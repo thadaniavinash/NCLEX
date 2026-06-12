@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NCLEX NGN Case Study Studio</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= DASHBOARD VIEW ================= -->
+  <div id="dashboard-view" class="view active">
+    <div class="dashboard-layout">
+      <!-- Sidebar on the left -->
+      <aside class="dashboard-sidebar">
+        <div class="sidebar-logo" style="display: flex; align-items: center; justify-content: space-between; width: 100%; padding-right: 8px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 24px; height: 24px;">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            <h2 style="margin: 0; font-size: 20px;">NCLEX <span>Studio</span></h2>
+          </div>
+          <button id="dashboard-theme-toggle-btn" class="btn btn-secondary" title="Toggle Light/Dark Mode" style="display: inline-flex; align-items: center; justify-content: center; padding: 0; width: 36px; height: 32px;">
+            <!-- Light Mode Icon (Sun) -->
+            <svg class="sun-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <!-- Dark Mode Icon (Moon) -->
+            <svg class="moon-icon hidden" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+        </div>
+        <nav class="sidebar-nav" style="overflow-y: auto;">
+          <!-- Case Studies Folder -->
+          <div class="sidebar-folder" id="folder-cases">
+            <button id="nav-tab-cases" class="nav-item nav-folder-toggle active" style="margin-bottom: 2px;">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="folder-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+              <span>Case Studies</span>
+              <span id="sidebar-cases-count" class="nav-badge">0</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" class="chevron-icon"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="sidebar-sub-list hidden" id="sub-list-cases">
+              <!-- Dynamically populated categories -->
+            </div>
+          </div>
+
+          <!-- Stand-alone Questions Folder -->
+          <div class="sidebar-folder" id="folder-standalone">
+            <button id="nav-tab-standalone" class="nav-item nav-folder-toggle" style="margin-bottom: 2px;">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="folder-icon"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span>Stand-alone Qs</span>
+              <span id="sidebar-standalone-count" class="nav-badge">0</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" class="chevron-icon"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="sidebar-sub-list hidden" id="sub-list-standalone">
+              <!-- Dynamically populated categories -->
+            </div>
+          </div>
+
+          <!-- Quiz Generator Tab -->
+          <button id="nav-tab-generator" class="nav-item">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M9 17v-5h6v5"/></svg>
+            <span>Quiz Generator</span>
+          </button>
+        </nav>
+        
+        <!-- Admin Section at the bottom of sidebar -->
+        <div class="sidebar-admin-section">
+          <div id="admin-status-logged-out">
+            <button id="admin-login-btn" class="btn btn-secondary btn-full" style="width: 100%;">
+              <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px; display: inline-block; vertical-align: middle;"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3"/></svg>
+              <span style="vertical-align: middle;">Admin Login</span>
+            </button>
+          </div>
+          <div id="admin-status-logged-in" class="hidden">
+            <div class="admin-badge">
+              <span class="admin-dot"></span> Admin Mode
+            </div>
+            <button id="admin-logout-btn" class="btn btn-text btn-xs" style="color: #ef4444; width: 100%; margin-top: 8px; text-align: center; background: transparent; border: none; cursor: pointer;">
+              Logout
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content area on the right -->
+      <div class="dashboard-main-area">
+        <!-- Sub-panel 1: Case Studies -->
+        <div id="panel-cases" class="dashboard-panel active">
+          <header class="panel-header">
+            <div class="panel-header-title">
+              <h2>NGN Case Studies</h2>
+              <p>Multi-step clinical unfolding scenarios representing complex client care.</p>
+            </div>
+            <div class="panel-header-actions">
+              <button id="import-btn" class="btn btn-secondary admin-only">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                Import JSON
+              </button>
+              <button id="export-all-cases-btn" class="btn btn-secondary admin-only">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                Export All
+              </button>
+              <input type="file" id="import-file-input" accept=".json" style="display: none;">
+              <button id="create-btn" class="btn btn-primary admin-only">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Create Case Study
+              </button>
+            </div>
+          </header>
+          <div id="cases-grid" class="cases-grid">
+            <!-- Dynamically populated case cards -->
+          </div>
+          <div id="empty-state" class="empty-state hidden">
+            <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="9" y1="15" x2="15" y2="15"/>
+              <line x1="12" y1="12" x2="12" y2="18"/>
+            </svg>
+            <p>No case studies found. Load the default cardiovascular case study.</p>
+            <button id="load-default-btn" class="btn btn-accent admin-only">Load Demo Case Study</button>
+          </div>
+        </div>
+
+        <!-- Sub-panel 2: Stand-alone Questions -->
+        <div id="panel-standalone" class="dashboard-panel">
+          <header class="panel-header">
+            <div class="panel-header-title">
+              <h2>Stand-alone Questions</h2>
+              <p>Single client questions covering NGN item formats (MCQ, SATA, Bowtie, Hotspot, Highlight).</p>
+            </div>
+            <div class="panel-header-actions">
+              <button id="import-standalone-btn" class="btn btn-secondary admin-only">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                Import JSON
+              </button>
+              <button id="export-all-standalone-btn" class="btn btn-secondary admin-only">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                Export All
+              </button>
+              <input type="file" id="import-standalone-file-input" accept=".json" style="display: none;">
+              <button id="create-standalone-btn" class="btn btn-primary admin-only">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Create Question
+              </button>
+            </div>
+          </header>
+          <div id="standalone-grid" class="cases-grid">
+            <!-- Dynamically populated question cards -->
+          </div>
+          <div id="standalone-empty-state" class="empty-state hidden">
+            <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none">
+              <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12.01" y2="8"/><polyline points="11 12 12 12 12 16 13 16"/>
+            </svg>
+            <p>No stand-alone questions found. Create a new question or import one.</p>
+            <button id="create-standalone-empty-btn" class="btn btn-accent admin-only">Create New Question</button>
+          </div>
+        </div>
+
+        <!-- Sub-panel 3: Quiz Generator -->
+        <div id="panel-generator" class="dashboard-panel">
+          <header class="panel-header">
+            <div class="panel-header-title">
+              <h2>Custom Quiz Generator</h2>
+              <p>Compile a custom testing session using a combination of case studies and standalone questions.</p>
+            </div>
+          </header>
+          <div class="generator-workspace">
+            <div class="generator-controls-card">
+              <div class="form-group">
+                <label>Select Case Studies to Include</label>
+                <div id="generator-cases-list" class="generator-selection-list">
+                  <!-- Checklist of Case Studies -->
+                </div>
+              </div>
+              <div class="form-group" style="margin-top: 24px;">
+                <label>Select Stand-alone Questions to Include</label>
+                <div id="generator-standalone-list" class="generator-selection-list">
+                  <!-- Checklist of Stand-alone Questions -->
+                </div>
+              </div>
+              <div class="generator-summary-and-play" style="margin-top: 24px;">
+                <div id="generator-quiz-summary" class="generator-summary">
+                  Select items to see summary.
+                </div>
+                <button id="generate-play-btn" class="btn btn-primary btn-large btn-run" style="width: 100%; justify-content: center; margin-top: 16px;">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="margin-right: 8px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  Generate & Launch Custom Quiz
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= CREATOR / EDITOR VIEW ================= -->
+  <div id="editor-view" class="view">
+    <header class="editor-header">
+      <div class="editor-header-left">
+        <button id="editor-back-btn" class="btn-icon-back">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        </button>
+        <div class="editor-title-container" style="display: flex; flex-direction: column; gap: 6px; flex-grow: 1;">
+          <input type="text" id="case-title-input" class="editor-title-input" placeholder="Case Study Title" style="width: 100%;">
+          <div style="display: flex; gap: 12px; align-items: center; width: 100%;">
+            <input type="text" id="case-desc-input" class="editor-desc-input" placeholder="Enter a brief case description..." style="flex-grow: 1;">
+            <select id="case-disorder-select" class="form-control" style="width: 250px; font-size: 12px; padding: 4px 8px; border-radius: var(--radius-sm); border: 1px solid #334155; background: #1e293b; color: white; height: 28px; font-weight: 500; cursor: pointer; outline: none;">
+              <!-- Dropdown will be populated dynamically -->
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="editor-header-right">
+        <button id="editor-theme-toggle-btn" class="btn btn-secondary" title="Toggle Light/Dark Mode" style="display: inline-flex; align-items: center; justify-content: center; padding: 0; width: 36px; height: 32px;">
+          <!-- Light Mode Icon (Sun) -->
+          <svg class="sun-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <!-- Dark Mode Icon (Moon) -->
+          <svg class="moon-icon hidden" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button id="editor-save-btn" class="btn btn-secondary">Save Progress</button>
+        <button id="editor-export-btn" class="btn btn-secondary">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+          Export
+        </button>
+        <button id="editor-play-btn" class="btn btn-primary btn-run">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Launch
+        </button>
+      </div>
+    </header>
+
+    <div class="editor-workspace">
+      <!-- Steps panel on the very left of the workspace -->
+      <aside class="editor-steps-sidebar">
+        <div class="sidebar-section-title">Case Screens</div>
+        <div id="editor-steps-list" class="steps-list">
+          <!-- Step items go here -->
+        </div>
+        <button id="add-step-btn" class="btn btn-text btn-small">
+          <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Add Screen
+        </button>
+      </aside>
+
+      <!-- Main split screen content -->
+      <main class="editor-main-split">
+        <!-- Left Side: Patient Chart Editor -->
+        <section class="editor-pane pane-left">
+          <div class="pane-header">
+            <h4>Patient Chart Configuration</h4>
+          </div>
+          <div class="pane-body">
+              <div class="form-group">
+                <label>Screen Intro Context (displayed above chart)</label>
+                <div class="rich-editor-container">
+                  <div class="rich-editor-toolbar">
+                    <button type="button" class="toolbar-btn" data-cmd="bold" title="Bold"><b>B</b></button>
+                    <button type="button" class="toolbar-btn" data-cmd="superscript" title="Superscript">x<sup>2</sup></button>
+                    <button type="button" class="toolbar-btn" data-cmd="subscript" title="Subscript">x<sub>2</sub></button>
+                    <button type="button" class="toolbar-btn btn-symbol" data-symbol="&deg;" title="Degree Symbol">&deg;</button>
+                    <button type="button" class="toolbar-btn btn-symbol" data-symbol="&ge;" title="Greater Than or Equal to">&ge;</button>
+                    <button type="button" class="toolbar-btn btn-symbol" data-symbol="&le;" title="Less Than or Equal to">&le;</button>
+                    <button type="button" class="toolbar-btn" data-cmd="insertUnorderedList" title="Bullet List">• List</button>
+                    <button type="button" class="toolbar-btn" data-cmd="insertOrderedList" title="Numbered List">1. List</button>
+                  </div>
+                  <div contenteditable="true" class="rich-text-editor" id="step-intro-input" placeholder="e.g. The nurse is caring for a 72-year-old male client in the emergency department (ED)."></div>
+                </div>
+              </div>
+
+            <div class="tabs-editor-container">
+              <div class="tabs-editor-header">
+                <h5>Chart Tabs</h5>
+                <button id="add-tab-btn" class="btn btn-text btn-xs">
+                  <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Add Tab
+                </button>
+              </div>
+              <div id="editor-tabs-list" class="tabs-list-horizontal">
+                <!-- Tabs headers here -->
+              </div>
+              <div id="tab-content-editor" class="tab-content-editor-box">
+                  <div class="form-group no-margin">
+                    <label id="active-tab-label">Content for "History and Physical"</label>
+                    <input type="text" id="tab-title-input" class="tab-title-rename" placeholder="Tab Title">
+                    <div class="rich-editor-container">
+                      <div class="rich-editor-toolbar">
+                        <button type="button" class="toolbar-btn" data-cmd="bold" title="Bold"><b>B</b></button>
+                        <button type="button" class="toolbar-btn" data-cmd="superscript" title="Superscript">x<sup>2</sup></button>
+                        <button type="button" class="toolbar-btn" data-cmd="subscript" title="Subscript">x<sub>2</sub></button>
+                        <button type="button" class="toolbar-btn btn-symbol" data-symbol="&deg;" title="Degree Symbol">&deg;</button>
+                        <button type="button" class="toolbar-btn btn-symbol" data-symbol="&ge;" title="Greater Than or Equal to">&ge;</button>
+                        <button type="button" class="toolbar-btn btn-symbol" data-symbol="&le;" title="Less Than or Equal to">&le;</button>
+                        <button type="button" class="toolbar-btn" data-cmd="insertUnorderedList" title="Bullet List">• List</button>
+                        <button type="button" class="toolbar-btn" data-cmd="insertOrderedList" title="Numbered List">1. List</button>
+                        <button type="button" class="toolbar-btn table-insert-btn" title="Insert Table">
+                          <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2" fill="none" style="vertical-align: middle;"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+                          Table
+                        </button>
+                      </div>
+                      <div contenteditable="true" class="rich-text-editor" id="tab-text-input" placeholder="Enter tab medical record, logs, physical findings, or lab tables here..."></div>
+                    </div>
+                    <button id="delete-active-tab-btn" class="btn btn-danger btn-xs" style="margin-top: 10px;">Delete This Tab</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Right Side: Question Configurator -->
+        <section class="editor-pane pane-right">
+          <div class="pane-header">
+            <h4>Question Designer</h4>
+          </div>
+          <div class="pane-body">
+            <div class="form-group">
+              <label for="question-type-select">Question Type</label>
+              <select id="question-type-select" class="form-control">
+                <!-- 0/1 Scoring Question Types (i - x) -->
+                <optgroup label="0/1 Scoring (No Penalties)">
+                  <option value="dropdown_cloze">Drop-Down Cloze</option>
+                  <option value="drag_drop_cloze">Drag-and-Drop Cloze</option>
+                  <option value="dropdown_table">Drop-Down Table</option>
+                  <option value="matrix_mc">Matrix Multiple Choice</option>
+                  <option value="select_n">Select N Multiple Response</option>
+                  <option value="bowtie">Bowtie</option>
+                  <option value="multiple_choice">Multiple Choice</option>
+                  <option value="fill_blank">Fill-in-blank calculation</option>
+                  <option value="hotspot">Hotspot</option>
+                  <option value="ordered_response">Ordered Response</option>
+                </optgroup>
+                <!-- +/- Scoring Question Types (xi - xv) -->
+                <optgroup label="+/- Scoring (Penalty for Wrong Choices)">
+                  <option value="select_all">Select All Multiple Response (SATA)</option>
+                  <option value="highlight">Highlight Text/Table</option>
+                  <option value="matrix_mr">Matrix Multiple Response</option>
+                  <option value="grouped_mr">Grouped Multiple Response</option>
+                  <option value="trend">Trend</option>
+                </optgroup>
+                <!-- Rationale Scoring Question Types (xvi - xvii) -->
+                <optgroup label="Rationale Scoring (All-or-Nothing)">
+                  <option value="dyad">Dyad Rationale</option>
+                  <option value="triad">Triad Rationale</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>QUESTION PREAMBLE</label>
+              <div class="rich-editor-container">
+                <div class="rich-editor-toolbar">
+                  <button type="button" class="toolbar-btn" data-cmd="bold" title="Bold"><b>B</b></button>
+                  <button type="button" class="toolbar-btn" data-cmd="superscript" title="Superscript">x<sup>2</sup></button>
+                  <button type="button" class="toolbar-btn" data-cmd="subscript" title="Subscript">x<sub>2</sub></button>
+                  <button type="button" class="toolbar-btn btn-symbol" data-symbol="&deg;" title="Degree Symbol">&deg;</button>
+                  <button type="button" class="toolbar-btn btn-symbol" data-symbol="&ge;" title="Greater Than or Equal to">&ge;</button>
+                  <button type="button" class="toolbar-btn btn-symbol" data-symbol="&le;" title="Less Than or Equal to">&le;</button>
+                  <button type="button" class="toolbar-btn" data-cmd="insertUnorderedList" title="Bullet List">• List</button>
+                  <button type="button" class="toolbar-btn" data-cmd="insertOrderedList" title="Numbered List">1. List</button>
+                </div>
+                <div contenteditable="true" class="rich-text-editor" id="question-preamble-input" placeholder="Add text..."></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Question Stem (The Prompts/Instructions)</label>
+                <div class="rich-editor-container">
+                  <div class="rich-editor-toolbar">
+                    <button type="button" class="toolbar-btn" data-cmd="bold" title="Bold"><b>B</b></button>
+                    <button type="button" class="toolbar-btn" data-cmd="superscript" title="Superscript">x<sup>2</sup></button>
+                    <button type="button" class="toolbar-btn" data-cmd="subscript" title="Subscript">x<sub>2</sub></button>
+                    <button type="button" class="toolbar-btn btn-symbol" data-symbol="&deg;" title="Degree Symbol">&deg;</button>
+                    <button type="button" class="toolbar-btn btn-symbol" data-symbol="&ge;" title="Greater Than or Equal to">&ge;</button>
+                    <button type="button" class="toolbar-btn btn-symbol" data-symbol="&le;" title="Less Than or Equal to">&le;</button>
+                    <button type="button" class="toolbar-btn" data-cmd="insertUnorderedList" title="Bullet List">• List</button>
+                    <button type="button" class="toolbar-btn" data-cmd="insertOrderedList" title="Numbered List">1. List</button>
+                  </div>
+                  <div contenteditable="true" class="rich-text-editor" id="question-stem-input" placeholder="e.g. Which of the following findings require follow-up? Select all that apply."></div>
+                </div>
+              </div>
+
+            <!-- DYNAMIC EDITORS PER QUESTION TYPE -->
+            <div id="question-details-editor" class="question-details-editor">
+              <!-- Content gets injected by app.js based on selected question type -->
+            </div>
+
+              <div class="form-group explanation-group">
+                <label>Explanation / Rationale (Shown after submission)</label>
+                <div class="rich-editor-container">
+                  <div class="rich-editor-toolbar">
+                    <button type="button" class="toolbar-btn" data-cmd="bold" title="Bold"><b>B</b></button>
+                    <button type="button" class="toolbar-btn" data-cmd="superscript" title="Superscript">x<sup>2</sup></button>
+                    <button type="button" class="toolbar-btn" data-cmd="subscript" title="Subscript">x<sub>2</sub></button>
+                    <button type="button" class="toolbar-btn btn-symbol" data-symbol="&deg;" title="Degree Symbol">&deg;</button>
+                    <button type="button" class="toolbar-btn btn-symbol" data-symbol="&ge;" title="Greater Than or Equal to">&ge;</button>
+                    <button type="button" class="toolbar-btn btn-symbol" data-symbol="&le;" title="Less Than or Equal to">&le;</button>
+                    <button type="button" class="toolbar-btn" data-cmd="insertUnorderedList" title="Bullet List">• List</button>
+                    <button type="button" class="toolbar-btn" data-cmd="insertOrderedList" title="Numbered List">1. List</button>
+                  </div>
+                  <div contenteditable="true" class="rich-text-editor" id="question-explanation-input" placeholder="Explain the pathophysiology or clinical reasoning behind the correct answers..."></div>
+                </div>
+              </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+
+  <!-- ================= PLAYER VIEW (HIGH FIDELITY NCLEX) ================= -->
+  <div id="player-view" class="view">
+    <!-- NCLEX Blue Banner -->
+    <header class="player-header">
+      <div class="player-header-left">
+        <button id="player-calc-btn" class="player-calc-link">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="calc-icon"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+          Calculator
+        </button>
+      </div>
+      <div class="player-header-right">
+        <span id="player-progress-text">1 of 6</span>
+      </div>
+    </header>
+
+    <!-- Player Sandbox Workspace -->
+    <div class="player-workspace">
+      <!-- Left side: Quiz Navigation Panel & Calculator -->
+      <aside class="player-left-sidebar">
+        <div class="quiz-nav-card">
+          <h5>QUIZ NAVIGATION</h5>
+          <div id="player-nav-grid" class="nav-grid">
+            <!-- Navigation squares (1, 2, 3...) -->
+          </div>
+          <button id="player-finish-link" class="link-btn">Finish attempt ...</button>
+        </div>
+
+        <!-- TI-108 Style Interactive Calculator -->
+        <div id="ti108-calculator" class="ti-108-calc hidden">
+          <div class="calc-top-bar">
+            <span>TI-108</span>
+            <button id="close-calc-btn" class="close-calc-x">&times;</button>
+          </div>
+          <div class="calc-body">
+            <div class="calc-solar-and-logo">
+              <span class="calc-brand">TI-108</span>
+              <div class="calc-solar-panel">
+                <div class="solar-bar"></div>
+                <div class="solar-bar"></div>
+                <div class="solar-bar"></div>
+                <div class="solar-bar"></div>
+              </div>
+            </div>
+            
+            <div class="calc-screen-wrapper" style="display: flex; align-items: center; justify-content: space-between;">
+              <span id="calc-mem-indicator" style="font-family: var(--font-mono); font-size: 14px; font-weight: bold; color: #111827; visibility: hidden; margin-right: 6px;">M</span>
+              <div id="calc-display" class="calc-screen" style="flex-grow: 1; text-align: right;">0</div>
+            </div>
+
+            <div class="calc-keypad">
+              <!-- Row 1: Operations -->
+              <button class="calc-btn op-btn" data-action="sign">+/-</button>
+              <button class="calc-btn op-btn" data-action="sqrt">&radic;</button>
+              <button class="calc-btn op-btn" data-action="percent">%</button>
+              <button class="calc-btn op-btn" data-action="divide">&divide;</button>
+
+              <!-- Row 2: Memory -->
+              <button class="calc-btn mem-btn" data-action="mrc">MRC</button>
+              <button class="calc-btn mem-btn" data-action="mminus">M-</button>
+              <button class="calc-btn mem-btn" data-action="mplus">M+</button>
+              <button class="calc-btn op-btn" data-action="multiply">&times;</button>
+
+              <!-- Row 3: Numbers & Minus -->
+              <button class="calc-btn num-btn">7</button>
+              <button class="calc-btn num-btn">8</button>
+              <button class="calc-btn num-btn">9</button>
+              <button class="calc-btn op-btn" data-action="subtract">-</button>
+
+              <!-- Row 4: Numbers & Plus -->
+              <button class="calc-btn num-btn">4</button>
+              <button class="calc-btn num-btn">5</button>
+              <button class="calc-btn num-btn">6</button>
+              <button class="calc-btn op-btn" data-action="add">+</button>
+
+              <!-- Row 5: Numbers & Equals -->
+              <button class="calc-btn num-btn">1</button>
+              <button class="calc-btn num-btn">2</button>
+              <button class="calc-btn num-btn">3</button>
+              <button class="calc-btn equal-btn" data-action="equals" style="grid-row: span 2; height: 100%;">=</button>
+
+              <!-- Row 6: Clear & Zero & Decimal -->
+              <button class="calc-btn clear-btn" data-action="clear">ON/C</button>
+              <button class="calc-btn num-btn">0</button>
+              <button class="calc-btn num-btn">.</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Center split workspace: Left (Patient Chart) and Right (Question Card) -->
+      <main class="player-center-split">
+        <!-- Patient Chart (Left Panel) -->
+        <section class="player-pane chart-pane">
+          <div class="question-meta-box">
+            <span class="question-num-header" id="player-question-number-title">Question 1</span>
+            <span class="question-status" id="player-question-status-text">Not complete</span>
+            <div class="question-actions">
+              <button id="player-flag-btn" class="btn-flag">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+                Flag question
+              </button>
+            </div>
+          </div>
+
+          <div class="patient-chart-box">
+            <div class="patient-chart-screen-label" id="player-screen-label">Case Study Screen 1 of 6</div>
+            <p class="patient-chart-intro" id="player-intro-text">The nurse is caring for a 72-year-old male client in the emergency department (ED).</p>
+            
+            <div class="patient-chart-tabs-bar" id="player-chart-tabs">
+              <!-- Tabs dynamically loaded -->
+            </div>
+            
+            <div class="patient-chart-content" id="player-chart-content">
+              <!-- Active tab content goes here -->
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Question Form (Right Panel) -->
+        <section class="player-pane question-pane">
+          <div class="question-card">
+            <!-- Question Preamble -->
+            <div id="player-question-preamble" class="question-preamble hidden"></div>
+
+            <!-- Question prompt icon & text -->
+            <div class="question-stem-wrapper">
+              <svg class="blue-arrow-svg" viewBox="0 0 24 24" width="20" height="20">
+                <defs>
+                  <linearGradient id="arrow-top-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#ffffff" />
+                    <stop offset="100%" stop-color="#bce3ff" />
+                  </linearGradient>
+                </defs>
+                <path d="M 4 20 L 20 12 L 11 12 Z" fill="#025287" stroke="#002f5c" stroke-width="1.2" stroke-linejoin="round" />
+                <path d="M 4 4 L 20 12 L 11 12 Z" fill="url(#arrow-top-grad)" stroke="#002f5c" stroke-width="1.2" stroke-linejoin="round" />
+              </svg>
+              <div class="question-stem" id="player-question-stem">Which of the following findings require follow-up? Select all that apply.</div>
+            </div>
+
+            <!-- Dynamic Answer Box based on current question type -->
+            <div id="player-answer-box" class="answer-box">
+              <!-- Injected inputs -->
+            </div>
+
+            <div class="patient-chart-actions">
+              <button id="player-submit-btn" class="btn btn-primary-exam">Submit</button>
+              <button id="player-giveup-btn" class="btn btn-secondary-exam">Give up and show answer</button>
+            </div>
+
+            <!-- Feedback Area (Hidden initially, shown after Submit/Give up) -->
+            <div id="player-feedback-card" class="feedback-card hidden">
+              <div class="feedback-header">
+                <span class="feedback-badge" id="feedback-result-badge">Correct</span>
+                <span class="feedback-score-text" id="feedback-score-display">+1 point</span>
+              </div>
+              <div class="feedback-body">
+                <div class="feedback-explanation">
+                  <strong>Rationale:</strong>
+                  <p id="feedback-explanation-text">Lisinopril is an ACE inhibitor...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Bottom Nav Bar -->
+    <footer class="player-footer">
+      <button id="player-quit-btn" class="btn-footer">&larr; Quit</button>
+      <div class="player-footer-center">
+        <span class="powered-by">NCLEX NGN Engine</span>
+      </div>
+      <div class="player-footer-right">
+        <button id="player-prev-btn" class="btn-footer">&larr; Previous</button>
+        <button id="player-next-btn" class="btn-footer">Next &rarr;</button>
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- ================= RESULTS VIEW (SCOREBOARD) ================= -->
+  <div id="results-view" class="view">
+    <div class="results-container">
+      <header class="results-header">
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="2" fill="none">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+        </div>
+        <h2>Quiz Attempt Completed!</h2>
+        <p id="results-case-title">Cardiovascular Case Study 1</p>
+      </header>
+
+      <main class="results-summary">
+        <div class="score-card">
+          <div class="score-label">Total Score</div>
+          <div id="results-score" class="score-value">0 / 0</div>
+          <div class="score-percentage" id="results-percentage">0%</div>
+        </div>
+
+        <div class="breakdown-card">
+          <h3>Question Breakdown</h3>
+          <div id="results-breakdown-list" class="breakdown-list">
+            <!-- Breakdown items generated dynamically -->
+          </div>
+        </div>
+      </main>
+
+      <footer class="results-actions">
+        <button id="results-retry-btn" class="btn btn-secondary">Retry Quiz</button>
+        <button id="results-dashboard-btn" class="btn btn-primary">Return to Dashboard</button>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ================= ADMIN LOGIN MODAL ================= -->
+  <div id="login-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+      <div class="modal-header" style="display: flex; justify-content: center; margin-bottom: 24px; border: none; padding: 0;">
+        <h3 style="font-family: var(--font-title); font-size: 20px; font-weight: 700; margin: 0;">Admin Login</h3>
+      </div>
+      <form id="admin-login-form">
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label for="login-username" style="display: block; margin-bottom: 8px; font-size: 13px; color: #94a3b8;">Username</label>
+          <input type="text" id="login-username" class="form-control" placeholder="Enter username" required style="width: 100%;">
+        </div>
+        <div class="form-group" style="margin-bottom: 24px;">
+          <label for="login-password" style="display: block; margin-bottom: 8px; font-size: 13px; color: #94a3b8;">Password</label>
+          <input type="password" id="login-password" class="form-control" placeholder="Enter password" required style="width: 100%;">
+        </div>
+        <div id="login-error-msg" class="hidden" style="color: #ef4444; font-size: 13px; margin-bottom: 16px; text-align: center; font-weight: 500;">
+          Incorrect username or password.
+        </div>
+        <div style="display: flex; gap: 12px; justify-content: flex-end;">
+          <button type="button" id="login-cancel-btn" class="btn btn-secondary">Cancel</button>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Notification Toasts -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- JS Dependencies -->
+  <script src="default-case.js"></script>
+  <script src="cases-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
