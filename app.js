@@ -455,6 +455,15 @@ function renderDisorderFilters() {
   const subListStandalone = document.getElementById('sub-list-standalone');
   
   if (!subListCases || !subListStandalone) return;
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const casesFilter = urlParams.get('cases');
+  const standaloneFilter = urlParams.get('standalone');
+  if (!isAdminLoggedIn && !casesFilter && !standaloneFilter) {
+    subListCases.innerHTML = '<div style="padding:10px; font-size:12px; color:var(--text-dash-secondary); font-style:italic;">Access locked</div>';
+    subListStandalone.innerHTML = '<div style="padding:10px; font-size:12px; color:var(--text-dash-secondary); font-style:italic;">Access locked</div>';
+    return;
+  }
   
   // Calculate counts for cases
   const caseCounts = {};
@@ -652,6 +661,20 @@ function renderCasesDashboard() {
   const emptyState = document.getElementById('empty-state');
   
   grid.innerHTML = '';
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const casesFilter = urlParams.get('cases');
+  if (!casesFilter && !isAdminLoggedIn) {
+    grid.classList.add('hidden');
+    emptyState.classList.remove('hidden');
+    const pEl = emptyState.querySelector('p');
+    if (pEl) {
+      pEl.textContent = "Please use the official link provided on your Blackboard portal to launch your assigned case study.";
+    }
+    const loadDefaultBtn = document.getElementById('load-default-btn');
+    if (loadDefaultBtn) loadDefaultBtn.classList.add('hidden');
+    return;
+  }
   
   const filtered = activeCasesDisorderFilter
     ? caseStudies.filter(c => c.disorder === activeCasesDisorderFilter)
@@ -764,6 +787,20 @@ function renderStandaloneDashboard() {
   const emptyState = document.getElementById('standalone-empty-state');
   
   grid.innerHTML = '';
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const standaloneFilter = urlParams.get('standalone');
+  if (!standaloneFilter && !isAdminLoggedIn) {
+    grid.classList.add('hidden');
+    emptyState.classList.remove('hidden');
+    const pEl = emptyState.querySelector('p');
+    if (pEl) {
+      pEl.textContent = "Please use the official link provided on your Blackboard portal to launch your assigned question.";
+    }
+    const createBtn = document.getElementById('create-standalone-empty-btn');
+    if (createBtn) createBtn.classList.add('hidden');
+    return;
+  }
   
   const filtered = activeStandaloneDisorderFilter
     ? standaloneQuestions.filter(q => q.disorder === activeStandaloneDisorderFilter)
