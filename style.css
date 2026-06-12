@@ -3176,3 +3176,33 @@ body.light-mode .btn-secondary:hover {
   background-color: #cbd5e1;
   border-color: #94a3b8;
 }
+
+/* Clickable ID Badge on Dashboard Cards */
+.card-id-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-dash-secondary);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  margin-top: 2px;
+  border: 1px solid var(--border-dash);
+  transition: all 0.2s;
+}
+.card-id-badge:hover {
+  background: rgba(75, 163, 227, 0.1);
+  color: var(--nclex-sky);
+  border-color: var(--nclex-sky);
+}
+body.light-mode .card-id-badge {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #64748b;
+}
+body.light-mode .card-id-badge:hover {
+  background: rgba(75, 163, 227, 0.08);
+  color: var(--nclex-sky);
+  border-color: var(--nclex-sky);
+}

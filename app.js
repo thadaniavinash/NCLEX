@@ -246,6 +246,19 @@ async function loadAllData() {
     caseStudies.push(window.DEFAULT_CASE);
     saveCasesToStorage();
   }
+
+  // Apply query parameter filtering if specified in the URL (e.g. ?cases=id1,id2)
+  const urlParams = new URLSearchParams(window.location.search);
+  const casesFilter = urlParams.get('cases');
+  if (casesFilter) {
+    const allowedIds = casesFilter.split(',');
+    caseStudies = caseStudies.filter(c => allowedIds.includes(c.id));
+  }
+  const standaloneFilter = urlParams.get('standalone');
+  if (standaloneFilter) {
+    const allowedIds = standaloneFilter.split(',');
+    standaloneQuestions = standaloneQuestions.filter(q => allowedIds.includes(q.id));
+  }
 }
 
 function saveCasesToStorage() {
@@ -679,7 +692,10 @@ function renderCasesDashboard() {
         ${c.disorder ? `<div class="disorder-badge">${escapeHTML(c.disorder)}</div>` : ''}
       </div>
       <div class="case-card-meta">
-        <span>${c.screens ? c.screens.length : 0} Screens</span>
+        <div style="display:flex; flex-direction:column; gap:4px; align-items:flex-start;">
+          <span>${c.screens ? c.screens.length : 0} Screens</span>
+          <span class="card-id-badge" data-id="${c.id}" title="Click to copy ID">ID: ${c.id}</span>
+        </div>
         <div class="case-card-actions">
           <button class="btn btn-secondary btn-small play-case-btn" data-id="${c.id}">Launch</button>
           ${isAdminLoggedIn ? `
@@ -692,6 +708,11 @@ function renderCasesDashboard() {
     `;
     
     card.querySelector('.play-case-btn').addEventListener('click', () => startPlayer(c));
+    card.querySelector('.card-id-badge').addEventListener('click', (e) => {
+      e.stopPropagation();
+      navigator.clipboard.writeText(c.id);
+      showToast("ID copied to clipboard!");
+    });
     if (isAdminLoggedIn) {
       card.querySelector('.edit-case-btn').addEventListener('click', () => startEditor(c));
       card.querySelector('.export-case-btn').addEventListener('click', () => exportCaseStudy(c));
@@ -787,7 +808,10 @@ function renderStandaloneDashboard() {
         </div>
       </div>
       <div class="case-card-meta">
-        <span>1 Screen</span>
+        <div style="display:flex; flex-direction:column; gap:4px; align-items:flex-start;">
+          <span>1 Screen</span>
+          <span class="card-id-badge" data-id="${q.id}" title="Click to copy ID">ID: ${q.id}</span>
+        </div>
         <div class="case-card-actions">
           <button class="btn btn-secondary btn-small play-q-btn" data-id="${q.id}">Launch</button>
           ${isAdminLoggedIn ? `
@@ -800,6 +824,11 @@ function renderStandaloneDashboard() {
     `;
     
     card.querySelector('.play-q-btn').addEventListener('click', () => startPlayer(q));
+    card.querySelector('.card-id-badge').addEventListener('click', (e) => {
+      e.stopPropagation();
+      navigator.clipboard.writeText(q.id);
+      showToast("ID copied to clipboard!");
+    });
     if (isAdminLoggedIn) {
       card.querySelector('.edit-q-btn').addEventListener('click', () => startEditor(q));
       card.querySelector('.export-q-btn').addEventListener('click', () => exportCaseStudy(q));
