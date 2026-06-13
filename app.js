@@ -242,10 +242,7 @@ async function loadAllData() {
     }
   }
 
-  if (caseStudies.length === 0 && window.DEFAULT_CASE) {
-    caseStudies.push(window.DEFAULT_CASE);
-    saveCasesToStorage();
-  }
+
 
   // Apply query parameter filtering if specified in the URL (e.g. ?cases=id1,id2)
   const urlParams = new URLSearchParams(window.location.search);
@@ -298,6 +295,31 @@ function downloadUpdatedDataFile() {
   showToast("Downloaded updated cases-data.js file. Please replace it in your folder.");
 }
 
+async function saveAllDataToBackend() {
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    try {
+      const response = await fetch('/api/save', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          cases: caseStudies,
+          standalone: standaloneQuestions
+        })
+      });
+      const result = await response.json();
+      if (result.success) {
+        showToast("Saved directly to cases-data.js!", "success");
+      } else {
+        showToast("Error saving to disk: " + result.error, "error");
+      }
+    } catch (err) {
+      console.warn("Local backend offline. Changes saved in browser memory only.");
+    }
+  }
+}
+
 function saveCurrentCaseOrStandalone() {
   if (currentCase) {
     if (currentCase.isStandalone) {
@@ -305,7 +327,7 @@ function saveCurrentCaseOrStandalone() {
     } else {
       saveCasesToStorage();
     }
-    downloadUpdatedDataFile();
+    saveAllDataToBackend();
   }
 }
 
@@ -371,14 +393,7 @@ function initDashboardEvents() {
   }
   
   document.getElementById('create-btn').addEventListener('click', createNewCase);
-  document.getElementById('load-default-btn').addEventListener('click', () => {
-    if (window.DEFAULT_CASE) {
-      caseStudies = [window.DEFAULT_CASE];
-      saveCasesToStorage();
-      showToast("Demo Cardiovascular case study loaded.");
-      renderDashboard();
-    }
-  });
+
 
   const importBtn = document.getElementById('import-btn');
   const importInput = document.getElementById('import-file-input');
@@ -723,7 +738,6 @@ function renderCasesDashboard() {
           <button class="btn btn-secondary btn-small play-case-btn" data-id="${c.id}">Launch</button>
           ${isAdminLoggedIn ? `
             <button class="btn btn-secondary btn-small edit-case-btn" data-id="${c.id}">Edit</button>
-            <button class="btn btn-secondary btn-small export-case-btn" data-id="${c.id}">Export</button>
             <button class="btn btn-danger btn-small delete-case-btn" data-id="${c.id}">Delete</button>
           ` : ''}
         </div>
@@ -733,12 +747,14 @@ function renderCasesDashboard() {
     card.querySelector('.play-case-btn').addEventListener('click', () => startPlayer(c));
     card.querySelector('.card-id-badge').addEventListener('click', (e) => {
       e.stopPropagation();
-      navigator.clipboard.writeText(c.id);
-      showToast("ID copied to clipboard!");
+      const baseUrl = window.location.protocol.startsWith('http') 
+        ? (window.location.origin + window.location.pathname) 
+        : 'https://thadaniavinash.github.io/NCLEX/';
+      navigator.clipboard.writeText(`${baseUrl}?cases=${c.id}`);
+      showToast("Launch link copied to clipboard!");
     });
     if (isAdminLoggedIn) {
       card.querySelector('.edit-case-btn').addEventListener('click', () => startEditor(c));
-      card.querySelector('.export-case-btn').addEventListener('click', () => exportCaseStudy(c));
       card.querySelector('.delete-case-btn').addEventListener('click', () => {
         if (confirm(`Are you sure you want to delete "${c.title}"?`)) {
           caseStudies = caseStudies.filter(x => x.id !== c.id);
@@ -746,7 +762,7 @@ function renderCasesDashboard() {
           if (db) {
             deleteFromStore('case_studies', c.id);
           }
-          downloadUpdatedDataFile();
+          saveAllDataToBackend();
           showToast("Case study deleted.");
           renderCasesDashboard();
           updateSidebarBadges();
@@ -853,7 +869,6 @@ function renderStandaloneDashboard() {
           <button class="btn btn-secondary btn-small play-q-btn" data-id="${q.id}">Launch</button>
           ${isAdminLoggedIn ? `
             <button class="btn btn-secondary btn-small edit-q-btn" data-id="${q.id}">Edit</button>
-            <button class="btn btn-secondary btn-small export-q-btn" data-id="${q.id}">Export</button>
             <button class="btn btn-danger btn-small delete-q-btn" data-id="${q.id}">Delete</button>
           ` : ''}
         </div>
@@ -863,12 +878,14 @@ function renderStandaloneDashboard() {
     card.querySelector('.play-q-btn').addEventListener('click', () => startPlayer(q));
     card.querySelector('.card-id-badge').addEventListener('click', (e) => {
       e.stopPropagation();
-      navigator.clipboard.writeText(q.id);
-      showToast("ID copied to clipboard!");
+      const baseUrl = window.location.protocol.startsWith('http') 
+        ? (window.location.origin + window.location.pathname) 
+        : 'https://thadaniavinash.github.io/NCLEX/';
+      navigator.clipboard.writeText(`${baseUrl}?standalone=${q.id}`);
+      showToast("Launch link copied to clipboard!");
     });
     if (isAdminLoggedIn) {
       card.querySelector('.edit-q-btn').addEventListener('click', () => startEditor(q));
-      card.querySelector('.export-q-btn').addEventListener('click', () => exportCaseStudy(q));
       card.querySelector('.delete-q-btn').addEventListener('click', () => {
         if (confirm(`Are you sure you want to delete "${q.title}"?`)) {
           standaloneQuestions = standaloneQuestions.filter(x => x.id !== q.id);
@@ -876,7 +893,7 @@ function renderStandaloneDashboard() {
           if (db) {
             deleteFromStore('standalone_questions', q.id);
           }
-          downloadUpdatedDataFile();
+          saveAllDataToBackend();
           showToast("Standalone question deleted.");
           renderStandaloneDashboard();
           updateSidebarBadges();
@@ -921,6 +938,7 @@ function createStandaloneQuestion() {
   
   standaloneQuestions.push(newQ);
   saveStandaloneToStorage();
+  saveAllDataToBackend();
   startEditor(newQ);
   showToast("New standalone question initialized.");
 }
@@ -941,6 +959,7 @@ function handleImportStandaloneFile(e) {
       migrateCaseTypes(imported);
       standaloneQuestions.push(imported);
       saveStandaloneToStorage();
+      saveAllDataToBackend();
       showToast(`Successfully imported standalone: ${imported.title}`);
       switchDashboardPanel('standalone');
     } catch (err) {
@@ -1111,6 +1130,7 @@ function createNewCase() {
   
   caseStudies.push(newCase);
   saveCasesToStorage();
+  saveAllDataToBackend();
   startEditor(newCase);
   showToast("New case study initialized.");
 }
@@ -1130,6 +1150,7 @@ function handleImportFile(e) {
       migrateCaseTypes(imported);
       caseStudies.push(imported);
       saveCasesToStorage();
+      saveAllDataToBackend();
       showToast(`Successfully imported: ${imported.title}`);
       renderDashboard();
     } catch (err) {
@@ -1423,6 +1444,20 @@ function initEditorEvents() {
 
   document.getElementById('tab-text-input').addEventListener('blur', () => {
     saveActiveTabContent();
+  });
+
+  document.getElementById('tab-text-input').addEventListener('focus', (e) => {
+    if (!activeTabId) return;
+    const step = currentCase.screens[currentStepIndex];
+    if (!step) return;
+    const tabs = step.leftContent.tabs;
+    const tab = tabs.find(t => t.id === activeTabId);
+    if (tab && tab.title && /nurse|note|log|progress/i.test(tab.title)) {
+      const stripped = stripNursesNotesFormatting(e.target.innerHTML);
+      if (e.target.innerHTML !== stripped) {
+        e.target.innerHTML = stripped;
+      }
+    }
   });
 
   document.getElementById('question-type-select').addEventListener('change', (e) => {
@@ -4875,41 +4910,67 @@ function escapeHTML(str) {
   );
 }
 
+function stripNursesNotesFormatting(html) {
+  if (!html) return '';
+  const temp = document.createElement('div');
+  temp.innerHTML = html;
+  
+  // Find all row structures
+  const rows = temp.querySelectorAll('.nurse-note-row');
+  rows.forEach(row => {
+    const timeEl = row.querySelector('.nurse-note-time');
+    const textEl = row.querySelector('.nurse-note-text');
+    let timeVal = '';
+    let textVal = '';
+    
+    if (timeEl) timeVal = timeEl.innerHTML.trim();
+    if (textEl) textVal = textEl.innerHTML.trim();
+    
+    if (!timeEl && !textEl) {
+      return; // Already plain paragraph
+    }
+    
+    if (timeVal && timeVal !== '&nbsp;') {
+      row.innerHTML = timeVal + ' ' + textVal;
+    } else {
+      row.innerHTML = textVal;
+    }
+    row.classList.remove('nurse-note-row');
+  });
+  
+  // Strip any remaining or stray span elements
+  temp.querySelectorAll('.nurse-note-time, .nurse-note-text').forEach(span => {
+    const parent = span.parentNode;
+    if (parent) {
+      while (span.firstChild) {
+        parent.insertBefore(span.firstChild, span);
+      }
+      parent.removeChild(span);
+    }
+  });
+  
+  return temp.innerHTML;
+}
+
 function formatNursesNotes(html, tabTitle) {
   if (!tabTitle || !/nurse|note|log|progress/i.test(tabTitle)) {
     return html;
   }
   if (!html) return '';
   
+  // Clean up any existing formatting structures first to prevent nesting
+  const cleanedHtml = stripNursesNotesFormatting(html);
+  
   const temp = document.createElement('div');
-  temp.innerHTML = html;
+  temp.innerHTML = cleanedHtml;
   
-  // 1. Clean up existing wrapping to make the process idempotent
-  const existingRows = temp.querySelectorAll('.nurse-note-row');
-  existingRows.forEach(row => {
-    const timeEl = row.querySelector('.nurse-note-time');
-    const textEl = row.querySelector('.nurse-note-text');
-    if (timeEl && textEl) {
-      const timeVal = timeEl.innerHTML.trim();
-      const textVal = textEl.innerHTML.trim();
-      if (timeVal === '&nbsp;' || timeVal === '') {
-        row.innerHTML = textVal;
-      } else {
-        row.innerHTML = timeVal + ' ' + textVal;
-      }
-    }
-    row.classList.remove('nurse-note-row');
-  });
-  
-  // 2. Iterate over child nodes to format
   const children = Array.from(temp.childNodes);
   children.forEach(child => {
     if (child.nodeType === Node.ELEMENT_NODE) {
       const tagName = child.tagName.toLowerCase();
       if (['p', 'div', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tagName)) {
         const text = child.innerHTML.trim();
-        // Match standard 4-digit military times or times with colons at start.
-        // Can optionally be wrapped in strong/b tags.
+        // Match 4-digit military times (e.g. 1000:, 08:30, 1200) at start of paragraph.
         const timeRegex = /^(?:<(strong|b)>)?\s*(\b\d{2}:?\d{2}\b:?)\s*(?:<\/\1>)?\s*/i;
         const match = text.match(timeRegex);
         

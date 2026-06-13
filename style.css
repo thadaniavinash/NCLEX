@@ -1332,7 +1332,7 @@ textarea {
   color: #374151;
   overflow-y: auto;
   flex-grow: 1;
-  white-space: pre-line; /* Renders newlines from textarea */
+  white-space: normal; /* Renders standard HTML and respects tags */
 }
 
 .patient-chart-actions {
@@ -2702,15 +2702,16 @@ td.matrix-cell-incorrect {
   color: #0f172a;
 }
 
-/* Nurses Notes Grid Alignment styling */
 .nurse-note-row {
   display: grid !important;
-  grid-template-columns: 55px 1fr !important;
+  grid-template-columns: 75px 1fr !important; /* 75px spacing matches Time + Tab gap */
   align-items: start !important;
   gap: 12px !important;
   margin-top: 6px;
   margin-bottom: 6px;
   line-height: 1.6;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 .nurse-note-time {
@@ -2724,7 +2725,10 @@ td.matrix-cell-incorrect {
 }
 
 .nurse-note-text {
-  text-align: left;
+  text-align: justify !important; /* Justified to display box limits */
+  min-width: 0 !important; /* Prevents column from overflowing container */
+  word-break: break-word !important; /* Forces wrapped lines to stay inside container */
+  overflow-wrap: break-word !important;
 }
 
 .question-preamble {
