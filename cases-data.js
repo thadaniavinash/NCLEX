@@ -1372,23 +1372,18 @@ window.NCLEX_CASES = [
     "disorder": "Respiratory Disorders"
   },
   {
-    "id": "case_1781285254218",
+    "id": "case_1781387466359",
     "title": "New Case Study",
     "description": "",
     "screens": [
       {
         "step": 1,
         "leftContent": {
-          "intro": "Ms. R. is a 68-year-old adult admitted to the emergency department after 24 hours of vomiting and watery diarrhea. She reports dizziness when standing, thirst, weakness, and mild abdominal cramping. Her daughter states, “She seems more confused than usual.” Medical history includes type 2 diabetes mellitus, hypertension, and chronic kidney disease stage 3. Home medications include metformin, lisinopril, hydrochlorothiazide, and atorvastatin. She lives alone and has had limited oral intake since yesterday.",
+          "intro": "",
           "tabs": [
             {
-              "id": "nn_1781285254218",
+              "id": "nn_1781387466359",
               "title": "Nurses' Notes",
-              "content": "<b>1000</b><p class=\"nurse-note-row\"><span class=\"nurse-note-time\">&nbsp;</span><span class=\"nurse-note-text\">: Client reports dizziness when standing, thirst, weakness, and mild abdominal cramping. Her daughter states, “She seems more confused than usual.”</span></p><div class=\"nurse-note-row\"><span class=\"nurse-note-time\">&nbsp;</span><span class=\"nurse-note-text\"><br></span></div>"
-            },
-            {
-              "id": "tab_1781386599665",
-              "title": "New Tab",
               "content": ""
             }
           ]
@@ -1418,12 +1413,10 @@ window.NCLEX_CASES = [
               "correct": false
             }
           ],
-          "explanation": "",
-          "preamble": ""
+          "explanation": ""
         }
       }
-    ],
-    "disorder": "Blood Disorders"
+    ]
   }
 ];
 window.NCLEX_STANDALONE = [];

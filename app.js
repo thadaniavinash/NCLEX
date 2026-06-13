@@ -4964,45 +4964,54 @@ function formatNursesNotes(html, tabTitle) {
   const temp = document.createElement('div');
   temp.innerHTML = cleanedHtml;
   
+  // Flatten and group elements: merge text/paragraphs that belong to the same log entry
   const children = Array.from(temp.childNodes);
+  const output = document.createElement('div');
+  let currentP = null;
+  
   children.forEach(child => {
+    const childText = child.textContent.trim();
+    // Check if the node starts with a time (e.g. 1000 or 08:30)
+    const startsWithTime = /^\s*(?:<(strong|b)>)?\s*\b\d{2}:?\d{2}\b/i.test(childText);
+    
+    if (startsWithTime || !currentP) {
+      currentP = document.createElement('p');
+      output.appendChild(currentP);
+    }
+    
     if (child.nodeType === Node.ELEMENT_NODE) {
       const tagName = child.tagName.toLowerCase();
-      if (['p', 'div', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tagName)) {
-        const text = child.innerHTML.trim();
-        // Match 4-digit military times (e.g. 1000:, 08:30, 1200) at start of paragraph.
-        // Capture optional bold tag and digits, checking for colons inside or outside tags.
-        const timeRegex = /^(?:<(strong|b)>)?\s*(\b\d{2}:?\d{2}\b)\s*(:?)\s*(?:<\/\1>)?\s*(:?)\s*/i;
-        const match = text.match(timeRegex);
-        
-        if (match) {
-          const rawTime = match[2] + ':';
-          let restHtml = text.substring(match[0].length);
-          restHtml = restHtml.replace(/^(?:<br\s*\/?>|[:\s\t\n])+/i, ''); // Strip leading colons, spaces, and linebreaks
-          child.classList.add('nurse-note-row');
-          child.innerHTML = `<span class="nurse-note-time">${rawTime}</span><span class="nurse-note-text">${restHtml}</span>`;
-        } else {
-          child.classList.add('nurse-note-row');
-          child.innerHTML = `<span class="nurse-note-time">&nbsp;</span><span class="nurse-note-text">${child.innerHTML}</span>`;
-        }
-      }
-    } else if (child.nodeType === Node.TEXT_NODE && child.textContent.trim()) {
-      const text = child.textContent.trim();
-      const timeRegex = /^\s*(\b\d{2}:?\d{2}\b)\s*(:?)\s*/i;
-      const match = text.match(timeRegex);
-      const newP = document.createElement('p');
-      newP.classList.add('nurse-note-row');
-      if (match) {
-        const rawTime = match[1] + ':';
-        let restText = text.substring(match[0].length);
-        restText = restText.replace(/^(?:<br\s*\/?>|[:\s\t\n])+/i, ''); // Strip leading colons, spaces, and linebreaks
-        newP.innerHTML = `<span class="nurse-note-time">${rawTime}</span><span class="nurse-note-text">${restText}</span>`;
+      if (['p', 'div'].includes(tagName)) {
+        // Append inner HTML to flatten nested paragraph tags
+        currentP.innerHTML += (currentP.innerHTML ? ' ' : '') + child.innerHTML;
       } else {
-        newP.innerHTML = `<span class="nurse-note-time">&nbsp;</span><span class="nurse-note-text">${text}</span>`;
+        currentP.appendChild(child.cloneNode(true));
       }
-      temp.replaceChild(newP, child);
+    } else {
+      currentP.appendChild(child.cloneNode(true));
+    }
+  });
+
+  // Format each grouped paragraph as a grid row
+  const formattedRows = Array.from(output.childNodes);
+  formattedRows.forEach(child => {
+    if (child.nodeType === Node.ELEMENT_NODE) {
+      const text = child.innerHTML.trim();
+      const timeRegex = /^(?:<(strong|b)>)?\s*(\b\d{2}:?\d{2}\b)\s*(:?)\s*(?:<\/\1>)?\s*(:?)\s*/i;
+      const match = text.match(timeRegex);
+      
+      if (match) {
+        const rawTime = match[2] + ':';
+        let restHtml = text.substring(match[0].length);
+        restHtml = restHtml.replace(/^(?:<br\s*\/?>|[:\s\t\n])+/i, ''); // Strip leading colons/linebreaks
+        child.classList.add('nurse-note-row');
+        child.innerHTML = `<span class="nurse-note-time">${rawTime}</span><span class="nurse-note-text">${restHtml}</span>`;
+      } else {
+        child.classList.add('nurse-note-row');
+        child.innerHTML = `<span class="nurse-note-time">&nbsp;</span><span class="nurse-note-text">${child.innerHTML}</span>`;
+      }
     }
   });
   
-  return temp.innerHTML;
+  return output.innerHTML;
 }
