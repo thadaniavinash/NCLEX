@@ -4978,7 +4978,7 @@ function formatNursesNotes(html, tabTitle) {
         if (match) {
           const rawTime = match[2] + ':';
           let restHtml = text.substring(match[0].length);
-          restHtml = restHtml.replace(/^[:\s\t\n]+/, ''); // Strip leading colons/spaces
+          restHtml = restHtml.replace(/^(?:<br\s*\/?>|[:\s\t\n])+/i, ''); // Strip leading colons, spaces, and linebreaks
           child.classList.add('nurse-note-row');
           child.innerHTML = `<span class="nurse-note-time">${rawTime}</span><span class="nurse-note-text">${restHtml}</span>`;
         } else {
@@ -4995,7 +4995,7 @@ function formatNursesNotes(html, tabTitle) {
       if (match) {
         const rawTime = match[1] + ':';
         let restText = text.substring(match[0].length);
-        restText = restText.replace(/^[:\s\t\n]+/, ''); // Strip leading colons/spaces
+        restText = restText.replace(/^(?:<br\s*\/?>|[:\s\t\n])+/i, ''); // Strip leading colons, spaces, and linebreaks
         newP.innerHTML = `<span class="nurse-note-time">${rawTime}</span><span class="nurse-note-text">${restText}</span>`;
       } else {
         newP.innerHTML = `<span class="nurse-note-time">&nbsp;</span><span class="nurse-note-text">${text}</span>`;
