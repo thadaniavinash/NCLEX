@@ -4971,12 +4971,14 @@ function formatNursesNotes(html, tabTitle) {
       if (['p', 'div', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tagName)) {
         const text = child.innerHTML.trim();
         // Match 4-digit military times (e.g. 1000:, 08:30, 1200) at start of paragraph.
-        const timeRegex = /^(?:<(strong|b)>)?\s*(\b\d{2}:?\d{2}\b:?)\s*(?:<\/\1>)?\s*/i;
+        // Capture optional bold tag and digits, checking for colons inside or outside tags.
+        const timeRegex = /^(?:<(strong|b)>)?\s*(\b\d{2}:?\d{2}\b)\s*(:?)\s*(?:<\/\1>)?\s*(:?)\s*/i;
         const match = text.match(timeRegex);
         
         if (match) {
-          const rawTime = match[2];
-          const restHtml = text.substring(match[0].length);
+          const rawTime = match[2] + ':';
+          let restHtml = text.substring(match[0].length);
+          restHtml = restHtml.replace(/^[:\s\t\n]+/, ''); // Strip leading colons/spaces
           child.classList.add('nurse-note-row');
           child.innerHTML = `<span class="nurse-note-time">${rawTime}</span><span class="nurse-note-text">${restHtml}</span>`;
         } else {
@@ -4986,13 +4988,14 @@ function formatNursesNotes(html, tabTitle) {
       }
     } else if (child.nodeType === Node.TEXT_NODE && child.textContent.trim()) {
       const text = child.textContent.trim();
-      const timeRegex = /^\s*(\b\d{2}:?\d{2}\b:?)\s*/i;
+      const timeRegex = /^\s*(\b\d{2}:?\d{2}\b)\s*(:?)\s*/i;
       const match = text.match(timeRegex);
       const newP = document.createElement('p');
       newP.classList.add('nurse-note-row');
       if (match) {
-        const rawTime = match[1];
-        const restText = text.substring(match[0].length);
+        const rawTime = match[1] + ':';
+        let restText = text.substring(match[0].length);
+        restText = restText.replace(/^[:\s\t\n]+/, ''); // Strip leading colons/spaces
         newP.innerHTML = `<span class="nurse-note-time">${rawTime}</span><span class="nurse-note-text">${restText}</span>`;
       } else {
         newP.innerHTML = `<span class="nurse-note-time">&nbsp;</span><span class="nurse-note-text">${text}</span>`;

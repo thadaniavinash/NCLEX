@@ -1384,6 +1384,11 @@ window.NCLEX_CASES = [
             {
               "id": "nn_1781285254218",
               "title": "Nurses' Notes",
+              "content": "<b>1000</b><p class=\"nurse-note-row\"><span class=\"nurse-note-time\">&nbsp;</span><span class=\"nurse-note-text\">: Client reports dizziness when standing, thirst, weakness, and mild abdominal cramping. Her daughter states, “She seems more confused than usual.”</span></p><div class=\"nurse-note-row\"><span class=\"nurse-note-time\">&nbsp;</span><span class=\"nurse-note-text\"><br></span></div>"
+            },
+            {
+              "id": "tab_1781386599665",
+              "title": "New Tab",
               "content": ""
             }
           ]

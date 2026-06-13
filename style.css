@@ -2714,6 +2714,12 @@ td.matrix-cell-incorrect {
   box-sizing: border-box !important;
 }
 
+.nurse-note-row p,
+.nurse-note-row div {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .nurse-note-time {
   font-weight: 700;
   white-space: nowrap;
