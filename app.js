@@ -368,18 +368,6 @@ async function saveStandaloneToStorage() {
   }
 }
 
-function downloadUpdatedDataFile() {
-  const content = 'window.NCLEX_CASES = ' + JSON.stringify(caseStudies, null, 2) + ';\nwindow.NCLEX_STANDALONE = ' + JSON.stringify(standaloneQuestions, null, 2) + ';\n';
-  const blob = new Blob([content], { type: 'application/javascript' });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = 'cases-data.js';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  showToast("Downloaded updated cases-data.js file. Please replace it in your folder.");
-}
 
 async function saveAllDataToBackend() {
   if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
