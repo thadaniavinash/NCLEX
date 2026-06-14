@@ -1424,14 +1424,57 @@ window.NCLEX_CASES = [
             {
               "text": "Hyperglycemia is unrelated to acute illness and can be ignored until discharge.",
               "correct": false
+            }
+          ],
+          "explanation": "Vomiting and diarrhea can produce fluid volume deficit, electrolyte losses, acid-base changes, reduced perfusion, dizziness, tachycardia, and acute kidney injury risk. Fever and hyperglycemia may contribute but do not explain the whole priority pattern.",
+          "preamble": "The nurse has reviewed the recently received laboratory data."
+        }
+      },
+      {
+        "step": 2,
+        "leftContent": {
+          "intro": "The nurse is caring for a 68-year-old female adult admitted after 24 hours of vomiting and watery diarrhea. She reports dizziness when standing, thirst, weakness, and mild abdominal cramping. Her daughter states, “She seems more confused than usual.” Medical history includes type 2 diabetes mellitus, hypertension, and chronic kidney disease stage 3. Home medications include metformin, lisinopril, hydrochlorothiazide, and atorvastatin. She lives alone and has had limited oral intake since yesterday.",
+          "tabs": [
+            {
+              "id": "nn_1781387466359",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">1005:</span><span class=\"nurse-note-text\">Patient appears fatigued. Mucous membranes dry. Skin warm. Reports dizziness on standing. Denies chest pain. Mild generalized abdominal tenderness without guarding. Daughter reports new confusion. Last void was “early this morning.”</span></p>"
+            },
+            {
+              "id": "tab_1781387807243",
+              "title": "Vital Signs",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Time</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">1005</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Temp</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">38.1 °C</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">HR</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">116 beats/min</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">RR</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">22 breaths/min</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">BP</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">94/58 mm Hg</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Orthostatic BP</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Not attempted because client is dizzy when sitting upright</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">SpO<sub>2</sub></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">96% (on room air)</td></tr></tbody></table>"
+            },
+            {
+              "id": "tab_1781388411984",
+              "title": "Laboratory Results",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Laboratory Test and Reference Range</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\"></th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Sodium, blood<br>136 - 146 mmol/L</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">132 mmol/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Potassium, blood<br>3.5 - 5.1 mmol/L</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">3.3 mmol/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Bicarbonate, blood<br>21 - 32 mmol/L</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">20 mmol/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Blood urea nitrogen (BUN)<br>2.1 - 8.0 mmol/L</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">12.5 mmol/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Chloride, blood<br>98 - 107 mmol/L</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">96 mmol/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Creatinine, blood<br>Female: 22 - 75 micromol/L<br>Male: 49 - 93 micromole/L</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><br>168 micromol/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Glucose, blood<br>Fasting: 4.0 - 6.0 mmol/L<br>Random: 4.0 - 11.0 mmol/L</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">14.8 mmol/L (random)</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">White blood cell (WBC) count, blood<br>3.5 - 10.5 x 10<sup>9</sup>/L&nbsp;</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">13.8 x 10<sup>9</sup>/L</td></tr></tbody></table><p><br></p>"
+            }
+          ]
+        },
+        "question": {
+          "type": "multiple_choice",
+          "stem": "",
+          "options": [
+            {
+              "text": "",
+              "correct": true
+            },
+            {
+              "text": "",
+              "correct": false
+            },
+            {
+              "text": "",
+              "correct": false
             },
             {
               "text": "",
               "correct": false
             }
           ],
-          "explanation": "Vomiting and diarrhea can produce fluid volume deficit, electrolyte losses, acid-base changes, reduced perfusion, dizziness, tachycardia, and acute kidney injury risk. Fever and hyperglycemia may contribute but do not explain the whole priority pattern.",
-          "preamble": "The nurse has reviewed the recently received laboratory data."
+          "explanation": "",
+          "preamble": ""
         }
       }
     ],

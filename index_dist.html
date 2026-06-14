@@ -1,3 +1,3877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NCLEX NGN Case Study Studio</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <style>
+/* ================= DESIGN SYSTEM VARIABLES ================= */
+:root {
+  /* Dashboard Theme (Modern Dark/Slate) */
+  --bg-dash: #0f172a;
+  --bg-dash-card: #1e293b;
+  --text-dash-primary: #f8fafc;
+  --text-dash-secondary: #94a3b8;
+  --border-dash: #334155;
+  
+  /* NCLEX Exam Theme (Professional Light Blue/Grey) */
+  --bg-exam: #eef2f5;
+  --bg-exam-card: #ffffff;
+  --nclex-blue: #025287;
+  --nclex-blue-hover: #013f69;
+  --nclex-sky: #4ba3e3;
+  --nclex-border: #ccd8e0;
+  --text-exam-primary: #1e293b;
+  --text-exam-secondary: #64748b;
+  
+  /* Accent Colors */
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
+  --accent-orange: #f59e0b;
+  --accent-purple: #8b5cf6;
+  
+  /* Fonts */
+  --font-title: 'Outfit', 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
+  
+  /* Shadows & Radius */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-premium: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+/* ================= GENERAL STYLES ================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-body);
+  background-color: var(--bg-dash);
+  color: var(--text-dash-primary);
+  overflow: hidden;
+}
+
+/* View toggle framework */
+.view {
+  display: none;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.view.active {
+  display: flex;
+}
+
+/* Scrollbars styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+.view:not(#player-view) ::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+#player-view ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+/* ================= BUTTONS & INPUTS ================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-family: var(--font-title);
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary {
+  background-color: var(--nclex-sky);
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #3b8ec8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(75, 163, 227, 0.3);
+}
+
+.btn-secondary {
+  background-color: #334155;
+  color: var(--text-dash-primary);
+  border: 1px solid var(--border-dash);
+}
+.btn-secondary:hover {
+  background-color: #475569;
+  border-color: #64748b;
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, var(--nclex-sky), var(--accent-purple));
+  color: white;
+}
+.btn-accent:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.btn-danger {
+  background-color: var(--accent-red);
+  color: white;
+}
+.btn-danger:hover {
+  background-color: #dc2626;
+}
+
+.btn-text {
+  background: transparent;
+  color: var(--nclex-sky);
+  padding: 6px 12px;
+}
+.btn-text:hover {
+  background: rgba(75, 163, 227, 0.1);
+}
+
+.btn-small {
+  font-size: 12px;
+  padding: 6px 12px;
+}
+
+.btn-xs {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.badge {
+  background-color: #475569;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ================= TOAST NOTIFICATIONS ================= */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.toast {
+  background: rgba(30, 41, 59, 0.95);
+  border-left: 4px solid var(--nclex-sky);
+  color: white;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  min-width: 250px;
+  pointer-events: auto;
+  animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.toast.success {
+  border-left-color: var(--accent-green);
+}
+.toast.error {
+  border-left-color: var(--accent-red);
+}
+
+@keyframes slideIn {
+  from { transform: translateX(120%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* ================= DASHBOARD LAYOUT ================= */
+#dashboard-view {
+  background-color: var(--bg-dash);
+  color: var(--text-dash-primary);
+  overflow-y: auto;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid var(--border-dash);
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--nclex-sky);
+}
+
+.header-logo h1 {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.header-logo h1 span {
+  font-weight: 300;
+  color: var(--text-dash-secondary);
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.dashboard-main {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 48px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-section h2 {
+  font-family: var(--font-title);
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  background: linear-gradient(to right, #ffffff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-section p {
+  color: var(--text-dash-secondary);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.cases-section {
+  margin-top: 24px;
+}
+
+.section-title-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border-dash);
+  padding-bottom: 12px;
+}
+
+.section-title-bar h3 {
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.case-card {
+  background-color: var(--bg-dash-card);
+  border: 1px solid var(--border-dash);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 240px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.case-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--nclex-sky);
+  box-shadow: var(--shadow-premium);
+}
+
+.case-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(95deg, var(--nclex-sky), var(--accent-purple));
+  opacity: 0.8;
+}
+
+.case-card-body h4 {
+  font-family: var(--font-title);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.case-card-body p {
+  font-size: 14px;
+  color: var(--text-dash-secondary);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.case-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--text-dash-secondary);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 12px;
+}
+
+.case-card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.case-card-actions button {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  border: 2px dashed var(--border-dash);
+  border-radius: var(--radius-lg);
+  color: var(--text-dash-secondary);
+}
+
+.empty-state svg {
+  margin-bottom: 16px;
+  color: #475569;
+}
+
+.empty-state p {
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ================= CREATOR / EDITOR VIEW ================= */
+#editor-view {
+  background-color: #0f172a;
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-dash);
+  background-color: var(--bg-dash-card);
+}
+
+.editor-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-grow: 1;
+  max-width: 60%;
+}
+
+.btn-icon-back {
+  background: transparent;
+  border: none;
+  color: var(--text-dash-secondary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.btn-icon-back:hover {
+  background-color: #334155;
+  color: white;
+}
+
+.editor-title-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.editor-title-input {
+  background: transparent;
+  border: none;
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  outline: none;
+  width: 100%;
+}
+
+.editor-title-input::placeholder {
+  color: #475569;
+}
+
+.editor-desc-input {
+  background: transparent;
+  border: none;
+  font-size: 13px;
+  color: var(--text-dash-secondary);
+  outline: none;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.editor-desc-input::placeholder {
+  color: #475569;
+}
+
+.editor-header-right {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-run {
+  background-color: var(--accent-green);
+}
+.btn-run:hover {
+  background-color: #059669;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Editor Workspace split */
+.editor-workspace {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+/* Steps sidebar */
+.editor-steps-sidebar {
+  width: 180px;
+  background-color: #0b0f19;
+  border-right: 1px solid var(--border-dash);
+  display: flex;
+  flex-direction: column;
+  padding: 16px 12px;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.sidebar-section-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dash-secondary);
+  font-weight: 600;
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.step-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background-color: var(--bg-dash-card);
+  border: 1px solid var(--border-dash);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+  color: var(--text-dash-secondary);
+}
+
+.step-nav-item:hover {
+  border-color: #475569;
+  color: white;
+}
+
+.step-nav-item.active {
+  background-color: var(--nclex-sky);
+  border-color: var(--nclex-sky);
+  color: white;
+}
+
+.btn-step-delete {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  padding: 2px;
+  display: none;
+}
+
+.step-nav-item:hover .btn-step-delete {
+  display: block;
+}
+
+.btn-step-delete:hover {
+  color: var(--accent-red);
+}
+
+/* Main Split Screen Area */
+.editor-main-split {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.editor-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.pane-left {
+  border-right: 1px solid var(--border-dash);
+}
+
+.pane-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-dash);
+  background-color: #0d1322;
+}
+
+.pane-header h4 {
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 15px;
+  color: white;
+}
+
+.pane-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* General Editor Fields */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group.no-margin {
+  margin: 0;
+}
+
+.form-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dash-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.form-control, 
+textarea, 
+input[type="text"], 
+select {
+  background-color: var(--bg-dash-card);
+  border: 1px solid var(--border-dash);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  color: white;
+  font-family: var(--font-body);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.form-control:focus, 
+textarea:focus, 
+input[type="text"]:focus, 
+select:focus {
+  border-color: var(--nclex-sky);
+}
+
+select option {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+.cloze-select option {
+  background-color: #ffffff;
+  color: #111827;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Tabs Editor System */
+.tabs-editor-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+  flex-grow: 1;
+}
+
+.tabs-editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tabs-editor-header h5 {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tabs-list-horizontal {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  border-bottom: 2px solid var(--border-dash);
+  padding-bottom: 2px;
+}
+
+.tab-editor-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background-color: var(--bg-dash-card);
+  border: 1px solid var(--border-dash);
+  border-bottom: none;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  font-size: 12px;
+  color: var(--text-dash-secondary);
+  cursor: pointer;
+}
+
+.tab-editor-item.active {
+  background-color: #1e293b;
+  border-color: var(--nclex-sky);
+  color: white;
+}
+
+.btn-tab-close {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.btn-tab-close:hover {
+  color: var(--accent-red);
+}
+
+.tab-content-editor-box {
+  background-color: #111827;
+  border: 1px solid var(--border-dash);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.tab-title-rename {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.tab-content-editor-box textarea {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#delete-active-tab-btn {
+  margin-top: 10px;
+  align-self: flex-start;
+}
+
+/* Question-Type Specific Configuration UI styles */
+.question-details-editor {
+  border-top: 1px solid var(--border-dash);
+  padding-top: 16px;
+  margin-top: 8px;
+}
+
+.options-config-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.option-config-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.option-checkbox-input, 
+.option-radio-input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--nclex-sky);
+}
+
+.option-text-input {
+  flex-grow: 1;
+}
+
+.btn-option-delete {
+  background: transparent;
+  border: none;
+  color: var(--text-dash-secondary);
+  cursor: pointer;
+  padding: 6px;
+}
+
+.btn-option-delete:hover {
+  color: var(--accent-red);
+}
+
+/* Matrix designer styles */
+.matrix-designer-cols, .matrix-designer-rows {
+  margin-bottom: 16px;
+}
+
+.chip-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.col-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background-color: var(--bg-dash-card);
+  border: 1px solid var(--border-dash);
+  border-radius: 16px;
+  font-size: 12px;
+}
+
+.btn-chip-delete {
+  background: transparent;
+  border: none;
+  color: var(--text-dash-secondary);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-chip-delete:hover {
+  color: var(--accent-red);
+}
+
+.matrix-answers-designer {
+  margin-top: 16px;
+}
+
+.matrix-grid-designer-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.matrix-grid-designer-table th, 
+.matrix-grid-designer-table td {
+  border: 1px solid var(--border-dash);
+  padding: 8px;
+  text-align: center;
+}
+
+.matrix-grid-designer-table td:first-child {
+  text-align: left;
+  font-weight: 500;
+}
+
+/* Dropdown Cloze configuration */
+.cloze-warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 10px;
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  color: #fbbf24;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.cloze-dropdown-card {
+  background-color: rgba(255,255,255,0.02);
+  border: 1px solid var(--border-dash);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.cloze-dropdown-card h6 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--nclex-sky);
+  margin-bottom: 8px;
+}
+
+.cloze-placeholder-input {
+  margin-bottom: 10px;
+  font-size: 12px;
+  padding: 6px;
+}
+
+.explanation-group {
+  margin-top: 16px;
+  border-top: 1px solid var(--border-dash);
+  padding-top: 16px;
+}
+
+
+/* ================= PLAYER VIEW (HIGH FIDELITY NCLEX) ================= */
+#player-view {
+  background-color: var(--bg-exam);
+  color: var(--text-exam-primary);
+}
+
+/* Header style replicating screenshots */
+.player-header {
+  background-color: var(--nclex-blue);
+  color: white;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  border-bottom: 4px solid var(--nclex-sky);
+  flex-shrink: 0;
+  font-family: var(--font-body);
+}
+
+.player-calc-link {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  height: 100%;
+  padding: 0 12px;
+  font-weight: 500;
+}
+
+.player-calc-link:hover {
+  background-color: var(--nclex-blue-hover);
+}
+
+.calc-icon {
+  fill: none;
+  stroke: currentColor;
+}
+
+#player-progress-text {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Player main grid layout */
+.player-workspace {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Navigation Panel on Left (grey area) */
+.player-left-sidebar {
+  width: 200px;
+  background-color: #f3f4f6;
+  border-right: 1px solid var(--nclex-border);
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  gap: 12px;
+  position: relative;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.quiz-nav-card {
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.quiz-nav-card h5 {
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #374151;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.nav-square {
+  width: 32px;
+  height: 32px;
+  background: white;
+  border: 1px solid #9ca3af;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+  color: #374151;
+}
+
+.nav-square:hover {
+  background: #f3f4f6;
+  border-color: #4b5563;
+}
+
+.nav-square.active {
+  border: 2.5px solid black;
+  font-weight: 700;
+}
+
+.nav-square.answered {
+  background: #e2e8f0;
+  border-color: #64748b;
+}
+
+.nav-square.flagged {
+  position: relative;
+}
+
+.nav-square.flagged::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 6px 6px 0;
+  border-color: transparent var(--accent-red) transparent transparent;
+}
+
+.link-btn {
+  background: transparent;
+  border: none;
+  color: var(--nclex-blue);
+  font-size: 12px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.link-btn:hover {
+  text-decoration: underline;
+}
+
+/* TI-108 CALCULATOR GRAPHIC STYLING */
+.ti-108-calc {
+  position: absolute;
+  top: 12px;
+  left: 212px;
+  width: 250px;
+  background: #025287; /* Hard plastic blue rim */
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-premium);
+  border: 5px solid #00406d;
+  padding: 12px;
+  z-index: 999;
+  user-select: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  transition: opacity 0.2s;
+}
+
+.calc-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: grab;
+  padding: 8px 12px;
+  background-color: #00406d; /* Darker blue panel header matching physical TI-108 rim */
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  margin: -12px -12px 12px -12px; /* Edge-to-edge placement */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.calc-top-bar:active {
+  cursor: grabbing;
+}
+
+.close-calc-x {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.calc-solar-and-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.calc-brand {
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-style: italic;
+  font-size: 16px;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.calc-solar-panel {
+  display: flex;
+  background: #4a2f1b; /* Solar panel brown */
+  border: 1px solid #111;
+  padding: 2px;
+  gap: 1.5px;
+}
+
+.solar-bar {
+  width: 8px;
+  height: 12px;
+  background: #734524;
+}
+
+.calc-screen-wrapper {
+  background: #8fa89b; /* Classic LCD screen green-grey */
+  border: 3px solid #1e293b;
+  border-radius: var(--radius-sm);
+  padding: 8px;
+  margin-bottom: 12px;
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.calc-screen {
+  font-family: var(--font-mono);
+  color: #111827;
+  font-size: 26px;
+  text-align: right;
+  height: 32px;
+  line-height: 32px;
+  font-weight: bold;
+}
+
+.calc-keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.calc-btn {
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.3);
+  height: 32px;
+  color: white;
+  transition: transform 0.05s, box-shadow 0.05s;
+}
+
+.calc-btn:active, .calc-btn.active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+/* Keypad color systems replicating TI-108 */
+.op-btn {
+  background-color: #dc2626; /* red key */
+}
+.op-btn:hover { background-color: #ef4444; }
+
+.mem-btn {
+  background-color: #b91c1c; /* dark red key */
+}
+.mem-btn:hover { background-color: #dc2626; }
+
+.num-btn {
+  background-color: #ffffff; /* white keys */
+  color: #1e293b;
+}
+.num-btn:hover { background-color: #f1f5f9; }
+
+.clear-btn {
+  background-color: #dc2626; /* red */
+  font-size: 11px;
+}
+
+.double-width {
+  grid-column: span 2;
+}
+
+.equal-btn {
+  background-color: #b91c1c;
+  height: 100%; /* Spans full height of bottom cluster */
+  grid-row: span 2;
+}
+
+/* Center Split Screen */
+.player-center-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.player-pane {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+.chart-pane {
+  border-right: 1px solid var(--nclex-border);
+  padding: 16px 20px;
+  background-color: #fcfcfd;
+}
+
+.question-pane {
+  background-color: #f3f5f8;
+  padding: 16px 20px;
+}
+
+/* Question Header Meta */
+.question-meta-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.question-num-header {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 15px;
+  color: #111827;
+}
+
+.question-status {
+  font-size: 11px;
+  color: #6b7280;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.btn-flag {
+  background: transparent;
+  border: none;
+  color: #374151;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.btn-flag:hover {
+  color: var(--accent-red);
+}
+
+.btn-flag.flagged {
+  color: var(--accent-red);
+  font-weight: 700;
+}
+
+/* Patient Chart Core Box */
+.patient-chart-box {
+  border: 1px solid var(--nclex-border);
+  border-radius: var(--radius-sm);
+  background: white;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.patient-chart-screen-label {
+  font-size: 13px;
+  color: #6b7280;
+  padding: 8px 12px;
+  background: #f9fafb;
+  border-bottom: 1px solid var(--nclex-border);
+  font-weight: 500;
+}
+
+.patient-chart-intro {
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  border-bottom: 1px solid var(--nclex-border);
+}
+
+.patient-chart-tabs-bar {
+  display: flex;
+  background-color: #f3f4f6;
+  border-bottom: 1px solid var(--nclex-border);
+}
+
+.patient-chart-tab {
+  border: none;
+  background: transparent;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--nclex-blue);
+  cursor: pointer;
+  border-right: 1px solid var(--nclex-border);
+  border-bottom: 3px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.patient-chart-tab:hover {
+  background: #e5e7eb;
+}
+
+.patient-chart-tab.active {
+  background: white;
+  border-bottom-color: var(--nclex-sky);
+  font-weight: 700;
+  color: #111827;
+}
+
+.patient-chart-content {
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #374151;
+  overflow-y: auto;
+  flex-grow: 1;
+  white-space: normal; /* Renders standard HTML and respects tags */
+}
+
+.patient-chart-actions {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border-top: 1px solid var(--nclex-border);
+  background-color: #f9fafb;
+}
+
+.btn-primary-exam {
+  background-color: var(--nclex-sky);
+  border-radius: var(--radius-sm);
+  color: white;
+  border: 1px solid var(--nclex-sky);
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+.btn-primary-exam:hover:not(:disabled) {
+  background-color: var(--nclex-blue);
+  border-color: var(--nclex-blue);
+}
+.btn-primary-exam:disabled {
+  background-color: #d1d5db;
+  border-color: #d1d5db;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.btn-secondary-exam {
+  background-color: white;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 13px;
+  cursor: pointer;
+}
+.btn-secondary-exam:hover:not(:disabled) {
+  background-color: #f9fafb;
+  border-color: #c0c0c0;
+}
+.btn-secondary-exam:disabled {
+  color: #9ca3af;
+  border-color: #e5e7eb;
+  cursor: not-allowed;
+}
+
+/* Question Card Styles (Right Panel) */
+.question-card {
+  background: white;
+  border: 1px solid var(--nclex-border);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  box-shadow: var(--shadow-sm);
+}
+
+.question-stem-wrapper {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.blue-arrow-svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.question-stem {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #111827;
+}
+
+/* Answer Options dynamic rendering layout */
+.answer-box {
+  margin-bottom: 24px;
+}
+
+/* SATA / Single Choice Checkbox lines */
+.exam-option-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+  background: #f9fafb;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.exam-option-row:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.exam-option-row input[type="checkbox"], 
+.exam-option-row input[type="radio"] {
+  margin-top: 3px;
+  width: 15px;
+  height: 15px;
+  accent-color: var(--nclex-sky);
+  cursor: pointer;
+}
+
+.exam-option-row.checked {
+  background: #f0f7fc;
+  border-color: var(--nclex-sky);
+}
+
+.option-text-label {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #374151;
+  user-select: none;
+}
+
+/* Highlight after submission */
+.exam-option-row.show-correct {
+  border-color: var(--accent-green);
+  background-color: rgba(16, 185, 129, 0.08);
+}
+.exam-option-row.show-incorrect {
+  border-color: var(--accent-red);
+  background-color: rgba(239, 68, 68, 0.08);
+}
+
+/* Exam Matrix UI */
+.exam-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.matrix-note {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748b;
+  margin-top: 8px;
+}
+
+.exam-matrix-table th {
+  background-color: #f3f4f6;
+  color: #111827;
+  font-weight: 700;
+  border: 1px solid var(--nclex-border);
+  padding: 10px 8px;
+}
+
+.exam-matrix-table td {
+  border: 1px solid var(--nclex-border);
+  padding: 10px 8px;
+  text-align: center;
+}
+
+.exam-matrix-table tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.exam-matrix-table tr td:first-child {
+  text-align: left;
+  font-weight: 500;
+  padding-left: 12px;
+}
+
+.exam-matrix-table input[type="radio"], 
+.exam-matrix-table input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--nclex-sky);
+  cursor: pointer;
+}
+
+/* Correct/Incorrect Matrix Cell highlights */
+.matrix-row.correct-row {
+  /* optional row highlighting */
+}
+td.matrix-cell-correct {
+  background-color: rgba(16, 185, 129, 0.15) !important;
+}
+td.matrix-cell-incorrect {
+  background-color: rgba(239, 68, 68, 0.15) !important;
+}
+
+/* Dropdown Cloze sentence */
+.cloze-sentence {
+  font-size: 14px;
+  line-height: 2.2;
+  color: #374151;
+}
+
+.cloze-select {
+  display: inline-block;
+  width: auto;
+  min-width: 120px;
+  padding: 4px 24px 4px 10px;
+  margin: 0 6px;
+  font-size: 13px;
+  border: 1px solid #9ca3af;
+  border-radius: var(--radius-sm);
+  background-color: white;
+  color: #111827;
+  cursor: pointer;
+  appearance: auto;
+  vertical-align: middle;
+}
+
+.cloze-select:focus {
+  border-color: var(--nclex-sky);
+}
+
+.cloze-select.show-correct {
+  border-color: var(--accent-green) !important;
+  background-color: rgba(16, 185, 129, 0.08) !important;
+  color: #065f46 !important;
+  font-weight: bold;
+}
+
+.cloze-select.show-incorrect {
+  border-color: var(--accent-red) !important;
+  background-color: rgba(239, 68, 68, 0.08) !important;
+  color: #991b1b !important;
+  font-weight: bold;
+}
+
+/* Feedback Rationale Box */
+.feedback-card {
+  margin-top: 16px;
+  border: 1px solid var(--nclex-border);
+  border-radius: var(--radius-sm);
+  background-color: #f8fafc;
+  overflow: hidden;
+}
+
+.feedback-header {
+  padding: 10px 14px;
+  background-color: #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--nclex-border);
+}
+
+.feedback-badge {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.feedback-badge.correct {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.feedback-badge.incorrect {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.feedback-badge.partial {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.feedback-score-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.feedback-body {
+  padding: 14px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #374151;
+}
+
+.feedback-explanation p {
+  margin-top: 6px;
+  font-weight: 400;
+  color: #4b5563;
+}
+
+/* Bottom Footers in Exam Mode */
+.player-footer {
+  background-color: #1e293b;
+  border-top: 1px solid #334155;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.btn-footer {
+  background-color: #334155;
+  border: 1px solid #475569;
+  border-radius: var(--radius-sm);
+  color: white;
+  padding: 6px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.btn-footer:hover {
+  background-color: #475569;
+}
+
+.powered-by {
+  font-size: 11px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.player-footer-right {
+  display: flex;
+  gap: 8px;
+}
+
+/* ================= RESULTS VIEW (SCOREBOARD) ================= */
+#results-view {
+  background-color: var(--bg-dash);
+  overflow-y: auto;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.results-container {
+  max-width: 600px;
+  width: 100%;
+  background-color: var(--bg-dash-card);
+  border: 1px solid var(--border-dash);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  box-shadow: var(--shadow-premium);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.results-header {
+  text-align: center;
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--accent-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px auto;
+}
+
+.results-header h2 {
+  font-family: var(--font-title);
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 6px;
+}
+
+#results-case-title {
+  color: var(--text-dash-secondary);
+  font-size: 14px;
+}
+
+.score-card {
+  background-color: rgba(255,255,255,0.02);
+  border: 1px solid var(--border-dash);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  text-align: center;
+}
+
+.score-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-dash-secondary);
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.score-value {
+  font-family: var(--font-title);
+  font-size: 40px;
+  font-weight: 800;
+  color: white;
+}
+
+.score-percentage {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--nclex-sky);
+  margin-top: 6px;
+}
+
+.breakdown-card h3 {
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.breakdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background-color: rgba(255,255,255,0.01);
+  border: 1px solid var(--border-dash);
+  border-radius: var(--radius-md);
+  font-size: 13.5px;
+}
+
+.breakdown-item-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-dash-primary);
+}
+
+.breakdown-badge {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.breakdown-badge.correct {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
+
+.breakdown-badge.incorrect {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+.breakdown-badge.partial {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+}
+
+.breakdown-score {
+  font-weight: 600;
+  color: var(--text-dash-secondary);
+}
+
+.results-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.results-actions button {
+  flex: 1;
+  justify-content: center;
+}
+
+
+/* ================= RESPONSIVE ADJUSTMENTS ================= */
+@media (max-width: 900px) {
+  .player-center-split {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .chart-pane {
+    border-right: none;
+    border-bottom: 1px solid var(--nclex-border);
+  }
+  .editor-main-split {
+    flex-direction: column;
+  }
+  .pane-left {
+    border-right: none;
+    border-bottom: 1px solid var(--border-dash);
+  }
+}
+
+/* ================= NEW NGN QUESTION TYPE STYLES ================= */
+
+/* Bowtie Diagram Styling */
+.bowtie-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 10px;
+  width: 100%;
+}
+.bowtie-diagram {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 16px;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.bowtie-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: 14px;
+  box-shadow: var(--shadow-sm);
+}
+.bowtie-column.center-col {
+  background: #f0f7fc;
+  border-color: var(--nclex-border);
+}
+.bowtie-column h6 {
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 4px;
+  letter-spacing: 0.05em;
+}
+.bowtie-slot-box {
+  width: 100%;
+  min-height: 42px;
+  border: 1.5px solid #94a3b8;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  padding: 4px;
+}
+.bowtie-slot-select {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #1e293b;
+  text-align: center;
+  cursor: pointer;
+}
+.bowtie-slot-select.show-correct {
+  color: #065f46;
+  font-weight: bold;
+}
+.bowtie-slot-select.show-incorrect {
+  color: #991b1b;
+  font-weight: bold;
+}
+.bowtie-columns-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+}
+.bowtie-options-card {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  padding: 10px;
+}
+.bowtie-options-card h6 {
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 8px;
+  text-align: center;
+  border-bottom: 1px solid #cbd5e1;
+  padding-bottom: 4px;
+}
+.bowtie-option-pill {
+  font-size: 11px;
+  background: white;
+  border: 1px solid #cbd5e1;
+  padding: 5px 8px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Highlight Text/Table Styling */
+.highlight-passage {
+  line-height: 1.8;
+  font-size: 14px;
+  color: #374151;
+}
+.highlight-span {
+  cursor: pointer;
+  border-bottom: 2px dashed #94a3b8;
+  transition: background-color 0.15s;
+  padding: 0 2px;
+  border-radius: 2px;
+  display: inline;
+}
+.highlight-span:hover {
+  background-color: #f1f5f9;
+}
+.highlight-span.selected {
+  background-color: #fef08a !important; /* bright yellow */
+  border-bottom-style: solid;
+  border-bottom-color: #eab308;
+}
+.highlight-span.show-correct {
+  background-color: rgba(16, 185, 129, 0.25) !important;
+  border-bottom-color: var(--accent-green);
+}
+.highlight-span.show-incorrect {
+  background-color: rgba(239, 68, 68, 0.25) !important;
+  border-bottom-color: var(--accent-red);
+}
+
+/* Drag and Drop Cloze Blanks */
+.drag-blank-slot {
+  display: inline-flex;
+  min-width: 140px;
+  height: 26px;
+  border: 2px dashed #94a3b8;
+  background-color: #f8fafc;
+  border-radius: var(--radius-sm);
+  vertical-align: middle;
+  margin: 0 4px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 0 6px;
+  color: #111827;
+  transition: all 0.15s;
+}
+.drag-blank-slot.occupied {
+  border-style: solid;
+  border-color: var(--nclex-sky);
+  background-color: #f0f9ff;
+}
+.drag-blank-slot.show-correct {
+  border-color: var(--accent-green);
+  background-color: rgba(16, 185, 129, 0.08);
+  color: #065f46;
+  font-weight: bold;
+}
+.drag-blank-slot.show-incorrect {
+  border-color: var(--accent-red);
+  background-color: rgba(239, 68, 68, 0.08);
+  color: #991b1b;
+  font-weight: bold;
+}
+.drag-options-pool {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 12px;
+  background: #f1f5f9;
+  border-radius: var(--radius-sm);
+  border: 1px solid #e2e8f0;
+}
+.drag-option-token {
+  background: white;
+  border: 1.5px solid #cbd5e1;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: grab;
+  user-select: none;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.15s;
+}
+.drag-option-token:hover {
+  border-color: var(--nclex-sky);
+}
+.drag-option-token.placed {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Ordered Response Drag-Drop */
+.ordered-response-container {
+  display: grid;
+  grid-template-columns: 1fr 44px 1fr;
+  gap: 8px;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+}
+.order-box {
+  border: 1px solid var(--nclex-border);
+  border-radius: var(--radius-sm);
+  background: #f9fafb;
+  height: 220px;
+  overflow-y: auto;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.order-box-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  text-align: center;
+}
+.order-item {
+  background: white;
+  border: 1px solid #cbd5e1;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12.5px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.15s;
+}
+.order-item:hover {
+  border-color: var(--nclex-sky);
+}
+.order-item.selected {
+  background-color: #f0f7fc;
+  border-color: var(--nclex-sky);
+}
+.order-actions-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+.btn-order-action {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: var(--shadow-sm);
+  font-size: 14px;
+}
+.btn-order-action:hover {
+  background: #f3f4f6;
+}
+
+/* Hotspot Coordinates Styling */
+.hotspot-image-container {
+  position: relative;
+  display: inline-block;
+  cursor: crosshair;
+  border: 1px solid var(--nclex-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  max-width: 100%;
+}
+.hotspot-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  user-select: none;
+}
+.hotspot-click-marker {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-red);
+  border: 2px solid white;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  box-shadow: var(--shadow-md);
+}
+.hotspot-target-region {
+  position: absolute;
+  border: 2px dashed var(--accent-green);
+  background-color: rgba(16, 185, 129, 0.18);
+  pointer-events: none;
+  border-radius: var(--radius-sm);
+}
+
+/* Grouped Multiple Response */
+.grouped-mr-category {
+  margin-bottom: 16px;
+  border: 1px solid var(--nclex-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.grouped-mr-category-title {
+  background-color: #f3f4f6;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 12px;
+  color: #1f2937;
+  border-bottom: 1px solid var(--nclex-border);
+  text-transform: uppercase;
+}
+.grouped-mr-category-body {
+  padding: 8px;
+  background: white;
+}
+
+/* ================= NEW DASHBOARD REPOSITORY LAYOUT ================= */
+.dashboard-layout {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.dashboard-sidebar {
+  width: 260px;
+  background-color: #0f172a; /* Slate 900 */
+  border-right: 1px solid var(--border-dash);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  padding: 24px 16px;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  padding-left: 8px;
+}
+
+.sidebar-logo h2 {
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: 800;
+  color: white;
+}
+
+.sidebar-logo h2 span {
+  color: var(--nclex-sky);
+  font-weight: 400;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--text-dash-secondary);
+  font-family: var(--font-title);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.nav-item svg {
+  flex-shrink: 0;
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.nav-item.active {
+  background-color: rgba(75, 163, 227, 0.15);
+  color: var(--nclex-sky);
+  font-weight: 600;
+}
+
+.nav-badge {
+  margin-left: auto;
+  background-color: #334155;
+  color: var(--text-dash-primary);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  min-width: 24px;
+  text-align: center;
+}
+
+.nav-item.active .nav-badge {
+  background-color: var(--nclex-sky);
+  color: white;
+}
+
+.dashboard-main-area {
+  flex-grow: 1;
+  background-color: #0b0f19; /* Deeper slate for contrast */
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.dashboard-panel {
+  display: none;
+  padding: 40px;
+  min-height: 100%;
+}
+
+.dashboard-panel.active {
+  display: block;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  gap: 24px;
+  border-bottom: 1px solid var(--border-dash);
+  padding-bottom: 24px;
+}
+
+.panel-header-title h2 {
+  font-family: var(--font-title);
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 6px;
+}
+
+.panel-header-title p {
+  color: var(--text-dash-secondary);
+  font-size: 14px;
+}
+
+.panel-header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* Question Type badge inside Stand-alone view */
+.question-type-badge {
+  display: inline-block;
+  background-color: rgba(75, 163, 227, 0.1);
+  color: var(--nclex-sky);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(75, 163, 227, 0.2);
+}
+
+/* ================= QUIZ GENERATOR PANEL STYLING ================= */
+.generator-workspace {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.generator-controls-card {
+  background-color: var(--bg-dash-card);
+  border: 1px solid var(--border-dash);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-lg);
+}
+
+.generator-selection-list {
+  background-color: #0f172a;
+  border: 1px solid var(--border-dash);
+  border-radius: var(--radius-md);
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.generator-item-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  color: var(--text-dash-primary);
+  font-size: 14px;
+}
+
+.generator-item-label:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.generator-item-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--nclex-sky);
+  cursor: pointer;
+}
+
+.generator-item-label .item-name {
+  font-weight: 500;
+}
+
+.generator-item-label .item-meta {
+  color: var(--text-dash-secondary);
+  font-size: 12px;
+  margin-left: auto;
+}
+
+.generator-summary {
+  background-color: rgba(75, 163, 227, 0.05);
+  border: 1px dashed rgba(75, 163, 227, 0.3);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  color: var(--text-dash-primary);
+  font-size: 14px;
+}
+
+.generator-summary .summary-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.generator-summary .summary-text-muted {
+  color: var(--text-dash-secondary);
+  text-align: center;
+  font-style: italic;
+}
+
+/* ================= ADAPTIVE FULL-WIDTH PLAYER ================= */
+.player-center-split.full-width {
+  grid-template-columns: 1fr !important;
+}
+
+.player-center-split.full-width .chart-pane {
+  display: none !important;
+}
+
+/* ================= RICH TEXT EDITOR STYLING ================= */
+.rich-editor-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-dash);
+  border-radius: var(--radius-md);
+  background-color: rgba(255, 255, 255, 0.02);
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.rich-editor-toolbar {
+  display: flex;
+  gap: 6px;
+  padding: 6px 12px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid var(--border-dash);
+  align-items: center;
+}
+
+.toolbar-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-dash-secondary);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.toolbar-btn:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.toolbar-btn.active {
+  background-color: var(--border-dash);
+  color: white;
+}
+
+.rich-text-editor {
+  min-height: 80px;
+  max-height: 320px;
+  padding: 12px;
+  color: white;
+  outline: none;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-y: auto;
+  background-color: #0b0f19;
+}
+
+#tab-text-input {
+  min-height: 200px;
+}
+
+/* Placeholders for contenteditable elements */
+.rich-text-editor:empty::before {
+  content: attr(placeholder);
+  color: #64748b;
+  font-style: italic;
+  pointer-events: none;
+  display: block; /* For clean layout */
+}
+
+/* NCLEX-Style Rich Text Tables (Dynamic Insertion) */
+.nclex-editor-table, .patient-chart-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  background: white;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.nclex-editor-table th, .patient-chart-content table th {
+  background-color: #025287 !important; /* Premium NCLEX blue */
+  color: white !important;
+  font-weight: 600;
+  padding: 10px 12px;
+  font-size: 13px;
+  border: 1px solid var(--nclex-border);
+  text-align: left;
+}
+
+.nclex-editor-table td, .patient-chart-content table td {
+  padding: 10px 12px;
+  font-size: 13px;
+  border: 1px solid var(--nclex-border);
+  color: var(--text-exam-primary) !important;
+  background: white !important;
+}
+
+.nclex-editor-table tr:nth-child(even) td, .patient-chart-content table tr:nth-child(even) td {
+  background-color: #f8fafc !important;
+}
+
+.rich-text-editor table {
+  color: var(--text-exam-primary);
+}
+
+/* Placeholders for table cells when editing */
+.nclex-editor-table th:empty::before {
+  content: attr(placeholder);
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 600 !important;
+  font-style: italic;
+  display: inline-block;
+}
+
+.nclex-editor-table td:empty::before {
+  content: attr(placeholder);
+  color: #94a3b8 !important;
+  font-style: italic;
+  display: inline-block;
+}
+
+/* ================= ADMINISTRATOR SECURITY FEATURES ================= */
+.hidden-admin {
+  display: none !important;
+}
+
+.sidebar-admin-section {
+  border-top: 1px solid #334155;
+  padding-top: 20px;
+  margin-top: auto;
+}
+
+.admin-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.admin-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* ================= MODAL OVERLAYS ================= */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  transition: opacity 0.2s ease;
+}
+
+.modal-content {
+  background: #1e293b; /* Slate 800 */
+  border: 1px solid #334155; /* Slate 700 */
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+  padding: 32px;
+  width: 90%;
+  max-width: 400px;
+  color: white;
+  animation: modalScaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalScaleIn {
+  from {
+    transform: scale(0.9) translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Collapsible Folder & Chevrons Navigation */
+.nav-folder-toggle {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start !important;
+  width: 100%;
+}
+
+.nav-folder-toggle span {
+  margin-left: 8px;
+}
+
+.chevron-icon {
+  transition: transform 0.2s ease;
+  margin-left: auto;
+  opacity: 0.6;
+}
+
+.chevron-icon.rotated {
+  transform: rotate(180deg);
+}
+
+.sidebar-sub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 20px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+.sidebar-sub-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  font-size: 12px;
+  color: #94a3b8; /* Slate 400 */
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.sidebar-sub-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.sidebar-sub-item.active {
+  background: rgba(2, 82, 135, 0.2);
+  color: var(--nclex-sky);
+  font-weight: 600;
+}
+
+.sub-item-badge {
+  font-size: 10px;
+  background: #1e293b;
+  color: #94a3b8;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 700;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.sidebar-sub-item.active .sub-item-badge {
+  background: var(--nclex-sky);
+  color: #0f172a;
+}
+
+.nurse-note-row {
+  display: grid !important;
+  grid-template-columns: 75px 1fr !important; /* 75px spacing matches Time + Tab gap */
+  align-items: start !important;
+  gap: 12px !important;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  line-height: 1.6;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.nurse-note-row p,
+.nurse-note-row div {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.nurse-note-time {
+  font-weight: 700;
+  white-space: nowrap;
+  color: inherit;
+}
+
+.patient-chart-content .nurse-note-time {
+  color: #111827;
+}
+
+.nurse-note-text {
+  text-align: justify !important; /* Justified to display box limits */
+  min-width: 0 !important; /* Prevents column from overflowing container */
+  word-break: break-word !important; /* Forces wrapped lines to stay inside container */
+  overflow-wrap: break-word !important;
+}
+
+.question-preamble {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #111827;
+  margin-bottom: 20px;
+}
+.question-preamble.hidden {
+  display: none !important;
+}
+
+/* Toolbar button sub/sup styling */
+.toolbar-btn sup {
+  font-size: 8px !important;
+  vertical-align: super !important;
+  position: relative !important;
+  top: -3px !important;
+  font-weight: 700;
+}
+
+.toolbar-btn sub {
+  font-size: 8px !important;
+  vertical-align: sub !important;
+  position: relative !important;
+  bottom: -3px !important;
+  font-weight: 700;
+}
+
+/* Global input/textarea placeholder styling */
+input::placeholder, textarea::placeholder {
+  color: #94a3b8 !important; /* Elegant light slate grey */
+  opacity: 1 !important;
+  font-style: italic;
+}
+
+/* Bullet and Numbered List Indentation for Editors and Player Views */
+.rich-text-editor ul, 
+.rich-text-editor ol,
+.patient-chart-intro ul,
+.patient-chart-intro ol,
+.patient-chart-content ul,
+.patient-chart-content ol,
+.question-preamble ul,
+.question-preamble ol,
+.question-stem ul,
+.question-stem ol,
+.feedback-explanation ul,
+.feedback-explanation ol {
+  padding-left: 24px !important;
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+  list-style-position: outside !important;
+}
+
+.rich-text-editor li,
+.patient-chart-intro li,
+.patient-chart-content li,
+.question-preamble li,
+.question-stem li,
+.feedback-explanation li {
+  margin-bottom: 4px !important;
+}
+
+/* ================= LIGHT MODE FOR EDITOR ================= */
+body.light-mode #editor-view {
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+body.light-mode #editor-view .editor-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+body.light-mode #editor-view .editor-title-input {
+  color: #1e293b;
+}
+
+body.light-mode #editor-view .editor-title-input::placeholder {
+  color: #94a3b8;
+}
+
+body.light-mode #editor-view .editor-desc-input {
+  color: #64748b;
+}
+
+body.light-mode #editor-view .editor-desc-input::placeholder {
+  color: #94a3b8;
+}
+
+body.light-mode #editor-view #case-disorder-select {
+  background: #ffffff;
+  color: #1e293b;
+  border-color: #cbd5e1;
+}
+
+body.light-mode #editor-view .editor-steps-sidebar {
+  background-color: #f1f5f9;
+  border-right: 1px solid #cbd5e1;
+}
+
+body.light-mode #editor-view .sidebar-section-title {
+  color: #64748b;
+}
+
+body.light-mode #editor-view .step-nav-item {
+  background-color: #ffffff;
+  border-color: #cbd5e1;
+  color: #475569;
+}
+
+body.light-mode #editor-view .step-nav-item:hover {
+  border-color: #94a3b8;
+  color: #1e293b;
+}
+
+body.light-mode #editor-view .step-nav-item.active {
+  background-color: var(--nclex-sky);
+  border-color: var(--nclex-sky);
+  color: white;
+}
+
+body.light-mode #editor-view .btn-step-delete {
+  color: #94a3b8;
+}
+
+body.light-mode #editor-view .btn-step-delete:hover {
+  color: var(--accent-red);
+}
+
+body.light-mode #editor-view .pane-left {
+  border-right: 1px solid #cbd5e1;
+}
+
+body.light-mode #editor-view .pane-header {
+  background-color: #f1f5f9;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+body.light-mode #editor-view .pane-header h4 {
+  color: #1e293b;
+}
+
+body.light-mode #editor-view .pane-body {
+  color: #1e293b;
+}
+
+body.light-mode #editor-view .form-group label {
+  color: #475569;
+}
+
+body.light-mode #editor-view .rich-text-editor {
+  background-color: #ffffff;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+}
+
+body.light-mode #editor-view .rich-editor-toolbar {
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-bottom: none;
+  border-top-left-radius: var(--radius-sm);
+  border-top-right-radius: var(--radius-sm);
+}
+
+body.light-mode #editor-view .rich-editor-toolbar .toolbar-btn {
+  color: #475569;
+}
+
+body.light-mode #editor-view .rich-editor-toolbar .toolbar-btn:hover {
+  background-color: #e2e8f0;
+  color: #1e293b;
+}
+
+body.light-mode #editor-view .rich-editor-toolbar .toolbar-btn.active {
+  background-color: #cbd5e1;
+  color: #1e293b;
+}
+
+body.light-mode #editor-view .tab-editor-item {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #475569;
+}
+
+body.light-mode #editor-view .tab-editor-item.active {
+  background-color: #ffffff;
+  border-bottom-color: transparent;
+  color: #1e293b;
+}
+
+body.light-mode #editor-view .tab-content-editor-box {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+}
+
+body.light-mode #editor-view #active-tab-label {
+  color: #1e293b;
+}
+
+body.light-mode #editor-view .tab-title-rename {
+  background-color: #ffffff;
+  border-color: #cbd5e1;
+  color: #1e293b;
+}
+
+body.light-mode #editor-view .cloze-warning {
+  background-color: rgba(2, 82, 135, 0.08);
+  border-color: rgba(2, 82, 135, 0.2);
+  color: #025287;
+}
+
+body.light-mode #editor-view .cloze-dropdown-card {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  color: #1e293b;
+}
+
+body.light-mode #editor-view .cloze-placeholder-input,
+body.light-mode #editor-view .option-text-input,
+body.light-mode #editor-view .row-label-input,
+body.light-mode #editor-view .row-placeholder-input,
+body.light-mode #editor-view .opt-text-input,
+body.light-mode #editor-view .bowtie-input,
+body.light-mode #editor-view .form-control {
+  background-color: #ffffff;
+  border-color: #cbd5e1;
+  color: #1e293b;
+}
+
+body.light-mode #editor-view .form-control::placeholder {
+  color: #94a3b8;
+}
+
+body.light-mode #editor-view .options-config-title {
+  color: #475569;
+}
+
+body.light-mode #editor-view .option-config-row {
+  border-bottom-color: #e2e8f0;
+}
+
+body.light-mode #editor-view #matrix-col-2-input,
+body.light-mode #editor-view #matrix-col-3-input,
+body.light-mode #editor-view #matrix-col-4-input,
+body.light-mode #editor-view #matrix-first-col-input,
+body.light-mode #editor-view #new-matrix-row-input {
+  background-color: #ffffff;
+  border-color: #cbd5e1;
+  color: #1e293b;
+}
+
+body.light-mode #editor-view .matrix-grid-designer-table th {
+  background-color: #f1f5f9;
+  color: #334155;
+  border-color: #cbd5e1;
+}
+
+body.light-mode #editor-view .matrix-grid-designer-table td {
+  background-color: #ffffff;
+  color: #1e293b;
+  border-color: #cbd5e1;
+}
+
+/* ================= LIGHT MODE FOR DASHBOARD ================= */
+body.light-mode #dashboard-view {
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+body.light-mode .dashboard-sidebar {
+  background-color: #f1f5f9;
+  border-right: 1px solid #cbd5e1;
+}
+
+body.light-mode .sidebar-logo h2 {
+  color: #1e293b;
+}
+
+body.light-mode .nav-item {
+  color: #475569;
+}
+
+body.light-mode .nav-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #1e293b;
+}
+
+body.light-mode .nav-item.active {
+  background-color: rgba(75, 163, 227, 0.12);
+  color: var(--nclex-sky);
+}
+
+body.light-mode .nav-badge {
+  background-color: #e2e8f0;
+  color: #475569;
+}
+
+body.light-mode .dashboard-main-area {
+  background-color: #f8fafc;
+}
+
+body.light-mode .panel-header {
+  border-bottom: 1px solid #cbd5e1;
+}
+
+body.light-mode .panel-header-title h2 {
+  color: #1e293b;
+}
+
+body.light-mode .panel-header-title p {
+  color: #64748b;
+}
+
+body.light-mode .case-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+body.light-mode .case-card:hover {
+  border-color: var(--nclex-sky);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 4px 6px rgba(0, 0, 0, 0.03);
+}
+
+body.light-mode .case-card-body h4 {
+  color: #1e293b;
+}
+
+body.light-mode .case-card-body p {
+  color: #64748b;
+}
+
+body.light-mode .case-card-meta {
+  color: #64748b;
+  border-top: 1px solid #f1f5f9;
+}
+
+body.light-mode .empty-state {
+  border: 2px dashed #cbd5e1;
+  color: #64748b;
+}
+
+body.light-mode .empty-state svg {
+  color: #94a3b8;
+}
+
+body.light-mode .sidebar-sub-item {
+  color: #475569;
+}
+
+body.light-mode .sidebar-sub-item:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #1e293b;
+}
+
+body.light-mode .sidebar-sub-item.active {
+  background: rgba(2, 82, 135, 0.08);
+  color: var(--nclex-sky);
+}
+
+body.light-mode .sidebar-sub-item.active .sub-item-badge {
+  background: var(--nclex-sky);
+  color: #ffffff;
+}
+
+body.light-mode .generator-controls-card {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .generator-selection-list {
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+}
+
+body.light-mode .generator-item-label {
+  color: #1e293b;
+}
+
+body.light-mode .generator-item-label:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+body.light-mode .generator-item-label .item-meta {
+  color: #64748b;
+}
+
+body.light-mode .generator-summary {
+  background-color: rgba(75, 163, 227, 0.04);
+  border: 1px dashed rgba(75, 163, 227, 0.25);
+  color: #1e293b;
+}
+
+body.light-mode .generator-summary .summary-text-muted {
+  color: #64748b;
+}
+
+body.light-mode .modal-content {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+}
+
+body.light-mode .modal-content h3 {
+  color: #1e293b !important;
+}
+
+body.light-mode .form-group label {
+  color: #475569;
+}
+
+body.light-mode .modal-content .form-control {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+}
+
+/* Disorder badge styling */
+.disorder-badge {
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: #94a3b8;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+body.light-mode .disorder-badge {
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+  color: #475569;
+}
+
+/* Light mode secondary buttons styling */
+body.light-mode .btn-secondary {
+  background-color: #e2e8f0;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+}
+
+body.light-mode .btn-secondary:hover {
+  background-color: #cbd5e1;
+  border-color: #94a3b8;
+}
+
+/* Clickable ID Badge on Dashboard Cards */
+.card-id-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-dash-secondary);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  margin-top: 2px;
+  border: 1px solid var(--border-dash);
+  transition: all 0.2s;
+}
+.card-id-badge:hover {
+  background: rgba(75, 163, 227, 0.1);
+  color: var(--nclex-sky);
+  border-color: var(--nclex-sky);
+}
+body.light-mode .card-id-badge {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #64748b;
+}
+body.light-mode .card-id-badge:hover {
+  background: rgba(75, 163, 227, 0.08);
+  color: var(--nclex-sky);
+  border-color: var(--nclex-sky);
+}
+
+</style>
+</head>
+<body>
+
+  <!-- ================= DASHBOARD VIEW ================= -->
+  <div id="dashboard-view" class="view active">
+    <div class="dashboard-layout">
+      <!-- Sidebar on the left -->
+      <aside class="dashboard-sidebar">
+        <div class="sidebar-logo" style="display: flex; align-items: center; justify-content: space-between; width: 100%; padding-right: 8px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 24px; height: 24px;">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            <h2 style="margin: 0; font-size: 20px;">NCLEX <span>Studio</span></h2>
+          </div>
+          <button id="dashboard-theme-toggle-btn" class="btn btn-secondary" title="Toggle Light/Dark Mode" style="display: inline-flex; align-items: center; justify-content: center; padding: 0; width: 36px; height: 32px;">
+            <!-- Light Mode Icon (Sun) -->
+            <svg class="sun-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <!-- Dark Mode Icon (Moon) -->
+            <svg class="moon-icon hidden" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+        </div>
+        <nav class="sidebar-nav" style="overflow-y: auto;">
+          <!-- Case Studies Folder -->
+          <div class="sidebar-folder" id="folder-cases">
+            <button id="nav-tab-cases" class="nav-item nav-folder-toggle active" style="margin-bottom: 2px;">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="folder-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+              <span>Case Studies</span>
+              <span id="sidebar-cases-count" class="nav-badge">0</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" class="chevron-icon"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="sidebar-sub-list hidden" id="sub-list-cases">
+              <!-- Dynamically populated categories -->
+            </div>
+          </div>
+
+          <!-- Stand-alone Questions Folder -->
+          <div class="sidebar-folder" id="folder-standalone">
+            <button id="nav-tab-standalone" class="nav-item nav-folder-toggle" style="margin-bottom: 2px;">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="folder-icon"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span>Stand-alone Qs</span>
+              <span id="sidebar-standalone-count" class="nav-badge">0</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" class="chevron-icon"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="sidebar-sub-list hidden" id="sub-list-standalone">
+              <!-- Dynamically populated categories -->
+            </div>
+          </div>
+
+          <!-- Quiz Generator Tab -->
+          <button id="nav-tab-generator" class="nav-item admin-only">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M9 17v-5h6v5"/></svg>
+            <span>Quiz Generator</span>
+          </button>
+        </nav>
+        
+        <!-- Admin Section at the bottom of sidebar -->
+        <div class="sidebar-admin-section">
+          <div id="admin-status-logged-out">
+            <button id="admin-login-btn" class="btn btn-secondary btn-full" style="width: 100%;">
+              <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px; display: inline-block; vertical-align: middle;"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3"/></svg>
+              <span style="vertical-align: middle;">Admin Login</span>
+            </button>
+          </div>
+          <div id="admin-status-logged-in" class="hidden">
+            <div class="admin-badge">
+              <span class="admin-dot"></span> Admin Mode
+            </div>
+            <button id="admin-logout-btn" class="btn btn-text btn-xs" style="color: #ef4444; width: 100%; margin-top: 8px; text-align: center; background: transparent; border: none; cursor: pointer;">
+              Logout
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content area on the right -->
+      <div class="dashboard-main-area">
+        <!-- Sub-panel 1: Case Studies -->
+        <div id="panel-cases" class="dashboard-panel active">
+          <header class="panel-header">
+            <div class="panel-header-title">
+              <h2>NGN Case Studies</h2>
+              <p>Multi-step clinical unfolding scenarios representing complex client care.</p>
+            </div>
+            <div class="panel-header-actions">
+              <button id="import-btn" class="btn btn-secondary admin-only">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                Import JSON
+              </button>
+              <input type="file" id="import-file-input" accept=".json" style="display: none;">
+              <button id="create-btn" class="btn btn-primary admin-only">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Create Case Study
+              </button>
+            </div>
+          </header>
+          <div id="cases-grid" class="cases-grid">
+            <!-- Dynamically populated case cards -->
+          </div>
+          <div id="empty-state" class="empty-state hidden">
+            <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="9" y1="15" x2="15" y2="15"/>
+              <line x1="12" y1="12" x2="12" y2="18"/>
+            </svg>
+            <p>No case studies found. Create a new case study or import one.</p>
+          </div>
+        </div>
+
+        <!-- Sub-panel 2: Stand-alone Questions -->
+        <div id="panel-standalone" class="dashboard-panel">
+          <header class="panel-header">
+            <div class="panel-header-title">
+              <h2>Stand-alone Questions</h2>
+              <p>Single client questions covering NGN item formats (MCQ, SATA, Bowtie, Hotspot, Highlight).</p>
+            </div>
+            <div class="panel-header-actions">
+              <button id="import-standalone-btn" class="btn btn-secondary admin-only">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                Import JSON
+              </button>
+              <input type="file" id="import-standalone-file-input" accept=".json" style="display: none;">
+              <button id="create-standalone-btn" class="btn btn-primary admin-only">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Create Question
+              </button>
+            </div>
+          </header>
+          <div id="standalone-grid" class="cases-grid">
+            <!-- Dynamically populated question cards -->
+          </div>
+          <div id="standalone-empty-state" class="empty-state hidden">
+            <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none">
+              <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12.01" y2="8"/><polyline points="11 12 12 12 12 16 13 16"/>
+            </svg>
+            <p>No stand-alone questions found. Create a new question or import one.</p>
+            <button id="create-standalone-empty-btn" class="btn btn-accent admin-only">Create New Question</button>
+          </div>
+        </div>
+
+        <!-- Sub-panel 3: Quiz Generator -->
+        <div id="panel-generator" class="dashboard-panel">
+          <header class="panel-header">
+            <div class="panel-header-title">
+              <h2>Custom Quiz Generator</h2>
+              <p>Compile a custom testing session using a combination of case studies and standalone questions.</p>
+            </div>
+          </header>
+          <div class="generator-workspace">
+            <div class="generator-controls-card">
+              <div class="form-group">
+                <label>Select Case Studies to Include</label>
+                <div id="generator-cases-list" class="generator-selection-list">
+                  <!-- Checklist of Case Studies -->
+                </div>
+              </div>
+              <div class="form-group" style="margin-top: 24px;">
+                <label>Select Stand-alone Questions to Include</label>
+                <div id="generator-standalone-list" class="generator-selection-list">
+                  <!-- Checklist of Stand-alone Questions -->
+                </div>
+              </div>
+              <div class="generator-summary-and-play" style="margin-top: 24px;">
+                <div id="generator-quiz-summary" class="generator-summary">
+                  Select items to see summary.
+                </div>
+                <button id="generate-play-btn" class="btn btn-primary btn-large btn-run" style="width: 100%; justify-content: center; margin-top: 16px;">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="margin-right: 8px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  Generate & Launch Custom Quiz
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= CREATOR / EDITOR VIEW ================= -->
+  <div id="editor-view" class="view">
+    <header class="editor-header">
+      <div class="editor-header-left">
+        <button id="editor-back-btn" class="btn-icon-back">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        </button>
+        <div class="editor-title-container" style="display: flex; flex-direction: column; gap: 6px; flex-grow: 1;">
+          <input type="text" id="case-title-input" class="editor-title-input" placeholder="Case Study Title" style="width: 100%;">
+          <div style="display: flex; gap: 12px; align-items: center; width: 100%;">
+            <input type="text" id="case-desc-input" class="editor-desc-input" placeholder="Enter a brief case description..." style="flex-grow: 1;">
+            <select id="case-disorder-select" class="form-control" style="width: 250px; font-size: 12px; padding: 4px 8px; border-radius: var(--radius-sm); border: 1px solid #334155; background: #1e293b; color: white; height: 28px; font-weight: 500; cursor: pointer; outline: none;">
+              <!-- Dropdown will be populated dynamically -->
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="editor-header-right">
+        <button id="editor-theme-toggle-btn" class="btn btn-secondary" title="Toggle Light/Dark Mode" style="display: inline-flex; align-items: center; justify-content: center; padding: 0; width: 36px; height: 32px;">
+          <!-- Light Mode Icon (Sun) -->
+          <svg class="sun-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <!-- Dark Mode Icon (Moon) -->
+          <svg class="moon-icon hidden" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button id="editor-save-btn" class="btn btn-secondary">Save Progress</button>
+        <button id="editor-export-btn" class="btn btn-secondary">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+          Export
+        </button>
+        <button id="editor-play-btn" class="btn btn-primary btn-run">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Launch
+        </button>
+      </div>
+    </header>
+
+    <div class="editor-workspace">
+      <!-- Steps panel on the very left of the workspace -->
+      <aside class="editor-steps-sidebar">
+        <div class="sidebar-section-title">Case Screens</div>
+        <div id="editor-steps-list" class="steps-list">
+          <!-- Step items go here -->
+        </div>
+        <button id="add-step-btn" class="btn btn-text btn-small">
+          <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Add Screen
+        </button>
+      </aside>
+
+      <!-- Main split screen content -->
+      <main class="editor-main-split">
+        <!-- Left Side: Patient Chart Editor -->
+        <section class="editor-pane pane-left">
+          <div class="pane-header">
+            <h4>Patient Chart Configuration</h4>
+          </div>
+          <div class="pane-body">
+              <div class="form-group">
+                <label>Screen Intro Context (displayed above chart)</label>
+                <div class="rich-editor-container">
+                  <div class="rich-editor-toolbar">
+                    <button type="button" class="toolbar-btn" data-cmd="bold" title="Bold"><b>B</b></button>
+                    <button type="button" class="toolbar-btn" data-cmd="superscript" title="Superscript">x<sup>2</sup></button>
+                    <button type="button" class="toolbar-btn" data-cmd="subscript" title="Subscript">x<sub>2</sub></button>
+                    <button type="button" class="toolbar-btn btn-symbol" data-symbol="&deg;" title="Degree Symbol">&deg;</button>
+                    <button type="button" class="toolbar-btn btn-symbol" data-symbol="&ge;" title="Greater Than or Equal to">&ge;</button>
+                    <button type="button" class="toolbar-btn btn-symbol" data-symbol="&le;" title="Less Than or Equal to">&le;</button>
+                    <button type="button" class="toolbar-btn" data-cmd="insertUnorderedList" title="Bullet List">• List</button>
+                    <button type="button" class="toolbar-btn" data-cmd="insertOrderedList" title="Numbered List">1. List</button>
+                  </div>
+                  <div contenteditable="true" class="rich-text-editor" id="step-intro-input" placeholder="e.g. The nurse is caring for a 72-year-old male client in the emergency department (ED)."></div>
+                </div>
+              </div>
+
+            <div class="tabs-editor-container">
+              <div class="tabs-editor-header">
+                <h5>Chart Tabs</h5>
+                <button id="add-tab-btn" class="btn btn-text btn-xs">
+                  <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Add Tab
+                </button>
+              </div>
+              <div id="editor-tabs-list" class="tabs-list-horizontal">
+                <!-- Tabs headers here -->
+              </div>
+              <div id="tab-content-editor" class="tab-content-editor-box">
+                  <div class="form-group no-margin">
+                    <label id="active-tab-label">Content for "History and Physical"</label>
+                    <input type="text" id="tab-title-input" class="tab-title-rename" placeholder="Tab Title">
+                    <div class="rich-editor-container">
+                      <div class="rich-editor-toolbar">
+                        <button type="button" class="toolbar-btn" data-cmd="bold" title="Bold"><b>B</b></button>
+                        <button type="button" class="toolbar-btn" data-cmd="superscript" title="Superscript">x<sup>2</sup></button>
+                        <button type="button" class="toolbar-btn" data-cmd="subscript" title="Subscript">x<sub>2</sub></button>
+                        <button type="button" class="toolbar-btn btn-symbol" data-symbol="&deg;" title="Degree Symbol">&deg;</button>
+                        <button type="button" class="toolbar-btn btn-symbol" data-symbol="&ge;" title="Greater Than or Equal to">&ge;</button>
+                        <button type="button" class="toolbar-btn btn-symbol" data-symbol="&le;" title="Less Than or Equal to">&le;</button>
+                        <button type="button" class="toolbar-btn" data-cmd="insertUnorderedList" title="Bullet List">• List</button>
+                        <button type="button" class="toolbar-btn" data-cmd="insertOrderedList" title="Numbered List">1. List</button>
+                        <button type="button" class="toolbar-btn table-insert-btn" title="Insert Table">
+                          <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2" fill="none" style="vertical-align: middle;"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+                          Table
+                        </button>
+                      </div>
+                      <div contenteditable="true" class="rich-text-editor" id="tab-text-input" placeholder="Enter tab medical record, logs, physical findings, or lab tables here..."></div>
+                    </div>
+                    <button id="delete-active-tab-btn" class="btn btn-danger btn-xs" style="margin-top: 10px;">Delete This Tab</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Right Side: Question Configurator -->
+        <section class="editor-pane pane-right">
+          <div class="pane-header">
+            <h4>Question Designer</h4>
+          </div>
+          <div class="pane-body">
+            <div class="form-group">
+              <label for="question-type-select">Question Type</label>
+              <select id="question-type-select" class="form-control">
+                <!-- 0/1 Scoring Question Types (i - x) -->
+                <optgroup label="0/1 Scoring (No Penalties)">
+                  <option value="dropdown_cloze">Drop-Down Cloze</option>
+                  <option value="drag_drop_cloze">Drag-and-Drop Cloze</option>
+                  <option value="dropdown_table">Drop-Down Table</option>
+                  <option value="matrix_mc">Matrix Multiple Choice</option>
+                  <option value="select_n">Select N Multiple Response</option>
+                  <option value="bowtie">Bowtie</option>
+                  <option value="multiple_choice">Multiple Choice</option>
+                  <option value="fill_blank">Fill-in-blank calculation</option>
+                  <option value="hotspot">Hotspot</option>
+                  <option value="ordered_response">Ordered Response</option>
+                </optgroup>
+                <!-- +/- Scoring Question Types (xi - xv) -->
+                <optgroup label="+/- Scoring (Penalty for Wrong Choices)">
+                  <option value="select_all">Select All Multiple Response (SATA)</option>
+                  <option value="highlight">Highlight Text/Table</option>
+                  <option value="matrix_mr">Matrix Multiple Response</option>
+                  <option value="grouped_mr">Grouped Multiple Response</option>
+                  <option value="trend">Trend</option>
+                </optgroup>
+                <!-- Rationale Scoring Question Types (xvi - xvii) -->
+                <optgroup label="Rationale Scoring (All-or-Nothing)">
+                  <option value="dyad">Dyad Rationale</option>
+                  <option value="triad">Triad Rationale</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>QUESTION PREAMBLE</label>
+              <div class="rich-editor-container">
+                <div class="rich-editor-toolbar">
+                  <button type="button" class="toolbar-btn" data-cmd="bold" title="Bold"><b>B</b></button>
+                  <button type="button" class="toolbar-btn" data-cmd="superscript" title="Superscript">x<sup>2</sup></button>
+                  <button type="button" class="toolbar-btn" data-cmd="subscript" title="Subscript">x<sub>2</sub></button>
+                  <button type="button" class="toolbar-btn btn-symbol" data-symbol="&deg;" title="Degree Symbol">&deg;</button>
+                  <button type="button" class="toolbar-btn btn-symbol" data-symbol="&ge;" title="Greater Than or Equal to">&ge;</button>
+                  <button type="button" class="toolbar-btn btn-symbol" data-symbol="&le;" title="Less Than or Equal to">&le;</button>
+                  <button type="button" class="toolbar-btn" data-cmd="insertUnorderedList" title="Bullet List">• List</button>
+                  <button type="button" class="toolbar-btn" data-cmd="insertOrderedList" title="Numbered List">1. List</button>
+                </div>
+                <div contenteditable="true" class="rich-text-editor" id="question-preamble-input" placeholder="Add text..."></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Question Stem (The Prompts/Instructions)</label>
+                <div class="rich-editor-container">
+                  <div class="rich-editor-toolbar">
+                    <button type="button" class="toolbar-btn" data-cmd="bold" title="Bold"><b>B</b></button>
+                    <button type="button" class="toolbar-btn" data-cmd="superscript" title="Superscript">x<sup>2</sup></button>
+                    <button type="button" class="toolbar-btn" data-cmd="subscript" title="Subscript">x<sub>2</sub></button>
+                    <button type="button" class="toolbar-btn btn-symbol" data-symbol="&deg;" title="Degree Symbol">&deg;</button>
+                    <button type="button" class="toolbar-btn btn-symbol" data-symbol="&ge;" title="Greater Than or Equal to">&ge;</button>
+                    <button type="button" class="toolbar-btn btn-symbol" data-symbol="&le;" title="Less Than or Equal to">&le;</button>
+                    <button type="button" class="toolbar-btn" data-cmd="insertUnorderedList" title="Bullet List">• List</button>
+                    <button type="button" class="toolbar-btn" data-cmd="insertOrderedList" title="Numbered List">1. List</button>
+                  </div>
+                  <div contenteditable="true" class="rich-text-editor" id="question-stem-input" placeholder="e.g. Which of the following findings require follow-up? Select all that apply."></div>
+                </div>
+              </div>
+
+            <!-- DYNAMIC EDITORS PER QUESTION TYPE -->
+            <div id="question-details-editor" class="question-details-editor">
+              <!-- Content gets injected by app.js based on selected question type -->
+            </div>
+
+              <div class="form-group explanation-group">
+                <label>Explanation / Rationale (Shown after submission)</label>
+                <div class="rich-editor-container">
+                  <div class="rich-editor-toolbar">
+                    <button type="button" class="toolbar-btn" data-cmd="bold" title="Bold"><b>B</b></button>
+                    <button type="button" class="toolbar-btn" data-cmd="superscript" title="Superscript">x<sup>2</sup></button>
+                    <button type="button" class="toolbar-btn" data-cmd="subscript" title="Subscript">x<sub>2</sub></button>
+                    <button type="button" class="toolbar-btn btn-symbol" data-symbol="&deg;" title="Degree Symbol">&deg;</button>
+                    <button type="button" class="toolbar-btn btn-symbol" data-symbol="&ge;" title="Greater Than or Equal to">&ge;</button>
+                    <button type="button" class="toolbar-btn btn-symbol" data-symbol="&le;" title="Less Than or Equal to">&le;</button>
+                    <button type="button" class="toolbar-btn" data-cmd="insertUnorderedList" title="Bullet List">• List</button>
+                    <button type="button" class="toolbar-btn" data-cmd="insertOrderedList" title="Numbered List">1. List</button>
+                  </div>
+                  <div contenteditable="true" class="rich-text-editor" id="question-explanation-input" placeholder="Explain the pathophysiology or clinical reasoning behind the correct answers..."></div>
+                </div>
+              </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+
+  <!-- ================= PLAYER VIEW (HIGH FIDELITY NCLEX) ================= -->
+  <div id="player-view" class="view">
+    <!-- NCLEX Blue Banner -->
+    <header class="player-header">
+      <div class="player-header-left">
+        <button id="player-calc-btn" class="player-calc-link">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="calc-icon"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+          Calculator
+        </button>
+      </div>
+      <div class="player-header-right">
+        <span id="player-progress-text">1 of 6</span>
+      </div>
+    </header>
+
+    <!-- Player Sandbox Workspace -->
+    <div class="player-workspace">
+      <!-- Left side: Quiz Navigation Panel & Calculator -->
+      <aside class="player-left-sidebar">
+        <div class="quiz-nav-card">
+          <h5>QUIZ NAVIGATION</h5>
+          <div id="player-nav-grid" class="nav-grid">
+            <!-- Navigation squares (1, 2, 3...) -->
+          </div>
+          <button id="player-finish-link" class="link-btn">Finish attempt ...</button>
+        </div>
+
+        <!-- TI-108 Style Interactive Calculator -->
+        <div id="ti108-calculator" class="ti-108-calc hidden">
+          <div class="calc-top-bar">
+            <span>TI-108</span>
+            <button id="close-calc-btn" class="close-calc-x">&times;</button>
+          </div>
+          <div class="calc-body">
+            <div class="calc-solar-and-logo">
+              <span class="calc-brand">TI-108</span>
+              <div class="calc-solar-panel">
+                <div class="solar-bar"></div>
+                <div class="solar-bar"></div>
+                <div class="solar-bar"></div>
+                <div class="solar-bar"></div>
+              </div>
+            </div>
+            
+            <div class="calc-screen-wrapper" style="display: flex; align-items: center; justify-content: space-between;">
+              <span id="calc-mem-indicator" style="font-family: var(--font-mono); font-size: 14px; font-weight: bold; color: #111827; visibility: hidden; margin-right: 6px;">M</span>
+              <div id="calc-display" class="calc-screen" style="flex-grow: 1; text-align: right;">0</div>
+            </div>
+
+            <div class="calc-keypad">
+              <!-- Row 1: Operations -->
+              <button class="calc-btn op-btn" data-action="sign">+/-</button>
+              <button class="calc-btn op-btn" data-action="sqrt">&radic;</button>
+              <button class="calc-btn op-btn" data-action="percent">%</button>
+              <button class="calc-btn op-btn" data-action="divide">&divide;</button>
+
+              <!-- Row 2: Memory -->
+              <button class="calc-btn mem-btn" data-action="mrc">MRC</button>
+              <button class="calc-btn mem-btn" data-action="mminus">M-</button>
+              <button class="calc-btn mem-btn" data-action="mplus">M+</button>
+              <button class="calc-btn op-btn" data-action="multiply">&times;</button>
+
+              <!-- Row 3: Numbers & Minus -->
+              <button class="calc-btn num-btn">7</button>
+              <button class="calc-btn num-btn">8</button>
+              <button class="calc-btn num-btn">9</button>
+              <button class="calc-btn op-btn" data-action="subtract">-</button>
+
+              <!-- Row 4: Numbers & Plus -->
+              <button class="calc-btn num-btn">4</button>
+              <button class="calc-btn num-btn">5</button>
+              <button class="calc-btn num-btn">6</button>
+              <button class="calc-btn op-btn" data-action="add">+</button>
+
+              <!-- Row 5: Numbers & Equals -->
+              <button class="calc-btn num-btn">1</button>
+              <button class="calc-btn num-btn">2</button>
+              <button class="calc-btn num-btn">3</button>
+              <button class="calc-btn equal-btn" data-action="equals" style="grid-row: span 2; height: 100%;">=</button>
+
+              <!-- Row 6: Clear & Zero & Decimal -->
+              <button class="calc-btn clear-btn" data-action="clear">ON/C</button>
+              <button class="calc-btn num-btn">0</button>
+              <button class="calc-btn num-btn">.</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Center split workspace: Left (Patient Chart) and Right (Question Card) -->
+      <main class="player-center-split">
+        <!-- Patient Chart (Left Panel) -->
+        <section class="player-pane chart-pane">
+          <div class="question-meta-box">
+            <span class="question-num-header" id="player-question-number-title">Question 1</span>
+            <span class="question-status" id="player-question-status-text">Not complete</span>
+            <div class="question-actions">
+              <button id="player-flag-btn" class="btn-flag">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+                Flag question
+              </button>
+            </div>
+          </div>
+
+          <div class="patient-chart-box">
+            <div class="patient-chart-screen-label" id="player-screen-label">Case Study Screen 1 of 6</div>
+            <p class="patient-chart-intro" id="player-intro-text">The nurse is caring for a 72-year-old male client in the emergency department (ED).</p>
+            
+            <div class="patient-chart-tabs-bar" id="player-chart-tabs">
+              <!-- Tabs dynamically loaded -->
+            </div>
+            
+            <div class="patient-chart-content" id="player-chart-content">
+              <!-- Active tab content goes here -->
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Question Form (Right Panel) -->
+        <section class="player-pane question-pane">
+          <div class="question-card">
+            <!-- Question Preamble -->
+            <div id="player-question-preamble" class="question-preamble hidden"></div>
+
+            <!-- Question prompt icon & text -->
+            <div class="question-stem-wrapper">
+              <svg class="blue-arrow-svg" viewBox="0 0 24 24" width="20" height="20">
+                <defs>
+                  <linearGradient id="arrow-top-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#ffffff" />
+                    <stop offset="100%" stop-color="#bce3ff" />
+                  </linearGradient>
+                </defs>
+                <path d="M 4 20 L 20 12 L 11 12 Z" fill="#025287" stroke="#002f5c" stroke-width="1.2" stroke-linejoin="round" />
+                <path d="M 4 4 L 20 12 L 11 12 Z" fill="url(#arrow-top-grad)" stroke="#002f5c" stroke-width="1.2" stroke-linejoin="round" />
+              </svg>
+              <div class="question-stem" id="player-question-stem">Which of the following findings require follow-up? Select all that apply.</div>
+            </div>
+
+            <!-- Dynamic Answer Box based on current question type -->
+            <div id="player-answer-box" class="answer-box">
+              <!-- Injected inputs -->
+            </div>
+
+            <div class="patient-chart-actions">
+              <button id="player-submit-btn" class="btn btn-primary-exam">Submit</button>
+              <button id="player-giveup-btn" class="btn btn-secondary-exam">Give up and show answer</button>
+            </div>
+
+            <!-- Feedback Area (Hidden initially, shown after Submit/Give up) -->
+            <div id="player-feedback-card" class="feedback-card hidden">
+              <div class="feedback-header">
+                <span class="feedback-badge" id="feedback-result-badge">Correct</span>
+                <span class="feedback-score-text" id="feedback-score-display">+1 point</span>
+              </div>
+              <div class="feedback-body">
+                <div class="feedback-explanation">
+                  <strong>Rationale:</strong>
+                  <p id="feedback-explanation-text">Lisinopril is an ACE inhibitor...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Bottom Nav Bar -->
+    <footer class="player-footer">
+      <button id="player-quit-btn" class="btn-footer">&larr; Quit</button>
+      <div class="player-footer-center">
+        <span class="powered-by">NCLEX NGN Engine</span>
+      </div>
+      <div class="player-footer-right">
+        <button id="player-prev-btn" class="btn-footer">&larr; Previous</button>
+        <button id="player-next-btn" class="btn-footer">Next &rarr;</button>
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- ================= RESULTS VIEW (SCOREBOARD) ================= -->
+  <div id="results-view" class="view">
+    <div class="results-container">
+      <header class="results-header">
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="2" fill="none">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+        </div>
+        <h2>Quiz Attempt Completed!</h2>
+        <p id="results-case-title">Cardiovascular Case Study 1</p>
+      </header>
+
+      <main class="results-summary">
+        <div class="score-card">
+          <div class="score-label">Total Score</div>
+          <div id="results-score" class="score-value">0 / 0</div>
+          <div class="score-percentage" id="results-percentage">0%</div>
+        </div>
+
+        <div class="breakdown-card">
+          <h3>Question Breakdown</h3>
+          <div id="results-breakdown-list" class="breakdown-list">
+            <!-- Breakdown items generated dynamically -->
+          </div>
+        </div>
+      </main>
+
+      <footer class="results-actions">
+        <button id="results-retry-btn" class="btn btn-secondary">Retry Quiz</button>
+        <button id="results-dashboard-btn" class="btn btn-primary">Return to Dashboard</button>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ================= ADMIN LOGIN MODAL ================= -->
+  <div id="login-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+      <div class="modal-header" style="display: flex; justify-content: center; margin-bottom: 24px; border: none; padding: 0;">
+        <h3 style="font-family: var(--font-title); font-size: 20px; font-weight: 700; margin: 0;">Admin Login</h3>
+      </div>
+      <form id="admin-login-form">
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label for="login-username" style="display: block; margin-bottom: 8px; font-size: 13px; color: #94a3b8;">Username</label>
+          <input type="text" id="login-username" class="form-control" placeholder="Enter username" required style="width: 100%;">
+        </div>
+        <div class="form-group" style="margin-bottom: 24px;">
+          <label for="login-password" style="display: block; margin-bottom: 8px; font-size: 13px; color: #94a3b8;">Password</label>
+          <input type="password" id="login-password" class="form-control" placeholder="Enter password" required style="width: 100%;">
+        </div>
+        <div id="login-error-msg" class="hidden" style="color: #ef4444; font-size: 13px; margin-bottom: 16px; text-align: center; font-weight: 500;">
+          Incorrect username or password.
+        </div>
+        <div style="display: flex; gap: 12px; justify-content: flex-end;">
+          <button type="button" id="login-cancel-btn" class="btn btn-secondary">Cancel</button>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Notification Toasts -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- JS Dependencies -->
+  <script>
 /* ================= STATE & STATE INITIALIZATION ================= */
 const PATHOPHYSIOLOGY_DISORDERS = [
   "Blood Disorders",
@@ -5118,3 +8992,7 @@ function formatNursesNotes(html, tabTitle) {
   
   return output.innerHTML;
 }
+
+</script>
+</body>
+</html>
