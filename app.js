@@ -1567,7 +1567,24 @@ function initializeQuestionTypeDefaults(q) {
     }
   } else if (q.type === 'multiple_choice') {
     if (!q.options) {
-      q.options = [{ text: 'Option A', correct: true }, { text: 'Option B', correct: false }];
+      q.options = [
+        { text: 'Option A', correct: true },
+        { text: 'Option B', correct: false },
+        { text: 'Option C', correct: false },
+        { text: 'Option D', correct: false }
+      ];
+    } else {
+      if (q.options.length < 4) {
+        while (q.options.length < 4) {
+          q.options.push({ text: `Option ${String.fromCharCode(65 + q.options.length)}`, correct: false });
+        }
+      } else if (q.options.length > 4) {
+        q.options = q.options.slice(0, 4);
+      }
+      const hasCorrect = q.options.some(o => o.correct);
+      if (!hasCorrect && q.options.length > 0) {
+        q.options[0].correct = true;
+      }
     }
   } else if (q.type === 'fill_blank') {
     if (!q.correctAnswer) {

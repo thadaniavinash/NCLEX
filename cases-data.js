@@ -107,7 +107,8 @@ window.NCLEX_CASES = [
             ],
             "firstColumnHeader": "Findings"
           },
-          "explanation": "Left-sided heart failure causes pulmonary congestion (dyspnea, pink frothy sputum). Right-sided heart failure causes systemic venous congestion (jugular venous distention, dependent edema, ascites, hepatomegaly)."
+          "explanation": "Left-sided heart failure causes pulmonary congestion (dyspnea, pink frothy sputum). Right-sided heart failure causes systemic venous congestion (jugular venous distention, dependent edema, ascites, hepatomegaly).",
+          "preamble": ""
         }
       },
       {
@@ -242,7 +243,8 @@ window.NCLEX_CASES = [
             ],
             "firstColumnHeader": "Findings"
           },
-          "explanation": "Anticipated tests include Liver Function Tests (to evaluate hepatic congestion from right heart failure), Chest X-ray (pulmonary congestion/cardiomegaly), Echocardiogram (EF and structural dysfunction), CBC (general assessment), and ECG (ischemia/infarction/rhythm). Non-anticipated tests include EEG (for seizures/brain activity), Ventriculostomy (intracranial pressure monitoring), and Pulmonary Function Tests (not for acute cardiac dyspnea management)."
+          "explanation": "Anticipated tests include Liver Function Tests (to evaluate hepatic congestion from right heart failure), Chest X-ray (pulmonary congestion/cardiomegaly), Echocardiogram (EF and structural dysfunction), CBC (general assessment), and ECG (ischemia/infarction/rhythm). Non-anticipated tests include EEG (for seizures/brain activity), Ventriculostomy (intracranial pressure monitoring), and Pulmonary Function Tests (not for acute cardiac dyspnea management).",
+          "preamble": ""
         }
       },
       {
@@ -283,7 +285,8 @@ window.NCLEX_CASES = [
               "correct": false
             }
           ],
-          "explanation": "Epinephrine is a potent beta-1 and alpha-1 agonist that increases heart rate, cardiac workload, and myocardial oxygen demand, which can exacerbate heart failure and induce myocardial ischemia. Ramipril (ACE inhibitor) and Nitroglycerin (vasodilator) are standard treatments to reduce afterload and preload, and Metoprolol (beta-blocker) is part of long-term therapy once stabilized."
+          "explanation": "Epinephrine is a potent beta-1 and alpha-1 agonist that increases heart rate, cardiac workload, and myocardial oxygen demand, which can exacerbate heart failure and induce myocardial ischemia. Ramipril (ACE inhibitor) and Nitroglycerin (vasodilator) are standard treatments to reduce afterload and preload, and Metoprolol (beta-blocker) is part of long-term therapy once stabilized.",
+          "preamble": ""
         }
       },
       {
@@ -337,7 +340,8 @@ window.NCLEX_CASES = [
               "correct": false
             }
           ],
-          "explanation": "1. Gaining 0.5 lbs overnight is normal fluctuation; patients are taught to report 2-3 lbs in 24 hours or 5 lbs in a week. 2. Patients must stop smoking entirely, not limit to 1 cigarette. 3. Heart failure patients require fluid restriction, not increased fluids."
+          "explanation": "1. Gaining 0.5 lbs overnight is normal fluctuation; patients are taught to report 2-3 lbs in 24 hours or 5 lbs in a week. 2. Patients must stop smoking entirely, not limit to 1 cigarette. 3. Heart failure patients require fluid restriction, not increased fluids.",
+          "preamble": ""
         }
       }
     ],
@@ -412,7 +416,7 @@ window.NCLEX_CASES = [
             {
               "id": "hp",
               "title": "Nurses' Notes",
-              "content": "0845: The parent brought the client to the hospital after finding the client in the bathroom vomiting and unable to stand without assistance. The client states that she has experienced sore throat and nasal congestion for the past week. She reports 4 episodes of emesis during the past 24 hours and abdominal pain that is diffuse, constant, non-radiating, and rated 3 on a scale of 0-10. The client also reports polydipsia and polyuria over the past 2 months. The last menstrual period ended approximately 6 weeks ago with no abnormalities. Pregnancy status is unknown. The client is taking no medications, and she reports no smoking, alcohol, or recreational drug use. Family history includes hypertension and diabetes mellitus. The client appears drowsy and is oriented to person and time only. The abdomen is soft without guarding, rigidity, or rebound tenderness, and bowel sounds are normal. No blood is present in emesis. Respirations are rapid and deep. Breath sounds are clear. Vital signs are T 37.1° C), P 128, RR 30, and BP 88/60 mm Hg. Finger-stick blood glucose level is 33.3 mmol/L."
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0845:</span><span class=\"nurse-note-text\">The parent brought the client to the hospital after finding the client in the bathroom vomiting and unable to stand without assistance. The client states that she has experienced sore throat and nasal congestion for the past week. She reports 4 episodes of emesis during the past 24 hours and abdominal pain that is diffuse, constant, non-radiating, and rated 3 on a scale of 0-10. The client also reports polydipsia and polyuria over the past 2 months. The last menstrual period ended approximately 6 weeks ago with no abnormalities. Pregnancy status is unknown. The client is taking no medications, and she reports no smoking, alcohol, or recreational drug use. Family history includes hypertension and diabetes mellitus. The client appears drowsy and is oriented to person and time only. The abdomen is soft without guarding, rigidity, or rebound tenderness, and bowel sounds are normal. No blood is present in emesis. Respirations are rapid and deep. Breath sounds are clear. Vital signs are T 37.1° C), P 128, RR 30, and BP 88/60 mm Hg. Finger-stick blood glucose level is 33.3 mmol/L.</span></p>"
             }
           ]
         },
@@ -489,7 +493,8 @@ window.NCLEX_CASES = [
               }
             ],
             "firstColumnHeader": "Finding"
-          }
+          },
+          "preamble": ""
         }
       },
       {
@@ -568,7 +573,7 @@ window.NCLEX_CASES = [
             {
               "id": "hp",
               "title": "Nurses's Notes",
-              "content": "0845: The parent brought the client to the hospital after finding the client in the bathroom vomiting and unable to stand without assistance. The client states that she has experienced sore throat and nasal congestion for the past week. She reports 4 episodes of emesis during the past 24 hours and abdominal pain that is diffuse, constant, non-radiating, and rated 3 on a scale of 0-10. The client also reports polydipsia and polyuria over the past 2 months. The last menstrual period ended approximately 6 weeks ago with no abnormalities. Pregnancy status is unknown. The client is taking no medications, and she reports no smoking, alcohol, or recreational drug use. Family history includes hypertension and diabetes mellitus. The client appears drowsy and is oriented to person and time only. The abdomen is soft without guarding, rigidity, or rebound tenderness, and bowel sounds are normal. No blood is present in emesis. Respirations are rapid and deep. Breath sounds are clear. Vital signs are T 37.1° C), P 128, RR 30, and BP 88/60 mm Hg. Finger-stick blood glucose level is 33.3 mmol/L."
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0845:</span><span class=\"nurse-note-text\">The parent brought the client to the hospital after finding the client in the bathroom vomiting and unable to stand without assistance. The client states that she has experienced sore throat and nasal congestion for the past week. She reports 4 episodes of emesis during the past 24 hours and abdominal pain that is diffuse, constant, non-radiating, and rated 3 on a scale of 0-10. The client also reports polydipsia and polyuria over the past 2 months. The last menstrual period ended approximately 6 weeks ago with no abnormalities. Pregnancy status is unknown. The client is taking no medications, and she reports no smoking, alcohol, or recreational drug use. Family history includes hypertension and diabetes mellitus. The client appears drowsy and is oriented to person and time only. The abdomen is soft without guarding, rigidity, or rebound tenderness, and bowel sounds are normal. No blood is present in emesis. Respirations are rapid and deep. Breath sounds are clear. Vital signs are T 37.1° C), P 128, RR 30, and BP 88/60 mm Hg. Finger-stick blood glucose level is 33.3 mmol/L.</span></p>"
             },
             {
               "id": "tab_1780504534699",
@@ -641,7 +646,8 @@ window.NCLEX_CASES = [
               }
             ],
             "firstColumnHeader": "Findings"
-          }
+          },
+          "preamble": ""
         }
       },
       {
@@ -691,7 +697,7 @@ window.NCLEX_CASES = [
             {
               "id": "hp",
               "title": "Nurses's Notes",
-              "content": "0845: The parent brought the client to the hospital after finding the client in the bathroom vomiting and unable to stand without assistance. The client states that she has experienced sore throat and nasal congestion for the past week. She reports 4 episodes of emesis during the past 24 hours and abdominal pain that is diffuse, constant, non-radiating, and rated 3 on a scale of 0-10. The client also reports polydipsia and polyuria over the past 2 months. The last menstrual period ended approximately 6 weeks ago with no abnormalities. Pregnancy status is unknown. The client is taking no medications, and she reports no smoking, alcohol, or recreational drug use. Family history includes hypertension and diabetes mellitus. The client appears drowsy and is oriented to person and time only. The abdomen is soft without guarding, rigidity, or rebound tenderness, and bowel sounds are normal. No blood is present in emesis. Respirations are rapid and deep. Breath sounds are clear. Vital signs are T 37.1° C), P 128, RR 30, and BP 88/60 mm Hg. Finger-stick blood glucose level is 33.3 mmol/L."
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0845:</span><span class=\"nurse-note-text\">The parent brought the client to the hospital after finding the client in the bathroom vomiting and unable to stand without assistance. The client states that she has experienced sore throat and nasal congestion for the past week. She reports 4 episodes of emesis during the past 24 hours and abdominal pain that is diffuse, constant, non-radiating, and rated 3 on a scale of 0-10. The client also reports polydipsia and polyuria over the past 2 months. The last menstrual period ended approximately 6 weeks ago with no abnormalities. Pregnancy status is unknown. The client is taking no medications, and she reports no smoking, alcohol, or recreational drug use. Family history includes hypertension and diabetes mellitus. The client appears drowsy and is oriented to person and time only. The abdomen is soft without guarding, rigidity, or rebound tenderness, and bowel sounds are normal. No blood is present in emesis. Respirations are rapid and deep. Breath sounds are clear. Vital signs are T 37.1° C), P 128, RR 30, and BP 88/60 mm Hg. Finger-stick blood glucose level is 33.3 mmol/L.</span></p>"
             },
             {
               "id": "tab_1780505967277",
@@ -730,7 +736,8 @@ window.NCLEX_CASES = [
               "correct": true
             }
           ],
-          "explanation": "When a client with diabetes mellitus experiences an infection or another illness, the release of stress hormones can cause increased insulin resistance, which increases the blood glucose level and leads the body to break down fat for energy. Ketones are produced when fat is broken down, which can lead to diabetic ketoacidosis (DKA). Interventions for managing diabetes mellitus and preventing DKA during an illness include: Monitoring the urine for ketones if blood glucose levels are persistently elevated (&gt;13.3 mmol/L) to detect impending DKA (Option 1). Increasing fluid intake to help clear ketones from the system and prevent dehydration during illness. (Option 2) Checking blood glucose levels more frequently (e.g., every 4 hr) to monitor for hyperglycemia. (Option 4) Consuming beverages that contain glucose and replacing electrolytes if nausea and vomiting are present Notifying the health care provider of persistently elevated blood glucose levels, ketones in the urine, high fever, nausea, vomiting, or diarrhea. (Options 3 and 5) Clients with type 1 diabetes mellitus should not discontinue insulin use or reduce food intake during an illness. Unlike clients with type 2 diabetes mellitus, clients with type 1 diabetes produce no insulin, so not taking insulin will precipitate DKA. The client may require more insulin than usual due to the effects of stress hormones, and reduced food intake\ncontributes to the stress response. Educational objective: Infection or another illness in a client with diabetes mellitus can lead to diabetic ketoacidosis (DKA). During an illness, clients with diabetes mellitus should frequently monitor for elevated blood glucose levels and ketones in urine, increase fluid intake, ensure adequate intake of carbohydrates and electrolytes, and contact the health care provider if signs of DKA occur.\n"
+          "explanation": "When a client with diabetes mellitus experiences an infection or another illness, the release of stress hormones can cause increased insulin resistance, which increases the blood glucose level and leads the body to break down fat for energy. Ketones are produced when fat is broken down, which can lead to diabetic ketoacidosis (DKA). Interventions for managing diabetes mellitus and preventing DKA during an illness include: Monitoring the urine for ketones if blood glucose levels are persistently elevated (&gt;13.3 mmol/L) to detect impending DKA (Option 1). Increasing fluid intake to help clear ketones from the system and prevent dehydration during illness. (Option 2) Checking blood glucose levels more frequently (e.g., every 4 hr) to monitor for hyperglycemia. (Option 4) Consuming beverages that contain glucose and replacing electrolytes if nausea and vomiting are present Notifying the health care provider of persistently elevated blood glucose levels, ketones in the urine, high fever, nausea, vomiting, or diarrhea. (Options 3 and 5) Clients with type 1 diabetes mellitus should not discontinue insulin use or reduce food intake during an illness. Unlike clients with type 2 diabetes mellitus, clients with type 1 diabetes produce no insulin, so not taking insulin will precipitate DKA. The client may require more insulin than usual due to the effects of stress hormones, and reduced food intake\ncontributes to the stress response. Educational objective: Infection or another illness in a client with diabetes mellitus can lead to diabetic ketoacidosis (DKA). During an illness, clients with diabetes mellitus should frequently monitor for elevated blood glucose levels and ketones in urine, increase fluid intake, ensure adequate intake of carbohydrates and electrolytes, and contact the health care provider if signs of DKA occur.\n",
+          "preamble": ""
         }
       }
     ],
@@ -749,7 +756,7 @@ window.NCLEX_CASES = [
             {
               "id": "nn_1780591712513",
               "title": "Nurses' Notes",
-              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">1100</span><span class=\"nurse-note-text\">Client reports shortness of breath and chest tightness that has progressively worsened for the past 2 to 3 days. He has a history of seasonal allergies, is a non-smoker, and lives at home with his mother who is a current smoker. Denies fever or vomiting. Describes feeling fatigued and has a dry cough at night.</span></p><div class=\"nurse-note-row\"><span class=\"nurse-note-time\">1115</span><span class=\"nurse-note-text\">Audible and expiratory wheezing auscultated throughout lung fields bilaterally. Increased respiratory rate noted, capillary refill &lt; 3 seconds, skin warm to touch. Chest wall is symmetrical with no deformity. Client sits upright and leans forward resting his hands on his knees in tripod position and speaks only a few words between breaths. Tenderness on palpation of chest wall. Trachea is midline with no deviation. Labs drawn. CXR ordered.</span></div>"
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">1100:</span><span class=\"nurse-note-text\">Client reports shortness of breath and chest tightness that has progressively worsened for the past 2 to 3 days. He has a history of seasonal allergies, is a non-smoker, and lives at home with his mother who is a current smoker. Denies fever or vomiting. Describes feeling fatigued and has a dry cough at night.</span></p><p class=\"nurse-note-row\"><span class=\"nurse-note-time\">1115:</span><span class=\"nurse-note-text\">Audible and expiratory wheezing auscultated throughout lung fields bilaterally. Increased respiratory rate noted, capillary refill &lt; 3 seconds, skin warm to touch. Chest wall is symmetrical with no deformity. Client sits upright and leans forward resting his hands on his knees in tripod position and speaks only a few words between breaths. Tenderness on palpation of chest wall. Trachea is midline with no deviation. Labs drawn. CXR ordered.</span></p>"
             },
             {
               "id": "tab_1780591977805",
@@ -978,7 +985,7 @@ window.NCLEX_CASES = [
             {
               "id": "nn_1780591712513",
               "title": "Nurses' Notes",
-              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">1100</span><span class=\"nurse-note-text\">Client reports shortness of breath and chest tightness that has progressively worsened for the past 2 to 3 days. He has a history of seasonal allergies, is a non-smoker, and lives at home with his mother who is a current smoker. Denies fever or vomiting. Describes feeling fatigued and has a dry cough at night.</span></p><div class=\"nurse-note-row\"><span class=\"nurse-note-time\">1115</span><span class=\"nurse-note-text\">Audible and expiratory wheezing auscultated throughout lung fields bilaterally. Increased respiratory rate noted, capillary refill &lt; 3 seconds, skin warm to touch. Chest wall is symmetrical with no deformity. Client sits upright and leans forward resting his hands on his knees in tripod position and speaks only a few words between breaths. Tenderness on palpation of chest wall. Trachea is midline with no deviation. Labs drawn. CXR ordered.</span></div>"
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">1100:</span><span class=\"nurse-note-text\">Client reports shortness of breath and chest tightness that has progressively worsened for the past 2 to 3 days. He has a history of seasonal allergies, is a non-smoker, and lives at home with his mother who is a current smoker. Denies fever or vomiting. Describes feeling fatigued and has a dry cough at night.</span></p><p class=\"nurse-note-row\"><span class=\"nurse-note-time\">1115:</span><span class=\"nurse-note-text\">Audible and expiratory wheezing auscultated throughout lung fields bilaterally. Increased respiratory rate noted, capillary refill &lt; 3 seconds, skin warm to touch. Chest wall is symmetrical with no deformity. Client sits upright and leans forward resting his hands on his knees in tripod position and speaks only a few words between breaths. Tenderness on palpation of chest wall. Trachea is midline with no deviation. Labs drawn. CXR ordered.</span></p>"
             },
             {
               "id": "tab_1780591977805",
@@ -988,7 +995,7 @@ window.NCLEX_CASES = [
             {
               "id": "tab_1780603343821",
               "title": "Laboratory Results",
-              "content": "<br><table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Laboratory Range and Reference Range</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">1300</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Hematocrit<br>38 - 50%</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">48%</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Hemoglobin<br>Female: 115 - 155 g/L<br>Male: 125 - 155 g/L °C</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">150 g/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">White blood cell (WBC) count, blood<br>3.5 - 10.5 x 10<sup>9</sup>/L</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><br>8 x 10<sup>9</sup>/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Potassium, blood<br>3.5 - 5.1 mmol/L</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><br>4.0 mmol/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Sodium, blood<br>136 - 146 mmol/L</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><br>138 mmol/L</td></tr></tbody></table><p><br></p><br>"
+              "content": "<br><table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Laboratory Test and Reference Range</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">1300</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Hematocrit<br>38 - 50%</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">48%</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Hemoglobin<br>Female: 115 - 155 g/L<br>Male: 125 - 155 g/L °C</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">150 g/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">White blood cell (WBC) count, blood<br>3.5 - 10.5 x 10<sup>9</sup>/L</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><br>8 x 10<sup>9</sup>/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Potassium, blood<br>3.5 - 5.1 mmol/L</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><br>4.0 mmol/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Sodium, blood<br>136 - 146 mmol/L</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><br>138 mmol/L</td></tr></tbody></table><p><br></p><br>"
             },
             {
               "id": "tab_1780609656306",
@@ -1379,33 +1386,43 @@ window.NCLEX_CASES = [
       {
         "step": 1,
         "leftContent": {
-          "intro": "",
+          "intro": "The nurse is caring for a 68-year-old female adult admitted after 24 hours of vomiting and watery diarrhea. She reports dizziness when standing, thirst, weakness, and mild abdominal cramping. Her daughter states, “She seems more confused than usual.” Medical history includes type 2 diabetes mellitus, hypertension, and chronic kidney disease stage 3. Home medications include metformin, lisinopril, hydrochlorothiazide, and atorvastatin. She lives alone and has had limited oral intake since yesterday.",
           "tabs": [
             {
               "id": "nn_1781387466359",
               "title": "Nurses' Notes",
-              "content": ""
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">1005:</span><span class=\"nurse-note-text\">Patient appears fatigued. Mucous membranes dry. Skin warm. Reports dizziness on standing. Denies chest pain. Mild generalized abdominal tenderness without guarding. Daughter reports new confusion. Last void was “early this morning.”</span></p>"
+            },
+            {
+              "id": "tab_1781387807243",
+              "title": "Vital Signs",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Time</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">1005</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Temp</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">38.1 °C</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">HR</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">116 beats/min</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">RR</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">22 breaths/min</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">BP</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">94/58 mm Hg</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Orthostatic BP</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Not attempted because client is dizzy when sitting upright</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">SpO<sub>2</sub></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">96% (on room air)</td></tr></tbody></table>"
+            },
+            {
+              "id": "tab_1781388411984",
+              "title": "Laboratory Results",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Laboratory Test and Reference Range</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\"></th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Sodium, blood<br>136 - 146 mmol/L</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">132 mmol/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Potassium, blood<br>3.5 - 5.1 mmol/L</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">3.3 mmol/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Bicarbonate, blood<br>21 - 32 mmol/L</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">20 mmol/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Blood urea nitrogen (BUN)<br>2.1 - 8.0 mmol/L</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">12.5 mmol/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Chloride, blood<br>98 - 107 mmol/L</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">96 mmol/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Creatinine, blood<br>Female: 22 - 75 micromol/L<br>Male: 49 - 93 micromole/L</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><br>168 micromol/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Glucose, blood<br>Fasting: 4.0 - 6.0 mmol/L<br>Random: 4.0 - 11.0 mmol/L</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">14.8 mmol/L (random)</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">White blood cell (WBC) count, blood<br>3.5 - 10.5 x 10<sup>9</sup>/L&nbsp;</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">13.8 x 10<sup>9</sup>/L</td></tr></tbody></table><p><br></p>"
             }
           ]
         },
         "question": {
-          "type": "select_all",
-          "stem": "",
+          "type": "multiple_choice",
+          "stem": "Which statement best describes the priority pathophysiology concern in this case?",
           "options": [
             {
-              "text": "",
+              "text": "The client has only subjective symptoms, so objective findings are not concerning.",
               "correct": false
             },
             {
-              "text": "",
+              "text": "Vomiting and diarrhea can cause fluid volume deficit, electrolyte disturbance, and decreased tissue perfusion.",
+              "correct": true
+            },
+            {
+              "text": "Fever alone explains all findings, so no further assessment is required.",
               "correct": false
             },
             {
-              "text": "",
-              "correct": false
-            },
-            {
-              "text": "",
+              "text": "Hyperglycemia is unrelated to acute illness and can be ignored until discharge.",
               "correct": false
             },
             {
@@ -1413,10 +1430,12 @@ window.NCLEX_CASES = [
               "correct": false
             }
           ],
-          "explanation": ""
+          "explanation": "Vomiting and diarrhea can produce fluid volume deficit, electrolyte losses, acid-base changes, reduced perfusion, dizziness, tachycardia, and acute kidney injury risk. Fever and hyperglycemia may contribute but do not explain the whole priority pattern.",
+          "preamble": "The nurse has reviewed the recently received laboratory data."
         }
       }
-    ]
+    ],
+    "disorder": "Blood Disorders"
   }
 ];
 window.NCLEX_STANDALONE = [];
