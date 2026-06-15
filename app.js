@@ -1398,7 +1398,7 @@ function setupTableInteractionMenu() {
     menu.querySelector('#tbl-menu-add-row-below').onclick = () => {
       if (!selectedTableCellElement) return;
       const row = selectedTableCellElement.closest('tr');
-      const table = selectedTableCellElement.closest('table');
+      const parent = row.parentNode;
       const colsCount = row.cells.length;
       
       const newRow = document.createElement('tr');
@@ -1412,19 +1412,18 @@ function setupTableInteractionMenu() {
         newCell.style.color = '#1e293b';
         newRow.appendChild(newCell);
       }
-      row.parentNode.insertBefore(newRow, row.nextSibling);
+      parent.insertBefore(newRow, row.nextSibling);
       menu.style.display = 'none';
     };
 
     menu.querySelector('#tbl-menu-add-row-above').onclick = () => {
       if (!selectedTableCellElement) return;
       const row = selectedTableCellElement.closest('tr');
-      const table = selectedTableCellElement.closest('table');
+      const parent = row.parentNode;
       const colsCount = row.cells.length;
       
       const newRow = document.createElement('tr');
-      // If we insert above the head row, keep it th or td appropriately
-      const isHeader = row.parentNode.tagName.toLowerCase() === 'thead';
+      const isHeader = parent.tagName.toLowerCase() === 'thead';
       for (let j = 0; j < colsCount; j++) {
         const newCell = document.createElement(isHeader ? 'th' : 'td');
         if (isHeader) {
@@ -1445,7 +1444,7 @@ function setupTableInteractionMenu() {
         }
         newRow.appendChild(newCell);
       }
-      row.parentNode.insertBefore(newRow, row);
+      parent.insertBefore(newRow, row);
       menu.style.display = 'none';
     };
 
@@ -1453,7 +1452,6 @@ function setupTableInteractionMenu() {
       if (!selectedTableCellElement) return;
       const row = selectedTableCellElement.closest('tr');
       const table = selectedTableCellElement.closest('table');
-      // Do not allow deleting the last row
       if (table.querySelectorAll('tr').length > 1) {
         row.remove();
       }
@@ -1487,7 +1485,11 @@ function setupTableInteractionMenu() {
           newCell.style.background = 'white';
           newCell.style.color = '#1e293b';
         }
-        r.insertBefore(newCell, targetCell.nextSibling);
+        if (targetCell.nextSibling) {
+          r.insertBefore(newCell, targetCell.nextSibling);
+        } else {
+          r.appendChild(newCell);
+        }
       });
       menu.style.display = 'none';
     };
@@ -1530,7 +1532,6 @@ function setupTableInteractionMenu() {
       const table = selectedTableCellElement.closest('table');
       const rows = table.querySelectorAll('tr');
       
-      // Do not allow deleting the last column
       if (selectedTableCellElement.closest('tr').cells.length > 1) {
         rows.forEach(r => {
           if (r.cells[cellIndex]) {
@@ -1550,7 +1551,6 @@ function setupTableInteractionMenu() {
       selectedTableCellElement = cell;
       const rect = cell.getBoundingClientRect();
       menu.style.display = 'flex';
-      // Calculate viewport coordinates considering absolute scroll offset positioning
       menu.style.top = `${rect.bottom + window.scrollY}px`;
       menu.style.left = `${rect.left + window.scrollX}px`;
     } else {
