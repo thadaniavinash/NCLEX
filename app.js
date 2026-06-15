@@ -1561,6 +1561,11 @@ function setupTableInteractionMenu() {
 
   // Bind mousedown listener to table elements inside editor to position the menu
   document.addEventListener('mousedown', (e) => {
+    // If click/mousedown is inside the menu itself, do nothing (do not close or reposition)
+    if (e.target.closest('#table-interaction-menu')) {
+      return;
+    }
+    
     // Check if mousedown was inside a contenteditable rich-text cell
     const cell = e.target.closest('[contenteditable="true"] td, [contenteditable="true"] th');
     if (cell) {
@@ -1570,9 +1575,7 @@ function setupTableInteractionMenu() {
       menu.style.top = `${rect.bottom + window.scrollY}px`;
       menu.style.left = `${rect.left + window.scrollX}px`;
     } else {
-      if (!e.target.closest('#table-interaction-menu')) {
-        menu.style.display = 'none';
-      }
+      menu.style.display = 'none';
     }
   });
 }
