@@ -1371,6 +1371,7 @@ let selectedTableCellElement = null;
 function setupTableInteractionMenu() {
   let menu = document.getElementById('table-interaction-menu');
   if (!menu) {
+    menu = document.createElement('div');
     menu.id = 'table-interaction-menu';
     menu.style.position = 'absolute';
     menu.style.display = 'none';
