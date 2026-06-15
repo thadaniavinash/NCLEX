@@ -1524,11 +1524,13 @@ function setupTableInteractionMenu() {
 
   // Bind click listener to table elements inside editor to position the menu
   document.addEventListener('click', (e) => {
-    const cell = e.target.closest('.rich-text-editor td, .rich-text-editor th');
+    // Check if click was inside a contenteditable rich-text cell
+    const cell = e.target.closest('[contenteditable="true"] td, [contenteditable="true"] th');
     if (cell) {
       selectedTableCellElement = cell;
       const rect = cell.getBoundingClientRect();
       menu.style.display = 'flex';
+      // Calculate viewport coordinates considering absolute scroll offset positioning
       menu.style.top = `${rect.bottom + window.scrollY}px`;
       menu.style.left = `${rect.left + window.scrollX}px`;
     } else {
