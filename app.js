@@ -15,8 +15,7 @@ const PATHOPHYSIOLOGY_DISORDERS = [
   "Neurological Disorders",
   "Reproductive Disorders",
   "Respiratory Disorders",
-  "Urinary Disorders",
-  "Others"
+  "Urinary Disorders"
 ];
 
 let caseStudies = [];
@@ -369,30 +368,17 @@ async function saveStandaloneToStorage() {
   }
 }
 
-
-async function saveAllDataToBackend() {
-  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-    try {
-      const response = await fetch('/api/save', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          cases: caseStudies,
-          standalone: standaloneQuestions
-        })
-      });
-      const result = await response.json();
-      if (result.success) {
-        showToast("Saved directly to cases-data.js!", "success");
-      } else {
-        showToast("Error saving to disk: " + result.error, "error");
-      }
-    } catch (err) {
-      console.warn("Local backend offline. Changes saved in browser memory only.");
-    }
-  }
+function downloadUpdatedDataFile() {
+  const content = 'window.NCLEX_CASES = ' + JSON.stringify(caseStudies, null, 2) + ';\nwindow.NCLEX_STANDALONE = ' + JSON.stringify(standaloneQuestions, null, 2) + ';\n';
+  const blob = new Blob([content], { type: 'application/javascript' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'cases-data.js';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  showToast("Downloaded updated cases-data.js file. Please replace it in your folder.");
 }
 
 function saveCurrentCaseOrStandalone() {
@@ -402,7 +388,6 @@ function saveCurrentCaseOrStandalone() {
     } else {
       saveCasesToStorage();
     }
-    saveAllDataToBackend();
   }
 }
 
@@ -468,7 +453,14 @@ function initDashboardEvents() {
   }
   
   document.getElementById('create-btn').addEventListener('click', createNewCase);
-
+  document.getElementById('load-default-btn').addEventListener('click', () => {
+    if (window.DEFAULT_CASE) {
+      caseStudies = [window.DEFAULT_CASE];
+      saveCasesToStorage();
+      showToast("Demo Cardiovascular case study loaded.");
+      renderDashboard();
+    }
+  });
 
   const importBtn = document.getElementById('import-btn');
   const importInput = document.getElementById('import-file-input');
@@ -822,7 +814,9 @@ function renderCasesDashboard() {
     card.querySelector('.play-case-btn').addEventListener('click', () => startPlayer(c));
     card.querySelector('.card-id-badge').addEventListener('click', (e) => {
       e.stopPropagation();
-      const baseUrl = 'https://thadaniavinash.github.io/NCLEX/';
+      const baseUrl = window.location.protocol.startsWith('http') 
+        ? (window.location.origin + window.location.pathname) 
+        : 'https://thadaniavinash.github.io/NCLEX/';
       navigator.clipboard.writeText(`${baseUrl}?cases=${c.id}`);
       showToast("Launch link copied to clipboard!");
     });
@@ -835,7 +829,6 @@ function renderCasesDashboard() {
           if (db) {
             deleteFromStore('case_studies', c.id);
           }
-          saveAllDataToBackend();
           showToast("Case study deleted.");
           renderCasesDashboard();
           updateSidebarBadges();
@@ -951,7 +944,9 @@ function renderStandaloneDashboard() {
     card.querySelector('.play-q-btn').addEventListener('click', () => startPlayer(q));
     card.querySelector('.card-id-badge').addEventListener('click', (e) => {
       e.stopPropagation();
-      const baseUrl = 'https://thadaniavinash.github.io/NCLEX/';
+      const baseUrl = window.location.protocol.startsWith('http') 
+        ? (window.location.origin + window.location.pathname) 
+        : 'https://thadaniavinash.github.io/NCLEX/';
       navigator.clipboard.writeText(`${baseUrl}?standalone=${q.id}`);
       showToast("Launch link copied to clipboard!");
     });
@@ -964,7 +959,6 @@ function renderStandaloneDashboard() {
           if (db) {
             deleteFromStore('standalone_questions', q.id);
           }
-          saveAllDataToBackend();
           showToast("Standalone question deleted.");
           renderStandaloneDashboard();
           updateSidebarBadges();
@@ -1009,7 +1003,6 @@ function createStandaloneQuestion() {
   
   standaloneQuestions.push(newQ);
   saveStandaloneToStorage();
-  saveAllDataToBackend();
   startEditor(newQ);
   showToast("New standalone question initialized.");
 }
@@ -1030,7 +1023,6 @@ function handleImportStandaloneFile(e) {
       migrateCaseTypes(imported);
       standaloneQuestions.push(imported);
       saveStandaloneToStorage();
-      saveAllDataToBackend();
       showToast(`Successfully imported standalone: ${imported.title}`);
       switchDashboardPanel('standalone');
     } catch (err) {
@@ -1201,7 +1193,6 @@ function createNewCase() {
   
   caseStudies.push(newCase);
   saveCasesToStorage();
-  saveAllDataToBackend();
   startEditor(newCase);
   showToast("New case study initialized.");
 }
@@ -1221,7 +1212,6 @@ function handleImportFile(e) {
       migrateCaseTypes(imported);
       caseStudies.push(imported);
       saveCasesToStorage();
-      saveAllDataToBackend();
       showToast(`Successfully imported: ${imported.title}`);
       renderDashboard();
     } catch (err) {
@@ -1285,7 +1275,7 @@ function initRichTextEditors() {
       } else if (symbol) {
         document.execCommand('insertText', false, symbol);
       } else if (btn.classList.contains('table-insert-btn')) {
-        insertTableAtCursor(editor, 3, 2);
+        showTableInsertModal(editor);
       }
       
       // Restore focus and selection range (only if not already focused, or if text was selected)
@@ -1320,7 +1310,62 @@ function initRichTextEditors() {
   });
 }
 
-function insertTableAtCursor(editorDiv, rows = 3, cols = 2) {
+function showTableInsertModal(editor) {
+  let modal = document.getElementById('table-insert-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'table-insert-modal';
+    modal.className = 'modal-overlay';
+    modal.style.zIndex = '9999';
+    modal.innerHTML = `
+      <div class="modal-content" style="max-width:320px; background:#1e293b; border:1px solid #334155; border-radius:var(--radius-md); padding:20px; box-shadow:var(--shadow-lg);">
+        <h4 style="margin-top:0; margin-bottom:16px; font-size:14px; font-weight:600; color:white;">Insert Table</h4>
+        <div class="form-group" style="margin-bottom:12px;">
+          <label style="display:block; margin-bottom:6px; font-size:12px; color:#94a3b8;">Rows</label>
+          <select id="table-modal-rows" class="form-control" style="width:100%; height:32px; font-size:12px; padding:4px 8px; background:#0f172a; border-color:#334155; color:white; cursor:pointer;">
+            <option value="2">2</option>
+            <option value="3" selected>3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom:20px;">
+          <label style="display:block; margin-bottom:6px; font-size:12px; color:#94a3b8;">Columns</label>
+          <select id="table-modal-cols" class="form-control" style="width:100%; height:32px; font-size:12px; padding:4px 8px; background:#0f172a; border-color:#334155; color:white; cursor:pointer;">
+            <option value="2" selected>2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <div style="display:flex; gap:10px; justify-content:flex-end;">
+          <button id="table-modal-cancel" class="btn btn-secondary" style="font-size:12px; padding:6px 12px; height:32px;">Cancel</button>
+          <button id="table-modal-insert" class="btn btn-primary" style="font-size:12px; padding:6px 12px; height:32px;">Insert</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  }
+
+  modal.classList.remove('hidden');
+
+  const cleanUp = () => {
+    modal.classList.add('hidden');
+  };
+
+  modal.querySelector('#table-modal-cancel').onclick = cleanUp;
+  modal.querySelector('#table-modal-insert').onclick = () => {
+    const rows = parseInt(modal.querySelector('#table-modal-rows').value);
+    const cols = parseInt(modal.querySelector('#table-modal-cols').value);
+    insertTableAtCursor(editor, rows, cols);
+    cleanUp();
+  };
+}
+
+function insertTableAtCursor(editorDiv, rows, cols) {
   let tableHTML = '<table class="nclex-editor-table" style="width:100%; border-collapse:collapse; margin:12px 0;">';
   // Header Row
   tableHTML += '<thead><tr>';
@@ -1328,9 +1373,8 @@ function insertTableAtCursor(editorDiv, rows = 3, cols = 2) {
     tableHTML += `<th placeholder="Header ${j+1}" style="border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;"></th>`;
   }
   tableHTML += '</tr></thead><tbody>';
-  // Data Rows (excluding the header row from count. rows=3 includes 1 header row, so 2 body rows)
-  const bodyRowsCount = rows - 1;
-  for (let i = 0; i < bodyRowsCount; i++) {
+  // Data Rows
+  for (let i = 0; i < rows; i++) {
     tableHTML += '<tr>';
     for (let j = 0; j < cols; j++) {
       tableHTML += '<td placeholder="Cell" style="border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;"></td>';
@@ -1343,6 +1387,7 @@ function insertTableAtCursor(editorDiv, rows = 3, cols = 2) {
   const selection = window.getSelection();
   if (selection.rangeCount > 0) {
     const range = selection.getRangeAt(0);
+    // Ensure selection is inside the editor
     if (editorDiv.contains(range.commonAncestorContainer)) {
       range.deleteContents();
       const el = document.createElement('div');
@@ -1362,258 +1407,8 @@ function insertTableAtCursor(editorDiv, rows = 3, cols = 2) {
       return;
     }
   }
+  // Fallback if not focused/inside editor
   editorDiv.innerHTML += tableHTML;
-}
-
-// Interactive helper variables to keep track of clicked table elements for modifications
-let selectedTableCellElement = null;
-
-function setupTableInteractionMenu() {
-  let menu = document.getElementById('table-interaction-menu');
-  if (!menu) {
-    menu = document.createElement('div');
-    menu.id = 'table-interaction-menu';
-    menu.style.position = 'absolute';
-    menu.style.display = 'none';
-    menu.style.zIndex = '10000';
-    menu.style.background = '#1e293b';
-    menu.style.border = '1px solid #475569';
-    menu.style.borderRadius = 'var(--radius-md)';
-    menu.style.padding = '6px';
-    menu.style.boxShadow = 'var(--shadow-lg)';
-    menu.style.gap = '4px';
-    menu.style.flexDirection = 'column';
-    menu.style.maxHeight = '180px';
-    menu.style.overflowY = 'auto';
-    menu.style.width = '160px';
-    menu.innerHTML = `
-      <button id="tbl-menu-add-row-below" class="btn btn-secondary btn-xs" style="text-align:left; justify-content:flex-start; width:100%;">+ Add Row Below</button>
-      <button id="tbl-menu-add-row-above" class="btn btn-secondary btn-xs" style="text-align:left; justify-content:flex-start; width:100%;">+ Add Row Above</button>
-      <button id="tbl-menu-delete-row" class="btn btn-danger btn-xs" style="text-align:left; justify-content:flex-start; width:100%;">- Delete Row</button>
-      <div style="border-top:1px solid #334155; margin:4px 0;"></div>
-      <button id="tbl-menu-add-col-right" class="btn btn-secondary btn-xs" style="text-align:left; justify-content:flex-start; width:100%;">+ Add Column Right</button>
-      <button id="tbl-menu-add-col-left" class="btn btn-secondary btn-xs" style="text-align:left; justify-content:flex-start; width:100%;">+ Add Column Left</button>
-      <button id="tbl-menu-delete-col" class="btn btn-danger btn-xs" style="text-align:left; justify-content:flex-start; width:100%;">- Delete Column</button>
-    `;
-    document.body.appendChild(menu);
-
-    // Context Actions implementation
-    menu.querySelector('#tbl-menu-add-row-below').addEventListener('mousedown', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      if (!selectedTableCellElement) return;
-      const row = selectedTableCellElement.closest('tr');
-      const parent = row.parentNode;
-      const colsCount = row.cells.length;
-      
-      const newRow = document.createElement('tr');
-      for (let j = 0; j < colsCount; j++) {
-        const newCell = document.createElement('td');
-        newCell.setAttribute('placeholder', 'Cell');
-        newCell.style.border = '1px solid #ccd8e0';
-        newCell.style.padding = '8px';
-        newCell.style.minWidth = '80px';
-        newCell.style.background = 'white';
-        newCell.style.color = '#1e293b';
-        newRow.appendChild(newCell);
-      }
-      if (row.nextSibling) {
-        parent.insertBefore(newRow, row.nextSibling);
-      } else {
-        parent.appendChild(newRow);
-      }
-      menu.style.display = 'none';
-    });
-
-    menu.querySelector('#tbl-menu-add-row-above').addEventListener('mousedown', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      if (!selectedTableCellElement) return;
-      const row = selectedTableCellElement.closest('tr');
-      const parent = row.parentNode;
-      const colsCount = row.cells.length;
-      
-      const newRow = document.createElement('tr');
-      const isHeader = parent.tagName.toLowerCase() === 'thead';
-      for (let j = 0; j < colsCount; j++) {
-        const newCell = document.createElement(isHeader ? 'th' : 'td');
-        if (isHeader) {
-          newCell.setAttribute('placeholder', `Header ${j+1}`);
-          newCell.style.border = '1px solid #ccd8e0';
-          newCell.style.padding = '8px';
-          newCell.style.background = '#025287';
-          newCell.style.color = 'white';
-          newCell.style.fontWeight = '600';
-          newCell.style.textAlign = 'left';
-        } else {
-          newCell.setAttribute('placeholder', 'Cell');
-          newCell.style.border = '1px solid #ccd8e0';
-          newCell.style.padding = '8px';
-          newCell.style.minWidth = '80px';
-          newCell.style.background = 'white';
-          newCell.style.color = '#1e293b';
-        }
-        newRow.appendChild(newCell);
-      }
-      parent.insertBefore(newRow, row);
-      menu.style.display = 'none';
-    });
-
-    menu.querySelector('#tbl-menu-delete-row').addEventListener('mousedown', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      if (!selectedTableCellElement) return;
-      const row = selectedTableCellElement.closest('tr');
-      const table = selectedTableCellElement.closest('table');
-      if (table.querySelectorAll('tr').length > 1) {
-        row.remove();
-      }
-      menu.style.display = 'none';
-    });
-
-    menu.querySelector('#tbl-menu-add-col-right').addEventListener('mousedown', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      if (!selectedTableCellElement) return;
-      const cellIndex = selectedTableCellElement.cellIndex;
-      const table = selectedTableCellElement.closest('table');
-      const rows = table.querySelectorAll('tr');
-      
-      rows.forEach(r => {
-        const isHeader = r.closest('thead') !== null;
-        const targetCell = r.cells[cellIndex];
-        const newCell = document.createElement(isHeader ? 'th' : 'td');
-        
-        if (isHeader) {
-          newCell.setAttribute('placeholder', 'Header');
-          newCell.style.border = '1px solid #ccd8e0';
-          newCell.style.padding = '8px';
-          newCell.style.background = '#025287';
-          newCell.style.color = 'white';
-          newCell.style.fontWeight = '600';
-          newCell.style.textAlign = 'left';
-        } else {
-          newCell.setAttribute('placeholder', 'Cell');
-          newCell.style.border = '1px solid #ccd8e0';
-          newCell.style.padding = '8px';
-          newCell.style.minWidth = '80px';
-          newCell.style.background = 'white';
-          newCell.style.color = '#1e293b';
-        }
-        if (targetCell && targetCell.nextSibling) {
-          r.insertBefore(newCell, targetCell.nextSibling);
-        } else {
-          r.appendChild(newCell);
-        }
-      });
-      menu.style.display = 'none';
-    });
-
-    menu.querySelector('#tbl-menu-add-col-left').addEventListener('mousedown', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      if (!selectedTableCellElement) return;
-      const cellIndex = selectedTableCellElement.cellIndex;
-      const table = selectedTableCellElement.closest('table');
-      const rows = table.querySelectorAll('tr');
-      
-      rows.forEach(r => {
-        const isHeader = r.closest('thead') !== null;
-        const targetCell = r.cells[cellIndex];
-        const newCell = document.createElement(isHeader ? 'th' : 'td');
-        
-        if (isHeader) {
-          newCell.setAttribute('placeholder', 'Header');
-          newCell.style.border = '1px solid #ccd8e0';
-          newCell.style.padding = '8px';
-          newCell.style.background = '#025287';
-          newCell.style.color = 'white';
-          newCell.style.fontWeight = '600';
-          newCell.style.textAlign = 'left';
-        } else {
-          newCell.setAttribute('placeholder', 'Cell');
-          newCell.style.border = '1px solid #ccd8e0';
-          newCell.style.padding = '8px';
-          newCell.style.minWidth = '80px';
-          newCell.style.background = 'white';
-          newCell.style.color = '#1e293b';
-        }
-        r.insertBefore(newCell, targetCell);
-      });
-      menu.style.display = 'none';
-    });
-
-    menu.querySelector('#tbl-menu-delete-col').addEventListener('mousedown', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      if (!selectedTableCellElement) return;
-      const cellIndex = selectedTableCellElement.cellIndex;
-      const table = selectedTableCellElement.closest('table');
-      const rows = table.querySelectorAll('tr');
-      
-      if (selectedTableCellElement.closest('tr').cells.length > 1) {
-        rows.forEach(r => {
-          if (r.cells[cellIndex]) {
-            r.cells[cellIndex].remove();
-          }
-        });
-      }
-      menu.style.display = 'none';
-    });
-  }
-
-  // Bind mousedown listener to table elements inside editor to position the menu
-  document.addEventListener('mousedown', (e) => {
-    // If click/mousedown is inside the menu itself, do nothing (do not close or reposition)
-    if (e.target.closest('#table-interaction-menu')) {
-      return;
-    }
-    
-    // Check if mousedown was inside a contenteditable rich-text cell
-    const cell = e.target.closest('[contenteditable="true"] td, [contenteditable="true"] th');
-    if (cell) {
-      // Get cell coordinates
-      const rect = cell.getBoundingClientRect();
-      
-      // Determine if click coordinates fell in the top-right corner region of the cell (representing the chevron area)
-      const clickedX = e.clientX;
-      const clickedY = e.clientY;
-      const insideChevronX = (clickedX >= rect.right - 24 && clickedX <= rect.right);
-      const insideChevronY = (clickedY >= rect.top && clickedY <= rect.top + 24);
-      
-      if (insideChevronX && insideChevronY) {
-        // Only trigger the menu if clicked on the top-right chevron area
-        selectedTableCellElement = cell;
-        menu.style.display = 'flex';
-        
-        // Smart positioning: Check if showing the menu below the cell will push it off screen
-        const menuHeight = 180; // set max-height
-        const screenHeight = window.innerHeight;
-        const offsetBelow = rect.bottom + menuHeight;
-        
-        if (offsetBelow > screenHeight && rect.top > menuHeight) {
-          // Position above the cell if it runs off the bottom and there is space above
-          menu.style.top = `${rect.top + window.scrollY - menuHeight}px`;
-        } else {
-          // Default position below the cell
-          menu.style.top = `${rect.bottom + window.scrollY}px`;
-        }
-        menu.style.left = `${rect.left + window.scrollX}px`;
-      } else {
-        // If clicking anywhere else inside the cell, just close the menu so they can type freely
-        menu.style.display = 'none';
-      }
-    } else {
-      menu.style.display = 'none';
-    }
-  });
-}
-
-// Run initializer on window load
-if (document.readyState === 'loading') {
-  window.addEventListener('DOMContentLoaded', setupTableInteractionMenu);
-} else {
-  setupTableInteractionMenu();
 }
 
 function toggleTheme(forceLight) {
@@ -1750,7 +1545,7 @@ function initializeQuestionTypeDefaults(q) {
     }
     
     const textStr = q.cloze.text || '';
-    const isStandardDefault = !textStr || textStr === 'The patient should be ordered [[drop0]] due to [[drop1]].';
+    const isStandardDefault = !textStr || textStr === 'The patient should be ordered [[drop0]] due to [[drop1]].' || textStr === 'The patient should...[[drop0]]...due to...[[drop1]]';
     const isTriadText = textStr.includes('[[drop2]]') || textStr.includes('and [[drop2]]');
     const isDyadText = !isTriadText && textStr.includes('[[drop1]]');
 
@@ -1777,13 +1572,17 @@ function initializeQuestionTypeDefaults(q) {
           q.cloze.dropdowns[2] || { placeholder: 'Select...', options: [{ text: 'Choice 1', correct: true }, { text: 'Choice 2', correct: false }, { text: 'Choice 3', correct: false }] }
         ];
       }
-    } else if ((q.type === 'dropdown_cloze' || q.type === 'drag_drop_cloze') && !textStr) {
-      q.stem = q.stem || 'Complete the following sentence by choosing from the list of options.';
-      q.cloze.text = 'The patient should be ordered [[drop0]] due to [[drop1]].';
-      q.cloze.dropdowns = [
-        { placeholder: 'Choose...', options: [{ text: 'Choice A', correct: true }, { text: 'Choice B', correct: false }] },
-        { placeholder: 'Choose...', options: [{ text: 'Choice X', correct: true }, { text: 'Choice Y', correct: false }] }
-      ];
+    } else if (q.type === 'dropdown_cloze' || q.type === 'drag_drop_cloze') {
+      if (!q.stem) {
+        q.stem = 'Complete the following sentence by choosing from the list of options.';
+      }
+      if (!textStr) {
+        q.cloze.text = 'The patient should...[[drop0]]...due to...[[drop1]]';
+        q.cloze.dropdowns = [
+          { placeholder: 'Choose...', options: [{ text: 'Choice A', correct: true }, { text: 'Choice B', correct: false }] },
+          { placeholder: 'Choose...', options: [{ text: 'Choice X', correct: true }, { text: 'Choice Y', correct: false }] }
+        ];
+      }
     }
   } else if (q.type === 'dropdown_table') {
     if (!q.dropdownTableRows) {
@@ -1834,24 +1633,7 @@ function initializeQuestionTypeDefaults(q) {
     }
   } else if (q.type === 'multiple_choice') {
     if (!q.options) {
-      q.options = [
-        { text: 'Option A', correct: true },
-        { text: 'Option B', correct: false },
-        { text: 'Option C', correct: false },
-        { text: 'Option D', correct: false }
-      ];
-    } else {
-      if (q.options.length < 4) {
-        while (q.options.length < 4) {
-          q.options.push({ text: `Option ${String.fromCharCode(65 + q.options.length)}`, correct: false });
-        }
-      } else if (q.options.length > 4) {
-        q.options = q.options.slice(0, 4);
-      }
-      const hasCorrect = q.options.some(o => o.correct);
-      if (!hasCorrect && q.options.length > 0) {
-        q.options[0].correct = true;
-      }
+      q.options = [{ text: 'Option A', correct: true }, { text: 'Option B', correct: false }];
     }
   } else if (q.type === 'fill_blank') {
     if (!q.correctAnswer) {
@@ -2285,80 +2067,90 @@ function renderClozeConfigurator(q, box) {
   const c = q.cloze || { text: '', dropdowns: [] };
   const wrapper = document.createElement('div');
   
-  let instructions = 'Use [[drop0]], [[drop1]], etc., in the template to place slots.';
+  const isDyadOrTriad = (q.type === 'dyad' || q.type === 'triad');
+  
+  let instructions = 'Sentence contains drop-down options. Set the choices and placeholder for each slot below.';
   if (q.type === 'dyad') instructions = 'Dyad requires exactly 2 slots: [[drop0]] and [[drop1]]. Both must be correct to score 1 point.';
   if (q.type === 'triad') instructions = 'Triad requires exactly 3 slots: [[drop0]], [[drop1]], and [[drop2]]. All must be correct.';
   
-  const isDyadOrTriad = (q.type === 'dyad' || q.type === 'triad');
-  const expectedSlots = q.type === 'dyad' ? 2 : (q.type === 'triad' ? 3 : 0);
+  let expectedSlots;
+  if (q.type === 'dyad') {
+    expectedSlots = 2;
+  } else if (q.type === 'triad') {
+    expectedSlots = 3;
+  } else {
+    if (!c.dropdowns || c.dropdowns.length < 2) {
+      c.dropdowns = [
+        c.dropdowns[0] || { placeholder: 'Choose...', options: [{ text: 'Choice A', correct: true }, { text: 'Choice B', correct: false }] },
+        c.dropdowns[1] || { placeholder: 'Choose...', options: [{ text: 'Choice X', correct: true }, { text: 'Choice Y', correct: false }] }
+      ];
+    }
+    expectedSlots = c.dropdowns.length;
+  }
   
-  if (isDyadOrTriad) {
-    const segments = getClozeSegments(c.text || '', expectedSlots);
-    let segmentInputsHTML = '';
-    
-    for (let i = 0; i <= expectedSlots; i++) {
-      let placeholder = 'Text...';
-      if (q.type === 'dyad') {
-        if (i === 0) placeholder = 'The nurse should...';
-        else if (i === 1) placeholder = '...as most evidenced by...';
-        else if (i === 2) placeholder = 'Suffix text (optional)...';
-      } else if (q.type === 'triad') {
-        if (i === 0) placeholder = 'The nurse should...';
-        else if (i === 1) placeholder = '...as most evidenced by...';
-        else if (i === 2) placeholder = '...and...';
-        else if (i === 3) placeholder = 'Suffix text (optional)...';
-      }
-      
-      segmentInputsHTML += `<input type="text" class="cloze-segment-input form-control" data-index="${i}" style="flex: 1; min-width: 140px; font-size:12px; padding:6px;" value="${escapeHTML(segments[i] || '')}" placeholder="${placeholder}">`;
-      
-      if (i < expectedSlots) {
-        segmentInputsHTML += `<span class="cloze-slot-badge" style="background:#025287; color:white; padding:4px 8px; border-radius:4px; font-weight:600; font-size:11px; white-space:nowrap; user-select:none;">[Slot ${i + 1}]</span>`;
-      }
+  const segments = getClozeSegments(c.text || '', expectedSlots);
+  let segmentInputsHTML = '';
+  
+  for (let i = 0; i <= expectedSlots; i++) {
+    let placeholder = 'Text...';
+    if (q.type === 'dyad') {
+      if (i === 0) placeholder = 'The nurse should...';
+      else if (i === 1) placeholder = '...as most evidenced by...';
+      else if (i === 2) placeholder = 'Suffix text (optional)...';
+    } else if (q.type === 'triad') {
+      if (i === 0) placeholder = 'The nurse should...';
+      else if (i === 1) placeholder = '...as most evidenced by...';
+      else if (i === 2) placeholder = '...and...';
+      else if (i === 3) placeholder = 'Suffix text (optional)...';
+    } else {
+      if (i === 0) placeholder = 'The patient should...';
+      else if (i === 1) placeholder = '...due to...';
+      else placeholder = 'Suffix text (optional)...';
     }
     
-    wrapper.innerHTML = `
-      <div class="cloze-warning">${instructions}</div>
-      <div class="form-group">
-        <label>Question Builder</label>
-        <div style="display:flex; flex-direction:column; gap:10px; background:rgba(255,255,255,0.03); padding:12px; border-radius:var(--radius-sm); border:1px solid var(--border-dash);">
-          <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center;">
-            ${segmentInputsHTML}
-          </div>
-        </div>
-      </div>
-      <div id="cloze-dropdowns-settings" style="margin-top: 16px;"></div>
-    `;
-  } else {
-    wrapper.innerHTML = `
-      <div class="cloze-warning">${instructions}</div>
-      <div class="form-group">
-        <label>Question</label>
-        <textarea id="cloze-text-box" rows="3" placeholder="e.g., The patient is at risk for [[drop0]] due to [[drop1]]."></textarea>
-      </div>
-      <div id="cloze-dropdowns-settings" style="margin-top: 16px;"></div>
-    `;
+    segmentInputsHTML += `<input type="text" class="cloze-segment-input form-control" data-index="${i}" style="flex: 1; min-width: 140px; font-size:12px; padding:6px;" value="${escapeHTML(segments[i] || '')}" placeholder="${placeholder}">`;
+    
+    if (i < expectedSlots) {
+      segmentInputsHTML += `<span class="cloze-slot-badge" style="background:#025287; color:white; padding:4px 8px; border-radius:4px; font-weight:600; font-size:11px; white-space:nowrap; user-select:none;">[Slot ${i + 1}]</span>`;
+    }
   }
+  
+  const actionButtonsHTML = !isDyadOrTriad ? `
+    <div style="margin-top: 10px; display: flex; gap: 8px;">
+      <button id="add-cloze-slot-btn" class="btn btn-secondary btn-xs">+ Add Dropdown Slot</button>
+      ${expectedSlots > 2 ? `<button id="remove-cloze-slot-btn" class="btn btn-danger btn-xs">- Remove Last Slot</button>` : ''}
+    </div>
+  ` : '';
+  
+  wrapper.innerHTML = `
+    <div class="cloze-warning">${instructions}</div>
+    <div class="form-group">
+      <label>Question</label>
+      <div style="display:flex; flex-direction:column; gap:10px; background:rgba(255,255,255,0.03); padding:12px; border-radius:var(--radius-sm); border:1px solid var(--border-dash);">
+        <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center;">
+          ${segmentInputsHTML}
+        </div>
+        ${actionButtonsHTML}
+      </div>
+    </div>
+    <div id="cloze-dropdowns-settings" style="margin-top: 16px;"></div>
+  `;
   
   box.appendChild(wrapper);
   
   const settingsBox = document.getElementById('cloze-dropdowns-settings');
   
   const parseCloze = () => {
-    if (isDyadOrTriad) {
-      const inputs = Array.from(wrapper.querySelectorAll('.cloze-segment-input'));
-      inputs.sort((a, b) => parseInt(a.dataset.index) - parseInt(b.dataset.index));
-      const segs = inputs.map(inp => inp.value);
-      
-      let assembledText = '';
-      for (let i = 0; i < expectedSlots; i++) {
-        assembledText += (segs[i] || '') + `[[drop${i}]]`;
-      }
-      assembledText += (segs[expectedSlots] || '');
-      c.text = assembledText;
-    } else {
-      const txtBox = document.getElementById('cloze-text-box');
-      c.text = txtBox ? txtBox.value : '';
+    const inputs = Array.from(wrapper.querySelectorAll('.cloze-segment-input'));
+    inputs.sort((a, b) => parseInt(a.dataset.index) - parseInt(b.dataset.index));
+    const segs = inputs.map(inp => inp.value);
+    
+    let assembledText = '';
+    for (let i = 0; i < expectedSlots; i++) {
+      assembledText += (segs[i] || '') + `[[drop${i}]]`;
     }
+    assembledText += (segs[expectedSlots] || '');
+    c.text = assembledText;
     
     settingsBox.innerHTML = '';
     const regex = /\[\[d(?:r)?op(\d+)\]\]/gi;
@@ -2434,15 +2226,54 @@ function renderClozeConfigurator(q, box) {
     c.dropdowns = temp;
   };
   
-  if (isDyadOrTriad) {
-    wrapper.querySelectorAll('.cloze-segment-input').forEach(inp => {
-      inp.addEventListener('input', parseCloze);
-    });
-  } else {
-    const txtBox = document.getElementById('cloze-text-box');
-    if (txtBox) {
-      txtBox.value = c.text;
-      txtBox.addEventListener('input', parseCloze);
+  wrapper.querySelectorAll('.cloze-segment-input').forEach(inp => {
+    inp.addEventListener('input', parseCloze);
+  });
+  
+  if (!isDyadOrTriad) {
+    const addBtn = wrapper.querySelector('#add-cloze-slot-btn');
+    if (addBtn) {
+      addBtn.addEventListener('click', () => {
+        const inputs = Array.from(wrapper.querySelectorAll('.cloze-segment-input'));
+        inputs.sort((a, b) => parseInt(a.dataset.index) - parseInt(b.dataset.index));
+        const segs = inputs.map(inp => inp.value);
+        
+        let assembledText = '';
+        for (let i = 0; i < expectedSlots; i++) {
+          assembledText += (segs[i] || '') + `[[drop${i}]]`;
+        }
+        assembledText += (segs[expectedSlots] || '');
+        c.text = assembledText + `[[drop${expectedSlots}]]`;
+        
+        c.dropdowns.push({
+          placeholder: 'Choose...',
+          options: [{ text: 'Correct Option', correct: true }, { text: 'Incorrect Option', correct: false }]
+        });
+        
+        renderDynamicQuestionConfigurator(q);
+      });
+    }
+    
+    const removeBtn = wrapper.querySelector('#remove-cloze-slot-btn');
+    if (removeBtn) {
+      removeBtn.addEventListener('click', () => {
+        if (expectedSlots <= 2) return;
+        
+        const inputs = Array.from(wrapper.querySelectorAll('.cloze-segment-input'));
+        inputs.sort((a, b) => parseInt(a.dataset.index) - parseInt(b.dataset.index));
+        const segs = inputs.map(inp => inp.value);
+        
+        let assembledText = '';
+        for (let i = 0; i < expectedSlots - 1; i++) {
+          assembledText += (segs[i] || '') + `[[drop${i}]]`;
+        }
+        assembledText += (segs[expectedSlots - 1] || '') + (segs[expectedSlots] || '');
+        c.text = assembledText;
+        
+        c.dropdowns.pop();
+        
+        renderDynamicQuestionConfigurator(q);
+      });
     }
   }
   
@@ -5248,54 +5079,42 @@ function formatNursesNotes(html, tabTitle) {
   const temp = document.createElement('div');
   temp.innerHTML = cleanedHtml;
   
-  // Flatten and group elements: merge text/paragraphs that belong to the same log entry
   const children = Array.from(temp.childNodes);
-  const output = document.createElement('div');
-  let currentP = null;
-  
   children.forEach(child => {
-    const childText = child.textContent.trim();
-    // Check if the node starts with a time (e.g. 1000 or 08:30)
-    const startsWithTime = /^\s*(?:<(strong|b)>)?\s*\b\d{2}:?\d{2}\b/i.test(childText);
-    
-    if (startsWithTime || !currentP) {
-      currentP = document.createElement('p');
-      output.appendChild(currentP);
-    }
-    
     if (child.nodeType === Node.ELEMENT_NODE) {
       const tagName = child.tagName.toLowerCase();
-      if (['p', 'div'].includes(tagName)) {
-        // Append inner HTML to flatten nested paragraph tags
-        currentP.innerHTML += (currentP.innerHTML ? ' ' : '') + child.innerHTML;
-      } else {
-        currentP.appendChild(child.cloneNode(true));
+      if (['p', 'div', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tagName)) {
+        const text = child.innerHTML.trim();
+        // Match 4-digit military times (e.g. 1000:, 08:30, 1200) at start of paragraph.
+        const timeRegex = /^(?:<(strong|b)>)?\s*(\b\d{2}:?\d{2}\b:?)\s*(?:<\/\1>)?\s*/i;
+        const match = text.match(timeRegex);
+        
+        if (match) {
+          const rawTime = match[2];
+          const restHtml = text.substring(match[0].length);
+          child.classList.add('nurse-note-row');
+          child.innerHTML = `<span class="nurse-note-time">${rawTime}</span><span class="nurse-note-text">${restHtml}</span>`;
+        } else {
+          child.classList.add('nurse-note-row');
+          child.innerHTML = `<span class="nurse-note-time">&nbsp;</span><span class="nurse-note-text">${child.innerHTML}</span>`;
+        }
       }
-    } else {
-      currentP.appendChild(child.cloneNode(true));
-    }
-  });
-
-  // Format each grouped paragraph as a grid row
-  const formattedRows = Array.from(output.childNodes);
-  formattedRows.forEach(child => {
-    if (child.nodeType === Node.ELEMENT_NODE) {
-      const text = child.innerHTML.trim();
-      const timeRegex = /^(?:<(strong|b)>)?\s*(\b\d{2}:?\d{2}\b)\s*(:?)\s*(?:<\/\1>)?\s*(:?)\s*/i;
+    } else if (child.nodeType === Node.TEXT_NODE && child.textContent.trim()) {
+      const text = child.textContent.trim();
+      const timeRegex = /^\s*(\b\d{2}:?\d{2}\b:?)\s*/i;
       const match = text.match(timeRegex);
-      
+      const newP = document.createElement('p');
+      newP.classList.add('nurse-note-row');
       if (match) {
-        const rawTime = match[2] + ':';
-        let restHtml = text.substring(match[0].length);
-        restHtml = restHtml.replace(/^(?:<br\s*\/?>|[:\s\t\n])+/i, ''); // Strip leading colons/linebreaks
-        child.classList.add('nurse-note-row');
-        child.innerHTML = `<span class="nurse-note-time">${rawTime}</span><span class="nurse-note-text">${restHtml}</span>`;
+        const rawTime = match[1];
+        const restText = text.substring(match[0].length);
+        newP.innerHTML = `<span class="nurse-note-time">${rawTime}</span><span class="nurse-note-text">${restText}</span>`;
       } else {
-        child.classList.add('nurse-note-row');
-        child.innerHTML = `<span class="nurse-note-time">&nbsp;</span><span class="nurse-note-text">${child.innerHTML}</span>`;
+        newP.innerHTML = `<span class="nurse-note-time">&nbsp;</span><span class="nurse-note-text">${text}</span>`;
       }
+      temp.replaceChild(newP, child);
     }
   });
   
-  return output.innerHTML;
+  return temp.innerHTML;
 }
