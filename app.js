@@ -3670,7 +3670,7 @@ function renderPlayerMatrixBase(q, stepIdx, box, isSubmitted, userAnswers, isMul
   note.className = 'matrix-note';
   note.textContent = isMultiResponse 
     ? 'Note: Each column must have at least 1 response option selected.' 
-    : 'Note: Each row must have 1 response option selected.';
+    : 'Note: Each row must have only 1 response option selected.';
   box.appendChild(note);
 }
 
