@@ -1412,7 +1412,11 @@ function setupTableInteractionMenu() {
         newCell.style.color = '#1e293b';
         newRow.appendChild(newCell);
       }
-      parent.insertBefore(newRow, row.nextSibling);
+      if (row.nextSibling) {
+        parent.insertBefore(newRow, row.nextSibling);
+      } else {
+        parent.appendChild(newRow);
+      }
       menu.style.display = 'none';
     };
 
@@ -1485,7 +1489,7 @@ function setupTableInteractionMenu() {
           newCell.style.background = 'white';
           newCell.style.color = '#1e293b';
         }
-        if (targetCell.nextSibling) {
+        if (targetCell && targetCell.nextSibling) {
           r.insertBefore(newCell, targetCell.nextSibling);
         } else {
           r.appendChild(newCell);
