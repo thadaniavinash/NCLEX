@@ -452,15 +452,22 @@ function initDashboardEvents() {
     exportAllStandaloneBtn.addEventListener('click', exportAllStandalone);
   }
   
-  document.getElementById('create-btn').addEventListener('click', createNewCase);
-  document.getElementById('load-default-btn').addEventListener('click', () => {
-    if (window.DEFAULT_CASE) {
-      caseStudies = [window.DEFAULT_CASE];
-      saveCasesToStorage();
-      showToast("Demo Cardiovascular case study loaded.");
-      renderDashboard();
-    }
-  });
+  const createBtn = document.getElementById('create-btn');
+  if (createBtn) {
+    createBtn.addEventListener('click', createNewCase);
+  }
+  
+  const loadDefaultBtn = document.getElementById('load-default-btn');
+  if (loadDefaultBtn) {
+    loadDefaultBtn.addEventListener('click', () => {
+      if (window.DEFAULT_CASE) {
+        caseStudies = [window.DEFAULT_CASE];
+        saveCasesToStorage();
+        showToast("Demo Cardiovascular case study loaded.");
+        renderDashboard();
+      }
+    });
+  }
 
   const importBtn = document.getElementById('import-btn');
   const importInput = document.getElementById('import-file-input');
