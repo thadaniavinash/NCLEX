@@ -13,6 +13,7 @@ const PATHOPHYSIOLOGY_DISORDERS = [
   "Musculoskeletal Disorders",
   "Neoplasia",
   "Neurological Disorders",
+  "Others",
   "Reproductive Disorders",
   "Respiratory Disorders",
   "Urinary Disorders"
