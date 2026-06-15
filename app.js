@@ -2418,177 +2418,199 @@ function renderMatrixMrConfigurator(q, box) {
 function renderMatrixBaseConfigurator(q, box, isMultiResponse) {
   if (!q.matrix) {
     q.matrix = {
-      firstColumnHeader: isMultiResponse ? 'Findings' : '',
-      columns: isMultiResponse ? ['DI', 'SIADH', 'Addison\'s'] : ['', ''],
+      firstColumnHeader: isMultiResponse ? 'Findings' : 'Potential Interventions',
+      columns: isMultiResponse ? ['DI', 'SIADH', "Addison's"] : ['Indicated', 'Not Indicated'],
       rows: isMultiResponse ? [
         { text: 'polyuria', correctIndices: [0, 2], correctIndex: 0 },
         { text: 'weight gain', correctIndices: [1], correctIndex: 0 }
-      ] : []
+      ] : [
+        { text: 'clear liquid diet', correctIndex: 0, correctIndices: [0] },
+        { text: 'soapsuds enema', correctIndex: 0, correctIndices: [0] }
+      ]
     };
   }
   const m = q.matrix;
-  if (m.firstColumnHeader === undefined) {
-    m.firstColumnHeader = isMultiResponse ? 'Findings' : '';
+  if (!m.firstColumnHeader) {
+    m.firstColumnHeader = isMultiResponse ? 'Findings' : 'Potential Interventions';
   }
-  
-  const expectedColsCount = isMultiResponse ? 3 : 2;
-  while (m.columns.length < expectedColsCount) m.columns.push('');
-  if (m.columns.length > expectedColsCount) m.columns = m.columns.slice(0, expectedColsCount);
-  
-  const firstColPlaceholder = isMultiResponse ? 'e.g. Findings, Client Findings, etc.' : 'Add text...';
-  
-  const columnsHtml = isMultiResponse ? `
-    <div class="matrix-designer-cols">
-      <label>Columns 2, 3, and 4 Header Names</label>
-      <div style="display:flex; flex-direction:column; gap:8px;">
-        <input type="text" id="matrix-col-2-input" class="form-control" value="${escapeHTML(m.columns[0] || '')}" placeholder="Add header text...">
-        <input type="text" id="matrix-col-3-input" class="form-control" value="${escapeHTML(m.columns[1] || '')}" placeholder="Add header text...">
-        <input type="text" id="matrix-col-4-input" class="form-control" value="${escapeHTML(m.columns[2] || '')}" placeholder="Add header text...">
-      </div>
-    </div>
-  ` : `
-    <div class="matrix-designer-cols">
-      <label>Column 2 and 3 Header Name</label>
-      <div style="display:flex; flex-direction:column; gap:8px;">
-        <input type="text" id="matrix-col-2-input" class="form-control" value="${escapeHTML(m.columns[0] || '')}" placeholder="Add header text...">
-        <input type="text" id="matrix-col-3-input" class="form-control" value="${escapeHTML(m.columns[1] || '')}" placeholder="Add header text...">
-      </div>
-    </div>
-  `;
+  if (!m.columns || m.columns.length < 2) {
+    m.columns = isMultiResponse ? ['DI', 'SIADH', "Addison's"] : ['Indicated', 'Not Indicated'];
+  }
+  if (!m.rows || m.rows.length === 0) {
+    m.rows = [
+      { text: 'New Row 1', correctIndex: 0, correctIndices: [0] },
+      { text: 'New Row 2', correctIndex: 0, correctIndices: [0] }
+    ];
+  }
 
   const wrapper = document.createElement('div');
-  wrapper.innerHTML = `
-    <div class="matrix-designer-header" style="margin-bottom: 16px;">
-      <label for="matrix-first-col-input">First Column Header Name</label>
-      <input type="text" id="matrix-first-col-input" class="form-control" value="${escapeHTML(m.firstColumnHeader)}" placeholder="${firstColPlaceholder}">
-    </div>
+  wrapper.className = 'matrix-table-editor-wrapper';
+  wrapper.style.marginTop = '12px';
 
-    ${columnsHtml}
+  const renderTable = () => {
+    wrapper.innerHTML = '';
     
-    <div class="matrix-designer-rows">
-      <label>Rows</label>
-      <div style="display:flex; gap:8px;">
-        <input type="text" id="new-matrix-row-input" class="form-control" placeholder="Add text...">
-        <button id="add-matrix-row-btn" class="btn btn-secondary btn-small">Add</button>
-      </div>
-      <div id="matrix-rows-list" class="chip-container"></div>
-    </div>
+    const tableContainer = document.createElement('div');
+    tableContainer.style.overflowX = 'auto';
     
-    <div class="matrix-answers-designer">
-      <label>Specify Correct Responses</label>
-      <div id="matrix-grid-designer-box" style="overflow-x: auto;"></div>
-    </div>
-  `;
-  box.appendChild(wrapper);
-  
-  const rowContainer = document.getElementById('matrix-rows-list');
-  const gridContainer = document.getElementById('matrix-grid-designer-box');
-  
-  const renderMatrixAll = () => {
-    // 2. Row Chips
-    rowContainer.innerHTML = '';
-    m.rows.forEach((r, idx) => {
-      const chip = document.createElement('div');
-      chip.className = 'col-chip';
-      chip.style.borderColor = '#475569';
-      chip.innerHTML = `
-        <span>${escapeHTML(r.text)}</span>
-        <button class="btn-chip-delete">&times;</button>
-      `;
-      chip.querySelector('.btn-chip-delete').addEventListener('click', () => {
-        m.rows.splice(idx, 1);
-        renderMatrixAll();
-      });
-      rowContainer.appendChild(chip);
+    const table = document.createElement('table');
+    table.className = 'matrix-grid-designer-table';
+    table.style.width = '100%';
+    table.style.borderCollapse = 'collapse';
+    table.style.marginBottom = '12px';
+    
+    // THEAD
+    const thead = document.createElement('thead');
+    const headerRow = document.createElement('tr');
+    
+    // First column header input
+    const thFirst = document.createElement('th');
+    thFirst.style.padding = '8px';
+    thFirst.style.minWidth = '180px';
+    thFirst.innerHTML = `
+      <input type="text" class="form-control matrix-first-header-input" style="font-weight:bold; font-size:12px; padding:6px;" value="${escapeHTML(m.firstColumnHeader)}" placeholder="e.g., Potential Interventions">
+    `;
+    thFirst.querySelector('.matrix-first-header-input').addEventListener('input', (e) => {
+      m.firstColumnHeader = e.target.value;
     });
-
-    // 3. Answer Grid
-    gridContainer.innerHTML = '';
-    if (m.rows.length === 0) {
-      gridContainer.innerHTML = '<p style="font-size:12px; color:var(--text-dash-secondary);">Please add rows.</p>';
-      return;
-    }
-    const tbl = document.createElement('table');
-    tbl.className = 'matrix-grid-designer-table';
+    headerRow.appendChild(thFirst);
     
-    let html = `<thead><tr><th>${escapeHTML(m.firstColumnHeader || '')}</th>`;
-    m.columns.forEach(col => { html += `<th>${escapeHTML(col || '')}</th>`; });
-    html += `</tr></thead><tbody>`;
+    // Additional column headers inputs
+    m.columns.forEach((col, cIdx) => {
+      const thCol = document.createElement('th');
+      thCol.style.padding = '8px';
+      thCol.style.textAlign = 'center';
+      thCol.style.position = 'relative';
+      thCol.style.minWidth = '120px';
+      thCol.innerHTML = `
+        <div style="display:flex; align-items:center; gap:4px; justify-content:center;">
+          <input type="text" class="form-control matrix-col-header-input" style="font-size:12px; text-align:center; padding:6px;" value="${escapeHTML(col)}" placeholder="Column ${cIdx+2}">
+          ${m.columns.length > 2 ? `<button class="delete-col-btn" style="background:transparent; border:none; color:#ef4444; font-size:16px; cursor:pointer; padding:0 4px;">&times;</button>` : ''}
+        </div>
+      `;
+      thCol.querySelector('.matrix-col-header-input').addEventListener('input', (e) => {
+        m.columns[cIdx] = e.target.value;
+      });
+      if (m.columns.length > 2) {
+        thCol.querySelector('.delete-col-btn').addEventListener('click', () => {
+          m.columns.splice(cIdx, 1);
+          // Shift correct indexes if needed
+          m.rows.forEach(r => {
+            if (isMultiResponse) {
+              r.correctIndices = (r.correctIndices || []).filter(idx => idx !== cIdx).map(idx => idx > cIdx ? idx - 1 : idx);
+            } else {
+              if (r.correctIndex === cIdx) r.correctIndex = 0;
+              else if (r.correctIndex > cIdx) r.correctIndex--;
+            }
+          });
+          renderTable();
+        });
+      }
+      headerRow.appendChild(thCol);
+    });
     
+    // Actions column header
+    const thActions = document.createElement('th');
+    thActions.style.width = '50px';
+    thActions.style.padding = '8px';
+    thActions.innerHTML = '';
+    headerRow.appendChild(thActions);
+    
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+    
+    // TBODY
+    const tbody = document.createElement('tbody');
     m.rows.forEach((r, rIdx) => {
-      html += `<tr><td>${escapeHTML(r.text)}</td>`;
+      const tr = document.createElement('tr');
+      
+      // Row Label Input
+      const tdLabel = document.createElement('td');
+      tdLabel.style.padding = '8px';
+      tdLabel.innerHTML = `
+        <input type="text" class="form-control matrix-row-label-input" style="font-size:12px; padding:6px;" value="${escapeHTML(r.text)}" placeholder="Row label...">
+      `;
+      tdLabel.querySelector('.matrix-row-label-input').addEventListener('input', (e) => {
+        r.text = e.target.value;
+      });
+      tr.appendChild(tdLabel);
+      
+      // Correct indicator cells
       m.columns.forEach((col, cIdx) => {
+        const tdCheck = document.createElement('td');
+        tdCheck.style.padding = '8px';
+        tdCheck.style.textAlign = 'center';
+        
         const isChecked = isMultiResponse
           ? (r.correctIndices || []).includes(cIdx)
           : r.correctIndex === cIdx;
         
-        html += `<td>
-          <input type="${isMultiResponse ? 'checkbox' : 'radio'}" name="matrix-row-${rIdx}" ${isChecked ? 'checked' : ''} data-row="${rIdx}" data-col="${cIdx}">
-        </td>`;
-      });
-      html += `</tr>`;
-    });
-    html += `</tbody>`;
-    tbl.innerHTML = html;
-    
-    tbl.querySelectorAll('input').forEach(input => {
-      input.addEventListener('change', (e) => {
-        const row = parseInt(e.target.dataset.row);
-        const col = parseInt(e.target.dataset.col);
-        if (isMultiResponse) {
-          if (!m.rows[row].correctIndices) m.rows[row].correctIndices = [];
-          if (e.target.checked) {
-            m.rows[row].correctIndices.push(col);
+        tdCheck.innerHTML = `
+          <input type="${isMultiResponse ? 'checkbox' : 'radio'}" name="matrix-row-radio-${rIdx}" ${isChecked ? 'checked' : ''} style="transform: scale(1.1); cursor:pointer;">
+        `;
+        tdCheck.querySelector('input').addEventListener('change', (e) => {
+          if (isMultiResponse) {
+            if (!r.correctIndices) r.correctIndices = [];
+            if (e.target.checked) {
+              r.correctIndices.push(cIdx);
+            } else {
+              r.correctIndices = r.correctIndices.filter(v => v !== cIdx);
+            }
           } else {
-            m.rows[row].correctIndices = m.rows[row].correctIndices.filter(v => v !== col);
+            r.correctIndex = cIdx;
           }
-        } else {
-          m.rows[row].correctIndex = col;
-        }
+        });
+        tr.appendChild(tdCheck);
       });
+      
+      // Delete Row Button Cell
+      const tdDel = document.createElement('td');
+      tdDel.style.padding = '8px';
+      tdDel.style.textAlign = 'center';
+      tdDel.innerHTML = `
+        <button class="delete-row-btn" style="background:transparent; border:none; color:#ef4444; font-size:18px; cursor:pointer; padding:0;">&times;</button>
+      `;
+      tdDel.querySelector('.delete-row-btn').addEventListener('click', () => {
+        m.rows.splice(rIdx, 1);
+        renderTable();
+      });
+      tr.appendChild(tdDel);
+      
+      tbody.appendChild(tr);
     });
+    table.appendChild(tbody);
+    tableContainer.appendChild(table);
+    wrapper.appendChild(tableContainer);
     
-    gridContainer.appendChild(tbl);
+    // Bottom Action Buttons
+    const btnContainer = document.createElement('div');
+    btnContainer.style.display = 'flex';
+    btnContainer.style.gap = '10px';
+    btnContainer.style.marginTop = '10px';
+    
+    const addRowBtn = document.createElement('button');
+    addRowBtn.className = 'btn btn-secondary btn-xs';
+    addRowBtn.textContent = '+ Add Row';
+    addRowBtn.addEventListener('click', () => {
+      m.rows.push({ text: '', correctIndex: 0, correctIndices: [0] });
+      renderTable();
+    });
+    btnContainer.appendChild(addRowBtn);
+    
+    const addColBtn = document.createElement('button');
+    addColBtn.className = 'btn btn-secondary btn-xs';
+    addColBtn.textContent = '+ Add Column';
+    addColBtn.addEventListener('click', () => {
+      m.columns.push('');
+      renderTable();
+    });
+    btnContainer.appendChild(addColBtn);
+    
+    wrapper.appendChild(btnContainer);
   };
-
-  renderMatrixAll();
-
-  // Watch first column header input real-time
-  document.getElementById('matrix-first-col-input').addEventListener('input', (e) => {
-    m.firstColumnHeader = e.target.value;
-    const firstHeaderTh = gridContainer.querySelector('thead th');
-    if (firstHeaderTh) {
-      firstHeaderTh.textContent = m.firstColumnHeader || '';
-    }
-  });
-
-  const col2Input = document.getElementById('matrix-col-2-input');
-  const col3Input = document.getElementById('matrix-col-3-input');
-  const col4Input = document.getElementById('matrix-col-4-input');
-  if (col2Input && col3Input && col4Input) {
-    col2Input.addEventListener('input', (e) => {
-      m.columns[0] = e.target.value;
-      renderMatrixAll();
-    });
-    col3Input.addEventListener('input', (e) => {
-      m.columns[1] = e.target.value;
-      renderMatrixAll();
-    });
-    col4Input.addEventListener('input', (e) => {
-      m.columns[2] = e.target.value;
-      renderMatrixAll();
-    });
-  }
-
-  document.getElementById('add-matrix-row-btn').addEventListener('click', () => {
-    const input = document.getElementById('new-matrix-row-input');
-    const val = input.value.trim();
-    if (val) {
-      m.rows.push({ text: val, correctIndex: 0, correctIndices: [0] });
-      input.value = '';
-      renderMatrixAll();
-    }
-  });
+  
+  renderTable();
+  box.appendChild(wrapper);
 }
 
 // 5. Select N Configurator
