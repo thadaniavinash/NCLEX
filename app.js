@@ -1403,7 +1403,14 @@ function setupTableInteractionMenu() {
       
       const newRow = document.createElement('tr');
       for (let j = 0; j < colsCount; j++) {
-        newRow.innerHTML += '<td placeholder="Cell" style="border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;"></td>';
+        const newCell = document.createElement('td');
+        newCell.setAttribute('placeholder', 'Cell');
+        newCell.style.border = '1px solid #ccd8e0';
+        newCell.style.padding = '8px';
+        newCell.style.minWidth = '80px';
+        newCell.style.background = 'white';
+        newCell.style.color = '#1e293b';
+        newRow.appendChild(newCell);
       }
       row.parentNode.insertBefore(newRow, row.nextSibling);
       menu.style.display = 'none';
@@ -1419,11 +1426,24 @@ function setupTableInteractionMenu() {
       // If we insert above the head row, keep it th or td appropriately
       const isHeader = row.parentNode.tagName.toLowerCase() === 'thead';
       for (let j = 0; j < colsCount; j++) {
+        const newCell = document.createElement(isHeader ? 'th' : 'td');
         if (isHeader) {
-          newRow.innerHTML += `<th placeholder="Header ${j+1}" style="border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;"></th>`;
+          newCell.setAttribute('placeholder', `Header ${j+1}`);
+          newCell.style.border = '1px solid #ccd8e0';
+          newCell.style.padding = '8px';
+          newCell.style.background = '#025287';
+          newCell.style.color = 'white';
+          newCell.style.fontWeight = '600';
+          newCell.style.textAlign = 'left';
         } else {
-          newRow.innerHTML += '<td placeholder="Cell" style="border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;"></td>';
+          newCell.setAttribute('placeholder', 'Cell');
+          newCell.style.border = '1px solid #ccd8e0';
+          newCell.style.padding = '8px';
+          newCell.style.minWidth = '80px';
+          newCell.style.background = 'white';
+          newCell.style.color = '#1e293b';
         }
+        newRow.appendChild(newCell);
       }
       row.parentNode.insertBefore(newRow, row);
       menu.style.display = 'none';
