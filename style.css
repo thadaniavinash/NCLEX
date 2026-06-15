@@ -2525,7 +2525,7 @@ td.matrix-cell-incorrect {
 }
 
 /* Placeholders for table cells when editing */
-.nclex-editor-table th:empty::before {
+[contenteditable="true"] .nclex-editor-table th:empty::before {
   content: attr(placeholder);
   color: rgba(255, 255, 255, 0.6) !important;
   font-weight: 600 !important;
@@ -2533,7 +2533,7 @@ td.matrix-cell-incorrect {
   display: inline-block;
 }
 
-.nclex-editor-table td:empty::before {
+[contenteditable="true"] .nclex-editor-table td:empty::before {
   content: attr(placeholder);
   color: #94a3b8 !important;
   font-style: italic;
