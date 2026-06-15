@@ -1395,7 +1395,9 @@ function setupTableInteractionMenu() {
     document.body.appendChild(menu);
 
     // Context Actions implementation
-    menu.querySelector('#tbl-menu-add-row-below').onclick = () => {
+    menu.querySelector('#tbl-menu-add-row-below').addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       if (!selectedTableCellElement) return;
       const row = selectedTableCellElement.closest('tr');
       const parent = row.parentNode;
@@ -1418,9 +1420,11 @@ function setupTableInteractionMenu() {
         parent.appendChild(newRow);
       }
       menu.style.display = 'none';
-    };
+    });
 
-    menu.querySelector('#tbl-menu-add-row-above').onclick = () => {
+    menu.querySelector('#tbl-menu-add-row-above').addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       if (!selectedTableCellElement) return;
       const row = selectedTableCellElement.closest('tr');
       const parent = row.parentNode;
@@ -1450,9 +1454,11 @@ function setupTableInteractionMenu() {
       }
       parent.insertBefore(newRow, row);
       menu.style.display = 'none';
-    };
+    });
 
-    menu.querySelector('#tbl-menu-delete-row').onclick = () => {
+    menu.querySelector('#tbl-menu-delete-row').addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       if (!selectedTableCellElement) return;
       const row = selectedTableCellElement.closest('tr');
       const table = selectedTableCellElement.closest('table');
@@ -1460,9 +1466,11 @@ function setupTableInteractionMenu() {
         row.remove();
       }
       menu.style.display = 'none';
-    };
+    });
 
-    menu.querySelector('#tbl-menu-add-col-right').onclick = () => {
+    menu.querySelector('#tbl-menu-add-col-right').addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       if (!selectedTableCellElement) return;
       const cellIndex = selectedTableCellElement.cellIndex;
       const table = selectedTableCellElement.closest('table');
@@ -1496,9 +1504,11 @@ function setupTableInteractionMenu() {
         }
       });
       menu.style.display = 'none';
-    };
+    });
 
-    menu.querySelector('#tbl-menu-add-col-left').onclick = () => {
+    menu.querySelector('#tbl-menu-add-col-left').addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       if (!selectedTableCellElement) return;
       const cellIndex = selectedTableCellElement.cellIndex;
       const table = selectedTableCellElement.closest('table');
@@ -1528,9 +1538,11 @@ function setupTableInteractionMenu() {
         r.insertBefore(newCell, targetCell);
       });
       menu.style.display = 'none';
-    };
+    });
 
-    menu.querySelector('#tbl-menu-delete-col').onclick = () => {
+    menu.querySelector('#tbl-menu-delete-col').addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       if (!selectedTableCellElement) return;
       const cellIndex = selectedTableCellElement.cellIndex;
       const table = selectedTableCellElement.closest('table');
@@ -1544,7 +1556,7 @@ function setupTableInteractionMenu() {
         });
       }
       menu.style.display = 'none';
-    };
+    });
   }
 
   // Bind click listener to table elements inside editor to position the menu
