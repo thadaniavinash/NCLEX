@@ -822,9 +822,7 @@ function renderCasesDashboard() {
     card.querySelector('.play-case-btn').addEventListener('click', () => startPlayer(c));
     card.querySelector('.card-id-badge').addEventListener('click', (e) => {
       e.stopPropagation();
-      const baseUrl = window.location.protocol.startsWith('http') 
-        ? (window.location.origin + window.location.pathname) 
-        : 'https://thadaniavinash.github.io/NCLEX/';
+      const baseUrl = 'https://thadaniavinash.github.io/NCLEX/';
       navigator.clipboard.writeText(`${baseUrl}?cases=${c.id}`);
       showToast("Launch link copied to clipboard!");
     });
@@ -953,9 +951,7 @@ function renderStandaloneDashboard() {
     card.querySelector('.play-q-btn').addEventListener('click', () => startPlayer(q));
     card.querySelector('.card-id-badge').addEventListener('click', (e) => {
       e.stopPropagation();
-      const baseUrl = window.location.protocol.startsWith('http') 
-        ? (window.location.origin + window.location.pathname) 
-        : 'https://thadaniavinash.github.io/NCLEX/';
+      const baseUrl = 'https://thadaniavinash.github.io/NCLEX/';
       navigator.clipboard.writeText(`${baseUrl}?standalone=${q.id}`);
       showToast("Launch link copied to clipboard!");
     });
