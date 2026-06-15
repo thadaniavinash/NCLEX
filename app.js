@@ -1285,7 +1285,7 @@ function initRichTextEditors() {
       } else if (symbol) {
         document.execCommand('insertText', false, symbol);
       } else if (btn.classList.contains('table-insert-btn')) {
-        showTableInsertModal(editor);
+        insertTableAtCursor(editor, 3, 2);
       }
       
       // Restore focus and selection range (only if not already focused, or if text was selected)
