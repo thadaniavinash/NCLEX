@@ -15,7 +15,8 @@ const PATHOPHYSIOLOGY_DISORDERS = [
   "Neurological Disorders",
   "Reproductive Disorders",
   "Respiratory Disorders",
-  "Urinary Disorders"
+  "Urinary Disorders",
+  "Others"
 ];
 
 let caseStudies = [];
