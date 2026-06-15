@@ -1778,6 +1778,7 @@ function initializeQuestionTypeDefaults(q) {
         ];
       }
     } else if ((q.type === 'dropdown_cloze' || q.type === 'drag_drop_cloze') && !textStr) {
+      q.stem = q.stem || 'Complete the following sentence by choosing from the list of options.';
       q.cloze.text = 'The patient should be ordered [[drop0]] due to [[drop1]].';
       q.cloze.dropdowns = [
         { placeholder: 'Choose...', options: [{ text: 'Choice A', correct: true }, { text: 'Choice B', correct: false }] },
@@ -2318,7 +2319,7 @@ function renderClozeConfigurator(q, box) {
     wrapper.innerHTML = `
       <div class="cloze-warning">${instructions}</div>
       <div class="form-group">
-        <label>Sentence Template Builder</label>
+        <label>Question Builder</label>
         <div style="display:flex; flex-direction:column; gap:10px; background:rgba(255,255,255,0.03); padding:12px; border-radius:var(--radius-sm); border:1px solid var(--border-dash);">
           <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center;">
             ${segmentInputsHTML}
@@ -2331,7 +2332,7 @@ function renderClozeConfigurator(q, box) {
     wrapper.innerHTML = `
       <div class="cloze-warning">${instructions}</div>
       <div class="form-group">
-        <label>Sentence Template</label>
+        <label>Question</label>
         <textarea id="cloze-text-box" rows="3" placeholder="e.g., The patient is at risk for [[drop0]] due to [[drop1]]."></textarea>
       </div>
       <div id="cloze-dropdowns-settings" style="margin-top: 16px;"></div>
