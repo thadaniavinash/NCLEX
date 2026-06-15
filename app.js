@@ -1395,7 +1395,7 @@ function setupTableInteractionMenu() {
     document.body.appendChild(menu);
 
     // Context Actions implementation
-    menu.querySelector('#tbl-menu-add-row-below').addEventListener('click', (e) => {
+    menu.querySelector('#tbl-menu-add-row-below').addEventListener('mousedown', (e) => {
       e.preventDefault();
       e.stopPropagation();
       if (!selectedTableCellElement) return;
@@ -1422,7 +1422,7 @@ function setupTableInteractionMenu() {
       menu.style.display = 'none';
     });
 
-    menu.querySelector('#tbl-menu-add-row-above').addEventListener('click', (e) => {
+    menu.querySelector('#tbl-menu-add-row-above').addEventListener('mousedown', (e) => {
       e.preventDefault();
       e.stopPropagation();
       if (!selectedTableCellElement) return;
@@ -1456,7 +1456,7 @@ function setupTableInteractionMenu() {
       menu.style.display = 'none';
     });
 
-    menu.querySelector('#tbl-menu-delete-row').addEventListener('click', (e) => {
+    menu.querySelector('#tbl-menu-delete-row').addEventListener('mousedown', (e) => {
       e.preventDefault();
       e.stopPropagation();
       if (!selectedTableCellElement) return;
@@ -1468,7 +1468,7 @@ function setupTableInteractionMenu() {
       menu.style.display = 'none';
     });
 
-    menu.querySelector('#tbl-menu-add-col-right').addEventListener('click', (e) => {
+    menu.querySelector('#tbl-menu-add-col-right').addEventListener('mousedown', (e) => {
       e.preventDefault();
       e.stopPropagation();
       if (!selectedTableCellElement) return;
@@ -1506,7 +1506,7 @@ function setupTableInteractionMenu() {
       menu.style.display = 'none';
     });
 
-    menu.querySelector('#tbl-menu-add-col-left').addEventListener('click', (e) => {
+    menu.querySelector('#tbl-menu-add-col-left').addEventListener('mousedown', (e) => {
       e.preventDefault();
       e.stopPropagation();
       if (!selectedTableCellElement) return;
@@ -1540,7 +1540,7 @@ function setupTableInteractionMenu() {
       menu.style.display = 'none';
     });
 
-    menu.querySelector('#tbl-menu-delete-col').addEventListener('click', (e) => {
+    menu.querySelector('#tbl-menu-delete-col').addEventListener('mousedown', (e) => {
       e.preventDefault();
       e.stopPropagation();
       if (!selectedTableCellElement) return;
