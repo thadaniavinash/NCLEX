@@ -1320,62 +1320,7 @@ function initRichTextEditors() {
   });
 }
 
-function showTableInsertModal(editor) {
-  let modal = document.getElementById('table-insert-modal');
-  if (!modal) {
-    modal = document.createElement('div');
-    modal.id = 'table-insert-modal';
-    modal.className = 'modal-overlay';
-    modal.style.zIndex = '9999';
-    modal.innerHTML = `
-      <div class="modal-content" style="max-width:320px; background:#1e293b; border:1px solid #334155; border-radius:var(--radius-md); padding:20px; box-shadow:var(--shadow-lg);">
-        <h4 style="margin-top:0; margin-bottom:16px; font-size:14px; font-weight:600; color:white;">Insert Table</h4>
-        <div class="form-group" style="margin-bottom:12px;">
-          <label style="display:block; margin-bottom:6px; font-size:12px; color:#94a3b8;">Rows</label>
-          <select id="table-modal-rows" class="form-control" style="width:100%; height:32px; font-size:12px; padding:4px 8px; background:#0f172a; border-color:#334155; color:white; cursor:pointer;">
-            <option value="2">2</option>
-            <option value="3" selected>3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-          </select>
-        </div>
-        <div class="form-group" style="margin-bottom:20px;">
-          <label style="display:block; margin-bottom:6px; font-size:12px; color:#94a3b8;">Columns</label>
-          <select id="table-modal-cols" class="form-control" style="width:100%; height:32px; font-size:12px; padding:4px 8px; background:#0f172a; border-color:#334155; color:white; cursor:pointer;">
-            <option value="2" selected>2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </div>
-        <div style="display:flex; gap:10px; justify-content:flex-end;">
-          <button id="table-modal-cancel" class="btn btn-secondary" style="font-size:12px; padding:6px 12px; height:32px;">Cancel</button>
-          <button id="table-modal-insert" class="btn btn-primary" style="font-size:12px; padding:6px 12px; height:32px;">Insert</button>
-        </div>
-      </div>
-    `;
-    document.body.appendChild(modal);
-  }
-
-  modal.classList.remove('hidden');
-
-  const cleanUp = () => {
-    modal.classList.add('hidden');
-  };
-
-  modal.querySelector('#table-modal-cancel').onclick = cleanUp;
-  modal.querySelector('#table-modal-insert').onclick = () => {
-    const rows = parseInt(modal.querySelector('#table-modal-rows').value);
-    const cols = parseInt(modal.querySelector('#table-modal-cols').value);
-    insertTableAtCursor(editor, rows, cols);
-    cleanUp();
-  };
-}
-
-function insertTableAtCursor(editorDiv, rows, cols) {
+function insertTableAtCursor(editorDiv, rows = 3, cols = 2) {
   let tableHTML = '<table class="nclex-editor-table" style="width:100%; border-collapse:collapse; margin:12px 0;">';
   // Header Row
   tableHTML += '<thead><tr>';
@@ -1383,8 +1328,9 @@ function insertTableAtCursor(editorDiv, rows, cols) {
     tableHTML += `<th placeholder="Header ${j+1}" style="border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;"></th>`;
   }
   tableHTML += '</tr></thead><tbody>';
-  // Data Rows
-  for (let i = 0; i < rows; i++) {
+  // Data Rows (excluding the header row from count. rows=3 includes 1 header row, so 2 body rows)
+  const bodyRowsCount = rows - 1;
+  for (let i = 0; i < bodyRowsCount; i++) {
     tableHTML += '<tr>';
     for (let j = 0; j < cols; j++) {
       tableHTML += '<td placeholder="Cell" style="border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;"></td>';
@@ -1397,7 +1343,6 @@ function insertTableAtCursor(editorDiv, rows, cols) {
   const selection = window.getSelection();
   if (selection.rangeCount > 0) {
     const range = selection.getRangeAt(0);
-    // Ensure selection is inside the editor
     if (editorDiv.contains(range.commonAncestorContainer)) {
       range.deleteContents();
       const el = document.createElement('div');
@@ -1417,8 +1362,166 @@ function insertTableAtCursor(editorDiv, rows, cols) {
       return;
     }
   }
-  // Fallback if not focused/inside editor
   editorDiv.innerHTML += tableHTML;
+}
+
+// Interactive helper variables to keep track of clicked table elements for modifications
+let selectedTableCellElement = null;
+
+function setupTableInteractionMenu() {
+  let menu = document.getElementById('table-interaction-menu');
+  if (!menu) {
+    menu = document.createElement('div');
+    menu.id = 'table-interaction-menu';
+    menu.style.position = 'absolute';
+    menu.style.display = 'none';
+    menu.style.zIndex = '10000';
+    menu.style.background = '#1e293b';
+    menu.style.border = '1px solid #475569';
+    menu.style.borderRadius = 'var(--radius-md)';
+    menu.style.padding = '6px';
+    menu.style.boxShadow = 'var(--shadow-lg)';
+    menu.style.gap = '4px';
+    menu.style.flexDirection = 'column';
+    menu.innerHTML = `
+      <button id="tbl-menu-add-row-below" class="btn btn-secondary btn-xs" style="text-align:left; justify-content:flex-start; width:100%;">+ Add Row Below</button>
+      <button id="tbl-menu-add-row-above" class="btn btn-secondary btn-xs" style="text-align:left; justify-content:flex-start; width:100%;">+ Add Row Above</button>
+      <button id="tbl-menu-delete-row" class="btn btn-danger btn-xs" style="text-align:left; justify-content:flex-start; width:100%;">- Delete Row</button>
+      <div style="border-top:1px solid #334155; margin:4px 0;"></div>
+      <button id="tbl-menu-add-col-right" class="btn btn-secondary btn-xs" style="text-align:left; justify-content:flex-start; width:100%;">+ Add Column Right</button>
+      <button id="tbl-menu-add-col-left" class="btn btn-secondary btn-xs" style="text-align:left; justify-content:flex-start; width:100%;">+ Add Column Left</button>
+      <button id="tbl-menu-delete-col" class="btn btn-danger btn-xs" style="text-align:left; justify-content:flex-start; width:100%;">- Delete Column</button>
+    `;
+    document.body.appendChild(menu);
+
+    // Context Actions implementation
+    menu.querySelector('#tbl-menu-add-row-below').onclick = () => {
+      if (!selectedTableCellElement) return;
+      const row = selectedTableCellElement.closest('tr');
+      const table = selectedTableCellElement.closest('table');
+      const colsCount = row.cells.length;
+      
+      const newRow = document.createElement('tr');
+      for (let j = 0; j < colsCount; j++) {
+        newRow.innerHTML += '<td placeholder="Cell" style="border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;"></td>';
+      }
+      row.parentNode.insertBefore(newRow, row.nextSibling);
+      menu.style.display = 'none';
+    };
+
+    menu.querySelector('#tbl-menu-add-row-above').onclick = () => {
+      if (!selectedTableCellElement) return;
+      const row = selectedTableCellElement.closest('tr');
+      const table = selectedTableCellElement.closest('table');
+      const colsCount = row.cells.length;
+      
+      const newRow = document.createElement('tr');
+      // If we insert above the head row, keep it th or td appropriately
+      const isHeader = row.parentNode.tagName.toLowerCase() === 'thead';
+      for (let j = 0; j < colsCount; j++) {
+        if (isHeader) {
+          newRow.innerHTML += `<th placeholder="Header ${j+1}" style="border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;"></th>`;
+        } else {
+          newRow.innerHTML += '<td placeholder="Cell" style="border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;"></td>';
+        }
+      }
+      row.parentNode.insertBefore(newRow, row);
+      menu.style.display = 'none';
+    };
+
+    menu.querySelector('#tbl-menu-delete-row').onclick = () => {
+      if (!selectedTableCellElement) return;
+      const row = selectedTableCellElement.closest('tr');
+      const table = selectedTableCellElement.closest('table');
+      // Do not allow deleting the last row
+      if (table.querySelectorAll('tr').length > 1) {
+        row.remove();
+      }
+      menu.style.display = 'none';
+    };
+
+    menu.querySelector('#tbl-menu-add-col-right').onclick = () => {
+      if (!selectedTableCellElement) return;
+      const cellIndex = selectedTableCellElement.cellIndex;
+      const table = selectedTableCellElement.closest('table');
+      const rows = table.querySelectorAll('tr');
+      
+      rows.forEach(r => {
+        const isHeader = r.closest('thead') !== null;
+        const targetCell = r.cells[cellIndex];
+        const newCell = document.createElement(isHeader ? 'th' : 'td');
+        if (isHeader) {
+          newCell.outerHTML = `<th placeholder="Header" style="border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;"></th>`;
+        } else {
+          newCell.outerHTML = '<td placeholder="Cell" style="border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;"></td>';
+        }
+        const insertElement = document.createElement('div');
+        insertElement.innerHTML = isHeader 
+          ? `<th placeholder="Header" style="border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;"></th>`
+          : '<td placeholder="Cell" style="border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;"></td>';
+        r.insertBefore(insertElement.firstElementChild, targetCell.nextSibling);
+      });
+      menu.style.display = 'none';
+    };
+
+    menu.querySelector('#tbl-menu-add-col-left').onclick = () => {
+      if (!selectedTableCellElement) return;
+      const cellIndex = selectedTableCellElement.cellIndex;
+      const table = selectedTableCellElement.closest('table');
+      const rows = table.querySelectorAll('tr');
+      
+      rows.forEach(r => {
+        const isHeader = r.closest('thead') !== null;
+        const targetCell = r.cells[cellIndex];
+        const insertElement = document.createElement('div');
+        insertElement.innerHTML = isHeader 
+          ? `<th placeholder="Header" style="border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;"></th>`
+          : '<td placeholder="Cell" style="border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;"></td>';
+        r.insertBefore(insertElement.firstElementChild, targetCell);
+      });
+      menu.style.display = 'none';
+    };
+
+    menu.querySelector('#tbl-menu-delete-col').onclick = () => {
+      if (!selectedTableCellElement) return;
+      const cellIndex = selectedTableCellElement.cellIndex;
+      const table = selectedTableCellElement.closest('table');
+      const rows = table.querySelectorAll('tr');
+      
+      // Do not allow deleting the last column
+      if (selectedTableCellElement.closest('tr').cells.length > 1) {
+        rows.forEach(r => {
+          if (r.cells[cellIndex]) {
+            r.cells[cellIndex].remove();
+          }
+        });
+      }
+      menu.style.display = 'none';
+    };
+  }
+
+  // Bind click listener to table elements inside editor to position the menu
+  document.addEventListener('click', (e) => {
+    const cell = e.target.closest('.rich-text-editor td, .rich-text-editor th');
+    if (cell) {
+      selectedTableCellElement = cell;
+      const rect = cell.getBoundingClientRect();
+      menu.style.display = 'flex';
+      menu.style.top = `${rect.bottom + window.scrollY}px`;
+      menu.style.left = `${rect.left + window.scrollX}px`;
+    } else {
+      if (!e.target.closest('#table-interaction-menu')) {
+        menu.style.display = 'none';
+      }
+    }
+  });
+}
+
+// Run initializer on window load
+if (document.readyState === 'loading') {
+  window.addEventListener('DOMContentLoaded', setupTableInteractionMenu);
+} else {
+  setupTableInteractionMenu();
 }
 
 function toggleTheme(forceLight) {
