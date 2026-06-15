@@ -2203,9 +2203,22 @@ function renderClozeConfigurator(q, box) {
           const row = document.createElement('div');
           row.className = 'option-config-row';
           const placeholderText = `Choice ${String.fromCharCode(65 + oIdx)}`;
+          
+          let val = opt.text || '';
+          const genericDefaults = [
+            'Choice A', 'Choice B', 'Choice C', 'Choice D', 'Choice E',
+            'Choice X', 'Choice Y', 'Choice Z',
+            'Choice 1', 'Choice 2', 'Choice 3',
+            'Correct Option', 'Incorrect Option', 'New Choice'
+          ];
+          if (genericDefaults.includes(val)) {
+            val = '';
+            opt.text = '';
+          }
+          
           row.innerHTML = `
             <input type="radio" name="cloze-correct-${idx}" class="choice-correct-toggle" ${opt.correct ? 'checked' : ''}>
-            <input type="text" class="option-text-input form-control" style="font-size:12px; padding:6px;" value="${escapeHTML(opt.text || '')}" placeholder="${placeholderText}">
+            <input type="text" class="option-text-input form-control" style="font-size:12px; padding:6px;" value="${escapeHTML(val)}" placeholder="${placeholderText}">
             <button class="btn-option-delete">&times;</button>
           `;
           
