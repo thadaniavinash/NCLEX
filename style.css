@@ -2540,6 +2540,38 @@ td.matrix-cell-incorrect {
   display: inline-block;
 }
 
+/* Table cell interaction controls (relative positioning and hover chevron button) */
+[contenteditable="true"] .nclex-editor-table th,
+[contenteditable="true"] .nclex-editor-table td {
+  position: relative !important;
+}
+
+[contenteditable="true"] .nclex-editor-table th::after,
+[contenteditable="true"] .nclex-editor-table td::after {
+  content: '▼';
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  font-size: 8px;
+  line-height: 12px;
+  text-align: center;
+  width: 14px;
+  height: 14px;
+  background: rgba(30, 41, 59, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  border-radius: 3px;
+  cursor: pointer;
+  display: none;
+  z-index: 50;
+  user-select: none;
+}
+
+[contenteditable="true"] .nclex-editor-table th:hover::after,
+[contenteditable="true"] .nclex-editor-table td:hover::after {
+  display: block;
+}
+
 /* ================= ADMINISTRATOR SECURITY FEATURES ================= */
 .hidden-admin {
   display: none !important;

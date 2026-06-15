@@ -1572,23 +1572,37 @@ function setupTableInteractionMenu() {
     // Check if mousedown was inside a contenteditable rich-text cell
     const cell = e.target.closest('[contenteditable="true"] td, [contenteditable="true"] th');
     if (cell) {
-      selectedTableCellElement = cell;
+      // Get cell coordinates
       const rect = cell.getBoundingClientRect();
-      menu.style.display = 'flex';
       
-      // Smart positioning: Check if showing the menu below the cell will push it off screen
-      const menuHeight = 180; // set max-height
-      const screenHeight = window.innerHeight;
-      const offsetBelow = rect.bottom + menuHeight;
+      // Determine if click coordinates fell in the top-right corner region of the cell (representing the chevron area)
+      const clickedX = e.clientX;
+      const clickedY = e.clientY;
+      const insideChevronX = (clickedX >= rect.right - 24 && clickedX <= rect.right);
+      const insideChevronY = (clickedY >= rect.top && clickedY <= rect.top + 24);
       
-      if (offsetBelow > screenHeight && rect.top > menuHeight) {
-        // Position above the cell if it runs off the bottom and there is space above
-        menu.style.top = `${rect.top + window.scrollY - menuHeight}px`;
+      if (insideChevronX && insideChevronY) {
+        // Only trigger the menu if clicked on the top-right chevron area
+        selectedTableCellElement = cell;
+        menu.style.display = 'flex';
+        
+        // Smart positioning: Check if showing the menu below the cell will push it off screen
+        const menuHeight = 180; // set max-height
+        const screenHeight = window.innerHeight;
+        const offsetBelow = rect.bottom + menuHeight;
+        
+        if (offsetBelow > screenHeight && rect.top > menuHeight) {
+          // Position above the cell if it runs off the bottom and there is space above
+          menu.style.top = `${rect.top + window.scrollY - menuHeight}px`;
+        } else {
+          // Default position below the cell
+          menu.style.top = `${rect.bottom + window.scrollY}px`;
+        }
+        menu.style.left = `${rect.left + window.scrollX}px`;
       } else {
-        // Default position below the cell
-        menu.style.top = `${rect.bottom + window.scrollY}px`;
+        // If clicking anywhere else inside the cell, just close the menu so they can type freely
+        menu.style.display = 'none';
       }
-      menu.style.left = `${rect.left + window.scrollX}px`;
     } else {
       menu.style.display = 'none';
     }
