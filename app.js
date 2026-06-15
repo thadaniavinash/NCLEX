@@ -1371,7 +1371,6 @@ let selectedTableCellElement = null;
 function setupTableInteractionMenu() {
   let menu = document.getElementById('table-interaction-menu');
   if (!menu) {
-    menu = document.createElement('div');
     menu.id = 'table-interaction-menu';
     menu.style.position = 'absolute';
     menu.style.display = 'none';
@@ -1383,6 +1382,9 @@ function setupTableInteractionMenu() {
     menu.style.boxShadow = 'var(--shadow-lg)';
     menu.style.gap = '4px';
     menu.style.flexDirection = 'column';
+    menu.style.maxHeight = '180px';
+    menu.style.overflowY = 'auto';
+    menu.style.width = '160px';
     menu.innerHTML = `
       <button id="tbl-menu-add-row-below" class="btn btn-secondary btn-xs" style="text-align:left; justify-content:flex-start; width:100%;">+ Add Row Below</button>
       <button id="tbl-menu-add-row-above" class="btn btn-secondary btn-xs" style="text-align:left; justify-content:flex-start; width:100%;">+ Add Row Above</button>
@@ -1572,7 +1574,19 @@ function setupTableInteractionMenu() {
       selectedTableCellElement = cell;
       const rect = cell.getBoundingClientRect();
       menu.style.display = 'flex';
-      menu.style.top = `${rect.bottom + window.scrollY}px`;
+      
+      // Smart positioning: Check if showing the menu below the cell will push it off screen
+      const menuHeight = 180; // set max-height
+      const screenHeight = window.innerHeight;
+      const offsetBelow = rect.bottom + menuHeight;
+      
+      if (offsetBelow > screenHeight && rect.top > menuHeight) {
+        // Position above the cell if it runs off the bottom and there is space above
+        menu.style.top = `${rect.top + window.scrollY - menuHeight}px`;
+      } else {
+        // Default position below the cell
+        menu.style.top = `${rect.bottom + window.scrollY}px`;
+      }
       menu.style.left = `${rect.left + window.scrollX}px`;
     } else {
       menu.style.display = 'none';
