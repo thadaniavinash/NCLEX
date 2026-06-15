@@ -1450,16 +1450,24 @@ function setupTableInteractionMenu() {
         const isHeader = r.closest('thead') !== null;
         const targetCell = r.cells[cellIndex];
         const newCell = document.createElement(isHeader ? 'th' : 'td');
+        
         if (isHeader) {
-          newCell.outerHTML = `<th placeholder="Header" style="border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;"></th>`;
+          newCell.setAttribute('placeholder', 'Header');
+          newCell.style.border = '1px solid #ccd8e0';
+          newCell.style.padding = '8px';
+          newCell.style.background = '#025287';
+          newCell.style.color = 'white';
+          newCell.style.fontWeight = '600';
+          newCell.style.textAlign = 'left';
         } else {
-          newCell.outerHTML = '<td placeholder="Cell" style="border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;"></td>';
+          newCell.setAttribute('placeholder', 'Cell');
+          newCell.style.border = '1px solid #ccd8e0';
+          newCell.style.padding = '8px';
+          newCell.style.minWidth = '80px';
+          newCell.style.background = 'white';
+          newCell.style.color = '#1e293b';
         }
-        const insertElement = document.createElement('div');
-        insertElement.innerHTML = isHeader 
-          ? `<th placeholder="Header" style="border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;"></th>`
-          : '<td placeholder="Cell" style="border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;"></td>';
-        r.insertBefore(insertElement.firstElementChild, targetCell.nextSibling);
+        r.insertBefore(newCell, targetCell.nextSibling);
       });
       menu.style.display = 'none';
     };
@@ -1473,11 +1481,25 @@ function setupTableInteractionMenu() {
       rows.forEach(r => {
         const isHeader = r.closest('thead') !== null;
         const targetCell = r.cells[cellIndex];
-        const insertElement = document.createElement('div');
-        insertElement.innerHTML = isHeader 
-          ? `<th placeholder="Header" style="border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;"></th>`
-          : '<td placeholder="Cell" style="border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;"></td>';
-        r.insertBefore(insertElement.firstElementChild, targetCell);
+        const newCell = document.createElement(isHeader ? 'th' : 'td');
+        
+        if (isHeader) {
+          newCell.setAttribute('placeholder', 'Header');
+          newCell.style.border = '1px solid #ccd8e0';
+          newCell.style.padding = '8px';
+          newCell.style.background = '#025287';
+          newCell.style.color = 'white';
+          newCell.style.fontWeight = '600';
+          newCell.style.textAlign = 'left';
+        } else {
+          newCell.setAttribute('placeholder', 'Cell');
+          newCell.style.border = '1px solid #ccd8e0';
+          newCell.style.padding = '8px';
+          newCell.style.minWidth = '80px';
+          newCell.style.background = 'white';
+          newCell.style.color = '#1e293b';
+        }
+        r.insertBefore(newCell, targetCell);
       });
       menu.style.display = 'none';
     };
