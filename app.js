@@ -1641,8 +1641,18 @@ function initializeQuestionTypeDefaults(q) {
       q.bowtieParams = [{ text: '', correct: false }, { text: '', correct: false }, { text: '', correct: false }, { text: '', correct: false }, { text: '', correct: false }];
     }
   } else if (q.type === 'multiple_choice') {
-    if (!q.options) {
-      q.options = [{ text: 'Option A', correct: true }, { text: 'Option B', correct: false }];
+    if (!q.options || q.options.length !== 4) {
+      const currentOpts = q.options || [];
+      q.options = [
+        currentOpts[0] || { text: '', correct: true },
+        currentOpts[1] || { text: '', correct: false },
+        currentOpts[2] || { text: '', correct: false },
+        currentOpts[3] || { text: '', correct: false }
+      ];
+      const hasCorrect = q.options.some(o => o.correct);
+      if (!hasCorrect) {
+        q.options[0].correct = true;
+      }
     }
   } else if (q.type === 'fill_blank') {
     if (!q.correctAnswer) {
@@ -2638,12 +2648,22 @@ function renderOptionsBaseConfigurator(q, box, isCheckbox, showNLimit) {
       div.style.marginBottom = '8px';
       div.style.background = '#1e293b';
       
-      const placeholderText = q.type === 'select_all' ? `Option ${String.fromCharCode(65 + idx)}` : 'Option Text';
+      const placeholderText = `Option ${String.fromCharCode(65 + idx)}`;
+      
+      let val = opt.text || '';
+      const genericDefaults = [
+        'Option A', 'Option B', 'Option C', 'Option D', 'Option E', 'Option F',
+        'Option 1', 'Option 2', 'Option 3', 'Option 4'
+      ];
+      if (genericDefaults.includes(val)) {
+        val = '';
+        opt.text = '';
+      }
       
       div.innerHTML = `
         <div style="display:flex; align-items:center; gap:8px; width:100%;">
           <input type="${isCheckbox ? 'checkbox' : 'radio'}" name="correct-option-group" class="option-correct-toggle" ${opt.correct ? 'checked' : ''}>
-          <input type="text" class="option-text-input form-control" style="flex-grow:1;" value="${escapeHTML(opt.text)}" placeholder="${placeholderText}">
+          <input type="text" class="option-text-input form-control" style="flex-grow:1;" value="${escapeHTML(val)}" placeholder="${placeholderText}">
           <button class="btn-option-delete">&times;</button>
         </div>
         <div style="display:flex; align-items:center; gap:8px; width:100%;">
