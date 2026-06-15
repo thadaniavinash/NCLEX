@@ -1564,8 +1564,8 @@ function initializeQuestionTypeDefaults(q) {
       // Enforce exactly 2 slots for Dyad
       if (q.cloze.dropdowns.length !== 2) {
         q.cloze.dropdowns = [
-          q.cloze.dropdowns[0] || { placeholder: 'Select...', options: [{ text: 'Choice A', correct: true }, { text: 'Choice B', correct: false }, { text: 'Choice C', correct: false }] },
-          q.cloze.dropdowns[1] || { placeholder: 'Select...', options: [{ text: 'Choice X', correct: true }, { text: 'Choice Y', correct: false }, { text: 'Choice Z', correct: false }] }
+          q.cloze.dropdowns[0] || { placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }, { text: '', correct: false }] },
+          q.cloze.dropdowns[1] || { placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }, { text: '', correct: false }] }
         ];
       }
     } else if (q.type === 'triad') {
@@ -1575,20 +1575,20 @@ function initializeQuestionTypeDefaults(q) {
       // Enforce exactly 3 slots for Triad
       if (q.cloze.dropdowns.length !== 3) {
         q.cloze.dropdowns = [
-          q.cloze.dropdowns[0] || { placeholder: 'Select...', options: [{ text: 'Choice A', correct: true }, { text: 'Choice B', correct: false }, { text: 'Choice C', correct: false }] },
-          q.cloze.dropdowns[1] || { placeholder: 'Select...', options: [{ text: 'Choice X', correct: true }, { text: 'Choice Y', correct: false }, { text: 'Choice Z', correct: false }] },
-          q.cloze.dropdowns[2] || { placeholder: 'Select...', options: [{ text: 'Choice 1', correct: true }, { text: 'Choice 2', correct: false }, { text: 'Choice 3', correct: false }] }
+          q.cloze.dropdowns[0] || { placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }, { text: '', correct: false }] },
+          q.cloze.dropdowns[1] || { placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }, { text: '', correct: false }] },
+          q.cloze.dropdowns[2] || { placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }, { text: '', correct: false }] }
         ];
       }
     } else if (q.type === 'dropdown_cloze' || q.type === 'drag_drop_cloze') {
       if (!q.stem) {
-        q.stem = 'Complete the following sentence by choosing from the list of options.';
+        q.stem = 'Complete the following sentence by choosing from the lists of options.';
       }
       if (!textStr) {
         q.cloze.text = 'The patient should...[[drop0]]...due to...[[drop1]]';
         q.cloze.dropdowns = [
-          { placeholder: 'Choose...', options: [{ text: 'Choice A', correct: true }, { text: 'Choice B', correct: false }] },
-          { placeholder: 'Choose...', options: [{ text: 'Choice X', correct: true }, { text: 'Choice Y', correct: false }] }
+          { placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }] },
+          { placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }] }
         ];
       }
     }
@@ -2089,8 +2089,8 @@ function renderClozeConfigurator(q, box) {
   } else {
     if (!c.dropdowns || c.dropdowns.length < 2) {
       c.dropdowns = [
-        c.dropdowns[0] || { placeholder: 'Choose...', options: [{ text: 'Choice A', correct: true }, { text: 'Choice B', correct: false }] },
-        c.dropdowns[1] || { placeholder: 'Choose...', options: [{ text: 'Choice X', correct: true }, { text: 'Choice Y', correct: false }] }
+        c.dropdowns[0] || { placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }] },
+        c.dropdowns[1] || { placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }] }
       ];
     }
     expectedSlots = c.dropdowns.length;
@@ -2172,10 +2172,9 @@ function renderClozeConfigurator(q, box) {
     const temp = [];
     unique.forEach(idx => {
       if (!c.dropdowns[idx]) {
-        const defaultPlaceholder = (q.type === 'dyad' || q.type === 'triad') ? 'Select...' : 'Choose...';
         c.dropdowns[idx] = {
-          placeholder: defaultPlaceholder,
-          options: [{ text: 'Correct Option', correct: true }, { text: 'Incorrect Option', correct: false }]
+          placeholder: 'Select...',
+          options: [{ text: '', correct: true }, { text: '', correct: false }]
         };
       }
       const dd = c.dropdowns[idx];
@@ -2203,9 +2202,10 @@ function renderClozeConfigurator(q, box) {
         dd.options.forEach((opt, oIdx) => {
           const row = document.createElement('div');
           row.className = 'option-config-row';
+          const placeholderText = `Choice ${String.fromCharCode(65 + oIdx)}`;
           row.innerHTML = `
             <input type="radio" name="cloze-correct-${idx}" class="choice-correct-toggle" ${opt.correct ? 'checked' : ''}>
-            <input type="text" class="option-text-input form-control" style="font-size:12px; padding:6px;" value="${escapeHTML(opt.text)}" placeholder="Add choice text...">
+            <input type="text" class="option-text-input form-control" style="font-size:12px; padding:6px;" value="${escapeHTML(opt.text || '')}" placeholder="${placeholderText}">
             <button class="btn-option-delete">&times;</button>
           `;
           
@@ -2224,7 +2224,7 @@ function renderClozeConfigurator(q, box) {
       };
       
       card.querySelector('.add-choice-btn').addEventListener('click', () => {
-        dd.options.push({ text: 'New Choice', correct: false });
+        dd.options.push({ text: '', correct: false });
         renderChoices();
       });
       
@@ -2254,8 +2254,8 @@ function renderClozeConfigurator(q, box) {
         c.text = assembledText + `[[drop${expectedSlots}]]`;
         
         c.dropdowns.push({
-          placeholder: 'Choose...',
-          options: [{ text: 'Correct Option', correct: true }, { text: 'Incorrect Option', correct: false }]
+          placeholder: 'Select...',
+          options: [{ text: '', correct: true }, { text: '', correct: false }]
         });
         
         renderDynamicQuestionConfigurator(q);
