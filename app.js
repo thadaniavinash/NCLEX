@@ -1581,7 +1581,8 @@ function initializeQuestionTypeDefaults(q) {
         ];
       }
     } else if (q.type === 'dropdown_cloze' || q.type === 'drag_drop_cloze') {
-      if (!q.stem) {
+      const cleanStem = (q.stem || '').replace(/<[^>]*>/g, '').replace(/&nbsp;/g, '').trim();
+      if (!cleanStem) {
         q.stem = 'Complete the following sentence by choosing from the lists of options.';
       }
       if (!textStr) {
