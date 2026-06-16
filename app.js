@@ -1607,11 +1607,18 @@ function initializeQuestionTypeDefaults(q) {
       ];
     }
   } else if (q.type === 'matrix_mc') {
+    const cleanStem = (q.stem || '').replace(/<[^>]*>/g, '').replace(/&nbsp;/g, '').trim();
+    if (!cleanStem) {
+      q.stem = 'For each..., click to specify...';
+    }
     if (!q.matrix) {
       q.matrix = {
         firstColumnHeader: '',
-        columns: ['', ''],
-        rows: []
+        columns: ['Indicated', 'Not Indicated'],
+        rows: [
+          { text: '', correctIndex: 0, correctIndices: [0] },
+          { text: '', correctIndex: 0, correctIndices: [0] }
+        ]
       };
     } else {
       while (q.matrix.columns.length < 2) q.matrix.columns.push('');
@@ -2597,12 +2604,19 @@ function renderMatrixBaseConfigurator(q, box, isMultiResponse) {
     const thead = document.createElement('thead');
     const headerRow = document.createElement('tr');
     
+    // Clean generic default header strings to empty for placeholder behavior
+    let h1Val = m.firstColumnHeader || '';
+    if (h1Val === 'Potential Interventions' || h1Val === 'Findings') {
+      h1Val = '';
+      m.firstColumnHeader = '';
+    }
+    
     // First column header input
     const thFirst = document.createElement('th');
     thFirst.style.padding = '8px';
     thFirst.style.minWidth = '180px';
     thFirst.innerHTML = `
-      <input type="text" class="form-control matrix-first-header-input" style="font-weight:bold; font-size:12px; padding:6px;" value="${escapeHTML(m.firstColumnHeader)}" placeholder="e.g., Potential Interventions">
+      <input type="text" class="form-control matrix-first-header-input" style="font-weight:bold; font-size:12px; padding:6px;" value="${escapeHTML(h1Val)}" placeholder="Column 1">
     `;
     thFirst.querySelector('.matrix-first-header-input').addEventListener('input', (e) => {
       m.firstColumnHeader = e.target.value;
@@ -2658,11 +2672,19 @@ function renderMatrixBaseConfigurator(q, box, isMultiResponse) {
     m.rows.forEach((r, rIdx) => {
       const tr = document.createElement('tr');
       
+      // Clean generic row label strings to empty for placeholder behavior
+      let rText = r.text || '';
+      const genericRows = ['clear liquid diet', 'soapsuds enema', 'polyuria', 'weight gain', 'New Row 1', 'New Row 2'];
+      if (genericRows.includes(rText)) {
+        rText = '';
+        r.text = '';
+      }
+      
       // Row Label Input
       const tdLabel = document.createElement('td');
       tdLabel.style.padding = '8px';
       tdLabel.innerHTML = `
-        <input type="text" class="form-control matrix-row-label-input" style="font-size:12px; padding:6px;" value="${escapeHTML(r.text)}" placeholder="Row label...">
+        <input type="text" class="form-control matrix-row-label-input" style="font-size:12px; padding:6px;" value="${escapeHTML(rText)}" placeholder="Text...">
       `;
       tdLabel.querySelector('.matrix-row-label-input').addEventListener('input', (e) => {
         r.text = e.target.value;
