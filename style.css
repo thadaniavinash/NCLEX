@@ -1689,40 +1689,21 @@ td.matrix-cell-incorrect {
   border: 1.5px solid #ffffff;
   border-radius: var(--radius-sm);
   color: white;
-  padding: 6px 20px;
+  padding: 6px 0;
+  width: 130px;
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
   transition: all 0.2s ease;
 }
 
 .btn-footer-nav:hover {
-  background-color: #3b8fd9;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  background-color: #166da9;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.75);
   border-color: #ffffff;
-}
-
-.btn-arrow-left,
-.btn-arrow-right {
-  font-size: 1.8em;
-  font-weight: 900;
-  line-height: 1;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.btn-arrow-left {
-  margin-right: 6px;
-  margin-top: -2px;
-}
-
-.btn-arrow-right {
-  margin-left: 6px;
-  margin-top: -2px;
 }
 
 .powered-by {
