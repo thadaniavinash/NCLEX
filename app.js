@@ -36,7 +36,6 @@ let isAdminLoggedIn = (typeof sessionStorage !== 'undefined') ? (sessionStorage.
 // Player interaction tracking
 let playerAnswers = {}; // { stepIndex: answersObject }
 let submittedAnswers = {}; // { stepIndex: boolean }
-let flaggedSteps = {}; // { stepIndex: boolean }
 let playerScores = {}; // { stepIndex: { score: X, max: Y } }
 
 // Calculator state
@@ -3332,8 +3331,6 @@ function initPlayerEvents() {
       loadResultsView();
     }
   });
-
-  document.getElementById('player-flag-btn').addEventListener('click', toggleFlagQuestion);
 }
 
 function startPlayer(caseStudy) {
@@ -3344,7 +3341,6 @@ function startPlayer(caseStudy) {
   
   playerAnswers = {};
   submittedAnswers = {};
-  flaggedSteps = {};
   playerScores = {};
   
   document.getElementById('ti108-calculator').classList.add('hidden');
@@ -3363,14 +3359,9 @@ function renderPlayerStep(stepIdx) {
   document.getElementById('player-question-number-title').textContent = `Question ${stepIdx + 1}`;
   
   const isSubmitted = submittedAnswers[stepIdx];
-  const isFlagged = flaggedSteps[stepIdx];
   
   const statusEl = document.getElementById('player-question-status-text');
   statusEl.textContent = isSubmitted ? 'Complete' : 'Not complete';
-  
-  const flagBtn = document.getElementById('player-flag-btn');
-  if (isFlagged) flagBtn.classList.add('flagged');
-  else flagBtn.classList.remove('flagged');
   
   document.getElementById('player-screen-label').textContent = `Case Study Screen ${stepIdx + 1} of ${currentCase.screens.length}`;
   document.getElementById('player-intro-text').innerHTML = step.leftContent.intro || '';
@@ -3466,21 +3457,11 @@ function renderPlayerNavGrid() {
     square.className = 'nav-square';
     if (idx === playerStepIndex) square.classList.add('active');
     if (submittedAnswers[idx]) square.classList.add('answered');
-    if (flaggedSteps[idx]) square.classList.add('flagged');
     
     square.textContent = idx + 1;
     square.addEventListener('click', () => renderPlayerStep(idx));
     navGrid.appendChild(square);
   });
-}
-
-function toggleFlagQuestion() {
-  if (flaggedSteps[playerStepIndex]) {
-    delete flaggedSteps[playerStepIndex];
-  } else {
-    flaggedSteps[playerStepIndex] = true;
-  }
-  renderPlayerNavGrid();
 }
 
 /* ================= 17 PLAYER OPTIONS RENDERERS ================= */

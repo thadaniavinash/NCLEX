@@ -1073,21 +1073,7 @@ textarea {
   border-color: #64748b;
 }
 
-.nav-square.flagged {
-  position: relative;
-}
 
-.nav-square.flagged::after {
-  content: '';
-  position: absolute;
-  top: 1px;
-  right: 1px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 6px 6px 0;
-  border-color: transparent var(--accent-red) transparent transparent;
-}
 
 .link-btn {
   background: transparent;
@@ -1303,25 +1289,6 @@ textarea {
   font-weight: 600;
 }
 
-.btn-flag {
-  background: transparent;
-  border: none;
-  color: #374151;
-  font-size: 12px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  cursor: pointer;
-}
-
-.btn-flag:hover {
-  color: var(--accent-red);
-}
-
-.btn-flag.flagged {
-  color: var(--accent-red);
-  font-weight: 700;
-}
 
 /* Patient Chart Core Box */
 .patient-chart-box {
