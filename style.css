@@ -1457,13 +1457,13 @@ textarea {
   border: 1px solid transparent;
   border-radius: var(--radius-sm);
   margin-bottom: 8px;
-  background: #f9fafb;
+  background: #ffffff;
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .exam-option-row:hover {
-  background: #f3f4f6;
+  background: #ffffff;
 }
 
 .exam-option-row input[type="checkbox"], 
