@@ -3842,7 +3842,7 @@ function renderPlayerMatrixBase(q, stepIdx, box, isSubmitted, userAnswers, isMul
 function renderPlayerSelectN(q, stepIdx, box, isSubmitted, userAnswers) {
   const wrapper = document.createElement('div');
   const limit = q.limit || 3;
-  wrapper.innerHTML = `<span style="font-size:11px; font-weight:700; color:#64748b; margin-bottom:8px; display:block;">Select exactly ${limit} findings:</span>`;
+  wrapper.innerHTML = '';
   
   const savedVal = userAnswers || {};
   const options = q.options || [];
@@ -3872,7 +3872,7 @@ function renderPlayerSelectN(q, stepIdx, box, isSubmitted, userAnswers) {
         const currentCount = Object.values(playerAnswers[stepIdx] || {}).filter(Boolean).length;
         if (input.checked && currentCount >= limit) {
           input.checked = false;
-          alert(`You can only select exactly ${limit} choices.`);
+          alert(`You can only select up to ${limit} choices.`);
           return;
         }
         if (!playerAnswers[stepIdx]) playerAnswers[stepIdx] = {};
