@@ -1257,13 +1257,13 @@ textarea {
 }
 
 .chart-pane {
-  border-right: 1px solid var(--nclex-border);
+  border-right: 1px solid #cccccc;
   padding: 16px 20px;
-  background-color: #fcfcfd;
+  background-color: #f2f2f2;
 }
 
 .question-pane {
-  background-color: #f3f5f8;
+  background-color: #ffffff;
   padding: 16px 20px;
 }
 
