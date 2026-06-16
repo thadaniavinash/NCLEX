@@ -1410,14 +1410,14 @@ textarea {
 /* Question Card Styles (Right Panel) */
 .question-card {
   background: white;
-  border: 1px solid var(--nclex-border);
-  border-radius: var(--radius-sm);
+  border: none;
+  border-radius: 0;
   padding: 20px;
   display: flex;
   flex-direction: column;
   height: 100%;
   overflow-y: auto;
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
 }
 
 .question-stem-wrapper {
