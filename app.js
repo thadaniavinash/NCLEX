@@ -1594,10 +1594,12 @@ function initializeQuestionTypeDefaults(q) {
       }
     }
   } else if (q.type === 'dropdown_table') {
+    q.dropdownTableHeader1 = q.dropdownTableHeader1 || 'Braden Scale Category';
+    q.dropdownTableHeader2 = q.dropdownTableHeader2 || 'Client Assessment Score';
     if (!q.dropdownTableRows) {
       q.dropdownTableRows = [
-        { label: 'Sensory Perception', placeholder: 'Choose...', options: [{ text: '1 - Correct', correct: true }, { text: '2 - Incorrect', correct: false }] },
-        { label: 'Moisture', placeholder: 'Choose...', options: [{ text: '1 - Correct', correct: true }, { text: '2 - Incorrect', correct: false }] }
+        { label: 'Sensory Perception', placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }] },
+        { label: 'Moisture', placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }] }
       ];
     }
   } else if (q.type === 'matrix_mc') {
@@ -2314,95 +2316,204 @@ function renderClozeConfigurator(q, box) {
 
 // 2. Drop-Down Table Configurator
 function renderDropdownTableConfigurator(q, box) {
+  if (!q.dropdownTableHeader1) q.dropdownTableHeader1 = 'Braden Scale Category';
+  if (!q.dropdownTableHeader2) q.dropdownTableHeader2 = 'Client Assessment Score';
   const rows = q.dropdownTableRows || [];
+  
+  if (rows.length === 0) {
+    rows.push({
+      label: 'Sensory Perception',
+      placeholder: 'Select...',
+      options: [{ text: '', correct: true }, { text: '', correct: false }]
+    });
+    rows.push({
+      label: 'Moisture',
+      placeholder: 'Select...',
+      options: [{ text: '', correct: true }, { text: '', correct: false }]
+    });
+    q.dropdownTableRows = rows;
+  }
+
   const wrapper = document.createElement('div');
-  wrapper.innerHTML = `
-    <div class="options-config-title">
-      <span>Table Rows with Dropdowns</span>
-      <button id="add-table-row-btn" class="btn btn-text btn-xs">+ Add Row</button>
-    </div>
-    <div id="table-rows-editor-container"></div>
-  `;
-  box.appendChild(wrapper);
-  
-  const container = document.getElementById('table-rows-editor-container');
-  
-  const renderRows = () => {
-    container.innerHTML = '';
+  wrapper.className = 'dropdown-table-editor-wrapper';
+  wrapper.style.marginTop = '12px';
+
+  const renderTable = () => {
+    wrapper.innerHTML = '';
+    
+    const tableContainer = document.createElement('div');
+    tableContainer.style.overflowX = 'auto';
+    
+    const table = document.createElement('table');
+    table.className = 'matrix-grid-designer-table';
+    table.style.width = '100%';
+    table.style.borderCollapse = 'collapse';
+    table.style.marginBottom = '12px';
+    
+    // THEAD
+    const thead = document.createElement('thead');
+    const headerRow = document.createElement('tr');
+    
+    // Column 1 Header Input
+    const th1 = document.createElement('th');
+    th1.style.padding = '8px';
+    th1.style.minWidth = '200px';
+    th1.innerHTML = `
+      <input type="text" class="form-control dropdown-table-header-1-input" style="font-weight:bold; font-size:12px; padding:6px;" value="${escapeHTML(q.dropdownTableHeader1)}" placeholder="Category header...">
+    `;
+    th1.querySelector('.dropdown-table-header-1-input').addEventListener('input', (e) => {
+      q.dropdownTableHeader1 = e.target.value;
+    });
+    headerRow.appendChild(th1);
+    
+    // Column 2 Header Input
+    const th2 = document.createElement('th');
+    th2.style.padding = '8px';
+    th2.style.minWidth = '280px';
+    th2.innerHTML = `
+      <input type="text" class="form-control dropdown-table-header-2-input" style="font-weight:bold; font-size:12px; padding:6px;" value="${escapeHTML(q.dropdownTableHeader2)}" placeholder="Score header...">
+    `;
+    th2.querySelector('.dropdown-table-header-2-input').addEventListener('input', (e) => {
+      q.dropdownTableHeader2 = e.target.value;
+    });
+    headerRow.appendChild(th2);
+    
+    // Action column header
+    const thAction = document.createElement('th');
+    thAction.style.width = '50px';
+    thAction.innerHTML = '';
+    headerRow.appendChild(thAction);
+    
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+    
+    // TBODY
+    const tbody = document.createElement('tbody');
     rows.forEach((row, rIdx) => {
-      const card = document.createElement('div');
-      card.className = 'cloze-dropdown-card';
-      card.innerHTML = `
-        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-          <input type="text" class="form-control row-label-input" style="font-weight:bold; width:80%;" value="${escapeHTML(row.label)}" placeholder="Row Label (e.g. Moisture)">
-          <button class="btn btn-danger btn-xs delete-row-btn">Delete Row</button>
-        </div>
-        <input type="text" class="form-control row-placeholder-input" style="font-size:12px; margin-bottom:8px;" value="${escapeHTML(row.placeholder || 'Choose...')}" placeholder="Placeholder...">
-        <div class="options-config-title">
-          <span>Options</span>
-          <button class="btn btn-text btn-xs add-row-opt-btn">+ Add Option</button>
-        </div>
-        <div class="row-opts-list"></div>
-      `;
+      const tr = document.createElement('tr');
       
-      card.querySelector('.row-label-input').addEventListener('input', (e) => {
+      // Left Cell: Row label input
+      const tdLabel = document.createElement('td');
+      tdLabel.style.padding = '8px';
+      tdLabel.style.verticalAlign = 'top';
+      tdLabel.innerHTML = `
+        <input type="text" class="form-control row-label-input" style="font-size:12px; padding:6px; font-weight:500;" value="${escapeHTML(row.label)}" placeholder="Category label...">
+      `;
+      tdLabel.querySelector('.row-label-input').addEventListener('input', (e) => {
         row.label = e.target.value;
       });
-      card.querySelector('.row-placeholder-input').addEventListener('input', (e) => {
+      tr.appendChild(tdLabel);
+      
+      // Right Cell: Placeholder and Dropdown options configurator
+      const tdOptions = document.createElement('td');
+      tdOptions.style.padding = '8px';
+      tdOptions.innerHTML = `
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <input type="text" class="form-control row-placeholder-input" style="font-size:11px; padding:4px 8px; font-style:italic;" value="${escapeHTML(row.placeholder || 'Select...')}" placeholder="Placeholder (e.g. Select...)">
+          <div class="row-options-container" style="display:flex; flex-direction:column; gap:4px; margin-top:4px;"></div>
+          <button class="btn btn-text btn-xs add-row-option-btn" style="align-self:flex-start; font-size:10px; margin-top:2px;">+ Add Option</button>
+        </div>
+      `;
+      
+      const placeholderInput = tdOptions.querySelector('.row-placeholder-input');
+      placeholderInput.addEventListener('input', (e) => {
         row.placeholder = e.target.value;
       });
-      card.querySelector('.delete-row-btn').addEventListener('click', () => {
-        rows.splice(rIdx, 1);
-        renderRows();
-      });
       
-      const optsList = card.querySelector('.row-opts-list');
+      const optionsContainer = tdOptions.querySelector('.row-options-container');
       const renderRowOptions = () => {
-        optsList.innerHTML = '';
-        row.options.forEach((opt, oIdx) => {
-          const div = document.createElement('div');
-          div.className = 'option-config-row';
-          div.innerHTML = `
-            <input type="radio" name="tab-row-correct-${rIdx}" class="opt-correct-toggle" ${opt.correct ? 'checked' : ''}>
-            <input type="text" class="form-control opt-text-input" style="font-size:12px; padding:6px;" value="${escapeHTML(opt.text)}">
-            <button class="btn-option-delete">&times;</button>
+        optionsContainer.innerHTML = '';
+        const opts = row.options || [];
+        opts.forEach((opt, oIdx) => {
+          const optDiv = document.createElement('div');
+          optDiv.style.display = 'flex';
+          optDiv.style.alignItems = 'center';
+          optDiv.style.gap = '6px';
+          
+          let val = opt.text || '';
+          const genericDefaults = [
+            'Choice A', 'Choice B', 'Choice C',
+            'Option 1', 'Option 2', 'Option 3',
+            '1 - Correct', '2 - Incorrect', 'Correct Answer', 'Incorrect Answer', 'New Option', 'New Choice'
+          ];
+          if (genericDefaults.includes(val)) {
+            val = '';
+            opt.text = '';
+          }
+          const placeholderText = `Option ${oIdx + 1}`;
+          
+          optDiv.innerHTML = `
+            <input type="radio" name="dropdown-table-correct-radio-${rIdx}" class="row-opt-correct-toggle" ${opt.correct ? 'checked' : ''} style="cursor:pointer;">
+            <input type="text" class="form-control row-opt-text-input" style="font-size:11px; padding:4px 6px; flex-grow:1;" value="${escapeHTML(val)}" placeholder="${placeholderText}">
+            <button class="delete-opt-btn" style="background:transparent; border:none; color:#ef4444; font-size:16px; cursor:pointer; padding:0 4px;">&times;</button>
           `;
           
-          div.querySelector('.opt-text-input').addEventListener('input', (e) => {
+          optDiv.querySelector('.row-opt-text-input').addEventListener('input', (e) => {
             opt.text = e.target.value;
           });
-          div.querySelector('.opt-correct-toggle').addEventListener('change', () => {
-            row.options.forEach((o, oi) => o.correct = oi === oIdx);
+          optDiv.querySelector('.row-opt-correct-toggle').addEventListener('change', () => {
+            opts.forEach((o, oi) => o.correct = oi === oIdx);
           });
-          div.querySelector('.btn-option-delete').addEventListener('click', () => {
-            row.options.splice(oIdx, 1);
+          optDiv.querySelector('.delete-opt-btn').addEventListener('click', () => {
+            opts.splice(oIdx, 1);
             renderRowOptions();
           });
-          optsList.appendChild(div);
+          
+          optionsContainer.appendChild(optDiv);
         });
       };
       
-      card.querySelector('.add-row-opt-btn').addEventListener('click', () => {
-        row.options.push({ text: 'New Option', correct: false });
+      tdOptions.querySelector('.add-row-option-btn').addEventListener('click', () => {
+        if (!row.options) row.options = [];
+        row.options.push({ text: '', correct: false });
         renderRowOptions();
       });
       
       renderRowOptions();
-      container.appendChild(card);
+      tr.appendChild(tdOptions);
+      
+      // Delete Row Button Cell
+      const tdDel = document.createElement('td');
+      tdDel.style.padding = '8px';
+      tdDel.style.verticalAlign = 'top';
+      tdDel.style.textAlign = 'center';
+      tdDel.innerHTML = `
+        <button class="delete-row-btn" style="background:transparent; border:none; color:#ef4444; font-size:18px; cursor:pointer; padding:4px 0 0 0;">&times;</button>
+      `;
+      tdDel.querySelector('.delete-row-btn').addEventListener('click', () => {
+        rows.splice(rIdx, 1);
+        renderTable();
+      });
+      tr.appendChild(tdDel);
+      
+      tbody.appendChild(tr);
     });
+    table.appendChild(tbody);
+    tableContainer.appendChild(table);
+    wrapper.appendChild(tableContainer);
+    
+    // Bottom Action Buttons
+    const btnContainer = document.createElement('div');
+    btnContainer.style.display = 'flex';
+    btnContainer.style.marginTop = '10px';
+    
+    const addRowBtn = document.createElement('button');
+    addRowBtn.className = 'btn btn-secondary btn-xs';
+    addRowBtn.textContent = '+ Add Row';
+    addRowBtn.addEventListener('click', () => {
+      rows.push({
+        label: '',
+        placeholder: 'Select...',
+        options: [{ text: '', correct: true }, { text: '', correct: false }]
+      });
+      renderTable();
+    });
+    btnContainer.appendChild(addRowBtn);
+    wrapper.appendChild(btnContainer);
   };
   
-  renderRows();
-  
-  document.getElementById('add-table-row-btn').addEventListener('click', () => {
-    rows.push({
-      label: 'New Category',
-      placeholder: 'Choose...',
-      options: [{ text: 'Correct Answer', correct: true }, { text: 'Incorrect Answer', correct: false }]
-    });
-    q.dropdownTableRows = rows;
-    renderRows();
-  });
+  renderTable();
+  box.appendChild(wrapper);
 }
 
 // 3. Matrix MC (Single choice per row)
@@ -3535,11 +3646,14 @@ function renderPlayerDropdownTable(q, stepIdx, box, isSubmitted, userAnswers) {
   const tbl = document.createElement('table');
   tbl.className = 'exam-matrix-table';
   
+  const header1 = q.dropdownTableHeader1 || 'Category Findings';
+  const header2 = q.dropdownTableHeader2 || 'Clinical Assessment Score / Selection';
+  
   tbl.innerHTML = `
     <thead>
       <tr>
-        <th>Category Findings</th>
-        <th>Clinical Assessment Score / Selection</th>
+        <th>${escapeHTML(header1)}</th>
+        <th>${escapeHTML(header2)}</th>
       </tr>
     </thead>
     <tbody></tbody>
