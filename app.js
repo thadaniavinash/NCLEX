@@ -3325,12 +3325,6 @@ function initPlayerEvents() {
       loadResultsView();
     }
   });
-
-  document.getElementById('player-finish-link').addEventListener('click', () => {
-    if (confirm("Are you sure you want to finish and submit this attempt?")) {
-      loadResultsView();
-    }
-  });
 }
 
 function startPlayer(caseStudy) {
