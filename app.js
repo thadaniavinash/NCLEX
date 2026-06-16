@@ -4242,7 +4242,7 @@ function renderPlayerFillBlank(q, stepIdx, box, isSubmitted, userAnswers) {
     <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; margin: 16px 0; flex-wrap: nowrap;">
       <span style="white-space: nowrap;">Answer: </span>
       <input type="text" id="player-blank-input" class="form-control" 
-        style="max-width:300px; width:220px; background-color:#f8fafc; border:1.5px solid #000000; color:#000000; display: inline-block; margin: 0; vertical-align: middle;" 
+        style="max-width:300px; width:220px; background-color:#f8fafc; border:1.5px solid #000000; color:#000000; display: inline-block; margin: 0; vertical-align: middle; border-radius: 0;" 
         value="${escapeHTML(val)}" ${isSubmitted ? 'disabled' : ''}>
       <span style="white-space: nowrap;">${escapeHTML(unitText)}</span>
     </div>
