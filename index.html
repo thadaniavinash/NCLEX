@@ -116,7 +116,8 @@
               <line x1="9" y1="15" x2="15" y2="15"/>
               <line x1="12" y1="12" x2="12" y2="18"/>
             </svg>
-            <p>No case studies found. Create a new case study or import one.</p>
+            <p>No case studies found. Load the default cardiovascular case study.</p>
+            <button id="load-default-btn" class="btn btn-accent admin-only">Load Demo Case Study</button>
           </div>
         </div>
 
@@ -321,7 +322,7 @@
                   <option value="select_n">Select N Multiple Response</option>
                   <option value="bowtie">Bowtie</option>
                   <option value="multiple_choice">Multiple Choice</option>
-                  <option value="fill_blank">Fill-in-blank calculation</option>
+                  <option value="fill_blank">Fill-in-the-Blank</option>
                   <option value="hotspot">Hotspot</option>
                   <option value="ordered_response">Ordered Response</option>
                 </optgroup>
@@ -651,6 +652,7 @@
   <div id="toast-container" class="toast-container"></div>
 
   <!-- JS Dependencies -->
+  <script src="default-case.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

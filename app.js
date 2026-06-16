@@ -858,7 +858,7 @@ function getQuestionTypeLabel(type) {
     'select_n': 'Select N Multiple Response',
     'bowtie': 'Bowtie',
     'multiple_choice': 'Multiple Choice',
-    'fill_blank': 'Fill-in-blank calculation',
+    'fill_blank': 'Fill-in-the-Blank',
     'hotspot': 'Hotspot',
     'ordered_response': 'Ordered Response',
     'select_all': 'Select All Multiple Response (SATA)',
