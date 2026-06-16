@@ -898,17 +898,73 @@ textarea {
 }
 
 /* Header style replicating screenshots */
-.player-header {
-  background-color: var(--nclex-blue);
+.player-header-new {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  font-family: var(--font-body);
+}
+
+.player-dark-bar {
+  background-color: #166da9;
   color: white;
   height: 44px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 16px;
-  border-bottom: 4px solid var(--nclex-sky);
-  flex-shrink: 0;
-  font-family: var(--font-body);
+}
+
+.player-header-left-new {
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+}
+
+.player-header-right-new {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.player-header-img1 {
+  height: 20px;
+  vertical-align: middle;
+}
+
+.player-light-bar {
+  background-color: #80afe1;
+  height: 17.6px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.player-calc-link-new {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  height: 100%;
+  padding: 0;
+  line-height: 17.6px;
+}
+
+.player-calc-link-new:hover {
+  opacity: 0.9;
+}
+
+.player-header-img2 {
+  height: 12px;
+  vertical-align: middle;
 }
 
 .player-calc-link {
@@ -2525,7 +2581,7 @@ td.matrix-cell-incorrect {
 }
 
 /* Placeholders for table cells when editing */
-[contenteditable="true"] .nclex-editor-table th:empty::before {
+.nclex-editor-table th:empty::before {
   content: attr(placeholder);
   color: rgba(255, 255, 255, 0.6) !important;
   font-weight: 600 !important;
@@ -2533,43 +2589,11 @@ td.matrix-cell-incorrect {
   display: inline-block;
 }
 
-[contenteditable="true"] .nclex-editor-table td:empty::before {
+.nclex-editor-table td:empty::before {
   content: attr(placeholder);
   color: #94a3b8 !important;
   font-style: italic;
   display: inline-block;
-}
-
-/* Table cell interaction controls (relative positioning and hover chevron button) */
-[contenteditable="true"] .nclex-editor-table th,
-[contenteditable="true"] .nclex-editor-table td {
-  position: relative !important;
-}
-
-[contenteditable="true"] .nclex-editor-table th::after,
-[contenteditable="true"] .nclex-editor-table td::after {
-  content: '▼';
-  position: absolute;
-  top: 4px;
-  right: 4px;
-  font-size: 8px;
-  line-height: 12px;
-  text-align: center;
-  width: 14px;
-  height: 14px;
-  background: rgba(30, 41, 59, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #e2e8f0;
-  border-radius: 3px;
-  cursor: pointer;
-  display: none;
-  z-index: 50;
-  user-select: none;
-}
-
-[contenteditable="true"] .nclex-editor-table th:hover::after,
-[contenteditable="true"] .nclex-editor-table td:hover::after {
-  display: block;
 }
 
 /* ================= ADMINISTRATOR SECURITY FEATURES ================= */
@@ -2744,12 +2768,6 @@ td.matrix-cell-incorrect {
   line-height: 1.6;
   width: 100% !important;
   box-sizing: border-box !important;
-}
-
-.nurse-note-row p,
-.nurse-note-row div {
-  margin: 0 !important;
-  padding: 0 !important;
 }
 
 .nurse-note-time {
