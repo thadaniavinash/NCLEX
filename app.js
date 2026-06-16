@@ -1992,6 +1992,8 @@ function saveCurrentStepData(isChangingType = false) {
   if (q.type === 'fill_blank') {
     const el = document.getElementById('fill-blank-correct-input');
     if (el) q.correctAnswer = el.value;
+    const unitEl = document.getElementById('fill-blank-unit-input');
+    if (unitEl) q.unit = unitEl.value;
   } else if (q.type === 'hotspot') {
     const el = document.getElementById('hotspot-url-input');
     if (el) q.imageUrl = el.value;
@@ -3057,8 +3059,16 @@ function renderFillBlankConfigurator(q, box) {
   const wrapper = document.createElement('div');
   wrapper.className = 'form-group';
   wrapper.innerHTML = `
-    <label for="fill-blank-correct-input">Correct Answer (Numeric value or word)</label>
-    <input type="text" id="fill-blank-correct-input" class="form-control" value="${escapeHTML(q.correctAnswer || '')}" placeholder="Add answer...">
+    <div style="display: flex; gap: 12px; align-items: flex-end;">
+      <div style="flex: 1;">
+        <label for="fill-blank-correct-input">Correct Answer (Numeric value or word)</label>
+        <input type="text" id="fill-blank-correct-input" class="form-control" value="${escapeHTML(q.correctAnswer || '')}" placeholder="Type answer">
+      </div>
+      <div style="flex: 1;">
+        <label for="fill-blank-unit-input">Unit</label>
+        <input type="text" id="fill-blank-unit-input" class="form-control" value="${escapeHTML(q.unit || '')}" placeholder="Type Unit">
+      </div>
+    </div>
   `;
   box.appendChild(wrapper);
 }
@@ -4221,16 +4231,25 @@ function renderPlayerMultipleChoice(q, stepIdx, box, isSubmitted, userAnswers) {
   box.appendChild(wrapper);
 }
 
-// 8. Fill in blank
 function renderPlayerFillBlank(q, stepIdx, box, isSubmitted, userAnswers) {
   const wrapper = document.createElement('div');
   wrapper.className = 'form-group';
+  wrapper.style.display = 'flex';
+  wrapper.style.alignItems = 'center';
+  wrapper.style.gap = '8px';
+  wrapper.style.fontSize = '14px';
+  wrapper.style.fontWeight = '500';
+  wrapper.style.margin = '16px 0';
   
   const val = userAnswers ? userAnswers.value : '';
+  const unitText = q.unit ? ' ' + q.unit : '';
   
   wrapper.innerHTML = `
-    <label for="player-blank-input">Type Your Answer Below:</label>
-    <input type="text" id="player-blank-input" class="form-control" style="max-width:300px;" value="${escapeHTML(val)}" ${isSubmitted ? 'disabled' : ''}>
+    <span>Answer: </span>
+    <input type="text" id="player-blank-input" class="form-control" 
+      style="max-width:300px; width:220px; background-color:#f8fafc; border:1.5px solid #000000; color:#000000;" 
+      value="${escapeHTML(val)}" ${isSubmitted ? 'disabled' : ''}>
+    <span>${escapeHTML(unitText)}</span>
   `;
   
   if (isSubmitted) {
