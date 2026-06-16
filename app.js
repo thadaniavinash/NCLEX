@@ -1594,12 +1594,16 @@ function initializeQuestionTypeDefaults(q) {
       }
     }
   } else if (q.type === 'dropdown_table') {
-    q.dropdownTableHeader1 = q.dropdownTableHeader1 || 'Braden Scale Category';
-    q.dropdownTableHeader2 = q.dropdownTableHeader2 || 'Client Assessment Score';
+    const cleanStem = (q.stem || '').replace(/<[^>]*>/g, '').replace(/&nbsp;/g, '').trim();
+    if (!cleanStem) {
+      q.stem = 'Complete the following table by...';
+    }
+    q.dropdownTableHeader1 = '';
+    q.dropdownTableHeader2 = '';
     if (!q.dropdownTableRows) {
       q.dropdownTableRows = [
-        { label: 'Sensory Perception', placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }] },
-        { label: 'Moisture', placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }] }
+        { label: '', placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }] },
+        { label: '', placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }] }
       ];
     }
   } else if (q.type === 'matrix_mc') {
@@ -2316,18 +2320,16 @@ function renderClozeConfigurator(q, box) {
 
 // 2. Drop-Down Table Configurator
 function renderDropdownTableConfigurator(q, box) {
-  if (!q.dropdownTableHeader1) q.dropdownTableHeader1 = 'Braden Scale Category';
-  if (!q.dropdownTableHeader2) q.dropdownTableHeader2 = 'Client Assessment Score';
   const rows = q.dropdownTableRows || [];
   
   if (rows.length === 0) {
     rows.push({
-      label: 'Sensory Perception',
+      label: '',
       placeholder: 'Select...',
       options: [{ text: '', correct: true }, { text: '', correct: false }]
     });
     rows.push({
-      label: 'Moisture',
+      label: '',
       placeholder: 'Select...',
       options: [{ text: '', correct: true }, { text: '', correct: false }]
     });
@@ -2354,12 +2356,25 @@ function renderDropdownTableConfigurator(q, box) {
     const thead = document.createElement('thead');
     const headerRow = document.createElement('tr');
     
+    // Clean generic default header strings to empty for placeholder behavior
+    let h1Val = q.dropdownTableHeader1 || '';
+    if (h1Val === 'Braden Scale Category' || h1Val === 'Category Findings') {
+      h1Val = '';
+      q.dropdownTableHeader1 = '';
+    }
+    
+    let h2Val = q.dropdownTableHeader2 || '';
+    if (h2Val === 'Client Assessment Score' || h2Val === 'Clinical Assessment Score / Selection') {
+      h2Val = '';
+      q.dropdownTableHeader2 = '';
+    }
+    
     // Column 1 Header Input
     const th1 = document.createElement('th');
     th1.style.padding = '8px';
     th1.style.minWidth = '200px';
     th1.innerHTML = `
-      <input type="text" class="form-control dropdown-table-header-1-input" style="font-weight:bold; font-size:12px; padding:6px;" value="${escapeHTML(q.dropdownTableHeader1)}" placeholder="Category header...">
+      <input type="text" class="form-control dropdown-table-header-1-input" style="font-weight:bold; font-size:12px; padding:6px;" value="${escapeHTML(h1Val)}" placeholder="Column 1 Header Text">
     `;
     th1.querySelector('.dropdown-table-header-1-input').addEventListener('input', (e) => {
       q.dropdownTableHeader1 = e.target.value;
@@ -2371,7 +2386,7 @@ function renderDropdownTableConfigurator(q, box) {
     th2.style.padding = '8px';
     th2.style.minWidth = '280px';
     th2.innerHTML = `
-      <input type="text" class="form-control dropdown-table-header-2-input" style="font-weight:bold; font-size:12px; padding:6px;" value="${escapeHTML(q.dropdownTableHeader2)}" placeholder="Score header...">
+      <input type="text" class="form-control dropdown-table-header-2-input" style="font-weight:bold; font-size:12px; padding:6px;" value="${escapeHTML(h2Val)}" placeholder="Column 2 Header Text">
     `;
     th2.querySelector('.dropdown-table-header-2-input').addEventListener('input', (e) => {
       q.dropdownTableHeader2 = e.target.value;
@@ -2392,12 +2407,20 @@ function renderDropdownTableConfigurator(q, box) {
     rows.forEach((row, rIdx) => {
       const tr = document.createElement('tr');
       
+      // Clean generic row label strings to empty for placeholder behavior
+      let rLabel = row.label || '';
+      const genericRows = ['Sensory Perception', 'Moisture', 'Activity', 'Mobility', 'Nutrition', 'Friction and Shear'];
+      if (genericRows.includes(rLabel)) {
+        rLabel = '';
+        row.label = '';
+      }
+      
       // Left Cell: Row label input
       const tdLabel = document.createElement('td');
       tdLabel.style.padding = '8px';
       tdLabel.style.verticalAlign = 'top';
       tdLabel.innerHTML = `
-        <input type="text" class="form-control row-label-input" style="font-size:12px; padding:6px; font-weight:500;" value="${escapeHTML(row.label)}" placeholder="Category label...">
+        <input type="text" class="form-control row-label-input" style="font-size:12px; padding:6px; font-weight:500;" value="${escapeHTML(rLabel)}" placeholder="Text...">
       `;
       tdLabel.querySelector('.row-label-input').addEventListener('input', (e) => {
         row.label = e.target.value;
