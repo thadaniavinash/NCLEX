@@ -1531,7 +1531,7 @@ function initEditorEvents() {
 
   document.getElementById('question-type-select').addEventListener('change', (e) => {
     const prevType = currentCase.screens[currentStepIndex].question.type;
-    if (!saveCurrentStepData()) {
+    if (!saveCurrentStepData(true)) {
       e.target.value = prevType;
       return;
     }
@@ -1608,8 +1608,8 @@ function initializeQuestionTypeDefaults(q) {
     }
   } else if (q.type === 'matrix_mc') {
     const cleanStem = (q.stem || '').replace(/<[^>]*>/g, '').replace(/&nbsp;/g, '').trim();
-    if (!cleanStem) {
-      q.stem = 'For each..., click to specify...';
+    if (!cleanStem || cleanStem === 'For each..., click to specify...') {
+      q.stem = '';
     }
     if (!q.matrix) {
       q.matrix = {
@@ -1621,6 +1621,15 @@ function initializeQuestionTypeDefaults(q) {
         ]
       };
     } else {
+      if (q.matrix.firstColumnHeader === 'Potential Interventions' || q.matrix.firstColumnHeader === 'Findings') {
+        q.matrix.firstColumnHeader = '';
+      }
+      const genericRows = ['clear liquid diet', 'soapsuds enema', 'polyuria', 'weight gain', 'New Row 1', 'New Row 2'];
+      q.matrix.rows.forEach(r => {
+        if (genericRows.includes(r.text)) {
+          r.text = '';
+        }
+      });
       while (q.matrix.columns.length < 2) q.matrix.columns.push('');
       if (q.matrix.columns.length > 2) q.matrix.columns = q.matrix.columns.slice(0, 2);
     }
@@ -1762,7 +1771,18 @@ function renderEditorStep(stepIdx) {
   const q = step.question;
   document.getElementById('question-type-select').value = q.type;
   document.getElementById('question-preamble-input').innerHTML = q.preamble || '';
-  document.getElementById('question-stem-input').innerHTML = q.stem || '';
+  
+  const stemInput = document.getElementById('question-stem-input');
+  if (q.type === 'matrix_mc') {
+    stemInput.setAttribute('placeholder', 'For each..., click to specify...');
+  } else if (q.type === 'dropdown_table') {
+    stemInput.setAttribute('placeholder', 'Complete the following table by...');
+  } else if (q.type === 'dropdown_cloze' || q.type === 'drag_drop_cloze') {
+    stemInput.setAttribute('placeholder', 'Complete the following sentence by choosing from the lists of options.');
+  } else {
+    stemInput.setAttribute('placeholder', 'e.g. Which of the following findings require follow-up? Select all that apply.');
+  }
+  stemInput.innerHTML = q.stem || '';
   document.getElementById('question-explanation-input').innerHTML = q.explanation || '';
   
   renderDynamicQuestionConfigurator(q);
@@ -1934,7 +1954,7 @@ function deleteActiveTab() {
   }
 }
 
-function saveCurrentStepData() {
+function saveCurrentStepData(isChangingType = false) {
   if (!currentCase || currentCase.screens.length === 0) return true;
   
   const select = document.getElementById('case-disorder-select');
@@ -1957,15 +1977,6 @@ function saveCurrentStepData() {
   saveActiveTabContent();
   
   const q = step.question;
-  if (q.type === 'bowtie') {
-    const col1Count = (q.bowtieActions || []).filter(x => x.correct).length;
-    const col2Count = (q.bowtieConditions || []).filter(x => x.correct).length;
-    const col3Count = (q.bowtieParams || []).filter(x => x.correct).length;
-    if (col1Count !== 2 || col2Count !== 1 || col3Count !== 2) {
-      alert("Bowtie configuration error:\n- Column 1 must have exactly 2 correct answers selected.\n- Column 2 must have exactly 1 correct answer selected.\n- Column 3 must have exactly 2 correct answers selected.");
-      return false;
-    }
-  }
   
   q.preamble = document.getElementById('question-preamble-input').innerHTML;
   q.stem = document.getElementById('question-stem-input').innerHTML;
@@ -2559,28 +2570,31 @@ function renderMatrixMrConfigurator(q, box) {
 function renderMatrixBaseConfigurator(q, box, isMultiResponse) {
   if (!q.matrix) {
     q.matrix = {
-      firstColumnHeader: isMultiResponse ? 'Findings' : 'Potential Interventions',
+      firstColumnHeader: isMultiResponse ? 'Findings' : '',
       columns: isMultiResponse ? ['DI', 'SIADH', "Addison's"] : ['Indicated', 'Not Indicated'],
       rows: isMultiResponse ? [
         { text: 'polyuria', correctIndices: [0, 2], correctIndex: 0 },
         { text: 'weight gain', correctIndices: [1], correctIndex: 0 }
       ] : [
-        { text: 'clear liquid diet', correctIndex: 0, correctIndices: [0] },
-        { text: 'soapsuds enema', correctIndex: 0, correctIndices: [0] }
+        { text: '', correctIndex: 0, correctIndices: [0] },
+        { text: '', correctIndex: 0, correctIndices: [0] }
       ]
     };
   }
   const m = q.matrix;
-  if (!m.firstColumnHeader) {
-    m.firstColumnHeader = isMultiResponse ? 'Findings' : 'Potential Interventions';
+  if (!m.firstColumnHeader && isMultiResponse) {
+    m.firstColumnHeader = 'Findings';
   }
   if (!m.columns || m.columns.length < 2) {
     m.columns = isMultiResponse ? ['DI', 'SIADH', "Addison's"] : ['Indicated', 'Not Indicated'];
   }
   if (!m.rows || m.rows.length === 0) {
-    m.rows = [
+    m.rows = isMultiResponse ? [
       { text: 'New Row 1', correctIndex: 0, correctIndices: [0] },
       { text: 'New Row 2', correctIndex: 0, correctIndices: [0] }
+    ] : [
+      { text: '', correctIndex: 0, correctIndices: [0] },
+      { text: '', correctIndex: 0, correctIndices: [0] }
     ];
   }
 
@@ -3764,7 +3778,7 @@ function renderPlayerMatrixBase(q, stepIdx, box, isSubmitted, userAnswers, isMul
   const tbl = document.createElement('table');
   tbl.className = 'exam-matrix-table';
   
-  let html = `<thead><tr><th>${escapeHTML(m.firstColumnHeader || 'Findings')}</th>`;
+  let html = `<thead><tr><th>${escapeHTML(m.firstColumnHeader || (isMultiResponse ? 'Findings' : 'Column 1'))}</th>`;
   columns.forEach(col => { html += `<th>${escapeHTML(col)}</th>`; });
   html += `</tr></thead><tbody>`;
   
