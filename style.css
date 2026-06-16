@@ -1702,7 +1702,7 @@ td.matrix-cell-incorrect {
 
 .btn-footer-nav:hover {
   background-color: #166da9;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.75);
+  color: #fffd8d;
   border-color: #ffffff;
 }
 
