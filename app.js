@@ -3062,7 +3062,7 @@ function renderFillBlankConfigurator(q, box) {
     <div style="display: flex; gap: 12px; align-items: flex-end;">
       <div style="flex: 1;">
         <label for="fill-blank-correct-input">Correct Answer (Numeric value or word)</label>
-        <input type="text" id="fill-blank-correct-input" class="form-control" value="${escapeHTML(q.correctAnswer || '')}" placeholder="Type answer">
+        <input type="text" id="fill-blank-correct-input" class="form-control" value="${escapeHTML(q.correctAnswer || '')}" placeholder="Type answer...">
       </div>
       <div style="flex: 1;">
         <label for="fill-blank-unit-input">Unit</label>
@@ -4234,22 +4234,18 @@ function renderPlayerMultipleChoice(q, stepIdx, box, isSubmitted, userAnswers) {
 function renderPlayerFillBlank(q, stepIdx, box, isSubmitted, userAnswers) {
   const wrapper = document.createElement('div');
   wrapper.className = 'form-group';
-  wrapper.style.display = 'flex';
-  wrapper.style.alignItems = 'center';
-  wrapper.style.gap = '8px';
-  wrapper.style.fontSize = '14px';
-  wrapper.style.fontWeight = '500';
-  wrapper.style.margin = '16px 0';
   
   const val = userAnswers ? userAnswers.value : '';
   const unitText = q.unit ? ' ' + q.unit : '';
   
   wrapper.innerHTML = `
-    <span>Answer: </span>
-    <input type="text" id="player-blank-input" class="form-control" 
-      style="max-width:300px; width:220px; background-color:#f8fafc; border:1.5px solid #000000; color:#000000;" 
-      value="${escapeHTML(val)}" ${isSubmitted ? 'disabled' : ''}>
-    <span>${escapeHTML(unitText)}</span>
+    <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; margin: 16px 0; flex-wrap: nowrap;">
+      <span style="white-space: nowrap;">Answer: </span>
+      <input type="text" id="player-blank-input" class="form-control" 
+        style="max-width:300px; width:220px; background-color:#f8fafc; border:1.5px solid #000000; color:#000000; display: inline-block; margin: 0; vertical-align: middle;" 
+        value="${escapeHTML(val)}" ${isSubmitted ? 'disabled' : ''}>
+      <span style="white-space: nowrap;">${escapeHTML(unitText)}</span>
+    </div>
   `;
   
   if (isSubmitted) {
