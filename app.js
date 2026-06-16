@@ -3531,7 +3531,7 @@ function renderPlayerDropdownCloze(q, stepIdx, box, isSubmitted, userAnswers) {
       if (isSubmitted) select.disabled = true;
       
       const defOpt = document.createElement('option');
-      defOpt.textContent = dd.placeholder || 'Choose...';
+      defOpt.textContent = dd.placeholder || 'Select...';
       defOpt.value = '';
       select.appendChild(defOpt);
       
@@ -3689,7 +3689,7 @@ function renderPlayerDropdownTable(q, stepIdx, box, isSubmitted, userAnswers) {
       <td>${escapeHTML(row.label)}</td>
       <td>
         <select class="cloze-select row-select-box" style="width:100%; max-width:260px;" ${isSubmitted ? 'disabled' : ''}>
-          <option value="">${escapeHTML(row.placeholder || 'Choose...')}</option>
+          <option value="">${escapeHTML(row.placeholder || 'Select...')}</option>
         </select>
       </td>
     `;
