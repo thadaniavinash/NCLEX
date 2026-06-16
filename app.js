@@ -1677,8 +1677,12 @@ function initializeQuestionTypeDefaults(q) {
       }
     }
   } else if (q.type === 'fill_blank') {
-    if (!q.correctAnswer) {
-      q.correctAnswer = '12.5';
+    const cleanStem = (q.stem || '').replace(/<[^>]*>/g, '').replace(/&nbsp;/g, '').trim();
+    if (!cleanStem || cleanStem === 'Add question...') {
+      q.stem = '';
+    }
+    if (!q.correctAnswer || q.correctAnswer === '12.5') {
+      q.correctAnswer = '';
     }
   } else if (q.type === 'hotspot') {
     if (!q.imageUrl) {
@@ -1779,6 +1783,8 @@ function renderEditorStep(stepIdx) {
     stemInput.setAttribute('placeholder', 'Complete the following table by...');
   } else if (q.type === 'dropdown_cloze' || q.type === 'drag_drop_cloze') {
     stemInput.setAttribute('placeholder', 'Complete the following sentence by choosing from the lists of options.');
+  } else if (q.type === 'fill_blank') {
+    stemInput.setAttribute('placeholder', 'Add question...');
   } else {
     stemInput.setAttribute('placeholder', 'e.g. Which of the following findings require follow-up? Select all that apply.');
   }
@@ -3052,7 +3058,7 @@ function renderFillBlankConfigurator(q, box) {
   wrapper.className = 'form-group';
   wrapper.innerHTML = `
     <label for="fill-blank-correct-input">Correct Answer (Numeric value or word)</label>
-    <input type="text" id="fill-blank-correct-input" class="form-control" value="${escapeHTML(q.correctAnswer || '')}">
+    <input type="text" id="fill-blank-correct-input" class="form-control" value="${escapeHTML(q.correctAnswer || '')}" placeholder="Add answer...">
   `;
   box.appendChild(wrapper);
 }
