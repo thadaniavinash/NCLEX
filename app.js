@@ -1360,6 +1360,10 @@ function showTableInsertModal(editor) {
   }
 
   modal.classList.remove('hidden');
+  console.log("Modal displayed. Computed Display:", window.getComputedStyle(modal).display);
+  console.log("Modal Computed z-index:", window.getComputedStyle(modal).zIndex);
+  console.log("Modal height/width:", modal.offsetHeight, modal.offsetWidth);
+  console.log("Modal parent:", modal.parentElement ? modal.parentElement.tagName : 'none');
 
   const cleanUp = () => {
     modal.classList.add('hidden');
