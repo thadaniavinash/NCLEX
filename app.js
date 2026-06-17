@@ -3393,9 +3393,9 @@ function renderPlayerStep(stepIdx) {
   const nextBtn = document.getElementById('player-next-btn');
   prevBtn.disabled = stepIdx === 0;
   if (stepIdx === currentCase.screens.length - 1) {
-    nextBtn.innerHTML = 'Finish attempt &rarr;';
+    nextBtn.innerHTML = 'Finish attempt <svg viewBox="0 0 24 24" width="16" height="16" style="vertical-align: middle; fill: currentColor; margin-left: 6.5px; transform: rotate(180deg);"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>';
   } else {
-    nextBtn.innerHTML = 'Next &rarr;';
+    nextBtn.innerHTML = 'Next <svg viewBox="0 0 24 24" width="16" height="16" style="vertical-align: middle; fill: currentColor; margin-left: 6.5px; transform: rotate(180deg);"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>';
   }
   
   const submitBtn = document.getElementById('player-submit-btn');
