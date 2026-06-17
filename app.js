@@ -1282,6 +1282,7 @@ function initRichTextEditors() {
       } else if (symbol) {
         document.execCommand('insertText', false, symbol);
       } else if (btn.classList.contains('table-insert-btn')) {
+        console.log("Table button clicked. Editor ID:", editor ? editor.id : 'null');
         showTableInsertModal(editor);
       }
       
@@ -1318,12 +1319,13 @@ function initRichTextEditors() {
 }
 
 function showTableInsertModal(editor) {
+  console.log("showTableInsertModal triggered");
   let modal = document.getElementById('table-insert-modal');
   if (!modal) {
     modal = document.createElement('div');
     modal.id = 'table-insert-modal';
     modal.className = 'modal-overlay';
-    modal.style.zIndex = '9999';
+    modal.style.zIndex = '10005';
     modal.innerHTML = `
       <div class="modal-content" style="max-width:320px; background:#1e293b; border:1px solid #334155; border-radius:var(--radius-md); padding:20px; box-shadow:var(--shadow-lg);">
         <h4 style="margin-top:0; margin-bottom:16px; font-size:14px; font-weight:600; color:white;">Insert Table</h4>
