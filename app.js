@@ -5512,19 +5512,24 @@ function setupTableInteractionMenu() {
       const insideChevronY = (clickedY >= rect.top && clickedY <= rect.top + 24);
       
       if (insideChevronX && insideChevronY) {
-        selectedTableCellElement = cell;
-        menu.style.display = 'flex';
-        
-        const menuHeight = 180;
-        const screenHeight = window.innerHeight;
-        const offsetBelow = rect.bottom + menuHeight;
-        
-        if (offsetBelow > screenHeight && rect.top > menuHeight) {
-          menu.style.top = `${rect.top + window.scrollY - menuHeight}px`;
+        if (menu.style.display === 'flex' && selectedTableCellElement === cell) {
+          menu.style.display = 'none';
+          selectedTableCellElement = null;
         } else {
-          menu.style.top = `${rect.bottom + window.scrollY}px`;
+          selectedTableCellElement = cell;
+          menu.style.display = 'flex';
+          
+          const menuHeight = 180;
+          const screenHeight = window.innerHeight;
+          const offsetBelow = rect.bottom + menuHeight;
+          
+          if (offsetBelow > screenHeight && rect.top > menuHeight) {
+            menu.style.top = `${rect.top + window.scrollY - menuHeight}px`;
+          } else {
+            menu.style.top = `${rect.bottom + window.scrollY}px`;
+          }
+          menu.style.left = `${rect.left + window.scrollX}px`;
         }
-        menu.style.left = `${rect.left + window.scrollX}px`;
       } else {
         menu.style.display = 'none';
       }
