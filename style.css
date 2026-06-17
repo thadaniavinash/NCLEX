@@ -1312,7 +1312,7 @@ textarea {
 }
 
 .patient-chart-intro {
-  padding: 12px;
+  padding: 12px 12px 12px 0;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
