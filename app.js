@@ -5510,7 +5510,7 @@ function setupTableInteractionMenu() {
       const rect = cell.getBoundingClientRect();
       const clickedX = e.clientX;
       const clickedY = e.clientY;
-      const insideChevronX = (clickedX >= rect.left && clickedX <= rect.left + 24);
+      const insideChevronX = (clickedX >= rect.right - 24 && clickedX <= rect.right);
       const insideChevronY = (clickedY >= rect.top && clickedY <= rect.top + 24);
       
       if (insideChevronX && insideChevronY) {

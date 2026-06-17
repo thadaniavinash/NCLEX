@@ -3286,7 +3286,7 @@ body.light-mode .card-id-badge:hover {
   content: '▼';
   position: absolute;
   top: 4px;
-  left: 4px;
+  right: 4px;
   font-size: 8px;
   line-height: 12px;
   text-align: center;
