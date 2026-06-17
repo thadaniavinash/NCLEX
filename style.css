@@ -959,6 +959,7 @@ textarea {
 }
 
 .player-calc-link-new:hover {
+  color: #ffff00;
   opacity: 0.9;
 }
 
@@ -1702,7 +1703,7 @@ td.matrix-cell-incorrect {
 
 .btn-footer-nav:hover {
   background-color: #166da9;
-  color: #ffeb3b;
+  color: #ffff00;
   border-color: #ffffff;
 }
 
