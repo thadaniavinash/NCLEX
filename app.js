@@ -4544,6 +4544,9 @@ function evaluateStepScore(stepIdx) {
   const q = step.question;
   const userAnswers = playerAnswers[stepIdx] || {};
   
+  console.log("evaluateStepScore triggered for stepIdx:", stepIdx, "Question Type:", q.type);
+  console.log("User Answers:", JSON.stringify(userAnswers));
+  
   let score = 0;
   let maxScore = 0;
   
@@ -4812,6 +4815,7 @@ function evaluateStepScore(stepIdx) {
     }
   }
   
+  console.log("evaluateStepScore result - Score:", score, "Max:", maxScore);
   playerScores[stepIdx] = { score, max: maxScore };
 }
 
