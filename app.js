@@ -1364,6 +1364,15 @@ function showTableInsertModal(editor) {
   console.log("Modal Computed z-index:", window.getComputedStyle(modal).zIndex);
   console.log("Modal height/width:", modal.offsetHeight, modal.offsetWidth);
   console.log("Modal parent:", modal.parentElement ? modal.parentElement.tagName : 'none');
+  
+  const innerContent = modal.querySelector('.modal-content');
+  if (innerContent) {
+    console.log("Inner Content computed display:", window.getComputedStyle(innerContent).display);
+    console.log("Inner Content opacity:", window.getComputedStyle(innerContent).opacity);
+    console.log("Inner Content size:", innerContent.offsetHeight, innerContent.offsetWidth);
+  } else {
+    console.log("Inner Content (.modal-content) not found in DOM!");
+  }
 
   const cleanUp = () => {
     modal.classList.add('hidden');
