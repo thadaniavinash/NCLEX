@@ -1292,7 +1292,7 @@ textarea {
 
 /* Patient Chart Core Box */
 .patient-chart-box {
-  border: 1px solid var(--nclex-border);
+  border: none;
   border-radius: var(--radius-sm);
   background: white;
   display: flex;
