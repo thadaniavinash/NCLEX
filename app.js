@@ -1423,7 +1423,7 @@ function initEditorEvents() {
   }
 
   document.getElementById('editor-back-btn').addEventListener('click', () => {
-    if (!saveCurrentStepData()) return;
+    if (!saveCurrentStepData(false, true)) return;
     saveCurrentCaseOrStandalone();
     switchView('dashboard');
   });
@@ -1906,7 +1906,7 @@ function deleteActiveTab() {
   }
 }
 
-function saveCurrentStepData(isChangingType = false) {
+function saveCurrentStepData(isChangingType = false, isBackingOut = false) {
   if (!currentCase || currentCase.screens.length === 0) return true;
   
   const select = document.getElementById('case-disorder-select');
@@ -1914,7 +1914,9 @@ function saveCurrentStepData(isChangingType = false) {
     const val = select.value;
     if (!val) {
       alert("Please select a disorder category for this case study / question.");
-      return false;
+      if (!isBackingOut) {
+        return false;
+      }
     }
     currentCase.disorder = val;
   }
