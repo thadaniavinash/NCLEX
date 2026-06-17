@@ -1316,7 +1316,6 @@ textarea {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
-  border-bottom: 1px solid var(--nclex-border);
 }
 
 .patient-chart-tabs-bar {
@@ -1397,8 +1396,9 @@ textarea {
 .btn-primary-exam:hover:not(:disabled) {
   background-color: #0d5c91;
   border-color: #0d5c91;
-  color: #ffffff;
-  text-shadow: 0 0 8px #ffffff, 0 0 16px rgba(255, 255, 255, 0.8);
+  color: #ffff00;
+  text-shadow: 0 0 8px #ffff00, 0 0 16px rgba(255, 255, 0, 0.9);
+  box-shadow: 0 0 12px #ffff00;
 }
 .btn-primary-exam:disabled {
   background-color: #d1d5db;
