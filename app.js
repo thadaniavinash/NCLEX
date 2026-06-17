@@ -3267,6 +3267,11 @@ function initPlayerEvents() {
   });
 
   document.getElementById('player-next-btn').addEventListener('click', () => {
+    const isSubmitted = submittedAnswers[playerStepIndex];
+    if (!isSubmitted) {
+      alert("Please submit your response first by clicking the Submit button.");
+      return;
+    }
     if (playerStepIndex < currentCase.screens.length - 1) {
       playerStepIndex++;
       renderPlayerStep(playerStepIndex);
