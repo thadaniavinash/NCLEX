@@ -1,0 +1,171 @@
+{
+  "id": "new-case-study-id",
+  "title": "Example Case Study Title",
+  "disorder": "Cardiovascular Disorders",
+  "description": "Brief description of the patient scenario and diagnostic focus.",
+  "isStandalone": false,
+  "screens": [
+    {
+      "step": 1,
+      "leftContent": {
+        "intro": "The nurse is caring for a client in the clinical setting...",
+        "tabs": [
+          {
+            "id": "tab-1",
+            "title": "History and Physical",
+            "content": "Patient medical record, vital signs, client history, etc. here."
+          },
+          {
+            "id": "tab-2",
+            "title": "Nurses' Notes",
+            "content": "0800: Patient reports feeling dizzy.\n0815: Administered prescribed medication."
+          }
+        ]
+      },
+      "question": {
+        "type": "select_all",
+        "preamble": "Add preamble text if applicable...",
+        "stem": "Which of the following findings require immediate follow-up? Select all that apply.",
+        "options": [
+          { "text": "Heart rate of 112 bpm", "correct": true },
+          { "text": "Oxygen saturation of 95% on room air", "correct": false },
+          { "text": "Respiratory rate of 28 breaths/min", "correct": true },
+          { "text": "Client is oriented to person, place, and time", "correct": false }
+        ],
+        "explanation": "Brief pathophysiology or reasoning explaining correct choices."
+      }
+    },
+    {
+      "step": 2,
+      "leftContent": {
+        "intro": "The nurse is caring for a client in the clinical setting...",
+        "tabs": [
+          {
+            "id": "tab-1",
+            "title": "History and Physical",
+            "content": "Patient medical record information here."
+          }
+        ]
+      },
+      "question": {
+        "type": "dropdown_cloze",
+        "preamble": "Add preamble text if applicable...",
+        "stem": "Complete the following sentence by choosing from the list of options.",
+        "cloze": {
+          "text": "The patient is at highest risk for [[drop0]] as most evidenced by [[drop1]].",
+          "dropdowns": [
+            {
+              "placeholder": "Choose...",
+              "options": [
+                { "text": "Heart Failure", "correct": true },
+                { "text": "Pneumonia", "correct": false }
+              ]
+            },
+            {
+              "placeholder": "Choose...",
+              "options": [
+                { "text": "pulmonary crackles", "correct": true },
+                { "text": "productive green sputum", "correct": false }
+              ]
+            }
+          ]
+        },
+        "explanation": "Brief explanation of correct choices."
+      }
+    },
+    {
+      "step": 3,
+      "leftContent": {
+        "intro": "The nurse is caring for a client in the clinical setting...",
+        "tabs": [
+          {
+            "id": "tab-1",
+            "title": "History and Physical",
+            "content": "Patient medical record information here."
+          }
+        ]
+      },
+      "question": {
+        "type": "dyad",
+        "preamble": "Add preamble text...",
+        "stem": "Complete the sentence choosing from the dropdown slots.",
+        "cloze": {
+          "text": "The nurse should...[[drop0]]...as most evidenced by...[[drop1]]",
+          "dropdowns": [
+            {
+              "placeholder": "Select...",
+              "options": [
+                { "text": "administer furosemide", "correct": true },
+                { "text": "infuse IV fluids", "correct": false },
+                { "text": "obtain an ECG", "correct": false }
+              ]
+            },
+            {
+              "placeholder": "Select...",
+              "options": [
+                { "text": "jugular venous distention", "correct": true },
+                { "text": "flat neck veins", "correct": false },
+                { "text": "dry mucous membranes", "correct": false }
+              ]
+            }
+          ]
+        },
+        "explanation": "Furosemide is indicated for volume overload as evidenced by JVD."
+      }
+    },
+    {
+      "step": 4,
+      "leftContent": {
+        "intro": "The nurse is caring for a client in the clinical setting...",
+        "tabs": [
+          {
+            "id": "tab-1",
+            "title": "History and Physical",
+            "content": "Patient medical record information here."
+          }
+        ]
+      },
+      "question": {
+        "type": "matrix_mc",
+        "preamble": "Add preamble text if applicable...",
+        "stem": "For each client finding, click to specify if the finding is consistent with left-sided or right-sided heart failure.",
+        "matrix": {
+          "firstColumnHeader": "Findings",
+          "columns": ["Left-sided Heart Failure", "Right-sided Heart Failure"],
+          "rows": [
+            { "text": "Dyspnea", "correctIndex": 0 },
+            { "text": "Jugular venous distention", "correctIndex": 1 }
+          ]
+        },
+        "explanation": "Dyspnea is pulmonary (Left), and JVD is systemic venous (Right)."
+      }
+    },
+    {
+      "step": 5,
+      "leftContent": {
+        "intro": "The nurse is caring for a client in the clinical setting...",
+        "tabs": [
+          {
+            "id": "tab-1",
+            "title": "History and Physical",
+            "content": "Patient medical record information here."
+          }
+        ]
+      },
+      "question": {
+        "type": "matrix_mr",
+        "preamble": "Add preamble text if applicable...",
+        "stem": "Select all options that apply in the grid below.",
+        "matrix": {
+          "firstColumnHeader": "Findings",
+          "columns": ["DI", "SIADH", "Addison's"],
+          "rows": [
+            { "text": "polyuria", "correctIndices": [0, 2], "correctIndex": 0 },
+            { "text": "weight gain", "correctIndices": [1], "correctIndex": 0 }
+          ]
+        },
+        "explanation": "Diagnostic findings consistent with standard conditions."
+      }
+    }
+  ]
+}
