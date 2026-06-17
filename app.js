@@ -5351,3 +5351,245 @@ function formatNursesNotes(html, tabTitle) {
   
   return temp.innerHTML;
 }
+
+let selectedTableCellElement = null;
+
+function setupTableInteractionMenu() {
+  let menu = document.getElementById('table-interaction-menu');
+  if (!menu) {
+    menu = document.createElement('div');
+    menu.id = 'table-interaction-menu';
+    menu.style.position = 'absolute';
+    menu.style.display = 'none';
+    menu.style.zIndex = '10000';
+    menu.style.background = '#1e293b';
+    menu.style.border = '1px solid #475569';
+    menu.style.borderRadius = 'var(--radius-md)';
+    menu.style.padding = '6px';
+    menu.style.boxShadow = 'var(--shadow-lg)';
+    menu.style.gap = '4px';
+    menu.style.flexDirection = 'column';
+    menu.style.maxHeight = '180px';
+    menu.style.overflowY = 'auto';
+    menu.style.width = '160px';
+    menu.innerHTML = `
+      <button id="tbl-menu-add-row-below" class="btn btn-secondary btn-xs" style="text-align:left; justify-content:flex-start; width:100%;">+ Add Row Below</button>
+      <button id="tbl-menu-add-row-above" class="btn btn-secondary btn-xs" style="text-align:left; justify-content:flex-start; width:100%;">+ Add Row Above</button>
+      <button id="tbl-menu-delete-row" class="btn btn-danger btn-xs" style="text-align:left; justify-content:flex-start; width:100%;">- Delete Row</button>
+      <div style="border-top:1px solid #334155; margin:4px 0;"></div>
+      <button id="tbl-menu-add-col-right" class="btn btn-secondary btn-xs" style="text-align:left; justify-content:flex-start; width:100%;">+ Add Column Right</button>
+      <button id="tbl-menu-add-col-left" class="btn btn-secondary btn-xs" style="text-align:left; justify-content:flex-start; width:100%;">+ Add Column Left</button>
+      <button id="tbl-menu-delete-col" class="btn btn-danger btn-xs" style="text-align:left; justify-content:flex-start; width:100%;">- Delete Column</button>
+    `;
+    document.body.appendChild(menu);
+
+    // Context Actions implementation
+    menu.querySelector('#tbl-menu-add-row-below').addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (!selectedTableCellElement) return;
+      const row = selectedTableCellElement.closest('tr');
+      const parent = row.parentNode;
+      const colsCount = row.cells.length;
+      
+      const newRow = document.createElement('tr');
+      for (let j = 0; j < colsCount; j++) {
+        const newCell = document.createElement('td');
+        newCell.setAttribute('placeholder', 'Cell');
+        newCell.style.border = '1px solid #ccd8e0';
+        newCell.style.padding = '8px';
+        newCell.style.minWidth = '80px';
+        newCell.style.background = 'white';
+        newCell.style.color = '#1e293b';
+        newRow.appendChild(newCell);
+      }
+      if (row.nextSibling) {
+        parent.insertBefore(newRow, row.nextSibling);
+      } else {
+        parent.appendChild(newRow);
+      }
+      menu.style.display = 'none';
+    });
+
+    menu.querySelector('#tbl-menu-add-row-above').addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (!selectedTableCellElement) return;
+      const row = selectedTableCellElement.closest('tr');
+      const parent = row.parentNode;
+      const colsCount = row.cells.length;
+      
+      const newRow = document.createElement('tr');
+      const isHeader = parent.tagName.toLowerCase() === 'thead';
+      for (let j = 0; j < colsCount; j++) {
+        const newCell = document.createElement(isHeader ? 'th' : 'td');
+        if (isHeader) {
+          newCell.setAttribute('placeholder', `Header ${j+1}`);
+          newCell.style.border = '1px solid #ccd8e0';
+          newCell.style.padding = '8px';
+          newCell.style.background = '#025287';
+          newCell.style.color = 'white';
+          newCell.style.fontWeight = '600';
+          newCell.style.textAlign = 'left';
+        } else {
+          newCell.setAttribute('placeholder', 'Cell');
+          newCell.style.border = '1px solid #ccd8e0';
+          newCell.style.padding = '8px';
+          newCell.style.minWidth = '80px';
+          newCell.style.background = 'white';
+          newCell.style.color = '#1e293b';
+        }
+        newRow.appendChild(newCell);
+      }
+      parent.insertBefore(newRow, row);
+      menu.style.display = 'none';
+    });
+
+    menu.querySelector('#tbl-menu-delete-row').addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (!selectedTableCellElement) return;
+      const row = selectedTableCellElement.closest('tr');
+      const table = selectedTableCellElement.closest('table');
+      if (table.querySelectorAll('tr').length > 1) {
+        row.remove();
+      }
+      menu.style.display = 'none';
+    });
+
+    menu.querySelector('#tbl-menu-add-col-right').addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (!selectedTableCellElement) return;
+      const cellIndex = selectedTableCellElement.cellIndex;
+      const table = selectedTableCellElement.closest('table');
+      const rows = table.querySelectorAll('tr');
+      
+      rows.forEach(r => {
+        const isHeader = r.closest('thead') !== null;
+        const targetCell = r.cells[cellIndex];
+        const newCell = document.createElement(isHeader ? 'th' : 'td');
+        
+        if (isHeader) {
+          newCell.setAttribute('placeholder', 'Header');
+          newCell.style.border = '1px solid #ccd8e0';
+          newCell.style.padding = '8px';
+          newCell.style.background = '#025287';
+          newCell.style.color = 'white';
+          newCell.style.fontWeight = '600';
+          newCell.style.textAlign = 'left';
+        } else {
+          newCell.setAttribute('placeholder', 'Cell');
+          newCell.style.border = '1px solid #ccd8e0';
+          newCell.style.padding = '8px';
+          newCell.style.minWidth = '80px';
+          newCell.style.background = 'white';
+          newCell.style.color = '#1e293b';
+        }
+        if (targetCell && targetCell.nextSibling) {
+          r.insertBefore(newCell, targetCell.nextSibling);
+        } else {
+          r.appendChild(newCell);
+        }
+      });
+      menu.style.display = 'none';
+    });
+
+    menu.querySelector('#tbl-menu-add-col-left').addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (!selectedTableCellElement) return;
+      const cellIndex = selectedTableCellElement.cellIndex;
+      const table = selectedTableCellElement.closest('table');
+      const rows = table.querySelectorAll('tr');
+      
+      rows.forEach(r => {
+        const isHeader = r.closest('thead') !== null;
+        const targetCell = r.cells[cellIndex];
+        const newCell = document.createElement(isHeader ? 'th' : 'td');
+        
+        if (isHeader) {
+          newCell.setAttribute('placeholder', 'Header');
+          newCell.style.border = '1px solid #ccd8e0';
+          newCell.style.padding = '8px';
+          newCell.style.background = '#025287';
+          newCell.style.color = 'white';
+          newCell.style.fontWeight = '600';
+          newCell.style.textAlign = 'left';
+        } else {
+          newCell.setAttribute('placeholder', 'Cell');
+          newCell.style.border = '1px solid #ccd8e0';
+          newCell.style.padding = '8px';
+          newCell.style.minWidth = '80px';
+          newCell.style.background = 'white';
+          newCell.style.color = '#1e293b';
+        }
+        r.insertBefore(newCell, targetCell);
+      });
+      menu.style.display = 'none';
+    });
+
+    menu.querySelector('#tbl-menu-delete-col').addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (!selectedTableCellElement) return;
+      const cellIndex = selectedTableCellElement.cellIndex;
+      const table = selectedTableCellElement.closest('table');
+      const rows = table.querySelectorAll('tr');
+      
+      if (selectedTableCellElement.closest('tr').cells.length > 1) {
+        rows.forEach(r => {
+          if (r.cells[cellIndex]) {
+            r.cells[cellIndex].remove();
+          }
+        });
+      }
+      menu.style.display = 'none';
+    });
+  }
+
+  // Bind mousedown listener to table elements inside editor to position the menu
+  document.addEventListener('mousedown', (e) => {
+    // If click/mousedown is inside the menu itself, do nothing
+    if (e.target.closest('#table-interaction-menu')) {
+      return;
+    }
+    
+    // Check if mousedown was inside a contenteditable rich-text cell
+    const cell = e.target.closest('[contenteditable="true"] td, [contenteditable="true"] th');
+    if (cell) {
+      const rect = cell.getBoundingClientRect();
+      const clickedX = e.clientX;
+      const clickedY = e.clientY;
+      const insideChevronX = (clickedX >= rect.right - 24 && clickedX <= rect.right);
+      const insideChevronY = (clickedY >= rect.top && clickedY <= rect.top + 24);
+      
+      if (insideChevronX && insideChevronY) {
+        selectedTableCellElement = cell;
+        menu.style.display = 'flex';
+        
+        const menuHeight = 180;
+        const screenHeight = window.innerHeight;
+        const offsetBelow = rect.bottom + menuHeight;
+        
+        if (offsetBelow > screenHeight && rect.top > menuHeight) {
+          menu.style.top = `${rect.top + window.scrollY - menuHeight}px`;
+        } else {
+          menu.style.top = `${rect.bottom + window.scrollY}px`;
+        }
+        menu.style.left = `${rect.left + window.scrollX}px`;
+      } else {
+        menu.style.display = 'none';
+      }
+    } else {
+      menu.style.display = 'none';
+    }
+  });
+}
+
+// Run initializer on window load
+if (document.readyState === 'loading') {
+  window.addEventListener('DOMContentLoaded', setupTableInteractionMenu);
+} else {
+  setupTableInteractionMenu();
+}
