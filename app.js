@@ -1282,8 +1282,7 @@ function initRichTextEditors() {
       } else if (symbol) {
         document.execCommand('insertText', false, symbol);
       } else if (btn.classList.contains('table-insert-btn')) {
-        console.log("Table button clicked. Editor ID:", editor ? editor.id : 'null');
-        showTableInsertModal(editor);
+        insertTableAtCursor(editor, 3, 2);
       }
       
       // Restore focus and selection range (only if not already focused, or if text was selected)
@@ -1318,74 +1317,7 @@ function initRichTextEditors() {
   });
 }
 
-function showTableInsertModal(editor) {
-  console.log("showTableInsertModal triggered");
-  let modal = document.getElementById('table-insert-modal');
-  if (!modal) {
-    modal = document.createElement('div');
-    modal.id = 'table-insert-modal';
-    modal.className = 'modal-overlay';
-    modal.style.zIndex = '10005';
-    modal.innerHTML = `
-      <div class="modal-content" style="max-width:320px; background:#1e293b; border:1px solid #334155; border-radius:var(--radius-md); padding:20px; box-shadow:var(--shadow-lg);">
-        <h4 style="margin-top:0; margin-bottom:16px; font-size:14px; font-weight:600; color:white;">Insert Table</h4>
-        <div class="form-group" style="margin-bottom:12px;">
-          <label style="display:block; margin-bottom:6px; font-size:12px; color:#94a3b8;">Rows</label>
-          <select id="table-modal-rows" class="form-control" style="width:100%; height:32px; font-size:12px; padding:4px 8px; background:#0f172a; border-color:#334155; color:white; cursor:pointer;">
-            <option value="2">2</option>
-            <option value="3" selected>3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-          </select>
-        </div>
-        <div class="form-group" style="margin-bottom:20px;">
-          <label style="display:block; margin-bottom:6px; font-size:12px; color:#94a3b8;">Columns</label>
-          <select id="table-modal-cols" class="form-control" style="width:100%; height:32px; font-size:12px; padding:4px 8px; background:#0f172a; border-color:#334155; color:white; cursor:pointer;">
-            <option value="2" selected>2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </div>
-        <div style="display:flex; gap:10px; justify-content:flex-end;">
-          <button id="table-modal-cancel" class="btn btn-secondary" style="font-size:12px; padding:6px 12px; height:32px;">Cancel</button>
-          <button id="table-modal-insert" class="btn btn-primary" style="font-size:12px; padding:6px 12px; height:32px;">Insert</button>
-        </div>
-      </div>
-    `;
-    document.body.appendChild(modal);
-  }
 
-  modal.classList.remove('hidden');
-  console.log("Modal displayed. Computed Display:", window.getComputedStyle(modal).display);
-  console.log("Modal Computed z-index:", window.getComputedStyle(modal).zIndex);
-  console.log("Modal height/width:", modal.offsetHeight, modal.offsetWidth);
-  console.log("Modal parent:", modal.parentElement ? modal.parentElement.tagName : 'none');
-  
-  const innerContent = modal.querySelector('.modal-content');
-  if (innerContent) {
-    console.log("Inner Content computed display:", window.getComputedStyle(innerContent).display);
-    console.log("Inner Content opacity:", window.getComputedStyle(innerContent).opacity);
-    console.log("Inner Content size:", innerContent.offsetHeight, innerContent.offsetWidth);
-  } else {
-    console.log("Inner Content (.modal-content) not found in DOM!");
-  }
-
-  const cleanUp = () => {
-    modal.classList.add('hidden');
-  };
-
-  modal.querySelector('#table-modal-cancel').onclick = cleanUp;
-  modal.querySelector('#table-modal-insert').onclick = () => {
-    const rows = parseInt(modal.querySelector('#table-modal-rows').value);
-    const cols = parseInt(modal.querySelector('#table-modal-cols').value);
-    insertTableAtCursor(editor, rows, cols);
-    cleanUp();
-  };
-}
 
 function insertTableAtCursor(editorDiv, rows, cols) {
   let tableHTML = '<table class="nclex-editor-table" style="width:100%; border-collapse:collapse; margin:12px 0;">';
@@ -5576,7 +5508,7 @@ function setupTableInteractionMenu() {
       const rect = cell.getBoundingClientRect();
       const clickedX = e.clientX;
       const clickedY = e.clientY;
-      const insideChevronX = (clickedX >= rect.right - 24 && clickedX <= rect.right);
+      const insideChevronX = (clickedX >= rect.left && clickedX <= rect.left + 24);
       const insideChevronY = (clickedY >= rect.top && clickedY <= rect.top + 24);
       
       if (insideChevronX && insideChevronY) {
