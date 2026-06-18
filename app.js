@@ -1609,16 +1609,26 @@ function initializeQuestionTypeDefaults(q) {
       if (q.matrix.columns.length > 2) q.matrix.columns = q.matrix.columns.slice(0, 2);
     }
   } else if (q.type === 'matrix_mr') {
+    const cleanStem = (q.stem || '').replace(/<[^>]*>/g, '').replace(/&nbsp;/g, '').trim();
+    if (!cleanStem) {
+      q.stem = 'For each assessment finding below, click to specify if the finding is consistent with the disease process of ... . Each finding may support more than 1 disease process.';
+    }
     if (!q.matrix) {
       q.matrix = {
-        firstColumnHeader: 'Findings',
-        columns: ['DI', 'SIADH', 'Addison\'s'],
+        firstColumnHeader: '',
+        columns: ['', '', ''],
         rows: [
-          { text: 'polyuria', correctIndices: [0, 2] },
-          { text: 'weight gain', correctIndices: [1] }
+          { text: '', correctIndices: [] },
+          { text: '', correctIndices: [] }
         ]
       };
     } else {
+      const genericRows = ['clear liquid diet', 'soapsuds enema', 'polyuria', 'weight gain', 'New Row 1', 'New Row 2'];
+      q.matrix.rows.forEach(r => {
+        if (genericRows.includes(r.text)) {
+          r.text = '';
+        }
+      });
       while (q.matrix.columns.length < 3) q.matrix.columns.push('');
       if (q.matrix.columns.length > 3) q.matrix.columns = q.matrix.columns.slice(0, 3);
     }
@@ -2582,11 +2592,11 @@ function renderMatrixMrConfigurator(q, box) {
 function renderMatrixBaseConfigurator(q, box, isMultiResponse) {
   if (!q.matrix) {
     q.matrix = {
-      firstColumnHeader: isMultiResponse ? 'Findings' : '',
-      columns: isMultiResponse ? ['DI', 'SIADH', "Addison's"] : ['Indicated', 'Not Indicated'],
+      firstColumnHeader: '',
+      columns: isMultiResponse ? ['', '', ''] : ['Indicated', 'Not Indicated'],
       rows: isMultiResponse ? [
-        { text: 'polyuria', correctIndices: [0, 2], correctIndex: 0 },
-        { text: 'weight gain', correctIndices: [1], correctIndex: 0 }
+        { text: '', correctIndices: [], correctIndex: 0 },
+        { text: '', correctIndices: [], correctIndex: 0 }
       ] : [
         { text: '', correctIndex: 0, correctIndices: [0] },
         { text: '', correctIndex: 0, correctIndices: [0] }
@@ -2595,15 +2605,15 @@ function renderMatrixBaseConfigurator(q, box, isMultiResponse) {
   }
   const m = q.matrix;
   if (!m.firstColumnHeader && isMultiResponse) {
-    m.firstColumnHeader = 'Findings';
+    m.firstColumnHeader = '';
   }
   if (!m.columns || m.columns.length < 2) {
-    m.columns = isMultiResponse ? ['DI', 'SIADH', "Addison's"] : ['Indicated', 'Not Indicated'];
+    m.columns = isMultiResponse ? ['', '', ''] : ['Indicated', 'Not Indicated'];
   }
   if (!m.rows || m.rows.length === 0) {
     m.rows = isMultiResponse ? [
-      { text: 'New Row 1', correctIndex: 0, correctIndices: [0] },
-      { text: 'New Row 2', correctIndex: 0, correctIndices: [0] }
+      { text: '', correctIndex: 0, correctIndices: [] },
+      { text: '', correctIndex: 0, correctIndices: [] }
     ] : [
       { text: '', correctIndex: 0, correctIndices: [0] },
       { text: '', correctIndex: 0, correctIndices: [0] }
@@ -2642,7 +2652,7 @@ function renderMatrixBaseConfigurator(q, box, isMultiResponse) {
     thFirst.style.padding = '8px';
     thFirst.style.minWidth = '180px';
     thFirst.innerHTML = `
-      <input type="text" class="form-control matrix-first-header-input" style="font-weight:bold; font-size:12px; padding:6px;" value="${escapeHTML(h1Val)}" placeholder="Column 1">
+      <input type="text" class="form-control matrix-first-header-input" style="font-weight:bold; font-size:12px; padding:6px;" value="${escapeHTML(h1Val)}" placeholder="Add text...">
     `;
     thFirst.querySelector('.matrix-first-header-input').addEventListener('input', (e) => {
       m.firstColumnHeader = e.target.value;
@@ -2658,7 +2668,7 @@ function renderMatrixBaseConfigurator(q, box, isMultiResponse) {
       thCol.style.minWidth = '120px';
       thCol.innerHTML = `
         <div style="display:flex; align-items:center; gap:4px; justify-content:center;">
-          <input type="text" class="form-control matrix-col-header-input" style="font-size:12px; text-align:center; padding:6px;" value="${escapeHTML(col)}" placeholder="Column ${cIdx+2}">
+          <input type="text" class="form-control matrix-col-header-input" style="font-size:12px; text-align:center; padding:6px;" value="${escapeHTML(col)}" placeholder="Add text...">
           ${m.columns.length > 2 ? `<button class="delete-col-btn" style="background:transparent; border:none; color:#ef4444; font-size:16px; cursor:pointer; padding:0 4px;">&times;</button>` : ''}
         </div>
       `;
