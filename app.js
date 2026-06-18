@@ -3501,11 +3501,33 @@ function renderPlayerStep(stepIdx) {
   // Full-width adaptive layout for questions with no tabs
   const splitContainer = document.querySelector('.player-center-split');
   if (splitContainer) {
-    const hasLeftContent = step.leftContent && step.leftContent.tabs && step.leftContent.tabs.length > 0;
+    const hasLeftContent = step.leftContent && step.leftContent.tabs && step.leftContent.tabs.length > 0 && step.question.type !== 'highlight';
     if (!hasLeftContent) {
       splitContainer.classList.add('full-width');
     } else {
       splitContainer.classList.remove('full-width');
+    }
+  }
+
+  // Populate and show full-width meta header if in highlight question type
+  const fullwidthHeader = document.getElementById('player-fullwidth-meta-header');
+  if (fullwidthHeader) {
+    if (step.question.type === 'highlight') {
+      fullwidthHeader.classList.remove('hidden');
+      document.getElementById('player-fullwidth-question-number-title').textContent = `Question ${stepIdx + 1}`;
+      document.getElementById('player-fullwidth-question-status-text').textContent = isSubmitted ? 'Complete' : 'Not complete';
+      
+      const fwScreenLabel = document.getElementById('player-fullwidth-screen-label');
+      if (fwScreenLabel) {
+        if (isStepStandalone) {
+          fwScreenLabel.style.display = 'none';
+        } else {
+          fwScreenLabel.style.display = 'block';
+          fwScreenLabel.textContent = `Case Study Screen ${stepIdx + 1} of ${currentCase.screens.length}`;
+        }
+      }
+    } else {
+      fullwidthHeader.classList.add('hidden');
     }
   }
 
