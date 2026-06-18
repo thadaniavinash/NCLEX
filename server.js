@@ -1,6 +1,8 @@
+// NCLEX NGN Case Study Studio - Server Configuration
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+
 
 const PORT = 3000;
 const PUBLIC_DIR = __dirname;
