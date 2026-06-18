@@ -24,8 +24,10 @@ let standaloneQuestions = [];
 let currentCase = null;
 let currentStepIndex = 0; // For Editor
 let activeTabId = ''; // For Editor active tab
+let highlightActiveTabId = ''; // For Editor active highlight tab
 let playerStepIndex = 0; // For Player
 let playerActiveTabId = ''; // For Player active tab
+let playerHighlightActiveTabId = ''; // For Player active highlight tab
 let activeDashboardTab = 'cases'; // 'cases', 'standalone', 'generator'
 let isCasesFolderExpanded = false;
 let isStandaloneFolderExpanded = false;
@@ -1159,6 +1161,7 @@ function generateAndStartQuiz() {
       q.screens.forEach(screen => {
         const screenCopy = JSON.parse(JSON.stringify(screen));
         screenCopy.step = currentStepNum++;
+        screenCopy.isStandalone = true;
         compiledCase.screens.push(screenCopy);
       });
     }
@@ -1251,59 +1254,78 @@ function updateToolbarStates(editor) {
 }
 
 function initRichTextEditors() {
-  document.querySelectorAll('.rich-editor-toolbar .toolbar-btn').forEach(btn => {
-    // Prevent focus loss from contenteditable on mousedown
-    btn.addEventListener('mousedown', (e) => {
+  // Prevent focus loss from contenteditable on mousedown
+  document.body.addEventListener('mousedown', (e) => {
+    const btn = e.target.closest('.rich-editor-toolbar .toolbar-btn');
+    if (btn) {
       e.preventDefault();
-    });
+    }
+  });
 
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      
-      const container = btn.closest('.rich-editor-container');
-      const editor = container.querySelector('.rich-text-editor');
-      const isAlreadyFocused = (document.activeElement === editor || editor.contains(document.activeElement));
-      
-      // Save current selection range before applying command
-      const selection = window.getSelection();
-      let savedRange = null;
-      if (selection.rangeCount > 0) {
-        const range = selection.getRangeAt(0);
-        if (editor.contains(range.commonAncestorContainer)) {
-          savedRange = range.cloneRange();
-        }
+  document.body.addEventListener('click', (e) => {
+    const btn = e.target.closest('.rich-editor-toolbar .toolbar-btn');
+    if (!btn) return;
+    
+    e.preventDefault();
+    
+    const container = btn.closest('.rich-editor-container');
+    if (!container) return;
+    
+    const editor = container.querySelector('.rich-text-editor');
+    if (!editor) return;
+    
+    const isAlreadyFocused = (document.activeElement === editor || editor.contains(document.activeElement));
+    
+    // Save current selection range before applying command
+    const selection = window.getSelection();
+    let savedRange = null;
+    if (selection.rangeCount > 0) {
+      const range = selection.getRangeAt(0);
+      if (editor.contains(range.commonAncestorContainer)) {
+        savedRange = range.cloneRange();
       }
-      
-      const cmd = btn.dataset.cmd;
-      const symbol = btn.dataset.symbol;
-      
-      if (cmd) {
-        document.execCommand(cmd, false, null);
-      } else if (symbol) {
-        document.execCommand('insertText', false, symbol);
-      } else if (btn.classList.contains('table-insert-btn')) {
-        insertTableAtCursor(editor, 3, 2);
-      }
-      
-      // Restore focus and selection range (only if not already focused, or if text was selected)
-      if (!isAlreadyFocused) {
-        editor.focus();
-      }
-      if (savedRange && !savedRange.collapsed) {
-        selection.removeAllRanges();
-        selection.addRange(savedRange);
-      }
-      
-      // Immediately update toolbar active states
-      updateToolbarStates(editor);
-    });
+    }
+    
+    const cmd = btn.dataset.cmd;
+    const symbol = btn.dataset.symbol;
+    
+    if (cmd) {
+      document.execCommand(cmd, false, null);
+    } else if (symbol) {
+      document.execCommand('insertText', false, symbol);
+    } else if (btn.classList.contains('table-insert-btn')) {
+      insertTableAtCursor(editor, 3, 2);
+    }
+    
+    // Restore focus and selection range (only if not already focused, or if text was selected)
+    if (!isAlreadyFocused) {
+      editor.focus();
+    }
+    if (savedRange && !savedRange.collapsed) {
+      selection.removeAllRanges();
+      selection.addRange(savedRange);
+    }
+    
+    // Immediately update toolbar active states
+    updateToolbarStates(editor);
   });
 
   // Keep toolbar states synced on cursor movement / selection change
-  document.querySelectorAll('.rich-text-editor').forEach(editor => {
-    ['keyup', 'mouseup', 'click', 'focus'].forEach(evtType => {
-      editor.addEventListener(evtType, () => updateToolbarStates(editor));
-    });
+  document.body.addEventListener('keyup', (e) => {
+    const editor = e.target.closest('.rich-text-editor');
+    if (editor) updateToolbarStates(editor);
+  });
+  document.body.addEventListener('mouseup', (e) => {
+    const editor = e.target.closest('.rich-text-editor');
+    if (editor) updateToolbarStates(editor);
+  });
+  document.body.addEventListener('click', (e) => {
+    const editor = e.target.closest('.rich-text-editor');
+    if (editor) updateToolbarStates(editor);
+  });
+  document.body.addEventListener('focusin', (e) => {
+    const editor = e.target.closest('.rich-text-editor');
+    if (editor) updateToolbarStates(editor);
   });
 
   // Force plain text paste in contenteditable editors to prevent font modifications
@@ -1472,6 +1494,13 @@ function initEditorEvents() {
       if (e.target.innerHTML !== stripped) {
         e.target.innerHTML = stripped;
       }
+    }
+  });
+
+  document.getElementById('tab-text-input').addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      document.execCommand('insertHTML', false, '&nbsp;&nbsp;&nbsp;&nbsp;');
     }
   });
 
@@ -1658,8 +1687,10 @@ function initializeQuestionTypeDefaults(q) {
       }
     }
   } else if (q.type === 'highlight') {
-    if (!q.highlightText) {
-      q.highlightText = 'The client reports {pain in left calf|correct}. Respirations are {shallow and labored|correct}. Temperature is {98.6 F}.';
+    if (!q.highlightTabs) {
+      q.highlightTabs = [
+        { id: 'ht_' + Date.now(), title: "Nurses' Notes", content: q.highlightText || 'The client reports {pain in left calf|correct}. Respirations are {shallow and labored|correct}. Temperature is {98.6 F}.' }
+      ];
     }
   } else if (q.type === 'grouped_mr') {
     if (!q.groupedRows) {
@@ -1715,10 +1746,23 @@ function renderEditorStep(stepIdx) {
   
   renderStepsSidebar();
   
+  const stdChartEditor = document.getElementById('standard-chart-editor');
+  const highlightPlaceholder = document.getElementById('highlight-chart-placeholder');
+  const q = step.question;
+  
+  if (stdChartEditor && highlightPlaceholder) {
+    if (q.type === 'highlight') {
+      stdChartEditor.classList.add('hidden');
+      highlightPlaceholder.classList.remove('hidden');
+    } else {
+      stdChartEditor.classList.remove('hidden');
+      highlightPlaceholder.classList.add('hidden');
+    }
+  }
+  
   document.getElementById('step-intro-input').innerHTML = step.leftContent.intro || '';
   renderEditorTabs(step.leftContent.tabs);
   
-  const q = step.question;
   document.getElementById('question-type-select').value = q.type;
   document.getElementById('question-preamble-input').innerHTML = q.preamble || '';
   
@@ -1946,8 +1990,20 @@ function saveCurrentStepData(isChangingType = false, isBackingOut = false) {
     const el = document.getElementById('hotspot-url-input');
     if (el) q.imageUrl = el.value;
   } else if (q.type === 'highlight') {
-    const el = document.getElementById('highlight-markup-input');
-    if (el) q.highlightText = el.value;
+    const el = document.getElementById('highlight-tab-text-input');
+    if (el && q.highlightTabs) {
+      const activeTab = q.highlightTabs.find(t => t.id === highlightActiveTabId);
+      if (activeTab) {
+        activeTab.content = el.innerHTML;
+      }
+    }
+    const titleEl = document.getElementById('highlight-tab-title-input');
+    if (titleEl && q.highlightTabs) {
+      const activeTab = q.highlightTabs.find(t => t.id === highlightActiveTabId);
+      if (activeTab) {
+        activeTab.title = titleEl.value;
+      }
+    }
     const maxInput = document.getElementById('highlight-max-correct-input');
     if (maxInput) q.maxCorrectSelections = parseInt(maxInput.value) || null;
   }
@@ -3137,24 +3193,118 @@ function renderOrderedResponseConfigurator(q, box) {
   });
 }
 
-// 12. Highlight Configurator
 function renderHighlightConfigurator(q, box) {
+  if (!q.highlightTabs) {
+    q.highlightTabs = [
+      { id: 'ht_' + Date.now(), title: "Nurses' Notes", content: q.highlightText || '' }
+    ];
+  }
+  
+  if (!highlightActiveTabId || !q.highlightTabs.find(t => t.id === highlightActiveTabId)) {
+    highlightActiveTabId = q.highlightTabs[0].id;
+  }
+  
+  const activeTab = q.highlightTabs.find(t => t.id === highlightActiveTabId);
+  
   const wrapper = document.createElement('div');
+  wrapper.className = 'highlight-tabs-editor-container';
   wrapper.innerHTML = `
-    <div class="cloze-warning">
+    <div class="cloze-warning" style="margin-bottom: 12px;">
       Wrap phrases in curly braces like: <strong>{unstable vitals|correct}</strong> for correct findings, or <strong>{temperature of 98.6 F}</strong> for incorrect findings that are click-selectable.
     </div>
-    <div class="form-group">
-      <label for="highlight-markup-input">Highlight Text Passage</label>
-      <textarea id="highlight-markup-input" rows="6" placeholder="The patient had {crackles in lungs|correct}. Pulse rate was {82 bpm}."></textarea>
+    
+    <div class="tabs-editor-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
+      <h5 style="margin:0;">Highlight Chart Tabs</h5>
+      <button id="add-highlight-tab-btn" class="btn btn-text btn-xs">+ Add Tab</button>
     </div>
-    <div class="form-group" style="margin-top: 12px;">
-      <label for="highlight-max-correct-input">Number of Correct Responses (optional)</label>
-      <input type="number" id="highlight-max-correct-input" class="form-control" style="width: 150px;" min="1" placeholder="e.g. 3" value="${q.maxCorrectSelections || ''}">
+    
+    <div id="highlight-editor-tabs-list" class="tabs-list-horizontal" style="display:flex; gap:4px; margin-bottom:8px; border-bottom:1px solid var(--border-color); padding-bottom:4px; overflow-x:auto;">
+      ${q.highlightTabs.map(t => `
+        <div class="tab-editor-item ${t.id === highlightActiveTabId ? 'active' : ''}" data-id="${t.id}" style="padding: 6px 12px; border: 1px solid var(--border-color); border-bottom: none; border-radius: 4px 4px 0 0; cursor: pointer; font-size:13px; font-weight:500;">
+          <span>${escapeHTML(t.title)}</span>
+        </div>
+      `).join('')}
+    </div>
+    
+    <div id="highlight-tab-content-editor" class="tab-content-editor-box" style="border: 1px solid var(--border-color); padding: 12px; border-radius: 4px; background: var(--background-secondary);">
+      <div class="form-group no-margin">
+        <label style="display:block; margin-bottom: 6px; font-weight: 500; font-size:13px;">Content for "${escapeHTML(activeTab.title)}"</label>
+        <input type="text" id="highlight-tab-title-input" class="tab-title-rename" placeholder="Tab Title" value="${escapeHTML(activeTab.title)}" style="width:100%; padding:6px; border:1px solid var(--border-color); border-radius:4px; margin-bottom:10px; font-size:13px;">
+        
+        <div class="rich-editor-container" style="border:1px solid var(--border-color); border-radius:4px; overflow:hidden; background:#ffffff; margin-bottom:10px;">
+          <div class="rich-editor-toolbar" style="display:flex; flex-wrap:wrap; gap:4px; padding:6px; border-bottom:1px solid var(--border-color); background:var(--background-primary);">
+            <button type="button" class="toolbar-btn" data-cmd="bold" title="Bold"><b>B</b></button>
+            <button type="button" class="toolbar-btn" data-cmd="superscript" title="Superscript">x<sup>2</sup></button>
+            <button type="button" class="toolbar-btn" data-cmd="subscript" title="Subscript">x<sub>2</sub></button>
+            <button type="button" class="toolbar-btn btn-symbol" data-symbol="&deg;" title="Degree Symbol">&deg;</button>
+            <button type="button" class="toolbar-btn btn-symbol" data-symbol="&ge;" title="Greater Than or Equal to">&ge;</button>
+            <button type="button" class="toolbar-btn btn-symbol" data-symbol="&le;" title="Less Than or Equal to">&le;</button>
+            <button type="button" class="toolbar-btn" data-cmd="insertUnorderedList" title="Bullet List">• List</button>
+            <button type="button" class="toolbar-btn" data-cmd="insertOrderedList" title="Numbered List">1. List</button>
+            <button type="button" class="toolbar-btn table-insert-btn" title="Insert Table">
+              <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2" fill="none" style="vertical-align: middle;"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+              Table
+            </button>
+          </div>
+          <div contenteditable="true" class="rich-text-editor" id="highlight-tab-text-input" placeholder="Enter chart text or tables here..." style="min-height: 150px; padding: 12px; outline: none; font-size:14px; line-height:1.5;">${activeTab.content || ''}</div>
+        </div>
+        
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <button id="delete-highlight-tab-btn" class="btn btn-danger btn-xs">Delete This Tab</button>
+          <div>
+            <label for="highlight-max-correct-input" style="font-size:12px; margin-right: 6px;">Max Correct (optional):</label>
+            <input type="number" id="highlight-max-correct-input" class="form-control" style="width: 70px; display:inline-block; padding:4px;" min="1" value="${q.maxCorrectSelections || ''}">
+          </div>
+        </div>
+      </div>
     </div>
   `;
   box.appendChild(wrapper);
-  document.getElementById('highlight-markup-input').value = q.highlightText || '';
+  
+  // Attach event listeners for highlight tabs editor
+  const titleInput = document.getElementById('highlight-tab-title-input');
+  titleInput.addEventListener('input', (e) => {
+    activeTab.title = e.target.value;
+    const tabHeader = document.querySelector(`#highlight-editor-tabs-list .tab-editor-item[data-id="${highlightActiveTabId}"] span`);
+    if (tabHeader) tabHeader.textContent = e.target.value;
+  });
+  
+  // Tab switching
+  const tabItems = wrapper.querySelectorAll('#highlight-editor-tabs-list .tab-editor-item');
+  tabItems.forEach(item => {
+    item.addEventListener('click', () => {
+      activeTab.content = document.getElementById('highlight-tab-text-input').innerHTML;
+      highlightActiveTabId = item.getAttribute('data-id');
+      renderDynamicQuestionConfigurator(q);
+    });
+  });
+  
+  // Add tab
+  document.getElementById('add-highlight-tab-btn').addEventListener('click', () => {
+    activeTab.content = document.getElementById('highlight-tab-text-input').innerHTML;
+    const newId = 'ht_' + Date.now();
+    q.highlightTabs.push({
+      id: newId,
+      title: 'New Tab',
+      content: ''
+    });
+    highlightActiveTabId = newId;
+    renderDynamicQuestionConfigurator(q);
+  });
+  
+  // Delete tab
+  document.getElementById('delete-highlight-tab-btn').addEventListener('click', () => {
+    if (q.highlightTabs.length <= 1) {
+      alert("Must keep at least one tab.");
+      return;
+    }
+    if (confirm("Delete this tab?")) {
+      const idx = q.highlightTabs.findIndex(t => t.id === highlightActiveTabId);
+      q.highlightTabs.splice(idx, 1);
+      highlightActiveTabId = q.highlightTabs[0].id;
+      renderDynamicQuestionConfigurator(q);
+    }
+  });
 }
 
 // 14. Grouped Multiple Response Configurator
@@ -3253,6 +3403,23 @@ function initPlayerEvents() {
     }
   });
   
+  document.getElementById('player-menu-toggle-btn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    const sidebar = document.querySelector('.player-left-sidebar');
+    sidebar.classList.toggle('expanded');
+  });
+
+  document.addEventListener('click', (e) => {
+    const sidebar = document.querySelector('.player-left-sidebar');
+    const toggleBtn = document.getElementById('player-menu-toggle-btn');
+    if (sidebar && sidebar.classList.contains('expanded') && toggleBtn) {
+      const isClickInside = sidebar.contains(e.target) || toggleBtn.contains(e.target);
+      if (!isClickInside || e.target.classList.contains('nav-square') || e.target.closest('.nav-square') || e.target.classList.contains('link-btn')) {
+        sidebar.classList.remove('expanded');
+      }
+    }
+  });
+
   document.getElementById('player-calc-btn').addEventListener('click', toggleCalculator);
   document.getElementById('close-calc-btn').addEventListener('click', toggleCalculator);
 
@@ -3311,13 +3478,20 @@ function renderPlayerStep(stepIdx) {
   const statusEl = document.getElementById('player-question-status-text');
   statusEl.textContent = isSubmitted ? 'Complete' : 'Not complete';
   
-  document.getElementById('player-screen-label').textContent = `Case Study Screen ${stepIdx + 1} of ${currentCase.screens.length}`;
+  const isStepStandalone = currentCase.isStandalone || step.isStandalone;
+  const screenLabel = document.getElementById('player-screen-label');
+  if (isStepStandalone) {
+    screenLabel.style.display = 'none';
+  } else {
+    screenLabel.style.display = 'block';
+    screenLabel.textContent = `Case Study Screen ${stepIdx + 1} of ${currentCase.screens.length}`;
+  }
   document.getElementById('player-intro-text').innerHTML = step.leftContent.intro || '';
   
   // Full-width adaptive layout for questions with no tabs
   const splitContainer = document.querySelector('.player-center-split');
   if (splitContainer) {
-    const hasLeftContent = step.leftContent && step.leftContent.tabs && step.leftContent.tabs.length > 0;
+    const hasLeftContent = step.leftContent && step.leftContent.tabs && step.leftContent.tabs.length > 0 && step.question.type !== 'highlight';
     if (!hasLeftContent) {
       splitContainer.classList.add('full-width');
     } else {
@@ -3864,38 +4038,38 @@ function renderPlayerBowtie(q, stepIdx, box, isSubmitted, userAnswers) {
   const params = q.bowtieParams || [];
 
   let html = `
-    <div class="bowtie-diagram-wrapper" style="display:flex; justify-content:space-between; align-items:center; position:relative; min-height:220px; padding:20px; background:#ffffff; border:1px solid #e2e8f0; border-radius:var(--radius-md); box-shadow:var(--shadow-sm); user-select:none;">
+    <div class="bowtie-diagram-wrapper" style="display:flex; justify-content:space-between; align-items:center; position:relative; min-height:220px; padding:20px; background:#ffffff; border:0px; border-radius:var(--radius-md); box-shadow:none; user-select:none;">
       
-      <svg style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; stroke:#cbd5e1; stroke-width:1.5; stroke-dasharray:4 4;" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <line x1="20" y1="25" x2="50" y2="50" />
-        <line x1="20" y1="75" x2="50" y2="50" />
-        <line x1="50" y1="50" x2="80" y2="25" />
-        <line x1="50" y1="50" x2="80" y2="75" />
+      <svg style="position:absolute; top:20px; left:20px; width:calc(100% - 40px); height:calc(100% - 40px); pointer-events:none; stroke:#cbd5e1; stroke-width:0.5;" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <line x1="30" y1="22.2" x2="35" y2="50" />
+        <line x1="30" y1="77.8" x2="35" y2="50" />
+        <line x1="70" y1="22.2" x2="65" y2="50" />
+        <line x1="70" y1="77.8" x2="65" y2="50" />
       </svg>
 
       <!-- Left Targets Column -->
       <div style="display:flex; flex-direction:column; justify-content:space-between; height:180px; width:30%; z-index:1;">
-        <div id="bowtie-target-left1" class="bowtie-target-zone" data-col="1" style="background:#ecf5f4; border:1.5px dashed #025287; border-radius:4px; height:80px; display:flex; align-items:center; justify-content:center; padding:8px; text-align:center; position:relative; transition:all 0.2s;">
+        <div id="bowtie-target-left1" class="bowtie-target-zone" data-col="1" style="background:#ecf5f4; border:1.5px solid #025287; border-radius:4px; height:80px; display:flex; align-items:center; justify-content:center; padding:8px; text-align:center; position:relative; transition:all 0.2s;">
           <span class="placeholder-text" style="color:#025287; font-size:13px; font-weight:500; opacity:0.6;">${escapeHTML(leftPH)}</span>
         </div>
-        <div id="bowtie-target-left2" class="bowtie-target-zone" data-col="1" style="background:#ecf5f4; border:1.5px dashed #025287; border-radius:4px; height:80px; display:flex; align-items:center; justify-content:center; padding:8px; text-align:center; position:relative; transition:all 0.2s;">
+        <div id="bowtie-target-left2" class="bowtie-target-zone" data-col="1" style="background:#ecf5f4; border:1.5px solid #025287; border-radius:4px; height:80px; display:flex; align-items:center; justify-content:center; padding:8px; text-align:center; position:relative; transition:all 0.2s;">
           <span class="placeholder-text" style="color:#025287; font-size:13px; font-weight:500; opacity:0.6;">${escapeHTML(leftPH)}</span>
         </div>
       </div>
 
       <!-- Center Target Column -->
       <div style="display:flex; flex-direction:column; justify-content:center; height:180px; width:30%; z-index:1;">
-        <div id="bowtie-target-center" class="bowtie-target-zone" data-col="2" style="background:#b9e5f1; border:1.5px dashed #0891b2; border-radius:4px; height:80px; display:flex; align-items:center; justify-content:center; padding:8px; text-align:center; position:relative; transition:all 0.2s;">
+        <div id="bowtie-target-center" class="bowtie-target-zone" data-col="2" style="background:#bae6f2; border:1.5px solid #0891b2; border-radius:4px; height:80px; display:flex; align-items:center; justify-content:center; padding:8px; text-align:center; position:relative; transition:all 0.2s;">
           <span class="placeholder-text" style="color:#0891b2; font-size:13px; font-weight:500; opacity:0.6;">${escapeHTML(centerPH)}</span>
         </div>
       </div>
 
       <!-- Right Targets Column -->
       <div style="display:flex; flex-direction:column; justify-content:space-between; height:180px; width:30%; z-index:1;">
-        <div id="bowtie-target-right1" class="bowtie-target-zone" data-col="3" style="background:#ecf0f5; border:1.5px dashed #475569; border-radius:4px; height:80px; display:flex; align-items:center; justify-content:center; padding:8px; text-align:center; position:relative; transition:all 0.2s;">
+        <div id="bowtie-target-right1" class="bowtie-target-zone" data-col="3" style="background:#ecf0f5; border:1.5px solid #475569; border-radius:4px; height:80px; display:flex; align-items:center; justify-content:center; padding:8px; text-align:center; position:relative; transition:all 0.2s;">
           <span class="placeholder-text" style="color:#475569; font-size:13px; font-weight:500; opacity:0.6;">${escapeHTML(rightPH)}</span>
         </div>
-        <div id="bowtie-target-right2" class="bowtie-target-zone" data-col="3" style="background:#ecf0f5; border:1.5px dashed #475569; border-radius:4px; height:80px; display:flex; align-items:center; justify-content:center; padding:8px; text-align:center; position:relative; transition:all 0.2s;">
+        <div id="bowtie-target-right2" class="bowtie-target-zone" data-col="3" style="background:#ecf0f5; border:1.5px solid #475569; border-radius:4px; height:80px; display:flex; align-items:center; justify-content:center; padding:8px; text-align:center; position:relative; transition:all 0.2s;">
           <span class="placeholder-text" style="color:#475569; font-size:13px; font-weight:500; opacity:0.6;">${escapeHTML(rightPH)}</span>
         </div>
       </div>
@@ -3907,24 +4081,24 @@ function renderPlayerBowtie(q, stepIdx, box, isSubmitted, userAnswers) {
     <div class="bowtie-table-wrapper" style="display:flex; gap:16px; width:100%; user-select:none;">
       
       <!-- Column 1 (Ingredients) -->
-      <div style="flex:1; border:1.5px solid #000000; border-radius:4px; background:#ffffff; overflow:hidden;">
-        <div style="background:#e6f1ff; border-bottom:1.5px solid #000000; padding:10px; font-weight:bold; font-size:13px; text-align:center; color:#1e293b;">
+      <div style="flex:1; border:1.5px solid #000000; border-radius:4px; background:#ffffff; overflow:hidden; align-self: flex-start;">
+        <div style="background:#e9f1f7; border-bottom:1.5px solid #000000; padding:10px; font-weight:bold; font-size:13px; text-align:center; color:#1e293b;">
           ${escapeHTML(col1Header)}
         </div>
         <div id="bowtie-table-col1" style="padding:8px; display:flex; flex-direction:column; gap:8px;"></div>
       </div>
 
       <!-- Column 2 (Orders) -->
-      <div style="flex:1; border:1.5px solid #000000; border-radius:4px; background:#ffffff; overflow:hidden;">
-        <div style="background:#e6f1ff; border-bottom:1.5px solid #000000; padding:10px; font-weight:bold; font-size:13px; text-align:center; color:#1e293b;">
+      <div style="flex:1; border:1.5px solid #000000; border-radius:4px; background:#ffffff; overflow:hidden; align-self: flex-start;">
+        <div style="background:#e9f1f7; border-bottom:1.5px solid #000000; padding:10px; font-weight:bold; font-size:13px; text-align:center; color:#1e293b;">
           ${escapeHTML(col2Header)}
         </div>
         <div id="bowtie-table-col2" style="padding:8px; display:flex; flex-direction:column; gap:8px;"></div>
       </div>
 
       <!-- Column 3 (Materials) -->
-      <div style="flex:1; border:1.5px solid #000000; border-radius:4px; background:#ffffff; overflow:hidden;">
-        <div style="background:#e6f1ff; border-bottom:1.5px solid #000000; padding:10px; font-weight:bold; font-size:13px; text-align:center; color:#1e293b;">
+      <div style="flex:1; border:1.5px solid #000000; border-radius:4px; background:#ffffff; overflow:hidden; align-self: flex-start;">
+        <div style="background:#e9f1f7; border-bottom:1.5px solid #000000; padding:10px; font-weight:bold; font-size:13px; text-align:center; color:#1e293b;">
           ${escapeHTML(col3Header)}
         </div>
         <div id="bowtie-table-col3" style="padding:8px; display:flex; flex-direction:column; gap:8px;"></div>
@@ -3991,7 +4165,7 @@ function renderPlayerBowtie(q, stepIdx, box, isSubmitted, userAnswers) {
       slot.dataset.col = colNum;
       slot.dataset.idx = idx;
       slot.style.height = '48px';
-      slot.style.background = '#ffffff';
+      slot.style.background = itemColor;
       slot.style.border = '1px solid #cbd5e1';
       slot.style.borderRadius = '4px';
       slot.style.display = 'flex';
@@ -4051,7 +4225,7 @@ function renderPlayerBowtie(q, stepIdx, box, isSubmitted, userAnswers) {
   };
 
   populateColumn('bowtie-table-col1', actions, 1, '#ecf5f4');
-  populateColumn('bowtie-table-col2', conditions, 2, '#b9e5f1');
+  populateColumn('bowtie-table-col2', conditions, 2, '#bae6f2');
   populateColumn('bowtie-table-col3', params, 3, '#ecf0f5');
 
   if (!isSubmitted) {
@@ -4415,7 +4589,19 @@ function renderPlayerSata(q, stepIdx, box, isSubmitted, userAnswers) {
 // 12. Highlight Text/Table Player
 function renderPlayerHighlight(q, stepIdx, box, isSubmitted, userAnswers) {
   const container = document.createElement('div');
-  const text = q.highlightText || '';
+  container.className = 'player-highlight-tabs-container';
+  
+  if (!q.highlightTabs) {
+    q.highlightTabs = [
+      { id: 'ht_' + Date.now(), title: "Nurses' Notes", content: q.highlightText || '' }
+    ];
+  }
+  
+  if (!playerHighlightActiveTabId || !q.highlightTabs.find(t => t.id === playerHighlightActiveTabId)) {
+    playerHighlightActiveTabId = q.highlightTabs[0].id;
+  }
+  
+  const activeTab = q.highlightTabs.find(t => t.id === playerHighlightActiveTabId);
   
   if (q.maxCorrectSelections) {
     const limitInfo = document.createElement('div');
@@ -4428,64 +4614,122 @@ function renderPlayerHighlight(q, stepIdx, box, isSubmitted, userAnswers) {
     container.appendChild(limitInfo);
   }
   
-  const regex = /\{([^{|]+)(?:\|([^{}]+))?\}/g;
-  let lastIndex = 0;
-  let match;
-  let highlightIdx = 0;
+  // Render tabs bar (always show, even if there's only 1 tab)
+  const tabsBar = document.createElement('div');
+  tabsBar.className = 'patient-chart-tabs-bar';
+  q.highlightTabs.forEach(t => {
+    const tabBtn = document.createElement('button');
+    tabBtn.className = `patient-chart-tab ${t.id === playerHighlightActiveTabId ? 'active' : ''}`;
+    tabBtn.textContent = t.title;
+    tabBtn.addEventListener('click', () => {
+      playerHighlightActiveTabId = t.id;
+      box.innerHTML = '';
+      renderPlayerHighlight(q, stepIdx, box, isSubmitted, userAnswers);
+    });
+    tabsBar.appendChild(tabBtn);
+  });
+  container.appendChild(tabsBar);
+  
+  // Calculate global index offset for the active tab's highlight items
+  let globalHighlightIdx = 0;
+  for (let i = 0; i < q.highlightTabs.indexOf(activeTab); i++) {
+    const text = q.highlightTabs[i].content || '';
+    const matches = text.match(/\{([^{|]+)(?:\|([^{}]+))?\}/g) || [];
+    globalHighlightIdx += matches.length;
+  }
+  
+  // Content container with border (uses patient-chart-content styling)
+  const contentBox = document.createElement('div');
+  contentBox.className = 'patient-chart-content';
   
   const passage = document.createElement('div');
   passage.className = 'highlight-passage';
   
+  const rawText = activeTab.content || '';
+  // Format nurses notes styling
+  const formattedHtml = formatNursesNotes(rawText, activeTab.title);
+  passage.innerHTML = formattedHtml;
+  
+  let currentLocalHIdx = 0;
   const savedAnswers = userAnswers || {};
   
-  while ((match = regex.exec(text)) !== null) {
-    passage.appendChild(document.createTextNode(text.substring(lastIndex, match.index)));
-    
-    const phrase = match[1];
-    const isCorrect = match[2] === 'correct';
-    const currentHIdx = highlightIdx++;
-    
-    const span = document.createElement('span');
-    span.className = 'highlight-span';
-    span.textContent = phrase;
-    
-    const isSelected = savedAnswers[currentHIdx] === true;
-    if (isSelected) span.classList.add('selected');
-    
-    if (isSubmitted) {
-      if (isCorrect) {
-        span.classList.add('show-correct');
-      } else if (isSelected) {
-        span.classList.add('show-incorrect');
-      }
-    } else {
-      span.addEventListener('click', () => {
-        if (!playerAnswers[stepIdx]) playerAnswers[stepIdx] = {};
+  function processNode(node) {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const text = node.textContent;
+      if (!text.includes('{')) return;
+      
+      const regex = /\{([^{|]+)(?:\|([^{}]+))?\}/g;
+      const fragment = document.createDocumentFragment();
+      let match;
+      let lastIndex = 0;
+      let hasMatch = false;
+      
+      while ((match = regex.exec(text)) !== null) {
+        hasMatch = true;
+        if (match.index > lastIndex) {
+          fragment.appendChild(document.createTextNode(text.substring(lastIndex, match.index)));
+        }
         
-        const state = !playerAnswers[stepIdx][currentHIdx];
-        if (state && q.maxCorrectSelections) {
-          const selectedCount = Object.values(playerAnswers[stepIdx]).filter(v => v === true).length;
-          if (selectedCount >= q.maxCorrectSelections) {
-            showToast(`You can only select up to ${q.maxCorrectSelections} findings.`, "error");
-            return;
+        const phrase = match[1];
+        const isCorrect = match[2] === 'correct';
+        const currentHIdx = globalHighlightIdx + (currentLocalHIdx++);
+        
+        const span = document.createElement('span');
+        span.className = 'highlight-span';
+        span.textContent = phrase;
+        
+        const isSelected = savedAnswers[currentHIdx] === true;
+        if (isSelected) span.classList.add('selected');
+        
+        if (isSubmitted) {
+          if (isCorrect) {
+            span.classList.add('show-correct');
+          } else if (isSelected) {
+            span.classList.add('show-incorrect');
           }
+        } else {
+          span.addEventListener('click', () => {
+            if (!playerAnswers[stepIdx]) playerAnswers[stepIdx] = {};
+            
+            const state = !playerAnswers[stepIdx][currentHIdx];
+            if (state && q.maxCorrectSelections) {
+              const selectedCount = Object.values(playerAnswers[stepIdx]).filter(v => v === true).length;
+              if (selectedCount >= q.maxCorrectSelections) {
+                showToast(`You can only select up to ${q.maxCorrectSelections} findings.`, "error");
+                return;
+              }
+            }
+            
+            playerAnswers[stepIdx][currentHIdx] = state;
+            if (state) {
+              span.classList.add('selected');
+            } else {
+              span.classList.remove('selected');
+            }
+          });
         }
         
-        playerAnswers[stepIdx][currentHIdx] = state;
-        if (state) {
-          span.classList.add('selected');
-        } else {
-          span.classList.remove('selected');
+        fragment.appendChild(span);
+        lastIndex = regex.lastIndex;
+      }
+      
+      if (hasMatch) {
+        if (lastIndex < text.length) {
+          fragment.appendChild(document.createTextNode(text.substring(lastIndex)));
         }
-      });
+        node.parentNode.replaceChild(fragment, node);
+      }
+    } else if (node.nodeType === Node.ELEMENT_NODE) {
+      // Process children
+      const children = Array.from(node.childNodes);
+      children.forEach(child => processNode(child));
     }
-    
-    passage.appendChild(span);
-    lastIndex = regex.lastIndex;
   }
   
-  passage.appendChild(document.createTextNode(text.substring(lastIndex)));
-  container.appendChild(passage);
+  processNode(passage);
+  
+  contentBox.appendChild(passage);
+  container.appendChild(contentBox);
   box.appendChild(container);
 }
 
@@ -4721,12 +4965,21 @@ function evaluateStepScore(stepIdx) {
       let correctSel = 0;
       let incorrectSel = 0;
       
-      // Parse highlights list to match Indices
       const regex = /\{([^{|]+)(?:\|([^{}]+))?\}/g;
       let match;
       const highlights = [];
-      while ((match = regex.exec(q.highlightText || '')) !== null) {
-        highlights.push({ text: match[1], correct: match[2] === 'correct' });
+      
+      if (q.highlightTabs) {
+        q.highlightTabs.forEach(tab => {
+          regex.lastIndex = 0;
+          while ((match = regex.exec(tab.content || '')) !== null) {
+            highlights.push({ text: match[1], correct: match[2] === 'correct' });
+          }
+        });
+      } else {
+        while ((match = regex.exec(q.highlightText || '')) !== null) {
+          highlights.push({ text: match[1], correct: match[2] === 'correct' });
+        }
       }
       
       highlights.forEach((h, idx) => {
@@ -5221,30 +5474,12 @@ function stripNursesNotesFormatting(html) {
   const temp = document.createElement('div');
   temp.innerHTML = html;
   
-  // Find all row structures
-  const rows = temp.querySelectorAll('.nurse-note-row');
-  rows.forEach(row => {
-    const timeEl = row.querySelector('.nurse-note-time');
-    const textEl = row.querySelector('.nurse-note-text');
-    let timeVal = '';
-    let textVal = '';
-    
-    if (timeEl) timeVal = timeEl.innerHTML.trim();
-    if (textEl) textVal = textEl.innerHTML.trim();
-    
-    if (!timeEl && !textEl) {
-      return; // Already plain paragraph
-    }
-    
-    if (timeVal && timeVal !== '&nbsp;') {
-      row.innerHTML = timeVal + ' ' + textVal;
-    } else {
-      row.innerHTML = textVal;
-    }
+  temp.querySelectorAll('.nurse-note-row').forEach(row => {
     row.classList.remove('nurse-note-row');
+    row.style.paddingLeft = '';
+    row.style.textIndent = '';
   });
   
-  // Strip any remaining or stray span elements
   temp.querySelectorAll('.nurse-note-time, .nurse-note-text').forEach(span => {
     const parent = span.parentNode;
     if (parent) {
@@ -5264,7 +5499,6 @@ function formatNursesNotes(html, tabTitle) {
   }
   if (!html) return '';
   
-  // Clean up any existing formatting structures first to prevent nesting
   const cleanedHtml = stripNursesNotesFormatting(html);
   
   const temp = document.createElement('div');
@@ -5275,33 +5509,32 @@ function formatNursesNotes(html, tabTitle) {
     if (child.nodeType === Node.ELEMENT_NODE) {
       const tagName = child.tagName.toLowerCase();
       if (['p', 'div', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tagName)) {
-        const text = child.innerHTML.trim();
-        // Match 4-digit military times (e.g. 1000:, 08:30, 1200) at start of paragraph.
-        const timeRegex = /^(?:<(strong|b)>)?\s*(\b\d{2}:?\d{2}\b:?)\s*(?:<\/\1>)?\s*/i;
-        const match = text.match(timeRegex);
+        // Strip any existing <b>/<strong> tags around time digits to clean up
+        let innerHTML = child.innerHTML.replace(/<\/?(?:strong|b)>/g, '').trim();
+        const timeRegex = /^\s*(\b\d{2}:?\d{2}\b)\s*:\s*(.*)/i;
+        const match = innerHTML.match(timeRegex);
         
         if (match) {
-          const rawTime = match[2];
-          const restHtml = text.substring(match[0].length);
-          child.classList.add('nurse-note-row');
-          child.innerHTML = `<span class="nurse-note-time">${rawTime}</span><span class="nurse-note-text">${restHtml}</span>`;
+          const rawTime = match[1];
+          const restHtml = match[2].trim();
+          child.className = 'nurse-note-row';
+          child.innerHTML = `<span class="nurse-note-time">${rawTime}:</span><span class="nurse-note-text">${restHtml}</span>`;
         } else {
-          child.classList.add('nurse-note-row');
-          child.innerHTML = `<span class="nurse-note-time">&nbsp;</span><span class="nurse-note-text">${child.innerHTML}</span>`;
+          child.classList.remove('nurse-note-row');
         }
       }
     } else if (child.nodeType === Node.TEXT_NODE && child.textContent.trim()) {
       const text = child.textContent.trim();
-      const timeRegex = /^\s*(\b\d{2}:?\d{2}\b:?)\s*/i;
+      const timeRegex = /^\s*(\b\d{2}:?\d{2}\b)\s*:\s*(.*)/i;
       const match = text.match(timeRegex);
       const newP = document.createElement('p');
-      newP.classList.add('nurse-note-row');
       if (match) {
         const rawTime = match[1];
-        const restText = text.substring(match[0].length);
-        newP.innerHTML = `<span class="nurse-note-time">${rawTime}</span><span class="nurse-note-text">${restText}</span>`;
+        const restText = match[2].trim();
+        newP.className = 'nurse-note-row';
+        newP.innerHTML = `<span class="nurse-note-time">${rawTime}:</span><span class="nurse-note-text">${restText}</span>`;
       } else {
-        newP.innerHTML = `<span class="nurse-note-time">&nbsp;</span><span class="nurse-note-text">${text}</span>`;
+        newP.textContent = text;
       }
       temp.replaceChild(newP, child);
     }
