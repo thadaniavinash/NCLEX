@@ -1527,6 +1527,7 @@ textarea {
   font-weight: 700;
   color: #64748b;
   margin-top: 8px;
+  text-align: left;
 }
 
 .exam-matrix-table th {
@@ -1545,6 +1546,19 @@ textarea {
 
 .exam-matrix-table tr:nth-child(even) {
   background-color: #f9fafb;
+}
+
+/* Specific styling for Matrix Multiple Response (MR) */
+.matrix-mr-table th {
+  background-color: #e7f5fe !important;
+}
+
+.matrix-mr-table tbody tr:nth-child(odd) {
+  background-color: #f3f4f6 !important; /* light grey */
+}
+
+.matrix-mr-table tbody tr:nth-child(even) {
+  background-color: #ffffff !important; /* white */
 }
 
 .exam-matrix-table tr td:first-child {

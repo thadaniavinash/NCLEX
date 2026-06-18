@@ -3905,7 +3905,7 @@ function renderPlayerMatrixBase(q, stepIdx, box, isSubmitted, userAnswers, isMul
   const columns = m.columns || [];
   const rows = m.rows || [];
   const tbl = document.createElement('table');
-  tbl.className = 'exam-matrix-table';
+  tbl.className = isMultiResponse ? 'exam-matrix-table matrix-mr-table' : 'exam-matrix-table';
   
   let html = `<thead><tr><th>${escapeHTML(m.firstColumnHeader || (isMultiResponse ? 'Findings' : 'Column 1'))}</th>`;
   columns.forEach(col => { html += `<th>${escapeHTML(col)}</th>`; });
