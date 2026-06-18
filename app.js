@@ -3501,7 +3501,7 @@ function renderPlayerStep(stepIdx) {
   // Full-width adaptive layout for questions with no tabs
   const splitContainer = document.querySelector('.player-center-split');
   if (splitContainer) {
-    const hasLeftContent = step.leftContent && step.leftContent.tabs && step.leftContent.tabs.length > 0 && step.question.type !== 'highlight';
+    const hasLeftContent = step.leftContent && step.leftContent.tabs && step.leftContent.tabs.length > 0;
     if (!hasLeftContent) {
       splitContainer.classList.add('full-width');
     } else {
