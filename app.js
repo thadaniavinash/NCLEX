@@ -2000,7 +2000,7 @@ function saveCurrentStepData(isChangingType = false, isBackingOut = false) {
   } else if (q.type === 'hotspot') {
     const el = document.getElementById('hotspot-url-input');
     if (el) q.imageUrl = el.value;
-  } else if (q.type === 'highlight') {
+  } else if (q.type === 'highlight' || q.type === 'highlight_2') {
     const el = document.getElementById('highlight-tab-text-input');
     if (el && q.highlightTabs) {
       const activeTab = q.highlightTabs.find(t => t.id === highlightActiveTabId);
