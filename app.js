@@ -1563,8 +1563,8 @@ function initializeQuestionTypeDefaults(q) {
       if (!textStr) {
         q.cloze.text = 'The patient should...[[drop0]]...due to...[[drop1]]';
         q.cloze.dropdowns = [
-          { placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }] },
-          { placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }] }
+          { placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }, { text: '', correct: false }] },
+          { placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }, { text: '', correct: false }] }
         ];
       }
     }
@@ -2146,8 +2146,8 @@ function renderClozeConfigurator(q, box) {
   } else {
     if (!c.dropdowns || c.dropdowns.length === 0) {
       c.dropdowns = [
-        { placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }] },
-        { placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }] }
+        { placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }, { text: '', correct: false }] },
+        { placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }, { text: '', correct: false }] }
       ];
     }
     expectedSlots = c.dropdowns.length;
@@ -2231,7 +2231,7 @@ function renderClozeConfigurator(q, box) {
       if (!c.dropdowns[idx]) {
         c.dropdowns[idx] = {
           placeholder: 'Select...',
-          options: [{ text: '', correct: true }, { text: '', correct: false }]
+          options: [{ text: '', correct: true }, { text: '', correct: false }, { text: '', correct: false }]
         };
       }
       const dd = c.dropdowns[idx];
@@ -2325,7 +2325,7 @@ function renderClozeConfigurator(q, box) {
         
         c.dropdowns.push({
           placeholder: 'Select...',
-          options: [{ text: '', correct: true }, { text: '', correct: false }]
+          options: [{ text: '', correct: true }, { text: '', correct: false }, { text: '', correct: false }]
         });
         
         renderDynamicQuestionConfigurator(q);
@@ -3708,7 +3708,9 @@ function renderPlayerDropdownCloze(q, stepIdx, box, isSubmitted, userAnswers) {
   const dropdowns = c.dropdowns || [];
   
   while ((match = regex.exec(baseText)) !== null) {
-    container.appendChild(document.createTextNode(baseText.substring(lastIndex, match.index)));
+    const textSpan = document.createElement('span');
+    textSpan.innerHTML = baseText.substring(lastIndex, match.index);
+    container.appendChild(textSpan);
     const idx = parseInt(match[1]);
     const dd = dropdowns[idx];
     
@@ -3754,7 +3756,9 @@ function renderPlayerDropdownCloze(q, stepIdx, box, isSubmitted, userAnswers) {
     }
     lastIndex = regex.lastIndex;
   }
-  container.appendChild(document.createTextNode(baseText.substring(lastIndex)));
+  const endSpan = document.createElement('span');
+  endSpan.innerHTML = baseText.substring(lastIndex);
+  container.appendChild(endSpan);
   box.appendChild(container);
 }
 
@@ -3773,7 +3777,9 @@ function renderPlayerDragDropCloze(q, stepIdx, box, isSubmitted, userAnswers) {
   let match;
   
   while ((match = regex.exec(baseText)) !== null) {
-    container.appendChild(document.createTextNode(baseText.substring(lastIndex, match.index)));
+    const textSpan = document.createElement('span');
+    textSpan.innerHTML = baseText.substring(lastIndex, match.index);
+    container.appendChild(textSpan);
     const idx = parseInt(match[1]);
     const dd = dropdowns[idx];
     
@@ -3810,7 +3816,9 @@ function renderPlayerDragDropCloze(q, stepIdx, box, isSubmitted, userAnswers) {
     }
     lastIndex = regex.lastIndex;
   }
-  container.appendChild(document.createTextNode(baseText.substring(lastIndex)));
+  const endSpan = document.createElement('span');
+  endSpan.innerHTML = baseText.substring(lastIndex);
+  container.appendChild(endSpan);
   box.appendChild(container);
   
   // Options pool
