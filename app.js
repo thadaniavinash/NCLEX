@@ -864,6 +864,7 @@ function getQuestionTypeLabel(type) {
     'ordered_response': 'Ordered Response',
     'select_all': 'Select All Multiple Response (SATA)',
     'highlight': 'Highlight Text/Table',
+    'highlight_2': 'Highlight Text/Table-2',
     'matrix_mr': 'Matrix Multiple Response',
     'grouped_mr': 'Grouped Multiple Response',
     'trend': 'Trend',
@@ -1696,7 +1697,7 @@ function initializeQuestionTypeDefaults(q) {
         q.options = [{ text: 'Fever', correct: true }, { text: 'Cough', correct: false }, { text: 'Dyspnea', correct: true }];
       }
     }
-  } else if (q.type === 'highlight') {
+  } else if (q.type === 'highlight' || q.type === 'highlight_2') {
     if (!q.highlightTabs) {
       q.highlightTabs = [
         { id: 'ht_' + Date.now(), title: "Nurses' Notes", content: q.highlightText || 'The client reports {pain in left calf|correct}. Respirations are {shallow and labored|correct}. Temperature is {98.6 F}.' }
@@ -2090,6 +2091,7 @@ function renderDynamicQuestionConfigurator(q) {
       renderSataConfigurator(q, box);
       break;
     case 'highlight':
+    case 'highlight_2':
       renderHighlightConfigurator(q, box);
       break;
     case 'grouped_mr':
@@ -3673,6 +3675,7 @@ function renderPlayerAnswersBox(q, stepIdx) {
         renderPlayerSata(q, stepIdx, box, isSubmitted, userAnswers);
         break;
       case 'highlight':
+      case 'highlight_2':
         renderPlayerHighlight(q, stepIdx, box, isSubmitted, userAnswers);
         break;
       case 'grouped_mr':
@@ -5001,7 +5004,8 @@ function evaluateStepScore(stepIdx) {
       score = Math.max(0, correctSel - incorrectSel);
       break;
     }
-    case 'highlight': {
+    case 'highlight':
+    case 'highlight_2': {
       let correctSel = 0;
       let incorrectSel = 0;
       
