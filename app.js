@@ -2144,10 +2144,10 @@ function renderClozeConfigurator(q, box) {
   } else if (q.type === 'triad') {
     expectedSlots = 3;
   } else {
-    if (!c.dropdowns || c.dropdowns.length < 2) {
+    if (!c.dropdowns || c.dropdowns.length === 0) {
       c.dropdowns = [
-        c.dropdowns[0] || { placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }] },
-        c.dropdowns[1] || { placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }] }
+        { placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }] },
+        { placeholder: 'Select...', options: [{ text: '', correct: true }, { text: '', correct: false }] }
       ];
     }
     expectedSlots = c.dropdowns.length;
@@ -2183,7 +2183,7 @@ function renderClozeConfigurator(q, box) {
   const actionButtonsHTML = !isDyadOrTriad ? `
     <div style="margin-top: 10px; display: flex; gap: 8px;">
       <button id="add-cloze-slot-btn" class="btn btn-secondary btn-xs">+ Add Dropdown Slot</button>
-      ${expectedSlots > 2 ? `<button id="remove-cloze-slot-btn" class="btn btn-danger btn-xs">- Remove Last Slot</button>` : ''}
+      ${expectedSlots > 1 ? `<button id="remove-cloze-slot-btn" class="btn btn-danger btn-xs">- Remove Last Slot</button>` : ''}
     </div>
   ` : '';
   
@@ -2335,7 +2335,7 @@ function renderClozeConfigurator(q, box) {
     const removeBtn = wrapper.querySelector('#remove-cloze-slot-btn');
     if (removeBtn) {
       removeBtn.addEventListener('click', () => {
-        if (expectedSlots <= 2) return;
+        if (expectedSlots <= 1) return;
         
         const inputs = Array.from(wrapper.querySelectorAll('.cloze-segment-input'));
         inputs.sort((a, b) => parseInt(a.dataset.index) - parseInt(b.dataset.index));
