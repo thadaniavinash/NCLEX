@@ -1462,6 +1462,40 @@ function initEditorEvents() {
     saveCurrentCaseOrStandalone();
     exportCaseStudy(currentCase);
   });
+
+  // Question Image Configuration Event Listeners
+  const chooseImgBtn = document.getElementById('choose-question-image-btn');
+  const imgFileInput = document.getElementById('question-image-file-input');
+  const removeImgBtn = document.getElementById('remove-question-image-btn');
+  
+  if (chooseImgBtn && imgFileInput && removeImgBtn) {
+    chooseImgBtn.addEventListener('click', () => imgFileInput.click());
+    
+    imgFileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          const base64Str = event.target.result;
+          const step = currentCase.screens[currentStepIndex];
+          if (step && step.question) {
+            step.question.questionImage = base64Str;
+            updateImagePreview(base64Str);
+          }
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+    
+    removeImgBtn.addEventListener('click', () => {
+      const step = currentCase.screens[currentStepIndex];
+      if (step && step.question) {
+        step.question.questionImage = null;
+        imgFileInput.value = '';
+        updateImagePreview(null);
+      }
+    });
+  }
   
   document.getElementById('editor-play-btn').addEventListener('click', () => {
     if (!saveCurrentStepData()) return;
@@ -1792,7 +1826,28 @@ function renderEditorStep(stepIdx) {
   stemInput.innerHTML = q.stem || '';
   document.getElementById('question-explanation-input').innerHTML = q.explanation || '';
   
+  // Update image preview in editor
+  updateImagePreview(q.questionImage || null);
+  
   renderDynamicQuestionConfigurator(q);
+}
+
+function updateImagePreview(base64Str) {
+  const container = document.getElementById('question-image-preview-container');
+  const img = document.getElementById('question-image-preview');
+  const removeBtn = document.getElementById('remove-question-image-btn');
+  
+  if (container && img && removeBtn) {
+    if (base64Str) {
+      img.src = base64Str;
+      container.classList.remove('hidden');
+      removeBtn.classList.remove('hidden');
+    } else {
+      img.src = '';
+      container.classList.add('hidden');
+      removeBtn.classList.add('hidden');
+    }
+  }
 }
 
 function renderStepsSidebar() {
@@ -3544,6 +3599,19 @@ function renderPlayerStep(stepIdx) {
     } else {
       preambleEl.innerHTML = '';
       preambleEl.classList.add('hidden');
+    }
+  }
+  
+  // Render question image in player if present
+  const imgContainer = document.getElementById('player-question-image-container');
+  const playerImg = document.getElementById('player-question-image');
+  if (imgContainer && playerImg) {
+    if (step.question.questionImage) {
+      playerImg.src = step.question.questionImage;
+      imgContainer.classList.remove('hidden');
+    } else {
+      playerImg.src = '';
+      imgContainer.classList.add('hidden');
     }
   }
   
