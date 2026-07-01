@@ -1,0 +1,17 @@
+name: Keep Supabase Alive
+
+on:
+  schedule:
+    # Runs at 00:00 UTC every Tuesday and Friday (every 3-4 days)
+    - cron: '0 0 * * 2,5'
+  workflow_dispatch: # Allows you to manually trigger it from the GitHub website
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase Database
+        run: |
+          curl -X GET "https://taprukpiubqsckahocaz.supabase.co/rest/v1/nclex_data?select=key&limit=1" \
+            -H "apikey: sb_publishable_V1u7recZMcdc2-DXhoMwoQ_BEVWej3g" \
+            -H "Authorization: Bearer sb_publishable_V1u7recZMcdc2-DXhoMwoQ_BEVWej3g"
