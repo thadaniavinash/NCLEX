@@ -3550,7 +3550,6 @@ function startPlayer(caseStudy) {
   
   switchView('player');
   renderPlayerStep(0);
-  showToast(`Exam Started: ${caseStudy.title}`, 'success');
 }
 
 function renderPlayerStep(stepIdx) {
