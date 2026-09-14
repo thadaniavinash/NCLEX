@@ -3493,6 +3493,20 @@ function initPlayerEvents() {
   document.getElementById('player-submit-btn').addEventListener('click', handlePlayerSubmit);
   document.getElementById('player-giveup-btn').addEventListener('click', handlePlayerGiveUp);
 
+  const skipModal = document.getElementById('skip-question-modal');
+  const skipNoBtn = document.getElementById('skip-modal-no-btn');
+  const skipCloseBtn = document.getElementById('skip-modal-close-btn');
+  const skipYesBtn = document.getElementById('skip-modal-yes-btn');
+
+  if (skipNoBtn) skipNoBtn.addEventListener('click', closeSkipQuestionModal);
+  if (skipCloseBtn) skipCloseBtn.addEventListener('click', closeSkipQuestionModal);
+  if (skipYesBtn) skipYesBtn.addEventListener('click', confirmSkipQuestion);
+  if (skipModal) {
+    skipModal.addEventListener('click', (e) => {
+      if (e.target === skipModal) closeSkipQuestionModal();
+    });
+  }
+
   document.getElementById('player-prev-btn').addEventListener('click', () => {
     if (playerStepIndex > 0) {
       playerStepIndex--;
@@ -3503,6 +3517,12 @@ function initPlayerEvents() {
   document.getElementById('player-next-btn').addEventListener('click', () => {
     const isSubmitted = submittedAnswers[playerStepIndex];
     if (!isSubmitted) {
+      const step = currentCase.screens[playerStepIndex];
+      const hasAnswer = step ? hasSelectedAnyAnswer(step.question, playerStepIndex) : false;
+      if (!hasAnswer) {
+        showSkipQuestionModal();
+        return;
+      }
       alert("Please submit your response first by clicking the Submit button.");
       return;
     }
@@ -3526,6 +3546,7 @@ function startPlayer(caseStudy) {
   playerScores = {};
   
   document.getElementById('ti108-calculator').classList.add('hidden');
+  closeSkipQuestionModal();
   
   switchView('player');
   renderPlayerStep(0);
@@ -5189,11 +5210,147 @@ function evaluateStepScore(stepIdx) {
   playerScores[stepIdx] = { score, max: maxScore };
 }
 
+function hasSelectedAnyAnswer(q, stepIdx) {
+  if (!q) return false;
+  const userAnswers = playerAnswers[stepIdx];
+
+  // 1. Check state object first
+  if (userAnswers) {
+    switch (q.type) {
+      case 'dropdown_cloze':
+      case 'cloze':
+      case 'drag_drop_cloze':
+      case 'dyad':
+      case 'triad': {
+        const hasVal = Object.values(userAnswers).some(v => v !== undefined && v !== null && v !== '');
+        if (hasVal) return true;
+        break;
+      }
+      case 'dropdown_table': {
+        const hasVal = Object.values(userAnswers).some(v => v !== undefined && v !== null && v !== '');
+        if (hasVal) return true;
+        break;
+      }
+      case 'matrix_mc':
+      case 'matrix': {
+        const hasVal = Object.values(userAnswers).some(v => v !== undefined && v !== null && v !== '');
+        if (hasVal) return true;
+        break;
+      }
+      case 'select_n':
+      case 'selectN':
+      case 'multiple_choice':
+      case 'single':
+      case 'select_all':
+      case 'sata':
+      case 'trend':
+      case 'highlight':
+      case 'highlight_2': {
+        const hasVal = Object.values(userAnswers).some(v => v === true);
+        if (hasVal) return true;
+        break;
+      }
+      case 'fill_blank': {
+        if (userAnswers.value && userAnswers.value.toString().trim().length > 0) return true;
+        break;
+      }
+      case 'hotspot': {
+        if (userAnswers.x !== undefined && userAnswers.y !== undefined) return true;
+        break;
+      }
+      case 'ordered_response': {
+        if (Array.isArray(userAnswers.order) && userAnswers.order.length > 0) return true;
+        break;
+      }
+      case 'bowtie': {
+        if (userAnswers.action0 || userAnswers.action1 || userAnswers.condition || userAnswers.param0 || userAnswers.param1) return true;
+        break;
+      }
+      case 'matrix_mr': {
+        const hasVal = Object.values(userAnswers).some(arr => Array.isArray(arr) && arr.length > 0);
+        if (hasVal) return true;
+        break;
+      }
+      case 'grouped_mr': {
+        const hasVal = Object.values(userAnswers).some(group => group && Object.values(group).some(v => v === true));
+        if (hasVal) return true;
+        break;
+      }
+      default: {
+        const hasVal = Object.values(userAnswers).some(v => v !== undefined && v !== null && v !== false && v !== '');
+        if (hasVal) return true;
+      }
+    }
+  }
+
+  // 2. DOM inspection safeguard
+  const box = document.getElementById('player-answers-box');
+  if (box) {
+    const checkedInput = box.querySelector('input[type="checkbox"]:checked, input[type="radio"]:checked');
+    if (checkedInput) return true;
+
+    const selects = box.querySelectorAll('select');
+    for (const sel of selects) {
+      if (sel.value !== '' && sel.value !== null && sel.value !== undefined) return true;
+    }
+
+    const textInputs = box.querySelectorAll('input[type="text"], input[type="number"]');
+    for (const inp of textInputs) {
+      if (inp.value && inp.value.trim().length > 0) return true;
+    }
+
+    const highlighted = box.querySelector('.highlight-token.selected, .highlightable-text.selected, .highlight-token.active, .highlight-word.selected, .highlight-span.selected');
+    if (highlighted) return true;
+
+    const orderedItems = box.querySelectorAll('#order-right-box .order-item, #order-right-box .order-token, #order-right-box > div');
+    if (orderedItems.length > 0) return true;
+
+    const bowtieFilled = box.querySelector('.bowtie-target.filled, .bowtie-drop-zone.filled');
+    if (bowtieFilled) return true;
+
+    const hotspotMarker = box.querySelector('.hotspot-click-marker');
+    if (hotspotMarker) return true;
+  }
+
+  return false;
+}
+
+function showSkipQuestionModal() {
+  const modal = document.getElementById('skip-question-modal');
+  if (modal) modal.classList.remove('hidden');
+}
+
+function closeSkipQuestionModal() {
+  const modal = document.getElementById('skip-question-modal');
+  if (modal) modal.classList.add('hidden');
+}
+
+function confirmSkipQuestion() {
+  closeSkipQuestionModal();
+  submittedAnswers[playerStepIndex] = true;
+  evaluateStepScore(playerStepIndex);
+  if (!playerScores[playerStepIndex]) {
+    playerScores[playerStepIndex] = { score: 0, max: 1 };
+  } else {
+    playerScores[playerStepIndex].score = 0; // force zero points
+  }
+  renderPlayerStep(playerStepIndex);
+}
+
 function handlePlayerSubmit() {
+  const step = currentCase.screens[playerStepIndex];
+  if (!step) return;
+
+  const hasAnswer = hasSelectedAnyAnswer(step.question, playerStepIndex);
+  if (!hasAnswer) {
+    showSkipQuestionModal();
+    return;
+  }
+
   submittedAnswers[playerStepIndex] = true;
   evaluateStepScore(playerStepIndex);
   renderPlayerStep(playerStepIndex);
-  showToast("Response submitted successfully.");
+  // Response submitted toast removed per user request
 }
 
 function handlePlayerGiveUp() {
