@@ -95,6 +95,21 @@
               <p>Multi-step clinical unfolding scenarios representing complex client care.</p>
             </div>
             <div class="panel-header-actions">
+              <button id="connect-folder-btn-cases" class="btn btn-secondary connect-folder-btn admin-only" title="Connect a local folder so all saves write directly to your hard drive">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                Connect Local Folder
+              </button>
+              <div class="export-dropdown admin-only">
+                <button id="export-dropdown-btn-cases" class="btn btn-secondary" title="Export cases and questions as files">
+                  <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                  Export Data ▼
+                </button>
+                <div class="export-dropdown-menu hidden" id="export-menu-cases">
+                  <button class="export-menu-item" data-action="cases-json">Export cases.json</button>
+                  <button class="export-menu-item" data-action="cases-data-js">Export cases-data.js</button>
+                  <button class="export-menu-item" data-action="all-json">Export All (cases + standalone)</button>
+                </div>
+              </div>
               <button id="import-btn" class="btn btn-secondary admin-only">
                 <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
                 Import JSON
@@ -129,6 +144,21 @@
               <p>Single client questions covering NGN item formats (MCQ, SATA, Bowtie, Hotspot, Highlight).</p>
             </div>
             <div class="panel-header-actions">
+              <button id="connect-folder-btn-standalone" class="btn btn-secondary connect-folder-btn admin-only" title="Connect a local folder so all saves write directly to your hard drive">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                Connect Local Folder
+              </button>
+              <div class="export-dropdown admin-only">
+                <button id="export-dropdown-btn-standalone" class="btn btn-secondary" title="Export standalone questions">
+                  <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                  Export Data ▼
+                </button>
+                <div class="export-dropdown-menu hidden" id="export-menu-standalone">
+                  <button class="export-menu-item" data-action="standalone-json">Export standalone.json</button>
+                  <button class="export-menu-item" data-action="cases-data-js">Export cases-data.js</button>
+                  <button class="export-menu-item" data-action="all-json">Export All (cases + standalone)</button>
+                </div>
+              </div>
               <button id="import-standalone-btn" class="btn btn-secondary admin-only">
                 <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
                 Import JSON

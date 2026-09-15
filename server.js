@@ -21,6 +21,57 @@ const MIME_TYPES = {
   '.ico': 'image/x-icon'
 };
 
+function saveAllFiles(cases, standalone) {
+  // 1. cases-data.js
+  const jsContent = `window.NCLEX_CASES = ${JSON.stringify(cases, null, 2)};\n\nwindow.NCLEX_STANDALONE = ${JSON.stringify(standalone, null, 2)};\n`;
+  const jsPath = path.join(PUBLIC_DIR, 'cases-data.js');
+  fs.writeFileSync(jsPath, jsContent, 'utf8');
+
+  // 2. cases.json
+  const casesJsonPath = path.join(PUBLIC_DIR, 'cases.json');
+  fs.writeFileSync(casesJsonPath, JSON.stringify(cases, null, 2), 'utf8');
+
+  // 3. standalone.json
+  const standaloneJsonPath = path.join(PUBLIC_DIR, 'standalone.json');
+  fs.writeFileSync(standaloneJsonPath, JSON.stringify(standalone, null, 2), 'utf8');
+
+  // 4. Individual json files in json/ folder
+  const jsonDir = path.join(PUBLIC_DIR, 'json');
+  if (!fs.existsSync(jsonDir)) {
+    fs.mkdirSync(jsonDir, { recursive: true });
+  }
+  for (const c of cases) {
+    const slug = (c.title || 'case').replace(/[^a-zA-Z0-9_-]/g, '_').slice(0, 30);
+    fs.writeFileSync(path.join(jsonDir, `${c.id}_${slug}.json`), JSON.stringify(c, null, 2), 'utf8');
+  }
+  for (const s of standalone) {
+    const slug = (s.title || 'standalone').replace(/[^a-zA-Z0-9_-]/g, '_').slice(0, 30);
+    fs.writeFileSync(path.join(jsonDir, `${s.id}_${slug}.json`), JSON.stringify(s, null, 2), 'utf8');
+  }
+
+  // 5. Mirror to Desktop backup if it exists
+  const desktopDir = path.join('C:', 'Users', 'thada', 'Desktop', 'Antigravity', 'NCLEX Application');
+  if (fs.existsSync(desktopDir)) {
+    try {
+      fs.writeFileSync(path.join(desktopDir, 'cases-data.js'), jsContent, 'utf8');
+      fs.writeFileSync(path.join(desktopDir, 'cases.json'), JSON.stringify(cases, null, 2), 'utf8');
+      fs.writeFileSync(path.join(desktopDir, 'standalone.json'), JSON.stringify(standalone, null, 2), 'utf8');
+      const desktopJsonDir = path.join(desktopDir, 'json');
+      if (!fs.existsSync(desktopJsonDir)) fs.mkdirSync(desktopJsonDir, { recursive: true });
+      for (const c of cases) {
+        const slug = (c.title || 'case').replace(/[^a-zA-Z0-9_-]/g, '_').slice(0, 30);
+        fs.writeFileSync(path.join(desktopJsonDir, `${c.id}_${slug}.json`), JSON.stringify(c, null, 2), 'utf8');
+      }
+      for (const s of standalone) {
+        const slug = (s.title || 'standalone').replace(/[^a-zA-Z0-9_-]/g, '_').slice(0, 30);
+        fs.writeFileSync(path.join(desktopJsonDir, `${s.id}_${slug}.json`), JSON.stringify(s, null, 2), 'utf8');
+      }
+    } catch (e) {
+      console.warn('[NCLEX BACKEND] Desktop mirror error:', e.message);
+    }
+  }
+}
+
 const server = http.createServer((req, res) => {
   // Handle POST api save
   if (req.method === 'POST' && req.url === '/api/save') {
@@ -36,16 +87,12 @@ const server = http.createServer((req, res) => {
           throw new Error("Missing 'cases' or 'standalone' property in request body.");
         }
         
-        // Construct standard cases-data.js contents
-        const jsContent = `window.NCLEX_CASES = ${JSON.stringify(data.cases, null, 2)};\nwindow.NCLEX_STANDALONE = ${JSON.stringify(data.standalone, null, 2)};\n`;
+        saveAllFiles(data.cases, data.standalone);
         
-        const filePath = path.join(PUBLIC_DIR, 'cases-data.js');
-        fs.writeFileSync(filePath, jsContent, 'utf8');
-        
-        console.log(`[NCLEX BACKEND] Directly wrote updates to: ${filePath}`);
+        console.log(`[NCLEX BACKEND] Directly wrote updates to cases-data.js, cases.json, standalone.json, and json/ folder.`);
         
         res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ success: true, message: 'Data saved successfully to cases-data.js!' }));
+        res.end(JSON.stringify({ success: true, message: 'Data saved successfully to disk and json/ folder!' }));
       } catch (err) {
         console.error('[NCLEX BACKEND] Save error:', err.message);
         res.writeHead(400, { 'Content-Type': 'application/json' });

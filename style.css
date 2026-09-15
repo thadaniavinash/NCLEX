@@ -3561,3 +3561,57 @@ body.light-mode .card-id-badge:hover {
 .skip-modal-btn-yes:active {
   transform: translateY(1px);
 }
+
+/* ================= LOCAL FOLDER & EXPORT STYLING ================= */
+.btn-folder-connected {
+  background: rgba(16, 185, 129, 0.15) !important;
+  border-color: #10b981 !important;
+  color: #10b981 !important;
+  font-weight: 500;
+}
+
+.btn-folder-connected:hover {
+  background: rgba(16, 185, 129, 0.25) !important;
+}
+
+.export-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.export-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  background: var(--bg-dash-card, #1e293b);
+  border: 1px solid var(--border-dash, #334155);
+  border-radius: var(--radius-md, 8px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  min-width: 200px;
+  z-index: 1000;
+  overflow: hidden;
+  padding: 4px 0;
+}
+
+.export-dropdown-menu.hidden {
+  display: none !important;
+}
+
+.export-menu-item {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: var(--text-dash-primary, #f8fafc);
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.export-menu-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--nclex-sky, #38bdf8);
+}

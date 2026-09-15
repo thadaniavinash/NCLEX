@@ -153,6 +153,7 @@ async function initApp() {
   }
 
   await loadAllData();
+  await tryRestoreFolderHandle();
   initDashboardEvents();
   initEditorEvents();
   initPlayerEvents();
@@ -298,8 +299,227 @@ async function loadAllData() {
   }
 }
 
+// Local Folder (File System Access API) state
+let localFolderHandle = null;
+
+function getDirectoryHandleFromDB() {
+  return new Promise((resolve) => {
+    try {
+      const req = indexedDB.open('NCLEX_FOLDER_STORAGE', 1);
+      req.onupgradeneeded = (e) => {
+        const d = e.target.result;
+        if (!d.objectStoreNames.contains('handles')) {
+          d.createObjectStore('handles');
+        }
+      };
+      req.onsuccess = (e) => {
+        const d = e.target.result;
+        const tx = d.transaction('handles', 'readonly');
+        const store = tx.objectStore('handles');
+        const getReq = store.get('folder_handle');
+        getReq.onsuccess = () => resolve(getReq.result || null);
+        getReq.onerror = () => resolve(null);
+      };
+      req.onerror = () => resolve(null);
+    } catch (err) {
+      resolve(null);
+    }
+  });
+}
+
+function saveDirectoryHandleToDB(handle) {
+  return new Promise((resolve) => {
+    try {
+      const req = indexedDB.open('NCLEX_FOLDER_STORAGE', 1);
+      req.onupgradeneeded = (e) => {
+        const d = e.target.result;
+        if (!d.objectStoreNames.contains('handles')) {
+          d.createObjectStore('handles');
+        }
+      };
+      req.onsuccess = (e) => {
+        const d = e.target.result;
+        const tx = d.transaction('handles', 'readwrite');
+        const store = tx.objectStore('handles');
+        if (handle) {
+          store.put(handle, 'folder_handle');
+        } else {
+          store.delete('folder_handle');
+        }
+        tx.oncomplete = () => resolve(true);
+        tx.onerror = () => resolve(false);
+      };
+      req.onerror = () => resolve(false);
+    } catch (err) {
+      resolve(false);
+    }
+  });
+}
+
+async function saveToLocalBackend(cases, standalone) {
+  const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+  if (!isLocal) return false;
+  try {
+    const res = await fetch('/api/save', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ cases, standalone })
+    });
+    if (res.ok) {
+      console.log('[LOCAL SERVER] Saved directly to local disk and json/ folder.');
+      return true;
+    }
+  } catch (e) {
+    console.warn('[LOCAL SERVER] /api/save unavailable:', e.message);
+  }
+  return false;
+}
+
+async function writeDataToConnectedFolder(cases, standalone) {
+  if (!localFolderHandle) return false;
+  try {
+    let permission = await localFolderHandle.queryPermission({ mode: 'readwrite' });
+    if (permission !== 'granted') {
+      permission = await localFolderHandle.requestPermission({ mode: 'readwrite' });
+      if (permission !== 'granted') return false;
+    }
+
+    // 1. cases-data.js
+    const jsFile = await localFolderHandle.getFileHandle('cases-data.js', { create: true });
+    const jsWritable = await jsFile.createWritable();
+    const jsContent = `window.NCLEX_CASES = ${JSON.stringify(cases, null, 2)};\n\nwindow.NCLEX_STANDALONE = ${JSON.stringify(standalone, null, 2)};\n`;
+    await jsWritable.write(jsContent);
+    await jsWritable.close();
+
+    // 2. cases.json
+    const casesFile = await localFolderHandle.getFileHandle('cases.json', { create: true });
+    const casesWritable = await casesFile.createWritable();
+    await casesWritable.write(JSON.stringify(cases, null, 2));
+    await casesWritable.close();
+
+    // 3. standalone.json
+    const standaloneFile = await localFolderHandle.getFileHandle('standalone.json', { create: true });
+    const standaloneWritable = await standaloneFile.createWritable();
+    await standaloneWritable.write(JSON.stringify(standalone, null, 2));
+    await standaloneWritable.close();
+
+    // 4. json/ folder
+    const jsonDirHandle = await localFolderHandle.getDirectoryHandle('json', { create: true });
+    for (const c of cases) {
+      const slug = (c.title || 'case').replace(/[^a-zA-Z0-9_-]/g, '_').slice(0, 30);
+      const f = await jsonDirHandle.getFileHandle(`${c.id}_${slug}.json`, { create: true });
+      const w = await f.createWritable();
+      await w.write(JSON.stringify(c, null, 2));
+      await w.close();
+    }
+    for (const s of standalone) {
+      const slug = (s.title || 'standalone').replace(/[^a-zA-Z0-9_-]/g, '_').slice(0, 30);
+      const f = await jsonDirHandle.getFileHandle(`${s.id}_${slug}.json`, { create: true });
+      const w = await f.createWritable();
+      await w.write(JSON.stringify(s, null, 2));
+      await w.close();
+    }
+
+    console.log('[LOCAL FOLDER] Successfully wrote all files to connected folder:', localFolderHandle.name);
+    return true;
+  } catch (err) {
+    console.error('[LOCAL FOLDER] Error writing to folder:', err);
+    return false;
+  }
+}
+
+async function connectLocalFolder() {
+  if (!window.showDirectoryPicker) {
+    showToast("File System Access API is not supported by this browser. Please use Chrome or Edge.", "error");
+    return;
+  }
+  try {
+    const handle = await window.showDirectoryPicker({ mode: 'readwrite' });
+    if (handle) {
+      localFolderHandle = handle;
+      await saveDirectoryHandleToDB(handle);
+      updateFolderButtonUI(true);
+      const success = await writeDataToConnectedFolder(caseStudies, standaloneQuestions);
+      if (success) {
+        showToast(`Connected & saved files to: ${handle.name}`);
+      } else {
+        showToast(`Connected to ${handle.name}, but write permission was not granted.`, "warning");
+      }
+    }
+  } catch (err) {
+    if (err.name !== 'AbortError') {
+      console.error('Error selecting folder:', err);
+      showToast("Could not connect folder: " + err.message, "error");
+    }
+  }
+}
+
+async function tryRestoreFolderHandle() {
+  if (!window.showDirectoryPicker) return;
+  try {
+    const handle = await getDirectoryHandleFromDB();
+    if (handle) {
+      localFolderHandle = handle;
+      const permission = await handle.queryPermission({ mode: 'readwrite' });
+      updateFolderButtonUI(permission === 'granted');
+    }
+  } catch (err) {
+    console.warn('Could not restore folder handle:', err);
+  }
+}
+
+function updateFolderButtonUI(isPermissionGranted = true) {
+  const btns = document.querySelectorAll('.connect-folder-btn');
+  btns.forEach(btn => {
+    if (localFolderHandle) {
+      btn.innerHTML = `<svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/><polyline points="9 11 12 14 22 4"/></svg> ${isPermissionGranted ? 'Synced: ' : 'Reconnect: '}${localFolderHandle.name}`;
+      btn.classList.add('btn-folder-connected');
+      btn.title = `Connected to "${localFolderHandle.name}". Click to change folder or re-authenticate.`;
+    } else {
+      btn.innerHTML = `<svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg> Connect Local Folder`;
+      btn.classList.remove('btn-folder-connected');
+      btn.title = `Connect a local folder so all saves write directly to your hard drive.`;
+    }
+  });
+}
+
+function downloadBlob(content, filename, contentType) {
+  const blob = new Blob([content], { type: contentType });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+  showToast(`Exported ${filename}!`);
+}
+
+function exportAllDataAsJson() {
+  const data = {
+    cases: caseStudies,
+    standalone: standaloneQuestions,
+    exportedAt: new Date().toISOString()
+  };
+  downloadBlob(JSON.stringify(data, null, 2), 'nclex_all_data.json', 'application/json');
+}
+
+function exportCasesJson() {
+  downloadBlob(JSON.stringify(caseStudies, null, 2), 'cases.json', 'application/json');
+}
+
+function exportStandaloneJson() {
+  downloadBlob(JSON.stringify(standaloneQuestions, null, 2), 'standalone.json', 'application/json');
+}
+
+function exportCasesDataJs() {
+  const content = `window.NCLEX_CASES = ${JSON.stringify(caseStudies, null, 2)};\n\nwindow.NCLEX_STANDALONE = ${JSON.stringify(standaloneQuestions, null, 2)};\n`;
+  downloadBlob(content, 'cases-data.js', 'application/javascript');
+}
+
 async function saveCasesToStorage() {
-  // Always update local IndexedDB/localStorage fallback
+  // 1. IndexedDB / localStorage fallback
   if (db) {
     caseStudies.forEach(c => putInStore('case_studies', c));
   } else {
@@ -310,7 +530,14 @@ async function saveCasesToStorage() {
     }
   }
 
-  // Push updates to Supabase
+  // 2. Direct save to Local Server if running locally
+  const savedToLocalServer = await saveToLocalBackend(caseStudies, standaloneQuestions);
+
+  // 3. Direct save to Connected Local Folder (File System Access API) if connected
+  const savedToConnectedFolder = await writeDataToConnectedFolder(caseStudies, standaloneQuestions);
+
+  // 4. Push updates to Supabase
+  let savedToSupabase = false;
   try {
     const response = await fetch(`${SUPABASE_URL}/rest/v1/nclex_data?key=eq.cases`, {
       method: 'PATCH',
@@ -322,20 +549,27 @@ async function saveCasesToStorage() {
       body: JSON.stringify({ data: caseStudies })
     });
     if (response.ok) {
+      savedToSupabase = true;
       console.log('Saved cases successfully to Supabase.');
-      showToast("Changes saved to Supabase.");
-    } else {
-      console.error('Failed to save cases to Supabase:', response.statusText);
-      showToast("Saved locally, but failed to save to Supabase database.", "error");
     }
   } catch (err) {
     console.error('Error saving cases to Supabase:', err);
-    showToast("Saved locally. Network error saving to database.", "error");
+  }
+
+  // Clear, helpful feedback
+  if (savedToLocalServer) {
+    showToast("Saved directly to hard drive & json/ folder!");
+  } else if (savedToConnectedFolder) {
+    showToast("Saved directly to connected local folder & json/!");
+  } else if (savedToSupabase) {
+    showToast("Changes saved to cloud database.");
+  } else {
+    showToast("Saved locally in browser.", "warning");
   }
 }
 
 async function saveStandaloneToStorage() {
-  // Always update local IndexedDB/localStorage fallback
+  // 1. IndexedDB / localStorage fallback
   if (db) {
     standaloneQuestions.forEach(q => putInStore('standalone_questions', q));
   } else {
@@ -346,7 +580,14 @@ async function saveStandaloneToStorage() {
     }
   }
 
-  // Push updates to Supabase
+  // 2. Direct save to Local Server if running locally
+  const savedToLocalServer = await saveToLocalBackend(caseStudies, standaloneQuestions);
+
+  // 3. Direct save to Connected Local Folder (File System Access API) if connected
+  const savedToConnectedFolder = await writeDataToConnectedFolder(caseStudies, standaloneQuestions);
+
+  // 4. Push updates to Supabase
+  let savedToSupabase = false;
   try {
     const response = await fetch(`${SUPABASE_URL}/rest/v1/nclex_data?key=eq.standalone`, {
       method: 'PATCH',
@@ -358,15 +599,22 @@ async function saveStandaloneToStorage() {
       body: JSON.stringify({ data: standaloneQuestions })
     });
     if (response.ok) {
+      savedToSupabase = true;
       console.log('Saved standalone questions successfully to Supabase.');
-      showToast("Changes saved to Supabase.");
-    } else {
-      console.error('Failed to save standalone questions to Supabase:', response.statusText);
-      showToast("Saved locally, but failed to save to Supabase database.", "error");
     }
   } catch (err) {
     console.error('Error saving standalone to Supabase:', err);
-    showToast("Saved locally. Network error saving to database.", "error");
+  }
+
+  // Clear, helpful feedback
+  if (savedToLocalServer) {
+    showToast("Saved directly to hard drive & json/ folder!");
+  } else if (savedToConnectedFolder) {
+    showToast("Saved directly to connected local folder & json/!");
+  } else if (savedToSupabase) {
+    showToast("Changes saved to cloud database.");
+  } else {
+    showToast("Saved locally in browser.", "warning");
   }
 }
 
@@ -453,6 +701,43 @@ function initDashboardEvents() {
   if (exportAllStandaloneBtn) {
     exportAllStandaloneBtn.addEventListener('click', exportAllStandalone);
   }
+
+  // Connect Local Folder buttons
+  document.querySelectorAll('.connect-folder-btn').forEach(btn => {
+    btn.addEventListener('click', connectLocalFolder);
+  });
+
+  // Export dropdown handlers
+  ['cases', 'standalone'].forEach(type => {
+    const dropdownBtn = document.getElementById(`export-dropdown-btn-${type}`);
+    const menu = document.getElementById(`export-menu-${type}`);
+    if (dropdownBtn && menu) {
+      dropdownBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        document.querySelectorAll('.export-dropdown-menu').forEach(m => {
+          if (m !== menu) m.classList.add('hidden');
+        });
+        menu.classList.toggle('hidden');
+      });
+
+      menu.querySelectorAll('.export-menu-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.stopPropagation();
+          menu.classList.add('hidden');
+          const action = item.getAttribute('data-action');
+          if (action === 'cases-json') exportCasesJson();
+          else if (action === 'standalone-json') exportStandaloneJson();
+          else if (action === 'cases-data-js') exportCasesDataJs();
+          else if (action === 'all-json') exportAllDataAsJson();
+        });
+      });
+    }
+  });
+
+  // Close dropdowns on document click
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.export-dropdown-menu').forEach(m => m.classList.add('hidden'));
+  });
   
   const createBtn = document.getElementById('create-btn');
   if (createBtn) {
