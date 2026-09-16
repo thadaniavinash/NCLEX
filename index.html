@@ -59,10 +59,10 @@
             </div>
           </div>
 
-          <!-- Quiz Generator Tab -->
-          <button id="nav-tab-generator" class="nav-item admin-only">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M9 17v-5h6v5"/></svg>
-            <span>Quiz Generator</span>
+          <!-- Practice / Exam Session Builder Tab -->
+          <button id="nav-tab-generator" class="nav-item" style="margin-bottom: 2px;">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span>Practice / Exam Mode</span>
           </button>
         </nav>
         
@@ -182,37 +182,140 @@
           </div>
         </div>
 
-        <!-- Sub-panel 3: Quiz Generator -->
+        <!-- Sub-panel 3: Practice / Exam Session Builder -->
         <div id="panel-generator" class="dashboard-panel">
           <header class="panel-header">
             <div class="panel-header-title">
-              <h2>Custom Quiz Generator</h2>
-              <p>Compile a custom testing session using a combination of case studies and standalone questions.</p>
+              <h2>NextGen NCLEX Session Builder</h2>
+              <p>Customize your testing session by mode, topic, and question counts up to NCLEX exam limits.</p>
             </div>
           </header>
+
           <div class="generator-workspace">
             <div class="generator-controls-card">
-              <div class="form-group">
-                <label>Select Case Studies to Include</label>
-                <div id="generator-cases-list" class="generator-selection-list">
-                  <!-- Checklist of Case Studies -->
+              
+              <!-- SECTION 1: Operating Mode Selector -->
+              <div class="session-section">
+                <label class="session-section-title">1. Select Operating Mode</label>
+                <div class="mode-selector-grid">
+                  <label class="mode-card selected" id="mode-card-review">
+                    <input type="radio" name="session-mode" value="review" checked class="mode-radio">
+                    <div class="mode-content">
+                      <div class="mode-header">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        <span class="mode-name">Review Mode (Practice)</span>
+                      </div>
+                      <p class="mode-desc">Tutor-style practice. Jump freely with the <strong>Question Navigator</strong>, backtrack anytime, and see clinical rationales upon submission.</p>
+                    </div>
+                  </label>
+
+                  <label class="mode-card" id="mode-card-test">
+                    <input type="radio" name="session-mode" value="test" class="mode-radio">
+                    <div class="mode-content">
+                      <div class="mode-header">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <span class="mode-name">Test Mode (Exam Simulation)</span>
+                      </div>
+                      <p class="mode-desc">Realistic NextGen NCLEX exam. <strong>No backtracking</strong>, Question Navigator hidden during exam. Full interactive remediation review available upon completion.</p>
+                    </div>
+                  </label>
                 </div>
               </div>
-              <div class="form-group" style="margin-top: 24px;">
-                <label>Select Stand-alone Questions to Include</label>
-                <div id="generator-standalone-list" class="generator-selection-list">
-                  <!-- Checklist of Stand-alone Questions -->
+
+              <!-- SECTION 2: Topic Selection -->
+              <div class="session-section" style="margin-top: 24px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                  <label class="session-section-title" style="margin-bottom: 0;">2. Select Clinical Topics</label>
+                  <div style="display: flex; gap: 8px;">
+                    <button type="button" id="topics-select-all-btn" class="btn btn-secondary btn-xs">Select All</button>
+                    <button type="button" id="topics-clear-all-btn" class="btn btn-secondary btn-xs">Clear All</button>
+                  </div>
+                </div>
+                <div id="generator-topics-list" class="topics-grid">
+                  <!-- Dynamically populated topic checkboxes with live counts -->
                 </div>
               </div>
+
+              <!-- SECTION 3: Question Quantities (Hard capped at 3 cases & 67 standalone = 85 total) -->
+              <div class="session-section" style="margin-top: 24px;">
+                <label class="session-section-title">3. Configure Question Counts (NCLEX Exam Caps)</label>
+                <div class="presets-row" style="margin-bottom: 14px; display: flex; gap: 8px; flex-wrap: wrap;">
+                  <button type="button" class="btn btn-secondary btn-xs preset-btn" data-cases="1" data-standalone="0">1 Case Study (6 Qs)</button>
+                  <button type="button" class="btn btn-secondary btn-xs preset-btn" data-cases="0" data-standalone="10">Quick 10 Standalone</button>
+                  <button type="button" class="btn btn-secondary btn-xs preset-btn" data-cases="1" data-standalone="10">1 Case + 10 Standalone (16 Qs)</button>
+                  <button type="button" class="btn btn-secondary btn-xs preset-btn" data-cases="3" data-standalone="67" style="border-color: #3b82f6; color: #60a5fa;">NCLEX 85-Question Exam Cap</button>
+                </div>
+
+                <div class="quantity-controls-grid">
+                  <!-- Case Studies Input -->
+                  <div class="quantity-card">
+                    <div class="quantity-card-header">
+                      <div class="quantity-label">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                        <span>Case Studies</span>
+                      </div>
+                      <span class="quantity-avail" id="cases-avail-text">Avail: 0</span>
+                    </div>
+                    <div class="quantity-input-row">
+                      <input type="range" id="generator-cases-slider" min="0" max="3" value="1" class="quantity-slider">
+                      <input type="number" id="generator-cases-input" min="0" max="3" value="1" class="quantity-number-input">
+                    </div>
+                    <div class="quantity-note" id="cases-questions-note">1 Case Study = 6 Questions</div>
+                  </div>
+
+                  <!-- Standalone Questions Input -->
+                  <div class="quantity-card">
+                    <div class="quantity-card-header">
+                      <div class="quantity-label">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                        <span>Stand-alone Questions</span>
+                      </div>
+                      <span class="quantity-avail" id="standalone-avail-text">Avail: 0</span>
+                    </div>
+                    <div class="quantity-input-row">
+                      <input type="range" id="generator-standalone-slider" min="0" max="67" value="5" class="quantity-slider">
+                      <input type="number" id="generator-standalone-input" min="0" max="67" value="5" class="quantity-number-input">
+                    </div>
+                    <div class="quantity-note" id="standalone-questions-note">5 Stand-alone Questions</div>
+                  </div>
+                </div>
+
+                <!-- Live Total Summary Bar -->
+                <div class="session-total-bar" id="session-total-bar">
+                  <div class="total-stat">
+                    <span class="stat-label">Total Questions:</span>
+                    <span class="stat-val" id="session-total-questions-val">11</span>
+                    <span class="stat-max">/ 85 Max</span>
+                  </div>
+                  <div class="total-status" id="session-total-status-badge">Ready</div>
+                </div>
+              </div>
+
+              <!-- SECTION 4: Advanced Manual Selection Accordion -->
+              <details class="generator-advanced-details" style="margin-top: 16px;">
+                <summary style="cursor: pointer; font-size: 13px; color: #94a3b8; padding: 6px 0; user-select: none;">
+                  ▸ Advanced: Manually pick specific case studies & standalone questions
+                </summary>
+                <div style="margin-top: 12px; padding: 12px; background: rgba(0,0,0,0.15); border-radius: var(--radius-sm);">
+                  <div class="form-group">
+                    <label style="font-size: 12px;">Specific Case Studies:</label>
+                    <div id="generator-cases-list" class="generator-selection-list"></div>
+                  </div>
+                  <div class="form-group" style="margin-top: 14px;">
+                    <label style="font-size: 12px;">Specific Stand-alone Questions:</label>
+                    <div id="generator-standalone-list" class="generator-selection-list"></div>
+                  </div>
+                </div>
+              </details>
+
+              <!-- Launch Action -->
               <div class="generator-summary-and-play" style="margin-top: 24px;">
-                <div id="generator-quiz-summary" class="generator-summary">
-                  Select items to see summary.
-                </div>
-                <button id="generate-play-btn" class="btn btn-primary btn-large btn-run" style="width: 100%; justify-content: center; margin-top: 16px;">
+                <button id="generate-play-btn" class="btn btn-primary btn-large btn-run" style="width: 100%; justify-content: center; height: 46px; font-size: 16px; font-weight: 600;">
                   <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="margin-right: 8px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                  Generate & Launch Custom Quiz
+                  <span id="launch-btn-label">Start Practice Session (Review Mode)</span>
                 </button>
               </div>
+
             </div>
           </div>
         </div>
@@ -492,81 +595,107 @@
           </svg>
           Calculator
         </button>
+
+        <button id="player-nav-btn" class="player-nav-link-new" title="Open Question Navigator">
+          <svg viewBox="0 0 24 24" width="17" height="17" style="vertical-align: middle; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; margin-right: 5px;">
+            <!-- Navigation compass / indicator icon -->
+            <circle cx="12" cy="12" r="9" />
+            <polygon points="12 4 15 11 12 10 9 11 12 4" fill="currentColor" />
+            <polygon points="12 20 15 13 12 14 9 13 12 20" fill="currentColor" fill-opacity="0.5" />
+          </svg>
+          Question Navigator
+        </button>
       </div>
     </header>
 
+    <!-- Question Navigator Slide-over Drawer -->
+    <div id="question-navigator-drawer" class="question-nav-drawer hidden">
+      <div class="question-nav-drawer-header">
+        <div class="question-nav-drawer-title">
+          <svg viewBox="0 0 24 24" width="18" height="18" style="vertical-align: middle; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; margin-right: 6px;">
+            <circle cx="12" cy="12" r="9" />
+            <polygon points="12 4 15 11 12 10 9 11 12 4" fill="currentColor" />
+            <polygon points="12 20 15 13 12 14 9 13 12 20" fill="currentColor" fill-opacity="0.5" />
+          </svg>
+          Question Navigator
+        </div>
+        <button id="close-question-nav-btn" class="question-nav-drawer-close" title="Close Navigator">&times;</button>
+      </div>
+
+      <div class="question-nav-drawer-legend">
+        <span class="legend-item"><span class="legend-dot current"></span> Current</span>
+        <span class="legend-item"><span class="legend-dot complete"></span> Complete</span>
+        <span class="legend-item"><span class="legend-dot incomplete"></span> Incomplete</span>
+      </div>
+
+      <div id="question-nav-drawer-list" class="question-nav-drawer-list">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+    <div id="question-nav-drawer-backdrop" class="question-nav-drawer-backdrop hidden"></div>
+
     <!-- Player Sandbox Workspace -->
     <div class="player-workspace">
-      <!-- Left side: Quiz Navigation Panel & Calculator -->
-      <aside class="player-left-sidebar">
-        <div class="quiz-nav-card">
-          <h5>TEST NAVIGATION</h5>
-          <div id="player-nav-grid" class="nav-grid">
-            <!-- Navigation squares (1, 2, 3...) -->
+      <!-- TI-108 Style Interactive Calculator (Draggable popup) -->
+      <div id="ti108-calculator" class="ti-108-calc hidden">
+        <div class="calc-top-bar">
+          <span>TI-108</span>
+          <button id="close-calc-btn" class="close-calc-x">&times;</button>
+        </div>
+        <div class="calc-body">
+          <div class="calc-solar-and-logo">
+            <span class="calc-brand">TI-108</span>
+            <div class="calc-solar-panel">
+              <div class="solar-bar"></div>
+              <div class="solar-bar"></div>
+              <div class="solar-bar"></div>
+              <div class="solar-bar"></div>
+            </div>
+          </div>
+          
+          <div class="calc-screen-wrapper" style="display: flex; align-items: center; justify-content: space-between;">
+            <span id="calc-mem-indicator" style="font-family: var(--font-mono); font-size: 14px; font-weight: bold; color: #111827; visibility: hidden; margin-right: 6px;">M</span>
+            <div id="calc-display" class="calc-screen" style="flex-grow: 1; text-align: right;">0</div>
+          </div>
+
+          <div class="calc-keypad">
+            <!-- Row 1: Operations -->
+            <button class="calc-btn op-btn" data-action="sign">+/-</button>
+            <button class="calc-btn op-btn" data-action="sqrt">&radic;</button>
+            <button class="calc-btn op-btn" data-action="percent">%</button>
+            <button class="calc-btn op-btn" data-action="divide">&divide;</button>
+
+            <!-- Row 2: Memory & Multiply -->
+            <button class="calc-btn mem-btn" data-action="mrc">MRC</button>
+            <button class="calc-btn mem-btn" data-action="mminus">M-</button>
+            <button class="calc-btn mem-btn" data-action="mplus">M+</button>
+            <button class="calc-btn op-btn" data-action="multiply">&times;</button>
+
+            <!-- Row 3: Numbers & Minus -->
+            <button class="calc-btn num-btn">7</button>
+            <button class="calc-btn num-btn">8</button>
+            <button class="calc-btn num-btn">9</button>
+            <button class="calc-btn op-btn" data-action="subtract">-</button>
+
+            <!-- Row 4: Numbers & Plus -->
+            <button class="calc-btn num-btn">4</button>
+            <button class="calc-btn num-btn">5</button>
+            <button class="calc-btn num-btn">6</button>
+            <button class="calc-btn op-btn" data-action="add">+</button>
+
+            <!-- Row 5: Numbers & Equals -->
+            <button class="calc-btn num-btn">1</button>
+            <button class="calc-btn num-btn">2</button>
+            <button class="calc-btn num-btn">3</button>
+            <button class="calc-btn equal-btn" data-action="equals" style="grid-row: span 2; height: 100%;">=</button>
+
+            <!-- Row 6: Clear & Zero & Decimal -->
+            <button class="calc-btn clear-btn" data-action="clear">ON/C</button>
+            <button class="calc-btn num-btn">0</button>
+            <button class="calc-btn num-btn">.</button>
           </div>
         </div>
-
-        <!-- TI-108 Style Interactive Calculator -->
-        <div id="ti108-calculator" class="ti-108-calc hidden">
-          <div class="calc-top-bar">
-            <span>TI-108</span>
-            <button id="close-calc-btn" class="close-calc-x">&times;</button>
-          </div>
-          <div class="calc-body">
-            <div class="calc-solar-and-logo">
-              <span class="calc-brand">TI-108</span>
-              <div class="calc-solar-panel">
-                <div class="solar-bar"></div>
-                <div class="solar-bar"></div>
-                <div class="solar-bar"></div>
-                <div class="solar-bar"></div>
-              </div>
-            </div>
-            
-            <div class="calc-screen-wrapper" style="display: flex; align-items: center; justify-content: space-between;">
-              <span id="calc-mem-indicator" style="font-family: var(--font-mono); font-size: 14px; font-weight: bold; color: #111827; visibility: hidden; margin-right: 6px;">M</span>
-              <div id="calc-display" class="calc-screen" style="flex-grow: 1; text-align: right;">0</div>
-            </div>
-
-            <div class="calc-keypad">
-              <!-- Row 1: Operations -->
-              <button class="calc-btn op-btn" data-action="sign">+/-</button>
-              <button class="calc-btn op-btn" data-action="sqrt">&radic;</button>
-              <button class="calc-btn op-btn" data-action="percent">%</button>
-              <button class="calc-btn op-btn" data-action="divide">&divide;</button>
-
-              <!-- Row 2: Memory -->
-              <button class="calc-btn mem-btn" data-action="mrc">MRC</button>
-              <button class="calc-btn mem-btn" data-action="mminus">M-</button>
-              <button class="calc-btn mem-btn" data-action="mplus">M+</button>
-              <button class="calc-btn op-btn" data-action="multiply">&times;</button>
-
-              <!-- Row 3: Numbers & Minus -->
-              <button class="calc-btn num-btn">7</button>
-              <button class="calc-btn num-btn">8</button>
-              <button class="calc-btn num-btn">9</button>
-              <button class="calc-btn op-btn" data-action="subtract">-</button>
-
-              <!-- Row 4: Numbers & Plus -->
-              <button class="calc-btn num-btn">4</button>
-              <button class="calc-btn num-btn">5</button>
-              <button class="calc-btn num-btn">6</button>
-              <button class="calc-btn op-btn" data-action="add">+</button>
-
-              <!-- Row 5: Numbers & Equals -->
-              <button class="calc-btn num-btn">1</button>
-              <button class="calc-btn num-btn">2</button>
-              <button class="calc-btn num-btn">3</button>
-              <button class="calc-btn equal-btn" data-action="equals" style="grid-row: span 2; height: 100%;">=</button>
-
-              <!-- Row 6: Clear & Zero & Decimal -->
-              <button class="calc-btn clear-btn" data-action="clear">ON/C</button>
-              <button class="calc-btn num-btn">0</button>
-              <button class="calc-btn num-btn">.</button>
-            </div>
-          </div>
-        </div>
-      </aside>
+      </div>
 
       <!-- Center split workspace: Left (Patient Chart) and Right (Question Card) -->
       <main class="player-center-split">
@@ -604,6 +733,12 @@
           </div>
 
           <div class="question-card">
+            <!-- Case Study Transition Banner (Shown on Step 1 of a case in Test Mode) -->
+            <div id="player-case-banner" class="player-case-banner hidden">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; margin-right: 8px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span id="player-case-banner-text">The following 6 questions refer to this unfolding case study.</span>
+            </div>
+
             <!-- Question Preamble -->
             <div id="player-question-preamble" class="question-preamble hidden"></div>
 
@@ -703,10 +838,36 @@
         </div>
       </main>
 
-      <footer class="results-actions">
+      <footer class="results-actions" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <button id="results-review-answers-btn" class="btn btn-primary" style="background-color: #166da9; font-weight: 600; padding: 10px 20px;">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" style="vertical-align: middle; margin-right: 6px;">
+            <circle cx="12" cy="12" r="9"/>
+            <polygon points="12 4 15 11 12 10 9 11 12 4" fill="currentColor"/>
+            <polygon points="12 20 15 13 12 14 9 13 12 20" fill="currentColor" fill-opacity="0.5"/>
+          </svg>
+          Interactive Review Answers & Rationales
+        </button>
         <button id="results-retry-btn" class="btn btn-secondary">Retry Quiz</button>
-        <button id="results-dashboard-btn" class="btn btn-primary">Return to Dashboard</button>
+        <button id="results-dashboard-btn" class="btn btn-secondary">Return to Dashboard</button>
       </footer>
+    </div>
+  </div>
+
+  <!-- ================= TEST MODE CONFIRM SUBMIT MODAL ================= -->
+  <div id="test-submit-modal" class="skip-modal-overlay hidden">
+    <div class="skip-modal-container">
+      <div class="skip-modal-header" style="background-color: #166da9; color: white;">
+        <span class="skip-modal-title" style="color: white; font-weight: 600;">Confirm Submission</span>
+        <button type="button" class="skip-modal-close-btn" id="test-submit-close-btn" aria-label="Close" style="color: white;">&times;</button>
+      </div>
+      <div class="skip-modal-body" style="padding: 20px; font-size: 14px; line-height: 1.5; color: #1e293b;">
+        <p style="margin-bottom: 8px;"><strong>Are you ready to submit your answer?</strong></p>
+        <p style="color: #64748b; margin: 0;">In Test Mode, once you submit and move to the next question, you cannot return to change your answer.</p>
+      </div>
+      <div class="skip-modal-footer" style="padding: 12px 16px; display: flex; justify-content: flex-end; gap: 10px;">
+        <button type="button" class="btn btn-secondary btn-sm" id="test-submit-cancel-btn">Cancel</button>
+        <button type="button" class="btn btn-primary btn-sm" id="test-submit-confirm-btn" style="background-color: #166da9;">Confirm & Proceed</button>
+      </div>
     </div>
   </div>
 

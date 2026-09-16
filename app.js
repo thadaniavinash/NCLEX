@@ -39,6 +39,11 @@ let isAdminLoggedIn = (typeof sessionStorage !== 'undefined') ? (sessionStorage.
 let playerAnswers = {}; // { stepIndex: answersObject }
 let submittedAnswers = {}; // { stepIndex: boolean }
 let playerScores = {}; // { stepIndex: { score: X, max: Y } }
+let sessionConfig = {
+  mode: 'review', // 'review' | 'test'
+  isRemediation: false, // true during post-exam review
+  allowBacktrack: true
+};
 
 // Calculator state
 let calcInput = '0';
@@ -155,6 +160,7 @@ async function initApp() {
   await loadAllData();
   await tryRestoreFolderHandle();
   initDashboardEvents();
+  initSessionBuilder();
   initEditorEvents();
   initPlayerEvents();
   initResultsEvents();
@@ -163,9 +169,22 @@ async function initApp() {
   
   initAdminEvents();
   applyAdminState();
-  
-  // Start on Dashboard
-  switchView('dashboard');
+
+  // Check URL parameters for direct exam/mode launches
+  const urlParams = new URLSearchParams(window.location.search);
+  const examMode = urlParams.get('mode');
+  const examId = urlParams.get('exam');
+
+  if (examMode === 'test' || examId) {
+    // Launch directly into Test Mode simulation
+    switchDashboardPanel('generator');
+    const testCard = document.getElementById('mode-card-test');
+    if (testCard) testCard.click();
+    switchView('dashboard');
+  } else {
+    // Start on Dashboard
+    switchView('dashboard');
+  }
 }
 
 if (document.readyState === 'loading') {
@@ -1328,15 +1347,259 @@ function handleImportStandaloneFile(e) {
   e.target.value = '';
 }
 
-function renderGeneratorPanel() {
+/* ================= NEXTGEN NCLEX SESSION BUILDER ================= */
+let sessionBuilderTopics = [];
+let sessionBuilderMode = 'review'; // 'review' | 'test'
+
+function initSessionBuilder() {
+  // Mode selection cards
+  const reviewCard = document.getElementById('mode-card-review');
+  const testCard = document.getElementById('mode-card-test');
+  const reviewRadio = document.querySelector('input[name="session-mode"][value="review"]');
+  const testRadio = document.querySelector('input[name="session-mode"][value="test"]');
+  const launchBtnLabel = document.getElementById('launch-btn-label');
+
+  function setSessionMode(mode) {
+    sessionBuilderMode = mode;
+    if (mode === 'review') {
+      if (reviewCard) reviewCard.classList.add('selected');
+      if (testCard) testCard.classList.remove('selected');
+      if (reviewRadio) reviewRadio.checked = true;
+      if (launchBtnLabel) launchBtnLabel.textContent = 'Start Practice Session (Review Mode)';
+    } else {
+      if (testCard) testCard.classList.add('selected');
+      if (reviewCard) reviewCard.classList.remove('selected');
+      if (testRadio) testRadio.checked = true;
+      if (launchBtnLabel) launchBtnLabel.textContent = 'Start NCLEX Exam Simulation (Test Mode)';
+    }
+    updateSessionCountsAndBounds();
+  }
+
+  if (reviewCard) reviewCard.addEventListener('click', () => setSessionMode('review'));
+  if (testCard) testCard.addEventListener('click', () => setSessionMode('test'));
+  if (reviewRadio) reviewRadio.addEventListener('change', () => setSessionMode('review'));
+  if (testRadio) testRadio.addEventListener('change', () => setSessionMode('test'));
+
+  // Topics Select All / Clear All
+  const selectAllBtn = document.getElementById('topics-select-all-btn');
+  const clearAllBtn = document.getElementById('topics-clear-all-btn');
+
+  if (selectAllBtn) {
+    selectAllBtn.addEventListener('click', () => {
+      document.querySelectorAll('.session-topic-checkbox').forEach(cb => cb.checked = true);
+      updateSessionTopicsFromCheckboxes();
+    });
+  }
+
+  if (clearAllBtn) {
+    clearAllBtn.addEventListener('click', () => {
+      document.querySelectorAll('.session-topic-checkbox').forEach(cb => cb.checked = false);
+      updateSessionTopicsFromCheckboxes();
+    });
+  }
+
+  // Presets
+  document.querySelectorAll('.preset-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cases = parseInt(btn.dataset.cases || '0', 10);
+      const standalone = parseInt(btn.dataset.standalone || '0', 10);
+      
+      const casesSlider = document.getElementById('generator-cases-slider');
+      const casesInput = document.getElementById('generator-cases-input');
+      const stdSlider = document.getElementById('generator-standalone-slider');
+      const stdInput = document.getElementById('generator-standalone-input');
+
+      if (casesSlider) casesSlider.value = cases;
+      if (casesInput) casesInput.value = cases;
+      if (stdSlider) stdSlider.value = standalone;
+      if (stdInput) stdInput.value = standalone;
+
+      updateSessionCountsAndBounds();
+    });
+  });
+
+  // Quantity Sliders & Number inputs sync
+  const casesSlider = document.getElementById('generator-cases-slider');
+  const casesInput = document.getElementById('generator-cases-input');
+  const stdSlider = document.getElementById('generator-standalone-slider');
+  const stdInput = document.getElementById('generator-standalone-input');
+
+  if (casesSlider && casesInput) {
+    casesSlider.addEventListener('input', () => {
+      casesInput.value = casesSlider.value;
+      updateSessionCountsAndBounds();
+    });
+    casesInput.addEventListener('input', () => {
+      casesSlider.value = casesInput.value;
+      updateSessionCountsAndBounds();
+    });
+  }
+
+  if (stdSlider && stdInput) {
+    stdSlider.addEventListener('input', () => {
+      stdInput.value = stdSlider.value;
+      updateSessionCountsAndBounds();
+    });
+    stdInput.addEventListener('input', () => {
+      stdSlider.value = stdInput.value;
+      updateSessionCountsAndBounds();
+    });
+  }
+
+  // Launch button
+  const launchBtn = document.getElementById('generate-play-btn');
+  if (launchBtn) {
+    launchBtn.addEventListener('click', generateAndStartSession);
+  }
+
+  renderSessionTopicsList();
+  renderManualSelectionLists();
+}
+
+function renderSessionTopicsList() {
+  const container = document.getElementById('generator-topics-list');
+  if (!container) return;
+
+  const topicsMap = {};
+  
+  // Collect topics from cases
+  caseStudies.forEach(c => {
+    const t = (c.topic || c.disorder || 'General').trim();
+    if (!topicsMap[t]) topicsMap[t] = { cases: 0, standalone: 0 };
+    topicsMap[t].cases++;
+  });
+
+  // Collect topics from standalone
+  standaloneQuestions.forEach(s => {
+    const t = (s.topic || s.disorder || 'General').trim();
+    if (!topicsMap[t]) topicsMap[t] = { cases: 0, standalone: 0 };
+    topicsMap[t].standalone++;
+  });
+
+  const sortedTopics = Object.keys(topicsMap).sort();
+  container.innerHTML = '';
+
+  if (sortedTopics.length === 0) {
+    container.innerHTML = '<div style="color:#94a3b8; font-style:italic;">No topics found in library.</div>';
+    return;
+  }
+
+  sortedTopics.forEach(topic => {
+    const counts = topicsMap[topic];
+    const card = document.createElement('label');
+    card.className = 'topic-chip-card active';
+    card.innerHTML = `
+      <div class="topic-chip-left">
+        <input type="checkbox" class="session-topic-checkbox" value="${escapeHTML(topic)}" checked style="accent-color: #38bdf8; cursor: pointer;">
+        <span class="topic-chip-name">${escapeHTML(topic)}</span>
+      </div>
+      <span class="topic-chip-counts">${counts.cases} cases &bull; ${counts.standalone} Qs</span>
+    `;
+
+    const cb = card.querySelector('.session-topic-checkbox');
+    cb.addEventListener('change', () => {
+      if (cb.checked) card.classList.add('active');
+      else card.classList.remove('active');
+      updateSessionTopicsFromCheckboxes();
+    });
+
+    container.appendChild(card);
+  });
+
+  updateSessionTopicsFromCheckboxes();
+}
+
+function updateSessionTopicsFromCheckboxes() {
+  const checkboxes = document.querySelectorAll('.session-topic-checkbox:checked');
+  sessionBuilderTopics = Array.from(checkboxes).map(cb => cb.value);
+  updateSessionCountsAndBounds();
+}
+
+function updateSessionCountsAndBounds() {
+  // Available pool from selected topics
+  const availableCases = caseStudies.filter(c => sessionBuilderTopics.includes((c.topic || c.disorder || 'General').trim()));
+  const availableStandalone = standaloneQuestions.filter(s => sessionBuilderTopics.includes((s.topic || s.disorder || 'General').trim()));
+
+  const maxCases = Math.min(3, availableCases.length);
+  const maxStandalone = Math.min(67, availableStandalone.length);
+
+  const casesAvailEl = document.getElementById('cases-avail-text');
+  const stdAvailEl = document.getElementById('standalone-avail-text');
+  if (casesAvailEl) casesAvailEl.textContent = `Avail: ${availableCases.length} (Max 3)`;
+  if (stdAvailEl) stdAvailEl.textContent = `Avail: ${availableStandalone.length} (Max 67)`;
+
+  const casesSlider = document.getElementById('generator-cases-slider');
+  const casesInput = document.getElementById('generator-cases-input');
+  const stdSlider = document.getElementById('generator-standalone-slider');
+  const stdInput = document.getElementById('generator-standalone-input');
+
+  if (casesSlider && casesInput) {
+    casesSlider.max = maxCases;
+    casesInput.max = maxCases;
+    if (parseInt(casesInput.value || '0', 10) > maxCases) {
+      casesInput.value = maxCases;
+      casesSlider.value = maxCases;
+    }
+  }
+
+  if (stdSlider && stdInput) {
+    stdSlider.max = maxStandalone;
+    stdInput.max = maxStandalone;
+    if (parseInt(stdInput.value || '0', 10) > maxStandalone) {
+      stdInput.value = maxStandalone;
+      stdSlider.value = maxStandalone;
+    }
+  }
+
+  let casesVal = parseInt(casesInput ? casesInput.value : '0', 10) || 0;
+  let stdVal = parseInt(stdInput ? stdInput.value : '0', 10) || 0;
+
+  // Enforce 85 questions cap: (cases * 6) + standalone <= 85
+  const maxQuestionsCap = 85;
+  const casesQuestions = casesVal * 6;
+  if (casesQuestions + stdVal > maxQuestionsCap) {
+    stdVal = maxQuestionsCap - casesQuestions;
+    if (stdVal < 0) stdVal = 0;
+    if (stdInput) stdInput.value = stdVal;
+    if (stdSlider) stdSlider.value = stdVal;
+  }
+
+  const totalQuestions = casesQuestions + stdVal;
+
+  const casesNote = document.getElementById('cases-questions-note');
+  const stdNote = document.getElementById('standalone-questions-note');
+  if (casesNote) casesNote.textContent = `${casesVal} Case Stud${casesVal === 1 ? 'y' : 'ies'} = ${casesQuestions} Questions`;
+  if (stdNote) stdNote.textContent = `${stdVal} Stand-alone Question${stdVal === 1 ? '' : 's'}`;
+
+  const totalValEl = document.getElementById('session-total-questions-val');
+  const statusBadge = document.getElementById('session-total-status-badge');
+  const launchBtn = document.getElementById('generate-play-btn');
+
+  if (totalValEl) totalValEl.textContent = totalQuestions;
+
+  if (statusBadge) {
+    if (totalQuestions === 0) {
+      statusBadge.textContent = 'Select at least 1 Question';
+      statusBadge.className = 'total-status error';
+      if (launchBtn) launchBtn.disabled = true;
+    } else {
+      statusBadge.textContent = `Ready (${sessionBuilderMode === 'review' ? 'Practice' : 'Exam'})`;
+      statusBadge.className = 'total-status';
+      if (launchBtn) launchBtn.disabled = false;
+    }
+  }
+}
+
+function renderManualSelectionLists() {
   const casesList = document.getElementById('generator-cases-list');
   const standaloneList = document.getElementById('generator-standalone-list');
-  
+  if (!casesList || !standaloneList) return;
+
   casesList.innerHTML = '';
   standaloneList.innerHTML = '';
-  
+
   if (caseStudies.length === 0) {
-    casesList.innerHTML = '<p style="color:var(--text-dash-secondary); font-style:italic; padding:12px;">No case studies available.</p>';
+    casesList.innerHTML = '<p style="color:var(--text-dash-secondary); font-style:italic; padding:8px;">No case studies available.</p>';
   } else {
     caseStudies.forEach(c => {
       const item = document.createElement('label');
@@ -1344,14 +1607,14 @@ function renderGeneratorPanel() {
       item.innerHTML = `
         <input type="checkbox" class="generator-case-checkbox" data-id="${c.id}">
         <span class="item-name">${escapeHTML(c.title)}</span>
-        <span class="item-meta">(${c.screens ? c.screens.length : 0} screens)</span>
+        <span class="item-meta">(${c.screens ? c.screens.length : 0} screens &bull; ${escapeHTML(c.topic || c.disorder || '')})</span>
       `;
       casesList.appendChild(item);
     });
   }
-  
+
   if (standaloneQuestions.length === 0) {
-    standaloneList.innerHTML = '<p style="color:var(--text-dash-secondary); font-style:italic; padding:12px;">No stand-alone questions available.</p>';
+    standaloneList.innerHTML = '<p style="color:var(--text-dash-secondary); font-style:italic; padding:8px;">No stand-alone questions available.</p>';
   } else {
     standaloneQuestions.forEach(q => {
       const item = document.createElement('label');
@@ -1359,101 +1622,107 @@ function renderGeneratorPanel() {
       item.innerHTML = `
         <input type="checkbox" class="generator-standalone-checkbox" data-id="${q.id}">
         <span class="item-name">${escapeHTML(q.title)}</span>
-        <span class="item-meta">(1 screen)</span>
+        <span class="item-meta">(1 screen &bull; ${escapeHTML(q.topic || q.disorder || '')})</span>
       `;
       standaloneList.appendChild(item);
     });
   }
-  
-  document.querySelectorAll('.generator-case-checkbox, .generator-standalone-checkbox').forEach(cb => {
-    cb.addEventListener('change', updateGeneratorSummary);
-  });
-  
-  updateGeneratorSummary();
 }
 
-function updateGeneratorSummary() {
-  const selectedCaseIds = Array.from(document.querySelectorAll('.generator-case-checkbox:checked')).map(cb => cb.dataset.id);
-  const selectedStandaloneIds = Array.from(document.querySelectorAll('.generator-standalone-checkbox:checked')).map(cb => cb.dataset.id);
-  
-  let totalCasesCount = selectedCaseIds.length;
-  let totalStandaloneCount = selectedStandaloneIds.length;
-  let totalScreensCount = 0;
-  
-  selectedCaseIds.forEach(id => {
-    const c = caseStudies.find(x => x.id === id);
-    if (c && c.screens) {
-      totalScreensCount += c.screens.length;
-    }
-  });
-  
-  selectedStandaloneIds.forEach(id => {
-    const q = standaloneQuestions.find(x => x.id === id);
-    if (q && q.screens) {
-      totalScreensCount += q.screens.length;
-    }
-  });
-  
-  const summaryEl = document.getElementById('generator-quiz-summary');
-  if (summaryEl) {
-    if (totalCasesCount === 0 && totalStandaloneCount === 0) {
-      summaryEl.innerHTML = '<div class="summary-text-muted">Select case studies or stand-alone questions to compile your custom exam.</div>';
-      document.getElementById('generate-play-btn').disabled = true;
-    } else {
-      summaryEl.innerHTML = `
-        <div class="summary-details">
-          <p><strong>Selected Cases:</strong> ${totalCasesCount}</p>
-          <p><strong>Selected Stand-alone Questions:</strong> ${totalStandaloneCount}</p>
-          <p><strong>Total Exam Screens:</strong> ${totalScreensCount}</p>
-        </div>
-      `;
-      document.getElementById('generate-play-btn').disabled = false;
-    }
+function generateAndStartSession() {
+  // Check if manual selection was explicitly made in the advanced accordion
+  const manualCaseCbs = Array.from(document.querySelectorAll('.generator-case-checkbox:checked'));
+  const manualStdCbs = Array.from(document.querySelectorAll('.generator-standalone-checkbox:checked'));
+
+  let selectedCaseStudies = [];
+  let selectedStandalone = [];
+
+  if (manualCaseCbs.length > 0 || manualStdCbs.length > 0) {
+    // Use manual selection
+    selectedCaseStudies = manualCaseCbs.map(cb => caseStudies.find(x => x.id === cb.dataset.id)).filter(Boolean);
+    selectedStandalone = manualStdCbs.map(cb => standaloneQuestions.find(x => x.id === cb.dataset.id)).filter(Boolean);
+  } else {
+    // Use Topic & Quantity configuration
+    const availableCases = caseStudies.filter(c => sessionBuilderTopics.includes((c.topic || c.disorder || 'General').trim()));
+    const availableStandalone = standaloneQuestions.filter(s => sessionBuilderTopics.includes((s.topic || s.disorder || 'General').trim()));
+
+    const casesInput = document.getElementById('generator-cases-input');
+    const stdInput = document.getElementById('generator-standalone-input');
+    const casesQty = Math.min(3, parseInt(casesInput ? casesInput.value : '0', 10) || 0);
+    const stdQty = Math.min(67, parseInt(stdInput ? stdInput.value : '0', 10) || 0);
+
+    // Shuffle and slice requested count
+    const shuffledCases = [...availableCases].sort(() => 0.5 - Math.random());
+    const shuffledStd = [...availableStandalone].sort(() => 0.5 - Math.random());
+
+    selectedCaseStudies = shuffledCases.slice(0, casesQty);
+    selectedStandalone = shuffledStd.slice(0, stdQty);
   }
-}
 
-function generateAndStartQuiz() {
-  const selectedCaseIds = Array.from(document.querySelectorAll('.generator-case-checkbox:checked')).map(cb => cb.dataset.id);
-  const selectedStandaloneIds = Array.from(document.querySelectorAll('.generator-standalone-checkbox:checked')).map(cb => cb.dataset.id);
-  
-  if (selectedCaseIds.length === 0 && selectedStandaloneIds.length === 0) {
-    showToast("Please select at least one item to generate a quiz.", "error");
+  if (selectedCaseStudies.length === 0 && selectedStandalone.length === 0) {
+    showToast("Please select topics and questions to generate your session.", "error");
     return;
   }
-  
+
   const compiledCase = {
-    id: 'compiled_quiz_' + Date.now(),
-    title: 'Custom Compiled Exam',
-    description: 'A custom clinical practice exam with selected case studies and questions.',
+    id: 'compiled_session_' + Date.now(),
+    title: sessionBuilderMode === 'review' ? 'NCLEX Practice Session' : 'NextGen NCLEX Exam Simulation',
+    description: `A custom ${sessionBuilderMode} testing session containing ${selectedCaseStudies.length} case studies and ${selectedStandalone.length} stand-alone questions.`,
     screens: []
   };
-  
+
   let currentStepNum = 1;
-  
-  selectedCaseIds.forEach(id => {
-    const c = caseStudies.find(x => x.id === id);
+
+  // 1. Add Case Studies (each with full 6 chronological unfolding screens)
+  selectedCaseStudies.forEach(c => {
     if (c && c.screens) {
-      c.screens.forEach(screen => {
+      c.screens.forEach((screen, screenIdx) => {
         const screenCopy = JSON.parse(JSON.stringify(screen));
         screenCopy.step = currentStepNum++;
+        screenCopy.caseId = c.id;
+        screenCopy.caseTitle = c.title;
+        screenCopy.isCaseStart = (screenIdx === 0);
+        screenCopy.isStandalone = false;
         compiledCase.screens.push(screenCopy);
       });
     }
   });
-  
-  selectedStandaloneIds.forEach(id => {
-    const q = standaloneQuestions.find(x => x.id === id);
+
+  // 2. Add Stand-alone Questions
+  selectedStandalone.forEach(q => {
     if (q && q.screens) {
       q.screens.forEach(screen => {
         const screenCopy = JSON.parse(JSON.stringify(screen));
         screenCopy.step = currentStepNum++;
         screenCopy.isStandalone = true;
+        screenCopy.caseTitle = q.title || 'Stand-alone Question';
         compiledCase.screens.push(screenCopy);
       });
     }
   });
-  
-  startPlayer(compiledCase);
+
+  startPlayer(compiledCase, {
+    mode: sessionBuilderMode,
+    isRemediation: false,
+    allowBacktrack: (sessionBuilderMode === 'review')
+  });
+}
+
+function renderGeneratorLists() {
+  renderSessionTopicsList();
+  renderManualSelectionLists();
+}
+
+function renderGeneratorPanel() {
+  renderGeneratorLists();
+}
+
+function updateGeneratorSummary() {
+  updateSessionCountsAndBounds();
+}
+
+function generateAndStartQuiz() {
+  generateAndStartSession();
 }
 
 function createNewCase() {
@@ -3754,23 +4023,30 @@ function initPlayerEvents() {
       switchView('dashboard');
     }
   });
-  
-  document.getElementById('player-menu-toggle-btn').addEventListener('click', (e) => {
-    e.stopPropagation();
-    const sidebar = document.querySelector('.player-left-sidebar');
-    sidebar.classList.toggle('expanded');
-  });
 
-  document.addEventListener('click', (e) => {
-    const sidebar = document.querySelector('.player-left-sidebar');
-    const toggleBtn = document.getElementById('player-menu-toggle-btn');
-    if (sidebar && sidebar.classList.contains('expanded') && toggleBtn) {
-      const isClickInside = sidebar.contains(e.target) || toggleBtn.contains(e.target);
-      if (!isClickInside || e.target.classList.contains('nav-square') || e.target.closest('.nav-square') || e.target.classList.contains('link-btn')) {
-        sidebar.classList.remove('expanded');
-      }
-    }
-  });
+  // Question Navigator Button (Right-justified) and Drawer Overlay
+  const navBtn = document.getElementById('player-nav-btn');
+  if (navBtn) navBtn.addEventListener('click', () => toggleQuestionNavigator());
+
+  const closeNavBtn = document.getElementById('close-question-nav-btn');
+  if (closeNavBtn) closeNavBtn.addEventListener('click', () => toggleQuestionNavigator(false));
+
+  const navBackdrop = document.getElementById('question-nav-drawer-backdrop');
+  if (navBackdrop) navBackdrop.addEventListener('click', () => toggleQuestionNavigator(false));
+
+  // Test Mode Submit Confirmation Modal
+  const testModal = document.getElementById('test-submit-modal');
+  const testCloseBtn = document.getElementById('test-submit-close-btn');
+  const testCancelBtn = document.getElementById('test-submit-cancel-btn');
+  const testConfirmBtn = document.getElementById('test-submit-confirm-btn');
+  if (testCloseBtn) testCloseBtn.addEventListener('click', closeTestSubmitModal);
+  if (testCancelBtn) testCancelBtn.addEventListener('click', closeTestSubmitModal);
+  if (testConfirmBtn) testConfirmBtn.addEventListener('click', confirmTestSubmitAndAdvance);
+  if (testModal) {
+    testModal.addEventListener('click', (e) => {
+      if (e.target === testModal) closeTestSubmitModal();
+    });
+  }
 
   document.getElementById('player-calc-btn').addEventListener('click', toggleCalculator);
   document.getElementById('close-calc-btn').addEventListener('click', toggleCalculator);
@@ -3793,6 +4069,9 @@ function initPlayerEvents() {
   }
 
   document.getElementById('player-prev-btn').addEventListener('click', () => {
+    if (sessionConfig.mode === 'test' && !sessionConfig.isRemediation) {
+      return; // No backtracking in Test Mode
+    }
     if (playerStepIndex > 0) {
       playerStepIndex--;
       renderPlayerStep(playerStepIndex);
@@ -3800,6 +4079,30 @@ function initPlayerEvents() {
   });
 
   document.getElementById('player-next-btn').addEventListener('click', () => {
+    // 1. In Remediation Mode: free browsing to next question
+    if (sessionConfig.isRemediation) {
+      if (playerStepIndex < currentCase.screens.length - 1) {
+        playerStepIndex++;
+        renderPlayerStep(playerStepIndex);
+      } else {
+        loadResultsView();
+      }
+      return;
+    }
+
+    // 2. In Test Mode: prompt confirmation or skip before advancing (irreversible)
+    if (sessionConfig.mode === 'test') {
+      const step = currentCase.screens[playerStepIndex];
+      const hasAnswer = step ? hasSelectedAnyAnswer(step.question, playerStepIndex) : false;
+      if (!hasAnswer) {
+        showSkipQuestionModal();
+        return;
+      }
+      showTestSubmitModal();
+      return;
+    }
+
+    // 3. In Review Mode (Tutor): requires submitting before advancing
     const isSubmitted = submittedAnswers[playerStepIndex];
     if (!isSubmitted) {
       const step = currentCase.screens[playerStepIndex];
@@ -3820,7 +4123,45 @@ function initPlayerEvents() {
   });
 }
 
-function startPlayer(caseStudy) {
+function showTestSubmitModal() {
+  const modal = document.getElementById('test-submit-modal');
+  if (modal) modal.classList.remove('hidden');
+}
+
+function closeTestSubmitModal() {
+  const modal = document.getElementById('test-submit-modal');
+  if (modal) modal.classList.add('hidden');
+}
+
+function confirmTestSubmitAndAdvance() {
+  closeTestSubmitModal();
+  submittedAnswers[playerStepIndex] = true;
+  evaluateStepScore(playerStepIndex);
+  if (playerStepIndex < currentCase.screens.length - 1) {
+    playerStepIndex++;
+    renderPlayerStep(playerStepIndex);
+  } else {
+    loadResultsView();
+  }
+}
+
+function toggleQuestionNavigator(forceState) {
+  const drawer = document.getElementById('question-navigator-drawer');
+  const backdrop = document.getElementById('question-nav-drawer-backdrop');
+  if (!drawer) return;
+
+  const shouldOpen = typeof forceState === 'boolean' ? forceState : drawer.classList.contains('hidden');
+  if (shouldOpen) {
+    renderQuestionNavigatorList();
+    drawer.classList.remove('hidden');
+    if (backdrop) backdrop.classList.remove('hidden');
+  } else {
+    drawer.classList.add('hidden');
+    if (backdrop) backdrop.classList.add('hidden');
+  }
+}
+
+function startPlayer(caseStudy, config) {
   migrateCaseTypes(caseStudy);
   currentCase = caseStudy;
   playerStepIndex = 0;
@@ -3829,9 +4170,34 @@ function startPlayer(caseStudy) {
   playerAnswers = {};
   submittedAnswers = {};
   playerScores = {};
+
+  if (config) {
+    sessionConfig = Object.assign({
+      mode: 'review',
+      isRemediation: false,
+      allowBacktrack: config.mode !== 'test'
+    }, config);
+  } else {
+    sessionConfig = {
+      mode: 'review',
+      isRemediation: false,
+      allowBacktrack: true
+    };
+  }
+
+  // In remediation review, mark all steps as submitted initially
+  if (sessionConfig.isRemediation) {
+    currentCase.screens.forEach((s, idx) => {
+      submittedAnswers[idx] = true;
+      if (!playerScores[idx]) evaluateStepScore(idx);
+    });
+  }
   
-  document.getElementById('ti108-calculator').classList.add('hidden');
+  const calc = document.getElementById('ti108-calculator');
+  if (calc) calc.classList.add('hidden');
   closeSkipQuestionModal();
+  closeTestSubmitModal();
+  toggleQuestionNavigator(false);
   
   switchView('player');
   renderPlayerStep(0);
@@ -3845,7 +4211,7 @@ function renderPlayerStep(stepIdx) {
   document.getElementById('player-progress-text').textContent = `${stepIdx + 1} of ${currentCase.screens.length}`;
   document.getElementById('player-question-number-title').textContent = `Question ${stepIdx + 1}`;
   
-  const isSubmitted = submittedAnswers[stepIdx];
+  const isSubmitted = submittedAnswers[stepIdx] || sessionConfig.isRemediation;
   
   const statusEl = document.getElementById('player-question-status-text');
   statusEl.textContent = isSubmitted ? 'Complete' : 'Not complete';
@@ -3868,6 +4234,30 @@ function renderPlayerStep(stepIdx) {
       splitContainer.classList.add('full-width');
     } else {
       splitContainer.classList.remove('full-width');
+    }
+  }
+
+  // Question Navigator button visibility: Hidden in active Test Mode, Visible in Review Mode & Remediation Review
+  const navBtn = document.getElementById('player-nav-btn');
+  if (navBtn) {
+    if (sessionConfig.mode === 'test' && !sessionConfig.isRemediation) {
+      navBtn.style.display = 'none';
+    } else {
+      navBtn.style.display = 'inline-flex';
+    }
+  }
+
+  // Case Transition Banner (Shown when a case study begins)
+  const caseBanner = document.getElementById('player-case-banner');
+  const bannerText = document.getElementById('player-case-banner-text');
+  if (caseBanner && bannerText) {
+    const isNewCaseStart = !isStepStandalone && (stepIdx === 0 || currentCase.screens[stepIdx - 1]?.isStandalone || (currentCase.screens[stepIdx - 1]?.caseId && currentCase.screens[stepIdx - 1]?.caseId !== step.caseId));
+    if (isNewCaseStart) {
+      const caseName = step.caseTitle || currentCase.title || 'Unfolding Clinical Case';
+      bannerText.innerHTML = `The following 6 questions refer to this clinical scenario: <strong>${caseName}</strong>.`;
+      caseBanner.classList.remove('hidden');
+    } else {
+      caseBanner.classList.add('hidden');
     }
   }
 
@@ -3894,7 +4284,7 @@ function renderPlayerStep(stepIdx) {
   }
 
   renderPlayerTabs(step.leftContent.tabs);
-  renderPlayerNavGrid();
+  renderQuestionNavigatorList();
   
   const preambleEl = document.getElementById('player-question-preamble');
   if (preambleEl) {
@@ -3924,22 +4314,55 @@ function renderPlayerStep(stepIdx) {
   
   renderPlayerAnswersBox(step.question, stepIdx);
   
+  // Footer navigation buttons
   const prevBtn = document.getElementById('player-prev-btn');
   const nextBtn = document.getElementById('player-next-btn');
-  prevBtn.disabled = stepIdx === 0;
-  if (stepIdx === currentCase.screens.length - 1) {
-    nextBtn.innerHTML = 'Finish attempt <svg viewBox="0 0 24 24" width="16" height="16" style="vertical-align: middle; fill: currentColor; margin-left: 6.5px; transform: rotate(180deg);"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>';
+
+  // Previous button: strictly hidden in active Test Mode
+  if (sessionConfig.mode === 'test' && !sessionConfig.isRemediation) {
+    prevBtn.style.display = 'none';
   } else {
-    nextBtn.innerHTML = 'Next <svg viewBox="0 0 24 24" width="16" height="16" style="vertical-align: middle; fill: currentColor; margin-left: 6.5px; transform: rotate(180deg);"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>';
+    prevBtn.style.display = 'inline-flex';
+    prevBtn.disabled = stepIdx === 0;
+  }
+
+  // Next button label
+  const isLast = (stepIdx === currentCase.screens.length - 1);
+  if (sessionConfig.mode === 'test' && !sessionConfig.isRemediation) {
+    nextBtn.innerHTML = isLast
+      ? 'Finish Exam & Submit <svg viewBox="0 0 24 24" width="16" height="16" style="vertical-align: middle; fill: currentColor; margin-left: 6.5px; transform: rotate(180deg);"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>'
+      : 'Submit & Next <svg viewBox="0 0 24 24" width="16" height="16" style="vertical-align: middle; fill: currentColor; margin-left: 6.5px; transform: rotate(180deg);"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>';
+  } else {
+    nextBtn.innerHTML = isLast
+      ? 'Finish attempt <svg viewBox="0 0 24 24" width="16" height="16" style="vertical-align: middle; fill: currentColor; margin-left: 6.5px; transform: rotate(180deg);"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>'
+      : 'Next <svg viewBox="0 0 24 24" width="16" height="16" style="vertical-align: middle; fill: currentColor; margin-left: 6.5px; transform: rotate(180deg);"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>';
   }
   
   const submitBtn = document.getElementById('player-submit-btn');
   const giveupBtn = document.getElementById('player-giveup-btn');
-  submitBtn.disabled = isSubmitted;
-  giveupBtn.disabled = isSubmitted;
   
+  if (sessionConfig.isRemediation) {
+    // In remediation review, hide submit actions
+    if (submitBtn) submitBtn.style.display = 'none';
+    if (giveupBtn) giveupBtn.style.display = 'none';
+  } else if (sessionConfig.mode === 'test') {
+    // In test mode, submission happens on "Submit & Next" button
+    if (submitBtn) submitBtn.style.display = 'none';
+    if (giveupBtn) giveupBtn.style.display = 'none';
+  } else {
+    if (submitBtn) {
+      submitBtn.style.display = '';
+      submitBtn.disabled = isSubmitted;
+    }
+    if (giveupBtn) {
+      giveupBtn.style.display = 'none';
+      giveupBtn.disabled = isSubmitted;
+    }
+  }
+  
+  // Feedback card: only shown in Review Mode (after submit) or in Remediation Review
   const feedbackCard = document.getElementById('player-feedback-card');
-  if (isSubmitted) {
+  if (sessionConfig.isRemediation || (sessionConfig.mode === 'review' && isSubmitted)) {
     feedbackCard.classList.remove('hidden');
     displayPlayerFeedback(stepIdx);
   } else {
@@ -3977,20 +4400,74 @@ function renderPlayerTabs(tabs) {
   contentBox.innerHTML = activeTab ? formatNursesNotes(activeTab.content, activeTab.title) : '';
 }
 
-function renderPlayerNavGrid() {
-  const navGrid = document.getElementById('player-nav-grid');
-  navGrid.innerHTML = '';
-  
+function renderQuestionNavigatorList() {
+  const drawerList = document.getElementById('question-nav-drawer-list');
+  if (!drawerList || !currentCase || !currentCase.screens) return;
+  drawerList.innerHTML = '';
+
   currentCase.screens.forEach((step, idx) => {
-    const square = document.createElement('div');
-    square.className = 'nav-square';
-    if (idx === playerStepIndex) square.classList.add('active');
-    if (submittedAnswers[idx]) square.classList.add('answered');
-    
-    square.textContent = idx + 1;
-    square.addEventListener('click', () => renderPlayerStep(idx));
-    navGrid.appendChild(square);
+    const item = document.createElement('div');
+    item.className = 'nav-drawer-item';
+    if (idx === playerStepIndex) item.classList.add('active');
+
+    const isSub = submittedAnswers[idx];
+    if (isSub) item.classList.add('complete');
+
+    // Title / Context label
+    const typeLabel = (step.question.type || 'Question').toUpperCase().replace(/_/g, ' ');
+    const isStepStandalone = currentCase.isStandalone || step.isStandalone;
+    const contextLabel = isStepStandalone ? 'Stand-alone Question' : (step.caseTitle || currentCase.title || `Case Study Screen ${step.step || (idx + 1)}`);
+
+    let badgeClass = 'badge-incomplete';
+    let badgeText = 'Incomplete';
+
+    if (sessionConfig.isRemediation) {
+      const sc = playerScores[idx] || { score: 0, max: 1 };
+      if (sc.score === sc.max) {
+        badgeClass = 'badge-correct';
+        badgeText = `✓ Correct (${sc.score}/${sc.max})`;
+      } else if (sc.score > 0) {
+        badgeClass = 'badge-partial';
+        badgeText = `Partial (${sc.score}/${sc.max})`;
+      } else {
+        badgeClass = 'badge-incorrect';
+        badgeText = `✗ Incorrect (0/${sc.max})`;
+      }
+    } else if (idx === playerStepIndex) {
+      badgeClass = 'badge-current';
+      badgeText = 'Current';
+    } else if (isSub) {
+      badgeClass = 'badge-complete';
+      badgeText = 'Complete';
+    }
+
+    item.innerHTML = `
+      <div class="nav-drawer-item-left">
+        <div class="nav-drawer-item-num">${idx + 1}</div>
+        <div class="nav-drawer-item-info">
+          <span class="nav-drawer-item-title">${contextLabel}</span>
+          <span class="nav-drawer-item-sub">Question ${idx + 1} &bull; ${typeLabel}</span>
+        </div>
+      </div>
+      <span class="nav-drawer-item-badge ${badgeClass}">${badgeText}</span>
+    `;
+
+    item.addEventListener('click', () => {
+      // In Review Mode or Remediation review, student can jump freely
+      if (sessionConfig.mode === 'review' || sessionConfig.isRemediation) {
+        renderPlayerStep(idx);
+        toggleQuestionNavigator(false);
+      } else {
+        showToast("Backtracking is not permitted during Test Mode.", "info");
+      }
+    });
+
+    drawerList.appendChild(item);
   });
+}
+
+function renderPlayerNavGrid() {
+  renderQuestionNavigatorList();
 }
 
 /* ================= 17 PLAYER OPTIONS RENDERERS ================= */
@@ -5618,7 +6095,17 @@ function confirmSkipQuestion() {
   } else {
     playerScores[playerStepIndex].score = 0; // force zero points
   }
-  renderPlayerStep(playerStepIndex);
+
+  if (sessionConfig.mode === 'test' && !sessionConfig.isRemediation) {
+    if (playerStepIndex < currentCase.screens.length - 1) {
+      playerStepIndex++;
+      renderPlayerStep(playerStepIndex);
+    } else {
+      loadResultsView();
+    }
+  } else {
+    renderPlayerStep(playerStepIndex);
+  }
 }
 
 function handlePlayerSubmit() {
@@ -5672,12 +6159,30 @@ function displayPlayerFeedback(stepIdx) {
 /* ================= RESULTS VIEW (SCOREBOARD) ================= */
 function initResultsEvents() {
   document.getElementById('results-retry-btn').addEventListener('click', () => {
-    startPlayer(currentCase);
+    startPlayer(currentCase, { mode: sessionConfig.mode, isRemediation: false });
   });
   
   document.getElementById('results-dashboard-btn').addEventListener('click', () => {
     switchView('dashboard');
   });
+
+  const reviewAnswersBtn = document.getElementById('results-review-answers-btn');
+  if (reviewAnswersBtn) {
+    reviewAnswersBtn.addEventListener('click', () => {
+      startRemediationReview(0);
+    });
+  }
+}
+
+function startRemediationReview(jumpIdx = 0) {
+  sessionConfig.isRemediation = true;
+  sessionConfig.allowBacktrack = true;
+  currentCase.screens.forEach((s, idx) => {
+    submittedAnswers[idx] = true;
+    if (!playerScores[idx]) evaluateStepScore(idx);
+  });
+  switchView('player');
+  renderPlayerStep(jumpIdx);
 }
 
 function loadResultsView() {
@@ -5685,6 +6190,9 @@ function loadResultsView() {
     if (!submittedAnswers[idx]) {
       submittedAnswers[idx] = true;
       evaluateStepScore(idx);
+      if (!playerScores[idx]) {
+        playerScores[idx] = { score: 0, max: 1 };
+      }
       playerScores[idx].score = 0; // auto zero if skipped
     }
   });
@@ -5707,8 +6215,10 @@ function loadResultsView() {
   list.innerHTML = '';
   
   currentCase.screens.forEach((s, idx) => {
-    const sc = playerScores[idx];
-    const typeLabel = s.question.type.toUpperCase().replace('_', ' ');
+    const sc = playerScores[idx] || { score: 0, max: 1 };
+    const typeLabel = (s.question.type || 'Question').toUpperCase().replace(/_/g, ' ');
+    const isStepStandalone = currentCase.isStandalone || s.isStandalone;
+    const contextLabel = isStepStandalone ? 'Stand-alone Question' : (s.caseTitle || currentCase.title || `Screen ${idx + 1}`);
     
     let badgeClass = 'incorrect';
     let badgeText = 'Incorrect';
@@ -5723,13 +6233,21 @@ function loadResultsView() {
     
     const item = document.createElement('div');
     item.className = 'breakdown-item';
+    item.style.cursor = 'pointer';
+    item.title = 'Click to review question and clinical rationale';
     item.innerHTML = `
       <div class="breakdown-item-left">
         <span class="breakdown-badge ${badgeClass}">${badgeText}</span>
-        <strong>Screen ${idx + 1}</strong> (${typeLabel})
+        <strong>Question ${idx + 1}</strong> (${contextLabel} &bull; ${typeLabel})
       </div>
-      <span class="breakdown-score">${sc.score} / ${sc.max} pts</span>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span class="breakdown-score">${sc.score} / ${sc.max} pts</span>
+        <span style="font-size: 11px; color: #38bdf8; font-weight: 500;">Review &rarr;</span>
+      </div>
     `;
+    item.addEventListener('click', () => {
+      startRemediationReview(idx);
+    });
     list.appendChild(item);
   });
   

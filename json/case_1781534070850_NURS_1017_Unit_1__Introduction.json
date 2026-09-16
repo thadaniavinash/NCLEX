@@ -176,10 +176,6 @@
           {
             "text": "A final medical diagnosis can be made from the symptom pattern alone.",
             "correct": false
-          },
-          {
-            "text": "",
-            "correct": false
           }
         ],
         "preamble": "",
@@ -375,7 +371,7 @@
           }
         ],
         "preamble": "",
-        "explanation": ""
+        "explanation": "Based on the follow-up data, the incidence is zero since there are no new cases. Since only two students are currently ill, the prevalence has also decreased. Morbidity is the presence of a disease state and since only two students are currently symptomatic, it has decreased. Since the incidence, prevalence, and morbidity have decreased, the interventions most likely have been effective. Etiology is the cause of a disease and has no relationship to the incidence of the disease. Prevalence is not zero because two students currently have the disease."
       },
       "leftContent": {
         "tabs": [

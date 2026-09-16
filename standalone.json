@@ -37,7 +37,9 @@
     ],
     "disorder": "GI Disorders",
     "description": "",
-    "isStandalone": true
+    "isStandalone": true,
+    "topic": "GI Disorders",
+    "availability": "all"
   },
   {
     "id": "standalone_1781726101855",
@@ -197,7 +199,9 @@
     ],
     "disorder": "Neurological Disorders",
     "description": "",
-    "isStandalone": true
+    "isStandalone": true,
+    "topic": "Neurological Disorders",
+    "availability": "all"
   },
   {
     "id": "standalone_1781741057902",
@@ -237,7 +241,9 @@
     ],
     "disorder": "Neurological Disorders",
     "description": "",
-    "isStandalone": true
+    "isStandalone": true,
+    "topic": "Neurological Disorders",
+    "availability": "all"
   },
   {
     "id": "standalone_1782309032227",
@@ -279,7 +285,10 @@
       }
     ],
     "description": "",
-    "isStandalone": true
+    "isStandalone": true,
+    "topic": "General / Uncategorized",
+    "disorder": "General / Uncategorized",
+    "availability": "all"
   },
   {
     "id": "standalone_1782310710746",
@@ -324,6 +333,8 @@
     ],
     "disorder": "Cardiovascular Disorders",
     "description": "",
-    "isStandalone": true
+    "isStandalone": true,
+    "topic": "Cardiovascular Disorders",
+    "availability": "all"
   }
 ]

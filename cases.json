@@ -337,7 +337,9 @@
       }
     ],
     "disorder": "Cardiovascular Disorders",
-    "description": ""
+    "description": "",
+    "topic": "Cardiovascular Disorders",
+    "availability": "all"
   },
   {
     "id": "case_1780489713691",
@@ -735,7 +737,9 @@
       }
     ],
     "disorder": "Endocrine Disorders",
-    "description": "Endocrine Disorders"
+    "description": "Endocrine Disorders",
+    "topic": "Endocrine Disorders",
+    "availability": "all"
   },
   {
     "id": "case_1780591712513",
@@ -1370,7 +1374,9 @@
       }
     ],
     "disorder": "Respiratory Disorders",
-    "description": "Maryland Next Gen NCLEX Test Bank Project September 1, 2022; Authors: Angela Davis, RN, MS, CM/DN Morgan State University"
+    "description": "Maryland Next Gen NCLEX Test Bank Project September 1, 2022; Authors: Angela Davis, RN, MS, CM/DN Morgan State University",
+    "topic": "Respiratory Disorders",
+    "availability": "all"
   },
   {
     "id": "case_1781534070850",
@@ -1549,10 +1555,6 @@
             },
             {
               "text": "A final medical diagnosis can be made from the symptom pattern alone.",
-              "correct": false
-            },
-            {
-              "text": "",
               "correct": false
             }
           ],
@@ -1749,7 +1751,7 @@
             }
           ],
           "preamble": "",
-          "explanation": ""
+          "explanation": "Based on the follow-up data, the incidence is zero since there are no new cases. Since only two students are currently ill, the prevalence has also decreased. Morbidity is the presence of a disease state and since only two students are currently symptomatic, it has decreased. Since the incidence, prevalence, and morbidity have decreased, the interventions most likely have been effective. Etiology is the cause of a disease and has no relationship to the incidence of the disease. Prevalence is not zero because two students currently have the disease."
         },
         "leftContent": {
           "tabs": [
@@ -1779,7 +1781,9 @@
       }
     ],
     "disorder": "Others",
-    "description": "A case study for formative review of NURS 1017 Unit 1 (Introduction to Pathophysiology)"
+    "description": "A case study for formative review of NURS 1017 Unit 1 (Introduction to Pathophysiology)",
+    "topic": "Others",
+    "availability": "all"
   },
   {
     "id": "case_1781741217820",
@@ -2201,7 +2205,9 @@
       }
     ],
     "disorder": "GI Disorders",
-    "description": ""
+    "description": "",
+    "topic": "GI Disorders",
+    "availability": "all"
   },
   {
     "id": "case_1782149061171",
@@ -2643,7 +2649,9 @@
       }
     ],
     "disorder": "Immune disorders",
-    "description": ""
+    "description": "",
+    "topic": "Immune disorders",
+    "availability": "all"
   },
   {
     "id": "case_1782159166328",
@@ -3069,6 +3077,8 @@
       }
     ],
     "disorder": "Respiratory Disorders",
-    "description": ""
+    "description": "",
+    "topic": "Respiratory Disorders",
+    "availability": "all"
   }
 ]
