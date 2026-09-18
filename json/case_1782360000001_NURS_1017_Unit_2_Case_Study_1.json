@@ -10,19 +10,19 @@
     {
       "step": 1,
       "question": {
-        "stem": "The nurse reviews Arthur's history, physical examination, and diagnostic reports. Which of the following findings reflect <b>cellular adaptation</b> to chronic stress or increased workload? <b>Select all that apply.</b>",
+        "stem": "The nurse reviews Arthur's history, physical assessment, and diagnostic reports. Which of the following findings reflect <b>cellular adaptation</b> in response to chronic environmental stress or increased workload? <b>Select all that apply.</b>",
         "type": "select_all",
         "options": [
           {
-            "text": "Distal esophageal mucosa displaying conversion of stratified squamous epithelium to columnar epithelium with goblet cells",
+            "text": "Conversion of distal esophageal stratified squamous epithelium to columnar epithelium with goblet cells",
             "correct": true
           },
           {
-            "text": "Bronchial biopsy demonstrating replacement of ciliated pseudostratified columnar epithelium by stratified squamous epithelium",
+            "text": "Replacement of ciliated pseudostratified columnar epithelium by stratified squamous epithelium in the mainstem bronchi",
             "correct": true
           },
           {
-            "text": "Echocardiogram demonstrating left ventricular wall thickening of 1.5 cm in response to chronic hypertension",
+            "text": "Echocardiogram demonstrating left ventricular myocardial wall thickness of 1.5 cm in response to chronic hypertension",
             "correct": true
           },
           {
@@ -39,10 +39,10 @@
           }
         ],
         "preamble": "",
-        "explanation": "Cellular adaptations are reversible changes in cell size, number, phenotype, metabolic activity, or organization in response to changes in their environment. In this client, adaptations include: (1) Barrett's esophagus—glandular metaplasia of esophageal stratified squamous epithelium to columnar epithelium to withstand gastric acid; (2) Squamous metaplasia of respiratory pseudostratified ciliated columnar epithelium to stratified squamous epithelium due to chronic cigarette smoke; (3) Left ventricular hypertrophy—increased cardiomyocyte size in response to increased hemodynamic afterload; and (4) Disuse atrophy—shrinkage of skeletal muscle cells from decreased functional demand during casting. High fever with purulent sputum indicates acute infection/inflammation, while shock indicates cardiovascular collapse, neither of which represents an adaptive cellular response."
+        "explanation": "Cellular adaptations are reversible changes in cell size, number, phenotype, metabolic activity, or organization in response to altered physiological demand or chronic environmental stress. In this client, adaptations include: (1) Barrett's esophagus—glandular metaplasia of esophageal stratified squamous epithelium to columnar epithelium to better tolerate acidic gastric juice; (2) Squamous metaplasia of respiratory pseudostratified ciliated columnar epithelium to stratified squamous epithelium due to chronic cigarette smoke; (3) Left ventricular hypertrophy—increased cardiomyocyte size in response to chronic hemodynamic afterload; and (4) Disuse atrophy—shrinkage of skeletal muscle cells from decreased functional demand during casting. High fever with purulent sputum indicates acute infection/inflammation, while shock indicates cardiovascular collapse, neither of which represents an adaptive cellular response."
       },
       "leftContent": {
-        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for comprehensive evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
+        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
         "tabs": [
           {
             "id": "nn_1",
@@ -60,7 +60,7 @@
     {
       "step": 2,
       "question": {
-        "stem": "The nurse examines the newly uploaded diagnostic reports. For each clinical and pathological finding, click to specify the corresponding <b>cellular adaptation or tissue alteration</b>.",
+        "stem": "The nurse analyzes the client's clinical and diagnostic findings. For each finding, click to specify the corresponding <b>cellular adaptation or tissue alteration</b>.",
         "type": "matrix_mc",
         "matrix": {
           "firstColumnHeader": "Clinical & Pathological Finding",
@@ -109,11 +109,11 @@
           ]
         },
         "options": [],
-        "preamble": "Endoscopy, echocardiography, and biopsy pathology reports have been added to the client's medical chart (see Diagnostic Reports tab).",
+        "preamble": "Endoscopy, echocardiography, and biopsy pathology reports have been added to the client's chart (see Diagnostic Reports tab).",
         "explanation": "1. Hypertrophy: Increase in individual cell size resulting in overall organ enlargement, typical in non-dividing cells like cardiac myocytes adapting to chronic pressure overload (hypertension).\n2. Metaplasia: Reversible transformation of one differentiated adult cell type into another differentiated cell type that better withstands a noxious microenvironment (e.g., columnar epithelium replacing squamous in the esophagus, or squamous replacing ciliated columnar in bronchial airways).\n3. Atrophy: Reduction in cell size and functional capacity due to decreased workload/disuse, loss of innervation, or diminished blood supply.\n4. Dysplasia: Disordered growth and maturation characterized by variation in cellular size and shape, hyperchromatic enlarged nuclei, and architectural disarray; it is a pre-malignant alteration that may progress to neoplasia."
       },
       "leftContent": {
-        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for comprehensive evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
+        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
         "tabs": [
           {
             "id": "nn_1",
@@ -131,7 +131,7 @@
     {
       "step": 3,
       "question": {
-        "stem": "Complete the following clinical statement by choosing from the lists of options.",
+        "stem": "The nurse is analyzing Arthur's risk for neoplastic transformation. Complete the following sentence by choosing from the lists of options.",
         "type": "dropdown_cloze",
         "cloze": {
           "text": "Metaplasia is defined as the [[drop0]] conversion of one differentiated cell type to another in response to chronic persistent injury. In the client's airways, replacement of ciliated columnar cells with stratified squamous epithelium protects against smoke but results in loss of [[drop1]]. If the chronic noxious irritation is not removed, the tissue can evolve into [[drop2]], which is characterized by disordered maturation and cellular pleomorphism. In severe cases, progression to autonomous malignant tissue with complete loss of cellular differentiation is termed [[drop3]].",
@@ -211,7 +211,7 @@
         "explanation": "Metaplasia is fundamentally a reversible adaptive response where one differentiated cell type (e.g., ciliated columnar in bronchial airways, or stratified squamous in esophagus) is substituted by another differentiated cell type that better tolerates the chronic injury. However, in the lungs, squamous epithelium lacks cilia and mucus-producing goblet cells, eliminating vital mucociliary clearance and predisposing to chronic mucous plugging and recurrent infections. If the noxious stimulus persists, metaplasia can progress to dysplasia ('disordered growth'), characterized by loss of architectural uniformity and cellular pleomorphism—a recognized pre-cancerous condition. When malignant transformation occurs and cells completely lose cellular differentiation, orientation, and specialized function, it is termed anaplasia, the hallmark of malignant neoplasms."
       },
       "leftContent": {
-        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for comprehensive evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
+        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
         "tabs": [
           {
             "id": "nn_1",
@@ -229,39 +229,39 @@
     {
       "step": 4,
       "question": {
-        "stem": "The multidisciplinary team is formulating an evidence-based plan of care for Arthur. Which of the following interventions should the nurse anticipate to eliminate chronic cellular stress, promote tissue recovery, and prevent progression to neoplasia? <b>Select all that apply.</b>",
+        "stem": "The nurse is planning care for Arthur to promote cellular recovery, eliminate chronic cellular stressors, and prevent neoplastic progression. Which of the following nursing interventions should the nurse include in the client's plan of care? <b>Select all that apply.</b>",
         "type": "select_all",
         "options": [
           {
-            "text": "Enroll client in a comprehensive smoking cessation program with behavioral support and pharmacotherapy",
+            "text": "Provide education and supportive resources for a structured smoking cessation program to remove chronic bronchial mucosal irritation",
             "correct": true
           },
           {
-            "text": "Initiate daily prescription proton pump inhibitor (PPI) therapy to suppress gastric acid production",
+            "text": "Administer prescribed proton pump inhibitor (PPI) therapy to suppress gastric acid exposure to the esophageal mucosa",
             "correct": true
           },
           {
-            "text": "Educate client on anti-reflux lifestyle measures, including elevating the head of the bed 6 inches and avoiding meals within 3 hours of sleep",
+            "text": "Educate the client on anti-reflux lifestyle measures, including elevating the head of the bed 15 to 20 cm and avoiding meals within 3 hours of sleep",
             "correct": true
           },
           {
-            "text": "Prescribe an antihypertensive regimen (e.g., ACE inhibitor or ARB) to control blood pressure and promote regression of left ventricular hypertrophy",
+            "text": "Administer prescribed antihypertensive medication to reduce systemic cardiac workload and promote regression of left ventricular hypertrophy",
             "correct": true
           },
           {
-            "text": "Establish a scheduled surveillance upper endoscopy protocol every 6 to 12 months with four-quadrant biopsies",
+            "text": "Reinforce the importance of attending scheduled surveillance endoscopies with mucosal biopsies to monitor for dysplastic progression",
             "correct": true
           },
           {
-            "text": "Refer client for immediate surgical esophagectomy with neo-adjuvant radiation therapy",
+            "text": "Prepare the client for an immediate surgical esophagectomy with radiation therapy",
             "correct": false
           }
         ],
-        "preamble": "The healthcare team meets with Arthur to discuss treatment strategies to arrest and reverse his cellular adaptations and pre-neoplastic changes.",
-        "explanation": "Cellular adaptations and low-grade dysplasia can halt or regress when the initiating noxious stimulus is removed: (1) Smoking cessation removes chronic toxic hydrocarbons and thermal injury, allowing respiratory epithelium to regenerate ciliated columnar morphology; (2) PPI therapy profoundly decreases acid and pepsin exposure to the esophageal mucosa; (3) Anti-reflux lifestyle adjustments mechanically minimize retrograde acid flow; (4) Antihypertensive therapy reduces systemic cardiac afterload, arresting or regressing pathological left ventricular hypertrophy; (5) Regular surveillance endoscopy monitors Barrett's mucosa for progression to high-grade dysplasia or adenocarcinoma. Radical esophagectomy with radiation is an aggressive surgical intervention reserved for invasive esophageal carcinoma, not low-grade pre-invasive dysplasia."
+        "preamble": "The nurse develops a nursing plan of care aimed at arresting and reversing Arthur's cellular adaptations and pre-neoplastic changes.",
+        "explanation": "Nursing interventions for clients with adaptive cellular responses and low-grade dysplasia focus on removing noxious stimuli, administering prescribed protective therapies, and health teaching: (1) Smoking cessation education removes toxic combustion products, allowing respiratory stem cells to regenerate ciliated columnar morphology; (2) Administering prescribed PPIs reduces chemical acid/peptic injury to the distal esophagus; (3) Elevating the head of the bed and meal timing physically reduces nocturnal reflux; (4) Administering prescribed antihypertensives lowers systemic afterload, halting or regressing left ventricular hypertrophy; (5) Reinforcing surveillance endoscopy ensures early detection if dysplasia advances. Preparing for esophagectomy and radiation is incorrect, as radical surgery and radiotherapy are reserved for invasive malignancy, not low-grade pre-invasive dysplasia."
       },
       "leftContent": {
-        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for comprehensive evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
+        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
         "tabs": [
           {
             "id": "nn_1",
@@ -279,10 +279,10 @@
     {
       "step": 5,
       "question": {
-        "stem": "The nurse provides education to Arthur regarding his disease processes and lifestyle interventions. For each client statement or recommended action, click to specify whether it is <b>Indicated</b>, <b>Non-Essential</b>, or <b>Contraindicated</b>.",
+        "stem": "The nurse is taking action to provide discharge counseling and education to Arthur. For each nursing action or client instruction, click to specify whether it is <b>Indicated</b>, <b>Non-Essential</b>, or <b>Contraindicated</b>.",
         "type": "matrix_mc",
         "matrix": {
-          "firstColumnHeader": "Nursing Action or Client Statement",
+          "firstColumnHeader": "Nursing Action / Client Instruction",
           "columns": [
             "Indicated",
             "Non-Essential",
@@ -290,35 +290,35 @@
           ],
           "rows": [
             {
-              "text": "Educate client that he can discontinue prescribed proton pump inhibitor once his heartburn symptoms resolve for 3 consecutive days",
+              "text": "Educate the client that he can stop taking prescribed proton pump inhibitors once his heartburn symptoms resolve for 3 consecutive days",
               "correctIndex": 2,
               "correctIndices": [
                 2
               ]
             },
             {
-              "text": "Instruct client to immediately report 'red flag' symptoms such as progressive solid food dysphagia, unintentional weight loss, or hematemesis",
+              "text": "Instruct the client to immediately report 'red flag' symptoms such as progressive difficulty swallowing solid food, unintentional weight loss, or vomiting blood",
               "correctIndex": 0,
               "correctIndices": [
                 0
               ]
             },
             {
-              "text": "Advise client to use extra firm pillows or a bed wedge to elevate his upper body 15 to 20 cm during nocturnal sleep",
+              "text": "Advise the client to use a bed wedge or blocks under bedposts to elevate the head of the bed 15 to 20 cm during sleep",
               "correctIndex": 0,
               "correctIndices": [
                 0
               ]
             },
             {
-              "text": "Order routine weekly chest computed tomography (CT) scans to screen for lung nodules",
+              "text": "Request a provider prescription for weekly routine chest computed tomography (CT) scans to screen for lung nodules",
               "correctIndex": 1,
               "correctIndices": [
                 1
               ]
             },
             {
-              "text": "Reassure the client that because metaplasia is an adaptive response, it carries zero risk of malignant transformation",
+              "text": "Reassure the client that because metaplasia is an adaptive response, it carries zero risk of transforming into cancer",
               "correctIndex": 2,
               "correctIndices": [
                 2
@@ -327,11 +327,11 @@
           ]
         },
         "options": [],
-        "preamble": "The nurse conducts an in-depth patient education and discharge counseling session with Arthur.",
-        "explanation": "1. Contraindicated: Acid suppression in Barrett's esophagus must be maintained continuously, not stopped when symptoms subside, because chemical acid exposure continues to cause DNA damage even if nerve endings are desensitized.\n2. Indicated: Progressive dysphagia, weight loss, or gastrointestinal bleeding are critical red flags indicating possible progression to esophageal adenocarcinoma or stricture.\n3. Indicated: Bed elevation uses gravity to reduce nocturnal gastroesophageal acid pooling.\n4. Non-Essential: Weekly CT scans deliver unnecessary radiation; annual low-dose chest CT is the standard guideline for high-risk smokers.\n5. Contraindicated: While metaplasia is initially protective and adaptive, persistent irritation causes genetic mutations leading to dysplasia and invasive neoplasia (adenocarcinoma of the esophagus and squamous cell carcinoma of the bronchus)."
+        "preamble": "The nurse conducts a targeted patient education and discharge counseling session with Arthur.",
+        "explanation": "1. Contraindicated: Acid suppression in Barrett's esophagus must be maintained continuously as prescribed; chemical acid exposure continues to cause DNA damage even if sensory nerve endings become desensitized.\n2. Indicated: Progressive dysphagia, weight loss, or hematemesis are alarm cues suggesting esophageal stricture or adenocarcinoma progression, warranting immediate medical evaluation.\n3. Indicated: Nocturnal head-of-bed elevation utilizes gravity to prevent retrograde acid flow and pooling in the esophagus.\n4. Non-Essential: Weekly CT scans deliver unnecessary radiation and are non-essential; annual low-dose chest CT is the standard screening protocol for high-risk smokers.\n5. Contraindicated: While metaplasia is an adaptive response that is initially non-malignant, persistent chronic injury causes genetic mutations leading to pre-malignant dysplasia and potential progression to adenocarcinoma."
       },
       "leftContent": {
-        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for comprehensive evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
+        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
         "tabs": [
           {
             "id": "nn_1",
@@ -349,7 +349,7 @@
     {
       "step": 6,
       "question": {
-        "stem": "Complete the following evaluation statement by choosing from the lists of options.",
+        "stem": "The nurse evaluates Arthur's clinical status at the 12-month follow-up visit. Complete the following sentence by choosing from the lists of options.",
         "type": "dropdown_cloze",
         "cloze": {
           "text": "At Arthur's 12-month follow-up, successful smoking cessation has allowed his bronchial mucosa to reverse squamous metaplasia and regenerate normal [[drop0]] epithelium. Strict blood pressure control has arrested further progression of [[drop1]]. A repeat endoscopy revealing regression of low-grade dysplasia and stabilization of mucosal architecture confirms that early cellular adaptations and dysplasia are [[drop2]] when the initiating chronic stressor is eliminated.",
@@ -412,7 +412,7 @@
         "explanation": "The removal of noxious stimuli allows tissues with dividing stem cell populations to reverse adaptive metaplasia and early low-grade dysplasia. In the respiratory tract, differentiated pseudostratified ciliated columnar epithelium is regenerated by basal stem cells once tobacco smoke toxins are eliminated. Similarly, lowering systemic blood pressure decreases myocardial wall tension, reversing hemodynamic overload and halting left ventricular hypertrophy. This clinical case illustrates the fundamental pathophysiological principle: cellular adaptation and mild dysplasia are reversible upon removal of environmental stressors, preventing progression to irreversible malignant neoplasia."
       },
       "leftContent": {
-        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for comprehensive evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
+        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
         "tabs": [
           {
             "id": "nn_1",

@@ -102,7 +102,7 @@
           ]
         },
         "options": [],
-        "preamble": "Laboratory and pathology results are now available in the electronic medical record (see Laboratory & Pathology tab).",
+        "preamble": "Laboratory and pathology results are now available in the electronic health record (see Laboratory & Pathology tab).",
         "explanation": "1. Hydropic swelling (cloudy swelling) occurs when cellular injury impairs ATP production, disabling the Na+/K+-ATPase pump; sodium accumulates intracellularly and draws water into the cytoplasm by osmosis.\n2. Intracellular lipid accumulation (hepatic steatosis) in alcoholism results from excess NADH production, impaired mitochondrial beta-oxidation of fatty acids, increased lipogenesis, and decreased apolipoprotein synthesis needed for VLDL export.\n3. Chaperone proteins (heat-shock proteins like Hsp70) bind misfolded nascent proteins to prevent aggregation and assist in proper 3D refolding under cellular stress.\n4. Ubiquitin-proteasome pathway: When chaperone-assisted refolding fails, abnormal proteins are polyubiquitinated, targeting them to the 26S proteasome for degradation into reusable peptides."
       },
       "leftContent": {
@@ -124,10 +124,10 @@
     {
       "step": 3,
       "question": {
-        "stem": "Complete the following clinical pathophysiological statement by choosing from the lists of options.",
+        "stem": "The nurse is analyzing the cellular mechanisms contributing to Elena's condition. Complete the following sentence by choosing from the lists of options.",
         "type": "dropdown_cloze",
         "cloze": {
-          "text": "Hydropic swelling occurs when toxic injury and metabolic disruption deplete the cell's supply of [[drop0]], which directly paralyzes the plasma membrane [[drop1]]. As a consequence, sodium accumulates intracellularly and draws water into the cytoplasm by osmosis. Simultaneously, chronic alcohol intake disturbs intrahepatic lipid metabolism, resulting in the intracellular accumulation of [[drop2]]. Because the cell membranes and nuclear structures remain intact, these changes represent [[drop3]] cellular injury, which can completely resolve if alcohol exposure is terminated and nutritional support is provided.",
+          "text": "Hydropic swelling occurs when toxic injury and metabolic disruption deplete the cell's supply of [[drop0]], which directly impairs the plasma membrane [[drop1]]. As a consequence, sodium accumulates intracellularly and draws water into the cytoplasm by osmosis. Simultaneously, chronic alcohol intake disturbs intrahepatic lipid metabolism, resulting in the intracellular accumulation of [[drop2]]. Because the cell membranes and nuclear structures remain intact, these changes represent [[drop3]] cellular injury, which can completely resolve if alcohol exposure is terminated and nutritional support is provided.",
           "dropdowns": [
             {
               "placeholder": "Select...",
@@ -222,23 +222,23 @@
     {
       "step": 4,
       "question": {
-        "stem": "The nurse is developing the clinical management plan to support cellular recovery and prevent progression to irreversible liver injury. Which of the following interventions are appropriate? <b>Select all that apply.</b>",
+        "stem": "The nurse is planning care for Elena to support cellular recovery and prevent progression to irreversible hepatocellular necrosis. Which of the following nursing interventions should the nurse include in the plan of care? <b>Select all that apply.</b>",
         "type": "select_all",
         "options": [
           {
-            "text": "Enforce complete, supervised cessation of alcohol consumption with monitoring for alcohol withdrawal syndrome",
+            "text": "Implement a standardized alcohol withdrawal protocol with frequent monitoring of withdrawal symptoms and vital signs",
             "correct": true
           },
           {
-            "text": "Administer intravenous thiamine (vitamin B1) and high-potency multivitamins before initiating intravenous dextrose infusions",
+            "text": "Administer prescribed intravenous thiamine (vitamin B1) and high-potency multivitamins before initiating intravenous dextrose infusions",
             "correct": true
           },
           {
-            "text": "Initiate high-calorie, balanced protein nutritional support to replenish amino acids necessary for apolipoprotein synthesis and cellular repair",
+            "text": "Collaborate with the registered dietitian to provide high-calorie, balanced protein nutrition to support cellular repair and apolipoprotein synthesis",
             "correct": true
           },
           {
-            "text": "Monitor serial liver enzymes (AST, ALT), bilirubin, and coagulation studies (INR/PT) to assess hepatocellular recovery",
+            "text": "Monitor serial liver enzymes (AST, ALT), total bilirubin, and coagulation studies (INR/PT) to assess hepatocellular recovery",
             "correct": true
           },
           {
@@ -246,12 +246,12 @@
             "correct": false
           },
           {
-            "text": "Prepare client for immediate surgical wedge resection of the swollen hepatic segments",
+            "text": "Prepare the client for an urgent surgical wedge resection of the enlarged liver lobes",
             "correct": false
           }
         ],
-        "preamble": "The interprofessional medical team collaborates on Elena's inpatient management and rehabilitation plan.",
-        "explanation": "Management of reversible toxic and nutritional cell injury centers on removing the injurious agent and restoring metabolic substrates: (1) Total cessation of alcohol removes the primary hepatotoxin driving mitochondrial stress and lipid accumulation; (2) IV thiamine is crucial to prevent Wernicke's encephalopathy and acts as a vital coenzyme for pyruvate dehydrogenase in aerobic ATP production; (3) Balanced nutritional repletion provides amino acids essential for protein synthesis (such as apolipoproteins needed to export accumulated lipids out of hepatocytes); (4) Serial liver enzymes and coagulation profiles evaluate whether cell membranes are stabilizing and liver synthetic function is returning. In contrast, acetaminophen is metabolized by the liver into the hepatotoxic intermediate NAPQI; in the setting of glutathione depletion from chronic alcohol use, standard doses can precipitate massive, irreversible hepatic necrosis. Surgery is contraindicated for diffuse, reversible metabolic liver injury."
+        "preamble": "The nurse develops the client's nursing plan of care focused on cellular recovery, nutritional replenishment, and safe detoxification.",
+        "explanation": "Nursing management of reversible toxic and nutritional cell injury centers on removing the injurious agent, restoring metabolic substrates, and monitoring for complications: (1) Protocol-driven withdrawal monitoring detects early autonomic hyperactivity and prevents withdrawal delirium; (2) Administering prescribed IV thiamine prior to glucose prevents acute Wernicke encephalopathy and provides essential coenzymes for aerobic ATP generation; (3) Collaborating on nutritional repletion supplies amino acids essential for protein synthesis (such as apolipoproteins needed to export accumulated lipids out of hepatocytes); (4) Serial liver enzymes and coagulation profiles evaluate whether cell membranes are stabilizing and liver synthetic function is returning. In contrast, acetaminophen is metabolized by the liver into the hepatotoxic intermediate NAPQI; in the setting of glutathione depletion from chronic alcohol use, standard doses can precipitate massive, irreversible hepatic necrosis. Surgery is contraindicated for diffuse, reversible metabolic liver injury."
       },
       "leftContent": {
         "intro": "The medical-surgical nurse is admitting Elena Rostova, a 46-year-old female brought to the hospital by her sister due to worsening abdominal distension, profound fatigue, right upper quadrant tenderness, and jaundice.",
@@ -272,7 +272,7 @@
     {
       "step": 5,
       "question": {
-        "stem": "The nurse is prioritizing nursing interventions during Elena's acute hospitalization. For each nursing action, click to specify whether it is <b>Indicated</b>, <b>Non-Essential</b>, or <b>Contraindicated</b>.",
+        "stem": "The nurse is prioritizing nursing actions during Elena's acute hospitalization. For each nursing action, click to specify whether it is <b>Indicated</b>, <b>Non-Essential</b>, or <b>Contraindicated</b>.",
         "type": "matrix_mc",
         "matrix": {
           "firstColumnHeader": "Nursing Action",
@@ -290,14 +290,14 @@
               ]
             },
             {
-              "text": "Administer intravenous 5% dextrose in water (D5W) before providing intravenous thiamine supplementation",
+              "text": "Administer prescribed intravenous 5% dextrose in water (D5W) before providing intravenous thiamine supplementation",
               "correctIndex": 2,
               "correctIndices": [
                 2
               ]
             },
             {
-              "text": "Encourage client to drink unregulated herbal detox teas containing high concentrations of green tea extract and kava",
+              "text": "Encourage the client to drink over-the-counter herbal detox teas containing high concentrations of green tea extract and kava",
               "correctIndex": 2,
               "correctIndices": [
                 2
@@ -342,7 +342,7 @@
     {
       "step": 6,
       "question": {
-        "stem": "Complete the following evaluation statement by choosing from the lists of options.",
+        "stem": "The nurse evaluates Elena's response to therapy at her 4-week follow-up visit. Complete the following sentence by choosing from the lists of options.",
         "type": "dropdown_cloze",
         "cloze": {
           "text": "At Elena's 4-week outpatient follow-up, repeat hepatic testing demonstrates that her AST has decreased from 284 U/L to 46 U/L and total bilirubin has normalized to 0.9 mg/dL. These improvements reflect the resolution of [[drop0]]. Because hydropic swelling and fatty liver represent [[drop1]] cellular injury, the restoration of cellular ATP production allowed the [[drop2]] to re-establish ionic gradients, successfully clearing excess intracellular water and accumulated lipid droplets without progression to irreversible necrotic cell death.",

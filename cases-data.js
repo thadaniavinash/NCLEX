@@ -4010,19 +4010,19 @@ window.NCLEX_CASES = [
       {
         "step": 1,
         "question": {
-          "stem": "The nurse reviews Arthur's history, physical examination, and diagnostic reports. Which of the following findings reflect <b>cellular adaptation</b> to chronic stress or increased workload? <b>Select all that apply.</b>",
+          "stem": "The nurse reviews Arthur's history, physical assessment, and diagnostic reports. Which of the following findings reflect <b>cellular adaptation</b> in response to chronic environmental stress or increased workload? <b>Select all that apply.</b>",
           "type": "select_all",
           "options": [
             {
-              "text": "Distal esophageal mucosa displaying conversion of stratified squamous epithelium to columnar epithelium with goblet cells",
+              "text": "Conversion of distal esophageal stratified squamous epithelium to columnar epithelium with goblet cells",
               "correct": true
             },
             {
-              "text": "Bronchial biopsy demonstrating replacement of ciliated pseudostratified columnar epithelium by stratified squamous epithelium",
+              "text": "Replacement of ciliated pseudostratified columnar epithelium by stratified squamous epithelium in the mainstem bronchi",
               "correct": true
             },
             {
-              "text": "Echocardiogram demonstrating left ventricular wall thickening of 1.5 cm in response to chronic hypertension",
+              "text": "Echocardiogram demonstrating left ventricular myocardial wall thickness of 1.5 cm in response to chronic hypertension",
               "correct": true
             },
             {
@@ -4039,10 +4039,10 @@ window.NCLEX_CASES = [
             }
           ],
           "preamble": "",
-          "explanation": "Cellular adaptations are reversible changes in cell size, number, phenotype, metabolic activity, or organization in response to changes in their environment. In this client, adaptations include: (1) Barrett's esophagus—glandular metaplasia of esophageal stratified squamous epithelium to columnar epithelium to withstand gastric acid; (2) Squamous metaplasia of respiratory pseudostratified ciliated columnar epithelium to stratified squamous epithelium due to chronic cigarette smoke; (3) Left ventricular hypertrophy—increased cardiomyocyte size in response to increased hemodynamic afterload; and (4) Disuse atrophy—shrinkage of skeletal muscle cells from decreased functional demand during casting. High fever with purulent sputum indicates acute infection/inflammation, while shock indicates cardiovascular collapse, neither of which represents an adaptive cellular response."
+          "explanation": "Cellular adaptations are reversible changes in cell size, number, phenotype, metabolic activity, or organization in response to altered physiological demand or chronic environmental stress. In this client, adaptations include: (1) Barrett's esophagus—glandular metaplasia of esophageal stratified squamous epithelium to columnar epithelium to better tolerate acidic gastric juice; (2) Squamous metaplasia of respiratory pseudostratified ciliated columnar epithelium to stratified squamous epithelium due to chronic cigarette smoke; (3) Left ventricular hypertrophy—increased cardiomyocyte size in response to chronic hemodynamic afterload; and (4) Disuse atrophy—shrinkage of skeletal muscle cells from decreased functional demand during casting. High fever with purulent sputum indicates acute infection/inflammation, while shock indicates cardiovascular collapse, neither of which represents an adaptive cellular response."
         },
         "leftContent": {
-          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for comprehensive evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
+          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
           "tabs": [
             {
               "id": "nn_1",
@@ -4060,7 +4060,7 @@ window.NCLEX_CASES = [
       {
         "step": 2,
         "question": {
-          "stem": "The nurse examines the newly uploaded diagnostic reports. For each clinical and pathological finding, click to specify the corresponding <b>cellular adaptation or tissue alteration</b>.",
+          "stem": "The nurse analyzes the client's clinical and diagnostic findings. For each finding, click to specify the corresponding <b>cellular adaptation or tissue alteration</b>.",
           "type": "matrix_mc",
           "matrix": {
             "firstColumnHeader": "Clinical & Pathological Finding",
@@ -4109,11 +4109,11 @@ window.NCLEX_CASES = [
             ]
           },
           "options": [],
-          "preamble": "Endoscopy, echocardiography, and biopsy pathology reports have been added to the client's medical chart (see Diagnostic Reports tab).",
+          "preamble": "Endoscopy, echocardiography, and biopsy pathology reports have been added to the client's chart (see Diagnostic Reports tab).",
           "explanation": "1. Hypertrophy: Increase in individual cell size resulting in overall organ enlargement, typical in non-dividing cells like cardiac myocytes adapting to chronic pressure overload (hypertension).\n2. Metaplasia: Reversible transformation of one differentiated adult cell type into another differentiated cell type that better withstands a noxious microenvironment (e.g., columnar epithelium replacing squamous in the esophagus, or squamous replacing ciliated columnar in bronchial airways).\n3. Atrophy: Reduction in cell size and functional capacity due to decreased workload/disuse, loss of innervation, or diminished blood supply.\n4. Dysplasia: Disordered growth and maturation characterized by variation in cellular size and shape, hyperchromatic enlarged nuclei, and architectural disarray; it is a pre-malignant alteration that may progress to neoplasia."
         },
         "leftContent": {
-          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for comprehensive evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
+          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
           "tabs": [
             {
               "id": "nn_1",
@@ -4131,7 +4131,7 @@ window.NCLEX_CASES = [
       {
         "step": 3,
         "question": {
-          "stem": "Complete the following clinical statement by choosing from the lists of options.",
+          "stem": "The nurse is analyzing Arthur's risk for neoplastic transformation. Complete the following sentence by choosing from the lists of options.",
           "type": "dropdown_cloze",
           "cloze": {
             "text": "Metaplasia is defined as the [[drop0]] conversion of one differentiated cell type to another in response to chronic persistent injury. In the client's airways, replacement of ciliated columnar cells with stratified squamous epithelium protects against smoke but results in loss of [[drop1]]. If the chronic noxious irritation is not removed, the tissue can evolve into [[drop2]], which is characterized by disordered maturation and cellular pleomorphism. In severe cases, progression to autonomous malignant tissue with complete loss of cellular differentiation is termed [[drop3]].",
@@ -4211,7 +4211,7 @@ window.NCLEX_CASES = [
           "explanation": "Metaplasia is fundamentally a reversible adaptive response where one differentiated cell type (e.g., ciliated columnar in bronchial airways, or stratified squamous in esophagus) is substituted by another differentiated cell type that better tolerates the chronic injury. However, in the lungs, squamous epithelium lacks cilia and mucus-producing goblet cells, eliminating vital mucociliary clearance and predisposing to chronic mucous plugging and recurrent infections. If the noxious stimulus persists, metaplasia can progress to dysplasia ('disordered growth'), characterized by loss of architectural uniformity and cellular pleomorphism—a recognized pre-cancerous condition. When malignant transformation occurs and cells completely lose cellular differentiation, orientation, and specialized function, it is termed anaplasia, the hallmark of malignant neoplasms."
         },
         "leftContent": {
-          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for comprehensive evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
+          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
           "tabs": [
             {
               "id": "nn_1",
@@ -4229,39 +4229,39 @@ window.NCLEX_CASES = [
       {
         "step": 4,
         "question": {
-          "stem": "The multidisciplinary team is formulating an evidence-based plan of care for Arthur. Which of the following interventions should the nurse anticipate to eliminate chronic cellular stress, promote tissue recovery, and prevent progression to neoplasia? <b>Select all that apply.</b>",
+          "stem": "The nurse is planning care for Arthur to promote cellular recovery, eliminate chronic cellular stressors, and prevent neoplastic progression. Which of the following nursing interventions should the nurse include in the client's plan of care? <b>Select all that apply.</b>",
           "type": "select_all",
           "options": [
             {
-              "text": "Enroll client in a comprehensive smoking cessation program with behavioral support and pharmacotherapy",
+              "text": "Provide education and supportive resources for a structured smoking cessation program to remove chronic bronchial mucosal irritation",
               "correct": true
             },
             {
-              "text": "Initiate daily prescription proton pump inhibitor (PPI) therapy to suppress gastric acid production",
+              "text": "Administer prescribed proton pump inhibitor (PPI) therapy to suppress gastric acid exposure to the esophageal mucosa",
               "correct": true
             },
             {
-              "text": "Educate client on anti-reflux lifestyle measures, including elevating the head of the bed 6 inches and avoiding meals within 3 hours of sleep",
+              "text": "Educate the client on anti-reflux lifestyle measures, including elevating the head of the bed 15 to 20 cm and avoiding meals within 3 hours of sleep",
               "correct": true
             },
             {
-              "text": "Prescribe an antihypertensive regimen (e.g., ACE inhibitor or ARB) to control blood pressure and promote regression of left ventricular hypertrophy",
+              "text": "Administer prescribed antihypertensive medication to reduce systemic cardiac workload and promote regression of left ventricular hypertrophy",
               "correct": true
             },
             {
-              "text": "Establish a scheduled surveillance upper endoscopy protocol every 6 to 12 months with four-quadrant biopsies",
+              "text": "Reinforce the importance of attending scheduled surveillance endoscopies with mucosal biopsies to monitor for dysplastic progression",
               "correct": true
             },
             {
-              "text": "Refer client for immediate surgical esophagectomy with neo-adjuvant radiation therapy",
+              "text": "Prepare the client for an immediate surgical esophagectomy with radiation therapy",
               "correct": false
             }
           ],
-          "preamble": "The healthcare team meets with Arthur to discuss treatment strategies to arrest and reverse his cellular adaptations and pre-neoplastic changes.",
-          "explanation": "Cellular adaptations and low-grade dysplasia can halt or regress when the initiating noxious stimulus is removed: (1) Smoking cessation removes chronic toxic hydrocarbons and thermal injury, allowing respiratory epithelium to regenerate ciliated columnar morphology; (2) PPI therapy profoundly decreases acid and pepsin exposure to the esophageal mucosa; (3) Anti-reflux lifestyle adjustments mechanically minimize retrograde acid flow; (4) Antihypertensive therapy reduces systemic cardiac afterload, arresting or regressing pathological left ventricular hypertrophy; (5) Regular surveillance endoscopy monitors Barrett's mucosa for progression to high-grade dysplasia or adenocarcinoma. Radical esophagectomy with radiation is an aggressive surgical intervention reserved for invasive esophageal carcinoma, not low-grade pre-invasive dysplasia."
+          "preamble": "The nurse develops a nursing plan of care aimed at arresting and reversing Arthur's cellular adaptations and pre-neoplastic changes.",
+          "explanation": "Nursing interventions for clients with adaptive cellular responses and low-grade dysplasia focus on removing noxious stimuli, administering prescribed protective therapies, and health teaching: (1) Smoking cessation education removes toxic combustion products, allowing respiratory stem cells to regenerate ciliated columnar morphology; (2) Administering prescribed PPIs reduces chemical acid/peptic injury to the distal esophagus; (3) Elevating the head of the bed and meal timing physically reduces nocturnal reflux; (4) Administering prescribed antihypertensives lowers systemic afterload, halting or regressing left ventricular hypertrophy; (5) Reinforcing surveillance endoscopy ensures early detection if dysplasia advances. Preparing for esophagectomy and radiation is incorrect, as radical surgery and radiotherapy are reserved for invasive malignancy, not low-grade pre-invasive dysplasia."
         },
         "leftContent": {
-          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for comprehensive evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
+          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
           "tabs": [
             {
               "id": "nn_1",
@@ -4279,10 +4279,10 @@ window.NCLEX_CASES = [
       {
         "step": 5,
         "question": {
-          "stem": "The nurse provides education to Arthur regarding his disease processes and lifestyle interventions. For each client statement or recommended action, click to specify whether it is <b>Indicated</b>, <b>Non-Essential</b>, or <b>Contraindicated</b>.",
+          "stem": "The nurse is taking action to provide discharge counseling and education to Arthur. For each nursing action or client instruction, click to specify whether it is <b>Indicated</b>, <b>Non-Essential</b>, or <b>Contraindicated</b>.",
           "type": "matrix_mc",
           "matrix": {
-            "firstColumnHeader": "Nursing Action or Client Statement",
+            "firstColumnHeader": "Nursing Action / Client Instruction",
             "columns": [
               "Indicated",
               "Non-Essential",
@@ -4290,35 +4290,35 @@ window.NCLEX_CASES = [
             ],
             "rows": [
               {
-                "text": "Educate client that he can discontinue prescribed proton pump inhibitor once his heartburn symptoms resolve for 3 consecutive days",
+                "text": "Educate the client that he can stop taking prescribed proton pump inhibitors once his heartburn symptoms resolve for 3 consecutive days",
                 "correctIndex": 2,
                 "correctIndices": [
                   2
                 ]
               },
               {
-                "text": "Instruct client to immediately report 'red flag' symptoms such as progressive solid food dysphagia, unintentional weight loss, or hematemesis",
+                "text": "Instruct the client to immediately report 'red flag' symptoms such as progressive difficulty swallowing solid food, unintentional weight loss, or vomiting blood",
                 "correctIndex": 0,
                 "correctIndices": [
                   0
                 ]
               },
               {
-                "text": "Advise client to use extra firm pillows or a bed wedge to elevate his upper body 15 to 20 cm during nocturnal sleep",
+                "text": "Advise the client to use a bed wedge or blocks under bedposts to elevate the head of the bed 15 to 20 cm during sleep",
                 "correctIndex": 0,
                 "correctIndices": [
                   0
                 ]
               },
               {
-                "text": "Order routine weekly chest computed tomography (CT) scans to screen for lung nodules",
+                "text": "Request a provider prescription for weekly routine chest computed tomography (CT) scans to screen for lung nodules",
                 "correctIndex": 1,
                 "correctIndices": [
                   1
                 ]
               },
               {
-                "text": "Reassure the client that because metaplasia is an adaptive response, it carries zero risk of malignant transformation",
+                "text": "Reassure the client that because metaplasia is an adaptive response, it carries zero risk of transforming into cancer",
                 "correctIndex": 2,
                 "correctIndices": [
                   2
@@ -4327,11 +4327,11 @@ window.NCLEX_CASES = [
             ]
           },
           "options": [],
-          "preamble": "The nurse conducts an in-depth patient education and discharge counseling session with Arthur.",
-          "explanation": "1. Contraindicated: Acid suppression in Barrett's esophagus must be maintained continuously, not stopped when symptoms subside, because chemical acid exposure continues to cause DNA damage even if nerve endings are desensitized.\n2. Indicated: Progressive dysphagia, weight loss, or gastrointestinal bleeding are critical red flags indicating possible progression to esophageal adenocarcinoma or stricture.\n3. Indicated: Bed elevation uses gravity to reduce nocturnal gastroesophageal acid pooling.\n4. Non-Essential: Weekly CT scans deliver unnecessary radiation; annual low-dose chest CT is the standard guideline for high-risk smokers.\n5. Contraindicated: While metaplasia is initially protective and adaptive, persistent irritation causes genetic mutations leading to dysplasia and invasive neoplasia (adenocarcinoma of the esophagus and squamous cell carcinoma of the bronchus)."
+          "preamble": "The nurse conducts a targeted patient education and discharge counseling session with Arthur.",
+          "explanation": "1. Contraindicated: Acid suppression in Barrett's esophagus must be maintained continuously as prescribed; chemical acid exposure continues to cause DNA damage even if sensory nerve endings become desensitized.\n2. Indicated: Progressive dysphagia, weight loss, or hematemesis are alarm cues suggesting esophageal stricture or adenocarcinoma progression, warranting immediate medical evaluation.\n3. Indicated: Nocturnal head-of-bed elevation utilizes gravity to prevent retrograde acid flow and pooling in the esophagus.\n4. Non-Essential: Weekly CT scans deliver unnecessary radiation and are non-essential; annual low-dose chest CT is the standard screening protocol for high-risk smokers.\n5. Contraindicated: While metaplasia is an adaptive response that is initially non-malignant, persistent chronic injury causes genetic mutations leading to pre-malignant dysplasia and potential progression to adenocarcinoma."
         },
         "leftContent": {
-          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for comprehensive evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
+          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
           "tabs": [
             {
               "id": "nn_1",
@@ -4349,7 +4349,7 @@ window.NCLEX_CASES = [
       {
         "step": 6,
         "question": {
-          "stem": "Complete the following evaluation statement by choosing from the lists of options.",
+          "stem": "The nurse evaluates Arthur's clinical status at the 12-month follow-up visit. Complete the following sentence by choosing from the lists of options.",
           "type": "dropdown_cloze",
           "cloze": {
             "text": "At Arthur's 12-month follow-up, successful smoking cessation has allowed his bronchial mucosa to reverse squamous metaplasia and regenerate normal [[drop0]] epithelium. Strict blood pressure control has arrested further progression of [[drop1]]. A repeat endoscopy revealing regression of low-grade dysplasia and stabilization of mucosal architecture confirms that early cellular adaptations and dysplasia are [[drop2]] when the initiating chronic stressor is eliminated.",
@@ -4412,7 +4412,7 @@ window.NCLEX_CASES = [
           "explanation": "The removal of noxious stimuli allows tissues with dividing stem cell populations to reverse adaptive metaplasia and early low-grade dysplasia. In the respiratory tract, differentiated pseudostratified ciliated columnar epithelium is regenerated by basal stem cells once tobacco smoke toxins are eliminated. Similarly, lowering systemic blood pressure decreases myocardial wall tension, reversing hemodynamic overload and halting left ventricular hypertrophy. This clinical case illustrates the fundamental pathophysiological principle: cellular adaptation and mild dysplasia are reversible upon removal of environmental stressors, preventing progression to irreversible malignant neoplasia."
         },
         "leftContent": {
-          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for comprehensive evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
+          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
           "tabs": [
             {
               "id": "nn_1",
@@ -4533,7 +4533,7 @@ window.NCLEX_CASES = [
             ]
           },
           "options": [],
-          "preamble": "Laboratory and pathology results are now available in the electronic medical record (see Laboratory & Pathology tab).",
+          "preamble": "Laboratory and pathology results are now available in the electronic health record (see Laboratory & Pathology tab).",
           "explanation": "1. Hydropic swelling (cloudy swelling) occurs when cellular injury impairs ATP production, disabling the Na+/K+-ATPase pump; sodium accumulates intracellularly and draws water into the cytoplasm by osmosis.\n2. Intracellular lipid accumulation (hepatic steatosis) in alcoholism results from excess NADH production, impaired mitochondrial beta-oxidation of fatty acids, increased lipogenesis, and decreased apolipoprotein synthesis needed for VLDL export.\n3. Chaperone proteins (heat-shock proteins like Hsp70) bind misfolded nascent proteins to prevent aggregation and assist in proper 3D refolding under cellular stress.\n4. Ubiquitin-proteasome pathway: When chaperone-assisted refolding fails, abnormal proteins are polyubiquitinated, targeting them to the 26S proteasome for degradation into reusable peptides."
         },
         "leftContent": {
@@ -4555,10 +4555,10 @@ window.NCLEX_CASES = [
       {
         "step": 3,
         "question": {
-          "stem": "Complete the following clinical pathophysiological statement by choosing from the lists of options.",
+          "stem": "The nurse is analyzing the cellular mechanisms contributing to Elena's condition. Complete the following sentence by choosing from the lists of options.",
           "type": "dropdown_cloze",
           "cloze": {
-            "text": "Hydropic swelling occurs when toxic injury and metabolic disruption deplete the cell's supply of [[drop0]], which directly paralyzes the plasma membrane [[drop1]]. As a consequence, sodium accumulates intracellularly and draws water into the cytoplasm by osmosis. Simultaneously, chronic alcohol intake disturbs intrahepatic lipid metabolism, resulting in the intracellular accumulation of [[drop2]]. Because the cell membranes and nuclear structures remain intact, these changes represent [[drop3]] cellular injury, which can completely resolve if alcohol exposure is terminated and nutritional support is provided.",
+            "text": "Hydropic swelling occurs when toxic injury and metabolic disruption deplete the cell's supply of [[drop0]], which directly impairs the plasma membrane [[drop1]]. As a consequence, sodium accumulates intracellularly and draws water into the cytoplasm by osmosis. Simultaneously, chronic alcohol intake disturbs intrahepatic lipid metabolism, resulting in the intracellular accumulation of [[drop2]]. Because the cell membranes and nuclear structures remain intact, these changes represent [[drop3]] cellular injury, which can completely resolve if alcohol exposure is terminated and nutritional support is provided.",
             "dropdowns": [
               {
                 "placeholder": "Select...",
@@ -4653,23 +4653,23 @@ window.NCLEX_CASES = [
       {
         "step": 4,
         "question": {
-          "stem": "The nurse is developing the clinical management plan to support cellular recovery and prevent progression to irreversible liver injury. Which of the following interventions are appropriate? <b>Select all that apply.</b>",
+          "stem": "The nurse is planning care for Elena to support cellular recovery and prevent progression to irreversible hepatocellular necrosis. Which of the following nursing interventions should the nurse include in the plan of care? <b>Select all that apply.</b>",
           "type": "select_all",
           "options": [
             {
-              "text": "Enforce complete, supervised cessation of alcohol consumption with monitoring for alcohol withdrawal syndrome",
+              "text": "Implement a standardized alcohol withdrawal protocol with frequent monitoring of withdrawal symptoms and vital signs",
               "correct": true
             },
             {
-              "text": "Administer intravenous thiamine (vitamin B1) and high-potency multivitamins before initiating intravenous dextrose infusions",
+              "text": "Administer prescribed intravenous thiamine (vitamin B1) and high-potency multivitamins before initiating intravenous dextrose infusions",
               "correct": true
             },
             {
-              "text": "Initiate high-calorie, balanced protein nutritional support to replenish amino acids necessary for apolipoprotein synthesis and cellular repair",
+              "text": "Collaborate with the registered dietitian to provide high-calorie, balanced protein nutrition to support cellular repair and apolipoprotein synthesis",
               "correct": true
             },
             {
-              "text": "Monitor serial liver enzymes (AST, ALT), bilirubin, and coagulation studies (INR/PT) to assess hepatocellular recovery",
+              "text": "Monitor serial liver enzymes (AST, ALT), total bilirubin, and coagulation studies (INR/PT) to assess hepatocellular recovery",
               "correct": true
             },
             {
@@ -4677,12 +4677,12 @@ window.NCLEX_CASES = [
               "correct": false
             },
             {
-              "text": "Prepare client for immediate surgical wedge resection of the swollen hepatic segments",
+              "text": "Prepare the client for an urgent surgical wedge resection of the enlarged liver lobes",
               "correct": false
             }
           ],
-          "preamble": "The interprofessional medical team collaborates on Elena's inpatient management and rehabilitation plan.",
-          "explanation": "Management of reversible toxic and nutritional cell injury centers on removing the injurious agent and restoring metabolic substrates: (1) Total cessation of alcohol removes the primary hepatotoxin driving mitochondrial stress and lipid accumulation; (2) IV thiamine is crucial to prevent Wernicke's encephalopathy and acts as a vital coenzyme for pyruvate dehydrogenase in aerobic ATP production; (3) Balanced nutritional repletion provides amino acids essential for protein synthesis (such as apolipoproteins needed to export accumulated lipids out of hepatocytes); (4) Serial liver enzymes and coagulation profiles evaluate whether cell membranes are stabilizing and liver synthetic function is returning. In contrast, acetaminophen is metabolized by the liver into the hepatotoxic intermediate NAPQI; in the setting of glutathione depletion from chronic alcohol use, standard doses can precipitate massive, irreversible hepatic necrosis. Surgery is contraindicated for diffuse, reversible metabolic liver injury."
+          "preamble": "The nurse develops the client's nursing plan of care focused on cellular recovery, nutritional replenishment, and safe detoxification.",
+          "explanation": "Nursing management of reversible toxic and nutritional cell injury centers on removing the injurious agent, restoring metabolic substrates, and monitoring for complications: (1) Protocol-driven withdrawal monitoring detects early autonomic hyperactivity and prevents withdrawal delirium; (2) Administering prescribed IV thiamine prior to glucose prevents acute Wernicke encephalopathy and provides essential coenzymes for aerobic ATP generation; (3) Collaborating on nutritional repletion supplies amino acids essential for protein synthesis (such as apolipoproteins needed to export accumulated lipids out of hepatocytes); (4) Serial liver enzymes and coagulation profiles evaluate whether cell membranes are stabilizing and liver synthetic function is returning. In contrast, acetaminophen is metabolized by the liver into the hepatotoxic intermediate NAPQI; in the setting of glutathione depletion from chronic alcohol use, standard doses can precipitate massive, irreversible hepatic necrosis. Surgery is contraindicated for diffuse, reversible metabolic liver injury."
         },
         "leftContent": {
           "intro": "The medical-surgical nurse is admitting Elena Rostova, a 46-year-old female brought to the hospital by her sister due to worsening abdominal distension, profound fatigue, right upper quadrant tenderness, and jaundice.",
@@ -4703,7 +4703,7 @@ window.NCLEX_CASES = [
       {
         "step": 5,
         "question": {
-          "stem": "The nurse is prioritizing nursing interventions during Elena's acute hospitalization. For each nursing action, click to specify whether it is <b>Indicated</b>, <b>Non-Essential</b>, or <b>Contraindicated</b>.",
+          "stem": "The nurse is prioritizing nursing actions during Elena's acute hospitalization. For each nursing action, click to specify whether it is <b>Indicated</b>, <b>Non-Essential</b>, or <b>Contraindicated</b>.",
           "type": "matrix_mc",
           "matrix": {
             "firstColumnHeader": "Nursing Action",
@@ -4721,14 +4721,14 @@ window.NCLEX_CASES = [
                 ]
               },
               {
-                "text": "Administer intravenous 5% dextrose in water (D5W) before providing intravenous thiamine supplementation",
+                "text": "Administer prescribed intravenous 5% dextrose in water (D5W) before providing intravenous thiamine supplementation",
                 "correctIndex": 2,
                 "correctIndices": [
                   2
                 ]
               },
               {
-                "text": "Encourage client to drink unregulated herbal detox teas containing high concentrations of green tea extract and kava",
+                "text": "Encourage the client to drink over-the-counter herbal detox teas containing high concentrations of green tea extract and kava",
                 "correctIndex": 2,
                 "correctIndices": [
                   2
@@ -4773,7 +4773,7 @@ window.NCLEX_CASES = [
       {
         "step": 6,
         "question": {
-          "stem": "Complete the following evaluation statement by choosing from the lists of options.",
+          "stem": "The nurse evaluates Elena's response to therapy at her 4-week follow-up visit. Complete the following sentence by choosing from the lists of options.",
           "type": "dropdown_cloze",
           "cloze": {
             "text": "At Elena's 4-week outpatient follow-up, repeat hepatic testing demonstrates that her AST has decreased from 284 U/L to 46 U/L and total bilirubin has normalized to 0.9 mg/dL. These improvements reflect the resolution of [[drop0]]. Because hydropic swelling and fatty liver represent [[drop1]] cellular injury, the restoration of cellular ATP production allowed the [[drop2]] to re-establish ionic gradients, successfully clearing excess intracellular water and accumulated lipid droplets without progression to irreversible necrotic cell death.",
@@ -4915,7 +4915,7 @@ window.NCLEX_CASES = [
       {
         "step": 2,
         "question": {
-          "stem": "The nurse reviews the four primary types of tissue necrosis and irreversible injury. For each clinical presentation, click to match it with the correct <b>type of tissue necrosis</b>.",
+          "stem": "The nurse reviews the four primary types of tissue necrosis and irreversible cell death. For each clinical presentation, click to match it with the correct <b>type of tissue necrosis</b>.",
           "type": "matrix_mc",
           "matrix": {
             "firstColumnHeader": "Clinical & Pathological Scenario",
@@ -4979,7 +4979,7 @@ window.NCLEX_CASES = [
       {
         "step": 3,
         "question": {
-          "stem": "Complete the following comparative pathophysiological statement by choosing from the lists of options.",
+          "stem": "The nurse is analyzing the cellular death pathways contributing to Walter's presentation. Complete the following sentence by choosing from the lists of options.",
           "type": "dropdown_cloze",
           "cloze": {
             "text": "The initial ischemic death of Walter's toes was dry gangrene, a variant of [[drop0]] necrosis. When anaerobic bacteria infected the dead tissue, it transformed into wet/gas gangrene characterized by [[drop1]] necrosis. Unlike necrosis, which is unprogrammed and triggers [[drop2]], apoptosis is programmed cell death where cells fragment into apoptotic bodies without eliciting inflammation. The intrinsic pathway of apoptosis is initiated in the mitochondria by release of [[drop3]] into the cytoplasm, regulated by p53 and the BCL-2 protein family.",
@@ -5077,23 +5077,23 @@ window.NCLEX_CASES = [
       {
         "step": 4,
         "question": {
-          "stem": "Walter is in septic shock secondary to infected necrotic gangrenous tissue. Which of the following emergency clinical interventions should the nurse prioritize? <b>Select all that apply.</b>",
+          "stem": "The nurse is generating solutions for Walter who is experiencing septic shock secondary to infected gangrenous tissue. Which of the following emergency nursing interventions should the nurse prioritize? <b>Select all that apply.</b>",
           "type": "select_all",
           "options": [
             {
-              "text": "Initiate rapid intravenous isotonic crystalloid resuscitation (e.g., 30 mL/kg of Lactated Ringer's) to restore intravascular volume and perfusion pressure",
+              "text": "Administer prescribed rapid intravenous isotonic crystalloid resuscitation (e.g., 30 mL/kg of Lactated Ringer's) to restore circulating volume and perfusion pressure",
               "correct": true
             },
             {
-              "text": "Administer immediate broad-spectrum intravenous antimicrobial therapy covering anaerobes and gram-negative bacilli (e.g., piperacillin-tazobactam plus vancomycin)",
+              "text": "Administer prescribed broad-spectrum intravenous antimicrobial therapy covering anaerobes and gram-negative bacilli (e.g., piperacillin-tazobactam plus vancomycin)",
               "correct": true
             },
             {
-              "text": "Prepare the client immediately for emergent surgical debridement and amputation of non-viable gangrenous tissue",
+              "text": "Prepare the client for emergent surgical debridement by verifying informed consent documentation and initiating preoperative checklists",
               "correct": true
             },
             {
-              "text": "Insert an indwelling urinary catheter to monitor hourly urine output as an indicator of renal perfusion",
+              "text": "Insert an indwelling urinary catheter to monitor hourly urine output as an indicator of renal end-organ perfusion",
               "correct": true
             },
             {
@@ -5101,12 +5101,12 @@ window.NCLEX_CASES = [
               "correct": false
             },
             {
-              "text": "Submerge the gangrenous extremity in a whirlpool bath to soften and soak the crusts",
+              "text": "Submerge the gangrenous extremity in a warm water whirlpool bath to soften and soak necrotic crusts",
               "correct": false
             }
           ],
-          "preamble": "The emergency department physician and vascular surgery team evaluate Walter for immediate resuscitation and operative intervention.",
-          "explanation": "Gas/wet gangrene with septic shock is a surgical and medical emergency requiring immediate simultaneous actions: (1) Aggressive crystalloid fluid resuscitation restores effective circulating volume and combats hypoperfusion lactic acidosis; (2) Immediate broad-spectrum intravenous antimicrobials with anaerobic coverage stop bacterial proliferation and toxin production; (3) Urgent surgical debridement or amputation is the definitive life-saving intervention because antibiotics cannot penetrate dead, avascular necrotic tissue; and (4) Strict hourly urine output monitoring assesses renal end-organ perfusion. In contrast, tight compression bandages worsen tissue ischemia by further restricting arterial inflow, and heating pads cause thermal injury to neuropathic skin. Soaking in water macerates tissue, spreads bacterial infection, and is strictly contraindicated."
+          "preamble": "The nurse plans emergency resuscitation, stabilization, and preoperative preparation for urgent operative debridement.",
+          "explanation": "Gas/wet gangrene with septic shock is a surgical and medical emergency requiring immediate nursing actions: (1) Administering prescribed crystalloid fluid resuscitation restores effective circulating volume and combats hypoperfusion lactic acidosis; (2) Administering prescribed broad-spectrum intravenous antimicrobials stops bacterial proliferation and toxin production; (3) Preparing the client for surgical debridement/amputation ensures prompt source control, as antimicrobials cannot penetrate avascular dead tissue; and (4) Strict hourly urine output monitoring assesses renal perfusion. In contrast, tight compression bandages worsen tissue ischemia by further restricting arterial inflow, and heating pads cause thermal injury to neuropathic skin. Soaking in water macerates tissue, accelerates bacterial multiplication, and is strictly contraindicated."
         },
         "leftContent": {
           "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration.",
@@ -5145,14 +5145,14 @@ window.NCLEX_CASES = [
                 ]
               },
               {
-                "text": "Monitor closely for reperfusion injury manifestations (oxygen free radicals and calcium influx causing myocardial or renal damage) following revascularization",
+                "text": "Monitor closely for manifestations of reperfusion injury (such as cardiac dysrhythmias or acute oliguria) following surgical revascularization",
                 "correctIndex": 0,
                 "correctIndices": [
                   0
                 ]
               },
               {
-                "text": "Manage hyperglycemia using an intravenous regular insulin protocol targeting blood glucose 140–180 mg/dL",
+                "text": "Manage blood glucose levels using an intravenous regular insulin protocol targeting 140–180 mg/dL",
                 "correctIndex": 0,
                 "correctIndices": [
                   0
@@ -5166,7 +5166,7 @@ window.NCLEX_CASES = [
                 ]
               },
               {
-                "text": "Administer high-dose external beam radiation therapy to the surgical stump",
+                "text": "Prepare the client for external beam radiation therapy to the surgical site",
                 "correctIndex": 1,
                 "correctIndices": [
                   1
@@ -5197,7 +5197,7 @@ window.NCLEX_CASES = [
       {
         "step": 6,
         "question": {
-          "stem": "Complete the following clinical summary and evaluation statement by choosing from the lists of options.",
+          "stem": "The nurse is evaluating Walter's recovery on postoperative day 4. Complete the following sentence by choosing from the lists of options.",
           "type": "dropdown_cloze",
           "cloze": {
             "text": "Following surgical source control of Walter's infected gangrene, his WBC count normalized to 8,400 /mm3 and lactate decreased to 1.2 mmol/L, confirming eradication of [[drop0]]. Because necrotic cell death causes plasma membrane rupture and enzymatic leakage, it triggers [[drop1]], creating extensive collateral tissue destruction. In contrast, apoptosis eliminates unwanted or damaged cells through programmed cell condensation and fragmentation into apoptotic bodies, which are cleanly ingested by [[drop2]] without producing an inflammatory reaction.",

@@ -60,7 +60,7 @@
     {
       "step": 2,
       "question": {
-        "stem": "The nurse reviews the four primary types of tissue necrosis and irreversible injury. For each clinical presentation, click to match it with the correct <b>type of tissue necrosis</b>.",
+        "stem": "The nurse reviews the four primary types of tissue necrosis and irreversible cell death. For each clinical presentation, click to match it with the correct <b>type of tissue necrosis</b>.",
         "type": "matrix_mc",
         "matrix": {
           "firstColumnHeader": "Clinical & Pathological Scenario",
@@ -124,7 +124,7 @@
     {
       "step": 3,
       "question": {
-        "stem": "Complete the following comparative pathophysiological statement by choosing from the lists of options.",
+        "stem": "The nurse is analyzing the cellular death pathways contributing to Walter's presentation. Complete the following sentence by choosing from the lists of options.",
         "type": "dropdown_cloze",
         "cloze": {
           "text": "The initial ischemic death of Walter's toes was dry gangrene, a variant of [[drop0]] necrosis. When anaerobic bacteria infected the dead tissue, it transformed into wet/gas gangrene characterized by [[drop1]] necrosis. Unlike necrosis, which is unprogrammed and triggers [[drop2]], apoptosis is programmed cell death where cells fragment into apoptotic bodies without eliciting inflammation. The intrinsic pathway of apoptosis is initiated in the mitochondria by release of [[drop3]] into the cytoplasm, regulated by p53 and the BCL-2 protein family.",
@@ -222,23 +222,23 @@
     {
       "step": 4,
       "question": {
-        "stem": "Walter is in septic shock secondary to infected necrotic gangrenous tissue. Which of the following emergency clinical interventions should the nurse prioritize? <b>Select all that apply.</b>",
+        "stem": "The nurse is generating solutions for Walter who is experiencing septic shock secondary to infected gangrenous tissue. Which of the following emergency nursing interventions should the nurse prioritize? <b>Select all that apply.</b>",
         "type": "select_all",
         "options": [
           {
-            "text": "Initiate rapid intravenous isotonic crystalloid resuscitation (e.g., 30 mL/kg of Lactated Ringer's) to restore intravascular volume and perfusion pressure",
+            "text": "Administer prescribed rapid intravenous isotonic crystalloid resuscitation (e.g., 30 mL/kg of Lactated Ringer's) to restore circulating volume and perfusion pressure",
             "correct": true
           },
           {
-            "text": "Administer immediate broad-spectrum intravenous antimicrobial therapy covering anaerobes and gram-negative bacilli (e.g., piperacillin-tazobactam plus vancomycin)",
+            "text": "Administer prescribed broad-spectrum intravenous antimicrobial therapy covering anaerobes and gram-negative bacilli (e.g., piperacillin-tazobactam plus vancomycin)",
             "correct": true
           },
           {
-            "text": "Prepare the client immediately for emergent surgical debridement and amputation of non-viable gangrenous tissue",
+            "text": "Prepare the client for emergent surgical debridement by verifying informed consent documentation and initiating preoperative checklists",
             "correct": true
           },
           {
-            "text": "Insert an indwelling urinary catheter to monitor hourly urine output as an indicator of renal perfusion",
+            "text": "Insert an indwelling urinary catheter to monitor hourly urine output as an indicator of renal end-organ perfusion",
             "correct": true
           },
           {
@@ -246,12 +246,12 @@
             "correct": false
           },
           {
-            "text": "Submerge the gangrenous extremity in a whirlpool bath to soften and soak the crusts",
+            "text": "Submerge the gangrenous extremity in a warm water whirlpool bath to soften and soak necrotic crusts",
             "correct": false
           }
         ],
-        "preamble": "The emergency department physician and vascular surgery team evaluate Walter for immediate resuscitation and operative intervention.",
-        "explanation": "Gas/wet gangrene with septic shock is a surgical and medical emergency requiring immediate simultaneous actions: (1) Aggressive crystalloid fluid resuscitation restores effective circulating volume and combats hypoperfusion lactic acidosis; (2) Immediate broad-spectrum intravenous antimicrobials with anaerobic coverage stop bacterial proliferation and toxin production; (3) Urgent surgical debridement or amputation is the definitive life-saving intervention because antibiotics cannot penetrate dead, avascular necrotic tissue; and (4) Strict hourly urine output monitoring assesses renal end-organ perfusion. In contrast, tight compression bandages worsen tissue ischemia by further restricting arterial inflow, and heating pads cause thermal injury to neuropathic skin. Soaking in water macerates tissue, spreads bacterial infection, and is strictly contraindicated."
+        "preamble": "The nurse plans emergency resuscitation, stabilization, and preoperative preparation for urgent operative debridement.",
+        "explanation": "Gas/wet gangrene with septic shock is a surgical and medical emergency requiring immediate nursing actions: (1) Administering prescribed crystalloid fluid resuscitation restores effective circulating volume and combats hypoperfusion lactic acidosis; (2) Administering prescribed broad-spectrum intravenous antimicrobials stops bacterial proliferation and toxin production; (3) Preparing the client for surgical debridement/amputation ensures prompt source control, as antimicrobials cannot penetrate avascular dead tissue; and (4) Strict hourly urine output monitoring assesses renal perfusion. In contrast, tight compression bandages worsen tissue ischemia by further restricting arterial inflow, and heating pads cause thermal injury to neuropathic skin. Soaking in water macerates tissue, accelerates bacterial multiplication, and is strictly contraindicated."
       },
       "leftContent": {
         "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration.",
@@ -290,14 +290,14 @@
               ]
             },
             {
-              "text": "Monitor closely for reperfusion injury manifestations (oxygen free radicals and calcium influx causing myocardial or renal damage) following revascularization",
+              "text": "Monitor closely for manifestations of reperfusion injury (such as cardiac dysrhythmias or acute oliguria) following surgical revascularization",
               "correctIndex": 0,
               "correctIndices": [
                 0
               ]
             },
             {
-              "text": "Manage hyperglycemia using an intravenous regular insulin protocol targeting blood glucose 140–180 mg/dL",
+              "text": "Manage blood glucose levels using an intravenous regular insulin protocol targeting 140–180 mg/dL",
               "correctIndex": 0,
               "correctIndices": [
                 0
@@ -311,7 +311,7 @@
               ]
             },
             {
-              "text": "Administer high-dose external beam radiation therapy to the surgical stump",
+              "text": "Prepare the client for external beam radiation therapy to the surgical site",
               "correctIndex": 1,
               "correctIndices": [
                 1
@@ -342,7 +342,7 @@
     {
       "step": 6,
       "question": {
-        "stem": "Complete the following clinical summary and evaluation statement by choosing from the lists of options.",
+        "stem": "The nurse is evaluating Walter's recovery on postoperative day 4. Complete the following sentence by choosing from the lists of options.",
         "type": "dropdown_cloze",
         "cloze": {
           "text": "Following surgical source control of Walter's infected gangrene, his WBC count normalized to 8,400 /mm3 and lactate decreased to 1.2 mmol/L, confirming eradication of [[drop0]]. Because necrotic cell death causes plasma membrane rupture and enzymatic leakage, it triggers [[drop1]], creating extensive collateral tissue destruction. In contrast, apoptosis eliminates unwanted or damaged cells through programmed cell condensation and fragmentation into apoptotic bodies, which are cleanly ingested by [[drop2]] without producing an inflammatory reaction.",
