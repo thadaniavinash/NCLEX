@@ -3997,5 +3997,1284 @@
     "course": "",
     "unit": "Others",
     "topic": "Others"
+  },
+  {
+    "id": "case_1782360000001",
+    "title": "NURS 1017 Unit 2 Case Study 1",
+    "topic": "Unit 2 (Cellular Basis of Disease)",
+    "unit": "Unit 2 (Cellular Basis of Disease)",
+    "disorder": "Unit 2 (Cellular Basis of Disease)",
+    "course": "NURS 1017",
+    "description": "58-year-old male with chronic GERD, smoking, and hypertension presenting with Barrett's metaplasia, bronchial squamous metaplasia, and left ventricular hypertrophy.",
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse reviews Arthur's history, physical examination, and diagnostic reports. Which of the following findings reflect <b>cellular adaptation</b> to chronic stress or increased workload? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Distal esophageal mucosa displaying conversion of stratified squamous epithelium to columnar epithelium with goblet cells",
+              "correct": true
+            },
+            {
+              "text": "Bronchial biopsy demonstrating replacement of ciliated pseudostratified columnar epithelium by stratified squamous epithelium",
+              "correct": true
+            },
+            {
+              "text": "Echocardiogram demonstrating left ventricular wall thickening of 1.5 cm in response to chronic hypertension",
+              "correct": true
+            },
+            {
+              "text": "Historical reduction in right calf muscle circumference following 10 weeks of non-weight-bearing cast immobilization",
+              "correct": true
+            },
+            {
+              "text": "Acute temperature elevation of 39.5 °C with purulent sputum and marked leukocytosis",
+              "correct": false
+            },
+            {
+              "text": "Profuse arterial hypotension with cardiogenic shock and pulmonary edema",
+              "correct": false
+            }
+          ],
+          "preamble": "",
+          "explanation": "Cellular adaptations are reversible changes in cell size, number, phenotype, metabolic activity, or organization in response to changes in their environment. In this client, adaptations include: (1) Barrett's esophagus—glandular metaplasia of esophageal stratified squamous epithelium to columnar epithelium to withstand gastric acid; (2) Squamous metaplasia of respiratory pseudostratified ciliated columnar epithelium to stratified squamous epithelium due to chronic cigarette smoke; (3) Left ventricular hypertrophy—increased cardiomyocyte size in response to increased hemodynamic afterload; and (4) Disuse atrophy—shrinkage of skeletal muscle cells from decreased functional demand during casting. High fever with purulent sputum indicates acute infection/inflammation, while shock indicates cardiovascular collapse, neither of which represents an adaptive cellular response."
+        },
+        "leftContent": {
+          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for comprehensive evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0800:</span><span class=\"nurse-note-text\">Arthur Vance, a 58-year-old male, presents for evaluation of persistent, daily retrosternal burning (heartburn) and acidic regurgitation for over 12 years. Over the past 18 months, symptoms have intensified despite self-medicating with over-the-counter antacids; he reports occasional difficulty swallowing tough meats. He has smoked 1 pack of cigarettes daily for 38 years (~38 pack-years) and reports a chronic morning cough productive of tenacious grey-white mucus. He notes progressive exertional shortness of breath when climbing more than one flight of stairs. Medical history: essential hypertension diagnosed 7 years ago, poorly adherent to prescribed medications; denies history of myocardial infarction or stroke. Orthopedic history: sustained a right tibial fracture 4 years ago requiring 10 weeks of rigid cast immobilization; he recalls his right calf was visibly shrunken, weak, and thin compared to the left upon cast removal, which gradually improved with physical therapy rehabilitation.</span></p>"
+            },
+            {
+              "id": "vs_1",
+              "title": "Vital Signs",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Vital Sign</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Outpatient Clinic (Today, 0800)</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Temperature</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.8 °C (oral)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.5 – 37.5 °C</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Heart Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">82 bpm, regular</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">60 – 100 bpm</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Respiratory Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">18 breaths/min</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">12 – 20 breaths/min</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Blood Pressure</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">158/94 mmHg</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">&lt; 120/80 mmHg</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Oxygen Saturation (SpO<sub>2</sub>)</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">95% on room air</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">95 – 100%</td></tr></tbody></table>"
+            }
+          ]
+        }
+      },
+      {
+        "step": 2,
+        "question": {
+          "stem": "The nurse examines the newly uploaded diagnostic reports. For each clinical and pathological finding, click to specify the corresponding <b>cellular adaptation or tissue alteration</b>.",
+          "type": "matrix_mc",
+          "matrix": {
+            "firstColumnHeader": "Clinical & Pathological Finding",
+            "columns": [
+              "Atrophy",
+              "Hypertrophy",
+              "Metaplasia",
+              "Dysplasia"
+            ],
+            "rows": [
+              {
+                "text": "Left ventricular myocardial wall thickness of 1.5 cm in response to chronic elevated systemic vascular resistance",
+                "correctIndex": 1,
+                "correctIndices": [
+                  1
+                ]
+              },
+              {
+                "text": "Conversion of distal esophageal stratified squamous epithelium to mucin-secreting columnar epithelium (Barrett's mucosa)",
+                "correctIndex": 2,
+                "correctIndices": [
+                  2
+                ]
+              },
+              {
+                "text": "Shrinkage in skeletal muscle cell diameter and loss of mass following prolonged limb immobilization in a cast",
+                "correctIndex": 0,
+                "correctIndices": [
+                  0
+                ]
+              },
+              {
+                "text": "Replacement of ciliated pseudostratified columnar epithelium with stratified squamous epithelium in the main bronchi",
+                "correctIndex": 2,
+                "correctIndices": [
+                  2
+                ]
+              },
+              {
+                "text": "Marked cellular pleomorphism, nuclear enlargement, hyperchromatism, and disordered stratification in the mucosal biopsy",
+                "correctIndex": 3,
+                "correctIndices": [
+                  3
+                ]
+              }
+            ]
+          },
+          "options": [],
+          "preamble": "Endoscopy, echocardiography, and biopsy pathology reports have been added to the client's medical chart (see Diagnostic Reports tab).",
+          "explanation": "1. Hypertrophy: Increase in individual cell size resulting in overall organ enlargement, typical in non-dividing cells like cardiac myocytes adapting to chronic pressure overload (hypertension).\n2. Metaplasia: Reversible transformation of one differentiated adult cell type into another differentiated cell type that better withstands a noxious microenvironment (e.g., columnar epithelium replacing squamous in the esophagus, or squamous replacing ciliated columnar in bronchial airways).\n3. Atrophy: Reduction in cell size and functional capacity due to decreased workload/disuse, loss of innervation, or diminished blood supply.\n4. Dysplasia: Disordered growth and maturation characterized by variation in cellular size and shape, hyperchromatic enlarged nuclei, and architectural disarray; it is a pre-malignant alteration that may progress to neoplasia."
+        },
+        "leftContent": {
+          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for comprehensive evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0800:</span><span class=\"nurse-note-text\">Arthur Vance, a 58-year-old male, presents for evaluation of persistent, daily retrosternal burning (heartburn) and acidic regurgitation for over 12 years. Over the past 18 months, symptoms have intensified despite self-medicating with over-the-counter antacids; he reports occasional difficulty swallowing tough meats. He has smoked 1 pack of cigarettes daily for 38 years (~38 pack-years) and reports a chronic morning cough productive of tenacious grey-white mucus. He notes progressive exertional shortness of breath when climbing more than one flight of stairs. Medical history: essential hypertension diagnosed 7 years ago, poorly adherent to prescribed medications; denies history of myocardial infarction or stroke. Orthopedic history: sustained a right tibial fracture 4 years ago requiring 10 weeks of rigid cast immobilization; he recalls his right calf was visibly shrunken, weak, and thin compared to the left upon cast removal, which gradually improved with physical therapy rehabilitation.</span></p>"
+            },
+            {
+              "id": "diag_1",
+              "title": "Diagnostic Reports",
+              "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Upper Endoscopy (EGD) & Mucosal Biopsy:</b><br>Esophagitis with salmon-pink mucosal tongues extending 3.5 cm circumferentially above the gastroesophageal junction. Biopsy confirms Barrett's esophagus with intestinal metaplasia (stratified squamous epithelium replaced by glandular columnar epithelium containing goblet cells). Focal areas demonstrate low-grade dysplasia with cellular pleomorphism, nuclear enlargement, and hyperchromatism, without invasion through the basement membrane.</p><p style=\"margin-top:10px;\"><b>Bronchoscopy & Endobronchial Biopsy:</b><br>Right and left mainstem bronchi demonstrate erythematous, friable mucosa with loss of glistening ciliated surface. Biopsy reveals squamous metaplasia: respiratory ciliated pseudostratified columnar epithelium has been replaced by multi-layered stratified squamous epithelium.</p><p style=\"margin-top:10px;\"><b>Transthoracic Echocardiogram:</b><br>Concentric left ventricular hypertrophy (LVH). Interventricular septal wall thickness: 1.5 cm (reference: 0.6–1.1 cm). Left ventricular posterior wall thickness: 1.4 cm (reference: 0.6–1.1 cm). Estimated ejection fraction: 58%. Grade I diastolic dysfunction consistent with chronic systemic arterial hypertension.</p></div>"
+            }
+          ]
+        }
+      },
+      {
+        "step": 3,
+        "question": {
+          "stem": "Complete the following clinical statement by choosing from the lists of options.",
+          "type": "dropdown_cloze",
+          "cloze": {
+            "text": "Metaplasia is defined as the [[drop0]] conversion of one differentiated cell type to another in response to chronic persistent injury. In the client's airways, replacement of ciliated columnar cells with stratified squamous epithelium protects against smoke but results in loss of [[drop1]]. If the chronic noxious irritation is not removed, the tissue can evolve into [[drop2]], which is characterized by disordered maturation and cellular pleomorphism. In severe cases, progression to autonomous malignant tissue with complete loss of cellular differentiation is termed [[drop3]].",
+            "dropdowns": [
+              {
+                "placeholder": "Select...",
+                "options": [
+                  {
+                    "text": "reversible",
+                    "correct": true
+                  },
+                  {
+                    "text": "irreversible",
+                    "correct": false
+                  },
+                  {
+                    "text": "malignant",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "placeholder": "Select...",
+                "options": [
+                  {
+                    "text": "mucociliary clearance and protection",
+                    "correct": true
+                  },
+                  {
+                    "text": "cardiac contractility",
+                    "correct": false
+                  },
+                  {
+                    "text": "alveolar surfactant production",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "placeholder": "Select...",
+                "options": [
+                  {
+                    "text": "dysplasia",
+                    "correct": true
+                  },
+                  {
+                    "text": "atrophy",
+                    "correct": false
+                  },
+                  {
+                    "text": "hyperplasia",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "placeholder": "Select...",
+                "options": [
+                  {
+                    "text": "anaplasia",
+                    "correct": true
+                  },
+                  {
+                    "text": "hypertrophy",
+                    "correct": false
+                  },
+                  {
+                    "text": "metaplasia",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          },
+          "options": [],
+          "preamble": "The nurse analyzes the pathophysiology underlying Arthur's epithelial transformations and long-term oncology risks.",
+          "explanation": "Metaplasia is fundamentally a reversible adaptive response where one differentiated cell type (e.g., ciliated columnar in bronchial airways, or stratified squamous in esophagus) is substituted by another differentiated cell type that better tolerates the chronic injury. However, in the lungs, squamous epithelium lacks cilia and mucus-producing goblet cells, eliminating vital mucociliary clearance and predisposing to chronic mucous plugging and recurrent infections. If the noxious stimulus persists, metaplasia can progress to dysplasia ('disordered growth'), characterized by loss of architectural uniformity and cellular pleomorphism—a recognized pre-cancerous condition. When malignant transformation occurs and cells completely lose cellular differentiation, orientation, and specialized function, it is termed anaplasia, the hallmark of malignant neoplasms."
+        },
+        "leftContent": {
+          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for comprehensive evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0800:</span><span class=\"nurse-note-text\">Arthur Vance, a 58-year-old male, presents for evaluation of persistent, daily retrosternal burning (heartburn) and acidic regurgitation for over 12 years. Over the past 18 months, symptoms have intensified despite self-medicating with over-the-counter antacids; he reports occasional difficulty swallowing tough meats. He has smoked 1 pack of cigarettes daily for 38 years (~38 pack-years) and reports a chronic morning cough productive of tenacious grey-white mucus. He notes progressive exertional shortness of breath when climbing more than one flight of stairs. Medical history: essential hypertension diagnosed 7 years ago, poorly adherent to prescribed medications; denies history of myocardial infarction or stroke. Orthopedic history: sustained a right tibial fracture 4 years ago requiring 10 weeks of rigid cast immobilization; he recalls his right calf was visibly shrunken, weak, and thin compared to the left upon cast removal, which gradually improved with physical therapy rehabilitation.</span></p>"
+            },
+            {
+              "id": "diag_1",
+              "title": "Diagnostic Reports",
+              "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Upper Endoscopy (EGD) & Mucosal Biopsy:</b><br>Esophagitis with salmon-pink mucosal tongues extending 3.5 cm circumferentially above the gastroesophageal junction. Biopsy confirms Barrett's esophagus with intestinal metaplasia (stratified squamous epithelium replaced by glandular columnar epithelium containing goblet cells). Focal areas demonstrate low-grade dysplasia with cellular pleomorphism, nuclear enlargement, and hyperchromatism, without invasion through the basement membrane.</p><p style=\"margin-top:10px;\"><b>Bronchoscopy & Endobronchial Biopsy:</b><br>Right and left mainstem bronchi demonstrate erythematous, friable mucosa with loss of glistening ciliated surface. Biopsy reveals squamous metaplasia: respiratory ciliated pseudostratified columnar epithelium has been replaced by multi-layered stratified squamous epithelium.</p><p style=\"margin-top:10px;\"><b>Transthoracic Echocardiogram:</b><br>Concentric left ventricular hypertrophy (LVH). Interventricular septal wall thickness: 1.5 cm (reference: 0.6–1.1 cm). Left ventricular posterior wall thickness: 1.4 cm (reference: 0.6–1.1 cm). Estimated ejection fraction: 58%. Grade I diastolic dysfunction consistent with chronic systemic arterial hypertension.</p></div>"
+            }
+          ]
+        }
+      },
+      {
+        "step": 4,
+        "question": {
+          "stem": "The multidisciplinary team is formulating an evidence-based plan of care for Arthur. Which of the following interventions should the nurse anticipate to eliminate chronic cellular stress, promote tissue recovery, and prevent progression to neoplasia? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Enroll client in a comprehensive smoking cessation program with behavioral support and pharmacotherapy",
+              "correct": true
+            },
+            {
+              "text": "Initiate daily prescription proton pump inhibitor (PPI) therapy to suppress gastric acid production",
+              "correct": true
+            },
+            {
+              "text": "Educate client on anti-reflux lifestyle measures, including elevating the head of the bed 6 inches and avoiding meals within 3 hours of sleep",
+              "correct": true
+            },
+            {
+              "text": "Prescribe an antihypertensive regimen (e.g., ACE inhibitor or ARB) to control blood pressure and promote regression of left ventricular hypertrophy",
+              "correct": true
+            },
+            {
+              "text": "Establish a scheduled surveillance upper endoscopy protocol every 6 to 12 months with four-quadrant biopsies",
+              "correct": true
+            },
+            {
+              "text": "Refer client for immediate surgical esophagectomy with neo-adjuvant radiation therapy",
+              "correct": false
+            }
+          ],
+          "preamble": "The healthcare team meets with Arthur to discuss treatment strategies to arrest and reverse his cellular adaptations and pre-neoplastic changes.",
+          "explanation": "Cellular adaptations and low-grade dysplasia can halt or regress when the initiating noxious stimulus is removed: (1) Smoking cessation removes chronic toxic hydrocarbons and thermal injury, allowing respiratory epithelium to regenerate ciliated columnar morphology; (2) PPI therapy profoundly decreases acid and pepsin exposure to the esophageal mucosa; (3) Anti-reflux lifestyle adjustments mechanically minimize retrograde acid flow; (4) Antihypertensive therapy reduces systemic cardiac afterload, arresting or regressing pathological left ventricular hypertrophy; (5) Regular surveillance endoscopy monitors Barrett's mucosa for progression to high-grade dysplasia or adenocarcinoma. Radical esophagectomy with radiation is an aggressive surgical intervention reserved for invasive esophageal carcinoma, not low-grade pre-invasive dysplasia."
+        },
+        "leftContent": {
+          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for comprehensive evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0800:</span><span class=\"nurse-note-text\">Arthur Vance, a 58-year-old male, presents for evaluation of persistent, daily retrosternal burning (heartburn) and acidic regurgitation for over 12 years. Over the past 18 months, symptoms have intensified despite self-medicating with over-the-counter antacids; he reports occasional difficulty swallowing tough meats. He has smoked 1 pack of cigarettes daily for 38 years (~38 pack-years) and reports a chronic morning cough productive of tenacious grey-white mucus. He notes progressive exertional shortness of breath when climbing more than one flight of stairs. Medical history: essential hypertension diagnosed 7 years ago, poorly adherent to prescribed medications; denies history of myocardial infarction or stroke. Orthopedic history: sustained a right tibial fracture 4 years ago requiring 10 weeks of rigid cast immobilization; he recalls his right calf was visibly shrunken, weak, and thin compared to the left upon cast removal, which gradually improved with physical therapy rehabilitation.</span></p>"
+            },
+            {
+              "id": "diag_1",
+              "title": "Diagnostic Reports",
+              "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Upper Endoscopy (EGD) & Mucosal Biopsy:</b><br>Esophagitis with salmon-pink mucosal tongues extending 3.5 cm circumferentially above the gastroesophageal junction. Biopsy confirms Barrett's esophagus with intestinal metaplasia (stratified squamous epithelium replaced by glandular columnar epithelium containing goblet cells). Focal areas demonstrate low-grade dysplasia with cellular pleomorphism, nuclear enlargement, and hyperchromatism, without invasion through the basement membrane.</p><p style=\"margin-top:10px;\"><b>Bronchoscopy & Endobronchial Biopsy:</b><br>Right and left mainstem bronchi demonstrate erythematous, friable mucosa with loss of glistening ciliated surface. Biopsy reveals squamous metaplasia: respiratory ciliated pseudostratified columnar epithelium has been replaced by multi-layered stratified squamous epithelium.</p><p style=\"margin-top:10px;\"><b>Transthoracic Echocardiogram:</b><br>Concentric left ventricular hypertrophy (LVH). Interventricular septal wall thickness: 1.5 cm (reference: 0.6–1.1 cm). Left ventricular posterior wall thickness: 1.4 cm (reference: 0.6–1.1 cm). Estimated ejection fraction: 58%. Grade I diastolic dysfunction consistent with chronic systemic arterial hypertension.</p></div>"
+            }
+          ]
+        }
+      },
+      {
+        "step": 5,
+        "question": {
+          "stem": "The nurse provides education to Arthur regarding his disease processes and lifestyle interventions. For each client statement or recommended action, click to specify whether it is <b>Indicated</b>, <b>Non-Essential</b>, or <b>Contraindicated</b>.",
+          "type": "matrix_mc",
+          "matrix": {
+            "firstColumnHeader": "Nursing Action or Client Statement",
+            "columns": [
+              "Indicated",
+              "Non-Essential",
+              "Contraindicated"
+            ],
+            "rows": [
+              {
+                "text": "Educate client that he can discontinue prescribed proton pump inhibitor once his heartburn symptoms resolve for 3 consecutive days",
+                "correctIndex": 2,
+                "correctIndices": [
+                  2
+                ]
+              },
+              {
+                "text": "Instruct client to immediately report 'red flag' symptoms such as progressive solid food dysphagia, unintentional weight loss, or hematemesis",
+                "correctIndex": 0,
+                "correctIndices": [
+                  0
+                ]
+              },
+              {
+                "text": "Advise client to use extra firm pillows or a bed wedge to elevate his upper body 15 to 20 cm during nocturnal sleep",
+                "correctIndex": 0,
+                "correctIndices": [
+                  0
+                ]
+              },
+              {
+                "text": "Order routine weekly chest computed tomography (CT) scans to screen for lung nodules",
+                "correctIndex": 1,
+                "correctIndices": [
+                  1
+                ]
+              },
+              {
+                "text": "Reassure the client that because metaplasia is an adaptive response, it carries zero risk of malignant transformation",
+                "correctIndex": 2,
+                "correctIndices": [
+                  2
+                ]
+              }
+            ]
+          },
+          "options": [],
+          "preamble": "The nurse conducts an in-depth patient education and discharge counseling session with Arthur.",
+          "explanation": "1. Contraindicated: Acid suppression in Barrett's esophagus must be maintained continuously, not stopped when symptoms subside, because chemical acid exposure continues to cause DNA damage even if nerve endings are desensitized.\n2. Indicated: Progressive dysphagia, weight loss, or gastrointestinal bleeding are critical red flags indicating possible progression to esophageal adenocarcinoma or stricture.\n3. Indicated: Bed elevation uses gravity to reduce nocturnal gastroesophageal acid pooling.\n4. Non-Essential: Weekly CT scans deliver unnecessary radiation; annual low-dose chest CT is the standard guideline for high-risk smokers.\n5. Contraindicated: While metaplasia is initially protective and adaptive, persistent irritation causes genetic mutations leading to dysplasia and invasive neoplasia (adenocarcinoma of the esophagus and squamous cell carcinoma of the bronchus)."
+        },
+        "leftContent": {
+          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for comprehensive evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0800:</span><span class=\"nurse-note-text\">Arthur Vance, a 58-year-old male, presents for evaluation of persistent, daily retrosternal burning (heartburn) and acidic regurgitation for over 12 years. Over the past 18 months, symptoms have intensified despite self-medicating with over-the-counter antacids; he reports occasional difficulty swallowing tough meats. He has smoked 1 pack of cigarettes daily for 38 years (~38 pack-years) and reports a chronic morning cough productive of tenacious grey-white mucus. He notes progressive exertional shortness of breath when climbing more than one flight of stairs. Medical history: essential hypertension diagnosed 7 years ago, poorly adherent to prescribed medications; denies history of myocardial infarction or stroke. Orthopedic history: sustained a right tibial fracture 4 years ago requiring 10 weeks of rigid cast immobilization; he recalls his right calf was visibly shrunken, weak, and thin compared to the left upon cast removal, which gradually improved with physical therapy rehabilitation.</span></p>"
+            },
+            {
+              "id": "diag_1",
+              "title": "Diagnostic Reports",
+              "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Upper Endoscopy (EGD) & Mucosal Biopsy:</b><br>Esophagitis with salmon-pink mucosal tongues extending 3.5 cm circumferentially above the gastroesophageal junction. Biopsy confirms Barrett's esophagus with intestinal metaplasia (stratified squamous epithelium replaced by glandular columnar epithelium containing goblet cells). Focal areas demonstrate low-grade dysplasia with cellular pleomorphism, nuclear enlargement, and hyperchromatism, without invasion through the basement membrane.</p><p style=\"margin-top:10px;\"><b>Bronchoscopy & Endobronchial Biopsy:</b><br>Right and left mainstem bronchi demonstrate erythematous, friable mucosa with loss of glistening ciliated surface. Biopsy reveals squamous metaplasia: respiratory ciliated pseudostratified columnar epithelium has been replaced by multi-layered stratified squamous epithelium.</p><p style=\"margin-top:10px;\"><b>Transthoracic Echocardiogram:</b><br>Concentric left ventricular hypertrophy (LVH). Interventricular septal wall thickness: 1.5 cm (reference: 0.6–1.1 cm). Left ventricular posterior wall thickness: 1.4 cm (reference: 0.6–1.1 cm). Estimated ejection fraction: 58%. Grade I diastolic dysfunction consistent with chronic systemic arterial hypertension.</p></div>"
+            }
+          ]
+        }
+      },
+      {
+        "step": 6,
+        "question": {
+          "stem": "Complete the following evaluation statement by choosing from the lists of options.",
+          "type": "dropdown_cloze",
+          "cloze": {
+            "text": "At Arthur's 12-month follow-up, successful smoking cessation has allowed his bronchial mucosa to reverse squamous metaplasia and regenerate normal [[drop0]] epithelium. Strict blood pressure control has arrested further progression of [[drop1]]. A repeat endoscopy revealing regression of low-grade dysplasia and stabilization of mucosal architecture confirms that early cellular adaptations and dysplasia are [[drop2]] when the initiating chronic stressor is eliminated.",
+            "dropdowns": [
+              {
+                "placeholder": "Select...",
+                "options": [
+                  {
+                    "text": "pseudostratified ciliated columnar",
+                    "correct": true
+                  },
+                  {
+                    "text": "stratified squamous",
+                    "correct": false
+                  },
+                  {
+                    "text": "transitional",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "placeholder": "Select...",
+                "options": [
+                  {
+                    "text": "left ventricular hypertrophy",
+                    "correct": true
+                  },
+                  {
+                    "text": "cerebral atrophy",
+                    "correct": false
+                  },
+                  {
+                    "text": "prostatic hyperplasia",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "placeholder": "Select...",
+                "options": [
+                  {
+                    "text": "reversible",
+                    "correct": true
+                  },
+                  {
+                    "text": "inevitably malignant",
+                    "correct": false
+                  },
+                  {
+                    "text": "permanent and irreversible",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          },
+          "options": [],
+          "preamble": "At the 12-month follow-up visit, Arthur reports he has quit smoking completely for 10 months, adheres to his prescribed ramipril and esomeprazole, and participates in regular aerobic walking.",
+          "explanation": "The removal of noxious stimuli allows tissues with dividing stem cell populations to reverse adaptive metaplasia and early low-grade dysplasia. In the respiratory tract, differentiated pseudostratified ciliated columnar epithelium is regenerated by basal stem cells once tobacco smoke toxins are eliminated. Similarly, lowering systemic blood pressure decreases myocardial wall tension, reversing hemodynamic overload and halting left ventricular hypertrophy. This clinical case illustrates the fundamental pathophysiological principle: cellular adaptation and mild dysplasia are reversible upon removal of environmental stressors, preventing progression to irreversible malignant neoplasia."
+        },
+        "leftContent": {
+          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for comprehensive evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0800:</span><span class=\"nurse-note-text\">Arthur Vance, a 58-year-old male, presents for evaluation of persistent, daily retrosternal burning (heartburn) and acidic regurgitation for over 12 years. Over the past 18 months, symptoms have intensified despite self-medicating with over-the-counter antacids; he reports occasional difficulty swallowing tough meats. He has smoked 1 pack of cigarettes daily for 38 years (~38 pack-years) and reports a chronic morning cough productive of tenacious grey-white mucus. He notes progressive exertional shortness of breath when climbing more than one flight of stairs. Medical history: essential hypertension diagnosed 7 years ago, poorly adherent to prescribed medications; denies history of myocardial infarction or stroke. Orthopedic history: sustained a right tibial fracture 4 years ago requiring 10 weeks of rigid cast immobilization; he recalls his right calf was visibly shrunken, weak, and thin compared to the left upon cast removal, which gradually improved with physical therapy rehabilitation.</span></p><p class=\"nurse-note-row\"><span class=\"nurse-note-time\">12-Month Follow-Up:</span><span class=\"nurse-note-text\">Arthur returns for annual review. He has achieved 10 months of complete smoking cessation confirmed by exhaled carbon monoxide testing. Blood pressure today is 124/78 mmHg on ramipril 10 mg daily. Reflux symptoms have completely resolved on esomeprazole 40 mg daily. Repeat surveillance EGD with targeted biopsies reveals intact mucosal lining without dysplastic progression. Repeat spirometry shows improved FEV1.</span></p>"
+            },
+            {
+              "id": "diag_1",
+              "title": "Diagnostic Reports",
+              "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Upper Endoscopy (EGD) & Mucosal Biopsy:</b><br>Esophagitis with salmon-pink mucosal tongues extending 3.5 cm circumferentially above the gastroesophageal junction. Biopsy confirms Barrett's esophagus with intestinal metaplasia (stratified squamous epithelium replaced by glandular columnar epithelium containing goblet cells). Focal areas demonstrate low-grade dysplasia with cellular pleomorphism, nuclear enlargement, and hyperchromatism, without invasion through the basement membrane.</p><p style=\"margin-top:10px;\"><b>Bronchoscopy & Endobronchial Biopsy:</b><br>Right and left mainstem bronchi demonstrate erythematous, friable mucosa with loss of glistening ciliated surface. Biopsy reveals squamous metaplasia: respiratory ciliated pseudostratified columnar epithelium has been replaced by multi-layered stratified squamous epithelium.</p><p style=\"margin-top:10px;\"><b>Transthoracic Echocardiogram:</b><br>Concentric left ventricular hypertrophy (LVH). Interventricular septal wall thickness: 1.5 cm (reference: 0.6–1.1 cm). Left ventricular posterior wall thickness: 1.4 cm (reference: 0.6–1.1 cm). Estimated ejection fraction: 58%. Grade I diastolic dysfunction consistent with chronic systemic arterial hypertension.</p></div>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case_1782360000002",
+    "title": "NURS 1017 Unit 2 Case Study 2",
+    "topic": "Unit 2 (Cellular Basis of Disease)",
+    "unit": "Unit 2 (Cellular Basis of Disease)",
+    "disorder": "Unit 2 (Cellular Basis of Disease)",
+    "course": "NURS 1017",
+    "description": "46-year-old female with chronic alcohol abuse and malnutrition presenting with severe hepatic steatosis, hydropic swelling, and proteasome stress.",
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse reviews Elena's clinical presentation, laboratory results, and liver biopsy findings. Which of the following findings are characteristic features of <b>reversible cellular injury</b> and <b>intracellular accumulations</b>? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Hepatocyte hydropic swelling with expanded, pale cytoplasm and cellular enlargement (ballooning degeneration)",
+              "correct": true
+            },
+            {
+              "text": "Intracellular accumulation of macrovesicular and microvesicular lipid vacuoles within hepatocytes",
+              "correct": true
+            },
+            {
+              "text": "Dilation of the endoplasmic reticulum with ribosome detachment on electron microscopy",
+              "correct": true
+            },
+            {
+              "text": "Preservation of hepatocyte plasma membrane and nuclear envelope integrity",
+              "correct": true
+            },
+            {
+              "text": "Extensive nuclear karyorrhexis, chromatin disintegration, and plasma membrane lysis",
+              "correct": false
+            },
+            {
+              "text": "Formation of chalky white saponified fat deposits embedded in surrounding tissue",
+              "correct": false
+            }
+          ],
+          "preamble": "",
+          "explanation": "Reversible cellular injury is characterized by: (1) Hydropic swelling—cellular volume expansion caused by ATP depletion and failure of the energy-dependent Na+/K+-ATPase exchange pump, causing intracellular sodium and water accumulation; (2) Intracellular accumulations—in this case, hepatic steatosis (triglyceride accumulation) resulting from alcohol-induced impairment of mitochondrial lipid metabolism; and (3) Ultrastructural changes including dilated endoplasmic reticulum, detachment/disaggregation of ribosomes, and mitochondrial swelling. Crucially, the cell's plasma membrane and nuclear structure remain intact. In contrast, nuclear dissolution (karyorrhexis, karyolysis) and membrane lysis indicate irreversible necrotic cell death. Saponified chalky white deposits are specific to fat necrosis (such as in acute pancreatitis)."
+        },
+        "leftContent": {
+          "intro": "The medical-surgical nurse is admitting Elena Rostova, a 46-year-old female brought to the hospital by her sister due to worsening abdominal distension, profound fatigue, right upper quadrant tenderness, and jaundice.",
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0900:</span><span class=\"nurse-note-text\">Elena Rostova, a 46-year-old female, is admitted accompanied by her sister. Her sister reports that Elena has consumed 1 to 2 bottles of wine daily for the past 12 years, with intake escalating over the past 6 months following acute personal stress. For the past 4 weeks, her nutritional intake has been severely compromised, subsisting almost entirely on alcohol and processed crackers. Over the past 10 days, she developed progressive right upper quadrant heaviness, scleral icterus, dark amber urine, and generalized weakness. Medical history: no known history of viral hepatitis, biliary disease, or diabetes. Medications: none; denies taking acetaminophen, prescription medications, or intravenous drugs. Physical examination: alert but slow to respond; sclerae and sublingual mucosa visibly jaundiced; firm, smooth, tender hepatomegaly palpable 4 cm below the right costal margin. No asterixis or peripheral edema noted.</span></p>"
+            },
+            {
+              "id": "vs_1",
+              "title": "Vital Signs",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Parameter</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Admission (0900)</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Temperature</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">37.1 °C (oral)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.5 – 37.5 °C</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Heart Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">96 bpm, regular</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">60 – 100 bpm</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Respiratory Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">18 breaths/min</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">12 – 20 breaths/min</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Blood Pressure</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">108/68 mmHg</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">90/60 – 120/80 mmHg</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Oxygen Saturation</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">98% on ambient room air</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">95 – 100%</td></tr></tbody></table>"
+            }
+          ]
+        }
+      },
+      {
+        "step": 2,
+        "question": {
+          "stem": "The nurse analyzes the laboratory and liver biopsy reports. For each pathophysiological mechanism described below, click to match it with the correct <b>cellular alteration or repair pathway</b>.",
+          "type": "matrix_mc",
+          "matrix": {
+            "firstColumnHeader": "Pathophysiological Mechanism",
+            "columns": [
+              "Hydropic Swelling",
+              "Intracellular Lipid Accumulation",
+              "Chaperone Protein Refolding",
+              "Ubiquitin-Proteasome Pathway"
+            ],
+            "rows": [
+              {
+                "text": "Ethanol metabolite-induced ATP depletion impairs plasma membrane Na+/K+ pumps, causing cytosolic sodium accumulation and osmotic water influx",
+                "correctIndex": 0,
+                "correctIndices": [
+                  0
+                ]
+              },
+              {
+                "text": "Impairment of mitochondrial beta-oxidation and decreased apolipoprotein synthesis leading to triglyceride entrapment inside hepatocytes",
+                "correctIndex": 1,
+                "correctIndices": [
+                  1
+                ]
+              },
+              {
+                "text": "Heat-shock proteins bind to denatured or misfolded polypeptides to facilitate their return to correct 3D tertiary conformation",
+                "correctIndex": 2,
+                "correctIndices": [
+                  2
+                ]
+              },
+              {
+                "text": "Severely damaged, non-refoldable proteins are tagged with regulatory polypeptides for enzymatic digestion inside cylindrical protease complexes",
+                "correctIndex": 3,
+                "correctIndices": [
+                  3
+                ]
+              }
+            ]
+          },
+          "options": [],
+          "preamble": "Laboratory and pathology results are now available in the electronic medical record (see Laboratory & Pathology tab).",
+          "explanation": "1. Hydropic swelling (cloudy swelling) occurs when cellular injury impairs ATP production, disabling the Na+/K+-ATPase pump; sodium accumulates intracellularly and draws water into the cytoplasm by osmosis.\n2. Intracellular lipid accumulation (hepatic steatosis) in alcoholism results from excess NADH production, impaired mitochondrial beta-oxidation of fatty acids, increased lipogenesis, and decreased apolipoprotein synthesis needed for VLDL export.\n3. Chaperone proteins (heat-shock proteins like Hsp70) bind misfolded nascent proteins to prevent aggregation and assist in proper 3D refolding under cellular stress.\n4. Ubiquitin-proteasome pathway: When chaperone-assisted refolding fails, abnormal proteins are polyubiquitinated, targeting them to the 26S proteasome for degradation into reusable peptides."
+        },
+        "leftContent": {
+          "intro": "The medical-surgical nurse is admitting Elena Rostova, a 46-year-old female brought to the hospital by her sister due to worsening abdominal distension, profound fatigue, right upper quadrant tenderness, and jaundice.",
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0900:</span><span class=\"nurse-note-text\">Elena Rostova, a 46-year-old female, is admitted accompanied by her sister. Her sister reports that Elena has consumed 1 to 2 bottles of wine daily for the past 12 years, with intake escalating over the past 6 months following acute personal stress. For the past 4 weeks, her nutritional intake has been severely compromised, subsisting almost entirely on alcohol and processed crackers. Over the past 10 days, she developed progressive right upper quadrant heaviness, scleral icterus, dark amber urine, and generalized weakness. Medical history: no known history of viral hepatitis, biliary disease, or diabetes. Medications: none; denies taking acetaminophen, prescription medications, or intravenous drugs. Physical examination: alert but slow to respond; sclerae and sublingual mucosa visibly jaundiced; firm, smooth, tender hepatomegaly palpable 4 cm below the right costal margin. No asterixis or peripheral edema noted.</span></p>"
+            },
+            {
+              "id": "lab_1",
+              "title": "Laboratory & Pathology",
+              "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Serum Chemistry & Hepatic Enzymes:</b><br>• AST (Aspartate Aminotransferase): 284 U/L (Reference: 10–40 U/L)<br>• ALT (Alanine Aminotransferase): 142 U/L (Reference: 7–56 U/L) [AST:ALT ratio = 2.0]<br>• Total Bilirubin: 3.8 mg/dL (Reference: 0.2–1.2 mg/dL)<br>• Direct Bilirubin: 2.4 mg/dL (Reference: 0.0–0.3 mg/dL)<br>• Serum Albumin: 2.7 g/dL (Reference: 3.5–5.0 g/dL)<br>• Serum Lactic Acid: 2.4 mmol/L (Reference: 0.5–2.0 mmol/L)<br>• Serum Sodium: 132 mEq/L (Reference: 135–145 mEq/L)<br>• Blood Alcohol Concentration: 85 mg/dL</p><p style=\"margin-top:10px;\"><b>Liver Core Biopsy & Electron Microscopy:</b><br>Biopsy demonstrates diffuse macrovesicular and microvesicular hepatic steatosis with lipid droplets compressing hepatocyte nuclei. Pronounced hydropic swelling (ballooning degeneration) is evident throughout centrilobular zones. Electron microscopy reveals dilated cisternae of the endoplasmic reticulum with detached ribosomes, swollen mitochondria, and plasma membrane surface blebs. Nuclear chromatin is preserved without fragmentation, and the basal lamina is intact. Upregulated ubiquitin-proteasome intermediates and chaperone stress proteins are detected.</p></div>"
+            }
+          ]
+        }
+      },
+      {
+        "step": 3,
+        "question": {
+          "stem": "Complete the following clinical pathophysiological statement by choosing from the lists of options.",
+          "type": "dropdown_cloze",
+          "cloze": {
+            "text": "Hydropic swelling occurs when toxic injury and metabolic disruption deplete the cell's supply of [[drop0]], which directly paralyzes the plasma membrane [[drop1]]. As a consequence, sodium accumulates intracellularly and draws water into the cytoplasm by osmosis. Simultaneously, chronic alcohol intake disturbs intrahepatic lipid metabolism, resulting in the intracellular accumulation of [[drop2]]. Because the cell membranes and nuclear structures remain intact, these changes represent [[drop3]] cellular injury, which can completely resolve if alcohol exposure is terminated and nutritional support is provided.",
+            "dropdowns": [
+              {
+                "placeholder": "Select...",
+                "options": [
+                  {
+                    "text": "adenosine triphosphate (ATP)",
+                    "correct": true
+                  },
+                  {
+                    "text": "glycogen stores",
+                    "correct": false
+                  },
+                  {
+                    "text": "intracellular calcium",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "placeholder": "Select...",
+                "options": [
+                  {
+                    "text": "Na+/K+-ATPase exchange pump",
+                    "correct": true
+                  },
+                  {
+                    "text": "calcium efflux channel",
+                    "correct": false
+                  },
+                  {
+                    "text": "aquaporin water channel",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "placeholder": "Select...",
+                "options": [
+                  {
+                    "text": "triglycerides (fatty liver / steatosis)",
+                    "correct": true
+                  },
+                  {
+                    "text": "insoluble coal dust (anthracosis)",
+                    "correct": false
+                  },
+                  {
+                    "text": "tau protein tangles",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "placeholder": "Select...",
+                "options": [
+                  {
+                    "text": "reversible",
+                    "correct": true
+                  },
+                  {
+                    "text": "irreversible (necrotic)",
+                    "correct": false
+                  },
+                  {
+                    "text": "malignant neoplastic",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          },
+          "options": [],
+          "preamble": "The nurse correlates the client's cellular mechanisms with her reversible clinical state.",
+          "explanation": "Cellular volume regulation depends on three components: the plasma membrane, the Na+/K+-ATPase exchange pump, and an adequate supply of ATP. Alcohol metabolism produces toxic acetaldehyde and increases the NADH/NAD+ ratio, inhibiting mitochondrial ATP synthesis. Without ATP, the Na+/K+ pump fails; sodium ions accumulate inside the cell, creating an osmotic gradient that pulls water into the cytoplasm (hydropic swelling). At the same time, impaired fatty acid oxidation leads to triglyceride accumulation (steatosis). Because plasma membrane and nuclear structures remain intact, this represents reversible cellular injury. If the toxic insult ceases and cellular ATP production recovers, the pump resumes function, excess water is extruded, lipid droplets are metabolized, and hepatocyte architecture returns to normal."
+        },
+        "leftContent": {
+          "intro": "The medical-surgical nurse is admitting Elena Rostova, a 46-year-old female brought to the hospital by her sister due to worsening abdominal distension, profound fatigue, right upper quadrant tenderness, and jaundice.",
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0900:</span><span class=\"nurse-note-text\">Elena Rostova, a 46-year-old female, is admitted accompanied by her sister. Her sister reports that Elena has consumed 1 to 2 bottles of wine daily for the past 12 years, with intake escalating over the past 6 months following acute personal stress. For the past 4 weeks, her nutritional intake has been severely compromised, subsisting almost entirely on alcohol and processed crackers. Over the past 10 days, she developed progressive right upper quadrant heaviness, scleral icterus, dark amber urine, and generalized weakness. Medical history: no known history of viral hepatitis, biliary disease, or diabetes. Medications: none; denies taking acetaminophen, prescription medications, or intravenous drugs. Physical examination: alert but slow to respond; sclerae and sublingual mucosa visibly jaundiced; firm, smooth, tender hepatomegaly palpable 4 cm below the right costal margin. No asterixis or peripheral edema noted.</span></p>"
+            },
+            {
+              "id": "lab_1",
+              "title": "Laboratory & Pathology",
+              "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Serum Chemistry & Hepatic Enzymes:</b><br>• AST (Aspartate Aminotransferase): 284 U/L (Reference: 10–40 U/L)<br>• ALT (Alanine Aminotransferase): 142 U/L (Reference: 7–56 U/L) [AST:ALT ratio = 2.0]<br>• Total Bilirubin: 3.8 mg/dL (Reference: 0.2–1.2 mg/dL)<br>• Direct Bilirubin: 2.4 mg/dL (Reference: 0.0–0.3 mg/dL)<br>• Serum Albumin: 2.7 g/dL (Reference: 3.5–5.0 g/dL)<br>• Serum Lactic Acid: 2.4 mmol/L (Reference: 0.5–2.0 mmol/L)<br>• Serum Sodium: 132 mEq/L (Reference: 135–145 mEq/L)<br>• Blood Alcohol Concentration: 85 mg/dL</p><p style=\"margin-top:10px;\"><b>Liver Core Biopsy & Electron Microscopy:</b><br>Biopsy demonstrates diffuse macrovesicular and microvesicular hepatic steatosis with lipid droplets compressing hepatocyte nuclei. Pronounced hydropic swelling (ballooning degeneration) is evident throughout centrilobular zones. Electron microscopy reveals dilated cisternae of the endoplasmic reticulum with detached ribosomes, swollen mitochondria, and plasma membrane surface blebs. Nuclear chromatin is preserved without fragmentation, and the basal lamina is intact. Upregulated ubiquitin-proteasome intermediates and chaperone stress proteins are detected.</p></div>"
+            }
+          ]
+        }
+      },
+      {
+        "step": 4,
+        "question": {
+          "stem": "The nurse is developing the clinical management plan to support cellular recovery and prevent progression to irreversible liver injury. Which of the following interventions are appropriate? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Enforce complete, supervised cessation of alcohol consumption with monitoring for alcohol withdrawal syndrome",
+              "correct": true
+            },
+            {
+              "text": "Administer intravenous thiamine (vitamin B1) and high-potency multivitamins before initiating intravenous dextrose infusions",
+              "correct": true
+            },
+            {
+              "text": "Initiate high-calorie, balanced protein nutritional support to replenish amino acids necessary for apolipoprotein synthesis and cellular repair",
+              "correct": true
+            },
+            {
+              "text": "Monitor serial liver enzymes (AST, ALT), bilirubin, and coagulation studies (INR/PT) to assess hepatocellular recovery",
+              "correct": true
+            },
+            {
+              "text": "Administer acetaminophen 1000 mg orally every 6 hours around the clock for right upper quadrant discomfort",
+              "correct": false
+            },
+            {
+              "text": "Prepare client for immediate surgical wedge resection of the swollen hepatic segments",
+              "correct": false
+            }
+          ],
+          "preamble": "The interprofessional medical team collaborates on Elena's inpatient management and rehabilitation plan.",
+          "explanation": "Management of reversible toxic and nutritional cell injury centers on removing the injurious agent and restoring metabolic substrates: (1) Total cessation of alcohol removes the primary hepatotoxin driving mitochondrial stress and lipid accumulation; (2) IV thiamine is crucial to prevent Wernicke's encephalopathy and acts as a vital coenzyme for pyruvate dehydrogenase in aerobic ATP production; (3) Balanced nutritional repletion provides amino acids essential for protein synthesis (such as apolipoproteins needed to export accumulated lipids out of hepatocytes); (4) Serial liver enzymes and coagulation profiles evaluate whether cell membranes are stabilizing and liver synthetic function is returning. In contrast, acetaminophen is metabolized by the liver into the hepatotoxic intermediate NAPQI; in the setting of glutathione depletion from chronic alcohol use, standard doses can precipitate massive, irreversible hepatic necrosis. Surgery is contraindicated for diffuse, reversible metabolic liver injury."
+        },
+        "leftContent": {
+          "intro": "The medical-surgical nurse is admitting Elena Rostova, a 46-year-old female brought to the hospital by her sister due to worsening abdominal distension, profound fatigue, right upper quadrant tenderness, and jaundice.",
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0900:</span><span class=\"nurse-note-text\">Elena Rostova, a 46-year-old female, is admitted accompanied by her sister. Her sister reports that Elena has consumed 1 to 2 bottles of wine daily for the past 12 years, with intake escalating over the past 6 months following acute personal stress. For the past 4 weeks, her nutritional intake has been severely compromised, subsisting almost entirely on alcohol and processed crackers. Over the past 10 days, she developed progressive right upper quadrant heaviness, scleral icterus, dark amber urine, and generalized weakness. Medical history: no known history of viral hepatitis, biliary disease, or diabetes. Medications: none; denies taking acetaminophen, prescription medications, or intravenous drugs. Physical examination: alert but slow to respond; sclerae and sublingual mucosa visibly jaundiced; firm, smooth, tender hepatomegaly palpable 4 cm below the right costal margin. No asterixis or peripheral edema noted.</span></p>"
+            },
+            {
+              "id": "lab_1",
+              "title": "Laboratory & Pathology",
+              "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Serum Chemistry & Hepatic Enzymes:</b><br>• AST (Aspartate Aminotransferase): 284 U/L (Reference: 10–40 U/L)<br>• ALT (Alanine Aminotransferase): 142 U/L (Reference: 7–56 U/L) [AST:ALT ratio = 2.0]<br>• Total Bilirubin: 3.8 mg/dL (Reference: 0.2–1.2 mg/dL)<br>• Direct Bilirubin: 2.4 mg/dL (Reference: 0.0–0.3 mg/dL)<br>• Serum Albumin: 2.7 g/dL (Reference: 3.5–5.0 g/dL)<br>• Serum Lactic Acid: 2.4 mmol/L (Reference: 0.5–2.0 mmol/L)<br>• Serum Sodium: 132 mEq/L (Reference: 135–145 mEq/L)<br>• Blood Alcohol Concentration: 85 mg/dL</p><p style=\"margin-top:10px;\"><b>Liver Core Biopsy & Electron Microscopy:</b><br>Biopsy demonstrates diffuse macrovesicular and microvesicular hepatic steatosis with lipid droplets compressing hepatocyte nuclei. Pronounced hydropic swelling (ballooning degeneration) is evident throughout centrilobular zones. Electron microscopy reveals dilated cisternae of the endoplasmic reticulum with detached ribosomes, swollen mitochondria, and plasma membrane surface blebs. Nuclear chromatin is preserved without fragmentation, and the basal lamina is intact. Upregulated ubiquitin-proteasome intermediates and chaperone stress proteins are detected.</p></div>"
+            }
+          ]
+        }
+      },
+      {
+        "step": 5,
+        "question": {
+          "stem": "The nurse is prioritizing nursing interventions during Elena's acute hospitalization. For each nursing action, click to specify whether it is <b>Indicated</b>, <b>Non-Essential</b>, or <b>Contraindicated</b>.",
+          "type": "matrix_mc",
+          "matrix": {
+            "firstColumnHeader": "Nursing Action",
+            "columns": [
+              "Indicated",
+              "Non-Essential",
+              "Contraindicated"
+            ],
+            "rows": [
+              {
+                "text": "Utilize the Clinical Institute Withdrawal Assessment for Alcohol (CIWA-Ar) protocol to guide symptom-triggered benzodiazepine administration",
+                "correctIndex": 0,
+                "correctIndices": [
+                  0
+                ]
+              },
+              {
+                "text": "Administer intravenous 5% dextrose in water (D5W) before providing intravenous thiamine supplementation",
+                "correctIndex": 2,
+                "correctIndices": [
+                  2
+                ]
+              },
+              {
+                "text": "Encourage client to drink unregulated herbal detox teas containing high concentrations of green tea extract and kava",
+                "correctIndex": 2,
+                "correctIndices": [
+                  2
+                ]
+              },
+              {
+                "text": "Obtain daily weights and measure abdominal girth at the level of the umbilicus each morning",
+                "correctIndex": 0,
+                "correctIndices": [
+                  0
+                ]
+              },
+              {
+                "text": "Place client in reverse Trendelenburg position continuously throughout the shift",
+                "correctIndex": 1,
+                "correctIndices": [
+                  1
+                ]
+              }
+            ]
+          },
+          "options": [],
+          "preamble": "Elena is admitted to the medical step-down unit for detoxification, nutritional resuscitation, and close observation.",
+          "explanation": "1. Indicated: CIWA-Ar protocol allows precise, objective evaluation of withdrawal severity and guides prompt benzodiazepine treatment to prevent seizures and delirium tremens.\n2. Contraindicated: Giving dextrose before thiamine depletes residual thiamine coenzymes required for carbohydrate metabolism, precipitating acute Wernicke-Korsakoff encephalopathy. Thiamine MUST be administered prior to dextrose.\n3. Contraindicated: Many unregulated herbal supplements (e.g., kava, high-dose green tea extract) have recognized hepatotoxic potential and can aggravate acute hepatocellular injury.\n4. Indicated: Daily weights and abdominal girth measurements provide sensitive assessment of fluid retention and early ascites.\n5. Non-Essential: Reverse Trendelenburg is unnecessary; standard comfortable semi-Fowler position supports diaphragm movement and liver perfusion."
+        },
+        "leftContent": {
+          "intro": "The medical-surgical nurse is admitting Elena Rostova, a 46-year-old female brought to the hospital by her sister due to worsening abdominal distension, profound fatigue, right upper quadrant tenderness, and jaundice.",
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0900:</span><span class=\"nurse-note-text\">Elena Rostova, a 46-year-old female, is admitted accompanied by her sister. Her sister reports that Elena has consumed 1 to 2 bottles of wine daily for the past 12 years, with intake escalating over the past 6 months following acute personal stress. For the past 4 weeks, her nutritional intake has been severely compromised, subsisting almost entirely on alcohol and processed crackers. Over the past 10 days, she developed progressive right upper quadrant heaviness, scleral icterus, dark amber urine, and generalized weakness. Medical history: no known history of viral hepatitis, biliary disease, or diabetes. Medications: none; denies taking acetaminophen, prescription medications, or intravenous drugs. Physical examination: alert but slow to respond; sclerae and sublingual mucosa visibly jaundiced; firm, smooth, tender hepatomegaly palpable 4 cm below the right costal margin. No asterixis or peripheral edema noted.</span></p>"
+            },
+            {
+              "id": "lab_1",
+              "title": "Laboratory & Pathology",
+              "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Serum Chemistry & Hepatic Enzymes:</b><br>• AST (Aspartate Aminotransferase): 284 U/L (Reference: 10–40 U/L)<br>• ALT (Alanine Aminotransferase): 142 U/L (Reference: 7–56 U/L) [AST:ALT ratio = 2.0]<br>• Total Bilirubin: 3.8 mg/dL (Reference: 0.2–1.2 mg/dL)<br>• Direct Bilirubin: 2.4 mg/dL (Reference: 0.0–0.3 mg/dL)<br>• Serum Albumin: 2.7 g/dL (Reference: 3.5–5.0 g/dL)<br>• Serum Lactic Acid: 2.4 mmol/L (Reference: 0.5–2.0 mmol/L)<br>• Serum Sodium: 132 mEq/L (Reference: 135–145 mEq/L)<br>• Blood Alcohol Concentration: 85 mg/dL</p><p style=\"margin-top:10px;\"><b>Liver Core Biopsy & Electron Microscopy:</b><br>Biopsy demonstrates diffuse macrovesicular and microvesicular hepatic steatosis with lipid droplets compressing hepatocyte nuclei. Pronounced hydropic swelling (ballooning degeneration) is evident throughout centrilobular zones. Electron microscopy reveals dilated cisternae of the endoplasmic reticulum with detached ribosomes, swollen mitochondria, and plasma membrane surface blebs. Nuclear chromatin is preserved without fragmentation, and the basal lamina is intact. Upregulated ubiquitin-proteasome intermediates and chaperone stress proteins are detected.</p></div>"
+            }
+          ]
+        }
+      },
+      {
+        "step": 6,
+        "question": {
+          "stem": "Complete the following evaluation statement by choosing from the lists of options.",
+          "type": "dropdown_cloze",
+          "cloze": {
+            "text": "At Elena's 4-week outpatient follow-up, repeat hepatic testing demonstrates that her AST has decreased from 284 U/L to 46 U/L and total bilirubin has normalized to 0.9 mg/dL. These improvements reflect the resolution of [[drop0]]. Because hydropic swelling and fatty liver represent [[drop1]] cellular injury, the restoration of cellular ATP production allowed the [[drop2]] to re-establish ionic gradients, successfully clearing excess intracellular water and accumulated lipid droplets without progression to irreversible necrotic cell death.",
+            "dropdowns": [
+              {
+                "placeholder": "Select...",
+                "options": [
+                  {
+                    "text": "acute hepatocellular membrane leakage and cellular stress",
+                    "correct": true
+                  },
+                  {
+                    "text": "irreversible coagulative necrosis",
+                    "correct": false
+                  },
+                  {
+                    "text": "primary hepatocellular carcinoma",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "placeholder": "Select...",
+                "options": [
+                  {
+                    "text": "reversible",
+                    "correct": true
+                  },
+                  {
+                    "text": "irreversible",
+                    "correct": false
+                  },
+                  {
+                    "text": "anaplastic",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "placeholder": "Select...",
+                "options": [
+                  {
+                    "text": "plasma membrane Na+/K+-ATPase pump",
+                    "correct": true
+                  },
+                  {
+                    "text": "lysosomal acid hydrolases",
+                    "correct": false
+                  },
+                  {
+                    "text": "nuclear pore complex",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          },
+          "options": [],
+          "preamble": "Elena returns to the clinic 4 weeks after hospital discharge. She reports complete alcohol abstinence, active participation in a recovery support program, and excellent appetite with balanced nutrition.",
+          "explanation": "This case exemplifies the hallmark clinical course of reversible cellular injury. Once the chemical toxin (alcohol) is eliminated and nutritional cofactors are restored, mitochondrial aerobic respiration recovers, generating the ATP necessary to power the Na+/K+-ATPase pump. Intracellular sodium is actively pumped out against its concentration gradient, followed by water, resolving hydropic swelling. Concurrently, normal lipid synthesis and apolipoprotein transport mechanisms resume, mobilizing intrahepatic fat droplets. The dramatic drop in transaminases reflects restored plasma membrane integrity, confirming full recovery from reversible injury without progression to permanent necrosis or cirrhosis."
+        },
+        "leftContent": {
+          "intro": "The medical-surgical nurse is admitting Elena Rostova, a 46-year-old female brought to the hospital by her sister due to worsening abdominal distension, profound fatigue, right upper quadrant tenderness, and jaundice.",
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0900:</span><span class=\"nurse-note-text\">Elena Rostova, a 46-year-old female, is admitted accompanied by her sister. Her sister reports that Elena has consumed 1 to 2 bottles of wine daily for the past 12 years, with intake escalating over the past 6 months following acute personal stress. For the past 4 weeks, her nutritional intake has been severely compromised, subsisting almost entirely on alcohol and processed crackers. Over the past 10 days, she developed progressive right upper quadrant heaviness, scleral icterus, dark amber urine, and generalized weakness. Medical history: no known history of viral hepatitis, biliary disease, or diabetes. Medications: none; denies taking acetaminophen, prescription medications, or intravenous drugs. Physical examination: alert but slow to respond; sclerae and sublingual mucosa visibly jaundiced; firm, smooth, tender hepatomegaly palpable 4 cm below the right costal margin. No asterixis or peripheral edema noted.</span></p><p class=\"nurse-note-row\"><span class=\"nurse-note-time\">4-Week Outpatient Follow-up:</span><span class=\"nurse-note-text\">Elena arrives accompanied by her sister. She has maintained total abstinence from alcohol for 30 consecutive days. Reports energy has returned, jaundice has completely cleared, and abdominal fullness has resolved. Repeat liver palpation reveals liver edge non-tender and barely palpable at the costal margin. AST is 46 U/L, ALT 38 U/L, total bilirubin 0.9 mg/dL, and serum albumin has increased to 3.8 g/dL. Repeat liver ultrasound shows marked reduction in hepatic echogenicity and normal liver span.</span></p>"
+            },
+            {
+              "id": "lab_1",
+              "title": "Laboratory & Pathology",
+              "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Serum Chemistry & Hepatic Enzymes:</b><br>• AST (Aspartate Aminotransferase): 284 U/L (Reference: 10–40 U/L)<br>• ALT (Alanine Aminotransferase): 142 U/L (Reference: 7–56 U/L) [AST:ALT ratio = 2.0]<br>• Total Bilirubin: 3.8 mg/dL (Reference: 0.2–1.2 mg/dL)<br>• Direct Bilirubin: 2.4 mg/dL (Reference: 0.0–0.3 mg/dL)<br>• Serum Albumin: 2.7 g/dL (Reference: 3.5–5.0 g/dL)<br>• Serum Lactic Acid: 2.4 mmol/L (Reference: 0.5–2.0 mmol/L)<br>• Serum Sodium: 132 mEq/L (Reference: 135–145 mEq/L)<br>• Blood Alcohol Concentration: 85 mg/dL</p><p style=\"margin-top:10px;\"><b>Liver Core Biopsy & Electron Microscopy:</b><br>Biopsy demonstrates diffuse macrovesicular and microvesicular hepatic steatosis with lipid droplets compressing hepatocyte nuclei. Pronounced hydropic swelling (ballooning degeneration) is evident throughout centrilobular zones. Electron microscopy reveals dilated cisternae of the endoplasmic reticulum with detached ribosomes, swollen mitochondria, and plasma membrane surface blebs. Nuclear chromatin is preserved without fragmentation, and the basal lamina is intact. Upregulated ubiquitin-proteasome intermediates and chaperone stress proteins are detected.</p></div>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "case_1782360000003",
+    "title": "NURS 1017 Unit 2 Case Study 3",
+    "topic": "Unit 2 (Cellular Basis of Disease)",
+    "unit": "Unit 2 (Cellular Basis of Disease)",
+    "disorder": "Unit 2 (Cellular Basis of Disease)",
+    "course": "NURS 1017",
+    "description": "72-year-old male with diabetes and PAD presenting with ischemic dry gangrene progressing to liquefactive wet/gas gangrene with septic shock.",
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse conducts an immediate assessment of Walter's right lower extremity and systemic status. Which of the following findings indicate <b>severe irreversible cell death</b> and rapid progression from <b>dry gangrene to wet/gas gangrene</b>? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Blackened, dry, shriveled right second and third toes with an initial clear line of demarcation",
+              "correct": true
+            },
+            {
+              "text": "Rapid onset of foul-smelling, purulent, liquefactive drainage with tissue softening and extensive forefoot erythema",
+              "correct": true
+            },
+            {
+              "text": "Palpable subcutaneous crepitus (crackling gas bubbles) elicited across the dorsal forefoot",
+              "correct": true
+            },
+            {
+              "text": "Hypotension (BP 92/58 mmHg), tachycardia (118 bpm), high fever (38.9 °C), and elevated serum lactate (4.2 mmol/L)",
+              "correct": true
+            },
+            {
+              "text": "Transient toe paresthesia that completely resolves with limb elevation and warm blankets",
+              "correct": false
+            },
+            {
+              "text": "Strong, bounding palpable dorsalis pedis and posterior tibial arterial pulses bilaterally",
+              "correct": false
+            }
+          ],
+          "preamble": "",
+          "explanation": "Irreversible cell death results in necrosis and gangrene: (1) Dry gangrene is a form of coagulative necrosis resulting from severe ischemia, characterized by black, dry, wrinkled, mummified tissue with a distinct line of demarcation; (2) Wet gangrene occurs when necrotic tissue is superinfected by bacteria, inducing liquefactive necrosis with tissue softening, foul-smelling purulent drainage, and rapidly spreading edema; (3) Gas gangrene results from anaerobic bacterial infection (e.g., Clostridium perfringens), which ferments carbohydrates and produces characteristic gas bubbles that feel like crackling crepitus under the skin; (4) Systemic signs of septic shock (fever, tachycardia, hypotension, lactic acidosis from tissue hypoperfusion) reflect bacterial toxin release and systemic inflammatory response. Gangrene does not resolve with elevation or warming, and peripheral pulses are absent due to severe arterial occlusive disease."
+        },
+        "leftContent": {
+          "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration.",
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">1400:</span><span class=\"nurse-note-text\">Walter Henderson, a 72-year-old male, is admitted via EMS accompanied by his daughter. The daughter reports Walter has a 25-year history of poorly controlled type 2 diabetes mellitus, severe bilateral peripheral artery disease (PAD), and a remote coronary artery bypass graft. Over the past 3 weeks, he experienced severe, burning rest pain in his right forefoot that kept him awake at night, relieved only transiently by hanging his foot over the edge of the bed. Initially, his right second and third toes turned pale, cold, and numb, gradually becoming dark purple, and finally dry, shriveled, hard, and black with a sharp line of demarcation separating the dead tissue from healthy skin (dry gangrene). However, 48 hours ago, the black tissue softened, began weeping foul-smelling brown-yellow fluid, and the surrounding forefoot became swollen, red, and hot. On examination today, the nurse palpates distinct spongy, crackling sensations (subcutaneous crepitus) across the dorsum of the foot extending toward the ankle. Dorsalis pedis and posterior tibial pulses are non-palpable on the right (monophasic Doppler signal only). Client appears lethargic, diaphoretic, and shivering.</span></p>"
+            },
+            {
+              "id": "vs_1",
+              "title": "Vital Signs",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Vital Sign</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Emergency Dept (1400)</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Temperature</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">38.9 °C (tympanic)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.5 – 37.5 °C</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Heart Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">118 bpm, sinus tachycardia</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">60 – 100 bpm</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Respiratory Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">24 breaths/min</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">12 – 20 breaths/min</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Blood Pressure</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">92/58 mmHg (MAP 69 mmHg)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">90/60 – 120/80 mmHg</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Oxygen Saturation (SpO<sub>2</sub>)</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">94% on room air</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">95 – 100%</td></tr></tbody></table>"
+            }
+          ]
+        }
+      },
+      {
+        "step": 2,
+        "question": {
+          "stem": "The nurse reviews the four primary types of tissue necrosis and irreversible injury. For each clinical presentation, click to match it with the correct <b>type of tissue necrosis</b>.",
+          "type": "matrix_mc",
+          "matrix": {
+            "firstColumnHeader": "Clinical & Pathological Scenario",
+            "columns": [
+              "Coagulative Necrosis",
+              "Liquefactive Necrosis",
+              "Fat Necrosis",
+              "Caseous Necrosis"
+            ],
+            "rows": [
+              {
+                "text": "Myocardial infarction or arterial occlusion of an extremity where tissue architecture is preserved initially as 'ghost cells' lacking nuclei",
+                "correctIndex": 0,
+                "correctIndices": [
+                  0
+                ]
+              },
+              {
+                "text": "Brain infarction (stroke) or localized bacterial abscess where powerful hydrolytic enzymes dissolve dead cells into a liquid viscous mass",
+                "correctIndex": 1,
+                "correctIndices": [
+                  1
+                ]
+              },
+              {
+                "text": "Acute pancreatitis or trauma to the breast where released lipases split triglycerides into fatty acids that combine with calcium to form chalky white soaps",
+                "correctIndex": 2,
+                "correctIndices": [
+                  2
+                ]
+              },
+              {
+                "text": "Pulmonary tuberculosis infection where necrotic debris forms friable, yellowish-white, cheese-like material without preservation of cellular outlines",
+                "correctIndex": 3,
+                "correctIndices": [
+                  3
+                ]
+              }
+            ]
+          },
+          "options": [],
+          "preamble": "Laboratory results and preliminary wound culture findings have returned (see Laboratory & Wound Assessment tab).",
+          "explanation": "1. Coagulative necrosis: Most commonly caused by ischemia (except in the brain); protein denaturation predominates over enzymatic lysis, preserving basic structural cell outlines ('tombstone' or 'ghost' cells) for several days while nuclei undergo pyknosis, karyorrhexis, and karyolysis.\n2. Liquefactive necrosis: Enzymatic digestion predominates over protein denaturation; dead cells completely dissolve into a fluid viscous mass (pus/abscess), classic in bacterial/fungal infections and hypoxic death of central nervous system tissue (brain).\n3. Fat necrosis: Characterized by lipase-mediated destruction of adipose tissue (e.g., in acute pancreatitis or breast trauma); released free fatty acids bind with calcium ions (saponification) creating gross chalky-white deposits.\n4. Caseous necrosis: Distinctive feature of tuberculosis; tissue architecture is completely obliterated, leaving a friable, cheesy, amorphous granular debris surrounded by granulomatous inflammation."
+        },
+        "leftContent": {
+          "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration.",
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">1400:</span><span class=\"nurse-note-text\">Walter Henderson, a 72-year-old male, is admitted via EMS accompanied by his daughter. The daughter reports Walter has a 25-year history of poorly controlled type 2 diabetes mellitus, severe bilateral peripheral artery disease (PAD), and a remote coronary artery bypass graft. Over the past 3 weeks, he experienced severe, burning rest pain in his right forefoot that kept him awake at night, relieved only transiently by hanging his foot over the edge of the bed. Initially, his right second and third toes turned pale, cold, and numb, gradually becoming dark purple, and finally dry, shriveled, hard, and black with a sharp line of demarcation separating the dead tissue from healthy skin (dry gangrene). However, 48 hours ago, the black tissue softened, began weeping foul-smelling brown-yellow fluid, and the surrounding forefoot became swollen, red, and hot. On examination today, the nurse palpates distinct spongy, crackling sensations (subcutaneous crepitus) across the dorsum of the foot extending toward the ankle. Dorsalis pedis and posterior tibial pulses are non-palpable on the right (monophasic Doppler signal only). Client appears lethargic, diaphoretic, and shivering.</span></p>"
+            },
+            {
+              "id": "lab_1",
+              "title": "Laboratory & Wound Assessment",
+              "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Stat Laboratory Results:</b><br>• WBC: 21,400 /mm<sup>3</sup> (Reference: 4,500–11,000) with 88% neutrophils, 10% band forms<br>• Hemoglobin: 10.8 g/dL (Reference: 13.5–17.5 g/dL)<br>• Serum Lactic Acid: 4.2 mmol/L (Reference: 0.5–2.0 mmol/L) [Tissue hypoperfusion]<br>• Serum Creatinine: 1.8 mg/dL (Baseline: 1.0 mg/dL) [Acute kidney injury]<br>• Blood Glucose: 312 mg/dL (Reference: 70–99 mg/dL)<br>• C-Reactive Protein (CRP): 145 mg/L (Reference: &lt; 5 mg/L)</p><p style=\"margin-top:10px;\"><b>Gram Stain & Anaerobic Wound Smear:</b><br>Numerous polymorphonuclear leukocytes; heavy growth of large Gram-positive, blunt-ended, spore-forming rods morphologically consistent with <i>Clostridium perfringens</i>, along with mixed Gram-negative enteric bacilli.</p><p style=\"margin-top:10px;\"><b>Right Foot Plain Radiograph (X-Ray):</b><br>Extensive soft tissue gas dissecting through the dorsal and plantar fascial compartments of the forefoot. Severe arterial calcification of dorsalis pedis and digital vessels. No bony osteomyelitis.</p></div>"
+            }
+          ]
+        }
+      },
+      {
+        "step": 3,
+        "question": {
+          "stem": "Complete the following comparative pathophysiological statement by choosing from the lists of options.",
+          "type": "dropdown_cloze",
+          "cloze": {
+            "text": "The initial ischemic death of Walter's toes was dry gangrene, a variant of [[drop0]] necrosis. When anaerobic bacteria infected the dead tissue, it transformed into wet/gas gangrene characterized by [[drop1]] necrosis. Unlike necrosis, which is unprogrammed and triggers [[drop2]], apoptosis is programmed cell death where cells fragment into apoptotic bodies without eliciting inflammation. The intrinsic pathway of apoptosis is initiated in the mitochondria by release of [[drop3]] into the cytoplasm, regulated by p53 and the BCL-2 protein family.",
+            "dropdowns": [
+              {
+                "placeholder": "Select...",
+                "options": [
+                  {
+                    "text": "coagulative",
+                    "correct": true
+                  },
+                  {
+                    "text": "liquefactive",
+                    "correct": false
+                  },
+                  {
+                    "text": "caseous",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "placeholder": "Select...",
+                "options": [
+                  {
+                    "text": "liquefactive",
+                    "correct": true
+                  },
+                  {
+                    "text": "fat",
+                    "correct": false
+                  },
+                  {
+                    "text": "caseous",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "placeholder": "Select...",
+                "options": [
+                  {
+                    "text": "an intense acute inflammatory response",
+                    "correct": true
+                  },
+                  {
+                    "text": "no inflammatory reaction",
+                    "correct": false
+                  },
+                  {
+                    "text": "immediate neoplastic transformation",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "placeholder": "Select...",
+                "options": [
+                  {
+                    "text": "cytochrome c",
+                    "correct": true
+                  },
+                  {
+                    "text": "lactic acid",
+                    "correct": false
+                  },
+                  {
+                    "text": "glycogen synthetase",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          },
+          "options": [],
+          "preamble": "The nurse contrasts the mechanisms of necrotic cell death with physiological apoptosis.",
+          "explanation": "Necrosis is accidental, unprogrammed cell death resulting from severe exogenous injury (ischemia, toxins, severe trauma). In necrosis, ATP depletion causes cell and organelle swelling, plasma membrane disruption, release of intracellular macromolecules into the extracellular space, and inevitable acute inflammation. In dry gangrene, coagulative necrosis predominates; with secondary bacterial liquefaction, wet gangrene occurs. In gas gangrene, Clostridium toxins destroy adjacent viable tissue and produce gas bubbles. Conversely, apoptosis is programmed, energy-dependent cell suicide. The cell shrinks, chromatin condenses, and the cell buds into intact apoptotic bodies that are rapidly phagocytosed by macrophages without releasing cytosolic contents, producing NO inflammatory reaction. The intrinsic (mitochondrial) pathway is triggered by DNA damage, p53 activation, and intracellular calcium influx, causing BCL-2 effectors (BAX/BAK) to create mitochondrial pores that release cytochrome c, which activates executioner caspases."
+        },
+        "leftContent": {
+          "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration.",
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">1400:</span><span class=\"nurse-note-text\">Walter Henderson, a 72-year-old male, is admitted via EMS accompanied by his daughter. The daughter reports Walter has a 25-year history of poorly controlled type 2 diabetes mellitus, severe bilateral peripheral artery disease (PAD), and a remote coronary artery bypass graft. Over the past 3 weeks, he experienced severe, burning rest pain in his right forefoot that kept him awake at night, relieved only transiently by hanging his foot over the edge of the bed. Initially, his right second and third toes turned pale, cold, and numb, gradually becoming dark purple, and finally dry, shriveled, hard, and black with a sharp line of demarcation separating the dead tissue from healthy skin (dry gangrene). However, 48 hours ago, the black tissue softened, began weeping foul-smelling brown-yellow fluid, and the surrounding forefoot became swollen, red, and hot. On examination today, the nurse palpates distinct spongy, crackling sensations (subcutaneous crepitus) across the dorsum of the foot extending toward the ankle. Dorsalis pedis and posterior tibial pulses are non-palpable on the right (monophasic Doppler signal only). Client appears lethargic, diaphoretic, and shivering.</span></p>"
+            },
+            {
+              "id": "lab_1",
+              "title": "Laboratory & Wound Assessment",
+              "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Stat Laboratory Results:</b><br>• WBC: 21,400 /mm<sup>3</sup> (Reference: 4,500–11,000) with 88% neutrophils, 10% band forms<br>• Hemoglobin: 10.8 g/dL (Reference: 13.5–17.5 g/dL)<br>• Serum Lactic Acid: 4.2 mmol/L (Reference: 0.5–2.0 mmol/L) [Tissue hypoperfusion]<br>• Serum Creatinine: 1.8 mg/dL (Baseline: 1.0 mg/dL) [Acute kidney injury]<br>• Blood Glucose: 312 mg/dL (Reference: 70–99 mg/dL)<br>• C-Reactive Protein (CRP): 145 mg/L (Reference: &lt; 5 mg/L)</p><p style=\"margin-top:10px;\"><b>Gram Stain & Anaerobic Wound Smear:</b><br>Numerous polymorphonuclear leukocytes; heavy growth of large Gram-positive, blunt-ended, spore-forming rods morphologically consistent with <i>Clostridium perfringens</i>, along with mixed Gram-negative enteric bacilli.</p><p style=\"margin-top:10px;\"><b>Right Foot Plain Radiograph (X-Ray):</b><br>Extensive soft tissue gas dissecting through the dorsal and plantar fascial compartments of the forefoot. Severe arterial calcification of dorsalis pedis and digital vessels. No bony osteomyelitis.</p></div>"
+            }
+          ]
+        }
+      },
+      {
+        "step": 4,
+        "question": {
+          "stem": "Walter is in septic shock secondary to infected necrotic gangrenous tissue. Which of the following emergency clinical interventions should the nurse prioritize? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Initiate rapid intravenous isotonic crystalloid resuscitation (e.g., 30 mL/kg of Lactated Ringer's) to restore intravascular volume and perfusion pressure",
+              "correct": true
+            },
+            {
+              "text": "Administer immediate broad-spectrum intravenous antimicrobial therapy covering anaerobes and gram-negative bacilli (e.g., piperacillin-tazobactam plus vancomycin)",
+              "correct": true
+            },
+            {
+              "text": "Prepare the client immediately for emergent surgical debridement and amputation of non-viable gangrenous tissue",
+              "correct": true
+            },
+            {
+              "text": "Insert an indwelling urinary catheter to monitor hourly urine output as an indicator of renal perfusion",
+              "correct": true
+            },
+            {
+              "text": "Apply tight compression dressings and warm heating pads directly to the necrotic right forefoot",
+              "correct": false
+            },
+            {
+              "text": "Submerge the gangrenous extremity in a whirlpool bath to soften and soak the crusts",
+              "correct": false
+            }
+          ],
+          "preamble": "The emergency department physician and vascular surgery team evaluate Walter for immediate resuscitation and operative intervention.",
+          "explanation": "Gas/wet gangrene with septic shock is a surgical and medical emergency requiring immediate simultaneous actions: (1) Aggressive crystalloid fluid resuscitation restores effective circulating volume and combats hypoperfusion lactic acidosis; (2) Immediate broad-spectrum intravenous antimicrobials with anaerobic coverage stop bacterial proliferation and toxin production; (3) Urgent surgical debridement or amputation is the definitive life-saving intervention because antibiotics cannot penetrate dead, avascular necrotic tissue; and (4) Strict hourly urine output monitoring assesses renal end-organ perfusion. In contrast, tight compression bandages worsen tissue ischemia by further restricting arterial inflow, and heating pads cause thermal injury to neuropathic skin. Soaking in water macerates tissue, spreads bacterial infection, and is strictly contraindicated."
+        },
+        "leftContent": {
+          "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration.",
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">1400:</span><span class=\"nurse-note-text\">Walter Henderson, a 72-year-old male, is admitted via EMS accompanied by his daughter. The daughter reports Walter has a 25-year history of poorly controlled type 2 diabetes mellitus, severe bilateral peripheral artery disease (PAD), and a remote coronary artery bypass graft. Over the past 3 weeks, he experienced severe, burning rest pain in his right forefoot that kept him awake at night, relieved only transiently by hanging his foot over the edge of the bed. Initially, his right second and third toes turned pale, cold, and numb, gradually becoming dark purple, and finally dry, shriveled, hard, and black with a sharp line of demarcation separating the dead tissue from healthy skin (dry gangrene). However, 48 hours ago, the black tissue softened, began weeping foul-smelling brown-yellow fluid, and the surrounding forefoot became swollen, red, and hot. On examination today, the nurse palpates distinct spongy, crackling sensations (subcutaneous crepitus) across the dorsum of the foot extending toward the ankle. Dorsalis pedis and posterior tibial pulses are non-palpable on the right (monophasic Doppler signal only). Client appears lethargic, diaphoretic, and shivering.</span></p>"
+            },
+            {
+              "id": "lab_1",
+              "title": "Laboratory & Wound Assessment",
+              "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Stat Laboratory Results:</b><br>• WBC: 21,400 /mm<sup>3</sup> (Reference: 4,500–11,000) with 88% neutrophils, 10% band forms<br>• Hemoglobin: 10.8 g/dL (Reference: 13.5–17.5 g/dL)<br>• Serum Lactic Acid: 4.2 mmol/L (Reference: 0.5–2.0 mmol/L) [Tissue hypoperfusion]<br>• Serum Creatinine: 1.8 mg/dL (Baseline: 1.0 mg/dL) [Acute kidney injury]<br>• Blood Glucose: 312 mg/dL (Reference: 70–99 mg/dL)<br>• C-Reactive Protein (CRP): 145 mg/L (Reference: &lt; 5 mg/L)</p><p style=\"margin-top:10px;\"><b>Gram Stain & Anaerobic Wound Smear:</b><br>Numerous polymorphonuclear leukocytes; heavy growth of large Gram-positive, blunt-ended, spore-forming rods morphologically consistent with <i>Clostridium perfringens</i>, along with mixed Gram-negative enteric bacilli.</p><p style=\"margin-top:10px;\"><b>Right Foot Plain Radiograph (X-Ray):</b><br>Extensive soft tissue gas dissecting through the dorsal and plantar fascial compartments of the forefoot. Severe arterial calcification of dorsalis pedis and digital vessels. No bony osteomyelitis.</p></div>"
+            }
+          ]
+        }
+      },
+      {
+        "step": 5,
+        "question": {
+          "stem": "Walter underwent emergent right transmetatarsal amputation and extensive fascial debridement. The nurse is managing his postoperative critical care. For each nursing action, click to specify whether it is <b>Indicated</b>, <b>Non-Essential</b>, or <b>Contraindicated</b>.",
+          "type": "matrix_mc",
+          "matrix": {
+            "firstColumnHeader": "Postoperative Nursing Action",
+            "columns": [
+              "Indicated",
+              "Non-Essential",
+              "Contraindicated"
+            ],
+            "rows": [
+              {
+                "text": "Administer supplemental oxygen to maintain SpO2 ≥ 96% to support tissue oxygenation and inhibit anaerobic Clostridial spore germination",
+                "correctIndex": 0,
+                "correctIndices": [
+                  0
+                ]
+              },
+              {
+                "text": "Monitor closely for reperfusion injury manifestations (oxygen free radicals and calcium influx causing myocardial or renal damage) following revascularization",
+                "correctIndex": 0,
+                "correctIndices": [
+                  0
+                ]
+              },
+              {
+                "text": "Manage hyperglycemia using an intravenous regular insulin protocol targeting blood glucose 140–180 mg/dL",
+                "correctIndex": 0,
+                "correctIndices": [
+                  0
+                ]
+              },
+              {
+                "text": "Instruct the client to walk barefoot around the surgical intensive care unit to inspect his incision every 2 hours",
+                "correctIndex": 2,
+                "correctIndices": [
+                  2
+                ]
+              },
+              {
+                "text": "Administer high-dose external beam radiation therapy to the surgical stump",
+                "correctIndex": 1,
+                "correctIndices": [
+                  1
+                ]
+              }
+            ]
+          },
+          "options": [],
+          "preamble": "Walter is transferred to the surgical ICU following emergent right transmetatarsal amputation and extensive surgical debridement.",
+          "explanation": "1. Indicated: Supplemental oxygen supports mitochondrial oxidative phosphorylation in borderzone tissues and creates an oxygen-rich environment toxic to obligate anaerobic Clostridium species.\n2. Indicated: Reperfusion of chronically ischemic tissue delivers oxygen that generates toxic reactive oxygen species (free radicals) and high levels of extracellular calcium that rush into injured cells, triggering secondary cell death and cardiac arrhythmias.\n3. Indicated: Hyperglycemia impairs neutrophil phagocytosis and wound healing; maintaining glucose 140–180 mg/dL optimizes cellular defense without inducing hypoglycemia.\n4. Contraindicated: Weight-bearing and barefoot walking on a freshly debrided neuropathic diabetic amputation stump would cause immediate mechanical tissue disruption and catastrophic wound breakdown.\n5. Non-Essential: Radiation therapy is used for malignant neoplasms, not infectious ischemic gangrene."
+        },
+        "leftContent": {
+          "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration.",
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">1400:</span><span class=\"nurse-note-text\">Walter Henderson, a 72-year-old male, is admitted via EMS accompanied by his daughter. The daughter reports Walter has a 25-year history of poorly controlled type 2 diabetes mellitus, severe bilateral peripheral artery disease (PAD), and a remote coronary artery bypass graft. Over the past 3 weeks, he experienced severe, burning rest pain in his right forefoot that kept him awake at night, relieved only transiently by hanging his foot over the edge of the bed. Initially, his right second and third toes turned pale, cold, and numb, gradually becoming dark purple, and finally dry, shriveled, hard, and black with a sharp line of demarcation separating the dead tissue from healthy skin (dry gangrene). However, 48 hours ago, the black tissue softened, began weeping foul-smelling brown-yellow fluid, and the surrounding forefoot became swollen, red, and hot. On examination today, the nurse palpates distinct spongy, crackling sensations (subcutaneous crepitus) across the dorsum of the foot extending toward the ankle. Dorsalis pedis and posterior tibial pulses are non-palpable on the right (monophasic Doppler signal only). Client appears lethargic, diaphoretic, and shivering.</span></p><p class=\"nurse-note-row\"><span class=\"nurse-note-time\">1830 (Postoperative SICU):</span><span class=\"nurse-note-text\">Client transferred from operating room status-post right transmetatarsal amputation and extensive plantar fascial debridement. Clean surgical margins obtained. Incision left open with negative pressure wound therapy (wound VAC) applied at -125 mmHg continuous suction. Client receiving IV piperacillin-tazobactam and clindamycin. Blood pressure 114/72 mmHg on IV crystalloids, heart rate 88 bpm.</span></p>"
+            },
+            {
+              "id": "lab_1",
+              "title": "Laboratory & Wound Assessment",
+              "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Stat Laboratory Results:</b><br>• WBC: 21,400 /mm<sup>3</sup> (Reference: 4,500–11,000) with 88% neutrophils, 10% band forms<br>• Hemoglobin: 10.8 g/dL (Reference: 13.5–17.5 g/dL)<br>• Serum Lactic Acid: 4.2 mmol/L (Reference: 0.5–2.0 mmol/L) [Tissue hypoperfusion]<br>• Serum Creatinine: 1.8 mg/dL (Baseline: 1.0 mg/dL) [Acute kidney injury]<br>• Blood Glucose: 312 mg/dL (Reference: 70–99 mg/dL)<br>• C-Reactive Protein (CRP): 145 mg/L (Reference: &lt; 5 mg/L)</p><p style=\"margin-top:10px;\"><b>Gram Stain & Anaerobic Wound Smear:</b><br>Numerous polymorphonuclear leukocytes; heavy growth of large Gram-positive, blunt-ended, spore-forming rods morphologically consistent with <i>Clostridium perfringens</i>, along with mixed Gram-negative enteric bacilli.</p><p style=\"margin-top:10px;\"><b>Right Foot Plain Radiograph (X-Ray):</b><br>Extensive soft tissue gas dissecting through the dorsal and plantar fascial compartments of the forefoot. Severe arterial calcification of dorsalis pedis and digital vessels. No bony osteomyelitis.</p></div>"
+            }
+          ]
+        }
+      },
+      {
+        "step": 6,
+        "question": {
+          "stem": "Complete the following clinical summary and evaluation statement by choosing from the lists of options.",
+          "type": "dropdown_cloze",
+          "cloze": {
+            "text": "Following surgical source control of Walter's infected gangrene, his WBC count normalized to 8,400 /mm3 and lactate decreased to 1.2 mmol/L, confirming eradication of [[drop0]]. Because necrotic cell death causes plasma membrane rupture and enzymatic leakage, it triggers [[drop1]], creating extensive collateral tissue destruction. In contrast, apoptosis eliminates unwanted or damaged cells through programmed cell condensation and fragmentation into apoptotic bodies, which are cleanly ingested by [[drop2]] without producing an inflammatory reaction.",
+            "dropdowns": [
+              {
+                "placeholder": "Select...",
+                "options": [
+                  {
+                    "text": "liquefactive and gas gangrene",
+                    "correct": true
+                  },
+                  {
+                    "text": "caseous granulomatous necrosis",
+                    "correct": false
+                  },
+                  {
+                    "text": "reversible hydropic swelling",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "placeholder": "Select...",
+                "options": [
+                  {
+                    "text": "acute inflammation",
+                    "correct": true
+                  },
+                  {
+                    "text": "no inflammatory reaction",
+                    "correct": false
+                  },
+                  {
+                    "text": "anaplastic transformation",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "placeholder": "Select...",
+                "options": [
+                  {
+                    "text": "tissue macrophages",
+                    "correct": true
+                  },
+                  {
+                    "text": "erythrocytes",
+                    "correct": false
+                  },
+                  {
+                    "text": "cardiac myocytes",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          },
+          "options": [],
+          "preamble": "On postoperative day 4, Walter is hemodynamically stable, afebrile, and his amputation site demonstrates clean, beefy red granulation tissue without purulence or crepitus.",
+          "explanation": "This case summarizes the critical contrast between necrosis and apoptosis. In necrosis (including coagulative necrosis of dry gangrene and liquefactive necrosis of wet/gas gangrene), external injury disrupts the plasma membrane, spilling intracellular proteins, enzymes, and nucleic acids into surrounding interstitial spaces, triggering intense acute inflammation and tissue damage. In contrast, apoptosis is an orderly, programmed process wherein cell suicide is executed cleanly: cell shrinkage, chromatin condensation, and fragmentation into membrane-bound apoptotic bodies that display 'eat-me' signals (like phosphatidylserine) for rapid recognition and engulfment by tissue macrophages, preventing any inflammatory damage to neighboring tissues."
+        },
+        "leftContent": {
+          "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration.",
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">1400:</span><span class=\"nurse-note-text\">Walter Henderson, a 72-year-old male, is admitted via EMS accompanied by his daughter. The daughter reports Walter has a 25-year history of poorly controlled type 2 diabetes mellitus, severe bilateral peripheral artery disease (PAD), and a remote coronary artery bypass graft. Over the past 3 weeks, he experienced severe, burning rest pain in his right forefoot that kept him awake at night, relieved only transiently by hanging his foot over the edge of the bed. Initially, his right second and third toes turned pale, cold, and numb, gradually becoming dark purple, and finally dry, shriveled, hard, and black with a sharp line of demarcation separating the dead tissue from healthy skin (dry gangrene). However, 48 hours ago, the black tissue softened, began weeping foul-smelling brown-yellow fluid, and the surrounding forefoot became swollen, red, and hot. On examination today, the nurse palpates distinct spongy, crackling sensations (subcutaneous crepitus) across the dorsum of the foot extending toward the ankle. Dorsalis pedis and posterior tibial pulses are non-palpable on the right (monophasic Doppler signal only). Client appears lethargic, diaphoretic, and shivering.</span></p><p class=\"nurse-note-row\"><span class=\"nurse-note-time\">Postoperative Day 4:</span><span class=\"nurse-note-text\">Walter is alert, oriented, and sitting up in bed eating breakfast. Vital signs: T 36.8 °C, P 76 bpm, RR 16 breaths/min, BP 122/74 mmHg, SpO2 97% on room air. The surgical wound VAC dressing was changed; wound bed shows clean, beefy red granulation tissue without purulent drainage, erythema, or crepitus. WBC is 8,400 /mm<sup>3</sup>, lactate 1.2 mmol/L, and serum creatinine has improved to 1.1 mg/dL. He will be transferred to step-down for continued wound therapy, physical therapy, and glycemic optimization.</span></p>"
+            },
+            {
+              "id": "lab_1",
+              "title": "Laboratory & Wound Assessment",
+              "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Stat Laboratory Results:</b><br>• WBC: 21,400 /mm<sup>3</sup> (Reference: 4,500–11,000) with 88% neutrophils, 10% band forms<br>• Hemoglobin: 10.8 g/dL (Reference: 13.5–17.5 g/dL)<br>• Serum Lactic Acid: 4.2 mmol/L (Reference: 0.5–2.0 mmol/L) [Tissue hypoperfusion]<br>• Serum Creatinine: 1.8 mg/dL (Baseline: 1.0 mg/dL) [Acute kidney injury]<br>• Blood Glucose: 312 mg/dL (Reference: 70–99 mg/dL)<br>• C-Reactive Protein (CRP): 145 mg/L (Reference: &lt; 5 mg/L)</p><p style=\"margin-top:10px;\"><b>Gram Stain & Anaerobic Wound Smear:</b><br>Numerous polymorphonuclear leukocytes; heavy growth of large Gram-positive, blunt-ended, spore-forming rods morphologically consistent with <i>Clostridium perfringens</i>, along with mixed Gram-negative enteric bacilli.</p><p style=\"margin-top:10px;\"><b>Right Foot Plain Radiograph (X-Ray):</b><br>Extensive soft tissue gas dissecting through the dorsal and plantar fascial compartments of the forefoot. Severe arterial calcification of dorsalis pedis and digital vessels. No bony osteomyelitis.</p></div>"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

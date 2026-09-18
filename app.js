@@ -921,7 +921,7 @@ function renderAuthorCasesTable() {
     const tr = document.createElement('tr');
     tr.className = 'author-case-row';
     tr.dataset.course = c.course || 'Others';
-    tr.dataset.unit = c.unit || 'Others';
+    tr.dataset.unit = c.unit || c.topic || 'Others';
     tr.dataset.id = c.id;
     tr.dataset.title = (c.title || '').toLowerCase();
     tr.dataset.desc = (c.description || '').toLowerCase();
@@ -932,7 +932,7 @@ function renderAuthorCasesTable() {
         ? `<span class="badge-course-1021">NURS 1021</span>`
         : `<span class="badge-course-other">Unassigned</span>`;
 
-    const unitBadge = `<span class="badge-unit">${escapeHTML(c.unit || 'Others')}</span>`;
+    const unitBadge = `<span class="badge-unit">${escapeHTML(c.unit || c.topic || 'Others')}</span>`;
     const screensCount = c.screens ? c.screens.length : 0;
     const screensBadge = `<span class="badge-screens">${screensCount} Screens</span>`;
 
@@ -1018,7 +1018,7 @@ function renderAuthorStandaloneTable() {
     const tr = document.createElement('tr');
     tr.className = 'author-standalone-row';
     tr.dataset.course = q.course || 'Others';
-    tr.dataset.unit = q.unit || 'Others';
+    tr.dataset.unit = q.unit || q.topic || 'Others';
     tr.dataset.id = q.id;
     tr.dataset.title = (q.title || '').toLowerCase();
     tr.dataset.desc = (q.description || '').toLowerCase();
@@ -1029,7 +1029,7 @@ function renderAuthorStandaloneTable() {
         ? `<span class="badge-course-1021">NURS 1021</span>`
         : `<span class="badge-course-other">Unassigned</span>`;
 
-    const unitBadge = `<span class="badge-unit">${escapeHTML(q.unit || 'Others')}</span>`;
+    const unitBadge = `<span class="badge-unit">${escapeHTML(q.unit || q.topic || 'Others')}</span>`;
     const qType = q.screens && q.screens[0] && q.screens[0].question ? q.screens[0].question.type : '';
     const formatBadge = `<span class="badge-screens" style="background:#f1f5f9; color:#334155; border-color:#cbd5e1;">${escapeHTML(getQuestionTypeLabel(qType))}</span>`;
 
