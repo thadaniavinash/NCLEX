@@ -5734,12 +5734,10 @@ details[open] .chevron-adv {
 /* ================= STUDENT COURSE & UNIT FILTER BAR ================= */
 .student-course-unit-bar {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 18px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
   margin-bottom: 12px;
-  padding: 10px 14px;
+  padding: 12px 14px;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 6px;
@@ -5748,22 +5746,25 @@ details[open] .chevron-adv {
 .student-course-unit-bar .filter-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #334155;
-  flex: 0 0 auto;
+  gap: 10px;
+  width: 100%;
 }
 
 .student-course-unit-bar .filter-item label {
-  white-space: nowrap;
+  width: 58px;
+  min-width: 58px;
+  flex-shrink: 0;
+  font-size: 12px;
   font-weight: 700;
   color: #475569;
+  text-align: left;
+  white-space: nowrap;
 }
 
 .student-select {
-  flex: 0 0 auto;
-  min-width: 140px;
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: none;
   font-size: 12px;
   background-color: #ffffff !important;
   border: 1px solid #cbd5e1;
@@ -5783,8 +5784,8 @@ details[open] .chevron-adv {
 }
 
 .student-select.max-w-select {
-  min-width: 180px;
-  max-width: 280px;
+  width: 100%;
+  max-width: none;
 }
 
 /* Topic Chip Badges */
