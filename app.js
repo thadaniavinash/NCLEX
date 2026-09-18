@@ -885,6 +885,9 @@ function updateAuthorUnitFilterOptions() {
       <optgroup label="NURS 1021 (Pathophysiology 2)">
         ${CURRICULUM_COURSES["NURS 1021"].map(u => `<option value="${escapeHTML(u)}">${escapeHTML(u)}</option>`).join('')}
       </optgroup>
+      <optgroup label="Other Topics">
+        <option value="Others">Others (Unassigned)</option>
+      </optgroup>
     `;
   } else if (authorCourseFilter === 'NURS 1017') {
     html += `
@@ -1509,6 +1512,9 @@ function updateStudentUnitFilterOptions() {
       <optgroup label="NURS 1021 (Pathophysiology 2)">
         ${CURRICULUM_COURSES["NURS 1021"].map(u => `<option value="${escapeHTML(u)}">${escapeHTML(u)}</option>`).join('')}
       </optgroup>
+      <optgroup label="Other Topics">
+        <option value="Others">Others (Unassigned)</option>
+      </optgroup>
     `;
   } else if (studentCourseFilter === 'NURS 1017') {
     html += `
@@ -1640,7 +1646,13 @@ function renderSessionTopicsList() {
     if (!topicsMap[t].course && s.course) topicsMap[t].course = s.course;
   });
 
-  const sortedTopics = Object.keys(topicsMap).sort();
+  const sortedTopics = Object.keys(topicsMap).sort((a, b) => {
+    const isAOther = (a.toLowerCase() === 'others' || a.toLowerCase().startsWith('other'));
+    const isBOther = (b.toLowerCase() === 'others' || b.toLowerCase().startsWith('other'));
+    if (isAOther && !isBOther) return 1;
+    if (!isAOther && isBOther) return -1;
+    return a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' });
+  });
   container.innerHTML = '';
 
   if (sortedTopics.length === 0) {
