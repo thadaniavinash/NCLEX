@@ -1325,12 +1325,24 @@ function initSessionBuilder() {
     });
   }
 
-  // Presets
+  // Preset buttons
   document.querySelectorAll('.preset-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const cases = parseInt(btn.dataset.cases || '0', 10);
       const standalone = parseInt(btn.dataset.standalone || '0', 10);
-      
+
+      // If no topics are selected currently, auto-select all topics so preset can apply
+      if (!sessionBuilderTopics || sessionBuilderTopics.length === 0) {
+        document.querySelectorAll('#generator-topics-list .session-topic-checkbox').forEach(cb => {
+          cb.checked = true;
+          cb.closest('.topic-chip-card')?.classList.add('active');
+        });
+        const checkboxes = document.querySelectorAll('.session-topic-checkbox:checked');
+        sessionBuilderTopics = Array.from(checkboxes).map(cb => cb.value);
+      }
+
+      updateSessionCountsAndBounds();
+
       const casesSlider = document.getElementById('generator-cases-slider');
       const casesInput = document.getElementById('generator-cases-input');
       const stdSlider = document.getElementById('generator-standalone-slider');
@@ -1412,6 +1424,30 @@ function initSessionBuilder() {
     });
   }
 
+  // Select All Topics
+  const selectAllTopicsBtn = document.getElementById('topics-select-all-btn');
+  if (selectAllTopicsBtn) {
+    selectAllTopicsBtn.addEventListener('click', () => {
+      document.querySelectorAll('#generator-topics-list .session-topic-checkbox').forEach(cb => {
+        cb.checked = true;
+        cb.closest('.topic-chip-card')?.classList.add('active');
+      });
+      updateSessionTopicsFromCheckboxes();
+    });
+  }
+
+  // Clear All Topics
+  const clearAllTopicsBtn = document.getElementById('topics-clear-all-btn');
+  if (clearAllTopicsBtn) {
+    clearAllTopicsBtn.addEventListener('click', () => {
+      document.querySelectorAll('#generator-topics-list .session-topic-checkbox').forEach(cb => {
+        cb.checked = false;
+        cb.closest('.topic-chip-card')?.classList.remove('active');
+      });
+      updateSessionTopicsFromCheckboxes();
+    });
+  }
+
   renderSessionTopicsList();
   renderManualSelectionLists();
 }
@@ -1458,10 +1494,10 @@ function renderSessionTopicsList() {
     const counts = topicsMap[topic];
     const desc = topicDescriptions[topic] || 'Clinical scenario practice';
     const card = document.createElement('label');
-    card.className = 'topic-chip-card active';
+    card.className = 'topic-chip-card';
     card.innerHTML = `
       <div class="topic-chip-left">
-        <input type="checkbox" class="session-topic-checkbox" value="${escapeHTML(topic)}" checked style="accent-color: #025287; cursor: pointer; width: 16px; height: 16px;">
+        <input type="checkbox" class="session-topic-checkbox" value="${escapeHTML(topic)}" style="accent-color: #025287; cursor: pointer; width: 16px; height: 16px;">
         <div>
           <div class="topic-chip-name">${escapeHTML(topic)}</div>
           <div style="font-size: 11px; color: #64748b; font-weight: normal; margin-top: 1px;">${escapeHTML(desc)}</div>
