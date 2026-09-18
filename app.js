@@ -202,12 +202,51 @@ async function initApp() {
   initAdminEvents();
   applyAdminState();
 
-  // Check URL parameters for direct exam/mode launches or authoring
+  // Check URL parameters for direct case study launch, exam/mode launches, or authoring
   const urlParams = new URLSearchParams(window.location.search);
+  const directCaseId = urlParams.get('case') || urlParams.get('caseId') || urlParams.get('cases') || urlParams.get('id');
+  const directStandaloneId = urlParams.get('standalone') || urlParams.get('question') || urlParams.get('q');
   const examMode = urlParams.get('mode');
   const examId = urlParams.get('exam');
   const isAuthorParam = urlParams.get('author') === '1' || urlParams.get('studio') === '1';
 
+  // 1. Direct Case Study Launch (for LMS links)
+  if (directCaseId) {
+    const targetCase = caseStudies.find(c => c.id === directCaseId || c.id.toLowerCase() === directCaseId.toLowerCase());
+    if (targetCase) {
+      console.log(`Direct LMS launch: Case Study "${targetCase.title}" (${targetCase.id})`);
+      const targetMode = examMode === 'test' ? 'test' : 'review';
+      startPlayer(targetCase, {
+        mode: targetMode,
+        isRemediation: false,
+        allowBacktrack: targetMode !== 'test'
+      });
+      return;
+    } else {
+      console.warn(`Direct launch case ID "${directCaseId}" not found in bank.`);
+      showToast(`Case Study "${directCaseId}" not found. Showing main portal.`, 'error');
+    }
+  }
+
+  // 2. Direct Stand-alone Question Launch (for LMS links)
+  if (directStandaloneId) {
+    const targetQ = standaloneQuestions.find(q => q.id === directStandaloneId || q.id.toLowerCase() === directStandaloneId.toLowerCase());
+    if (targetQ) {
+      console.log(`Direct LMS launch: Stand-alone Question "${targetQ.title}" (${targetQ.id})`);
+      const targetMode = examMode === 'test' ? 'test' : 'review';
+      startPlayer(targetQ, {
+        mode: targetMode,
+        isRemediation: false,
+        allowBacktrack: targetMode !== 'test'
+      });
+      return;
+    } else {
+      console.warn(`Direct launch question ID "${directStandaloneId}" not found in bank.`);
+      showToast(`Question "${directStandaloneId}" not found. Showing main portal.`, 'error');
+    }
+  }
+
+  // 3. Authoring or Exam Simulation Mode
   if (isAuthorParam) {
     switchView('dashboard');
   } else if (examMode === 'test' || examId) {
@@ -940,7 +979,7 @@ function renderAuthorCasesTable() {
       <td>
         <div class="author-scenario-title">${escapeHTML(c.title || 'Untitled Case')}</div>
         <div class="author-scenario-desc">${escapeHTML(c.description || 'No description.')}</div>
-        <span class="author-scenario-id card-id-badge" data-id="${c.id}" title="Click to copy ID">ID: ${escapeHTML(c.id)}</span>
+        <span class="author-scenario-id card-id-badge" data-id="${c.id}" title="Click to copy direct LMS link for students"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-1px; margin-right:3px;"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>ID: ${escapeHTML(c.id)}</span>
       </td>
       <td>${courseBadge}</td>
       <td>${unitBadge}</td>
@@ -972,8 +1011,9 @@ function renderAuthorCasesTable() {
       const baseUrl = window.location.protocol.startsWith('http')
         ? (window.location.origin + window.location.pathname)
         : 'https://thadaniavinash.github.io/NCLEX/';
-      navigator.clipboard.writeText(`${baseUrl}?cases=${c.id}`);
-      showToast("Launch link copied to clipboard!");
+      const directUrl = `${baseUrl}?case=${encodeURIComponent(c.id)}`;
+      navigator.clipboard.writeText(directUrl);
+      showToast(`Copied LMS link for "${c.title}"!`);
     });
 
     tbody.appendChild(tr);
@@ -1037,7 +1077,7 @@ function renderAuthorStandaloneTable() {
       <td>
         <div class="author-scenario-title">${escapeHTML(q.title || 'Untitled Question')}</div>
         <div class="author-scenario-desc">${escapeHTML(q.description || 'No description.')}</div>
-        <span class="author-scenario-id card-id-badge" data-id="${q.id}" title="Click to copy ID">ID: ${escapeHTML(q.id)}</span>
+        <span class="author-scenario-id card-id-badge" data-id="${q.id}" title="Click to copy direct LMS link for students"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-1px; margin-right:3px;"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>ID: ${escapeHTML(q.id)}</span>
       </td>
       <td>${courseBadge}</td>
       <td>${unitBadge}</td>
@@ -1069,8 +1109,9 @@ function renderAuthorStandaloneTable() {
       const baseUrl = window.location.protocol.startsWith('http')
         ? (window.location.origin + window.location.pathname)
         : 'https://thadaniavinash.github.io/NCLEX/';
-      navigator.clipboard.writeText(`${baseUrl}?standalone=${q.id}`);
-      showToast("Launch link copied to clipboard!");
+      const directUrl = `${baseUrl}?standalone=${encodeURIComponent(q.id)}`;
+      navigator.clipboard.writeText(directUrl);
+      showToast(`Copied LMS link for "${q.title}"!`);
     });
 
     tbody.appendChild(tr);
