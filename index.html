@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NCLEX NGN Case Study Studio</title>
+  <title>Preparing for the NCLEX (NGN) Platform - Practice & Testing Portal</title>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,248 +13,164 @@
 </head>
 <body>
 
-  <!-- ================= DASHBOARD VIEW ================= -->
-  <div id="dashboard-view" class="view active">
-    <div class="dashboard-layout">
-      <!-- Sidebar on the left -->
-      <aside class="dashboard-sidebar">
-        <div class="sidebar-logo" style="display: flex; align-items: center; justify-content: space-between; width: 100%; padding-right: 8px;">
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 24px; height: 24px;">
+  <!-- ================= STUDENT PORTAL VIEW (PEARSON VUE NCLEX INTERFACE) ================= -->
+  <div id="student-view" class="view active">
+    <!-- Pearson VUE Top Header Bar -->
+    <header class="student-pv-header">
+      <div class="student-pv-top-bar">
+        <div class="student-pv-brand">
+          <div class="student-pv-logo">
+            <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
             </svg>
-            <h2 style="margin: 0; font-size: 20px;">NCLEX <span>Studio</span></h2>
           </div>
-          <button id="dashboard-theme-toggle-btn" class="btn btn-secondary" title="Toggle Light/Dark Mode" style="display: inline-flex; align-items: center; justify-content: center; padding: 0; width: 36px; height: 32px;">
-            <!-- Light Mode Icon (Sun) -->
-            <svg class="sun-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-            <!-- Dark Mode Icon (Moon) -->
-            <svg class="moon-icon hidden" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <div class="student-pv-titles">
+            <div class="student-pv-main-title">
+              Preparing for the NCLEX (NGN) Platform
+              <span class="student-pv-badge">Student Portal</span>
+            </div>
+            <div class="student-pv-subtitle">Practice and Testing Web Portal</div>
+          </div>
+        </div>
+
+        <div class="student-pv-header-actions">
+          <div class="student-pv-status-indicator">
+            <span class="status-dot-pulse"></span>
+            <span id="student-bank-status-text">Local Bank: Active</span>
+          </div>
+
+          <button id="student-authoring-btn" class="student-authoring-button" title="Switch to Faculty Authoring Studio">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+            </svg>
+            <span>Authoring</span>
           </button>
         </div>
-        <nav class="sidebar-nav" style="overflow-y: auto;">
-          <!-- Case Studies Folder -->
-          <div class="sidebar-folder" id="folder-cases">
-            <button id="nav-tab-cases" class="nav-item nav-folder-toggle active" style="margin-bottom: 2px;">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="folder-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-              <span>Case Studies</span>
-              <span id="sidebar-cases-count" class="nav-badge">0</span>
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" class="chevron-icon"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="sidebar-sub-list hidden" id="sub-list-cases">
-              <!-- Dynamically populated categories -->
-            </div>
-          </div>
+      </div>
 
-          <!-- Stand-alone Questions Folder -->
-          <div class="sidebar-folder" id="folder-standalone">
-            <button id="nav-tab-standalone" class="nav-item nav-folder-toggle" style="margin-bottom: 2px;">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="folder-icon"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-              <span>Stand-alone Qs</span>
-              <span id="sidebar-standalone-count" class="nav-badge">0</span>
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" class="chevron-icon"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="sidebar-sub-list hidden" id="sub-list-standalone">
-              <!-- Dynamically populated categories -->
-            </div>
-          </div>
+      <!-- Pearson VUE Sub-header Navigation / Breadcrumb -->
+      <div class="student-pv-sub-bar">
+        <div class="student-pv-breadcrumb">
+          <span class="breadcrumb-root">Portal</span>
+          <span class="breadcrumb-separator">&rsaquo;</span>
+          <span class="breadcrumb-current">Session Configurator</span>
+        </div>
+        <div class="student-pv-exam-meta">
+          <span>Exam Format: <strong>NGN Clinical Judgment</strong></span>
+          <span class="meta-divider">|</span>
+          <span>NCLEX Exam Limit: <strong>85 Questions Max</strong></span>
+        </div>
+      </div>
+    </header>
 
-          <!-- Practice / Exam Session Builder Tab -->
-          <button id="nav-tab-generator" class="nav-item" style="margin-bottom: 2px;">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            <span>Practice / Exam Mode</span>
-          </button>
-        </nav>
+    <!-- Student Portal Main Workspace (Scrollable) -->
+    <main class="student-portal-scroll-area">
+      <div class="student-portal-container">
         
-        <!-- Admin Section at the bottom of sidebar -->
-        <div class="sidebar-admin-section">
-          <div id="admin-status-logged-out">
-            <button id="admin-login-btn" class="btn btn-secondary btn-full" style="width: 100%;">
-              <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px; display: inline-block; vertical-align: middle;"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3"/></svg>
-              <span style="vertical-align: middle;">Admin Login</span>
-            </button>
+        <!-- Header Introduction Banner -->
+        <div class="student-intro-banner">
+          <div>
+            <h1 class="student-intro-title">NCLEX Session Builder</h1>
+            <p class="student-intro-desc">Configure your practice or simulation parameters. Select an operating mode, customize question counts, and filter by clinical topic.</p>
           </div>
-          <div id="admin-status-logged-in" class="hidden">
-            <div class="admin-badge">
-              <span class="admin-dot"></span> Admin Mode
-            </div>
-            <button id="admin-logout-btn" class="btn btn-text btn-xs" style="color: #ef4444; width: 100%; margin-top: 8px; text-align: center; background: transparent; border: none; cursor: pointer;">
-              Logout
-            </button>
-          </div>
-        </div>
-      </aside>
-
-      <!-- Main Content area on the right -->
-      <div class="dashboard-main-area">
-        <!-- Sub-panel 1: Case Studies -->
-        <div id="panel-cases" class="dashboard-panel active">
-          <header class="panel-header">
-            <div class="panel-header-title">
-              <h2>NGN Case Studies</h2>
-              <p>Multi-step clinical unfolding scenarios representing complex client care.</p>
-            </div>
-            <div class="panel-header-actions">
-              <button id="connect-folder-btn-cases" class="btn btn-secondary connect-folder-btn admin-only" title="Connect a local folder so all saves write directly to your hard drive">
-                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-                Connect Local Folder
-              </button>
-              <div class="export-dropdown admin-only">
-                <button id="export-dropdown-btn-cases" class="btn btn-secondary" title="Export cases and questions as files">
-                  <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
-                  Export Data ▼
-                </button>
-                <div class="export-dropdown-menu hidden" id="export-menu-cases">
-                  <button class="export-menu-item" data-action="cases-json">Export cases.json</button>
-                  <button class="export-menu-item" data-action="cases-data-js">Export cases-data.js</button>
-                  <button class="export-menu-item" data-action="all-json">Export All (cases + standalone)</button>
-                </div>
-              </div>
-              <button id="import-btn" class="btn btn-secondary admin-only">
-                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                Import JSON
-              </button>
-              <input type="file" id="import-file-input" accept=".json" style="display: none;">
-              <button id="create-btn" class="btn btn-primary admin-only">
-                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                Create Case Study
-              </button>
-            </div>
-          </header>
-          <div id="cases-grid" class="cases-grid">
-            <!-- Dynamically populated case cards -->
-          </div>
-          <div id="empty-state" class="empty-state hidden">
-            <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="9" y1="15" x2="15" y2="15"/>
-              <line x1="12" y1="12" x2="12" y2="18"/>
+          <div id="session-summary-pill" class="student-summary-pill">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
             </svg>
-            <p>No case studies found. Load the default cardiovascular case study.</p>
-            <button id="load-default-btn" class="btn btn-accent admin-only">Load Demo Case Study</button>
+            <span id="pill-mode-text">Review Mode</span>: <strong id="pill-total-text">10 Questions</strong> <span id="pill-time-text">(Est. 13 Mins)</span>
           </div>
         </div>
 
-        <!-- Sub-panel 2: Stand-alone Questions -->
-        <div id="panel-standalone" class="dashboard-panel">
-          <header class="panel-header">
-            <div class="panel-header-title">
-              <h2>Stand-alone Questions</h2>
-              <p>Single client questions covering NGN item formats (MCQ, SATA, Bowtie, Hotspot, Highlight).</p>
-            </div>
-            <div class="panel-header-actions">
-              <button id="connect-folder-btn-standalone" class="btn btn-secondary connect-folder-btn admin-only" title="Connect a local folder so all saves write directly to your hard drive">
-                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-                Connect Local Folder
-              </button>
-              <div class="export-dropdown admin-only">
-                <button id="export-dropdown-btn-standalone" class="btn btn-secondary" title="Export standalone questions">
-                  <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
-                  Export Data ▼
-                </button>
-                <div class="export-dropdown-menu hidden" id="export-menu-standalone">
-                  <button class="export-menu-item" data-action="standalone-json">Export standalone.json</button>
-                  <button class="export-menu-item" data-action="cases-data-js">Export cases-data.js</button>
-                  <button class="export-menu-item" data-action="all-json">Export All (cases + standalone)</button>
+        <!-- Two-Column Main Layout -->
+        <div class="student-builder-grid">
+
+          <!-- ================= LEFT COLUMN: Mode, Quantities, & Launch ================= -->
+          <div class="student-builder-left-col">
+
+            <!-- CARD 1: Operating Mode Selector -->
+            <div class="pv-panel">
+              <div class="pv-panel-header">
+                <div class="pv-header-step-title">
+                  <span class="pv-step-badge">1</span>
+                  <h3>Select Operating Mode</h3>
                 </div>
+                <span class="pv-step-subtitle">Choose practice feedback level</span>
               </div>
-              <button id="import-standalone-btn" class="btn btn-secondary admin-only">
-                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                Import JSON
-              </button>
-              <input type="file" id="import-standalone-file-input" accept=".json" style="display: none;">
-              <button id="create-standalone-btn" class="btn btn-primary admin-only">
-                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 6px;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                Create Question
-              </button>
-            </div>
-          </header>
-          <div id="standalone-grid" class="cases-grid">
-            <!-- Dynamically populated question cards -->
-          </div>
-          <div id="standalone-empty-state" class="empty-state hidden">
-            <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none">
-              <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12.01" y2="8"/><polyline points="11 12 12 12 12 16 13 16"/>
-            </svg>
-            <p>No stand-alone questions found. Create a new question or import one.</p>
-            <button id="create-standalone-empty-btn" class="btn btn-accent admin-only">Create New Question</button>
-          </div>
-        </div>
-
-        <!-- Sub-panel 3: Practice / Exam Session Builder -->
-        <div id="panel-generator" class="dashboard-panel">
-          <header class="panel-header">
-            <div class="panel-header-title">
-              <h2>NextGen NCLEX Session Builder</h2>
-              <p>Customize your testing session by mode, topic, and question counts up to NCLEX exam limits.</p>
-            </div>
-          </header>
-
-          <div class="generator-workspace">
-            <div class="generator-controls-card">
-              
-              <!-- SECTION 1: Operating Mode Selector -->
-              <div class="session-section">
-                <label class="session-section-title">1. Select Operating Mode</label>
+              <div class="pv-panel-body">
                 <div class="mode-selector-grid">
+                  <!-- Review Mode Card -->
                   <label class="mode-card selected" id="mode-card-review">
                     <input type="radio" name="session-mode" value="review" checked class="mode-radio">
                     <div class="mode-content">
                       <div class="mode-header">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                        <span class="mode-name">Review Mode (Practice)</span>
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                        </svg>
+                        <span class="mode-name">Review Mode</span>
+                        <span class="mode-tag-pill tutor">Practice</span>
                       </div>
-                      <p class="mode-desc">Tutor-style practice. Jump freely with the <strong>Question Navigator</strong>, backtrack anytime, and see clinical rationales upon submission.</p>
+                      <p class="mode-desc">Tutor-style practice. Jump freely with the <strong>Question Navigator</strong>, backtrack anytime, and see detailed clinical rationales upon answer submission.</p>
+                      <div class="mode-perk-row tutor-perk">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Immediate Feedback & Rationales</span>
+                      </div>
                     </div>
                   </label>
 
+                  <!-- Test Mode Card -->
                   <label class="mode-card" id="mode-card-test">
                     <input type="radio" name="session-mode" value="test" class="mode-radio">
                     <div class="mode-content">
                       <div class="mode-header">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        <span class="mode-name">Test Mode (Exam Simulation)</span>
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        <span class="mode-name">Test Mode</span>
+                        <span class="mode-tag-pill exam">Simulation</span>
                       </div>
-                      <p class="mode-desc">Realistic NextGen NCLEX exam. <strong>No backtracking</strong>, Question Navigator hidden during exam. Full interactive remediation review available upon completion.</p>
+                      <p class="mode-desc">Authentic Pearson VUE NCLEX exam simulation. <strong>Strictly no backtracking</strong>, Question Navigator hidden during test. Comprehensive score report and review upon completion.</p>
+                      <div class="mode-perk-row exam-perk">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <span>Timed Exam Conditions & Scoring</span>
+                      </div>
                     </div>
                   </label>
                 </div>
               </div>
+            </div>
 
-              <!-- SECTION 2: Topic Selection -->
-              <div class="session-section" style="margin-top: 24px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                  <label class="session-section-title" style="margin-bottom: 0;">2. Select Clinical Topics</label>
-                  <div style="display: flex; gap: 8px;">
-                    <button type="button" id="topics-select-all-btn" class="btn btn-secondary btn-xs">Select All</button>
-                    <button type="button" id="topics-clear-all-btn" class="btn btn-secondary btn-xs">Clear All</button>
+            <!-- CARD 2: Question Quantities -->
+            <div class="pv-panel">
+              <div class="pv-panel-header">
+                <div class="pv-header-step-title">
+                  <span class="pv-step-badge">2</span>
+                  <h3>Configure Question Quantities</h3>
+                </div>
+                <span class="pv-step-subtitle">NCLEX 85-Question Maximum</span>
+              </div>
+              <div class="pv-panel-body">
+                <!-- Presets Row -->
+                <div class="pv-presets-section">
+                  <label class="pv-sub-label">Fast Setup Presets:</label>
+                  <div class="presets-row">
+                    <button type="button" class="preset-chip preset-btn" data-cases="1" data-standalone="0">1 Case Study (6 Qs)</button>
+                    <button type="button" class="preset-chip preset-btn" data-cases="0" data-standalone="10">Quick 10 Standalone</button>
+                    <button type="button" class="preset-chip preset-btn" data-cases="1" data-standalone="10">1 Case + 10 Standalone (16 Qs)</button>
+                    <button type="button" class="preset-chip highlight preset-btn" data-cases="3" data-standalone="67">NCLEX 85-Question Exam Cap</button>
                   </div>
                 </div>
-                <div id="generator-topics-list" class="topics-grid">
-                  <!-- Dynamically populated topic checkboxes with live counts -->
-                </div>
-              </div>
 
-              <!-- SECTION 3: Question Quantities (Hard capped at 3 cases & 67 standalone = 85 total) -->
-              <div class="session-section" style="margin-top: 24px;">
-                <label class="session-section-title">3. Configure Question Counts (NCLEX Exam Caps)</label>
-                <div class="presets-row" style="margin-bottom: 14px; display: flex; gap: 8px; flex-wrap: wrap;">
-                  <button type="button" class="btn btn-secondary btn-xs preset-btn" data-cases="1" data-standalone="0">1 Case Study (6 Qs)</button>
-                  <button type="button" class="btn btn-secondary btn-xs preset-btn" data-cases="0" data-standalone="10">Quick 10 Standalone</button>
-                  <button type="button" class="btn btn-secondary btn-xs preset-btn" data-cases="1" data-standalone="10">1 Case + 10 Standalone (16 Qs)</button>
-                  <button type="button" class="btn btn-secondary btn-xs preset-btn" data-cases="3" data-standalone="67" style="border-color: #3b82f6; color: #60a5fa;">NCLEX 85-Question Exam Cap</button>
-                </div>
-
+                <!-- Sliders Grid -->
                 <div class="quantity-controls-grid">
-                  <!-- Case Studies Input -->
+                  <!-- Case Studies Card -->
                   <div class="quantity-card">
                     <div class="quantity-card-header">
                       <div class="quantity-label">
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-                        <span>Case Studies</span>
+                        <span>Unfolding Case Studies</span>
                       </div>
-                      <span class="quantity-avail" id="cases-avail-text">Avail: 0</span>
+                      <span class="quantity-avail" id="cases-avail-text">Avail: 0 (Max 3)</span>
                     </div>
                     <div class="quantity-input-row">
                       <input type="range" id="generator-cases-slider" min="0" max="3" value="1" class="quantity-slider">
@@ -263,20 +179,20 @@
                     <div class="quantity-note" id="cases-questions-note">1 Case Study = 6 Questions</div>
                   </div>
 
-                  <!-- Standalone Questions Input -->
+                  <!-- Standalone Card -->
                   <div class="quantity-card">
                     <div class="quantity-card-header">
                       <div class="quantity-label">
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
                         <span>Stand-alone Questions</span>
                       </div>
-                      <span class="quantity-avail" id="standalone-avail-text">Avail: 0</span>
+                      <span class="quantity-avail" id="standalone-avail-text">Avail: 0 (Max 67)</span>
                     </div>
                     <div class="quantity-input-row">
-                      <input type="range" id="generator-standalone-slider" min="0" max="67" value="5" class="quantity-slider">
-                      <input type="number" id="generator-standalone-input" min="0" max="67" value="5" class="quantity-number-input">
+                      <input type="range" id="generator-standalone-slider" min="0" max="67" value="4" class="quantity-slider">
+                      <input type="number" id="generator-standalone-input" min="0" max="67" value="4" class="quantity-number-input">
                     </div>
-                    <div class="quantity-note" id="standalone-questions-note">5 Stand-alone Questions</div>
+                    <div class="quantity-note" id="standalone-questions-note">4 Stand-alone Questions</div>
                   </div>
                 </div>
 
@@ -284,43 +200,360 @@
                 <div class="session-total-bar" id="session-total-bar">
                   <div class="total-stat">
                     <span class="stat-label">Total Questions:</span>
-                    <span class="stat-val" id="session-total-questions-val">11</span>
+                    <span class="stat-val" id="session-total-questions-val">10</span>
                     <span class="stat-max">/ 85 Max</span>
+                    <span class="stat-time">(Est. <span id="session-est-time-val">13</span> mins)</span>
                   </div>
-                  <div class="total-status" id="session-total-status-badge">Ready</div>
+                  <div class="total-status" id="session-total-status-badge">Ready (Practice)</div>
                 </div>
               </div>
+            </div>
 
-              <!-- SECTION 4: Advanced Manual Selection Accordion -->
-              <details class="generator-advanced-details" style="margin-top: 16px;">
-                <summary style="cursor: pointer; font-size: 13px; color: #94a3b8; padding: 6px 0; user-select: none;">
-                  ▸ Advanced: Manually pick specific case studies & standalone questions
-                </summary>
-                <div style="margin-top: 12px; padding: 12px; background: rgba(0,0,0,0.15); border-radius: var(--radius-sm);">
-                  <div class="form-group">
-                    <label style="font-size: 12px;">Specific Case Studies:</label>
-                    <div id="generator-cases-list" class="generator-selection-list"></div>
+            <!-- Hero Launch Button -->
+            <div class="student-launch-container">
+              <button id="generate-play-btn" class="btn-pv-hero-launch">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+                <span id="launch-btn-label">Start Practice Session (Review Mode)</span>
+              </button>
+              <p class="student-launch-disclaimer">All session answers are evaluated locally. You can review all clinical rationales and scoring upon completion.</p>
+            </div>
+
+          </div>
+
+          <!-- ================= RIGHT COLUMN: Topic Selector & Specific Picker ================= -->
+          <div class="student-builder-right-col">
+
+            <!-- CARD 3: Topic Selector -->
+            <div class="pv-panel">
+              <div class="pv-panel-header">
+                <div class="pv-header-step-title">
+                  <span class="pv-step-badge">3</span>
+                  <h3>Topic Selector</h3>
+                </div>
+                <span id="topics-selected-count-badge" class="pv-count-badge">Loading topics...</span>
+              </div>
+              
+              <div class="pv-panel-body">
+                <!-- Search & Quick Action Bar -->
+                <div class="topics-filter-bar">
+                  <div class="topics-search-wrapper">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="topic-search-input" placeholder="Filter clinical topics..." class="topics-search-input">
                   </div>
+                  <div class="topics-actions">
+                    <button type="button" id="topics-select-all-btn" class="btn-pv-sub-action">Select All</button>
+                    <button type="button" id="topics-clear-all-btn" class="btn-pv-sub-action">Clear</button>
+                  </div>
+                </div>
+
+                <p class="topics-guidance">Select clinical domains to include in this testing pool:</p>
+
+                <!-- Dynamic Topics List -->
+                <div id="generator-topics-list" class="topics-scroll-list">
+                  <!-- Injected dynamically by app.js with live counts -->
+                </div>
+
+                <!-- Topic Pool Summary Bar -->
+                <div class="topic-pool-summary" id="topic-pool-summary-box">
+                  <div class="pool-row">
+                    <span>Selected Topic Pool:</span>
+                    <strong id="topic-pool-counts-text">Loading pool...</strong>
+                  </div>
+                  <div class="pool-row-sub">NCLEX Capacity: 85 Questions Max</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 4: Select Specific Case Studies and Questions (Advanced Picker) -->
+            <div class="pv-panel pv-advanced-panel">
+              <details class="generator-advanced-details" id="generator-advanced-accordion">
+                <summary class="pv-advanced-summary">
+                  <div class="pv-advanced-summary-left">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" class="chevron-adv"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span class="pv-step-badge secondary">4</span>
+                    <h4>Select Specific Case Studies and Questions</h4>
+                  </div>
+                  <span class="pv-advanced-hint">Optional override &rsaquo;</span>
+                </summary>
+                
+                <div class="pv-advanced-body">
+                  <p class="pv-advanced-desc">
+                    Prefer a targeted drill? Check specific case studies or stand-alone questions below to practice exact clinical scenarios:
+                  </p>
+
+                  <div class="form-group">
+                    <label class="pv-adv-group-title">Specific Unfolding Case Studies (6 Qs each):</label>
+                    <div id="generator-cases-list" class="generator-selection-list">
+                      <!-- Dynamically injected -->
+                    </div>
+                  </div>
+
                   <div class="form-group" style="margin-top: 14px;">
-                    <label style="font-size: 12px;">Specific Stand-alone Questions:</label>
-                    <div id="generator-standalone-list" class="generator-selection-list"></div>
+                    <label class="pv-adv-group-title">Specific Stand-alone Questions:</label>
+                    <div id="generator-standalone-list" class="generator-selection-list">
+                      <!-- Dynamically injected -->
+                    </div>
                   </div>
                 </div>
               </details>
-
-              <!-- Launch Action -->
-              <div class="generator-summary-and-play" style="margin-top: 24px;">
-                <button id="generate-play-btn" class="btn btn-primary btn-large btn-run" style="width: 100%; justify-content: center; height: 46px; font-size: 16px; font-weight: 600;">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="margin-right: 8px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                  <span id="launch-btn-label">Start Practice Session (Review Mode)</span>
-                </button>
-              </div>
-
             </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+
+  <!-- ================= DASHBOARD VIEW (FACULTY / AUTHORING STUDIO) ================= -->
+  <div id="dashboard-view" class="view">
+    <!-- Faculty Authoring Header -->
+    <header class="author-pv-header">
+      <div class="author-pv-top-bar">
+        <div class="author-pv-brand">
+          <div class="author-pv-logo">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <div class="author-pv-titles">
+            <div class="author-pv-main-title">
+              NCLEX Authoring Studio
+              <span class="author-pv-badge">Faculty Portal</span>
+            </div>
+            <div class="author-pv-subtitle">Curriculum & Clinical Judgment Item Management System</div>
+          </div>
+        </div>
+
+        <div class="author-pv-header-actions">
+          <!-- Return to Student Portal Link -->
+          <button id="author-to-student-btn" class="author-student-link" title="Switch to Student Testing Portal">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+            <span>Student Portal &rarr;</span>
+          </button>
+
+          <!-- Admin Authentication Toggle -->
+          <div id="admin-status-logged-out">
+            <button id="admin-login-btn" class="author-auth-btn login">
+              <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3"/>
+              </svg>
+              <span>Admin Login</span>
+            </button>
+          </div>
+          <div id="admin-status-logged-in" class="hidden">
+            <button id="admin-logout-btn" class="author-auth-btn logged-in">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+              </svg>
+              <span>Admin Logged In (Logout)</span>
+            </button>
           </div>
         </div>
       </div>
-    </div>
+
+      <!-- Sub-Header / Breadcrumb -->
+      <div class="author-pv-sub-bar">
+        <div class="author-pv-breadcrumb">
+          <span style="color:#94a3b8;">Authoring</span>
+          <span style="color:#94a3b8;">&rsaquo;</span>
+          <span style="font-weight:600; color:#002f5c;">Curriculum Case Repository</span>
+        </div>
+        <div class="author-pv-meta">
+          <span>Active Curriculum: <strong>NURS 1017 &bull; NURS 1021</strong></span>
+          <span style="color:#cbd5e1;">|</span>
+          <span class="save-status-indicator">
+            <span class="status-dot-pulse"></span>
+            Auto-saving active (Disk & Cloud Sync)
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Workspace (Full Width, No Sidebar) -->
+    <main class="author-portal-scroll-area">
+      <div class="author-portal-container">
+
+        <!-- Top KPI Summary Cards -->
+        <div class="author-kpi-grid">
+          <!-- KPI 1: Case Studies -->
+          <div class="pv-panel author-kpi-card">
+            <div>
+              <span class="kpi-label">Case Studies</span>
+              <div id="author-kpi-cases-count" class="kpi-value">0 Cases</div>
+              <span id="author-kpi-cases-screens" class="kpi-sub">0 Unfolding Clinical Screens</span>
+            </div>
+            <div class="kpi-icon blue">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            </div>
+          </div>
+
+          <!-- KPI 2: Stand-alone Qs -->
+          <div class="pv-panel author-kpi-card">
+            <div>
+              <span class="kpi-label">Stand-alone Qs</span>
+              <div id="author-kpi-standalone-count" class="kpi-value">0 Questions</div>
+              <span class="kpi-sub">Bowtie, SATA, MCQ Formats</span>
+            </div>
+            <div class="kpi-icon indigo">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            </div>
+          </div>
+
+          <!-- KPI 3: NURS 1017 -->
+          <div class="pv-panel author-kpi-card">
+            <div>
+              <span class="kpi-label sky">NURS 1017 (Patho 1)</span>
+              <div id="author-kpi-1017-count" class="kpi-value sky">0 Items</div>
+              <span id="author-kpi-1017-units" class="kpi-sub">Curriculum Units</span>
+            </div>
+            <div class="kpi-icon sky-pill">1017</div>
+          </div>
+
+          <!-- KPI 4: NURS 1021 -->
+          <div class="pv-panel author-kpi-card">
+            <div>
+              <span class="kpi-label purple">NURS 1021 (Patho 2)</span>
+              <div id="author-kpi-1021-count" class="kpi-value purple">0 Items</div>
+              <span id="author-kpi-1021-units" class="kpi-sub">Curriculum Units</span>
+            </div>
+            <div class="kpi-icon purple-pill">1021</div>
+          </div>
+        </div>
+
+        <!-- Main Curriculum Repository Panel -->
+        <div class="pv-panel author-main-panel">
+          
+          <!-- Tabs & Primary Action Header -->
+          <div class="author-tabs-header">
+            <div class="author-tabs-left">
+              <button id="author-tab-cases" class="author-tab-btn active" type="button">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                <span>Unfolding Case Studies</span>
+                <span id="author-tab-cases-badge" class="author-tab-pill blue">0</span>
+              </button>
+              <button id="author-tab-standalone" class="author-tab-btn" type="button">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <span>Stand-alone Questions</span>
+                <span id="author-tab-standalone-badge" class="author-tab-pill grey">0</span>
+              </button>
+            </div>
+
+            <div class="author-header-right-actions">
+              <button id="create-btn" class="btn-pv-primary author-create-btn" type="button">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span id="create-btn-label">Create New Case Study</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Filter Toolbar -->
+          <div class="author-toolbar">
+            <div class="author-toolbar-filters">
+              <div class="filter-item">
+                <label for="author-course-filter">Course:</label>
+                <select id="author-course-filter" class="author-select">
+                  <option value="ALL">All Courses (1017 & 1021)</option>
+                  <option value="NURS 1017">NURS 1017 (Pathophysiology 1)</option>
+                  <option value="NURS 1021">NURS 1021 (Pathophysiology 2)</option>
+                  <option value="Others">Others (Unassigned)</option>
+                </select>
+              </div>
+
+              <div class="filter-item">
+                <label for="author-unit-filter">Unit:</label>
+                <select id="author-unit-filter" class="author-select max-w-select">
+                  <option value="ALL">All Units</option>
+                  <optgroup label="NURS 1017 (Pathophysiology 1)">
+                    <option value="Unit 1 (Introduction to Pathophysiology)">Unit 1 (Introduction to Pathophysiology)</option>
+                    <option value="Unit 2 (Cellular Basis of Disease)">Unit 2 (Cellular Basis of Disease)</option>
+                    <option value="Unit 3 (Genetic and Developmental Disorders)">Unit 3 (Genetic and Developmental Disorders)</option>
+                    <option value="Unit 4 (Neoplasia)">Unit 4 (Neoplasia)</option>
+                    <option value="Unit 5 (Integumentary Disorders and Burns)">Unit 5 (Integumentary Disorders and Burns)</option>
+                    <option value="Unit 6 (Musculoskeletal Disorders)">Unit 6 (Musculoskeletal Disorders)</option>
+                    <option value="Unit 7 (Neurological Disorders)">Unit 7 (Neurological Disorders)</option>
+                    <option value="Unit 8 (Pain)">Unit 8 (Pain)</option>
+                    <option value="Unit 9 (Disorders of the Eyes and Ears)">Unit 9 (Disorders of the Eyes and Ears)</option>
+                    <option value="Unit 10 (Stress and Disease)">Unit 10 (Stress and Disease)</option>
+                    <option value="Unit 11 (Endocrine Disorders)">Unit 11 (Endocrine Disorders)</option>
+                  </optgroup>
+                  <optgroup label="NURS 1021 (Pathophysiology 2)">
+                    <option value="Unit 1 (Blood Disorders)">Unit 1 (Blood Disorders)</option>
+                    <option value="Unit 2 (Cardiovascular Disorders)">Unit 2 (Cardiovascular Disorders)</option>
+                    <option value="Unit 3 (Respiratory Disorders)">Unit 3 (Respiratory Disorders)</option>
+                    <option value="Unit 4 (Inflammation and Immune Disorders)">Unit 4 (Inflammation and Immune Disorders)</option>
+                    <option value="Unit 5 (Leukemias and Lymphomas)">Unit 5 (Leukemias and Lymphomas)</option>
+                    <option value="Unit 6 (Gastrointestinal Disorders)">Unit 6 (Gastrointestinal Disorders)</option>
+                    <option value="Unit 7 (Urinary Disorders)">Unit 7 (Urinary Disorders)</option>
+                    <option value="Unit 8 (Fluid, Electrolytes, and Acid-Base Imbalances)">Unit 8 (Fluid, Electrolytes, and Acid-Base Imbalances)</option>
+                    <option value="Unit 9 (Reproductive Disorders)">Unit 9 (Reproductive Disorders)</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+
+            <div class="author-search-wrapper">
+              <svg class="search-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="author-table-search" placeholder="Search scenario title or ID..." class="author-search-input">
+            </div>
+          </div>
+
+          <!-- 1. Case Studies Table View -->
+          <div id="author-cases-table-view" class="author-table-container">
+            <table class="pv-table">
+              <thead>
+                <tr>
+                  <th style="width: 38%;">Case Title & Scenario</th>
+                  <th style="width: 12%;">Course</th>
+                  <th style="width: 22%;">Unit / Category</th>
+                  <th style="width: 10%;">Screens</th>
+                  <th style="width: 18%; text-align: right;">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="author-cases-tbody">
+                <!-- Dynamically rendered by app.js -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 2. Stand-alone Questions Table View -->
+          <div id="author-standalone-table-view" class="author-table-container hidden">
+            <table class="pv-table">
+              <thead>
+                <tr>
+                  <th style="width: 38%;">Question Title & Scenario</th>
+                  <th style="width: 12%;">Course</th>
+                  <th style="width: 22%;">Unit / Category</th>
+                  <th style="width: 10%;">Format</th>
+                  <th style="width: 18%; text-align: right;">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="author-standalone-tbody">
+                <!-- Dynamically rendered by app.js -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Table Footer -->
+          <div class="author-table-footer">
+            <span id="author-filtered-count-text">Showing 0 of 0 Case Studies</span>
+            <span class="author-footer-note">All edits save automatically to local disk and Supabase cloud.</span>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
   </div>
 
 
@@ -335,9 +568,17 @@
           <input type="text" id="case-title-input" class="editor-title-input" placeholder="Case Study Title" style="width: 100%;">
           <div style="display: flex; gap: 12px; align-items: center; width: 100%;">
             <input type="text" id="case-desc-input" class="editor-desc-input" placeholder="Enter a brief case description..." style="flex-grow: 1;">
-            <select id="case-disorder-select" class="form-control" style="width: 250px; font-size: 12px; padding: 4px 8px; border-radius: var(--radius-sm); border: 1px solid #334155; background: #1e293b; color: white; height: 28px; font-weight: 500; cursor: pointer; outline: none;">
-              <!-- Dropdown will be populated dynamically -->
-            </select>
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <select id="case-course-select" class="form-control" style="width: 130px; font-size: 12px; padding: 4px 8px; border-radius: var(--radius-sm); border: 1px solid #334155; background: #1e293b; color: white; height: 28px; font-weight: 600; cursor: pointer; outline: none;">
+                <option value="">Course: None</option>
+                <option value="NURS 1017">NURS 1017</option>
+                <option value="NURS 1021">NURS 1021</option>
+              </select>
+              <select id="case-unit-select" class="form-control" style="width: 250px; font-size: 12px; padding: 4px 8px; border-radius: var(--radius-sm); border: 1px solid #334155; background: #1e293b; color: white; height: 28px; font-weight: 500; cursor: pointer; outline: none;">
+                <!-- Populated dynamically based on course -->
+              </select>
+              <select id="case-disorder-select" style="display: none;"></select>
+            </div>
           </div>
         </div>
       </div>

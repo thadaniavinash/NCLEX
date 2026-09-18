@@ -1,6 +1,7 @@
 {
   "id": "standalone_1781535796380",
   "title": "GI Disorders (MCQ)",
+  "topic": "Unit 6 (Gastrointestinal Disorders)",
   "screens": [
     {
       "step": 1,
@@ -34,7 +35,10 @@
       }
     }
   ],
-  "disorder": "GI Disorders",
+  "disorder": "Unit 6 (Gastrointestinal Disorders)",
   "description": "",
-  "isStandalone": true
+  "availability": "all",
+  "isStandalone": true,
+  "course": "NURS 1021",
+  "unit": "Unit 6 (Gastrointestinal Disorders)"
 }

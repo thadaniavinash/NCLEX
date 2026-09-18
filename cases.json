@@ -2,6 +2,7 @@
   {
     "id": "cardio-case-1",
     "title": "Case Study 1",
+    "topic": "Unit 2 (Cardiovascular Disorders)",
     "screens": [
       {
         "step": 1,
@@ -336,14 +337,16 @@
         }
       }
     ],
-    "disorder": "Cardiovascular Disorders",
+    "disorder": "Unit 2 (Cardiovascular Disorders)",
     "description": "",
-    "topic": "Cardiovascular Disorders",
-    "availability": "all"
+    "availability": "all",
+    "course": "NURS 1021",
+    "unit": "Unit 2 (Cardiovascular Disorders)"
   },
   {
     "id": "case_1780489713691",
     "title": "Case Study 2",
+    "topic": "Unit 11 (Endocrine Disorders)",
     "screens": [
       {
         "step": 1,
@@ -736,14 +739,16 @@
         }
       }
     ],
-    "disorder": "Endocrine Disorders",
+    "disorder": "Unit 11 (Endocrine Disorders)",
     "description": "Endocrine Disorders",
-    "topic": "Endocrine Disorders",
-    "availability": "all"
+    "availability": "all",
+    "course": "NURS 1017",
+    "unit": "Unit 11 (Endocrine Disorders)"
   },
   {
     "id": "case_1780591712513",
     "title": "University of Maryland - CS1",
+    "topic": "Unit 3 (Respiratory Disorders)",
     "screens": [
       {
         "step": 1,
@@ -1373,14 +1378,16 @@
         }
       }
     ],
-    "disorder": "Respiratory Disorders",
+    "disorder": "Unit 3 (Respiratory Disorders)",
     "description": "Maryland Next Gen NCLEX Test Bank Project September 1, 2022; Authors: Angela Davis, RN, MS, CM/DN Morgan State University",
-    "topic": "Respiratory Disorders",
-    "availability": "all"
+    "availability": "all",
+    "course": "NURS 1021",
+    "unit": "Unit 3 (Respiratory Disorders)"
   },
   {
     "id": "case_1781534070850",
-    "title": "NURS 1017 Unit 1 (Introduction to Pathophysiology) Case Study",
+    "title": "NURS 1017 Unit 1 Case Study 1",
+    "topic": "Unit 1 (Introduction to Pathophysiology)",
     "screens": [
       {
         "step": 1,
@@ -1422,7 +1429,7 @@
             {
               "id": "tab_1781541062110",
               "title": "Vital Signs",
-              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\"></th><th placeholder=\"Header 2\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; background: rgb(2, 82, 135); color: white; text-align: left;\">Campus Clinic<br>1000</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>T</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">37.8 °C</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>P</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">102</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>RR</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">18</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>BP</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">110/70</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>SpO<sub>2</sub></b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">99% on room air</td></tr></tbody></table><p><br></p>"
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\"></th><th placeholder=\"Header 2\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; background: rgb(2, 82, 135); color: white; text-align: left;\">Campus Clinic<br>1000</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>T</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">37.8 °C</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>P</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">102</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>RR</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">18</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>BP</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">110/70</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>Pulse Oximetry Reading (SpO<sub>2</sub>)</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">99% on room air</td></tr></tbody></table><p><br></p>"
             }
           ],
           "intro": "The campus clinic nurse is caring for a 19-year-old female student who visits the campus health centre on Monday morning. She reports that she felt well the previous day and attended a catered dinner in her residence at 18:00 the previous day. At approximately 02:00 this morning, she developed nausea, two episodes of vomiting, three loose stools, mild abdominal cramping, and fatigue. Two roommates who attended the same dinner have texted her that they have similar symptoms. Leila has no chronic health conditions, takes no regular medications, and has not travelled recently."
@@ -1524,7 +1531,7 @@
             {
               "id": "tab_1781541062110",
               "title": "Vital Signs",
-              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\"></th><th placeholder=\"Header 2\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; background: rgb(2, 82, 135); color: white; text-align: left;\">Campus Clinic<br>1000</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>T</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">37.8 °C</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>P</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">102</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>RR</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">18</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>BP</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">110/70</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>SpO<sub>2</sub></b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">99% on room air</td></tr></tbody></table><p><br></p>"
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\"></th><th placeholder=\"Header 2\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; background: rgb(2, 82, 135); color: white; text-align: left;\">Campus Clinic<br>1000</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>T</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">37.8 °C</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>P</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">102</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>RR</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">18</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>BP</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">110/70</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>Pulse Oximetry Reading (SpO2)</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">99% on room air</td></tr></tbody></table><p><br></p>"
             },
             {
               "id": "tab_1781543362694",
@@ -1571,7 +1578,7 @@
             {
               "id": "tab_1781541062110",
               "title": "Vital Signs",
-              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\"></th><th placeholder=\"Header 2\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; background: rgb(2, 82, 135); color: white; text-align: left;\">Campus Clinic<br>1000</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>T</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">37.8 °C</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>P</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">102</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>RR</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">18</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>BP</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">110/70</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>SpO<sub>2</sub></b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">99% on room air</td></tr></tbody></table><p><br></p>"
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\"></th><th placeholder=\"Header 2\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; background: rgb(2, 82, 135); color: white; text-align: left;\">Campus Clinic<br>1000</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>T</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">37.8 °C</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>P</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">102</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>RR</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">18</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>BP</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">110/70</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>Pulse Oximetry Reading (SpO2)</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">99% on room air</td></tr></tbody></table><p><br></p>"
             },
             {
               "id": "tab_1781543362694",
@@ -1653,7 +1660,7 @@
             {
               "id": "tab_1781541062110",
               "title": "Vital Signs",
-              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\"></th><th placeholder=\"Header 2\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; background: rgb(2, 82, 135); color: white; text-align: left;\">Campus Clinic<br>1000</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>T</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">37.8 °C</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>P</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">102</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>RR</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">18</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>BP</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">110/70</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>SpO<sub>2</sub></b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">99% on room air</td></tr></tbody></table><p><br></p>"
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\"></th><th placeholder=\"Header 2\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; background: rgb(2, 82, 135); color: white; text-align: left;\">Campus Clinic<br>1000</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>T</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">37.8 °C</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>P</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">102</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>RR</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">18</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>BP</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">110/70</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>Pulse Oximetry Reading (SpO2)</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">99% on room air</td></tr></tbody></table><p><br></p>"
             },
             {
               "id": "tab_1781543362694",
@@ -1708,7 +1715,7 @@
             {
               "id": "tab_1781541062110",
               "title": "Vital Signs",
-              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\"></th><th placeholder=\"Header 2\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; background: rgb(2, 82, 135); color: white; text-align: left;\">Campus Clinic<br>1000</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>T</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">37.8 °C</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>P</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">102</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>RR</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">18</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>BP</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">110/70</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>SpO<sub>2</sub></b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">99% on room air</td></tr></tbody></table><p><br></p>"
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\"></th><th placeholder=\"Header 2\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; background: rgb(2, 82, 135); color: white; text-align: left;\">Campus Clinic<br>1000</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>T</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">37.8 °C</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>P</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">102</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>RR</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">18</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>BP</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">110/70</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>Pulse Oximetry Reading (SpO2)</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">99% on room air</td></tr></tbody></table><p><br></p>"
             },
             {
               "id": "tab_1781543362694",
@@ -1763,7 +1770,7 @@
             {
               "id": "tab_1781541062110",
               "title": "Vital Signs",
-              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\"></th><th placeholder=\"Header 2\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; background: rgb(2, 82, 135); color: white; text-align: left;\">Campus Clinic<br>1000</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>T</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">37.8 °C</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>P</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">102</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>RR</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">18</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>BP</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">110/70</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>SpO<sub>2</sub></b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">99% on room air</td></tr></tbody></table><p><br></p>"
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\"></th><th placeholder=\"Header 2\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; background: rgb(2, 82, 135); color: white; text-align: left;\">Campus Clinic<br>1000</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>T</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">37.8 °C</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>P</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">102</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>RR</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">18</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>BP</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">110/70</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>Pulse Oximetry Reading (SpO2)</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">99% on room air</td></tr></tbody></table><p><br></p>"
             },
             {
               "id": "tab_1781543362694",
@@ -1780,14 +1787,16 @@
         }
       }
     ],
-    "disorder": "Others",
-    "description": "A case study for formative review of NURS 1017 Unit 1 (Introduction to Pathophysiology)",
-    "topic": "Others",
-    "availability": "all"
+    "disorder": "Unit 1 (Introduction to Pathophysiology)",
+    "description": "A case study for formative review of NURS 1017 Unit 1",
+    "availability": "all",
+    "course": "NURS 1017",
+    "unit": "Unit 1 (Introduction to Pathophysiology)"
   },
   {
     "id": "case_1781741217820",
     "title": "NCSBN - Case Study 1",
+    "topic": "Unit 6 (Gastrointestinal Disorders)",
     "screens": [
       {
         "step": 1,
@@ -2204,14 +2213,16 @@
         }
       }
     ],
-    "disorder": "GI Disorders",
+    "disorder": "Unit 6 (Gastrointestinal Disorders)",
     "description": "",
-    "topic": "GI Disorders",
-    "availability": "all"
+    "availability": "all",
+    "course": "NURS 1021",
+    "unit": "Unit 6 (Gastrointestinal Disorders)"
   },
   {
     "id": "case_1782149061171",
     "title": "NCSBN Case Study 2",
+    "topic": "Unit 4 (Inflammation and Immune Disorders)",
     "screens": [
       {
         "step": 1,
@@ -2648,14 +2659,16 @@
         }
       }
     ],
-    "disorder": "Immune disorders",
+    "disorder": "Unit 4 (Inflammation and Immune Disorders)",
     "description": "",
-    "topic": "Immune disorders",
-    "availability": "all"
+    "availability": "all",
+    "course": "NURS 1021",
+    "unit": "Unit 4 (Inflammation and Immune Disorders)"
   },
   {
     "id": "case_1782159166328",
     "title": "New Case Study",
+    "topic": "Unit 3 (Respiratory Disorders)",
     "screens": [
       {
         "step": 1,
@@ -3076,9 +3089,913 @@
         }
       }
     ],
-    "disorder": "Respiratory Disorders",
+    "disorder": "Unit 3 (Respiratory Disorders)",
     "description": "",
-    "topic": "Respiratory Disorders",
-    "availability": "all"
+    "availability": "all",
+    "course": "NURS 1021",
+    "unit": "Unit 3 (Respiratory Disorders)"
+  },
+  {
+    "id": "case_1782350000001",
+    "title": "NURS 1017 Unit 1 Case Study 2",
+    "topic": "Unit 1 (Introduction to Pathophysiology)",
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is reviewing Marcus's initial clinical assessment. Which of the following findings are classified as <b>signs</b>? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Blood pressure of 154/96 mmHg",
+              "correct": true
+            },
+            {
+              "text": "Heart rate of 104 beats/min",
+              "correct": true
+            },
+            {
+              "text": "Epigastric tenderness elicited on abdominal palpation",
+              "correct": true
+            },
+            {
+              "text": "Severe, band-like tension headache across the forehead",
+              "correct": false
+            },
+            {
+              "text": "Burning sensation in the epigastric region",
+              "correct": false
+            },
+            {
+              "text": "Profound exhaustion and insomnia",
+              "correct": false
+            }
+          ],
+          "preamble": "",
+          "explanation": "Signs are objective evidence of a disease that can be directly evaluated, observed, or measured by the client or healthcare professionals (such as blood pressure of 154/96 mmHg, heart rate of 104 beats/min, and epigastric tenderness elicited on physical examination). In contrast, symptoms are subjective evidence of a disease that can only be evaluated, experienced, and described by the client (such as headaches, sensations of epigastric burning pain, and feelings of fatigue or insomnia)."
+        },
+        "leftContent": {
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0830:</span><span class=\"nurse-note-text\">Client presents to employee health clinic appearing visibly exhausted with dark circles under eyes and clenched jaw. Client reports working 65–70 hours weekly over the past 4 months due to administrative restructuring, high-stakes student disciplinary hearings, and upcoming provincial accreditation reviews. He describes persistent, band-like tension headaches across the forehead and occiput, progressive midday fatigue, and profound insomnia, waking up nightly around 0300 with racing thoughts. Over the past 2 weeks, to maintain focus and combat sleep loss, he increased caffeine intake from 1 morning coffee to 5–6 espresso shots daily and began self-medicating with over-the-counter ibuprofen 800 mg orally 3 to 4 times daily on an empty stomach. He now reports worsening gnawing, burning epigastric discomfort that intensifies shortly after drinking espresso. Medical history: no personal history of chronic illness; denies tobacco or illicit drug use; social alcohol use (1–2 beers on weekends, none recently). Family history: father diagnosed with essential hypertension at age 48 and suffered an acute myocardial infarction at age 58.</span></p>"
+            },
+            {
+              "id": "vs_1",
+              "title": "Vital Signs",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Parameter</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Annual Physical (1 Year Ago)</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Employee Health Clinic (Today, 0830)</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Temperature</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">36.7 °C (oral)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">36.9 °C (oral)</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Heart Rate (P)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">72 bpm, regular</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">104 bpm</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Respiratory Rate (RR)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">14 breaths/min</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">20 breaths/min</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Blood Pressure (BP)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">118/74 mmHg</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">154/96 mmHg</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Oxygen Saturation (SpO<sub style=\"\">2</sub>)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">99% on room air</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">98% on room air</td></tr></tbody></table>"
+            }
+          ],
+          "intro": "The occupational health nurse is conducting an evaluation of Marcus, a 44-year-old high school vice-principal, who visits the employee health clinic on Tuesday morning reporting escalating physical and psychological distress over recent weeks."
+        }
+      },
+      {
+        "step": 2,
+        "question": {
+          "stem": "For each client finding, click to specify whether the finding is a <b>predisposing factor</b> or a <b>precipitating factor</b>.",
+          "type": "matrix_mc",
+          "matrix": {
+            "rows": [
+              {
+                "text": "Family history of essential hypertension and coronary artery disease",
+                "correctIndex": 0,
+                "correctIndices": [
+                  0
+                ]
+              },
+              {
+                "text": "Chronic, relentless 4-month administrative workload and sleep disruption",
+                "correctIndex": 0,
+                "correctIndices": [
+                  0
+                ]
+              },
+              {
+                "text": "Self-administration of ibuprofen 800 mg 3–4 times daily over the last 2 weeks",
+                "correctIndex": 1,
+                "correctIndices": [
+                  1
+                ]
+              },
+              {
+                "text": "Acute escalation to 5–6 espresso shots daily over the past 72 hours",
+                "correctIndex": 1,
+                "correctIndices": [
+                  1
+                ]
+              },
+              {
+                "text": "Middle age (44 years old) and male sex",
+                "correctIndex": 0,
+                "correctIndices": [
+                  0
+                ]
+              }
+            ],
+            "columns": [
+              "Predisposing Factor",
+              "Precipitating Factor"
+            ],
+            "firstColumnHeader": "Client Finding"
+          },
+          "options": [],
+          "preamble": "The nurse reviews Marcus's clinical background and recent activities alongside newly obtained assessment findings (see Clinical Assessment and Point-of-Care Testing tab).",
+          "explanation": "Predisposing factors are factors that increase the risk or vulnerability of developing a disease or condition (e.g., genetic family history, chronic prolonged occupational stress, middle age, and sex). Precipitating factors are specific triggers that directly provoke or cause the onset of an acute disease state or acute clinical manifestation (e.g., sudden high-dose ingestion of ulcerogenic NSAIDs triggering acute epigastric gastritis, and acute caffeine overload triggering tachyarrhythmia and blood pressure elevation)."
+        },
+        "leftContent": {
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0830:</span><span class=\"nurse-note-text\">Client presents to employee health clinic appearing visibly exhausted with dark circles under eyes and clenched jaw. Client reports working 65–70 hours weekly over the past 4 months due to administrative restructuring, high-stakes student disciplinary hearings, and upcoming provincial accreditation reviews. He describes persistent, band-like tension headaches across the forehead and occiput, progressive midday fatigue, and profound insomnia, waking up nightly around 0300 with racing thoughts. Over the past 2 weeks, to maintain focus and combat sleep loss, he increased caffeine intake from 1 morning coffee to 5–6 espresso shots daily and began self-medicating with over-the-counter ibuprofen 800 mg orally 3 to 4 times daily on an empty stomach. He now reports worsening gnawing, burning epigastric discomfort that intensifies shortly after drinking espresso. Medical history: no personal history of chronic illness; denies tobacco or illicit drug use; social alcohol use (1–2 beers on weekends, none recently). Family history: father diagnosed with essential hypertension at age 48 and suffered an acute myocardial infarction at age 58.</span></p>"
+            },
+            {
+              "id": "vs_1",
+              "title": "Vital Signs",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Parameter</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Annual Physical (1 Year Ago)</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Employee Health Clinic (Today, 0830)</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Temperature</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">36.7 °C (oral)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">36.9 °C (oral)</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Heart Rate (P)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">72 bpm, regular</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">104 bpm, sinus tachycardia</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Respiratory Rate (RR)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">14 breaths/min</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">20 breaths/min</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Blood Pressure (BP)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">118/74 mmHg</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">154/96 mmHg</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Oxygen Saturation (SpO<sub>2</sub>)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">99% on room air</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">98% on room air</td></tr></tbody></table>"
+            },
+            {
+              "id": "labs_1",
+              "title": "Clinical Assessment and Point-of-Care Testing",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Assessment / Test</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Result</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range / Clinical Context</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Random Point-of-Care Capillary Blood Glucose</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">8.4 mmol/L (elevated)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 7.8 mmol/L random non-fasting; client last ate 3 hours ago</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Physical Exam: Abdomen</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Moderate tenderness localized to the epigastrium on palpation; no guarding, no rebound tenderness, bowel sounds normoactive in all 4 quadrants</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal: non-tender abdomen without organomegaly</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Physical Exam: Musculoskeletal</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Marked palpatory hypertonicity and tenderness of bilateral upper trapezius, splenius capitis, and suboccipital muscles</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Consistent with muscle contraction / tension headache</td></tr></tbody></table>"
+            }
+          ],
+          "intro": "The occupational health nurse is conducting an evaluation of Marcus, a 44-year-old high school vice-principal, who visits the employee health clinic on Tuesday morning reporting escalating physical and psychological distress over recent weeks."
+        }
+      },
+      {
+        "step": 3,
+        "question": {
+          "stem": "Complete the following statement regarding Marcus's physiological state by choosing from the lists of options.",
+          "type": "dropdown_cloze",
+          "cloze": {
+            "text": "The cumulative wear and tear on Marcus's body from prolonged overactivation of compensatory mechanisms represents [[drop0]]. The multisystem breakdown—demonstrated by hypertension, tachycardia, gastritis, and stress hyperglycemia—indicates that he has progressed to [[drop1]]. Furthermore, Marcus's acute epigastric gastric irritation resulting from high-dose ibuprofen therapy is classified as having an [[drop2]] etiology.",
+            "dropdowns": [
+              {
+                "options": [
+                  {
+                    "text": "allostatic load",
+                    "correct": true
+                  },
+                  {
+                    "text": "homeostasis",
+                    "correct": false
+                  },
+                  {
+                    "text": "convalescence",
+                    "correct": false
+                  },
+                  {
+                    "text": "remission",
+                    "correct": false
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              {
+                "options": [
+                  {
+                    "text": "allostatic overload",
+                    "correct": true
+                  },
+                  {
+                    "text": "a pandemic",
+                    "correct": false
+                  },
+                  {
+                    "text": "a subclinical stage",
+                    "correct": false
+                  },
+                  {
+                    "text": "an incubation period",
+                    "correct": false
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              {
+                "options": [
+                  {
+                    "text": "iatrogenic",
+                    "correct": true
+                  },
+                  {
+                    "text": "idiopathic",
+                    "correct": false
+                  },
+                  {
+                    "text": "endemic",
+                    "correct": false
+                  },
+                  {
+                    "text": "congenital",
+                    "correct": false
+                  }
+                ],
+                "placeholder": "Select..."
+              }
+            ]
+          },
+          "options": [],
+          "preamble": "",
+          "explanation": "Allostasis refers to the physiological processes that support homeostasis when internal or external environmental demands change. Allostatic load is the wear and tear on the body that results from prolonged over- or underactivation of compensatory mechanisms. When compensatory responses are excessive, sustained, or inadequately regulated, allostatic overload occurs, exacting a physical 'cost' to organs and tissues (manifesting as hypertension, tachycardia, gastritis, tension headaches, and hyperglycemia as illustrated on Unit 1, Slide 9). Etiology refers to the cause or origin of a disorder; an iatrogenic condition is one resulting from the activity of healthcare professionals or prescribed/administered medical, nursing, or pharmacological interventions (such as NSAID-induced gastritis). Idiopathic means without known cause."
+        },
+        "leftContent": {
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0830:</span><span class=\"nurse-note-text\">Client presents to employee health clinic appearing visibly exhausted with dark circles under eyes and clenched jaw. Client reports working 65–70 hours weekly over the past 4 months due to administrative restructuring, high-stakes student disciplinary hearings, and upcoming provincial accreditation reviews. He describes persistent, band-like tension headaches across the forehead and occiput, progressive midday fatigue, and profound insomnia, waking up nightly around 0300 with racing thoughts. Over the past 2 weeks, to maintain focus and combat sleep loss, he increased caffeine intake from 1 morning coffee to 5–6 espresso shots daily and began self-medicating with over-the-counter ibuprofen 800 mg orally 3 to 4 times daily on an empty stomach. He now reports worsening gnawing, burning epigastric discomfort that intensifies shortly after drinking espresso. Medical history: no personal history of chronic illness; denies tobacco or illicit drug use; social alcohol use (1–2 beers on weekends, none recently). Family history: father diagnosed with essential hypertension at age 48 and suffered an acute myocardial infarction at age 58.</span></p>"
+            },
+            {
+              "id": "vs_1",
+              "title": "Vital Signs",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Parameter</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Annual Physical (1 Year Ago)</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Employee Health Clinic (Today, 0830)</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Temperature</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">36.7 °C (oral)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">36.9 °C (oral)</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Heart Rate (P)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">72 bpm, regular</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">104 bpm, sinus tachycardia</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Respiratory Rate (RR)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">14 breaths/min</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">20 breaths/min</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Blood Pressure (BP)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">118/74 mmHg</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">154/96 mmHg</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Oxygen Saturation (SpO<sub>2</sub>)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">99% on room air</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">98% on room air</td></tr></tbody></table>"
+            },
+            {
+              "id": "labs_1",
+              "title": "Clinical Assessment and Point-of-Care Testing",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Assessment / Test</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Result</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range / Clinical Context</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Random Point-of-Care Capillary Blood Glucose</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">8.4 mmol/L (elevated)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 7.8 mmol/L random non-fasting; client last ate 3 hours ago</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Physical Exam: Abdomen</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Moderate tenderness localized to the epigastrium on palpation; no guarding, no rebound tenderness, bowel sounds normoactive in all 4 quadrants</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal: non-tender abdomen without organomegaly</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Physical Exam: Musculoskeletal</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Marked palpatory hypertonicity and tenderness of bilateral upper trapezius, splenius capitis, and suboccipital muscles</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Consistent with muscle contraction / tension headache</td></tr></tbody></table>"
+            }
+          ],
+          "intro": "The occupational health nurse is conducting an evaluation of Marcus, a 44-year-old high school vice-principal, who visits the employee health clinic on Tuesday morning reporting escalating physical and psychological distress over recent weeks."
+        }
+      },
+      {
+        "step": 4,
+        "question": {
+          "stem": "The nurse is developing a comprehensive health promotion and clinical management plan. For each proposed intervention, click to specify whether it represents <b>primary prevention</b>, <b>secondary prevention</b>, or <b>tertiary prevention</b>.",
+          "type": "matrix_mc",
+          "matrix": {
+            "rows": [
+              {
+                "text": "Facilitating workplace stress-management programs and sleep-hygiene education for campus faculty to reduce risk factors before illness occurs.",
+                "correctIndex": 0,
+                "correctIndices": [
+                  0
+                ]
+              },
+              {
+                "text": "Conducting routine blood pressure and fasting blood glucose screenings for asymptomatic staff at an annual employee wellness fair.",
+                "correctIndex": 1,
+                "correctIndices": [
+                  1
+                ]
+              },
+              {
+                "text": "Discontinuing over-the-counter NSAIDs and administering a prescribed proton pump inhibitor to treat Marcus's active epigastric gastritis.",
+                "correctIndex": 2,
+                "correctIndices": [
+                  2
+                ]
+              },
+              {
+                "text": "Providing occupational therapy ergonomics and physical therapy exercises to manage Marcus's active tension backache and muscle contraction headaches.",
+                "correctIndex": 2,
+                "correctIndices": [
+                  2
+                ]
+              },
+              {
+                "text": "Administering a validated depression and anxiety screening questionnaire during routine health checkups to identify subclinical psychological distress early.",
+                "correctIndex": 1,
+                "correctIndices": [
+                  1
+                ]
+              }
+            ],
+            "columns": [
+              "Primary Prevention",
+              "Secondary Prevention",
+              "Tertiary Prevention"
+            ],
+            "firstColumnHeader": "Intervention"
+          },
+          "options": [],
+          "preamble": "",
+          "explanation": "Primary prevention aims to keep disease from occurring by reducing risk factors or exposure in susceptible individuals (e.g., stress-management seminars and sleep education before disease onset). Secondary prevention focuses on the early screening, detection, and diagnosis of disease when it is asymptomatic or subclinical (e.g., routine blood pressure, blood glucose, and psychological screening clinics). Tertiary prevention encompasses all medical, nursing, and pharmacological interventions implemented to treat an established disease or condition (e.g., prescribing proton pump inhibitors for gastritis and physical therapy for active tension headaches)."
+        },
+        "leftContent": {
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0830:</span><span class=\"nurse-note-text\">Client presents to employee health clinic appearing visibly exhausted with dark circles under eyes and clenched jaw. Client reports working 65–70 hours weekly over the past 4 months due to administrative restructuring, high-stakes student disciplinary hearings, and upcoming provincial accreditation reviews. He describes persistent, band-like tension headaches across the forehead and occiput, progressive midday fatigue, and profound insomnia, waking up nightly around 0300 with racing thoughts. Over the past 2 weeks, to maintain focus and combat sleep loss, he increased caffeine intake from 1 morning coffee to 5–6 espresso shots daily and began self-medicating with over-the-counter ibuprofen 800 mg orally 3 to 4 times daily on an empty stomach. He now reports worsening gnawing, burning epigastric discomfort that intensifies shortly after drinking espresso. Medical history: no personal history of chronic illness; denies tobacco or illicit drug use; social alcohol use (1–2 beers on weekends, none recently). Family history: father diagnosed with essential hypertension at age 48 and suffered an acute myocardial infarction at age 58.</span></p>"
+            },
+            {
+              "id": "vs_1",
+              "title": "Vital Signs",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Parameter</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Annual Physical (1 Year Ago)</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Employee Health Clinic (Today, 0830)</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Temperature</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">36.7 °C (oral)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">36.9 °C (oral)</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Heart Rate (P)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">72 bpm, regular</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">104 bpm, sinus tachycardia</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Respiratory Rate (RR)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">14 breaths/min</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">20 breaths/min</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Blood Pressure (BP)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">118/74 mmHg</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">154/96 mmHg</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Oxygen Saturation (SpO<sub>2</sub>)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">99% on room air</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">98% on room air</td></tr></tbody></table>"
+            },
+            {
+              "id": "labs_1",
+              "title": "Clinical Assessment and Point-of-Care Testing",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Assessment / Test</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Result</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range / Clinical Context</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Random Point-of-Care Capillary Blood Glucose</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">8.4 mmol/L (elevated)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 7.8 mmol/L random non-fasting; client last ate 3 hours ago</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Physical Exam: Abdomen</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Moderate tenderness localized to the epigastrium on palpation; no guarding, no rebound tenderness, bowel sounds normoactive in all 4 quadrants</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal: non-tender abdomen without organomegaly</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Physical Exam: Musculoskeletal</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Marked palpatory hypertonicity and tenderness of bilateral upper trapezius, splenius capitis, and suboccipital muscles</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Consistent with muscle contraction / tension headache</td></tr></tbody></table>"
+            }
+          ],
+          "intro": "The occupational health nurse is conducting an evaluation of Marcus, a 44-year-old high school vice-principal, who visits the employee health clinic on Tuesday morning reporting escalating physical and psychological distress over recent weeks."
+        }
+      },
+      {
+        "step": 5,
+        "question": {
+          "stem": "Which nursing interventions should the nurse implement during Marcus's clinic visit? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Educate the client on how chronic allostatic load leads to allostatic overload which in turn produces multisystem wear and tear on the cardiovascular, gastrointestinal, and endocrine systems.",
+              "correct": true
+            },
+            {
+              "text": "Instruct the client to immediately discontinue unprescribed high-dose ibuprofen to prevent further iatrogenic gastrointestinal mucosal injury.",
+              "correct": true
+            },
+            {
+              "text": "Teach relaxation and diaphragmatic breathing techniques to help down-regulate sympathetic overactivation and support physiological homeostasis.",
+              "correct": true
+            },
+            {
+              "text": "Advise the client to abruptly eliminate all oral fluid intake to allow the body's internal set points to reset.",
+              "correct": false
+            },
+            {
+              "text": "Reassure the client that because hypertension has a genetic predisposing factor, lifestyle changes are ineffective and unnecessary.",
+              "correct": false
+            },
+            {
+              "text": "Collaborate with the primary healthcare provider to evaluate the need for short-term gastric mucosal protection and schedule a follow-up assessment.",
+              "correct": true
+            }
+          ],
+          "preamble": "",
+          "explanation": "Appropriate interventions include client education regarding allostatic load and the multisystem effects of stress (cardiovascular, GI, endocrine), eliminating iatrogenic risks by stopping high-dose NSAIDs, teaching physiological relaxation strategies to support homeostatic regulation, and arranging appropriate medical follow-up. Fluid restriction is physiologically detrimental and disrupts fluid homeostasis. Genetic predisposing factors increase risk but do not make disease inevitable; modifying lifestyle and precipitating triggers is vital."
+        },
+        "leftContent": {
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0830:</span><span class=\"nurse-note-text\">Client presents to employee health clinic appearing visibly exhausted with dark circles under eyes and clenched jaw. Client reports working 65–70 hours weekly over the past 4 months due to administrative restructuring, high-stakes student disciplinary hearings, and upcoming provincial accreditation reviews. He describes persistent, band-like tension headaches across the forehead and occiput, progressive midday fatigue, and profound insomnia, waking up nightly around 0300 with racing thoughts. Over the past 2 weeks, to maintain focus and combat sleep loss, he increased caffeine intake from 1 morning coffee to 5–6 espresso shots daily and began self-medicating with over-the-counter ibuprofen 800 mg orally 3 to 4 times daily on an empty stomach. He now reports worsening gnawing, burning epigastric discomfort that intensifies shortly after drinking espresso. Medical history: no personal history of chronic illness; denies tobacco or illicit drug use; social alcohol use (1–2 beers on weekends, none recently). Family history: father diagnosed with essential hypertension at age 48 and suffered an acute myocardial infarction at age 58.</span></p>"
+            },
+            {
+              "id": "vs_1",
+              "title": "Vital Signs",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Parameter</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Annual Physical (1 Year Ago)</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Employee Health Clinic (Today, 0830)</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Temperature</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">36.7 °C (oral)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">36.9 °C (oral)</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Heart Rate (P)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">72 bpm, regular</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">104 bpm, sinus tachycardia</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Respiratory Rate (RR)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">14 breaths/min</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">20 breaths/min</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Blood Pressure (BP)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">118/74 mmHg</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">154/96 mmHg</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Oxygen Saturation (SpO<sub>2</sub>)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">99% on room air</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">98% on room air</td></tr></tbody></table>"
+            },
+            {
+              "id": "labs_1",
+              "title": "Clinical Assessment and Point-of-Care Testing",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Assessment / Test</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Result</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range / Clinical Context</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Random Point-of-Care Capillary Blood Glucose</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">8.4 mmol/L (elevated)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 7.8 mmol/L random non-fasting; client last ate 3 hours ago</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Physical Exam: Abdomen</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Moderate tenderness localized to the epigastrium on palpation; no guarding, no rebound tenderness, bowel sounds normoactive in all 4 quadrants</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal: non-tender abdomen without organomegaly</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Physical Exam: Musculoskeletal</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Marked palpatory hypertonicity and tenderness of bilateral upper trapezius, splenius capitis, and suboccipital muscles</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Consistent with muscle contraction / tension headache</td></tr></tbody></table>"
+            }
+          ],
+          "intro": "The occupational health nurse is conducting an evaluation of Marcus, a 44-year-old high school vice-principal, who visits the employee health clinic on Tuesday morning reporting escalating physical and psychological distress over recent weeks."
+        }
+      },
+      {
+        "step": 6,
+        "question": {
+          "stem": "The nurse reviews Marcus's follow-up assessment obtained 4 weeks later (see Follow-Up Data tab). Which interpretations are correct? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "The return of blood pressure, heart rate, and blood glucose to narrow reference ranges demonstrates the restoration of physiological homeostasis.",
+              "correct": true
+            },
+            {
+              "text": "The complete absence of epigastric burning and tension headaches signifies a clinical remission of his acute manifestations.",
+              "correct": true
+            },
+            {
+              "text": "Marcus is currently in the stage of convalescence following the acute phase of allostatic overload and gastritis.",
+              "correct": true
+            },
+            {
+              "text": "The rapid improvement indicates that Marcus has developed permanent sequelae of his gastrointestinal lining.",
+              "correct": false
+            },
+            {
+              "text": "Marcus's overall prognosis is positive regarding the prevention of long-term cardiovascular and gastrointestinal disease.",
+              "correct": true
+            },
+            {
+              "text": "Because the client's symptoms have cleared, the mortality rate of the entire school faculty has dropped to zero.",
+              "correct": false
+            }
+          ],
+          "preamble": "",
+          "explanation": "Homeostasis is the maintenance of a stable internal environment via the dynamic equilibrium of physiological variables within narrow set-point ranges using negative feedback loops (demonstrated by normal BP, HR, and glucose). Remission is the temporary, partial, or complete disappearance of the clinical manifestations of a disease. Convalescence is the stage of recovery following an acute stage of disease or injury. Prognosis is a forecast as to the probable course and outcome of disease (which is favorable here). Sequelae are permanent lesions, disorders, or pathological conditions resulting from a preceding disease, which Marcus did not develop. Mortality refers to the death rate within a population and cannot be inferred from a single client's recovery."
+        },
+        "leftContent": {
+          "tabs": [
+            {
+              "id": "nn_1",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0830:</span><span class=\"nurse-note-text\">Client presents to employee health clinic appearing visibly exhausted with dark circles under eyes and clenched jaw. Client reports working 65–70 hours weekly over the past 4 months due to administrative restructuring, high-stakes student disciplinary hearings, and upcoming provincial accreditation reviews. He describes persistent, band-like tension headaches across the forehead and occiput, progressive midday fatigue, and profound insomnia, waking up nightly around 0300 with racing thoughts. Over the past 2 weeks, to maintain focus and combat sleep loss, he increased caffeine intake from 1 morning coffee to 5–6 espresso shots daily and began self-medicating with over-the-counter ibuprofen 800 mg orally 3 to 4 times daily on an empty stomach. He now reports worsening gnawing, burning epigastric discomfort that intensifies shortly after drinking espresso. Medical history: no personal history of chronic illness; denies tobacco or illicit drug use; social alcohol use (1–2 beers on weekends, none recently). Family history: father diagnosed with essential hypertension at age 48 and suffered an acute myocardial infarction at age 58.</span></p>"
+            },
+            {
+              "id": "vs_1",
+              "title": "Vital Signs",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Parameter</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Annual Physical (1 Year Ago)</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Employee Health Clinic (Today, 0830)</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Temperature</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">36.7 °C (oral)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">36.9 °C (oral)</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Heart Rate (P)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">72 bpm, regular</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">104 bpm, sinus tachycardia</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Respiratory Rate (RR)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">14 breaths/min</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">20 breaths/min</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Blood Pressure (BP)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">118/74 mmHg</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">154/96 mmHg</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Oxygen Saturation (SpO<sub>2</sub>)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">99% on room air</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">98% on room air</td></tr></tbody></table>"
+            },
+            {
+              "id": "labs_1",
+              "title": "Clinical Assessment and Point-of-Care Testing",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Assessment / Test</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Result</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range / Clinical Context</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Random Point-of-Care Capillary Blood Glucose</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">8.4 mmol/L (elevated)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 7.8 mmol/L random non-fasting; client last ate 3 hours ago</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Physical Exam: Abdomen</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Moderate tenderness localized to the epigastrium on palpation; no guarding, no rebound tenderness, bowel sounds normoactive in all 4 quadrants</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal: non-tender abdomen without organomegaly</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Physical Exam: Musculoskeletal</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Marked palpatory hypertonicity and tenderness of bilateral upper trapezius, splenius capitis, and suboccipital muscles</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Consistent with muscle contraction / tension headache</td></tr></tbody></table>"
+            },
+            {
+              "id": "fu_1",
+              "title": "Follow-Up Data (4 Weeks Later)",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Evaluation Parameter</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Finding at 4-Week Follow-Up Visit</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Vital Signs</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">T 36.8 °C; HR 72 bpm, regular; RR 14 breaths/min; BP 120/78 mmHg; SpO<sub>2</sub> 99% on room air</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Fasting Blood Glucose</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">5.1 mmol/L (within normal reference set point: 3.9–5.6 mmol/L)</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Clinical Manifestations</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Epigastric burning completely resolved; no abdominal tenderness on palpation; tension headaches absent over the past 14 days; client reports sleeping 7 hours nightly and feeling refreshed.</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Treatment Adherence</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Client completely discontinued high-dose OTC ibuprofen; reduced caffeine to 1 morning cup; completed 4-week course of prescribed oral omeprazole 20 mg daily; attending twice-weekly stress-reduction and mindfulness sessions.</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Tissue Integrity & Complications</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">No gastrointestinal bleeding or ulceration occurred; no residual organ damage or permanent tissue lesions.</td></tr></tbody></table>"
+            }
+          ],
+          "intro": "The occupational health nurse is conducting an evaluation of Marcus, a 44-year-old high school vice-principal, who visits the employee health clinic on Tuesday morning reporting escalating physical and psychological distress over recent weeks."
+        }
+      }
+    ],
+    "disorder": "Unit 1 (Introduction to Pathophysiology)",
+    "description": "A case study for formative review of NURS 1017 Unit 1",
+    "availability": "all",
+    "course": "NURS 1017",
+    "unit": "Unit 1 (Introduction to Pathophysiology)"
+  },
+  {
+    "id": "case_1782350000002",
+    "title": "NURS 1017 Unit 1 Case Study 3",
+    "topic": "Unit 1 (Introduction to Pathophysiology)",
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse reviews Evelyn's initial clinic presentation. Which of the following findings are classified as <b>symptoms</b>? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Bilateral wrist and hand joint pain rated 8/10",
+              "correct": true
+            },
+            {
+              "text": "Morning joint stiffness lasting 2.5 hours",
+              "correct": true
+            },
+            {
+              "text": "Feelings of profound fatigue and malaise",
+              "correct": true
+            },
+            {
+              "text": "Bilateral symmetrical swelling and warmth of the 2nd and 3rd MCP joints",
+              "correct": false
+            },
+            {
+              "text": "Oral body temperature of 38.1 °C",
+              "correct": false
+            },
+            {
+              "text": "Measured wrist flexion of 30 degrees",
+              "correct": false
+            }
+          ],
+          "preamble": "",
+          "explanation": "Symptoms are subjective evidence of a disease that can only be evaluated and described by the client (such as joint pain rated 8/10, the sensation of morning stiffness, and feelings of fatigue and malaise). Signs are objective evidence of a disease that can be evaluated, measured, or directly observed by the healthcare professional (such as visible/palpable joint swelling and warmth, a measured body temperature of 38.1 °C, and measured degrees of joint flexion)."
+        },
+        "leftContent": {
+          "tabs": [
+            {
+              "id": "nn_2",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0900:</span><span class=\"nurse-note-text\">Client presents accompanied by her spouse for evaluation of bilateral hand and wrist symptoms. Evelyn reports that approximately 8 months ago, routine wellness bloodwork ordered by her family physician for non-specific fatigue revealed a positive antinuclear antibody (ANA) and elevated rheumatoid factor (RF), although she had zero joint pain, zero swelling, and completely normal physical function at that time. Approximately 3 weeks ago, she experienced a 10-day period of vague, generalized malaise, mild muscle achiness, low-grade fatigue, and a feeling of 'coming down with something' without distinct localized joint symptoms. Five days ago, following a severe acute upper respiratory viral illness, she suddenly awoke with intense throbbing pain, visible redness, warmth, and pronounced swelling in both wrists and the second and third metacarpophalangeal (MCP) joints bilaterally. She states her morning stiffness now lasts over 2.5 hours before she can bend her fingers to hold a coffee cup. Medical history: no previous chronic illness; no regular medications prior to this flare. Denies smoking or alcohol. Family history: maternal grandmother had severe rheumatoid arthritis resulting in hand joint deformities.</span></p>"
+            },
+            {
+              "id": "vs_2",
+              "title": "Vital Signs and Physical Assessment",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Parameter / Assessment</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Finding (0900 Today)</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Clinical Reference</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Temperature (T)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">38.1 °C (oral, low-grade fever)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">36.5–37.5 °C</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Heart Rate (P)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">96 bpm, regular</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">60–100 bpm</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Respiratory Rate (RR)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">18 breaths/min</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">12–20 breaths/min</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Blood Pressure (BP)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">116/72 mmHg</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 120/80 mmHg</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Musculoskeletal Inspection</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Bilateral symmetric boggy swelling, erythema, and palpable warmth of the 2nd and 3rd MCP joints and bilateral carpal joints. No gross structural deformities present.</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal: no swelling, redness, or heat</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Pain & Range of Motion</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Client rates bilateral hand/wrist joint pain as 8/10 on numeric scale; wrist flexion measured at 30° bilaterally (limited by pain and edema).</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal wrist flexion: 60–80°</td></tr></tbody></table>"
+            }
+          ],
+          "intro": "The outpatient rheumatology and ambulatory clinic nurse is caring for Evelyn, a 29-year-old woman who presents with progressive joint swelling, morning stiffness, severe fatigue, and pain in both hands and wrists."
+        }
+      },
+      {
+        "step": 2,
+        "question": {
+          "stem": "Complete the following sentences regarding the stages and clinical course of Evelyn's condition by choosing from the lists of options.",
+          "type": "dropdown_cloze",
+          "cloze": {
+            "text": "The 8-month period during which autoantibodies were present in Evelyn's circulation without any detectable signs or symptoms represents the [[drop0]] stage. The 10-day period of vague malaise and generalized fatigue that directly preceded the appearance of joint inflammation constitutes the [[drop1]] stage. The sudden, severe flare-up of intense joint redness, heat, and swelling following a viral illness represents an [[drop2]].",
+            "dropdowns": [
+              {
+                "options": [
+                  {
+                    "text": "subclinical",
+                    "correct": true
+                  },
+                  {
+                    "text": "acute",
+                    "correct": false
+                  },
+                  {
+                    "text": "convalescence",
+                    "correct": false
+                  },
+                  {
+                    "text": "sequelae",
+                    "correct": false
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              {
+                "options": [
+                  {
+                    "text": "prodromal",
+                    "correct": true
+                  },
+                  {
+                    "text": "latent",
+                    "correct": false
+                  },
+                  {
+                    "text": "chronic",
+                    "correct": false
+                  },
+                  {
+                    "text": "remission",
+                    "correct": false
+                  }
+                ],
+                "placeholder": "Select..."
+              },
+              {
+                "options": [
+                  {
+                    "text": "exacerbation",
+                    "correct": true
+                  },
+                  {
+                    "text": "remission",
+                    "correct": false
+                  },
+                  {
+                    "text": "convalescence",
+                    "correct": false
+                  },
+                  {
+                    "text": "incubation",
+                    "correct": false
+                  }
+                ],
+                "placeholder": "Select..."
+              }
+            ]
+          },
+          "options": [],
+          "preamble": "The nurse analyzes Evelyn's history and reviews newly available laboratory and imaging findings (see Diagnostic and Laboratory Findings tab).",
+          "explanation": "The subclinical stage occurs when a disease process is active in the body without apparent clinical manifestations (e.g., autoantibodies present before physical symptoms). The prodromal stage is the brief period before the onset of acute disease characterized by vague, premonitory symptoms (e.g., generalized malaise and fatigue). An exacerbation is an acute increase in the severity of a disease or any of its clinical manifestations."
+        },
+        "leftContent": {
+          "tabs": [
+            {
+              "id": "nn_2",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0900:</span><span class=\"nurse-note-text\">Client presents accompanied by her spouse for evaluation of bilateral hand and wrist symptoms. Evelyn reports that approximately 8 months ago, routine wellness bloodwork ordered by her family physician for non-specific fatigue revealed a positive antinuclear antibody (ANA) and elevated rheumatoid factor (RF), although she had zero joint pain, zero swelling, and completely normal physical function at that time. Approximately 3 weeks ago, she experienced a 10-day period of vague, generalized malaise, mild muscle achiness, low-grade fatigue, and a feeling of 'coming down with something' without distinct localized joint symptoms. Five days ago, following a severe acute upper respiratory viral illness, she suddenly awoke with intense throbbing pain, visible redness, warmth, and pronounced swelling in both wrists and the second and third metacarpophalangeal (MCP) joints bilaterally. She states her morning stiffness now lasts over 2.5 hours before she can bend her fingers to hold a coffee cup. Medical history: no previous chronic illness; no regular medications prior to this flare. Denies smoking or alcohol. Family history: maternal grandmother had severe rheumatoid arthritis resulting in hand joint deformities.</span></p>"
+            },
+            {
+              "id": "vs_2",
+              "title": "Vital Signs and Physical Assessment",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Parameter / Assessment</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Finding (0900 Today)</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Clinical Reference</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Temperature (T)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">38.1 °C (oral, low-grade fever)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">36.5–37.5 °C</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Heart Rate (P)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">96 bpm, regular</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">60–100 bpm</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Respiratory Rate (RR)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">18 breaths/min</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">12–20 breaths/min</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Blood Pressure (BP)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">116/72 mmHg</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 120/80 mmHg</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Musculoskeletal Inspection</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Bilateral symmetric boggy swelling, erythema, and palpable warmth of the 2nd and 3rd MCP joints and bilateral carpal joints. No gross structural deformities present.</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal: no swelling, redness, or heat</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Pain & Range of Motion</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Client rates bilateral hand/wrist joint pain as 8/10 on numeric scale; wrist flexion measured at 30° bilaterally (limited by pain and edema).</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal wrist flexion: 60–80°</td></tr></tbody></table>"
+            },
+            {
+              "id": "diag_2",
+              "title": "Diagnostic and Laboratory Findings",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Diagnostic Test</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Result</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Erythrocyte Sedimentation Rate (ESR)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">68 mm/hr (markedly elevated)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 20 mm/hr</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>C-Reactive Protein (CRP)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">34 mg/L (markedly elevated)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 3.0 mg/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Rheumatoid Factor (RF)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Positive (112 IU/mL)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 14 IU/mL</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Hand & Wrist Ultrasound / X-Ray</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Significant acute synovial tissue thickening and active hypervascular effusion (synovitis); early focal discontinuity of the marginal articular cartilage (early erosion lesion). No fixed bone subluxation or ankylosis.</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal: intact articular cartilage and clear synovial space</td></tr></tbody></table>"
+            }
+          ],
+          "intro": "The outpatient rheumatology and ambulatory clinic nurse is caring for Evelyn, a 29-year-old woman who presents with progressive joint swelling, morning stiffness, severe fatigue, and pain in both hands and wrists."
+        }
+      },
+      {
+        "step": 3,
+        "question": {
+          "stem": "For each clinical occurrence in Evelyn's case, click to match it with its correct pathophysiological classification.",
+          "type": "matrix_mc",
+          "matrix": {
+            "rows": [
+              {
+                "text": "The acute viral respiratory infection that triggered the sudden onset of joint swelling",
+                "correctIndex": 3,
+                "correctIndices": [
+                  3
+                ]
+              },
+              {
+                "text": "Female sex and positive family history of autoimmune connective tissue disease",
+                "correctIndex": 4,
+                "correctIndices": [
+                  4
+                ]
+              },
+              {
+                "text": "Early focal discontinuity and erosion of the articular cartilage detected on joint ultrasound",
+                "correctIndex": 0,
+                "correctIndices": [
+                  0
+                ]
+              },
+              {
+                "text": "Development of oral candidiasis (thrush) resulting from prescribed high-dose corticosteroid treatment",
+                "correctIndex": 2,
+                "correctIndices": [
+                  2
+                ]
+              },
+              {
+                "text": "Development of an acute secondary soft-tissue abscess arising during the course of severe synovial inflammation",
+                "correctIndex": 1,
+                "correctIndices": [
+                  1
+                ]
+              }
+            ],
+            "columns": [
+              "Lesion",
+              "Complication",
+              "Iatrogenic Condition",
+              "Precipitating Factor",
+              "Predisposing Factor"
+            ],
+            "firstColumnHeader": "Clinical Occurrence"
+          },
+          "options": [],
+          "preamble": "",
+          "explanation": "According to Unit 1 definitions: Precipitating factors are factors that trigger the onset of an acute disease/condition (e.g., the viral respiratory infection). Predisposing factors are factors that increase the risk of developing a disease/condition (e.g., female sex, genetics, and family history). A lesion is any pathological or traumatic discontinuity of tissue (e.g., focal erosion/discontinuity of articular cartilage). An iatrogenic condition results from the activity of healthcare professionals or prescribed medical/nursing interventions or treatments (e.g., oral thrush arising from corticosteroid immunosuppression). A complication is a disease or condition arising during the course of or as a consequence of another disease (e.g., secondary soft-tissue infection)."
+        },
+        "leftContent": {
+          "tabs": [
+            {
+              "id": "nn_2",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0900:</span><span class=\"nurse-note-text\">Client presents accompanied by her spouse for evaluation of bilateral hand and wrist symptoms. Evelyn reports that approximately 8 months ago, routine wellness bloodwork ordered by her family physician for non-specific fatigue revealed a positive antinuclear antibody (ANA) and elevated rheumatoid factor (RF), although she had zero joint pain, zero swelling, and completely normal physical function at that time. Approximately 3 weeks ago, she experienced a 10-day period of vague, generalized malaise, mild muscle achiness, low-grade fatigue, and a feeling of 'coming down with something' without distinct localized joint symptoms. Five days ago, following a severe acute upper respiratory viral illness, she suddenly awoke with intense throbbing pain, visible redness, warmth, and pronounced swelling in both wrists and the second and third metacarpophalangeal (MCP) joints bilaterally. She states her morning stiffness now lasts over 2.5 hours before she can bend her fingers to hold a coffee cup. Medical history: no previous chronic illness; no regular medications prior to this flare. Denies smoking or alcohol. Family history: maternal grandmother had severe rheumatoid arthritis resulting in hand joint deformities.</span></p>"
+            },
+            {
+              "id": "vs_2",
+              "title": "Vital Signs and Physical Assessment",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Parameter / Assessment</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Finding (0900 Today)</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Clinical Reference</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Temperature (T)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">38.1 °C (oral, low-grade fever)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">36.5–37.5 °C</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Heart Rate (P)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">96 bpm, regular</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">60–100 bpm</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Respiratory Rate (RR)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">18 breaths/min</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">12–20 breaths/min</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Blood Pressure (BP)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">116/72 mmHg</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 120/80 mmHg</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Musculoskeletal Inspection</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Bilateral symmetric boggy swelling, erythema, and palpable warmth of the 2nd and 3rd MCP joints and bilateral carpal joints. No gross structural deformities present.</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal: no swelling, redness, or heat</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Pain & Range of Motion</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Client rates bilateral hand/wrist joint pain as 8/10 on numeric scale; wrist flexion measured at 30° bilaterally (limited by pain and edema).</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal wrist flexion: 60–80°</td></tr></tbody></table>"
+            },
+            {
+              "id": "diag_2",
+              "title": "Diagnostic and Laboratory Findings",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Diagnostic Test</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Result</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Erythrocyte Sedimentation Rate (ESR)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">68 mm/hr (markedly elevated)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 20 mm/hr</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>C-Reactive Protein (CRP)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">34 mg/L (markedly elevated)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 3.0 mg/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Rheumatoid Factor (RF)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Positive (112 IU/mL)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 14 IU/mL</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Hand & Wrist Ultrasound / X-Ray</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Significant acute synovial tissue thickening and active hypervascular effusion (synovitis); early focal discontinuity of the marginal articular cartilage (early erosion lesion). No fixed bone subluxation or ankylosis.</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal: intact articular cartilage and clear synovial space</td></tr></tbody></table>"
+            }
+          ],
+          "intro": "The outpatient rheumatology and ambulatory clinic nurse is caring for Evelyn, a 29-year-old woman who presents with progressive joint swelling, morning stiffness, severe fatigue, and pain in both hands and wrists."
+        }
+      },
+      {
+        "step": 4,
+        "question": {
+          "stem": "The nurse is analyzing health promotion and preventative measures related to autoimmune disorders. For each intervention, click to specify whether it represents <b>primary prevention</b>, <b>secondary prevention</b>, or <b>tertiary prevention</b>.",
+          "type": "matrix_mc",
+          "matrix": {
+            "rows": [
+              {
+                "text": "Providing smoking-cessation education and environmental hazard counseling to high-risk individuals to reduce risk factors before autoimmune illness develops.",
+                "correctIndex": 0,
+                "correctIndices": [
+                  0
+                ]
+              },
+              {
+                "text": "Screening first-degree relatives of affected clients for serum autoantibodies (RF and anti-CCP) to detect subclinical disease early.",
+                "correctIndex": 1,
+                "correctIndices": [
+                  1
+                ]
+              },
+              {
+                "text": "Administering prescribed disease-modifying antirheumatic drugs (DMARDs) and short-term corticosteroids to treat Evelyn's established synovial inflammation.",
+                "correctIndex": 2,
+                "correctIndices": [
+                  2
+                ]
+              },
+              {
+                "text": "Referring the client to physical and occupational therapy for joint splinting and energy-conservation training to preserve joint function.",
+                "correctIndex": 2,
+                "correctIndices": [
+                  2
+                ]
+              },
+              {
+                "text": "Performing routine musculoskeletal joint examinations and screening imaging in clients with early vague symptoms to diagnose arthritis before irreversible damage occurs.",
+                "correctIndex": 1,
+                "correctIndices": [
+                  1
+                ]
+              }
+            ],
+            "columns": [
+              "Primary Prevention",
+              "Secondary Prevention",
+              "Tertiary Prevention"
+            ],
+            "firstColumnHeader": "Intervention"
+          },
+          "options": [],
+          "preamble": "",
+          "explanation": "Primary prevention keeps disease from occurring by removing or reducing risk factors in susceptible individuals (e.g., smoking cessation to reduce autoimmune trigger risk). Secondary prevention focuses on early screening, detection, and diagnosis of disease when asymptomatic or in early stages (e.g., autoantibody screening and early joint screening). Tertiary prevention consists of all medical, nursing, and physical therapy interventions to treat an established disease and prevent worsening disability or deformity."
+        },
+        "leftContent": {
+          "tabs": [
+            {
+              "id": "nn_2",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0900:</span><span class=\"nurse-note-text\">Client presents accompanied by her spouse for evaluation of bilateral hand and wrist symptoms. Evelyn reports that approximately 8 months ago, routine wellness bloodwork ordered by her family physician for non-specific fatigue revealed a positive antinuclear antibody (ANA) and elevated rheumatoid factor (RF), although she had zero joint pain, zero swelling, and completely normal physical function at that time. Approximately 3 weeks ago, she experienced a 10-day period of vague, generalized malaise, mild muscle achiness, low-grade fatigue, and a feeling of 'coming down with something' without distinct localized joint symptoms. Five days ago, following a severe acute upper respiratory viral illness, she suddenly awoke with intense throbbing pain, visible redness, warmth, and pronounced swelling in both wrists and the second and third metacarpophalangeal (MCP) joints bilaterally. She states her morning stiffness now lasts over 2.5 hours before she can bend her fingers to hold a coffee cup. Medical history: no previous chronic illness; no regular medications prior to this flare. Denies smoking or alcohol. Family history: maternal grandmother had severe rheumatoid arthritis resulting in hand joint deformities.</span></p>"
+            },
+            {
+              "id": "vs_2",
+              "title": "Vital Signs and Physical Assessment",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Parameter / Assessment</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Finding (0900 Today)</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Clinical Reference</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Temperature (T)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">38.1 °C (oral, low-grade fever)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">36.5–37.5 °C</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Heart Rate (P)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">96 bpm, regular</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">60–100 bpm</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Respiratory Rate (RR)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">18 breaths/min</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">12–20 breaths/min</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Blood Pressure (BP)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">116/72 mmHg</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 120/80 mmHg</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Musculoskeletal Inspection</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Bilateral symmetric boggy swelling, erythema, and palpable warmth of the 2nd and 3rd MCP joints and bilateral carpal joints. No gross structural deformities present.</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal: no swelling, redness, or heat</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Pain & Range of Motion</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Client rates bilateral hand/wrist joint pain as 8/10 on numeric scale; wrist flexion measured at 30° bilaterally (limited by pain and edema).</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal wrist flexion: 60–80°</td></tr></tbody></table>"
+            },
+            {
+              "id": "diag_2",
+              "title": "Diagnostic and Laboratory Findings",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Diagnostic Test</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Result</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Erythrocyte Sedimentation Rate (ESR)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">68 mm/hr (markedly elevated)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 20 mm/hr</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>C-Reactive Protein (CRP)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">34 mg/L (markedly elevated)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 3.0 mg/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Rheumatoid Factor (RF)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Positive (112 IU/mL)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 14 IU/mL</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Hand & Wrist Ultrasound / X-Ray</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Significant acute synovial tissue thickening and active hypervascular effusion (synovitis); early focal discontinuity of the marginal articular cartilage (early erosion lesion). No fixed bone subluxation or ankylosis.</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal: intact articular cartilage and clear synovial space</td></tr></tbody></table>"
+            }
+          ],
+          "intro": "The outpatient rheumatology and ambulatory clinic nurse is caring for Evelyn, a 29-year-old woman who presents with progressive joint swelling, morning stiffness, severe fatigue, and pain in both hands and wrists."
+        }
+      },
+      {
+        "step": 5,
+        "question": {
+          "stem": "The nurse is planning direct care and discharge teaching for Evelyn during this acute exacerbation. Which actions should the nurse implement? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Teach the client to identify prodromal symptoms (such as mild fatigue and subtle stiffness) so medical therapy can be initiated before a severe exacerbation occurs.",
+              "correct": true
+            },
+            {
+              "text": "Monitor the client for iatrogenic adverse effects of prescribed immunosuppressants and corticosteroids, including opportunistic infections and hyperglycemia.",
+              "correct": true
+            },
+            {
+              "text": "Explain that physical and emotional stressors can act as precipitating factors that trigger future disease exacerbations.",
+              "correct": true
+            },
+            {
+              "text": "Advise the client to perform strenuous, high-resistance weight training on the actively inflamed wrist joints to prevent stiffness.",
+              "correct": false
+            },
+            {
+              "text": "Inform the client that once joint swelling disappears, the disease is cured and all medications can be permanently stopped.",
+              "correct": false
+            },
+            {
+              "text": "Provide education on energy conservation and joint-protection techniques to preserve physical mobility during convalescence.",
+              "correct": true
+            }
+          ],
+          "preamble": "",
+          "explanation": "Appropriate interventions include teaching the client to identify prodromal warning cues, monitoring for iatrogenic complications from prescribed therapies, educating on precipitating factors, and supporting joint protection during convalescence. Strenuous loading on actively inflamed joints accelerates cartilage lesions and tissue trauma. Chronic autoimmune diseases enter remission rather than permanent cure, and abrupt drug cessation can precipitate a severe rebound exacerbation."
+        },
+        "leftContent": {
+          "tabs": [
+            {
+              "id": "nn_2",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0900:</span><span class=\"nurse-note-text\">Client presents accompanied by her spouse for evaluation of bilateral hand and wrist symptoms. Evelyn reports that approximately 8 months ago, routine wellness bloodwork ordered by her family physician for non-specific fatigue revealed a positive antinuclear antibody (ANA) and elevated rheumatoid factor (RF), although she had zero joint pain, zero swelling, and completely normal physical function at that time. Approximately 3 weeks ago, she experienced a 10-day period of vague, generalized malaise, mild muscle achiness, low-grade fatigue, and a feeling of 'coming down with something' without distinct localized joint symptoms. Five days ago, following a severe acute upper respiratory viral illness, she suddenly awoke with intense throbbing pain, visible redness, warmth, and pronounced swelling in both wrists and the second and third metacarpophalangeal (MCP) joints bilaterally. She states her morning stiffness now lasts over 2.5 hours before she can bend her fingers to hold a coffee cup. Medical history: no previous chronic illness; no regular medications prior to this flare. Denies smoking or alcohol. Family history: maternal grandmother had severe rheumatoid arthritis resulting in hand joint deformities.</span></p>"
+            },
+            {
+              "id": "vs_2",
+              "title": "Vital Signs and Physical Assessment",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Parameter / Assessment</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Finding (0900 Today)</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Clinical Reference</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Temperature (T)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">38.1 °C (oral, low-grade fever)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">36.5–37.5 °C</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Heart Rate (P)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">96 bpm, regular</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">60–100 bpm</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Respiratory Rate (RR)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">18 breaths/min</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">12–20 breaths/min</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Blood Pressure (BP)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">116/72 mmHg</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 120/80 mmHg</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Musculoskeletal Inspection</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Bilateral symmetric boggy swelling, erythema, and palpable warmth of the 2nd and 3rd MCP joints and bilateral carpal joints. No gross structural deformities present.</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal: no swelling, redness, or heat</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Pain & Range of Motion</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Client rates bilateral hand/wrist joint pain as 8/10 on numeric scale; wrist flexion measured at 30° bilaterally (limited by pain and edema).</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal wrist flexion: 60–80°</td></tr></tbody></table>"
+            },
+            {
+              "id": "diag_2",
+              "title": "Diagnostic and Laboratory Findings",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Diagnostic Test</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Result</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Erythrocyte Sedimentation Rate (ESR)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">68 mm/hr (markedly elevated)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 20 mm/hr</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>C-Reactive Protein (CRP)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">34 mg/L (markedly elevated)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 3.0 mg/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Rheumatoid Factor (RF)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Positive (112 IU/mL)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 14 IU/mL</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Hand & Wrist Ultrasound / X-Ray</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Significant acute synovial tissue thickening and active hypervascular effusion (synovitis); early focal discontinuity of the marginal articular cartilage (early erosion lesion). No fixed bone subluxation or ankylosis.</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal: intact articular cartilage and clear synovial space</td></tr></tbody></table>"
+            }
+          ],
+          "intro": "The outpatient rheumatology and ambulatory clinic nurse is caring for Evelyn, a 29-year-old woman who presents with progressive joint swelling, morning stiffness, severe fatigue, and pain in both hands and wrists."
+        }
+      },
+      {
+        "step": 6,
+        "question": {
+          "stem": "The nurse evaluates Evelyn's clinical status at her 6-month follow-up visit (see Follow-Up Assessment tab). Which interpretations are correct? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "The disappearance of joint swelling, heat, and elevated inflammatory markers indicates that Evelyn is in a state of clinical <b>remission</b>.",
+              "correct": true
+            },
+            {
+              "text": "The persistent ulnar deviation and slight reduction in wrist extension represent a <b>sequela</b> resulting from the preceding inflammatory joint disease.",
+              "correct": true
+            },
+            {
+              "text": "The client's successful return to full-time work and independent living reflects a substantial reduction in individual <b>morbidity</b>.",
+              "correct": true
+            },
+            {
+              "text": "Because Evelyn has achieved remission, her autoimmune disorder has been completely eradicated with zero risk of future exacerbations.",
+              "correct": false
+            },
+            {
+              "text": "Evelyn's functional <b>prognosis</b> is favorable based on early diagnosis, therapeutic adherence, and stable joint architecture.",
+              "correct": true
+            },
+            {
+              "text": "The development of oral thrush during corticosteroid therapy represents an idiopathic manifestation unrelated to her medical treatment.",
+              "correct": false
+            }
+          ],
+          "preamble": "",
+          "explanation": "Remission is the temporary, partial, or complete disappearance of the clinical manifestations of a disease without being cured. Sequelae are any lesions, disorders, or pathological conditions that result from a preceding disease or accident (such as permanent joint deformity or restriction). Morbidity is a diseased condition or state, which has substantially improved with functional recovery. Prognosis is a forecast as to the probable course and outcome of the disease. Remission does not mean the disease is eradicated. Oral thrush resulting from corticosteroid immunosuppression is iatrogenic, not idiopathic."
+        },
+        "leftContent": {
+          "tabs": [
+            {
+              "id": "nn_2",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">0900:</span><span class=\"nurse-note-text\">Client presents accompanied by her spouse for evaluation of bilateral hand and wrist symptoms. Evelyn reports that approximately 8 months ago, routine wellness bloodwork ordered by her family physician for non-specific fatigue revealed a positive antinuclear antibody (ANA) and elevated rheumatoid factor (RF), although she had zero joint pain, zero swelling, and completely normal physical function at that time. Approximately 3 weeks ago, she experienced a 10-day period of vague, generalized malaise, mild muscle achiness, low-grade fatigue, and a feeling of 'coming down with something' without distinct localized joint symptoms. Five days ago, following a severe acute upper respiratory viral illness, she suddenly awoke with intense throbbing pain, visible redness, warmth, and pronounced swelling in both wrists and the second and third metacarpophalangeal (MCP) joints bilaterally. She states her morning stiffness now lasts over 2.5 hours before she can bend her fingers to hold a coffee cup. Medical history: no previous chronic illness; no regular medications prior to this flare. Denies smoking or alcohol. Family history: maternal grandmother had severe rheumatoid arthritis resulting in hand joint deformities.</span></p>"
+            },
+            {
+              "id": "vs_2",
+              "title": "Vital Signs and Physical Assessment",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Parameter / Assessment</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Finding (0900 Today)</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Clinical Reference</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Temperature (T)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">38.1 °C (oral, low-grade fever)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">36.5–37.5 °C</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Heart Rate (P)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">96 bpm, regular</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">60–100 bpm</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Respiratory Rate (RR)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">18 breaths/min</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">12–20 breaths/min</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Blood Pressure (BP)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">116/72 mmHg</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 120/80 mmHg</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Musculoskeletal Inspection</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Bilateral symmetric boggy swelling, erythema, and palpable warmth of the 2nd and 3rd MCP joints and bilateral carpal joints. No gross structural deformities present.</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal: no swelling, redness, or heat</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Pain & Range of Motion</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Client rates bilateral hand/wrist joint pain as 8/10 on numeric scale; wrist flexion measured at 30° bilaterally (limited by pain and edema).</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal wrist flexion: 60–80°</td></tr></tbody></table>"
+            },
+            {
+              "id": "diag_2",
+              "title": "Diagnostic and Laboratory Findings",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Diagnostic Test</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Result</th><th placeholder=\"Header 3\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Erythrocyte Sedimentation Rate (ESR)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">68 mm/hr (markedly elevated)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 20 mm/hr</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>C-Reactive Protein (CRP)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">34 mg/L (markedly elevated)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 3.0 mg/L</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Rheumatoid Factor (RF)</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Positive (112 IU/mL)</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">&lt; 14 IU/mL</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Hand & Wrist Ultrasound / X-Ray</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Significant acute synovial tissue thickening and active hypervascular effusion (synovitis); early focal discontinuity of the marginal articular cartilage (early erosion lesion). No fixed bone subluxation or ankylosis.</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Normal: intact articular cartilage and clear synovial space</td></tr></tbody></table>"
+            },
+            {
+              "id": "fu_2",
+              "title": "Follow-Up Assessment (6 Months Later)",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Parameter</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">6-Month Follow-Up Finding</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Clinical Status</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Active joint warmth and erythema have resolved completely. Morning joint stiffness has decreased from 2.5 hours to less than 10 minutes. Evelyn reports pain rated 1/10 occasionally after prolonged computer typing.</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Inflammatory Biomarkers</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">ESR: 14 mm/hr (normal); CRP: 2.1 mg/L (normal).</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Structural Assessment</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">X-ray shows stable joint architecture without new erosive lesions. However, mild permanent limitation in end-range wrist extension (50° vs normal 70°) and a slight persistent ulnar deviation of the left 3rd digit are documented.</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Medication Adverse Effects</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">During month 2 of high-dose prednisone therapy, Evelyn developed white curd-like oral patches diagnosed as oral candidiasis (thrush), which resolved following prescribed nystatin oral suspension. Prednisone has since been successfully tapered off, and she remains stable on methotrexate.</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Function and Employment</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">Client has resumed full-time employment as an accountant with ergonomic keyboard modifications. She reports high quality of life and independent self-care.</td></tr></tbody></table>"
+            }
+          ],
+          "intro": "The outpatient rheumatology and ambulatory clinic nurse is caring for Evelyn, a 29-year-old woman who presents with progressive joint swelling, morning stiffness, severe fatigue, and pain in both hands and wrists."
+        }
+      }
+    ],
+    "disorder": "Unit 1 (Introduction to Pathophysiology)",
+    "description": "A case study for formative review of NURS 1017 Unit 1",
+    "availability": "all",
+    "course": "NURS 1017",
+    "unit": "Unit 1 (Introduction to Pathophysiology)"
+  },
+  {
+    "id": "case_1789753289436",
+    "title": "New Case Study",
+    "description": "",
+    "screens": [
+      {
+        "step": 1,
+        "leftContent": {
+          "intro": "",
+          "tabs": [
+            {
+              "id": "nn_1789753289436",
+              "title": "Nurses' Notes",
+              "content": ""
+            }
+          ]
+        },
+        "question": {
+          "type": "select_all",
+          "stem": "",
+          "options": [
+            {
+              "text": "",
+              "correct": false
+            },
+            {
+              "text": "",
+              "correct": false
+            },
+            {
+              "text": "",
+              "correct": false
+            },
+            {
+              "text": "",
+              "correct": false
+            },
+            {
+              "text": "",
+              "correct": false
+            }
+          ],
+          "explanation": "",
+          "preamble": ""
+        }
+      }
+    ],
+    "disorder": "Others",
+    "course": "",
+    "unit": "Others",
+    "topic": "Others"
   }
 ]

@@ -19,6 +19,38 @@ const PATHOPHYSIOLOGY_DISORDERS = [
   "Urinary Disorders"
 ];
 
+const CURRICULUM_COURSES = {
+  "NURS 1017": [
+    "Unit 1 (Introduction to Pathophysiology)",
+    "Unit 2 (Cellular Basis of Disease)",
+    "Unit 3 (Genetic and Developmental Disorders)",
+    "Unit 4 (Neoplasia)",
+    "Unit 5 (Integumentary Disorders and Burns)",
+    "Unit 6 (Musculoskeletal Disorders)",
+    "Unit 7 (Neurological Disorders)",
+    "Unit 8 (Pain)",
+    "Unit 9 (Disorders of the Eyes and Ears)",
+    "Unit 10 (Stress and Disease)",
+    "Unit 11 (Endocrine Disorders)"
+  ],
+  "NURS 1021": [
+    "Unit 1 (Blood Disorders)",
+    "Unit 2 (Cardiovascular Disorders)",
+    "Unit 3 (Respiratory Disorders)",
+    "Unit 4 (Inflammation and Immune Disorders)",
+    "Unit 5 (Leukemias and Lymphomas)",
+    "Unit 6 (Gastrointestinal Disorders)",
+    "Unit 7 (Urinary Disorders)",
+    "Unit 8 (Fluid, Electrolytes, and Acid-Base Imbalances)",
+    "Unit 9 (Reproductive Disorders)"
+  ]
+};
+
+let authorCurrentTab = 'cases'; // 'cases' | 'standalone'
+let authorCourseFilter = 'ALL';
+let authorUnitFilter = 'ALL';
+let authorSearchQuery = '';
+
 let caseStudies = [];
 let standaloneQuestions = [];
 let currentCase = null;
@@ -170,20 +202,22 @@ async function initApp() {
   initAdminEvents();
   applyAdminState();
 
-  // Check URL parameters for direct exam/mode launches
+  // Check URL parameters for direct exam/mode launches or authoring
   const urlParams = new URLSearchParams(window.location.search);
   const examMode = urlParams.get('mode');
   const examId = urlParams.get('exam');
+  const isAuthorParam = urlParams.get('author') === '1' || urlParams.get('studio') === '1';
 
-  if (examMode === 'test' || examId) {
+  if (isAuthorParam) {
+    switchView('dashboard');
+  } else if (examMode === 'test' || examId) {
     // Launch directly into Test Mode simulation
-    switchDashboardPanel('generator');
+    switchView('student');
     const testCard = document.getElementById('mode-card-test');
     if (testCard) testCard.click();
-    switchView('dashboard');
   } else {
-    // Start on Dashboard
-    switchView('dashboard');
+    // Start on Student Portal
+    switchView('student');
   }
 }
 
@@ -667,7 +701,19 @@ function switchView(viewId) {
   
   if (viewId === 'dashboard') {
     renderDashboard();
+  } else if (viewId === 'student') {
+    renderStudentPortal();
   }
+}
+
+function renderStudentPortal() {
+  const bankStatusEl = document.getElementById('student-bank-status-text');
+  if (bankStatusEl) {
+    bankStatusEl.textContent = `Local Bank: ${caseStudies.length} Cases \u2022 ${standaloneQuestions.length} Standalone`;
+  }
+  renderSessionTopicsList();
+  renderManualSelectionLists();
+  updateSessionCountsAndBounds();
 }
 
 function exportAllCases() {
@@ -704,227 +750,366 @@ function exportAllStandalone() {
   showToast("All standalone questions exported.");
 }
 
-/* ================= DASHBOARD ENGINE ================= */
+/* ================= DASHBOARD ENGINE (FACULTY AUTHORING PORTAL) ================= */
 function initDashboardEvents() {
-  const dashThemeBtn = document.getElementById('dashboard-theme-toggle-btn');
-  if (dashThemeBtn) {
-    dashThemeBtn.addEventListener('click', toggleTheme);
-  }
-  
-  const exportAllCasesBtn = document.getElementById('export-all-cases-btn');
-  if (exportAllCasesBtn) {
-    exportAllCasesBtn.addEventListener('click', exportAllCases);
-  }
-  
-  const exportAllStandaloneBtn = document.getElementById('export-all-standalone-btn');
-  if (exportAllStandaloneBtn) {
-    exportAllStandaloneBtn.addEventListener('click', exportAllStandalone);
+  const authorToStudentBtn = document.getElementById('author-to-student-btn');
+  if (authorToStudentBtn) {
+    authorToStudentBtn.addEventListener('click', () => switchView('student'));
   }
 
-  // Connect Local Folder buttons
-  document.querySelectorAll('.connect-folder-btn').forEach(btn => {
-    btn.addEventListener('click', connectLocalFolder);
-  });
-
-  // Export dropdown handlers
-  ['cases', 'standalone'].forEach(type => {
-    const dropdownBtn = document.getElementById(`export-dropdown-btn-${type}`);
-    const menu = document.getElementById(`export-menu-${type}`);
-    if (dropdownBtn && menu) {
-      dropdownBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        document.querySelectorAll('.export-dropdown-menu').forEach(m => {
-          if (m !== menu) m.classList.add('hidden');
-        });
-        menu.classList.toggle('hidden');
-      });
-
-      menu.querySelectorAll('.export-menu-item').forEach(item => {
-        item.addEventListener('click', (e) => {
-          e.stopPropagation();
-          menu.classList.add('hidden');
-          const action = item.getAttribute('data-action');
-          if (action === 'cases-json') exportCasesJson();
-          else if (action === 'standalone-json') exportStandaloneJson();
-          else if (action === 'cases-data-js') exportCasesDataJs();
-          else if (action === 'all-json') exportAllDataAsJson();
-        });
-      });
-    }
-  });
-
-  // Close dropdowns on document click
-  document.addEventListener('click', () => {
-    document.querySelectorAll('.export-dropdown-menu').forEach(m => m.classList.add('hidden'));
-  });
-  
-  const createBtn = document.getElementById('create-btn');
-  if (createBtn) {
-    createBtn.addEventListener('click', createNewCase);
-  }
-  
-  const loadDefaultBtn = document.getElementById('load-default-btn');
-  if (loadDefaultBtn) {
-    loadDefaultBtn.addEventListener('click', () => {
-      if (window.DEFAULT_CASE) {
-        caseStudies = [window.DEFAULT_CASE];
-        saveCasesToStorage();
-        showToast("Demo Cardiovascular case study loaded.");
-        renderDashboard();
-      }
-    });
-  }
-
-  const importBtn = document.getElementById('import-btn');
-  const importInput = document.getElementById('import-file-input');
-  if (importBtn && importInput) {
-    importBtn.addEventListener('click', () => importInput.click());
-    importInput.addEventListener('change', handleImportFile);
-  }
-
-  // Sidebar Navigation Tabs Clicks
-  const tabCases = document.getElementById('nav-tab-cases');
-  const tabStandalone = document.getElementById('nav-tab-standalone');
-  const tabGenerator = document.getElementById('nav-tab-generator');
+  const tabCases = document.getElementById('author-tab-cases');
+  const tabStandalone = document.getElementById('author-tab-standalone');
   if (tabCases) {
-    tabCases.addEventListener('click', (e) => {
-      isCasesFolderExpanded = !isCasesFolderExpanded;
-      const subList = document.getElementById('sub-list-cases');
-      const chevron = tabCases.querySelector('.chevron-icon');
-      if (isCasesFolderExpanded) {
-        subList.classList.remove('hidden');
-        if (chevron) chevron.classList.add('rotated');
-      } else {
-        subList.classList.add('hidden');
-        if (chevron) chevron.classList.remove('rotated');
-      }
-      activeCasesDisorderFilter = '';
-      renderDisorderFilters();
-      switchDashboardPanel('cases');
-    });
+    tabCases.addEventListener('click', () => switchAuthorTab('cases'));
   }
   if (tabStandalone) {
-    tabStandalone.addEventListener('click', (e) => {
-      isStandaloneFolderExpanded = !isStandaloneFolderExpanded;
-      const subList = document.getElementById('sub-list-standalone');
-      const chevron = tabStandalone.querySelector('.chevron-icon');
-      if (isStandaloneFolderExpanded) {
-        subList.classList.remove('hidden');
-        if (chevron) chevron.classList.add('rotated');
+    tabStandalone.addEventListener('click', () => switchAuthorTab('standalone'));
+  }
+
+  const createBtn = document.getElementById('create-btn');
+  if (createBtn) {
+    createBtn.addEventListener('click', () => {
+      if (authorCurrentTab === 'cases') {
+        createNewCase();
       } else {
-        subList.classList.add('hidden');
-        if (chevron) chevron.classList.remove('rotated');
+        createStandaloneQuestion();
       }
-      activeStandaloneDisorderFilter = '';
-      renderDisorderFilters();
-      switchDashboardPanel('standalone');
     });
   }
-  if (tabGenerator) tabGenerator.addEventListener('click', () => switchDashboardPanel('generator'));
 
-  // Stand-alone Question Actions
-  const createQBtn = document.getElementById('create-standalone-btn');
-  const createQEmptyBtn = document.getElementById('create-standalone-empty-btn');
-  if (createQBtn) createQBtn.addEventListener('click', createStandaloneQuestion);
-  if (createQEmptyBtn) createQEmptyBtn.addEventListener('click', createStandaloneQuestion);
-
-  const importQBtn = document.getElementById('import-standalone-btn');
-  const importQInput = document.getElementById('import-standalone-file-input');
-  if (importQBtn && importQInput) {
-    importQBtn.addEventListener('click', () => importQInput.click());
-    importQInput.addEventListener('change', handleImportStandaloneFile);
+  const courseFilter = document.getElementById('author-course-filter');
+  if (courseFilter) {
+    courseFilter.addEventListener('change', (e) => {
+      authorCourseFilter = e.target.value;
+      updateAuthorUnitFilterOptions();
+      applyAuthorTableFilters();
+    });
   }
 
-  // Custom Quiz Generator Compile Actions
-  const playBtn = document.getElementById('generate-play-btn');
-  if (playBtn) playBtn.addEventListener('click', generateAndStartQuiz);
+  const unitFilter = document.getElementById('author-unit-filter');
+  if (unitFilter) {
+    unitFilter.addEventListener('change', (e) => {
+      authorUnitFilter = e.target.value;
+      applyAuthorTableFilters();
+    });
+  }
+
+  const tableSearch = document.getElementById('author-table-search');
+  if (tableSearch) {
+    tableSearch.addEventListener('input', (e) => {
+      authorSearchQuery = e.target.value.toLowerCase().trim();
+      applyAuthorTableFilters();
+    });
+  }
+}
+
+function switchAuthorTab(tab) {
+  authorCurrentTab = tab;
+  const tabCases = document.getElementById('author-tab-cases');
+  const tabStandalone = document.getElementById('author-tab-standalone');
+  const casesTableView = document.getElementById('author-cases-table-view');
+  const standaloneTableView = document.getElementById('author-standalone-table-view');
+  const createLabel = document.getElementById('create-btn-label');
+
+  if (tab === 'cases') {
+    if (tabCases) tabCases.classList.add('active');
+    if (tabStandalone) tabStandalone.classList.remove('active');
+    if (casesTableView) casesTableView.classList.remove('hidden');
+    if (standaloneTableView) standaloneTableView.classList.add('hidden');
+    if (createLabel) createLabel.textContent = 'Create New Case Study';
+  } else {
+    if (tabStandalone) tabStandalone.classList.add('active');
+    if (tabCases) tabCases.classList.remove('active');
+    if (standaloneTableView) standaloneTableView.classList.remove('hidden');
+    if (casesTableView) casesTableView.classList.add('hidden');
+    if (createLabel) createLabel.textContent = 'Create New Stand-alone Question';
+  }
+
+  applyAuthorTableFilters();
+}
+
+function updateAuthorUnitFilterOptions() {
+  const unitFilter = document.getElementById('author-unit-filter');
+  if (!unitFilter) return;
+
+  const currentVal = authorUnitFilter;
+  let html = '<option value="ALL">All Units</option>';
+
+  if (authorCourseFilter === 'ALL') {
+    html += `
+      <optgroup label="NURS 1017 (Pathophysiology 1)">
+        ${CURRICULUM_COURSES["NURS 1017"].map(u => `<option value="${escapeHTML(u)}">${escapeHTML(u)}</option>`).join('')}
+      </optgroup>
+      <optgroup label="NURS 1021 (Pathophysiology 2)">
+        ${CURRICULUM_COURSES["NURS 1021"].map(u => `<option value="${escapeHTML(u)}">${escapeHTML(u)}</option>`).join('')}
+      </optgroup>
+    `;
+  } else if (authorCourseFilter === 'NURS 1017') {
+    html += `
+      <optgroup label="NURS 1017 (Pathophysiology 1)">
+        ${CURRICULUM_COURSES["NURS 1017"].map(u => `<option value="${escapeHTML(u)}">${escapeHTML(u)}</option>`).join('')}
+      </optgroup>
+    `;
+  } else if (authorCourseFilter === 'NURS 1021') {
+    html += `
+      <optgroup label="NURS 1021 (Pathophysiology 2)">
+        ${CURRICULUM_COURSES["NURS 1021"].map(u => `<option value="${escapeHTML(u)}">${escapeHTML(u)}</option>`).join('')}
+      </optgroup>
+    `;
+  } else if (authorCourseFilter === 'Others') {
+    html += '<option value="Others">Others (Unassigned)</option>';
+  }
+
+  unitFilter.innerHTML = html;
+  const exists = Array.from(unitFilter.options).some(opt => opt.value === currentVal);
+  if (exists) {
+    unitFilter.value = currentVal;
+  } else {
+    authorUnitFilter = 'ALL';
+    unitFilter.value = 'ALL';
+  }
 }
 
 function renderDashboard() {
-  renderDisorderFilters();
-  switchDashboardPanel(activeDashboardTab);
+  // 1. Calculate KPI Summary Metrics
+  const totalCases = caseStudies.length;
+  const totalScreens = caseStudies.reduce((sum, c) => sum + (c.screens ? c.screens.length : 0), 0);
+  const totalStandalone = standaloneQuestions.length;
+
+  const count1017 = caseStudies.filter(c => c.course === 'NURS 1017').length +
+                    standaloneQuestions.filter(q => q.course === 'NURS 1017').length;
+
+  const count1021 = caseStudies.filter(c => c.course === 'NURS 1021').length +
+                    standaloneQuestions.filter(q => q.course === 'NURS 1021').length;
+
+  // 2. Update KPI Elements in DOM
+  const kpiCasesCount = document.getElementById('author-kpi-cases-count');
+  const kpiCasesScreens = document.getElementById('author-kpi-cases-screens');
+  const kpiStandaloneCount = document.getElementById('author-kpi-standalone-count');
+  const kpi1017Count = document.getElementById('author-kpi-1017-count');
+  const kpi1021Count = document.getElementById('author-kpi-1021-count');
+
+  if (kpiCasesCount) kpiCasesCount.textContent = `${totalCases} Cases`;
+  if (kpiCasesScreens) kpiCasesScreens.textContent = `${totalScreens} Unfolding Clinical Screens`;
+  if (kpiStandaloneCount) kpiStandaloneCount.textContent = `${totalStandalone} Questions`;
+  if (kpi1017Count) kpi1017Count.textContent = `${count1017} Items`;
+  if (kpi1021Count) kpi1021Count.textContent = `${count1021} Items`;
+
+  // 3. Update Tab Badges
+  const tabCasesBadge = document.getElementById('author-tab-cases-badge');
+  const tabStandaloneBadge = document.getElementById('author-tab-standalone-badge');
+  if (tabCasesBadge) tabCasesBadge.textContent = totalCases;
+  if (tabStandaloneBadge) tabStandaloneBadge.textContent = totalStandalone;
+
+  // 4. Render Tables
+  renderAuthorCasesTable();
+  renderAuthorStandaloneTable();
+  applyAuthorTableFilters();
 }
 
-function renderDisorderFilters() {
-  const subListCases = document.getElementById('sub-list-cases');
-  const subListStandalone = document.getElementById('sub-list-standalone');
-  
-  if (!subListCases || !subListStandalone) return;
+function renderAuthorCasesTable() {
+  const tbody = document.getElementById('author-cases-tbody');
+  if (!tbody) return;
+  tbody.innerHTML = '';
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const casesFilter = urlParams.get('cases');
-  const standaloneFilter = urlParams.get('standalone');
-  if (!isAdminLoggedIn && !casesFilter && !standaloneFilter) {
-    subListCases.innerHTML = '<div style="padding:10px; font-size:12px; color:var(--text-dash-secondary); font-style:italic;">Access locked</div>';
-    subListStandalone.innerHTML = '<div style="padding:10px; font-size:12px; color:var(--text-dash-secondary); font-style:italic;">Access locked</div>';
+  if (caseStudies.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:32px; color:#64748b; font-style:italic;">No case studies available. Click "Create New Case Study" to begin.</td></tr>`;
     return;
   }
-  
-  // Calculate counts for cases
-  const caseCounts = {};
-  PATHOPHYSIOLOGY_DISORDERS.forEach(d => {
-    caseCounts[d] = caseStudies.filter(c => c.disorder === d).length;
-  });
-  
-  // Calculate counts for standalone questions
-  const standaloneCounts = {};
-  PATHOPHYSIOLOGY_DISORDERS.forEach(d => {
-    standaloneCounts[d] = standaloneQuestions.filter(q => q.disorder === d).length;
-  });
-  
-  // Render sub-list for cases
-  subListCases.innerHTML = PATHOPHYSIOLOGY_DISORDERS.map(d => {
-    const activeClass = (activeCasesDisorderFilter === d) ? 'active' : '';
-    const count = caseCounts[d] || 0;
-    return `
-      <button class="sidebar-sub-item ${activeClass}" data-disorder="${escapeHTML(d)}">
-        <span>${escapeHTML(d)}</span>
-        <span class="sub-item-badge">${count}</span>
-      </button>
-    `;
-  }).join('');
-  
-  // Render sub-list for standalone
-  subListStandalone.innerHTML = PATHOPHYSIOLOGY_DISORDERS.map(d => {
-    const activeClass = (activeStandaloneDisorderFilter === d) ? 'active' : '';
-    const count = standaloneCounts[d] || 0;
-    return `
-      <button class="sidebar-sub-item ${activeClass}" data-disorder="${escapeHTML(d)}">
-        <span>${escapeHTML(d)}</span>
-        <span class="sub-item-badge">${count}</span>
-      </button>
-    `;
-  }).join('');
 
-  // Add event listeners to cases sub-items
-  subListCases.querySelectorAll('.sidebar-sub-item').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const selected = btn.dataset.disorder;
-      if (activeCasesDisorderFilter === selected) {
-        activeCasesDisorderFilter = '';
-      } else {
-        activeCasesDisorderFilter = selected;
+  caseStudies.forEach(c => {
+    const tr = document.createElement('tr');
+    tr.className = 'author-case-row';
+    tr.dataset.course = c.course || 'Others';
+    tr.dataset.unit = c.unit || 'Others';
+    tr.dataset.id = c.id;
+    tr.dataset.title = (c.title || '').toLowerCase();
+    tr.dataset.desc = (c.description || '').toLowerCase();
+
+    const courseBadge = c.course === 'NURS 1017'
+      ? `<span class="badge-course-1017">NURS 1017</span>`
+      : c.course === 'NURS 1021'
+        ? `<span class="badge-course-1021">NURS 1021</span>`
+        : `<span class="badge-course-other">Unassigned</span>`;
+
+    const unitBadge = `<span class="badge-unit">${escapeHTML(c.unit || 'Others')}</span>`;
+    const screensCount = c.screens ? c.screens.length : 0;
+    const screensBadge = `<span class="badge-screens">${screensCount} Screens</span>`;
+
+    tr.innerHTML = `
+      <td>
+        <div class="author-scenario-title">${escapeHTML(c.title || 'Untitled Case')}</div>
+        <div class="author-scenario-desc">${escapeHTML(c.description || 'No description.')}</div>
+        <span class="author-scenario-id card-id-badge" data-id="${c.id}" title="Click to copy ID">ID: ${escapeHTML(c.id)}</span>
+      </td>
+      <td>${courseBadge}</td>
+      <td>${unitBadge}</td>
+      <td>${screensBadge}</td>
+      <td class="author-actions-cell">
+        <div class="author-actions-wrapper">
+          <button class="btn-author-edit edit-case-btn" data-id="${c.id}">Edit</button>
+          <button class="btn-author-launch play-case-btn" data-id="${c.id}">Launch</button>
+          <button class="btn-author-delete delete-case-btn" data-id="${c.id}">Delete</button>
+        </div>
+      </td>
+    `;
+
+    tr.querySelector('.edit-case-btn').addEventListener('click', () => startEditor(c));
+    tr.querySelector('.play-case-btn').addEventListener('click', () => startPlayer(c));
+    tr.querySelector('.delete-case-btn').addEventListener('click', () => {
+      const caseTitle = c.title || 'Untitled Case';
+      if (confirm(`Are you sure you want to delete case study "${caseTitle}"? This action cannot be undone.`)) {
+        caseStudies = caseStudies.filter(x => x.id !== c.id);
+        saveCasesToStorage();
+        if (db) deleteFromStore('case_studies', c.id);
+        showToast(`Case study "${caseTitle}" deleted.`);
+        renderDashboard();
       }
-      renderDisorderFilters();
-      renderCasesDashboard();
     });
+
+    tr.querySelector('.card-id-badge').addEventListener('click', (e) => {
+      e.stopPropagation();
+      const baseUrl = window.location.protocol.startsWith('http')
+        ? (window.location.origin + window.location.pathname)
+        : 'https://thadaniavinash.github.io/NCLEX/';
+      navigator.clipboard.writeText(`${baseUrl}?cases=${c.id}`);
+      showToast("Launch link copied to clipboard!");
+    });
+
+    tbody.appendChild(tr);
+  });
+}
+
+function getQuestionTypeLabel(type) {
+  const mapping = {
+    'dropdown_cloze': 'Drop-Down Cloze',
+    'drag_drop_cloze': 'Drag-and-Drop Cloze',
+    'dropdown_table': 'Drop-Down Table',
+    'matrix_mc': 'Matrix Multiple Choice',
+    'select_n': 'Select N Multiple Response',
+    'bowtie': 'Bowtie',
+    'multiple_choice': 'Multiple Choice',
+    'fill_blank': 'Fill-in-the-Blank',
+    'hotspot': 'Hotspot',
+    'ordered_response': 'Ordered Response',
+    'select_all': 'Select All (SATA)',
+    'highlight': 'Highlight Text/Table',
+    'highlight_2': 'Highlight Text/Table-2',
+    'matrix_mr': 'Matrix Multiple Response',
+    'grouped_mr': 'Grouped Multiple Response',
+    'trend': 'Trend',
+    'dyad': 'Dyad Rationale',
+    'triad': 'Triad Rationale'
+  };
+  return mapping[type] || type;
+}
+
+function renderAuthorStandaloneTable() {
+  const tbody = document.getElementById('author-standalone-tbody');
+  if (!tbody) return;
+  tbody.innerHTML = '';
+
+  if (standaloneQuestions.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:32px; color:#64748b; font-style:italic;">No stand-alone questions available. Click "Create New Stand-alone Question" to begin.</td></tr>`;
+    return;
+  }
+
+  standaloneQuestions.forEach(q => {
+    const tr = document.createElement('tr');
+    tr.className = 'author-standalone-row';
+    tr.dataset.course = q.course || 'Others';
+    tr.dataset.unit = q.unit || 'Others';
+    tr.dataset.id = q.id;
+    tr.dataset.title = (q.title || '').toLowerCase();
+    tr.dataset.desc = (q.description || '').toLowerCase();
+
+    const courseBadge = q.course === 'NURS 1017'
+      ? `<span class="badge-course-1017">NURS 1017</span>`
+      : q.course === 'NURS 1021'
+        ? `<span class="badge-course-1021">NURS 1021</span>`
+        : `<span class="badge-course-other">Unassigned</span>`;
+
+    const unitBadge = `<span class="badge-unit">${escapeHTML(q.unit || 'Others')}</span>`;
+    const qType = q.screens && q.screens[0] && q.screens[0].question ? q.screens[0].question.type : '';
+    const formatBadge = `<span class="badge-screens" style="background:#f1f5f9; color:#334155; border-color:#cbd5e1;">${escapeHTML(getQuestionTypeLabel(qType))}</span>`;
+
+    tr.innerHTML = `
+      <td>
+        <div class="author-scenario-title">${escapeHTML(q.title || 'Untitled Question')}</div>
+        <div class="author-scenario-desc">${escapeHTML(q.description || 'No description.')}</div>
+        <span class="author-scenario-id card-id-badge" data-id="${q.id}" title="Click to copy ID">ID: ${escapeHTML(q.id)}</span>
+      </td>
+      <td>${courseBadge}</td>
+      <td>${unitBadge}</td>
+      <td>${formatBadge}</td>
+      <td class="author-actions-cell">
+        <div class="author-actions-wrapper">
+          <button class="btn-author-edit edit-q-btn" data-id="${q.id}">Edit</button>
+          <button class="btn-author-launch play-q-btn" data-id="${q.id}">Launch</button>
+          <button class="btn-author-delete delete-q-btn" data-id="${q.id}">Delete</button>
+        </div>
+      </td>
+    `;
+
+    tr.querySelector('.edit-q-btn').addEventListener('click', () => startEditor(q));
+    tr.querySelector('.play-q-btn').addEventListener('click', () => startPlayer(q));
+    tr.querySelector('.delete-q-btn').addEventListener('click', () => {
+      const qTitle = q.title || 'Untitled Question';
+      if (confirm(`Are you sure you want to delete stand-alone question "${qTitle}"? This action cannot be undone.`)) {
+        standaloneQuestions = standaloneQuestions.filter(x => x.id !== q.id);
+        saveStandaloneToStorage();
+        if (db) deleteFromStore('standalone_questions', q.id);
+        showToast(`Stand-alone question "${qTitle}" deleted.`);
+        renderDashboard();
+      }
+    });
+
+    tr.querySelector('.card-id-badge').addEventListener('click', (e) => {
+      e.stopPropagation();
+      const baseUrl = window.location.protocol.startsWith('http')
+        ? (window.location.origin + window.location.pathname)
+        : 'https://thadaniavinash.github.io/NCLEX/';
+      navigator.clipboard.writeText(`${baseUrl}?standalone=${q.id}`);
+      showToast("Launch link copied to clipboard!");
+    });
+
+    tbody.appendChild(tr);
+  });
+}
+
+function applyAuthorTableFilters() {
+  const currentTabIsCases = (authorCurrentTab === 'cases');
+  const rows = currentTabIsCases
+    ? document.querySelectorAll('#author-cases-tbody .author-case-row')
+    : document.querySelectorAll('#author-standalone-tbody .author-standalone-row');
+
+  let visibleCount = 0;
+  const totalCount = rows.length;
+
+  rows.forEach(tr => {
+    const rowCourse = tr.dataset.course;
+    const rowUnit = tr.dataset.unit;
+    const rowId = (tr.dataset.id || '').toLowerCase();
+    const rowTitle = tr.dataset.title || '';
+    const rowDesc = tr.dataset.desc || '';
+
+    let matchesCourse = (authorCourseFilter === 'ALL' || rowCourse === authorCourseFilter);
+    let matchesUnit = (authorUnitFilter === 'ALL' || rowUnit === authorUnitFilter);
+    let matchesSearch = (!authorSearchQuery || rowTitle.includes(authorSearchQuery) || rowDesc.includes(authorSearchQuery) || rowId.includes(authorSearchQuery));
+
+    if (matchesCourse && matchesUnit && matchesSearch) {
+      tr.style.display = '';
+      visibleCount++;
+    } else {
+      tr.style.display = 'none';
+    }
   });
 
-  // Add event listeners to standalone sub-items
-  subListStandalone.querySelectorAll('.sidebar-sub-item').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const selected = btn.dataset.disorder;
-      if (activeStandaloneDisorderFilter === selected) {
-        activeStandaloneDisorderFilter = '';
-      } else {
-        activeStandaloneDisorderFilter = selected;
-      }
-      renderDisorderFilters();
-      renderStandaloneDashboard();
-    });
-  });
+  const countText = document.getElementById('author-filtered-count-text');
+  if (countText) {
+    const itemType = currentTabIsCases ? 'Case Studies' : 'Stand-alone Questions';
+    countText.textContent = `Showing ${visibleCount} of ${totalCount} ${itemType}`;
+  }
 }
 
 /* ================= ADMIN MANAGEMENT SYSTEM ================= */
@@ -940,15 +1125,17 @@ function initAdminEvents() {
 
   if (adminLoginBtn) {
     adminLoginBtn.addEventListener('click', () => {
-      loginUsernameInput.value = '';
-      loginPasswordInput.value = '';
-      loginErrorMsg.classList.add('hidden');
-      loginModal.classList.remove('hidden');
-      loginUsernameInput.focus();
+      if (loginUsernameInput) loginUsernameInput.value = '';
+      if (loginPasswordInput) loginPasswordInput.value = '';
+      if (loginErrorMsg) loginErrorMsg.classList.add('hidden');
+      if (loginModal) {
+        loginModal.classList.remove('hidden');
+        if (loginUsernameInput) loginUsernameInput.focus();
+      }
     });
   }
 
-  if (loginCancelBtn) {
+  if (loginCancelBtn && loginModal) {
     loginCancelBtn.addEventListener('click', () => {
       loginModal.classList.add('hidden');
     });
@@ -971,11 +1158,11 @@ function initAdminEvents() {
       if (username === 'athadani' && password === '0911Keen!') {
         isAdminLoggedIn = true;
         if (typeof sessionStorage !== 'undefined') sessionStorage.setItem('isAdmin', 'true');
-        loginModal.classList.add('hidden');
+        if (loginModal) loginModal.classList.add('hidden');
         showToast("Logged in as Administrator", "success");
         applyAdminState();
       } else {
-        loginErrorMsg.classList.remove('hidden');
+        if (loginErrorMsg) loginErrorMsg.classList.remove('hidden');
       }
     });
   }
@@ -993,15 +1180,6 @@ function initAdminEvents() {
 }
 
 function applyAdminState() {
-  const adminElements = document.querySelectorAll('.admin-only');
-  adminElements.forEach(el => {
-    if (isAdminLoggedIn) {
-      el.classList.remove('hidden-admin');
-    } else {
-      el.classList.add('hidden-admin');
-    }
-  });
-
   const loggedOutEl = document.getElementById('admin-status-logged-out');
   const loggedInEl = document.getElementById('admin-status-logged-in');
   if (isAdminLoggedIn) {
@@ -1015,274 +1193,22 @@ function applyAdminState() {
   renderDashboard();
 }
 
-function switchDashboardPanel(panelId) {
-  activeDashboardTab = panelId;
-  
-  // Update sidebar active classes
-  document.querySelectorAll('.sidebar-nav .nav-item').forEach(btn => {
-    btn.classList.remove('active');
-  });
-  const activeTabBtn = document.getElementById(`nav-tab-${panelId}`);
-  if (activeTabBtn) activeTabBtn.classList.add('active');
-  
-  // Update sub-panels active classes
-  document.querySelectorAll('.dashboard-panel').forEach(panel => {
-    panel.classList.remove('active');
-  });
-  const activePanel = document.getElementById(`panel-${panelId}`);
-  if (activePanel) activePanel.classList.add('active');
-  
-  // Render sub-panel content
-  if (panelId === 'cases') {
-    renderCasesDashboard();
-  } else if (panelId === 'standalone') {
-    renderStandaloneDashboard();
-  } else if (panelId === 'generator') {
-    renderGeneratorPanel();
+function populateEditorUnitSelect(selectedCourse, selectedUnit) {
+  const unitSelect = document.getElementById('case-unit-select');
+  if (!unitSelect) return;
+
+  let html = '<option value="">Unit: Select Unit</option>';
+  if (selectedCourse === 'NURS 1017' && CURRICULUM_COURSES["NURS 1017"]) {
+    html += CURRICULUM_COURSES["NURS 1017"].map(u => `<option value="${escapeHTML(u)}">${escapeHTML(u)}</option>`).join('');
+  } else if (selectedCourse === 'NURS 1021' && CURRICULUM_COURSES["NURS 1021"]) {
+    html += CURRICULUM_COURSES["NURS 1021"].map(u => `<option value="${escapeHTML(u)}">${escapeHTML(u)}</option>`).join('');
+  } else {
+    html += '<option value="Others">Others</option>';
   }
-  
-  updateSidebarBadges();
-}
-
-function updateSidebarBadges() {
-  const casesBadge = document.getElementById('sidebar-cases-count');
-  const standaloneBadge = document.getElementById('sidebar-standalone-count');
-  if (casesBadge) casesBadge.textContent = caseStudies.length;
-  if (standaloneBadge) standaloneBadge.textContent = standaloneQuestions.length;
-}
-
-function renderCasesDashboard() {
-  const grid = document.getElementById('cases-grid');
-  const emptyState = document.getElementById('empty-state');
-  
-  grid.innerHTML = '';
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const casesFilter = urlParams.get('cases');
-  if (!casesFilter && !isAdminLoggedIn) {
-    grid.classList.add('hidden');
-    emptyState.classList.remove('hidden');
-    const pEl = emptyState.querySelector('p');
-    if (pEl) {
-      pEl.textContent = "Please use the official link provided on your Blackboard portal to launch your assigned case study.";
-    }
-    const loadDefaultBtn = document.getElementById('load-default-btn');
-    if (loadDefaultBtn) loadDefaultBtn.classList.add('hidden');
-    return;
+  unitSelect.innerHTML = html;
+  if (selectedUnit) {
+    unitSelect.value = selectedUnit;
   }
-  
-  const filtered = activeCasesDisorderFilter
-    ? caseStudies.filter(c => c.disorder === activeCasesDisorderFilter)
-    : caseStudies;
-  
-  if (filtered.length === 0) {
-    grid.classList.add('hidden');
-    emptyState.classList.remove('hidden');
-    const pEl = emptyState.querySelector('p');
-    if (pEl) {
-      if (activeCasesDisorderFilter) {
-        pEl.textContent = `No case studies found for category "${activeCasesDisorderFilter}".`;
-      } else {
-        pEl.textContent = `No case studies found. Load the default cardiovascular case study.`;
-      }
-    }
-    const loadDefaultBtn = document.getElementById('load-default-btn');
-    if (loadDefaultBtn) {
-      if (activeCasesDisorderFilter) {
-        loadDefaultBtn.classList.add('hidden');
-      } else {
-        loadDefaultBtn.classList.remove('hidden');
-      }
-    }
-    return;
-  }
-  
-  grid.classList.remove('hidden');
-  emptyState.classList.add('hidden');
-  
-  filtered.forEach((c) => {
-    const card = document.createElement('div');
-    card.className = 'case-card';
-    card.innerHTML = `
-      <div class="case-card-body">
-        <h4>${escapeHTML(c.title || 'Untitled Case')}</h4>
-        <p>${escapeHTML(c.description || 'No description.')}</p>
-        ${c.disorder ? `<div class="disorder-badge">${escapeHTML(c.disorder)}</div>` : ''}
-      </div>
-      <div class="case-card-meta">
-        <div style="display:flex; flex-direction:column; gap:4px; align-items:flex-start;">
-          <span>${c.screens ? c.screens.length : 0} Screens</span>
-          <span class="card-id-badge" data-id="${c.id}" title="Click to copy ID">ID: ${c.id}</span>
-        </div>
-        <div class="case-card-actions">
-          <button class="btn btn-secondary btn-small play-case-btn" data-id="${c.id}">Launch</button>
-          ${isAdminLoggedIn ? `
-            <button class="btn btn-secondary btn-small edit-case-btn" data-id="${c.id}">Edit</button>
-            <button class="btn btn-danger btn-small delete-case-btn" data-id="${c.id}">Delete</button>
-          ` : ''}
-        </div>
-      </div>
-    `;
-    
-    card.querySelector('.play-case-btn').addEventListener('click', () => startPlayer(c));
-    card.querySelector('.card-id-badge').addEventListener('click', (e) => {
-      e.stopPropagation();
-      const baseUrl = window.location.protocol.startsWith('http') 
-        ? (window.location.origin + window.location.pathname) 
-        : 'https://thadaniavinash.github.io/NCLEX/';
-      navigator.clipboard.writeText(`${baseUrl}?cases=${c.id}`);
-      showToast("Launch link copied to clipboard!");
-    });
-    if (isAdminLoggedIn) {
-      card.querySelector('.edit-case-btn').addEventListener('click', () => startEditor(c));
-      card.querySelector('.delete-case-btn').addEventListener('click', () => {
-        if (confirm(`Are you sure you want to delete "${c.title}"?`)) {
-          caseStudies = caseStudies.filter(x => x.id !== c.id);
-          saveCasesToStorage();
-          if (db) {
-            deleteFromStore('case_studies', c.id);
-          }
-          showToast("Case study deleted.");
-          renderCasesDashboard();
-          updateSidebarBadges();
-          renderDisorderFilters();
-        }
-      });
-    }
-    
-    grid.appendChild(card);
-  });
-}
-
-function getQuestionTypeLabel(type) {
-  const mapping = {
-    'dropdown_cloze': 'Drop-Down Cloze',
-    'drag_drop_cloze': 'Drag-and-Drop Cloze',
-    'dropdown_table': 'Drop-Down Table',
-    'matrix_mc': 'Matrix Multiple Choice',
-    'select_n': 'Select N Multiple Response',
-    'bowtie': 'Bowtie',
-    'multiple_choice': 'Multiple Choice',
-    'fill_blank': 'Fill-in-the-Blank',
-    'hotspot': 'Hotspot',
-    'ordered_response': 'Ordered Response',
-    'select_all': 'Select All Multiple Response (SATA)',
-    'highlight': 'Highlight Text/Table',
-    'highlight_2': 'Highlight Text/Table-2',
-    'matrix_mr': 'Matrix Multiple Response',
-    'grouped_mr': 'Grouped Multiple Response',
-    'trend': 'Trend',
-    'dyad': 'Dyad Rationale',
-    'triad': 'Triad Rationale'
-  };
-  return mapping[type] || type;
-}
-
-function renderStandaloneDashboard() {
-  const grid = document.getElementById('standalone-grid');
-  const emptyState = document.getElementById('standalone-empty-state');
-  
-  grid.innerHTML = '';
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const standaloneFilter = urlParams.get('standalone');
-  if (!standaloneFilter && !isAdminLoggedIn) {
-    grid.classList.add('hidden');
-    emptyState.classList.remove('hidden');
-    const pEl = emptyState.querySelector('p');
-    if (pEl) {
-      pEl.textContent = "Please use the official link provided on your Blackboard portal to launch your assigned question.";
-    }
-    const createBtn = document.getElementById('create-standalone-empty-btn');
-    if (createBtn) createBtn.classList.add('hidden');
-    return;
-  }
-  
-  const filtered = activeStandaloneDisorderFilter
-    ? standaloneQuestions.filter(q => q.disorder === activeStandaloneDisorderFilter)
-    : standaloneQuestions;
-  
-  if (filtered.length === 0) {
-    grid.classList.add('hidden');
-    emptyState.classList.remove('hidden');
-    const pEl = emptyState.querySelector('p');
-    if (pEl) {
-      if (activeStandaloneDisorderFilter) {
-        pEl.textContent = `No stand-alone questions found for category "${activeStandaloneDisorderFilter}".`;
-      } else {
-        pEl.textContent = `No stand-alone questions found. Create a new question or import one.`;
-      }
-    }
-    const createBtn = document.getElementById('create-standalone-empty-btn');
-    if (createBtn) {
-      if (activeStandaloneDisorderFilter) {
-        createBtn.classList.add('hidden');
-      } else {
-        createBtn.classList.remove('hidden');
-      }
-    }
-    return;
-  }
-  
-  grid.classList.remove('hidden');
-  emptyState.classList.add('hidden');
-  
-  filtered.forEach((q) => {
-    const card = document.createElement('div');
-    card.className = 'case-card';
-    const qType = q.screens && q.screens[0] && q.screens[0].question ? q.screens[0].question.type : '';
-    card.innerHTML = `
-      <div class="case-card-body">
-        <h4>${escapeHTML(q.title || 'Untitled Question')}</h4>
-        <p>${escapeHTML(q.description || 'No description.')}</p>
-        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:6px;">
-          <div class="question-type-badge">${escapeHTML(getQuestionTypeLabel(qType))}</div>
-          ${q.disorder ? `<div class="disorder-badge">${escapeHTML(q.disorder)}</div>` : ''}
-        </div>
-      </div>
-      <div class="case-card-meta">
-        <div style="display:flex; flex-direction:column; gap:4px; align-items:flex-start;">
-          <span>1 Screen</span>
-          <span class="card-id-badge" data-id="${q.id}" title="Click to copy ID">ID: ${q.id}</span>
-        </div>
-        <div class="case-card-actions">
-          <button class="btn btn-secondary btn-small play-q-btn" data-id="${q.id}">Launch</button>
-          ${isAdminLoggedIn ? `
-            <button class="btn btn-secondary btn-small edit-q-btn" data-id="${q.id}">Edit</button>
-            <button class="btn btn-danger btn-small delete-q-btn" data-id="${q.id}">Delete</button>
-          ` : ''}
-        </div>
-      </div>
-    `;
-    
-    card.querySelector('.play-q-btn').addEventListener('click', () => startPlayer(q));
-    card.querySelector('.card-id-badge').addEventListener('click', (e) => {
-      e.stopPropagation();
-      const baseUrl = window.location.protocol.startsWith('http') 
-        ? (window.location.origin + window.location.pathname) 
-        : 'https://thadaniavinash.github.io/NCLEX/';
-      navigator.clipboard.writeText(`${baseUrl}?standalone=${q.id}`);
-      showToast("Launch link copied to clipboard!");
-    });
-    if (isAdminLoggedIn) {
-      card.querySelector('.edit-q-btn').addEventListener('click', () => startEditor(q));
-      card.querySelector('.delete-q-btn').addEventListener('click', () => {
-        if (confirm(`Are you sure you want to delete "${q.title}"?`)) {
-          standaloneQuestions = standaloneQuestions.filter(x => x.id !== q.id);
-          saveStandaloneToStorage();
-          if (db) {
-            deleteFromStore('standalone_questions', q.id);
-          }
-          showToast("Standalone question deleted.");
-          renderStandaloneDashboard();
-          updateSidebarBadges();
-          renderDisorderFilters();
-        }
-      });
-    }
-    
-    grid.appendChild(card);
-  });
 }
 
 function createStandaloneQuestion() {
@@ -1338,7 +1264,8 @@ function handleImportStandaloneFile(e) {
       standaloneQuestions.push(imported);
       saveStandaloneToStorage();
       showToast(`Successfully imported standalone: ${imported.title}`);
-      switchDashboardPanel('standalone');
+      switchAuthorTab('standalone');
+      renderDashboard();
     } catch (err) {
       alert(`Import failed: ${err.message}`);
     }
@@ -1452,6 +1379,39 @@ function initSessionBuilder() {
     launchBtn.addEventListener('click', generateAndStartSession);
   }
 
+  // Authoring button in student header
+  const authBtn = document.getElementById('student-authoring-btn');
+  if (authBtn) {
+    authBtn.addEventListener('click', () => switchView('dashboard'));
+  }
+
+  // Return to student portal from dashboard
+  const retStudentBtn = document.getElementById('return-to-student-btn');
+  if (retStudentBtn) {
+    retStudentBtn.addEventListener('click', () => switchView('student'));
+  }
+
+  const navTabGen = document.getElementById('nav-tab-generator');
+  if (navTabGen) {
+    navTabGen.addEventListener('click', () => switchView('student'));
+  }
+
+  // Topic search filter
+  const topicSearchInput = document.getElementById('topic-search-input');
+  if (topicSearchInput) {
+    topicSearchInput.addEventListener('input', () => {
+      const q = topicSearchInput.value.toLowerCase().trim();
+      document.querySelectorAll('#generator-topics-list .topic-chip-card').forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (!q || text.includes(q)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  }
+
   renderSessionTopicsList();
   renderManualSelectionLists();
 }
@@ -1459,6 +1419,16 @@ function initSessionBuilder() {
 function renderSessionTopicsList() {
   const container = document.getElementById('generator-topics-list');
   if (!container) return;
+
+  const topicDescriptions = {
+    'Cardiovascular Disorders': 'Heart failure, MI, dysrhythmias, hypertension',
+    'Endocrine Disorders': 'DKA, HHS, thyroid storm, diabetes care',
+    'Respiratory Disorders': 'COPD, asthma, pulmonary embolism, ARDS',
+    'GI Disorders': 'Pancreatitis, cirrhosis, bowel obstruction, GI bleed',
+    'Neurological Disorders': 'Stroke, increased ICP, seizures, neuro checks',
+    'Immune disorders': 'Sepsis, anaphylaxis, infection control, immunity',
+    'Others': 'Fundamentals, pharmacology, multisystem management'
+  };
 
   const topicsMap = {};
   
@@ -1480,20 +1450,24 @@ function renderSessionTopicsList() {
   container.innerHTML = '';
 
   if (sortedTopics.length === 0) {
-    container.innerHTML = '<div style="color:#94a3b8; font-style:italic;">No topics found in library.</div>';
+    container.innerHTML = '<div style="color:#64748b; font-style:italic; padding: 8px;">No topics found in library.</div>';
     return;
   }
 
   sortedTopics.forEach(topic => {
     const counts = topicsMap[topic];
+    const desc = topicDescriptions[topic] || 'Clinical scenario practice';
     const card = document.createElement('label');
     card.className = 'topic-chip-card active';
     card.innerHTML = `
       <div class="topic-chip-left">
-        <input type="checkbox" class="session-topic-checkbox" value="${escapeHTML(topic)}" checked style="accent-color: #38bdf8; cursor: pointer;">
-        <span class="topic-chip-name">${escapeHTML(topic)}</span>
+        <input type="checkbox" class="session-topic-checkbox" value="${escapeHTML(topic)}" checked style="accent-color: #025287; cursor: pointer; width: 16px; height: 16px;">
+        <div>
+          <div class="topic-chip-name">${escapeHTML(topic)}</div>
+          <div style="font-size: 11px; color: #64748b; font-weight: normal; margin-top: 1px;">${escapeHTML(desc)}</div>
+        </div>
       </div>
-      <span class="topic-chip-counts">${counts.cases} cases &bull; ${counts.standalone} Qs</span>
+      <span class="topic-chip-counts">${counts.cases} Cases &bull; ${counts.standalone} Qs</span>
     `;
 
     const cb = card.querySelector('.session-topic-checkbox');
@@ -1576,6 +1550,32 @@ function updateSessionCountsAndBounds() {
   const launchBtn = document.getElementById('generate-play-btn');
 
   if (totalValEl) totalValEl.textContent = totalQuestions;
+
+  const estMins = Math.round(totalQuestions * 1.3);
+  const estTimeEl = document.getElementById('session-est-time-val');
+  if (estTimeEl) estTimeEl.textContent = estMins;
+
+  const pillTotalEl = document.getElementById('pill-total-text');
+  if (pillTotalEl) pillTotalEl.textContent = `${totalQuestions} Questions`;
+
+  const pillTimeEl = document.getElementById('pill-time-text');
+  if (pillTimeEl) pillTimeEl.textContent = `(Est. ${estMins} Mins)`;
+
+  const pillModeEl = document.getElementById('pill-mode-text');
+  if (pillModeEl) pillModeEl.textContent = (sessionBuilderMode === 'review' ? 'Review Mode' : 'Test Mode');
+
+  const topicsBadge = document.getElementById('topics-selected-count-badge');
+  const allTopicCards = document.querySelectorAll('#generator-topics-list .topic-chip-card');
+  const activeTopicCards = document.querySelectorAll('#generator-topics-list .topic-chip-card.active');
+  if (topicsBadge) {
+    topicsBadge.textContent = `${activeTopicCards.length} of ${allTopicCards.length} Selected`;
+  }
+
+  const poolCountsText = document.getElementById('topic-pool-counts-text');
+  if (poolCountsText) {
+    const poolCaseQuestions = availableCases.length * 6;
+    poolCountsText.textContent = `${availableCases.length} Cases (${poolCaseQuestions} Qs) + ${availableStandalone.length} Standalone`;
+  }
 
   if (statusBadge) {
     if (totalQuestions === 0) {
@@ -1999,6 +1999,13 @@ function initEditorEvents() {
     themeToggleBtn.addEventListener('click', toggleTheme);
   }
 
+  const courseSelect = document.getElementById('case-course-select');
+  if (courseSelect) {
+    courseSelect.addEventListener('change', (e) => {
+      populateEditorUnitSelect(e.target.value, '');
+    });
+  }
+
   document.getElementById('editor-back-btn').addEventListener('click', () => {
     if (!saveCurrentStepData(false, true)) return;
     saveCurrentCaseOrStandalone();
@@ -2312,6 +2319,13 @@ function startEditor(c) {
   currentCase = c;
   currentStepIndex = 0;
   
+  const courseSelect = document.getElementById('case-course-select');
+  const unitSelect = document.getElementById('case-unit-select');
+  if (courseSelect) {
+    courseSelect.value = c.course || '';
+    populateEditorUnitSelect(c.course || '', c.unit || '');
+  }
+
   const select = document.getElementById('case-disorder-select');
   if (select) {
     select.innerHTML = '<option value="">Categorize Case Study</option>' + 
@@ -2573,16 +2587,18 @@ function deleteActiveTab() {
 function saveCurrentStepData(isChangingType = false, isBackingOut = false) {
   if (!currentCase || currentCase.screens.length === 0) return true;
   
-  const select = document.getElementById('case-disorder-select');
-  if (select) {
-    const val = select.value;
-    if (!val) {
-      alert("Please select a disorder category for this case study / question.");
-      if (!isBackingOut) {
-        return false;
-      }
+  const courseSelect = document.getElementById('case-course-select');
+  const unitSelect = document.getElementById('case-unit-select');
+  if (courseSelect && unitSelect) {
+    currentCase.course = courseSelect.value || '';
+    currentCase.unit = unitSelect.value || '';
+    currentCase.disorder = currentCase.unit || currentCase.course || 'Others';
+    currentCase.topic = currentCase.unit || currentCase.course || 'Others';
+  } else {
+    const select = document.getElementById('case-disorder-select');
+    if (select) {
+      currentCase.disorder = select.value;
     }
-    currentCase.disorder = val;
   }
   
   currentCase.title = document.getElementById('case-title-input').value;
@@ -4020,7 +4036,7 @@ function renderGroupedMrConfigurator(q, box) {
 function initPlayerEvents() {
   document.getElementById('player-quit-btn').addEventListener('click', () => {
     if (confirm("Are you sure you want to quit the quiz? Your current progress will be lost.")) {
-      switchView('dashboard');
+      switchView('student');
     }
   });
 
@@ -6163,7 +6179,7 @@ function initResultsEvents() {
   });
   
   document.getElementById('results-dashboard-btn').addEventListener('click', () => {
-    switchView('dashboard');
+    switchView('student');
   });
 
   const reviewAnswersBtn = document.getElementById('results-review-answers-btn');
