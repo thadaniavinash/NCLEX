@@ -650,6 +650,17 @@ select:focus {
 }
 
 select option {
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+select optgroup {
+  background-color: #f1f5f9;
+  color: #025287;
+  font-weight: 700;
+}
+
+#editor-view:not(.light-mode) select option {
   background-color: #1e293b;
   color: #ffffff;
 }
@@ -5719,6 +5730,119 @@ details[open] .chevron-adv {
   font-weight: 500;
   color: #475569;
 }
+
+/* ================= STUDENT COURSE & UNIT FILTER BAR ================= */
+.student-course-unit-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+}
+
+.student-course-unit-bar .filter-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+  flex: 1 1 auto;
+}
+
+.student-course-unit-bar .filter-item label {
+  white-space: nowrap;
+  font-weight: 700;
+  color: #475569;
+}
+
+.student-select {
+  flex: 1 1 auto;
+  min-width: 130px;
+  font-size: 12px;
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 6px 10px;
+  color: #1e293b !important;
+  font-weight: 500;
+  outline: none;
+  font-family: inherit;
+  cursor: pointer;
+  color-scheme: light !important;
+}
+
+.student-select:focus {
+  border-color: #025287;
+  box-shadow: 0 0 0 2px rgba(2, 82, 135, 0.1);
+}
+
+.student-select.max-w-select {
+  max-width: 320px;
+}
+
+/* Topic Chip Badges */
+.topic-course-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 10px;
+  margin-left: 6px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.topic-course-tag.course-1017 {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.topic-course-tag.course-1021 {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+/* ================= PORTAL SELECT MENUS EXPANDED STYLING ================= */
+/* Ensures Course and Unit selection menus (and all selects) in BOTH student and author portals */
+/* NEVER have a black background when expanded, even in browsers with dark mode active */
+.author-select,
+.student-select,
+#student-view select,
+#author-view select {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+  color-scheme: light !important;
+}
+
+.author-select option,
+.author-select optgroup,
+.student-select option,
+.student-select optgroup,
+#student-view select option,
+#student-view select optgroup,
+#author-view select option,
+#author-view select optgroup {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+  color-scheme: light !important;
+}
+
+.author-select optgroup,
+.student-select optgroup,
+#student-view select optgroup,
+#author-view select optgroup {
+  background-color: #f1f5f9 !important;
+  color: #025287 !important;
+  font-weight: 700 !important;
+  padding: 4px 6px;
+}
+
 
 
 

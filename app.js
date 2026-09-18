@@ -51,6 +51,9 @@ let authorCourseFilter = 'ALL';
 let authorUnitFilter = 'ALL';
 let authorSearchQuery = '';
 
+let studentCourseFilter = 'ALL';
+let studentUnitFilter = 'ALL';
+
 let caseStudies = [];
 let standaloneQuestions = [];
 let currentCase = null;
@@ -1348,24 +1351,6 @@ function initSessionBuilder() {
   if (reviewRadio) reviewRadio.addEventListener('change', () => setSessionMode('review'));
   if (testRadio) testRadio.addEventListener('change', () => setSessionMode('test'));
 
-  // Topics Select All / Clear All
-  const selectAllBtn = document.getElementById('topics-select-all-btn');
-  const clearAllBtn = document.getElementById('topics-clear-all-btn');
-
-  if (selectAllBtn) {
-    selectAllBtn.addEventListener('click', () => {
-      document.querySelectorAll('.session-topic-checkbox').forEach(cb => cb.checked = true);
-      updateSessionTopicsFromCheckboxes();
-    });
-  }
-
-  if (clearAllBtn) {
-    clearAllBtn.addEventListener('click', () => {
-      document.querySelectorAll('.session-topic-checkbox').forEach(cb => cb.checked = false);
-      updateSessionTopicsFromCheckboxes();
-    });
-  }
-
   // Preset buttons
   document.querySelectorAll('.preset-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -1449,29 +1434,44 @@ function initSessionBuilder() {
     navTabGen.addEventListener('click', () => switchView('student'));
   }
 
+  // Student Course & Unit Filters
+  const studentCourseFilterEl = document.getElementById('student-course-filter');
+  if (studentCourseFilterEl) {
+    studentCourseFilterEl.addEventListener('change', (e) => {
+      studentCourseFilter = e.target.value;
+      updateStudentUnitFilterOptions();
+      filterSessionTopicCards();
+    });
+  }
+
+  const studentUnitFilterEl = document.getElementById('student-unit-filter');
+  if (studentUnitFilterEl) {
+    studentUnitFilterEl.addEventListener('change', (e) => {
+      studentUnitFilter = e.target.value;
+      filterSessionTopicCards();
+    });
+  }
+
   // Topic search filter
   const topicSearchInput = document.getElementById('topic-search-input');
   if (topicSearchInput) {
     topicSearchInput.addEventListener('input', () => {
-      const q = topicSearchInput.value.toLowerCase().trim();
-      document.querySelectorAll('#generator-topics-list .topic-chip-card').forEach(card => {
-        const text = card.textContent.toLowerCase();
-        if (!q || text.includes(q)) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+      filterSessionTopicCards();
     });
   }
 
-  // Select All Topics
+  // Select All Topics (selects visible topic cards)
   const selectAllTopicsBtn = document.getElementById('topics-select-all-btn');
   if (selectAllTopicsBtn) {
     selectAllTopicsBtn.addEventListener('click', () => {
-      document.querySelectorAll('#generator-topics-list .session-topic-checkbox').forEach(cb => {
-        cb.checked = true;
-        cb.closest('.topic-chip-card')?.classList.add('active');
+      document.querySelectorAll('#generator-topics-list .topic-chip-card').forEach(card => {
+        if (card.style.display !== 'none') {
+          const cb = card.querySelector('.session-topic-checkbox');
+          if (cb) {
+            cb.checked = true;
+            card.classList.add('active');
+          }
+        }
       });
       updateSessionTopicsFromCheckboxes();
     });
@@ -1489,8 +1489,103 @@ function initSessionBuilder() {
     });
   }
 
+  updateStudentUnitFilterOptions();
   renderSessionTopicsList();
   renderManualSelectionLists();
+}
+
+function updateStudentUnitFilterOptions() {
+  const unitFilter = document.getElementById('student-unit-filter');
+  if (!unitFilter) return;
+
+  const currentVal = studentUnitFilter;
+  let html = '<option value="ALL">All Units</option>';
+
+  if (studentCourseFilter === 'ALL') {
+    html += `
+      <optgroup label="NURS 1017 (Pathophysiology 1)">
+        ${CURRICULUM_COURSES["NURS 1017"].map(u => `<option value="${escapeHTML(u)}">${escapeHTML(u)}</option>`).join('')}
+      </optgroup>
+      <optgroup label="NURS 1021 (Pathophysiology 2)">
+        ${CURRICULUM_COURSES["NURS 1021"].map(u => `<option value="${escapeHTML(u)}">${escapeHTML(u)}</option>`).join('')}
+      </optgroup>
+    `;
+  } else if (studentCourseFilter === 'NURS 1017') {
+    html += `
+      <optgroup label="NURS 1017 (Pathophysiology 1)">
+        ${CURRICULUM_COURSES["NURS 1017"].map(u => `<option value="${escapeHTML(u)}">${escapeHTML(u)}</option>`).join('')}
+      </optgroup>
+    `;
+  } else if (studentCourseFilter === 'NURS 1021') {
+    html += `
+      <optgroup label="NURS 1021 (Pathophysiology 2)">
+        ${CURRICULUM_COURSES["NURS 1021"].map(u => `<option value="${escapeHTML(u)}">${escapeHTML(u)}</option>`).join('')}
+      </optgroup>
+    `;
+  } else if (studentCourseFilter === 'Others') {
+    html += '<option value="Others">Others (Unassigned)</option>';
+  }
+
+  unitFilter.innerHTML = html;
+  const exists = Array.from(unitFilter.options).some(opt => opt.value === currentVal);
+  if (exists) {
+    unitFilter.value = currentVal;
+  } else {
+    studentUnitFilter = 'ALL';
+    unitFilter.value = 'ALL';
+  }
+}
+
+function filterSessionTopicCards() {
+  const q = (document.getElementById('topic-search-input')?.value || '').toLowerCase().trim();
+  const cards = document.querySelectorAll('#generator-topics-list .topic-chip-card');
+  let visibleCount = 0;
+
+  cards.forEach(card => {
+    const cardCourse = card.dataset.course || '';
+    const cardUnit = card.dataset.unit || '';
+    const cardText = card.textContent.toLowerCase();
+
+    const matchesCourse = (studentCourseFilter === 'ALL' || cardCourse === studentCourseFilter);
+    const matchesUnit = (studentUnitFilter === 'ALL' || cardUnit === studentUnitFilter);
+    const matchesSearch = (!q || cardText.includes(q));
+
+    if (matchesCourse && matchesUnit && matchesSearch) {
+      card.style.display = 'flex';
+      visibleCount++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  // If a specific unit was selected in dropdown (not 'ALL'), auto-select its checkbox if none is selected
+  if (studentUnitFilter !== 'ALL') {
+    cards.forEach(card => {
+      if (card.dataset.unit === studentUnitFilter) {
+        const cb = card.querySelector('.session-topic-checkbox');
+        if (cb && !cb.checked) {
+          cb.checked = true;
+          card.classList.add('active');
+          updateSessionTopicsFromCheckboxes();
+        }
+      }
+    });
+  }
+
+  let emptyMsg = document.getElementById('generator-topics-empty-msg');
+  if (visibleCount === 0) {
+    if (!emptyMsg) {
+      emptyMsg = document.createElement('div');
+      emptyMsg.id = 'generator-topics-empty-msg';
+      emptyMsg.style.cssText = 'color:#64748b; font-style:italic; padding: 16px; text-align: center;';
+      emptyMsg.textContent = 'No matching units or topics found for the selected course and unit.';
+      document.getElementById('generator-topics-list')?.appendChild(emptyMsg);
+    } else {
+      emptyMsg.style.display = 'block';
+    }
+  } else if (emptyMsg) {
+    emptyMsg.style.display = 'none';
+  }
 }
 
 function renderSessionTopicsList() {
@@ -1498,13 +1593,33 @@ function renderSessionTopicsList() {
   if (!container) return;
 
   const topicDescriptions = {
+    'Unit 1 (Introduction to Pathophysiology)': 'Cell injury, adaptation, homeostasis, disease etiology',
+    'Unit 2 (Cellular Basis of Disease)': 'Hypertrophy, hyperplasia, metaplasia, dysplasia, necrosis',
+    'Unit 3 (Genetic and Developmental Disorders)': 'Chromosomal, Mendelian, Down, Turner, Klinefelter syndromes',
+    'Unit 4 (Neoplasia)': 'Carcinogenesis, oncogenes, tumor suppressors, benign vs malignant',
+    'Unit 5 (Integumentary Disorders and Burns)': 'Skin lesions, infections, burns (Rule of 9s, Parkland, depths)',
+    'Unit 6 (Musculoskeletal Disorders)': 'Fractures, osteoporosis, arthritis, compartment syndrome',
+    'Unit 7 (Neurological Disorders)': 'Stroke, intracranial pressure, seizures, neurological deficit',
+    'Unit 8 (Pain)': 'Nociceptive, neuropathic, pain management, assessment',
+    'Unit 9 (Disorders of the Eyes and Ears)': 'Glaucoma, cataracts, macular degeneration, hearing loss',
+    'Unit 10 (Stress and Disease)': 'GAS, cortisol, neuroendocrine response, stress adaptation',
+    'Unit 11 (Endocrine Disorders)': 'DKA, HHS, thyroid storm, adrenal disorders, diabetes care',
+    'Unit 1 (Blood Disorders)': 'Anemias, coagulopathies, sickle cell disease, transfusions',
+    'Unit 2 (Cardiovascular Disorders)': 'Heart failure, MI, dysrhythmias, hypertension, shock',
+    'Unit 3 (Respiratory Disorders)': 'COPD, asthma, pulmonary embolism, ARDS, pneumonia',
+    'Unit 4 (Inflammation and Immune Disorders)': 'Sepsis, autoimmune, anaphylaxis, hypersensitivity',
+    'Unit 5 (Leukemias and Lymphomas)': 'Acute/chronic leukemia, Hodgkin/non-Hodgkin lymphoma',
+    'Unit 6 (Gastrointestinal Disorders)': 'Pancreatitis, cirrhosis, bowel obstruction, GI bleed, IBD',
+    'Unit 7 (Urinary Disorders)': 'AKI, CKD, nephrotic syndrome, glomerulonephritis',
+    'Unit 8 (Fluid, Electrolytes, and Acid-Base Imbalances)': 'Hyponatremia, hyperkalemia, acidosis, alkalosis',
+    'Unit 9 (Reproductive Disorders)': 'Reproductive tract pathology, hormonal imbalances',
     'Cardiovascular Disorders': 'Heart failure, MI, dysrhythmias, hypertension',
     'Endocrine Disorders': 'DKA, HHS, thyroid storm, diabetes care',
     'Respiratory Disorders': 'COPD, asthma, pulmonary embolism, ARDS',
     'GI Disorders': 'Pancreatitis, cirrhosis, bowel obstruction, GI bleed',
     'Neurological Disorders': 'Stroke, increased ICP, seizures, neuro checks',
     'Immune disorders': 'Sepsis, anaphylaxis, infection control, immunity',
-    'Others': 'Fundamentals, pharmacology, multisystem management'
+    'Others': 'General pathophysiology, fundamentals, multisystem'
   };
 
   const topicsMap = {};
@@ -1512,15 +1627,17 @@ function renderSessionTopicsList() {
   // Collect topics from cases
   caseStudies.forEach(c => {
     const t = (c.topic || c.disorder || 'General').trim();
-    if (!topicsMap[t]) topicsMap[t] = { cases: 0, standalone: 0 };
+    if (!topicsMap[t]) topicsMap[t] = { cases: 0, standalone: 0, course: c.course || '' };
     topicsMap[t].cases++;
+    if (!topicsMap[t].course && c.course) topicsMap[t].course = c.course;
   });
 
   // Collect topics from standalone
   standaloneQuestions.forEach(s => {
     const t = (s.topic || s.disorder || 'General').trim();
-    if (!topicsMap[t]) topicsMap[t] = { cases: 0, standalone: 0 };
+    if (!topicsMap[t]) topicsMap[t] = { cases: 0, standalone: 0, course: s.course || '' };
     topicsMap[t].standalone++;
+    if (!topicsMap[t].course && s.course) topicsMap[t].course = s.course;
   });
 
   const sortedTopics = Object.keys(topicsMap).sort();
@@ -1534,13 +1651,31 @@ function renderSessionTopicsList() {
   sortedTopics.forEach(topic => {
     const counts = topicsMap[topic];
     const desc = topicDescriptions[topic] || 'Clinical scenario practice';
+
+    // Determine course
+    let course = counts.course || '';
+    if (!course) {
+      if (CURRICULUM_COURSES["NURS 1017"].includes(topic)) {
+        course = "NURS 1017";
+      } else if (CURRICULUM_COURSES["NURS 1021"].includes(topic)) {
+        course = "NURS 1021";
+      } else {
+        course = "Others";
+      }
+    }
+
     const card = document.createElement('label');
     card.className = 'topic-chip-card';
+    card.dataset.course = course;
+    card.dataset.unit = topic;
     card.innerHTML = `
       <div class="topic-chip-left">
         <input type="checkbox" class="session-topic-checkbox" value="${escapeHTML(topic)}" style="accent-color: #025287; cursor: pointer; width: 16px; height: 16px;">
         <div>
-          <div class="topic-chip-name">${escapeHTML(topic)}</div>
+          <div class="topic-chip-name">
+            ${escapeHTML(topic)}
+            ${course && course !== 'Others' ? `<span class="topic-course-tag ${course === 'NURS 1021' ? 'course-1021' : 'course-1017'}">${escapeHTML(course)}</span>` : ''}
+          </div>
           <div style="font-size: 11px; color: #64748b; font-weight: normal; margin-top: 1px;">${escapeHTML(desc)}</div>
         </div>
       </div>
@@ -1557,6 +1692,7 @@ function renderSessionTopicsList() {
     container.appendChild(card);
   });
 
+  filterSessionTopicCards();
   updateSessionTopicsFromCheckboxes();
 }
 

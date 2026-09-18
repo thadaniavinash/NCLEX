@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=20260918_v9">
+  <link rel="stylesheet" href="style.css?v=20260918_v10">
 </head>
 <body>
 
@@ -236,6 +236,50 @@
               </div>
               
               <div class="pv-panel-body">
+                <!-- Course & Unit Filter Bar (Matches Authoring Portal) -->
+                <div class="student-course-unit-bar">
+                  <div class="filter-item">
+                    <label for="student-course-filter">Course:</label>
+                    <select id="student-course-filter" class="author-select student-select">
+                      <option value="ALL">All Courses (1017 & 1021)</option>
+                      <option value="NURS 1017">NURS 1017 (Pathophysiology 1)</option>
+                      <option value="NURS 1021">NURS 1021 (Pathophysiology 2)</option>
+                      <option value="Others">Others (Unassigned)</option>
+                    </select>
+                  </div>
+
+                  <div class="filter-item">
+                    <label for="student-unit-filter">Unit:</label>
+                    <select id="student-unit-filter" class="author-select student-select max-w-select">
+                      <option value="ALL">All Units</option>
+                      <optgroup label="NURS 1017 (Pathophysiology 1)">
+                        <option value="Unit 1 (Introduction to Pathophysiology)">Unit 1 (Introduction to Pathophysiology)</option>
+                        <option value="Unit 2 (Cellular Basis of Disease)">Unit 2 (Cellular Basis of Disease)</option>
+                        <option value="Unit 3 (Genetic and Developmental Disorders)">Unit 3 (Genetic and Developmental Disorders)</option>
+                        <option value="Unit 4 (Neoplasia)">Unit 4 (Neoplasia)</option>
+                        <option value="Unit 5 (Integumentary Disorders and Burns)">Unit 5 (Integumentary Disorders and Burns)</option>
+                        <option value="Unit 6 (Musculoskeletal Disorders)">Unit 6 (Musculoskeletal Disorders)</option>
+                        <option value="Unit 7 (Neurological Disorders)">Unit 7 (Neurological Disorders)</option>
+                        <option value="Unit 8 (Pain)">Unit 8 (Pain)</option>
+                        <option value="Unit 9 (Disorders of the Eyes and Ears)">Unit 9 (Disorders of the Eyes and Ears)</option>
+                        <option value="Unit 10 (Stress and Disease)">Unit 10 (Stress and Disease)</option>
+                        <option value="Unit 11 (Endocrine Disorders)">Unit 11 (Endocrine Disorders)</option>
+                      </optgroup>
+                      <optgroup label="NURS 1021 (Pathophysiology 2)">
+                        <option value="Unit 1 (Blood Disorders)">Unit 1 (Blood Disorders)</option>
+                        <option value="Unit 2 (Cardiovascular Disorders)">Unit 2 (Cardiovascular Disorders)</option>
+                        <option value="Unit 3 (Respiratory Disorders)">Unit 3 (Respiratory Disorders)</option>
+                        <option value="Unit 4 (Inflammation and Immune Disorders)">Unit 4 (Inflammation and Immune Disorders)</option>
+                        <option value="Unit 5 (Leukemias and Lymphomas)">Unit 5 (Leukemias and Lymphomas)</option>
+                        <option value="Unit 6 (Gastrointestinal Disorders)">Unit 6 (Gastrointestinal Disorders)</option>
+                        <option value="Unit 7 (Urinary Disorders)">Unit 7 (Urinary Disorders)</option>
+                        <option value="Unit 8 (Fluid, Electrolytes, and Acid-Base Imbalances)">Unit 8 (Fluid, Electrolytes, and Acid-Base Imbalances)</option>
+                        <option value="Unit 9 (Reproductive Disorders)">Unit 9 (Reproductive Disorders)</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+
                 <!-- Search & Quick Action Bar -->
                 <div class="topics-filter-bar">
                   <div class="topics-search-wrapper">
@@ -1154,7 +1198,7 @@
   <div id="toast-container" class="toast-container"></div>
 
   <!-- JS Dependencies -->
-  <script src="default-case.js?v=20260918_v9"></script>
-  <script src="app.js?v=20260918_v9"></script>
+  <script src="default-case.js?v=20260918_v10"></script>
+  <script src="app.js?v=20260918_v10"></script>
 </body>
 </html>
