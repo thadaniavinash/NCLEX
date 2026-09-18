@@ -10,6 +10,7 @@ const SUPABASE_ANON_KEY = 'sb_publishable_V1u7recZMcdc2-DXhoMwoQ_BEVWej3g';
 
 const REPO_DIR = __dirname;
 const DESKTOP_DIR = path.join('C:', 'Users', 'thada', 'Desktop', 'Antigravity', 'NCLEX Application');
+const E_DRIVE_DIR = path.join('E:', 'NCLEX_NGN_Antigravity');
 
 function fetchTableData() {
   return new Promise((resolve, reject) => {
@@ -104,6 +105,29 @@ async function runSync() {
         console.log(`[OK] Mirrored to Desktop folder: ${DESKTOP_DIR}`);
       } catch (e) {
         console.warn(`[WARN] Could not mirror to Desktop folder: ${e.message}`);
+      }
+    }
+
+    // 5. Mirror to E: drive backup
+    if (fs.existsSync('E:\\')) {
+      try {
+        if (!fs.existsSync(E_DRIVE_DIR)) fs.mkdirSync(E_DRIVE_DIR, { recursive: true });
+        fs.writeFileSync(path.join(E_DRIVE_DIR, 'cases-data.js'), jsContent, 'utf8');
+        fs.writeFileSync(path.join(E_DRIVE_DIR, 'cases.json'), JSON.stringify(cases, null, 2), 'utf8');
+        fs.writeFileSync(path.join(E_DRIVE_DIR, 'standalone.json'), JSON.stringify(standalone, null, 2), 'utf8');
+        const eJsonDir = path.join(E_DRIVE_DIR, 'json');
+        if (!fs.existsSync(eJsonDir)) fs.mkdirSync(eJsonDir, { recursive: true });
+        for (const c of cases) {
+          const slug = (c.title || 'case').replace(/[^a-zA-Z0-9_-]/g, '_').slice(0, 30);
+          fs.writeFileSync(path.join(eJsonDir, `${c.id}_${slug}.json`), JSON.stringify(c, null, 2), 'utf8');
+        }
+        for (const s of standalone) {
+          const slug = (s.title || 'standalone').replace(/[^a-zA-Z0-9_-]/g, '_').slice(0, 30);
+          fs.writeFileSync(path.join(eJsonDir, `${s.id}_${slug}.json`), JSON.stringify(s, null, 2), 'utf8');
+        }
+        console.log(`[OK] Mirrored to E: drive folder: ${E_DRIVE_DIR}`);
+      } catch (e) {
+        console.warn(`[WARN] Could not mirror to E: drive folder: ${e.message}`);
       }
     }
 

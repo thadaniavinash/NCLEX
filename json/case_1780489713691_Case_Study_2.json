@@ -1,7 +1,9 @@
 {
   "id": "case_1780489713691",
+  "unit": "Unit 11 (Endocrine Disorders)",
   "title": "Case Study 2",
   "topic": "Unit 11 (Endocrine Disorders)",
+  "course": "NURS 1017",
   "screens": [
     {
       "step": 1,
@@ -396,7 +398,5 @@
   ],
   "disorder": "Unit 11 (Endocrine Disorders)",
   "description": "Endocrine Disorders",
-  "availability": "all",
-  "course": "NURS 1017",
-  "unit": "Unit 11 (Endocrine Disorders)"
+  "availability": "all"
 }

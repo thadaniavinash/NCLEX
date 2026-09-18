@@ -1,7 +1,9 @@
 {
   "id": "case_1782149061171",
+  "unit": "Unit 4 (Inflammation and Immune Disorders)",
   "title": "NCSBN Case Study 2",
   "topic": "Unit 4 (Inflammation and Immune Disorders)",
+  "course": "NURS 1021",
   "screens": [
     {
       "step": 1,
@@ -440,7 +442,5 @@
   ],
   "disorder": "Unit 4 (Inflammation and Immune Disorders)",
   "description": "",
-  "availability": "all",
-  "course": "NURS 1021",
-  "unit": "Unit 4 (Inflammation and Immune Disorders)"
+  "availability": "all"
 }

@@ -1,11 +1,9 @@
 {
   "id": "case_1782360000003",
+  "unit": "Unit 2 (Cellular Basis of Disease)",
   "title": "NURS 1017 Unit 2 Case Study 3",
   "topic": "Unit 2 (Cellular Basis of Disease)",
-  "unit": "Unit 2 (Cellular Basis of Disease)",
-  "disorder": "Unit 2 (Cellular Basis of Disease)",
   "course": "NURS 1017",
-  "description": "72-year-old male with diabetes and PAD presenting with ischemic dry gangrene progressing to liquefactive wet/gas gangrene with septic shock.",
   "screens": [
     {
       "step": 1,
@@ -42,7 +40,6 @@
         "explanation": "Irreversible cell death results in necrosis and gangrene: (1) Dry gangrene is a form of coagulative necrosis resulting from severe ischemia, characterized by black, dry, wrinkled, mummified tissue with a distinct line of demarcation; (2) Wet gangrene occurs when necrotic tissue is superinfected by bacteria, inducing liquefactive necrosis with tissue softening, foul-smelling purulent drainage, and rapidly spreading edema; (3) Gas gangrene results from anaerobic bacterial infection (e.g., Clostridium perfringens), which ferments carbohydrates and produces characteristic gas bubbles that feel like crackling crepitus under the skin; (4) Systemic signs of septic shock (fever, tachycardia, hypotension, lactic acidosis from tissue hypoperfusion) reflect bacterial toxin release and systemic inflammatory response. Gangrene does not resolve with elevation or warming, and peripheral pulses are absent due to severe arterial occlusive disease."
       },
       "leftContent": {
-        "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration.",
         "tabs": [
           {
             "id": "nn_1",
@@ -54,7 +51,8 @@
             "title": "Vital Signs",
             "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Vital Sign</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Emergency Dept (1400)</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Temperature</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">38.9 °C (tympanic)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.5 – 37.5 °C</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Heart Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">118 bpm, sinus tachycardia</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">60 – 100 bpm</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Respiratory Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">24 breaths/min</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">12 – 20 breaths/min</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Blood Pressure</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">92/58 mmHg (MAP 69 mmHg)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">90/60 – 120/80 mmHg</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Oxygen Saturation (SpO<sub>2</sub>)</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">94% on room air</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">95 – 100%</td></tr></tbody></table>"
           }
-        ]
+        ],
+        "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration."
       }
     },
     {
@@ -63,13 +61,6 @@
         "stem": "The nurse reviews the four primary types of tissue necrosis and irreversible cell death. For each clinical presentation, click to match it with the correct <b>type of tissue necrosis</b>.",
         "type": "matrix_mc",
         "matrix": {
-          "firstColumnHeader": "Clinical & Pathological Scenario",
-          "columns": [
-            "Coagulative Necrosis",
-            "Liquefactive Necrosis",
-            "Fat Necrosis",
-            "Caseous Necrosis"
-          ],
           "rows": [
             {
               "text": "Myocardial infarction or arterial occlusion of an extremity where tissue architecture is preserved initially as 'ghost cells' lacking nuclei",
@@ -99,14 +90,20 @@
                 3
               ]
             }
-          ]
+          ],
+          "columns": [
+            "Coagulative Necrosis",
+            "Liquefactive Necrosis",
+            "Fat Necrosis",
+            "Caseous Necrosis"
+          ],
+          "firstColumnHeader": "Clinical & Pathological Scenario"
         },
         "options": [],
         "preamble": "Laboratory results and preliminary wound culture findings have returned (see Laboratory & Wound Assessment tab).",
         "explanation": "1. Coagulative necrosis: Most commonly caused by ischemia (except in the brain); protein denaturation predominates over enzymatic lysis, preserving basic structural cell outlines ('tombstone' or 'ghost' cells) for several days while nuclei undergo pyknosis, karyorrhexis, and karyolysis.\n2. Liquefactive necrosis: Enzymatic digestion predominates over protein denaturation; dead cells completely dissolve into a fluid viscous mass (pus/abscess), classic in bacterial/fungal infections and hypoxic death of central nervous system tissue (brain).\n3. Fat necrosis: Characterized by lipase-mediated destruction of adipose tissue (e.g., in acute pancreatitis or breast trauma); released free fatty acids bind with calcium ions (saponification) creating gross chalky-white deposits.\n4. Caseous necrosis: Distinctive feature of tuberculosis; tissue architecture is completely obliterated, leaving a friable, cheesy, amorphous granular debris surrounded by granulomatous inflammation."
       },
       "leftContent": {
-        "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration.",
         "tabs": [
           {
             "id": "nn_1",
@@ -118,7 +115,8 @@
             "title": "Laboratory & Wound Assessment",
             "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Stat Laboratory Results:</b><br>• WBC: 21,400 /mm<sup>3</sup> (Reference: 4,500–11,000) with 88% neutrophils, 10% band forms<br>• Hemoglobin: 10.8 g/dL (Reference: 13.5–17.5 g/dL)<br>• Serum Lactic Acid: 4.2 mmol/L (Reference: 0.5–2.0 mmol/L) [Tissue hypoperfusion]<br>• Serum Creatinine: 1.8 mg/dL (Baseline: 1.0 mg/dL) [Acute kidney injury]<br>• Blood Glucose: 312 mg/dL (Reference: 70–99 mg/dL)<br>• C-Reactive Protein (CRP): 145 mg/L (Reference: &lt; 5 mg/L)</p><p style=\"margin-top:10px;\"><b>Gram Stain & Anaerobic Wound Smear:</b><br>Numerous polymorphonuclear leukocytes; heavy growth of large Gram-positive, blunt-ended, spore-forming rods morphologically consistent with <i>Clostridium perfringens</i>, along with mixed Gram-negative enteric bacilli.</p><p style=\"margin-top:10px;\"><b>Right Foot Plain Radiograph (X-Ray):</b><br>Extensive soft tissue gas dissecting through the dorsal and plantar fascial compartments of the forefoot. Severe arterial calcification of dorsalis pedis and digital vessels. No bony osteomyelitis.</p></div>"
           }
-        ]
+        ],
+        "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration."
       }
     },
     {
@@ -130,7 +128,6 @@
           "text": "The initial ischemic death of Walter's toes was dry gangrene, a variant of [[drop0]] necrosis. When anaerobic bacteria infected the dead tissue, it transformed into wet/gas gangrene characterized by [[drop1]] necrosis. Unlike necrosis, which is unprogrammed and triggers [[drop2]], apoptosis is programmed cell death where cells fragment into apoptotic bodies without eliciting inflammation. The intrinsic pathway of apoptosis is initiated in the mitochondria by release of [[drop3]] into the cytoplasm, regulated by p53 and the BCL-2 protein family.",
           "dropdowns": [
             {
-              "placeholder": "Select...",
               "options": [
                 {
                   "text": "coagulative",
@@ -144,10 +141,10 @@
                   "text": "caseous",
                   "correct": false
                 }
-              ]
+              ],
+              "placeholder": "Select..."
             },
             {
-              "placeholder": "Select...",
               "options": [
                 {
                   "text": "liquefactive",
@@ -161,10 +158,10 @@
                   "text": "caseous",
                   "correct": false
                 }
-              ]
+              ],
+              "placeholder": "Select..."
             },
             {
-              "placeholder": "Select...",
               "options": [
                 {
                   "text": "an intense acute inflammatory response",
@@ -178,10 +175,10 @@
                   "text": "immediate neoplastic transformation",
                   "correct": false
                 }
-              ]
+              ],
+              "placeholder": "Select..."
             },
             {
-              "placeholder": "Select...",
               "options": [
                 {
                   "text": "cytochrome c",
@@ -195,7 +192,8 @@
                   "text": "glycogen synthetase",
                   "correct": false
                 }
-              ]
+              ],
+              "placeholder": "Select..."
             }
           ]
         },
@@ -204,7 +202,6 @@
         "explanation": "Necrosis is accidental, unprogrammed cell death resulting from severe exogenous injury (ischemia, toxins, severe trauma). In necrosis, ATP depletion causes cell and organelle swelling, plasma membrane disruption, release of intracellular macromolecules into the extracellular space, and inevitable acute inflammation. In dry gangrene, coagulative necrosis predominates; with secondary bacterial liquefaction, wet gangrene occurs. In gas gangrene, Clostridium toxins destroy adjacent viable tissue and produce gas bubbles. Conversely, apoptosis is programmed, energy-dependent cell suicide. The cell shrinks, chromatin condenses, and the cell buds into intact apoptotic bodies that are rapidly phagocytosed by macrophages without releasing cytosolic contents, producing NO inflammatory reaction. The intrinsic (mitochondrial) pathway is triggered by DNA damage, p53 activation, and intracellular calcium influx, causing BCL-2 effectors (BAX/BAK) to create mitochondrial pores that release cytochrome c, which activates executioner caspases."
       },
       "leftContent": {
-        "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration.",
         "tabs": [
           {
             "id": "nn_1",
@@ -216,7 +213,8 @@
             "title": "Laboratory & Wound Assessment",
             "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Stat Laboratory Results:</b><br>• WBC: 21,400 /mm<sup>3</sup> (Reference: 4,500–11,000) with 88% neutrophils, 10% band forms<br>• Hemoglobin: 10.8 g/dL (Reference: 13.5–17.5 g/dL)<br>• Serum Lactic Acid: 4.2 mmol/L (Reference: 0.5–2.0 mmol/L) [Tissue hypoperfusion]<br>• Serum Creatinine: 1.8 mg/dL (Baseline: 1.0 mg/dL) [Acute kidney injury]<br>• Blood Glucose: 312 mg/dL (Reference: 70–99 mg/dL)<br>• C-Reactive Protein (CRP): 145 mg/L (Reference: &lt; 5 mg/L)</p><p style=\"margin-top:10px;\"><b>Gram Stain & Anaerobic Wound Smear:</b><br>Numerous polymorphonuclear leukocytes; heavy growth of large Gram-positive, blunt-ended, spore-forming rods morphologically consistent with <i>Clostridium perfringens</i>, along with mixed Gram-negative enteric bacilli.</p><p style=\"margin-top:10px;\"><b>Right Foot Plain Radiograph (X-Ray):</b><br>Extensive soft tissue gas dissecting through the dorsal and plantar fascial compartments of the forefoot. Severe arterial calcification of dorsalis pedis and digital vessels. No bony osteomyelitis.</p></div>"
           }
-        ]
+        ],
+        "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration."
       }
     },
     {
@@ -254,7 +252,6 @@
         "explanation": "Gas/wet gangrene with septic shock is a surgical and medical emergency requiring immediate nursing actions: (1) Administering prescribed crystalloid fluid resuscitation restores effective circulating volume and combats hypoperfusion lactic acidosis; (2) Administering prescribed broad-spectrum intravenous antimicrobials stops bacterial proliferation and toxin production; (3) Preparing the client for surgical debridement/amputation ensures prompt source control, as antimicrobials cannot penetrate avascular dead tissue; and (4) Strict hourly urine output monitoring assesses renal perfusion. In contrast, tight compression bandages worsen tissue ischemia by further restricting arterial inflow, and heating pads cause thermal injury to neuropathic skin. Soaking in water macerates tissue, accelerates bacterial multiplication, and is strictly contraindicated."
       },
       "leftContent": {
-        "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration.",
         "tabs": [
           {
             "id": "nn_1",
@@ -266,7 +263,8 @@
             "title": "Laboratory & Wound Assessment",
             "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Stat Laboratory Results:</b><br>• WBC: 21,400 /mm<sup>3</sup> (Reference: 4,500–11,000) with 88% neutrophils, 10% band forms<br>• Hemoglobin: 10.8 g/dL (Reference: 13.5–17.5 g/dL)<br>• Serum Lactic Acid: 4.2 mmol/L (Reference: 0.5–2.0 mmol/L) [Tissue hypoperfusion]<br>• Serum Creatinine: 1.8 mg/dL (Baseline: 1.0 mg/dL) [Acute kidney injury]<br>• Blood Glucose: 312 mg/dL (Reference: 70–99 mg/dL)<br>• C-Reactive Protein (CRP): 145 mg/L (Reference: &lt; 5 mg/L)</p><p style=\"margin-top:10px;\"><b>Gram Stain & Anaerobic Wound Smear:</b><br>Numerous polymorphonuclear leukocytes; heavy growth of large Gram-positive, blunt-ended, spore-forming rods morphologically consistent with <i>Clostridium perfringens</i>, along with mixed Gram-negative enteric bacilli.</p><p style=\"margin-top:10px;\"><b>Right Foot Plain Radiograph (X-Ray):</b><br>Extensive soft tissue gas dissecting through the dorsal and plantar fascial compartments of the forefoot. Severe arterial calcification of dorsalis pedis and digital vessels. No bony osteomyelitis.</p></div>"
           }
-        ]
+        ],
+        "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration."
       }
     },
     {
@@ -275,12 +273,6 @@
         "stem": "Walter underwent emergent right transmetatarsal amputation and extensive fascial debridement. The nurse is managing his postoperative critical care. For each nursing action, click to specify whether it is <b>Indicated</b>, <b>Non-Essential</b>, or <b>Contraindicated</b>.",
         "type": "matrix_mc",
         "matrix": {
-          "firstColumnHeader": "Postoperative Nursing Action",
-          "columns": [
-            "Indicated",
-            "Non-Essential",
-            "Contraindicated"
-          ],
           "rows": [
             {
               "text": "Administer supplemental oxygen to maintain SpO2 ≥ 96% to support tissue oxygenation and inhibit anaerobic Clostridial spore germination",
@@ -317,14 +309,19 @@
                 1
               ]
             }
-          ]
+          ],
+          "columns": [
+            "Indicated",
+            "Non-Essential",
+            "Contraindicated"
+          ],
+          "firstColumnHeader": "Postoperative Nursing Action"
         },
         "options": [],
         "preamble": "Walter is transferred to the surgical ICU following emergent right transmetatarsal amputation and extensive surgical debridement.",
         "explanation": "1. Indicated: Supplemental oxygen supports mitochondrial oxidative phosphorylation in borderzone tissues and creates an oxygen-rich environment toxic to obligate anaerobic Clostridium species.\n2. Indicated: Reperfusion of chronically ischemic tissue delivers oxygen that generates toxic reactive oxygen species (free radicals) and high levels of extracellular calcium that rush into injured cells, triggering secondary cell death and cardiac arrhythmias.\n3. Indicated: Hyperglycemia impairs neutrophil phagocytosis and wound healing; maintaining glucose 140–180 mg/dL optimizes cellular defense without inducing hypoglycemia.\n4. Contraindicated: Weight-bearing and barefoot walking on a freshly debrided neuropathic diabetic amputation stump would cause immediate mechanical tissue disruption and catastrophic wound breakdown.\n5. Non-Essential: Radiation therapy is used for malignant neoplasms, not infectious ischemic gangrene."
       },
       "leftContent": {
-        "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration.",
         "tabs": [
           {
             "id": "nn_1",
@@ -336,7 +333,8 @@
             "title": "Laboratory & Wound Assessment",
             "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Stat Laboratory Results:</b><br>• WBC: 21,400 /mm<sup>3</sup> (Reference: 4,500–11,000) with 88% neutrophils, 10% band forms<br>• Hemoglobin: 10.8 g/dL (Reference: 13.5–17.5 g/dL)<br>• Serum Lactic Acid: 4.2 mmol/L (Reference: 0.5–2.0 mmol/L) [Tissue hypoperfusion]<br>• Serum Creatinine: 1.8 mg/dL (Baseline: 1.0 mg/dL) [Acute kidney injury]<br>• Blood Glucose: 312 mg/dL (Reference: 70–99 mg/dL)<br>• C-Reactive Protein (CRP): 145 mg/L (Reference: &lt; 5 mg/L)</p><p style=\"margin-top:10px;\"><b>Gram Stain & Anaerobic Wound Smear:</b><br>Numerous polymorphonuclear leukocytes; heavy growth of large Gram-positive, blunt-ended, spore-forming rods morphologically consistent with <i>Clostridium perfringens</i>, along with mixed Gram-negative enteric bacilli.</p><p style=\"margin-top:10px;\"><b>Right Foot Plain Radiograph (X-Ray):</b><br>Extensive soft tissue gas dissecting through the dorsal and plantar fascial compartments of the forefoot. Severe arterial calcification of dorsalis pedis and digital vessels. No bony osteomyelitis.</p></div>"
           }
-        ]
+        ],
+        "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration."
       }
     },
     {
@@ -348,7 +346,6 @@
           "text": "Following surgical source control of Walter's infected gangrene, his WBC count normalized to 8,400 /mm3 and lactate decreased to 1.2 mmol/L, confirming eradication of [[drop0]]. Because necrotic cell death causes plasma membrane rupture and enzymatic leakage, it triggers [[drop1]], creating extensive collateral tissue destruction. In contrast, apoptosis eliminates unwanted or damaged cells through programmed cell condensation and fragmentation into apoptotic bodies, which are cleanly ingested by [[drop2]] without producing an inflammatory reaction.",
           "dropdowns": [
             {
-              "placeholder": "Select...",
               "options": [
                 {
                   "text": "liquefactive and gas gangrene",
@@ -362,10 +359,10 @@
                   "text": "reversible hydropic swelling",
                   "correct": false
                 }
-              ]
+              ],
+              "placeholder": "Select..."
             },
             {
-              "placeholder": "Select...",
               "options": [
                 {
                   "text": "acute inflammation",
@@ -379,10 +376,10 @@
                   "text": "anaplastic transformation",
                   "correct": false
                 }
-              ]
+              ],
+              "placeholder": "Select..."
             },
             {
-              "placeholder": "Select...",
               "options": [
                 {
                   "text": "tissue macrophages",
@@ -396,7 +393,8 @@
                   "text": "cardiac myocytes",
                   "correct": false
                 }
-              ]
+              ],
+              "placeholder": "Select..."
             }
           ]
         },
@@ -405,7 +403,6 @@
         "explanation": "This case summarizes the critical contrast between necrosis and apoptosis. In necrosis (including coagulative necrosis of dry gangrene and liquefactive necrosis of wet/gas gangrene), external injury disrupts the plasma membrane, spilling intracellular proteins, enzymes, and nucleic acids into surrounding interstitial spaces, triggering intense acute inflammation and tissue damage. In contrast, apoptosis is an orderly, programmed process wherein cell suicide is executed cleanly: cell shrinkage, chromatin condensation, and fragmentation into membrane-bound apoptotic bodies that display 'eat-me' signals (like phosphatidylserine) for rapid recognition and engulfment by tissue macrophages, preventing any inflammatory damage to neighboring tissues."
       },
       "leftContent": {
-        "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration.",
         "tabs": [
           {
             "id": "nn_1",
@@ -417,8 +414,11 @@
             "title": "Laboratory & Wound Assessment",
             "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Stat Laboratory Results:</b><br>• WBC: 21,400 /mm<sup>3</sup> (Reference: 4,500–11,000) with 88% neutrophils, 10% band forms<br>• Hemoglobin: 10.8 g/dL (Reference: 13.5–17.5 g/dL)<br>• Serum Lactic Acid: 4.2 mmol/L (Reference: 0.5–2.0 mmol/L) [Tissue hypoperfusion]<br>• Serum Creatinine: 1.8 mg/dL (Baseline: 1.0 mg/dL) [Acute kidney injury]<br>• Blood Glucose: 312 mg/dL (Reference: 70–99 mg/dL)<br>• C-Reactive Protein (CRP): 145 mg/L (Reference: &lt; 5 mg/L)</p><p style=\"margin-top:10px;\"><b>Gram Stain & Anaerobic Wound Smear:</b><br>Numerous polymorphonuclear leukocytes; heavy growth of large Gram-positive, blunt-ended, spore-forming rods morphologically consistent with <i>Clostridium perfringens</i>, along with mixed Gram-negative enteric bacilli.</p><p style=\"margin-top:10px;\"><b>Right Foot Plain Radiograph (X-Ray):</b><br>Extensive soft tissue gas dissecting through the dorsal and plantar fascial compartments of the forefoot. Severe arterial calcification of dorsalis pedis and digital vessels. No bony osteomyelitis.</p></div>"
           }
-        ]
+        ],
+        "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration."
       }
     }
-  ]
+  ],
+  "disorder": "Unit 2 (Cellular Basis of Disease)",
+  "description": "72-year-old male with diabetes and PAD presenting with ischemic dry gangrene progressing to liquefactive wet/gas gangrene with septic shock."
 }

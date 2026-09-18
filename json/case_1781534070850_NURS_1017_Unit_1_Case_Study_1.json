@@ -1,7 +1,9 @@
 {
   "id": "case_1781534070850",
+  "unit": "Unit 1 (Introduction to Pathophysiology)",
   "title": "NURS 1017 Unit 1 Case Study 1",
   "topic": "Unit 1 (Introduction to Pathophysiology)",
+  "course": "NURS 1017",
   "screens": [
     {
       "step": 1,
@@ -403,7 +405,5 @@
   ],
   "disorder": "Unit 1 (Introduction to Pathophysiology)",
   "description": "A case study for formative review of NURS 1017 Unit 1",
-  "availability": "all",
-  "course": "NURS 1017",
-  "unit": "Unit 1 (Introduction to Pathophysiology)"
+  "availability": "all"
 }

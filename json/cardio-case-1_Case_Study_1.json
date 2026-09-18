@@ -1,7 +1,9 @@
 {
   "id": "cardio-case-1",
+  "unit": "Unit 2 (Cardiovascular Disorders)",
   "title": "Case Study 1",
   "topic": "Unit 2 (Cardiovascular Disorders)",
+  "course": "NURS 1021",
   "screens": [
     {
       "step": 1,
@@ -338,7 +340,5 @@
   ],
   "disorder": "Unit 2 (Cardiovascular Disorders)",
   "description": "",
-  "availability": "all",
-  "course": "NURS 1021",
-  "unit": "Unit 2 (Cardiovascular Disorders)"
+  "availability": "all"
 }

@@ -1,11 +1,9 @@
 {
   "id": "case_1782370000002",
+  "unit": "Unit 3 (Genetic and Developmental Disorders)",
   "title": "NURS 1017 Unit 3 Case Study 2",
   "topic": "Unit 3 (Genetic and Developmental Disorders)",
-  "unit": "Unit 3 (Genetic and Developmental Disorders)",
-  "disorder": "Unit 3 (Genetic and Developmental Disorders)",
   "course": "NURS 1017",
-  "description": "Young couple presenting for preconception genetic counseling and health assessment with complex family history of Cystic Fibrosis (autosomal recessive), Marfan syndrome (autosomal dominant), and Hemophilia A (X-linked recessive).",
   "screens": [
     {
       "step": 1,
@@ -42,7 +40,6 @@
         "explanation": "Mendelian single-gene disorders follow predictable inheritance patterns (autosomal dominant, autosomal recessive, or X-linked): (1) Hemophilia A is an X-linked recessive bleeding disorder caused by deficiency of factor VIII; Maya's brother being affected means their mother is an obligate or probable carrier, placing Maya at 50% risk of being a carrier. (2) Sudden aortic dissection in a tall relative with pectus excavatum strongly suggests Marfan syndrome (an autosomal dominant connective tissue disorder caused by FBN1 mutations). (3) Cystic Fibrosis is an autosomal recessive disorder caused by CFTR mutations; cousins affected indicates carrier risk in parental lineages. (4) David's physical findings (tall, arm span > height, joint laxity, aortic murmur) are phenotypic cues of Marfan syndrome requiring immediate cardiovascular investigation. Primary hypertension and type 2 diabetes are multifactorial/polygenic disorders, not Mendelian single-gene disorders. Seasonal allergies are immune-mediated environmental responses."
       },
       "leftContent": {
-        "intro": "The nurse in an outpatient Medical Genetics and Preconception Planning Clinic is conducting an intake assessment for Maya (27 years old) and David (29 years old), who are planning their first pregnancy.",
         "tabs": [
           {
             "id": "nn_1",
@@ -54,7 +51,8 @@
             "title": "Vital Signs (David)",
             "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Parameter</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">David (Today, 0900)</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Blood Pressure</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">118/68 mmHg</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">&lt; 120/80 mmHg</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Heart Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">74 bpm, regular</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">60 – 100 bpm</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Respiratory Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">16 breaths/min</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">12 – 20 breaths/min</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Height / Weight</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">198 cm (6'6\") / 77 kg</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">Arm span: 206 cm (Span/Height ratio: 1.04)</td></tr></tbody></table>"
           }
-        ]
+        ],
+        "intro": "The nurse in an outpatient Medical Genetics and Preconception Planning Clinic is conducting an intake assessment for Maya (27 years old) and David (29 years old), who are planning their first pregnancy."
       }
     },
     {
@@ -63,12 +61,6 @@
         "stem": "The nurse analyzes the genetic transmission patterns for the single-gene disorders identified in the couple's pedigree. For each disorder, click to specify its <b>mode of inheritance</b> and primary <b>pathophysiological mechanism</b>.",
         "type": "matrix_mc",
         "matrix": {
-          "firstColumnHeader": "Disorder & Pathophysiology",
-          "columns": [
-            "Autosomal Dominant",
-            "Autosomal Recessive",
-            "X-Linked Recessive"
-          ],
           "rows": [
             {
               "text": "Cystic Fibrosis: Mutation in chloride ion membrane transporter protein producing abnormally thick, viscous secretions obstructing bronchioles and pancreatic ducts",
@@ -105,14 +97,19 @@
                 1
               ]
             }
-          ]
+          ],
+          "columns": [
+            "Autosomal Dominant",
+            "Autosomal Recessive",
+            "X-Linked Recessive"
+          ],
+          "firstColumnHeader": "Disorder & Pathophysiology"
         },
         "options": [],
         "preamble": "The nurse is reviewing Mendelian inheritance principles to prepare genetic education modules for the clients.",
         "explanation": "1. Cystic Fibrosis (CFTR): Autosomal recessive. Affects epithelial chloride conductance, leading to dehydrated thick mucus in pulmonary airways and pancreatic duct obstruction.\n2. Marfan Syndrome (FBN1): Autosomal dominant. Connective tissue microfibril defect causing aortic root dilation/rupture, mitral valve prolapse, tall stature, and skeletal deformities.\n3. Hemophilia A (F8): X-linked recessive. Factor VIII deficiency; affected individuals are almost exclusively male (hemizygous), while carrier females transmit the defective X chromosome.\n4. Huntington Disease (HTT): Autosomal dominant. Progressive neurodegeneration with motor (chorea) and cognitive decline appearing around age 40 due to huntingtin protein aggregation. Offspring of an affected individual have a 50% (1 in 2) chance of inheriting the gene.\n5. Sickle Cell Disease (HBB): Autosomal recessive. Both parents must carry the mutant allele for an offspring to have a 25% chance of being affected (homozygous HbSS)."
       },
       "leftContent": {
-        "intro": "The genetics team completes targeted pedigree mapping and provides DNA carrier panel results for Maya and David.",
         "tabs": [
           {
             "id": "nn_2",
@@ -124,7 +121,8 @@
             "title": "Genetic & Diagnostic Reports",
             "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Test / Client</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Genotype / Finding</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Clinical Interpretation</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Maya: CFTR Panel</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">Heterozygous (&Delta;F508 / normal)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">Asymptomatic carrier of Cystic Fibrosis (Autosomal Recessive)</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>David: CFTR Panel</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">Heterozygous (&Delta;F508 / normal)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">Asymptomatic carrier of Cystic Fibrosis (Autosomal Recessive)</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Maya: F8 Gene Analysis</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">Heterozygous (X<sup>H</sup>X<sup>h</sup>)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">Asymptomatic carrier of Hemophilia A (X-linked Recessive)</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>David: Transthoracic Echo</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">Aortic root dilation (4.4 cm); mild AR</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">High clinical suspicion for Marfan Syndrome (Autosomal Dominant)</td></tr></tbody></table>"
           }
-        ]
+        ],
+        "intro": "The genetics team completes targeted pedigree mapping and provides DNA carrier panel results for Maya and David."
       }
     },
     {
@@ -132,12 +130,10 @@
       "question": {
         "stem": "The nurse utilizes Punnett square principles to calculate genetic transmission risks for Maya and David's future offspring.<br><br>Complete the following sentences by choosing from the lists of options.",
         "type": "dropdown_cloze",
+        "options": [],
+        "preamble": "",
+        "explanation": "1. Autosomal Recessive (Cystic Fibrosis): When two heterozygous carriers mate (Cc x Cc), Punnett square yields: 25% homozygous normal (CC), 50% heterozygous carrier (Cc), and 25% homozygous affected (cc). Thus, each child has a 1 in 4 (25%) risk of having CF.\n2. X-Linked Recessive (Hemophilia A): A carrier mother (XHXh) and normal father (XHY) produce daughters who are XHXH (50% normal) or XHXh (50% carrier), and sons who are XHY (50% normal) or XhY (50% affected). Thus, any son born has a 50% (1 in 2) probability of having Hemophilia A.\n3. Autosomal Dominant (Marfan Syndrome): An affected individual heterozygous for the mutant allele (Mm) mated with an unaffected partner (mm) produces 50% affected offspring (Mm) and 50% unaffected offspring (mm), with males and females equally at risk.",
         "dropdown_cloze": {
-          "sentences": [
-            "Because both Maya and David are heterozygous carriers for Cystic Fibrosis (Cc x Cc), with each pregnancy there is a [drp1] probability of having a child affected with Cystic Fibrosis.",
-            "As an X-linked recessive carrier (X<sup>H</sup>X<sup>h</sup>) partnered with an unaffected male (X<sup>H</sup>Y), Maya has a [drp2] probability of giving birth to an affected son with Hemophilia A.",
-            "If David is confirmed to carry a heterozygous dominant mutation for Marfan syndrome (Mm x mm), any biological child has a [drp3] probability of inheriting the disorder regardless of biological sex."
-          ],
           "dropdowns": [
             {
               "id": "drp1",
@@ -172,14 +168,15 @@
               ],
               "correctIndex": 0
             }
+          ],
+          "sentences": [
+            "Because both Maya and David are heterozygous carriers for Cystic Fibrosis (Cc x Cc), with each pregnancy there is a [drp1] probability of having a child affected with Cystic Fibrosis.",
+            "As an X-linked recessive carrier (X<sup>H</sup>X<sup>h</sup>) partnered with an unaffected male (X<sup>H</sup>Y), Maya has a [drp2] probability of giving birth to an affected son with Hemophilia A.",
+            "If David is confirmed to carry a heterozygous dominant mutation for Marfan syndrome (Mm x mm), any biological child has a [drp3] probability of inheriting the disorder regardless of biological sex."
           ]
-        },
-        "options": [],
-        "preamble": "",
-        "explanation": "1. Autosomal Recessive (Cystic Fibrosis): When two heterozygous carriers mate (Cc x Cc), Punnett square yields: 25% homozygous normal (CC), 50% heterozygous carrier (Cc), and 25% homozygous affected (cc). Thus, each child has a 1 in 4 (25%) risk of having CF.\n2. X-Linked Recessive (Hemophilia A): A carrier mother (XHXh) and normal father (XHY) produce daughters who are XHXH (50% normal) or XHXh (50% carrier), and sons who are XHY (50% normal) or XhY (50% affected). Thus, any son born has a 50% (1 in 2) probability of having Hemophilia A.\n3. Autosomal Dominant (Marfan Syndrome): An affected individual heterozygous for the mutant allele (Mm) mated with an unaffected partner (mm) produces 50% affected offspring (Mm) and 50% unaffected offspring (mm), with males and females equally at risk."
+        }
       },
       "leftContent": {
-        "intro": "The nurse conducts a dedicated counseling session using visual Punnett square diagrams to guide Maya and David through the genetic inheritance probabilities.",
         "tabs": [
           {
             "id": "nn_3",
@@ -191,7 +188,8 @@
             "title": "Punnett Probability Reference",
             "content": "<div style=\"border:1px solid #ccd8e0; border-radius:6px; padding:12px; background:#f8fafc;\"><h4 style=\"margin-top:0; color:#025287;\">Mendelian Risk Summary:</h4><ul style=\"line-height:1.6;\"><li><b>Autosomal Recessive (Carrier x Carrier):</b> 25% affected (homozygous), 50% carrier (heterozygous), 25% uninfected non-carrier.</li><li><b>Autosomal Dominant (Affected Heterozygote x Unaffected):</b> 50% affected, 50% unaffected; equal risk for males and females.</li><li><b>X-Linked Recessive (Carrier Mother x Normal Father):</b> 50% of sons affected; 50% of daughters are carriers; no sons receive father's X.</li></ul></div>"
           }
-        ]
+        ],
+        "intro": "The nurse conducts a dedicated counseling session using visual Punnett square diagrams to guide Maya and David through the genetic inheritance probabilities."
       }
     },
     {
@@ -233,7 +231,6 @@
         "explanation": "Appropriate nursing interventions include: (1) Promptly alerting the cardiology healthcare provider regarding David's aortic root dilation (4.4 cm is significantly enlarged in Marfan syndrome, placing him at risk for fatal aortic dissection/rupture); (2) Educating David on avoiding isometric resistance exercises and high-impact contact sports to prevent acute aortic wall shear stress; (3) Reviewing reproductive technologies (PGD with IVF, or prenatal diagnostic amniocentesis/CVS) so the couple can make informed family planning decisions; (4) Educating Maya regarding hemophilia precautions for a male newborn (deferring elective circumcisions until coagulation factor VIII status is verified to prevent life-threatening hemorrhage); and (5) Providing psychological support and disease-specific foundation resources. Aortic dilation of 4.4 cm is never a benign athletic finding in someone with Marfan phenotype. Folic acid prevents neural tube defects (multifactorial developmental defect), but cannot prevent or repair Mendelian single-gene DNA mutations."
       },
       "leftContent": {
-        "intro": "The nurse facilitates clinical coordination for David's cardiac protection and outlines reproductive genetic planning pathways for the couple.",
         "tabs": [
           {
             "id": "nn_4",
@@ -245,7 +242,8 @@
             "title": "Care Pathways",
             "content": "<p><b>Reproductive & Genetic Options:</b></p><ul><li><b>Natural conception with prenatal diagnosis:</b> Chorionic villus sampling (at 10–13 weeks) or amniocentesis (at 15–20 weeks) to test fetal DNA for CFTR mutations, F8 inversion, and FBN1 mutation.</li><li><b>In Vitro Fertilization (IVF) with Preimplantation Genetic Diagnosis (PGD):</b> Biopsy of blastocysts to transfer only embryos unaffected by Marfan syndrome, Cystic Fibrosis, or Hemophilia A.</li><li><b>Donor gametes:</b> Use of donor sperm or donor oocytes.</li></ul>"
           }
-        ]
+        ],
+        "intro": "The nurse facilitates clinical coordination for David's cardiac protection and outlines reproductive genetic planning pathways for the couple."
       }
     },
     {
@@ -254,12 +252,6 @@
         "stem": "The nurse evaluates planned clinical interventions and client education for David's suspected Marfan syndrome and the couple's genetic risk management. For each intervention, click to specify whether the action is <b>Indicated</b>, <b>Non-Essential</b>, or <b>Contraindicated</b>.",
         "type": "matrix_mc",
         "matrix": {
-          "firstColumnHeader": "Clinical Intervention & Education",
-          "columns": [
-            "Indicated",
-            "Non-Essential",
-            "Contraindicated"
-          ],
           "rows": [
             {
               "text": "Advise David to seek immediate emergency medical evaluation if he develops sudden, severe tearing chest, back, or neck pain",
@@ -303,21 +295,27 @@
                 1
               ]
             }
-          ]
+          ],
+          "columns": [
+            "Indicated",
+            "Non-Essential",
+            "Contraindicated"
+          ],
+          "firstColumnHeader": "Clinical Intervention & Education"
         },
         "options": [],
         "preamble": "The nurse is reviewing discharge teaching and self-care instructions with Maya and David.",
         "explanation": "1. Indicated: Sudden tearing chest or back pain is the hallmark warning symptom of acute aortic dissection, requiring immediate emergency intervention.\n2. Contraindicated: Heavy isometric lifting and contact sports dramatically elevate systolic blood pressure and aortic wall stress, increasing risk of dissection/rupture in Marfan syndrome.\n3. Indicated: Fibrillin-1 mutations affect the ciliary zonules of the eye, making ectopia lentis (upward lens dislocation) a frequent diagnostic finding in Marfan syndrome.\n4. Contraindicated: Discontinuing prenatal multivitamins is harmful; periconceptional folic acid is essential to prevent neural tube defects.\n5. Indicated: Meconium ileus at birth, salty skin (elevated sweat chloride), failure to thrive, and steatorrhea (pancreatic exocrine deficiency) are classic infantile presentations of CF.\n6. Non-Essential: Daily blood glucose checks are not indicated for an asymptomatic young adult with normal glycemic status and no acute symptoms."
       },
       "leftContent": {
-        "intro": "The nurse finishes reviewing safety precautions, warning signs, and follow-up plans with Maya and David before concluding their clinic visit.",
         "tabs": [
           {
             "id": "nn_5",
             "title": "Nurses' Notes",
             "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">1430:</span><span class=\"nurse-note-text\">Discharge counseling completed. David was provided written emergency action plans for aortic symptoms. Ophthalmology specialty consultation confirmed for slit-lamp evaluation of lens position. Maya provided educational brochures regarding prenatal screening timelines and early infant symptoms of Cystic Fibrosis and Hemophilia. Couple verbalizes clear understanding of the genetic mechanisms and expresses appreciation for the structured guidance.</span></p>"
           }
-        ]
+        ],
+        "intro": "The nurse finishes reviewing safety precautions, warning signs, and follow-up plans with Maya and David before concluding their clinic visit."
       }
     },
     {
@@ -325,12 +323,10 @@
       "question": {
         "stem": "The nurse evaluates the couple's understanding of genetic principles and health maintenance before concluding the visit.<br><br>Complete the following sentences by choosing from the lists of options.",
         "type": "dropdown_cloze",
+        "options": [],
+        "preamble": "Post-counseling evaluation in the genetics clinic.",
+        "explanation": "1. Autosomal Recessive Carrier Probability among Unaffected Offspring: Among the healthy/unaffected children of two carriers (excluding the 25% homozygous affected [cc]), 2 out of 3 (66.7%) will be heterozygous carriers (Cc), while 1 out of 3 (33.3%) will be homozygous normal (CC).\n2. X-Linked Recessive: Carrier mothers have a 50% chance of transmitting the defective X to daughters, making them asymptomatic carriers. A female would only be clinically affected if her father had hemophilia and her mother was a carrier (or through non-random X-inactivation/Turner syndrome).\n3. Marfan Syndrome Management: Connective tissue deficiency cannot be cured; medical management focuses on lifelong serial echocardiography/MRI surveillance of aortic diameter and administration of beta-blockers or angiotensin receptor blockers (ARBs) to lower heart rate and blood pressure, reducing pulsatile aortic wall stress.",
         "dropdown_cloze": {
-          "sentences": [
-            "The nurse confirms the couple understands autosomal recessive transmission when they state that an unaffected child born to two carriers has a [drp1] probability of being a carrier like themselves.",
-            "Regarding X-linked inheritance, the nurse verifies comprehension when Maya states that her future daughters [drp2].",
-            "In reviewing the natural history of Marfan syndrome, the nurse confirms David understands that aortic root dilation requires [drp3]."
-          ],
           "dropdowns": [
             {
               "id": "drp1",
@@ -365,22 +361,26 @@
               ],
               "correctIndex": 0
             }
+          ],
+          "sentences": [
+            "The nurse confirms the couple understands autosomal recessive transmission when they state that an unaffected child born to two carriers has a [drp1] probability of being a carrier like themselves.",
+            "Regarding X-linked inheritance, the nurse verifies comprehension when Maya states that her future daughters [drp2].",
+            "In reviewing the natural history of Marfan syndrome, the nurse confirms David understands that aortic root dilation requires [drp3]."
           ]
-        },
-        "options": [],
-        "preamble": "Post-counseling evaluation in the genetics clinic.",
-        "explanation": "1. Autosomal Recessive Carrier Probability among Unaffected Offspring: Among the healthy/unaffected children of two carriers (excluding the 25% homozygous affected [cc]), 2 out of 3 (66.7%) will be heterozygous carriers (Cc), while 1 out of 3 (33.3%) will be homozygous normal (CC).\n2. X-Linked Recessive: Carrier mothers have a 50% chance of transmitting the defective X to daughters, making them asymptomatic carriers. A female would only be clinically affected if her father had hemophilia and her mother was a carrier (or through non-random X-inactivation/Turner syndrome).\n3. Marfan Syndrome Management: Connective tissue deficiency cannot be cured; medical management focuses on lifelong serial echocardiography/MRI surveillance of aortic diameter and administration of beta-blockers or angiotensin receptor blockers (ARBs) to lower heart rate and blood pressure, reducing pulsatile aortic wall stress."
+        }
       },
       "leftContent": {
-        "intro": "Maya and David complete their follow-up questionnaire and summarize their key takeaways with the genetics nurse.",
         "tabs": [
           {
             "id": "nn_6",
             "title": "Nurses' Notes",
             "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">1530:</span><span class=\"nurse-note-text\">Final debriefing concluded. Maya and David verbalize accurate comprehension of their respective genetic transmission probabilities. They have decided to consult with a reproductive endocrinologist regarding PGD-IVF while David begins clinical management for Marfan syndrome with cardiology. Follow-up genetics appointment booked in 6 weeks to review full FBN1 gene sequencing and discuss family cascade testing for David's siblings.</span></p>"
           }
-        ]
+        ],
+        "intro": "Maya and David complete their follow-up questionnaire and summarize their key takeaways with the genetics nurse."
       }
     }
-  ]
+  ],
+  "disorder": "Unit 3 (Genetic and Developmental Disorders)",
+  "description": "Young couple presenting for preconception genetic counseling and health assessment with complex family history of Cystic Fibrosis (autosomal recessive), Marfan syndrome (autosomal dominant), and Hemophilia A (X-linked recessive)."
 }

@@ -1,23 +1,15 @@
 {
   "id": "case_1789753289436",
+  "unit": "Others",
   "title": "New Case Study",
-  "description": "",
+  "topic": "Others",
+  "course": "",
   "screens": [
     {
       "step": 1,
-      "leftContent": {
-        "intro": "",
-        "tabs": [
-          {
-            "id": "nn_1789753289436",
-            "title": "Nurses' Notes",
-            "content": ""
-          }
-        ]
-      },
       "question": {
-        "type": "select_all",
         "stem": "",
+        "type": "select_all",
         "options": [
           {
             "text": "",
@@ -40,13 +32,21 @@
             "correct": false
           }
         ],
-        "explanation": "",
-        "preamble": ""
+        "preamble": "",
+        "explanation": ""
+      },
+      "leftContent": {
+        "tabs": [
+          {
+            "id": "nn_1789753289436",
+            "title": "Nurses' Notes",
+            "content": ""
+          }
+        ],
+        "intro": ""
       }
     }
   ],
   "disorder": "Others",
-  "course": "",
-  "unit": "Others",
-  "topic": "Others"
+  "description": ""
 }

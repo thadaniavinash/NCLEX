@@ -1,11 +1,9 @@
 {
   "id": "case_1782370000001",
+  "unit": "Unit 3 (Genetic and Developmental Disorders)",
   "title": "NURS 1017 Unit 3 Case Study 1",
   "topic": "Unit 3 (Genetic and Developmental Disorders)",
-  "unit": "Unit 3 (Genetic and Developmental Disorders)",
-  "disorder": "Unit 3 (Genetic and Developmental Disorders)",
   "course": "NURS 1017",
-  "description": "Newborn male presenting with hypotonia, low-set ears, epicanthal folds, protruding tongue, and heart murmur, prompting chromosomal karyotyping and comparative evaluation of Down, Turner, and Klinefelter syndromes.",
   "screens": [
     {
       "step": 1,
@@ -50,7 +48,6 @@
         "explanation": "Clinical manifestations of Trisomy 21 (Down syndrome) result from the presence of an extra 21st chromosome (autosomal polysomy/trisomy) and characteristically include: generalized muscular hypotonia (floppy infant), upward-slanting palpebral fissures, prominent epicanthal folds, protruding tongue/macroglossia, low-set malformed ears, short neck with redundant skin, single transverse palmar crease (simian crease), wide gap between the first and second toes, and congenital heart defects (most commonly atrioventricular septal defects or atrial/ventricular septal defects, producing murmurs). Hypertonia, sustained clonus, and craniosynostosis are not characteristic of Down syndrome."
       },
       "leftContent": {
-        "intro": "The nurse in the Neonatal Intensive Care Step-Down Unit is caring for infant Leo, a term male newborn delivered at 38 weeks and 2 days gestation to a 41-year-old mother via uncomplicated spontaneous vaginal delivery.",
         "tabs": [
           {
             "id": "nn_1",
@@ -62,7 +59,8 @@
             "title": "Vital Signs",
             "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Vital Sign</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Current Value (0100)</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Normal Term Newborn Range</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Temperature (Axillary)</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.7 °C</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.5 – 37.5 °C</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Heart Rate (Apical)</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">146 bpm, regular</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">110 – 160 bpm</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Respiratory Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">52 breaths/min</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">30 – 60 breaths/min</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Blood Pressure (Right Arm)</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">66/42 mmHg</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">60–80 / 40–50 mmHg</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Pre-ductal SpO<sub>2</sub> (Right Hand)</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">96% on room air</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">&ge; 95%</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Post-ductal SpO<sub>2</sub> (Left Foot)</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">95% on room air</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">&ge; 95%</td></tr></tbody></table>"
           }
-        ]
+        ],
+        "intro": "The nurse in the Neonatal Intensive Care Step-Down Unit is caring for infant Leo, a term male newborn delivered at 38 weeks and 2 days gestation to a 41-year-old mother via uncomplicated spontaneous vaginal delivery."
       }
     },
     {
@@ -71,12 +69,6 @@
         "stem": "The nurse reviews chromosomal disorders with a nursing student assigned to the unit. For each clinical characteristic or chromosomal profile, click to specify whether it corresponds to <b>Down Syndrome (Trisomy 21)</b>, <b>Turner Syndrome (45,X)</b>, or <b>Klinefelter Syndrome (47,XXY)</b>.",
         "type": "matrix_mc",
         "matrix": {
-          "firstColumnHeader": "Clinical & Genetic Manifestation",
-          "columns": [
-            "Down Syndrome (Trisomy 21)",
-            "Turner Syndrome (45,X)",
-            "Klinefelter Syndrome (47,XXY)"
-          ],
           "rows": [
             {
               "text": "Autosomal trisomy characterized by epicanthal folds, muscular hypotonia, and increased long-term risk of leukemia and early-onset Alzheimer disease",
@@ -120,14 +112,19 @@
                 2
               ]
             }
-          ]
+          ],
+          "columns": [
+            "Down Syndrome (Trisomy 21)",
+            "Turner Syndrome (45,X)",
+            "Klinefelter Syndrome (47,XXY)"
+          ],
+          "firstColumnHeader": "Clinical & Genetic Manifestation"
         },
         "options": [],
         "preamble": "Karyotype results and diagnostic genetic consult notes have been added to infant Leo's chart (see Diagnostic & Genetic Reports tab).",
         "explanation": "1. Down Syndrome (Trisomy 21): Extra autosome 21 (47,XX,+21 or 47,XY,+21); manifestations include hypotonia, protruding tongue, epicanthal folds, low-set ears, atrioventricular septal defects, and high lifetime risk of leukemia and Alzheimer disease.\n2. Turner Syndrome (45,X): Monosomy of the X chromosome in females (only 1 normal X; other missing or structurally abnormal); manifestations include short stature, webbed neck, broad shield-like chest with widely spaced nipples, streak ovaries causing primary amenorrhea and sterility, and aortic coarctation/bicuspid aortic valve.\n3. Klinefelter Syndrome (47,XXY): Polysomy of sex chromosomes in males (extra X chromosome); manifestations include male phenotype, testicular atrophy, reduced testosterone production causing gynecomastia, female-pattern hair distribution, taller than average height with elongated limbs, infertility, and verbal/learning deficits."
       },
       "leftContent": {
-        "intro": "Infant Leo is now 12 hours old. Echocardiography and chromosomal karyotype analysis have been performed. The nurse is reviewing the findings and preparing educational resources on chromosomal abnormalities.",
         "tabs": [
           {
             "id": "nn_2",
@@ -139,7 +136,8 @@
             "title": "Diagnostic & Genetic Reports",
             "content": "<div style=\"margin-bottom:12px;\"><b>Neonatal Echocardiogram Report (1000):</b><br>Normal left ventricular systolic function (EF 64%). Large ostium primum atrial septal defect (ASD) measuring 6.2 mm with left-to-right shunt. Mild mitral valve regurgitation without outflow tract obstruction. Pulmonary arterial pressures estimated at upper limits of normal for transitional neonatal circulation. Follow-up pediatric cardiology consultation scheduled.</div><div style=\"margin-top:12px;\"><b>Rapid Fluorescent In Situ Hybridization (FISH) & Karyotype (1130):</b><br>Karyotype result: <b>47,XY,+21</b>. Three distinct copies of chromosome 21 identified in all 20 metaphase cells examined, confirming non-mosaic complete Trisomy 21 (Down syndrome). Sex chromosomes: XY (genotypically male).</div>"
           }
-        ]
+        ],
+        "intro": "Infant Leo is now 12 hours old. Echocardiography and chromosomal karyotype analysis have been performed. The nurse is reviewing the findings and preparing educational resources on chromosomal abnormalities."
       }
     },
     {
@@ -147,12 +145,10 @@
       "question": {
         "stem": "The nurse analyzes the client's clinical data and genetic findings to formulate priorities of care.<br><br>Complete the following sentences by choosing from the lists of options.",
         "type": "dropdown_cloze",
+        "options": [],
+        "preamble": "",
+        "explanation": "Trisomy 21 (Down syndrome) most commonly (~95% of cases) arises from nondisjunction of chromosome 21 during parental meiosis (strongly correlated with advancing maternal age). The presence of a large atrial septal defect creates a left-to-right intracardiac shunt, placing the infant at high risk for pulmonary overcirculation, tachypnea, diaphoresis with feeds, and congestive heart failure. Concurrently, generalized hypotonia coupled with a protruding tongue (macroglossia) causes weak suction, uncoordinated swallowing, and increased risk for feeding fatigue, poor caloric intake, and aspiration of formula or breast milk.",
         "dropdown_cloze": {
-          "sentences": [
-            "The infant's chromosomal abnormality is caused by [drp1] during parental meiosis, resulting in autosomal aneuploidy with three copies of chromosome 21.",
-            "The nurse's immediate physiological priority during the newborn transition period is monitoring for [drp2] secondary to the confirmed atrial septal defect.",
-            "Due to generalized muscular hypotonia and macroglossia, the nurse must prioritize interventions to prevent [drp3] during enteral nutrition."
-          ],
           "dropdowns": [
             {
               "id": "drp1",
@@ -187,14 +183,15 @@
               ],
               "correctIndex": 0
             }
+          ],
+          "sentences": [
+            "The infant's chromosomal abnormality is caused by [drp1] during parental meiosis, resulting in autosomal aneuploidy with three copies of chromosome 21.",
+            "The nurse's immediate physiological priority during the newborn transition period is monitoring for [drp2] secondary to the confirmed atrial septal defect.",
+            "Due to generalized muscular hypotonia and macroglossia, the nurse must prioritize interventions to prevent [drp3] during enteral nutrition."
           ]
-        },
-        "options": [],
-        "preamble": "",
-        "explanation": "Trisomy 21 (Down syndrome) most commonly (~95% of cases) arises from nondisjunction of chromosome 21 during parental meiosis (strongly correlated with advancing maternal age). The presence of a large atrial septal defect creates a left-to-right intracardiac shunt, placing the infant at high risk for pulmonary overcirculation, tachypnea, diaphoresis with feeds, and congestive heart failure. Concurrently, generalized hypotonia coupled with a protruding tongue (macroglossia) causes weak suction, uncoordinated swallowing, and increased risk for feeding fatigue, poor caloric intake, and aspiration of formula or breast milk."
+        }
       },
       "leftContent": {
-        "intro": "The nurse is evaluating infant Leo's diagnostic reports and clinical trajectory to determine high-priority nursing diagnoses and anticipated complications.",
         "tabs": [
           {
             "id": "nn_3",
@@ -206,7 +203,8 @@
             "title": "Vital Signs",
             "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Parameter</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Baseline (0100)</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Post-Feeding (1400)</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Heart Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">146 bpm</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">164 bpm</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Respiratory Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">52 breaths/min</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">68 breaths/min (tachypneic)</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>SpO<sub>2</sub></b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">96%</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">92% &rarr; 95% with rest</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Temperature</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.7 °C</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.8 °C</td></tr></tbody></table>"
           }
-        ]
+        ],
+        "intro": "The nurse is evaluating infant Leo's diagnostic reports and clinical trajectory to determine high-priority nursing diagnoses and anticipated complications."
       }
     },
     {
@@ -248,7 +246,6 @@
         "explanation": "Key nursing interventions for a neonate with Trisomy 21 and a congenital heart defect (ASD) include: (1) Upright positioning with head and neck supported to facilitate swallowing and prevent aspiration; (2) Using specialized feeding devices (e.g., Haberman or firm nipple) with small, frequent feeds (limiting feeds to 20–30 minutes to avoid excessive caloric expenditure and fatigue); (3) Close monitoring for heart failure (daily weights, respiratory effort, tachypnea, hepatomegaly, diaphoresis with feeds); and (4) Providing emotional support, genetic counseling referrals, and connection to infant development resources. Hyperextending the neck increases airway aspiration risk, and forcing 60-minute feeds exhausts the infant and increases cardiac work."
       },
       "leftContent": {
-        "intro": "The nurse collaborates with the neonatal interprofessional healthcare team (pediatrician, lactation consultant, and pediatric cardiologist) while formulating nursing interventions for infant Leo and his parents.",
         "tabs": [
           {
             "id": "nn_4",
@@ -260,7 +257,8 @@
             "title": "Cardiology Consult Note",
             "content": "<p><b>Pediatric Cardiology Assessment:</b> Ostium primum ASD with moderate left-to-right shunt. Currently compensated without acute pulmonary edema. Medical management: maintain caloric density, monitor for tachypnea and diaphoresis during feeds. Outpatient cardiology follow-up in 2 weeks for repeat echocardiogram. If signs of failure to thrive or pulmonary congestion develop, diuretic therapy and surgical repair consultation will be initiated.</p>"
           }
-        ]
+        ],
+        "intro": "The nurse collaborates with the neonatal interprofessional healthcare team (pediatrician, lactation consultant, and pediatric cardiologist) while formulating nursing interventions for infant Leo and his parents."
       }
     },
     {
@@ -269,12 +267,6 @@
         "stem": "The nurse is reviewing orders and planning nursing care for infant Leo. For each nursing action, click to specify whether the action is <b>Indicated</b>, <b>Non-Essential</b>, or <b>Contraindicated</b>.",
         "type": "matrix_mc",
         "matrix": {
-          "firstColumnHeader": "Nursing Action",
-          "columns": [
-            "Indicated",
-            "Non-Essential",
-            "Contraindicated"
-          ],
           "rows": [
             {
               "text": "Assess pre- and post-ductal oxygen saturations and apical heart rate prior to and following feedings",
@@ -318,14 +310,19 @@
                 1
               ]
             }
-          ]
+          ],
+          "columns": [
+            "Indicated",
+            "Non-Essential",
+            "Contraindicated"
+          ],
+          "firstColumnHeader": "Nursing Action"
         },
         "options": [],
         "preamble": "The nurse is executing the daily neonatal care plan and monitoring infant Leo on DOL 2.",
         "explanation": "1. Indicated: Assessing oxygen saturation and apical pulse pre- and post-feeding evaluates cardiopulmonary tolerance and detects early decompensation.\n2. Contraindicated: Prone sleeping is contraindicated due to increased risk of sudden infant death syndrome (SIDS); infants must sleep supine on a flat, firm surface.\n3. Indicated: Clearing oral secretions with a bulb syringe helps maintain airway patency, especially given hypotonia and macroglossia.\n4. Contraindicated: Prophylactic IV aminoglycosides are not indicated without evidence of systemic infection and pose risks of nephrotoxicity and ototoxicity.\n5. Indicated: Monitoring diaper count (aiming for 6+ wet diapers/day), fontanel fullness, and skin turgor accurately evaluates hydration status.\n6. Non-Essential: Invasive arterial monitoring is unnecessary and invasive for a stable neonate without cardiogenic shock or vasoactive infusions."
       },
       "leftContent": {
-        "intro": "Infant Leo is now 28 hours old (Day of Life 2). The mother is rooming-in and actively participating in diaper changes and feeding sessions under nursing supervision.",
         "tabs": [
           {
             "id": "nn_5",
@@ -337,7 +334,8 @@
             "title": "Vital Signs",
             "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Vital Sign</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Current Value (DOL 2, 0800)</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Target Range</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Temperature</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.8 °C (axillary)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.5 – 37.5 °C</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Heart Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">142 bpm</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">110 – 160 bpm</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Respiratory Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">48 breaths/min</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">30 – 60 breaths/min</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Blood Pressure</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">68/44 mmHg</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">60–80 / 40–50 mmHg</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>SpO<sub>2</sub></b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">97% on room air</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">&ge; 95%</td></tr></tbody></table>"
           }
-        ]
+        ],
+        "intro": "Infant Leo is now 28 hours old (Day of Life 2). The mother is rooming-in and actively participating in diaper changes and feeding sessions under nursing supervision."
       }
     },
     {
@@ -345,12 +343,10 @@
       "question": {
         "stem": "The nurse conducts discharge teaching and evaluates parental understanding prior to home transition.<br><br>Complete the following sentences by choosing from the lists of options.",
         "type": "dropdown_cloze",
+        "options": [],
+        "preamble": "Discharge preparation is underway on Day of Life 3.",
+        "explanation": "1. Warning signs of worsening left-to-right shunt and heart failure in infants with congenital heart disease include diaphoresis during feeds, tachypnea (> 60 breaths/min), retractions, prolonged feeding times (> 30 mins), and faltering weight gain.\n2. Children with Trisomy 21 have multisystem risks requiring structured surveillance: thyroid dysfunction (hypothyroidism ~15%), sensorineural/conductive hearing loss, acute leukemias (10- to 20-fold increased risk), celiac disease, obstructive sleep apnea, and atlantoaxial instability, as well as early Alzheimer disease in adult years.\n3. For parents of a child with standard nondisjunction Trisomy 21, the recurrence risk in subsequent pregnancies is approximately 1% (or slightly higher if maternal age exceeds 40 years), which differs significantly from Mendelian single-gene disorders (25% or 50%).",
         "dropdown_cloze": {
-          "sentences": [
-            "The nurse recognizes that parents demonstrate correct understanding of home cardiac monitoring when they state they will notify the healthcare provider if the infant develops [drp1].",
-            "Regarding developmental screening and long-term health maintenance for Trisomy 21, the nurse educates the parents that regular evaluations are necessary due to an increased risk of [drp2].",
-            "When the mother asks about recurrence risk in future pregnancies, the nurse explains that the recurrence rate for standard meiotic nondisjunction trisomy 21 is approximately [drp3]."
-          ],
           "dropdowns": [
             {
               "id": "drp1",
@@ -385,14 +381,15 @@
               ],
               "correctIndex": 0
             }
+          ],
+          "sentences": [
+            "The nurse recognizes that parents demonstrate correct understanding of home cardiac monitoring when they state they will notify the healthcare provider if the infant develops [drp1].",
+            "Regarding developmental screening and long-term health maintenance for Trisomy 21, the nurse educates the parents that regular evaluations are necessary due to an increased risk of [drp2].",
+            "When the mother asks about recurrence risk in future pregnancies, the nurse explains that the recurrence rate for standard meiotic nondisjunction trisomy 21 is approximately [drp3]."
           ]
-        },
-        "options": [],
-        "preamble": "Discharge preparation is underway on Day of Life 3.",
-        "explanation": "1. Warning signs of worsening left-to-right shunt and heart failure in infants with congenital heart disease include diaphoresis during feeds, tachypnea (> 60 breaths/min), retractions, prolonged feeding times (> 30 mins), and faltering weight gain.\n2. Children with Trisomy 21 have multisystem risks requiring structured surveillance: thyroid dysfunction (hypothyroidism ~15%), sensorineural/conductive hearing loss, acute leukemias (10- to 20-fold increased risk), celiac disease, obstructive sleep apnea, and atlantoaxial instability, as well as early Alzheimer disease in adult years.\n3. For parents of a child with standard nondisjunction Trisomy 21, the recurrence risk in subsequent pregnancies is approximately 1% (or slightly higher if maternal age exceeds 40 years), which differs significantly from Mendelian single-gene disorders (25% or 50%)."
+        }
       },
       "leftContent": {
-        "intro": "Infant Leo is 56 hours old (DOL 3) and preparing for discharge home with outpatient pediatric cardiology, audiology, and early infant intervention follow-up scheduled.",
         "tabs": [
           {
             "id": "nn_6",
@@ -404,8 +401,11 @@
             "title": "Discharge Summary",
             "content": "<div style=\"margin-bottom:8px;\"><b>Discharge Diagnoses:</b> Term newborn male; Complete Trisomy 21 (Karyotype 47,XY,+21); Ostium primum atrial septal defect (stable, hemodynamically compensated); Neonatal feeding hypotonia (improving).</div><div><b>Follow-up Plan:</b> Pediatric primary care visit in 48 hours for weight and bilirubin check. Pediatric cardiology clinic in 2 weeks. Comprehensive newborn hearing screening: right ear refer, left ear pass; repeat formal ABR scheduled at 4 weeks. Thyroid function tests (TSH/free T4) scheduled at 2 months.</div>"
           }
-        ]
+        ],
+        "intro": "Infant Leo is 56 hours old (DOL 3) and preparing for discharge home with outpatient pediatric cardiology, audiology, and early infant intervention follow-up scheduled."
       }
     }
-  ]
+  ],
+  "disorder": "Unit 3 (Genetic and Developmental Disorders)",
+  "description": "Newborn male presenting with hypotonia, low-set ears, epicanthal folds, protruding tongue, and heart murmur, prompting chromosomal karyotyping and comparative evaluation of Down, Turner, and Klinefelter syndromes."
 }

@@ -1,8 +1,10 @@
 [
   {
     "id": "cardio-case-1",
+    "unit": "Unit 2 (Cardiovascular Disorders)",
     "title": "Case Study 1",
     "topic": "Unit 2 (Cardiovascular Disorders)",
+    "course": "NURS 1021",
     "screens": [
       {
         "step": 1,
@@ -339,14 +341,14 @@
     ],
     "disorder": "Unit 2 (Cardiovascular Disorders)",
     "description": "",
-    "availability": "all",
-    "course": "NURS 1021",
-    "unit": "Unit 2 (Cardiovascular Disorders)"
+    "availability": "all"
   },
   {
     "id": "case_1780489713691",
+    "unit": "Unit 11 (Endocrine Disorders)",
     "title": "Case Study 2",
     "topic": "Unit 11 (Endocrine Disorders)",
+    "course": "NURS 1017",
     "screens": [
       {
         "step": 1,
@@ -741,14 +743,14 @@
     ],
     "disorder": "Unit 11 (Endocrine Disorders)",
     "description": "Endocrine Disorders",
-    "availability": "all",
-    "course": "NURS 1017",
-    "unit": "Unit 11 (Endocrine Disorders)"
+    "availability": "all"
   },
   {
     "id": "case_1780591712513",
+    "unit": "Unit 3 (Respiratory Disorders)",
     "title": "University of Maryland - CS1",
     "topic": "Unit 3 (Respiratory Disorders)",
+    "course": "NURS 1021",
     "screens": [
       {
         "step": 1,
@@ -1380,14 +1382,14 @@
     ],
     "disorder": "Unit 3 (Respiratory Disorders)",
     "description": "Maryland Next Gen NCLEX Test Bank Project September 1, 2022; Authors: Angela Davis, RN, MS, CM/DN Morgan State University",
-    "availability": "all",
-    "course": "NURS 1021",
-    "unit": "Unit 3 (Respiratory Disorders)"
+    "availability": "all"
   },
   {
     "id": "case_1781534070850",
+    "unit": "Unit 1 (Introduction to Pathophysiology)",
     "title": "NURS 1017 Unit 1 Case Study 1",
     "topic": "Unit 1 (Introduction to Pathophysiology)",
+    "course": "NURS 1017",
     "screens": [
       {
         "step": 1,
@@ -1789,14 +1791,14 @@
     ],
     "disorder": "Unit 1 (Introduction to Pathophysiology)",
     "description": "A case study for formative review of NURS 1017 Unit 1",
-    "availability": "all",
-    "course": "NURS 1017",
-    "unit": "Unit 1 (Introduction to Pathophysiology)"
+    "availability": "all"
   },
   {
     "id": "case_1781741217820",
+    "unit": "Unit 6 (Gastrointestinal Disorders)",
     "title": "NCSBN - Case Study 1",
     "topic": "Unit 6 (Gastrointestinal Disorders)",
+    "course": "NURS 1021",
     "screens": [
       {
         "step": 1,
@@ -2215,14 +2217,14 @@
     ],
     "disorder": "Unit 6 (Gastrointestinal Disorders)",
     "description": "",
-    "availability": "all",
-    "course": "NURS 1021",
-    "unit": "Unit 6 (Gastrointestinal Disorders)"
+    "availability": "all"
   },
   {
     "id": "case_1782149061171",
+    "unit": "Unit 4 (Inflammation and Immune Disorders)",
     "title": "NCSBN Case Study 2",
     "topic": "Unit 4 (Inflammation and Immune Disorders)",
+    "course": "NURS 1021",
     "screens": [
       {
         "step": 1,
@@ -2661,14 +2663,14 @@
     ],
     "disorder": "Unit 4 (Inflammation and Immune Disorders)",
     "description": "",
-    "availability": "all",
-    "course": "NURS 1021",
-    "unit": "Unit 4 (Inflammation and Immune Disorders)"
+    "availability": "all"
   },
   {
     "id": "case_1782159166328",
+    "unit": "Unit 3 (Respiratory Disorders)",
     "title": "New Case Study",
     "topic": "Unit 3 (Respiratory Disorders)",
+    "course": "NURS 1021",
     "screens": [
       {
         "step": 1,
@@ -3091,14 +3093,14 @@
     ],
     "disorder": "Unit 3 (Respiratory Disorders)",
     "description": "",
-    "availability": "all",
-    "course": "NURS 1021",
-    "unit": "Unit 3 (Respiratory Disorders)"
+    "availability": "all"
   },
   {
     "id": "case_1782350000001",
+    "unit": "Unit 1 (Introduction to Pathophysiology)",
     "title": "NURS 1017 Unit 1 Case Study 2",
     "topic": "Unit 1 (Introduction to Pathophysiology)",
+    "course": "NURS 1017",
     "screens": [
       {
         "step": 1,
@@ -3515,14 +3517,14 @@
     ],
     "disorder": "Unit 1 (Introduction to Pathophysiology)",
     "description": "A case study for formative review of NURS 1017 Unit 1",
-    "availability": "all",
-    "course": "NURS 1017",
-    "unit": "Unit 1 (Introduction to Pathophysiology)"
+    "availability": "all"
   },
   {
     "id": "case_1782350000002",
+    "unit": "Unit 1 (Introduction to Pathophysiology)",
     "title": "NURS 1017 Unit 1 Case Study 3",
     "topic": "Unit 1 (Introduction to Pathophysiology)",
+    "course": "NURS 1017",
     "screens": [
       {
         "step": 1,
@@ -3942,30 +3944,20 @@
     ],
     "disorder": "Unit 1 (Introduction to Pathophysiology)",
     "description": "A case study for formative review of NURS 1017 Unit 1",
-    "availability": "all",
-    "course": "NURS 1017",
-    "unit": "Unit 1 (Introduction to Pathophysiology)"
+    "availability": "all"
   },
   {
     "id": "case_1789753289436",
+    "unit": "Others",
     "title": "New Case Study",
-    "description": "",
+    "topic": "Others",
+    "course": "",
     "screens": [
       {
         "step": 1,
-        "leftContent": {
-          "intro": "",
-          "tabs": [
-            {
-              "id": "nn_1789753289436",
-              "title": "Nurses' Notes",
-              "content": ""
-            }
-          ]
-        },
         "question": {
-          "type": "select_all",
           "stem": "",
+          "type": "select_all",
           "options": [
             {
               "text": "",
@@ -3988,24 +3980,30 @@
               "correct": false
             }
           ],
-          "explanation": "",
-          "preamble": ""
+          "preamble": "",
+          "explanation": ""
+        },
+        "leftContent": {
+          "tabs": [
+            {
+              "id": "nn_1789753289436",
+              "title": "Nurses' Notes",
+              "content": ""
+            }
+          ],
+          "intro": ""
         }
       }
     ],
     "disorder": "Others",
-    "course": "",
-    "unit": "Others",
-    "topic": "Others"
+    "description": ""
   },
   {
     "id": "case_1782360000001",
+    "unit": "Unit 2 (Cellular Basis of Disease)",
     "title": "NURS 1017 Unit 2 Case Study 1",
     "topic": "Unit 2 (Cellular Basis of Disease)",
-    "unit": "Unit 2 (Cellular Basis of Disease)",
-    "disorder": "Unit 2 (Cellular Basis of Disease)",
     "course": "NURS 1017",
-    "description": "58-year-old male with chronic GERD, smoking, and hypertension presenting with Barrett's metaplasia, bronchial squamous metaplasia, and left ventricular hypertrophy.",
     "screens": [
       {
         "step": 1,
@@ -4042,7 +4040,6 @@
           "explanation": "Cellular adaptations are reversible changes in cell size, number, phenotype, metabolic activity, or organization in response to altered physiological demand or chronic environmental stress. In this client, adaptations include: (1) Barrett's esophagus—glandular metaplasia of esophageal stratified squamous epithelium to columnar epithelium to better tolerate acidic gastric juice; (2) Squamous metaplasia of respiratory pseudostratified ciliated columnar epithelium to stratified squamous epithelium due to chronic cigarette smoke; (3) Left ventricular hypertrophy—increased cardiomyocyte size in response to chronic hemodynamic afterload; and (4) Disuse atrophy—shrinkage of skeletal muscle cells from decreased functional demand during casting. High fever with purulent sputum indicates acute infection/inflammation, while shock indicates cardiovascular collapse, neither of which represents an adaptive cellular response."
         },
         "leftContent": {
-          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
           "tabs": [
             {
               "id": "nn_1",
@@ -4054,7 +4051,8 @@
               "title": "Vital Signs",
               "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Vital Sign</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Outpatient Clinic (Today, 0800)</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Temperature</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.8 °C (oral)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.5 – 37.5 °C</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Heart Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">82 bpm, regular</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">60 – 100 bpm</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Respiratory Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">18 breaths/min</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">12 – 20 breaths/min</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Blood Pressure</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">158/94 mmHg</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">&lt; 120/80 mmHg</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Oxygen Saturation (SpO<sub>2</sub>)</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">95% on room air</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">95 – 100%</td></tr></tbody></table>"
             }
-          ]
+          ],
+          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath."
         }
       },
       {
@@ -4063,13 +4061,6 @@
           "stem": "The nurse analyzes the client's clinical and diagnostic findings. For each finding, click to specify the corresponding <b>cellular adaptation or tissue alteration</b>.",
           "type": "matrix_mc",
           "matrix": {
-            "firstColumnHeader": "Clinical & Pathological Finding",
-            "columns": [
-              "Atrophy",
-              "Hypertrophy",
-              "Metaplasia",
-              "Dysplasia"
-            ],
             "rows": [
               {
                 "text": "Left ventricular myocardial wall thickness of 1.5 cm in response to chronic elevated systemic vascular resistance",
@@ -4106,14 +4097,20 @@
                   3
                 ]
               }
-            ]
+            ],
+            "columns": [
+              "Atrophy",
+              "Hypertrophy",
+              "Metaplasia",
+              "Dysplasia"
+            ],
+            "firstColumnHeader": "Clinical & Pathological Finding"
           },
           "options": [],
           "preamble": "Endoscopy, echocardiography, and biopsy pathology reports have been added to the client's chart (see Diagnostic Reports tab).",
           "explanation": "1. Hypertrophy: Increase in individual cell size resulting in overall organ enlargement, typical in non-dividing cells like cardiac myocytes adapting to chronic pressure overload (hypertension).\n2. Metaplasia: Reversible transformation of one differentiated adult cell type into another differentiated cell type that better withstands a noxious microenvironment (e.g., columnar epithelium replacing squamous in the esophagus, or squamous replacing ciliated columnar in bronchial airways).\n3. Atrophy: Reduction in cell size and functional capacity due to decreased workload/disuse, loss of innervation, or diminished blood supply.\n4. Dysplasia: Disordered growth and maturation characterized by variation in cellular size and shape, hyperchromatic enlarged nuclei, and architectural disarray; it is a pre-malignant alteration that may progress to neoplasia."
         },
         "leftContent": {
-          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
           "tabs": [
             {
               "id": "nn_1",
@@ -4125,7 +4122,8 @@
               "title": "Diagnostic Reports",
               "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Upper Endoscopy (EGD) & Mucosal Biopsy:</b><br>Esophagitis with salmon-pink mucosal tongues extending 3.5 cm circumferentially above the gastroesophageal junction. Biopsy confirms Barrett's esophagus with intestinal metaplasia (stratified squamous epithelium replaced by glandular columnar epithelium containing goblet cells). Focal areas demonstrate low-grade dysplasia with cellular pleomorphism, nuclear enlargement, and hyperchromatism, without invasion through the basement membrane.</p><p style=\"margin-top:10px;\"><b>Bronchoscopy & Endobronchial Biopsy:</b><br>Right and left mainstem bronchi demonstrate erythematous, friable mucosa with loss of glistening ciliated surface. Biopsy reveals squamous metaplasia: respiratory ciliated pseudostratified columnar epithelium has been replaced by multi-layered stratified squamous epithelium.</p><p style=\"margin-top:10px;\"><b>Transthoracic Echocardiogram:</b><br>Concentric left ventricular hypertrophy (LVH). Interventricular septal wall thickness: 1.5 cm (reference: 0.6–1.1 cm). Left ventricular posterior wall thickness: 1.4 cm (reference: 0.6–1.1 cm). Estimated ejection fraction: 58%. Grade I diastolic dysfunction consistent with chronic systemic arterial hypertension.</p></div>"
             }
-          ]
+          ],
+          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath."
         }
       },
       {
@@ -4137,7 +4135,6 @@
             "text": "Metaplasia is defined as the [[drop0]] conversion of one differentiated cell type to another in response to chronic persistent injury. In the client's airways, replacement of ciliated columnar cells with stratified squamous epithelium protects against smoke but results in loss of [[drop1]]. If the chronic noxious irritation is not removed, the tissue can evolve into [[drop2]], which is characterized by disordered maturation and cellular pleomorphism. In severe cases, progression to autonomous malignant tissue with complete loss of cellular differentiation is termed [[drop3]].",
             "dropdowns": [
               {
-                "placeholder": "Select...",
                 "options": [
                   {
                     "text": "reversible",
@@ -4151,10 +4148,10 @@
                     "text": "malignant",
                     "correct": false
                   }
-                ]
+                ],
+                "placeholder": "Select..."
               },
               {
-                "placeholder": "Select...",
                 "options": [
                   {
                     "text": "mucociliary clearance and protection",
@@ -4168,10 +4165,10 @@
                     "text": "alveolar surfactant production",
                     "correct": false
                   }
-                ]
+                ],
+                "placeholder": "Select..."
               },
               {
-                "placeholder": "Select...",
                 "options": [
                   {
                     "text": "dysplasia",
@@ -4185,10 +4182,10 @@
                     "text": "hyperplasia",
                     "correct": false
                   }
-                ]
+                ],
+                "placeholder": "Select..."
               },
               {
-                "placeholder": "Select...",
                 "options": [
                   {
                     "text": "anaplasia",
@@ -4202,7 +4199,8 @@
                     "text": "metaplasia",
                     "correct": false
                   }
-                ]
+                ],
+                "placeholder": "Select..."
               }
             ]
           },
@@ -4211,7 +4209,6 @@
           "explanation": "Metaplasia is fundamentally a reversible adaptive response where one differentiated cell type (e.g., ciliated columnar in bronchial airways, or stratified squamous in esophagus) is substituted by another differentiated cell type that better tolerates the chronic injury. However, in the lungs, squamous epithelium lacks cilia and mucus-producing goblet cells, eliminating vital mucociliary clearance and predisposing to chronic mucous plugging and recurrent infections. If the noxious stimulus persists, metaplasia can progress to dysplasia ('disordered growth'), characterized by loss of architectural uniformity and cellular pleomorphism—a recognized pre-cancerous condition. When malignant transformation occurs and cells completely lose cellular differentiation, orientation, and specialized function, it is termed anaplasia, the hallmark of malignant neoplasms."
         },
         "leftContent": {
-          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
           "tabs": [
             {
               "id": "nn_1",
@@ -4223,7 +4220,8 @@
               "title": "Diagnostic Reports",
               "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Upper Endoscopy (EGD) & Mucosal Biopsy:</b><br>Esophagitis with salmon-pink mucosal tongues extending 3.5 cm circumferentially above the gastroesophageal junction. Biopsy confirms Barrett's esophagus with intestinal metaplasia (stratified squamous epithelium replaced by glandular columnar epithelium containing goblet cells). Focal areas demonstrate low-grade dysplasia with cellular pleomorphism, nuclear enlargement, and hyperchromatism, without invasion through the basement membrane.</p><p style=\"margin-top:10px;\"><b>Bronchoscopy & Endobronchial Biopsy:</b><br>Right and left mainstem bronchi demonstrate erythematous, friable mucosa with loss of glistening ciliated surface. Biopsy reveals squamous metaplasia: respiratory ciliated pseudostratified columnar epithelium has been replaced by multi-layered stratified squamous epithelium.</p><p style=\"margin-top:10px;\"><b>Transthoracic Echocardiogram:</b><br>Concentric left ventricular hypertrophy (LVH). Interventricular septal wall thickness: 1.5 cm (reference: 0.6–1.1 cm). Left ventricular posterior wall thickness: 1.4 cm (reference: 0.6–1.1 cm). Estimated ejection fraction: 58%. Grade I diastolic dysfunction consistent with chronic systemic arterial hypertension.</p></div>"
             }
-          ]
+          ],
+          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath."
         }
       },
       {
@@ -4261,7 +4259,6 @@
           "explanation": "Nursing interventions for clients with adaptive cellular responses and low-grade dysplasia focus on removing noxious stimuli, administering prescribed protective therapies, and health teaching: (1) Smoking cessation education removes toxic combustion products, allowing respiratory stem cells to regenerate ciliated columnar morphology; (2) Administering prescribed PPIs reduces chemical acid/peptic injury to the distal esophagus; (3) Elevating the head of the bed and meal timing physically reduces nocturnal reflux; (4) Administering prescribed antihypertensives lowers systemic afterload, halting or regressing left ventricular hypertrophy; (5) Reinforcing surveillance endoscopy ensures early detection if dysplasia advances. Preparing for esophagectomy and radiation is incorrect, as radical surgery and radiotherapy are reserved for invasive malignancy, not low-grade pre-invasive dysplasia."
         },
         "leftContent": {
-          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
           "tabs": [
             {
               "id": "nn_1",
@@ -4273,7 +4270,8 @@
               "title": "Diagnostic Reports",
               "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Upper Endoscopy (EGD) & Mucosal Biopsy:</b><br>Esophagitis with salmon-pink mucosal tongues extending 3.5 cm circumferentially above the gastroesophageal junction. Biopsy confirms Barrett's esophagus with intestinal metaplasia (stratified squamous epithelium replaced by glandular columnar epithelium containing goblet cells). Focal areas demonstrate low-grade dysplasia with cellular pleomorphism, nuclear enlargement, and hyperchromatism, without invasion through the basement membrane.</p><p style=\"margin-top:10px;\"><b>Bronchoscopy & Endobronchial Biopsy:</b><br>Right and left mainstem bronchi demonstrate erythematous, friable mucosa with loss of glistening ciliated surface. Biopsy reveals squamous metaplasia: respiratory ciliated pseudostratified columnar epithelium has been replaced by multi-layered stratified squamous epithelium.</p><p style=\"margin-top:10px;\"><b>Transthoracic Echocardiogram:</b><br>Concentric left ventricular hypertrophy (LVH). Interventricular septal wall thickness: 1.5 cm (reference: 0.6–1.1 cm). Left ventricular posterior wall thickness: 1.4 cm (reference: 0.6–1.1 cm). Estimated ejection fraction: 58%. Grade I diastolic dysfunction consistent with chronic systemic arterial hypertension.</p></div>"
             }
-          ]
+          ],
+          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath."
         }
       },
       {
@@ -4282,12 +4280,6 @@
           "stem": "The nurse is taking action to provide discharge counseling and education to Arthur. For each nursing action or client instruction, click to specify whether it is <b>Indicated</b>, <b>Non-Essential</b>, or <b>Contraindicated</b>.",
           "type": "matrix_mc",
           "matrix": {
-            "firstColumnHeader": "Nursing Action / Client Instruction",
-            "columns": [
-              "Indicated",
-              "Non-Essential",
-              "Contraindicated"
-            ],
             "rows": [
               {
                 "text": "Educate the client that he can stop taking prescribed proton pump inhibitors once his heartburn symptoms resolve for 3 consecutive days",
@@ -4324,14 +4316,19 @@
                   2
                 ]
               }
-            ]
+            ],
+            "columns": [
+              "Indicated",
+              "Non-Essential",
+              "Contraindicated"
+            ],
+            "firstColumnHeader": "Nursing Action / Client Instruction"
           },
           "options": [],
           "preamble": "The nurse conducts a targeted patient education and discharge counseling session with Arthur.",
           "explanation": "1. Contraindicated: Acid suppression in Barrett's esophagus must be maintained continuously as prescribed; chemical acid exposure continues to cause DNA damage even if sensory nerve endings become desensitized.\n2. Indicated: Progressive dysphagia, weight loss, or hematemesis are alarm cues suggesting esophageal stricture or adenocarcinoma progression, warranting immediate medical evaluation.\n3. Indicated: Nocturnal head-of-bed elevation utilizes gravity to prevent retrograde acid flow and pooling in the esophagus.\n4. Non-Essential: Weekly CT scans deliver unnecessary radiation and are non-essential; annual low-dose chest CT is the standard screening protocol for high-risk smokers.\n5. Contraindicated: While metaplasia is an adaptive response that is initially non-malignant, persistent chronic injury causes genetic mutations leading to pre-malignant dysplasia and potential progression to adenocarcinoma."
         },
         "leftContent": {
-          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
           "tabs": [
             {
               "id": "nn_1",
@@ -4343,7 +4340,8 @@
               "title": "Diagnostic Reports",
               "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Upper Endoscopy (EGD) & Mucosal Biopsy:</b><br>Esophagitis with salmon-pink mucosal tongues extending 3.5 cm circumferentially above the gastroesophageal junction. Biopsy confirms Barrett's esophagus with intestinal metaplasia (stratified squamous epithelium replaced by glandular columnar epithelium containing goblet cells). Focal areas demonstrate low-grade dysplasia with cellular pleomorphism, nuclear enlargement, and hyperchromatism, without invasion through the basement membrane.</p><p style=\"margin-top:10px;\"><b>Bronchoscopy & Endobronchial Biopsy:</b><br>Right and left mainstem bronchi demonstrate erythematous, friable mucosa with loss of glistening ciliated surface. Biopsy reveals squamous metaplasia: respiratory ciliated pseudostratified columnar epithelium has been replaced by multi-layered stratified squamous epithelium.</p><p style=\"margin-top:10px;\"><b>Transthoracic Echocardiogram:</b><br>Concentric left ventricular hypertrophy (LVH). Interventricular septal wall thickness: 1.5 cm (reference: 0.6–1.1 cm). Left ventricular posterior wall thickness: 1.4 cm (reference: 0.6–1.1 cm). Estimated ejection fraction: 58%. Grade I diastolic dysfunction consistent with chronic systemic arterial hypertension.</p></div>"
             }
-          ]
+          ],
+          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath."
         }
       },
       {
@@ -4355,7 +4353,6 @@
             "text": "At Arthur's 12-month follow-up, successful smoking cessation has allowed his bronchial mucosa to reverse squamous metaplasia and regenerate normal [[drop0]] epithelium. Strict blood pressure control has arrested further progression of [[drop1]]. A repeat endoscopy revealing regression of low-grade dysplasia and stabilization of mucosal architecture confirms that early cellular adaptations and dysplasia are [[drop2]] when the initiating chronic stressor is eliminated.",
             "dropdowns": [
               {
-                "placeholder": "Select...",
                 "options": [
                   {
                     "text": "pseudostratified ciliated columnar",
@@ -4369,10 +4366,10 @@
                     "text": "transitional",
                     "correct": false
                   }
-                ]
+                ],
+                "placeholder": "Select..."
               },
               {
-                "placeholder": "Select...",
                 "options": [
                   {
                     "text": "left ventricular hypertrophy",
@@ -4386,10 +4383,10 @@
                     "text": "prostatic hyperplasia",
                     "correct": false
                   }
-                ]
+                ],
+                "placeholder": "Select..."
               },
               {
-                "placeholder": "Select...",
                 "options": [
                   {
                     "text": "reversible",
@@ -4403,7 +4400,8 @@
                     "text": "permanent and irreversible",
                     "correct": false
                   }
-                ]
+                ],
+                "placeholder": "Select..."
               }
             ]
           },
@@ -4412,7 +4410,6 @@
           "explanation": "The removal of noxious stimuli allows tissues with dividing stem cell populations to reverse adaptive metaplasia and early low-grade dysplasia. In the respiratory tract, differentiated pseudostratified ciliated columnar epithelium is regenerated by basal stem cells once tobacco smoke toxins are eliminated. Similarly, lowering systemic blood pressure decreases myocardial wall tension, reversing hemodynamic overload and halting left ventricular hypertrophy. This clinical case illustrates the fundamental pathophysiological principle: cellular adaptation and mild dysplasia are reversible upon removal of environmental stressors, preventing progression to irreversible malignant neoplasia."
         },
         "leftContent": {
-          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
           "tabs": [
             {
               "id": "nn_1",
@@ -4424,19 +4421,20 @@
               "title": "Diagnostic Reports",
               "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Upper Endoscopy (EGD) & Mucosal Biopsy:</b><br>Esophagitis with salmon-pink mucosal tongues extending 3.5 cm circumferentially above the gastroesophageal junction. Biopsy confirms Barrett's esophagus with intestinal metaplasia (stratified squamous epithelium replaced by glandular columnar epithelium containing goblet cells). Focal areas demonstrate low-grade dysplasia with cellular pleomorphism, nuclear enlargement, and hyperchromatism, without invasion through the basement membrane.</p><p style=\"margin-top:10px;\"><b>Bronchoscopy & Endobronchial Biopsy:</b><br>Right and left mainstem bronchi demonstrate erythematous, friable mucosa with loss of glistening ciliated surface. Biopsy reveals squamous metaplasia: respiratory ciliated pseudostratified columnar epithelium has been replaced by multi-layered stratified squamous epithelium.</p><p style=\"margin-top:10px;\"><b>Transthoracic Echocardiogram:</b><br>Concentric left ventricular hypertrophy (LVH). Interventricular septal wall thickness: 1.5 cm (reference: 0.6–1.1 cm). Left ventricular posterior wall thickness: 1.4 cm (reference: 0.6–1.1 cm). Estimated ejection fraction: 58%. Grade I diastolic dysfunction consistent with chronic systemic arterial hypertension.</p></div>"
             }
-          ]
+          ],
+          "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath."
         }
       }
-    ]
+    ],
+    "disorder": "Unit 2 (Cellular Basis of Disease)",
+    "description": "58-year-old male with chronic GERD, smoking, and hypertension presenting with Barrett's metaplasia, bronchial squamous metaplasia, and left ventricular hypertrophy."
   },
   {
     "id": "case_1782360000002",
+    "unit": "Unit 2 (Cellular Basis of Disease)",
     "title": "NURS 1017 Unit 2 Case Study 2",
     "topic": "Unit 2 (Cellular Basis of Disease)",
-    "unit": "Unit 2 (Cellular Basis of Disease)",
-    "disorder": "Unit 2 (Cellular Basis of Disease)",
     "course": "NURS 1017",
-    "description": "46-year-old female with chronic alcohol abuse and malnutrition presenting with severe hepatic steatosis, hydropic swelling, and proteasome stress.",
     "screens": [
       {
         "step": 1,
@@ -4473,7 +4471,6 @@
           "explanation": "Reversible cellular injury is characterized by: (1) Hydropic swelling—cellular volume expansion caused by ATP depletion and failure of the energy-dependent Na+/K+-ATPase exchange pump, causing intracellular sodium and water accumulation; (2) Intracellular accumulations—in this case, hepatic steatosis (triglyceride accumulation) resulting from alcohol-induced impairment of mitochondrial lipid metabolism; and (3) Ultrastructural changes including dilated endoplasmic reticulum, detachment/disaggregation of ribosomes, and mitochondrial swelling. Crucially, the cell's plasma membrane and nuclear structure remain intact. In contrast, nuclear dissolution (karyorrhexis, karyolysis) and membrane lysis indicate irreversible necrotic cell death. Saponified chalky white deposits are specific to fat necrosis (such as in acute pancreatitis)."
         },
         "leftContent": {
-          "intro": "The medical-surgical nurse is admitting Elena Rostova, a 46-year-old female brought to the hospital by her sister due to worsening abdominal distension, profound fatigue, right upper quadrant tenderness, and jaundice.",
           "tabs": [
             {
               "id": "nn_1",
@@ -4485,7 +4482,8 @@
               "title": "Vital Signs",
               "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Parameter</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Admission (0900)</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Temperature</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">37.1 °C (oral)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.5 – 37.5 °C</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Heart Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">96 bpm, regular</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">60 – 100 bpm</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Respiratory Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">18 breaths/min</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">12 – 20 breaths/min</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Blood Pressure</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">108/68 mmHg</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">90/60 – 120/80 mmHg</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Oxygen Saturation</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">98% on ambient room air</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">95 – 100%</td></tr></tbody></table>"
             }
-          ]
+          ],
+          "intro": "The medical-surgical nurse is admitting Elena Rostova, a 46-year-old female brought to the hospital by her sister due to worsening abdominal distension, profound fatigue, right upper quadrant tenderness, and jaundice."
         }
       },
       {
@@ -4494,13 +4492,6 @@
           "stem": "The nurse analyzes the laboratory and liver biopsy reports. For each pathophysiological mechanism described below, click to match it with the correct <b>cellular alteration or repair pathway</b>.",
           "type": "matrix_mc",
           "matrix": {
-            "firstColumnHeader": "Pathophysiological Mechanism",
-            "columns": [
-              "Hydropic Swelling",
-              "Intracellular Lipid Accumulation",
-              "Chaperone Protein Refolding",
-              "Ubiquitin-Proteasome Pathway"
-            ],
             "rows": [
               {
                 "text": "Ethanol metabolite-induced ATP depletion impairs plasma membrane Na+/K+ pumps, causing cytosolic sodium accumulation and osmotic water influx",
@@ -4530,14 +4521,20 @@
                   3
                 ]
               }
-            ]
+            ],
+            "columns": [
+              "Hydropic Swelling",
+              "Intracellular Lipid Accumulation",
+              "Chaperone Protein Refolding",
+              "Ubiquitin-Proteasome Pathway"
+            ],
+            "firstColumnHeader": "Pathophysiological Mechanism"
           },
           "options": [],
           "preamble": "Laboratory and pathology results are now available in the electronic health record (see Laboratory & Pathology tab).",
           "explanation": "1. Hydropic swelling (cloudy swelling) occurs when cellular injury impairs ATP production, disabling the Na+/K+-ATPase pump; sodium accumulates intracellularly and draws water into the cytoplasm by osmosis.\n2. Intracellular lipid accumulation (hepatic steatosis) in alcoholism results from excess NADH production, impaired mitochondrial beta-oxidation of fatty acids, increased lipogenesis, and decreased apolipoprotein synthesis needed for VLDL export.\n3. Chaperone proteins (heat-shock proteins like Hsp70) bind misfolded nascent proteins to prevent aggregation and assist in proper 3D refolding under cellular stress.\n4. Ubiquitin-proteasome pathway: When chaperone-assisted refolding fails, abnormal proteins are polyubiquitinated, targeting them to the 26S proteasome for degradation into reusable peptides."
         },
         "leftContent": {
-          "intro": "The medical-surgical nurse is admitting Elena Rostova, a 46-year-old female brought to the hospital by her sister due to worsening abdominal distension, profound fatigue, right upper quadrant tenderness, and jaundice.",
           "tabs": [
             {
               "id": "nn_1",
@@ -4549,7 +4546,8 @@
               "title": "Laboratory & Pathology",
               "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Serum Chemistry & Hepatic Enzymes:</b><br>• AST (Aspartate Aminotransferase): 284 U/L (Reference: 10–40 U/L)<br>• ALT (Alanine Aminotransferase): 142 U/L (Reference: 7–56 U/L) [AST:ALT ratio = 2.0]<br>• Total Bilirubin: 3.8 mg/dL (Reference: 0.2–1.2 mg/dL)<br>• Direct Bilirubin: 2.4 mg/dL (Reference: 0.0–0.3 mg/dL)<br>• Serum Albumin: 2.7 g/dL (Reference: 3.5–5.0 g/dL)<br>• Serum Lactic Acid: 2.4 mmol/L (Reference: 0.5–2.0 mmol/L)<br>• Serum Sodium: 132 mEq/L (Reference: 135–145 mEq/L)<br>• Blood Alcohol Concentration: 85 mg/dL</p><p style=\"margin-top:10px;\"><b>Liver Core Biopsy & Electron Microscopy:</b><br>Biopsy demonstrates diffuse macrovesicular and microvesicular hepatic steatosis with lipid droplets compressing hepatocyte nuclei. Pronounced hydropic swelling (ballooning degeneration) is evident throughout centrilobular zones. Electron microscopy reveals dilated cisternae of the endoplasmic reticulum with detached ribosomes, swollen mitochondria, and plasma membrane surface blebs. Nuclear chromatin is preserved without fragmentation, and the basal lamina is intact. Upregulated ubiquitin-proteasome intermediates and chaperone stress proteins are detected.</p></div>"
             }
-          ]
+          ],
+          "intro": "The medical-surgical nurse is admitting Elena Rostova, a 46-year-old female brought to the hospital by her sister due to worsening abdominal distension, profound fatigue, right upper quadrant tenderness, and jaundice."
         }
       },
       {
@@ -4561,7 +4559,6 @@
             "text": "Hydropic swelling occurs when toxic injury and metabolic disruption deplete the cell's supply of [[drop0]], which directly impairs the plasma membrane [[drop1]]. As a consequence, sodium accumulates intracellularly and draws water into the cytoplasm by osmosis. Simultaneously, chronic alcohol intake disturbs intrahepatic lipid metabolism, resulting in the intracellular accumulation of [[drop2]]. Because the cell membranes and nuclear structures remain intact, these changes represent [[drop3]] cellular injury, which can completely resolve if alcohol exposure is terminated and nutritional support is provided.",
             "dropdowns": [
               {
-                "placeholder": "Select...",
                 "options": [
                   {
                     "text": "adenosine triphosphate (ATP)",
@@ -4575,10 +4572,10 @@
                     "text": "intracellular calcium",
                     "correct": false
                   }
-                ]
+                ],
+                "placeholder": "Select..."
               },
               {
-                "placeholder": "Select...",
                 "options": [
                   {
                     "text": "Na+/K+-ATPase exchange pump",
@@ -4592,10 +4589,10 @@
                     "text": "aquaporin water channel",
                     "correct": false
                   }
-                ]
+                ],
+                "placeholder": "Select..."
               },
               {
-                "placeholder": "Select...",
                 "options": [
                   {
                     "text": "triglycerides (fatty liver / steatosis)",
@@ -4609,10 +4606,10 @@
                     "text": "tau protein tangles",
                     "correct": false
                   }
-                ]
+                ],
+                "placeholder": "Select..."
               },
               {
-                "placeholder": "Select...",
                 "options": [
                   {
                     "text": "reversible",
@@ -4626,7 +4623,8 @@
                     "text": "malignant neoplastic",
                     "correct": false
                   }
-                ]
+                ],
+                "placeholder": "Select..."
               }
             ]
           },
@@ -4635,7 +4633,6 @@
           "explanation": "Cellular volume regulation depends on three components: the plasma membrane, the Na+/K+-ATPase exchange pump, and an adequate supply of ATP. Alcohol metabolism produces toxic acetaldehyde and increases the NADH/NAD+ ratio, inhibiting mitochondrial ATP synthesis. Without ATP, the Na+/K+ pump fails; sodium ions accumulate inside the cell, creating an osmotic gradient that pulls water into the cytoplasm (hydropic swelling). At the same time, impaired fatty acid oxidation leads to triglyceride accumulation (steatosis). Because plasma membrane and nuclear structures remain intact, this represents reversible cellular injury. If the toxic insult ceases and cellular ATP production recovers, the pump resumes function, excess water is extruded, lipid droplets are metabolized, and hepatocyte architecture returns to normal."
         },
         "leftContent": {
-          "intro": "The medical-surgical nurse is admitting Elena Rostova, a 46-year-old female brought to the hospital by her sister due to worsening abdominal distension, profound fatigue, right upper quadrant tenderness, and jaundice.",
           "tabs": [
             {
               "id": "nn_1",
@@ -4647,7 +4644,8 @@
               "title": "Laboratory & Pathology",
               "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Serum Chemistry & Hepatic Enzymes:</b><br>• AST (Aspartate Aminotransferase): 284 U/L (Reference: 10–40 U/L)<br>• ALT (Alanine Aminotransferase): 142 U/L (Reference: 7–56 U/L) [AST:ALT ratio = 2.0]<br>• Total Bilirubin: 3.8 mg/dL (Reference: 0.2–1.2 mg/dL)<br>• Direct Bilirubin: 2.4 mg/dL (Reference: 0.0–0.3 mg/dL)<br>• Serum Albumin: 2.7 g/dL (Reference: 3.5–5.0 g/dL)<br>• Serum Lactic Acid: 2.4 mmol/L (Reference: 0.5–2.0 mmol/L)<br>• Serum Sodium: 132 mEq/L (Reference: 135–145 mEq/L)<br>• Blood Alcohol Concentration: 85 mg/dL</p><p style=\"margin-top:10px;\"><b>Liver Core Biopsy & Electron Microscopy:</b><br>Biopsy demonstrates diffuse macrovesicular and microvesicular hepatic steatosis with lipid droplets compressing hepatocyte nuclei. Pronounced hydropic swelling (ballooning degeneration) is evident throughout centrilobular zones. Electron microscopy reveals dilated cisternae of the endoplasmic reticulum with detached ribosomes, swollen mitochondria, and plasma membrane surface blebs. Nuclear chromatin is preserved without fragmentation, and the basal lamina is intact. Upregulated ubiquitin-proteasome intermediates and chaperone stress proteins are detected.</p></div>"
             }
-          ]
+          ],
+          "intro": "The medical-surgical nurse is admitting Elena Rostova, a 46-year-old female brought to the hospital by her sister due to worsening abdominal distension, profound fatigue, right upper quadrant tenderness, and jaundice."
         }
       },
       {
@@ -4685,7 +4683,6 @@
           "explanation": "Nursing management of reversible toxic and nutritional cell injury centers on removing the injurious agent, restoring metabolic substrates, and monitoring for complications: (1) Protocol-driven withdrawal monitoring detects early autonomic hyperactivity and prevents withdrawal delirium; (2) Administering prescribed IV thiamine prior to glucose prevents acute Wernicke encephalopathy and provides essential coenzymes for aerobic ATP generation; (3) Collaborating on nutritional repletion supplies amino acids essential for protein synthesis (such as apolipoproteins needed to export accumulated lipids out of hepatocytes); (4) Serial liver enzymes and coagulation profiles evaluate whether cell membranes are stabilizing and liver synthetic function is returning. In contrast, acetaminophen is metabolized by the liver into the hepatotoxic intermediate NAPQI; in the setting of glutathione depletion from chronic alcohol use, standard doses can precipitate massive, irreversible hepatic necrosis. Surgery is contraindicated for diffuse, reversible metabolic liver injury."
         },
         "leftContent": {
-          "intro": "The medical-surgical nurse is admitting Elena Rostova, a 46-year-old female brought to the hospital by her sister due to worsening abdominal distension, profound fatigue, right upper quadrant tenderness, and jaundice.",
           "tabs": [
             {
               "id": "nn_1",
@@ -4697,7 +4694,8 @@
               "title": "Laboratory & Pathology",
               "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Serum Chemistry & Hepatic Enzymes:</b><br>• AST (Aspartate Aminotransferase): 284 U/L (Reference: 10–40 U/L)<br>• ALT (Alanine Aminotransferase): 142 U/L (Reference: 7–56 U/L) [AST:ALT ratio = 2.0]<br>• Total Bilirubin: 3.8 mg/dL (Reference: 0.2–1.2 mg/dL)<br>• Direct Bilirubin: 2.4 mg/dL (Reference: 0.0–0.3 mg/dL)<br>• Serum Albumin: 2.7 g/dL (Reference: 3.5–5.0 g/dL)<br>• Serum Lactic Acid: 2.4 mmol/L (Reference: 0.5–2.0 mmol/L)<br>• Serum Sodium: 132 mEq/L (Reference: 135–145 mEq/L)<br>• Blood Alcohol Concentration: 85 mg/dL</p><p style=\"margin-top:10px;\"><b>Liver Core Biopsy & Electron Microscopy:</b><br>Biopsy demonstrates diffuse macrovesicular and microvesicular hepatic steatosis with lipid droplets compressing hepatocyte nuclei. Pronounced hydropic swelling (ballooning degeneration) is evident throughout centrilobular zones. Electron microscopy reveals dilated cisternae of the endoplasmic reticulum with detached ribosomes, swollen mitochondria, and plasma membrane surface blebs. Nuclear chromatin is preserved without fragmentation, and the basal lamina is intact. Upregulated ubiquitin-proteasome intermediates and chaperone stress proteins are detected.</p></div>"
             }
-          ]
+          ],
+          "intro": "The medical-surgical nurse is admitting Elena Rostova, a 46-year-old female brought to the hospital by her sister due to worsening abdominal distension, profound fatigue, right upper quadrant tenderness, and jaundice."
         }
       },
       {
@@ -4706,12 +4704,6 @@
           "stem": "The nurse is prioritizing nursing actions during Elena's acute hospitalization. For each nursing action, click to specify whether it is <b>Indicated</b>, <b>Non-Essential</b>, or <b>Contraindicated</b>.",
           "type": "matrix_mc",
           "matrix": {
-            "firstColumnHeader": "Nursing Action",
-            "columns": [
-              "Indicated",
-              "Non-Essential",
-              "Contraindicated"
-            ],
             "rows": [
               {
                 "text": "Utilize the Clinical Institute Withdrawal Assessment for Alcohol (CIWA-Ar) protocol to guide symptom-triggered benzodiazepine administration",
@@ -4748,14 +4740,19 @@
                   1
                 ]
               }
-            ]
+            ],
+            "columns": [
+              "Indicated",
+              "Non-Essential",
+              "Contraindicated"
+            ],
+            "firstColumnHeader": "Nursing Action"
           },
           "options": [],
           "preamble": "Elena is admitted to the medical step-down unit for detoxification, nutritional resuscitation, and close observation.",
           "explanation": "1. Indicated: CIWA-Ar protocol allows precise, objective evaluation of withdrawal severity and guides prompt benzodiazepine treatment to prevent seizures and delirium tremens.\n2. Contraindicated: Giving dextrose before thiamine depletes residual thiamine coenzymes required for carbohydrate metabolism, precipitating acute Wernicke-Korsakoff encephalopathy. Thiamine MUST be administered prior to dextrose.\n3. Contraindicated: Many unregulated herbal supplements (e.g., kava, high-dose green tea extract) have recognized hepatotoxic potential and can aggravate acute hepatocellular injury.\n4. Indicated: Daily weights and abdominal girth measurements provide sensitive assessment of fluid retention and early ascites.\n5. Non-Essential: Reverse Trendelenburg is unnecessary; standard comfortable semi-Fowler position supports diaphragm movement and liver perfusion."
         },
         "leftContent": {
-          "intro": "The medical-surgical nurse is admitting Elena Rostova, a 46-year-old female brought to the hospital by her sister due to worsening abdominal distension, profound fatigue, right upper quadrant tenderness, and jaundice.",
           "tabs": [
             {
               "id": "nn_1",
@@ -4767,7 +4764,8 @@
               "title": "Laboratory & Pathology",
               "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Serum Chemistry & Hepatic Enzymes:</b><br>• AST (Aspartate Aminotransferase): 284 U/L (Reference: 10–40 U/L)<br>• ALT (Alanine Aminotransferase): 142 U/L (Reference: 7–56 U/L) [AST:ALT ratio = 2.0]<br>• Total Bilirubin: 3.8 mg/dL (Reference: 0.2–1.2 mg/dL)<br>• Direct Bilirubin: 2.4 mg/dL (Reference: 0.0–0.3 mg/dL)<br>• Serum Albumin: 2.7 g/dL (Reference: 3.5–5.0 g/dL)<br>• Serum Lactic Acid: 2.4 mmol/L (Reference: 0.5–2.0 mmol/L)<br>• Serum Sodium: 132 mEq/L (Reference: 135–145 mEq/L)<br>• Blood Alcohol Concentration: 85 mg/dL</p><p style=\"margin-top:10px;\"><b>Liver Core Biopsy & Electron Microscopy:</b><br>Biopsy demonstrates diffuse macrovesicular and microvesicular hepatic steatosis with lipid droplets compressing hepatocyte nuclei. Pronounced hydropic swelling (ballooning degeneration) is evident throughout centrilobular zones. Electron microscopy reveals dilated cisternae of the endoplasmic reticulum with detached ribosomes, swollen mitochondria, and plasma membrane surface blebs. Nuclear chromatin is preserved without fragmentation, and the basal lamina is intact. Upregulated ubiquitin-proteasome intermediates and chaperone stress proteins are detected.</p></div>"
             }
-          ]
+          ],
+          "intro": "The medical-surgical nurse is admitting Elena Rostova, a 46-year-old female brought to the hospital by her sister due to worsening abdominal distension, profound fatigue, right upper quadrant tenderness, and jaundice."
         }
       },
       {
@@ -4779,7 +4777,6 @@
             "text": "At Elena's 4-week outpatient follow-up, repeat hepatic testing demonstrates that her AST has decreased from 284 U/L to 46 U/L and total bilirubin has normalized to 0.9 mg/dL. These improvements reflect the resolution of [[drop0]]. Because hydropic swelling and fatty liver represent [[drop1]] cellular injury, the restoration of cellular ATP production allowed the [[drop2]] to re-establish ionic gradients, successfully clearing excess intracellular water and accumulated lipid droplets without progression to irreversible necrotic cell death.",
             "dropdowns": [
               {
-                "placeholder": "Select...",
                 "options": [
                   {
                     "text": "acute hepatocellular membrane leakage and cellular stress",
@@ -4793,10 +4790,10 @@
                     "text": "primary hepatocellular carcinoma",
                     "correct": false
                   }
-                ]
+                ],
+                "placeholder": "Select..."
               },
               {
-                "placeholder": "Select...",
                 "options": [
                   {
                     "text": "reversible",
@@ -4810,10 +4807,10 @@
                     "text": "anaplastic",
                     "correct": false
                   }
-                ]
+                ],
+                "placeholder": "Select..."
               },
               {
-                "placeholder": "Select...",
                 "options": [
                   {
                     "text": "plasma membrane Na+/K+-ATPase pump",
@@ -4827,7 +4824,8 @@
                     "text": "nuclear pore complex",
                     "correct": false
                   }
-                ]
+                ],
+                "placeholder": "Select..."
               }
             ]
           },
@@ -4836,7 +4834,6 @@
           "explanation": "This case exemplifies the hallmark clinical course of reversible cellular injury. Once the chemical toxin (alcohol) is eliminated and nutritional cofactors are restored, mitochondrial aerobic respiration recovers, generating the ATP necessary to power the Na+/K+-ATPase pump. Intracellular sodium is actively pumped out against its concentration gradient, followed by water, resolving hydropic swelling. Concurrently, normal lipid synthesis and apolipoprotein transport mechanisms resume, mobilizing intrahepatic fat droplets. The dramatic drop in transaminases reflects restored plasma membrane integrity, confirming full recovery from reversible injury without progression to permanent necrosis or cirrhosis."
         },
         "leftContent": {
-          "intro": "The medical-surgical nurse is admitting Elena Rostova, a 46-year-old female brought to the hospital by her sister due to worsening abdominal distension, profound fatigue, right upper quadrant tenderness, and jaundice.",
           "tabs": [
             {
               "id": "nn_1",
@@ -4848,19 +4845,20 @@
               "title": "Laboratory & Pathology",
               "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Serum Chemistry & Hepatic Enzymes:</b><br>• AST (Aspartate Aminotransferase): 284 U/L (Reference: 10–40 U/L)<br>• ALT (Alanine Aminotransferase): 142 U/L (Reference: 7–56 U/L) [AST:ALT ratio = 2.0]<br>• Total Bilirubin: 3.8 mg/dL (Reference: 0.2–1.2 mg/dL)<br>• Direct Bilirubin: 2.4 mg/dL (Reference: 0.0–0.3 mg/dL)<br>• Serum Albumin: 2.7 g/dL (Reference: 3.5–5.0 g/dL)<br>• Serum Lactic Acid: 2.4 mmol/L (Reference: 0.5–2.0 mmol/L)<br>• Serum Sodium: 132 mEq/L (Reference: 135–145 mEq/L)<br>• Blood Alcohol Concentration: 85 mg/dL</p><p style=\"margin-top:10px;\"><b>Liver Core Biopsy & Electron Microscopy:</b><br>Biopsy demonstrates diffuse macrovesicular and microvesicular hepatic steatosis with lipid droplets compressing hepatocyte nuclei. Pronounced hydropic swelling (ballooning degeneration) is evident throughout centrilobular zones. Electron microscopy reveals dilated cisternae of the endoplasmic reticulum with detached ribosomes, swollen mitochondria, and plasma membrane surface blebs. Nuclear chromatin is preserved without fragmentation, and the basal lamina is intact. Upregulated ubiquitin-proteasome intermediates and chaperone stress proteins are detected.</p></div>"
             }
-          ]
+          ],
+          "intro": "The medical-surgical nurse is admitting Elena Rostova, a 46-year-old female brought to the hospital by her sister due to worsening abdominal distension, profound fatigue, right upper quadrant tenderness, and jaundice."
         }
       }
-    ]
+    ],
+    "disorder": "Unit 2 (Cellular Basis of Disease)",
+    "description": "46-year-old female with chronic alcohol abuse and malnutrition presenting with severe hepatic steatosis, hydropic swelling, and proteasome stress."
   },
   {
     "id": "case_1782360000003",
+    "unit": "Unit 2 (Cellular Basis of Disease)",
     "title": "NURS 1017 Unit 2 Case Study 3",
     "topic": "Unit 2 (Cellular Basis of Disease)",
-    "unit": "Unit 2 (Cellular Basis of Disease)",
-    "disorder": "Unit 2 (Cellular Basis of Disease)",
     "course": "NURS 1017",
-    "description": "72-year-old male with diabetes and PAD presenting with ischemic dry gangrene progressing to liquefactive wet/gas gangrene with septic shock.",
     "screens": [
       {
         "step": 1,
@@ -4897,7 +4895,6 @@
           "explanation": "Irreversible cell death results in necrosis and gangrene: (1) Dry gangrene is a form of coagulative necrosis resulting from severe ischemia, characterized by black, dry, wrinkled, mummified tissue with a distinct line of demarcation; (2) Wet gangrene occurs when necrotic tissue is superinfected by bacteria, inducing liquefactive necrosis with tissue softening, foul-smelling purulent drainage, and rapidly spreading edema; (3) Gas gangrene results from anaerobic bacterial infection (e.g., Clostridium perfringens), which ferments carbohydrates and produces characteristic gas bubbles that feel like crackling crepitus under the skin; (4) Systemic signs of septic shock (fever, tachycardia, hypotension, lactic acidosis from tissue hypoperfusion) reflect bacterial toxin release and systemic inflammatory response. Gangrene does not resolve with elevation or warming, and peripheral pulses are absent due to severe arterial occlusive disease."
         },
         "leftContent": {
-          "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration.",
           "tabs": [
             {
               "id": "nn_1",
@@ -4909,7 +4906,8 @@
               "title": "Vital Signs",
               "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Vital Sign</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Emergency Dept (1400)</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Temperature</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">38.9 °C (tympanic)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.5 – 37.5 °C</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Heart Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">118 bpm, sinus tachycardia</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">60 – 100 bpm</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Respiratory Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">24 breaths/min</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">12 – 20 breaths/min</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Blood Pressure</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">92/58 mmHg (MAP 69 mmHg)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">90/60 – 120/80 mmHg</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Oxygen Saturation (SpO<sub>2</sub>)</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">94% on room air</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">95 – 100%</td></tr></tbody></table>"
             }
-          ]
+          ],
+          "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration."
         }
       },
       {
@@ -4918,13 +4916,6 @@
           "stem": "The nurse reviews the four primary types of tissue necrosis and irreversible cell death. For each clinical presentation, click to match it with the correct <b>type of tissue necrosis</b>.",
           "type": "matrix_mc",
           "matrix": {
-            "firstColumnHeader": "Clinical & Pathological Scenario",
-            "columns": [
-              "Coagulative Necrosis",
-              "Liquefactive Necrosis",
-              "Fat Necrosis",
-              "Caseous Necrosis"
-            ],
             "rows": [
               {
                 "text": "Myocardial infarction or arterial occlusion of an extremity where tissue architecture is preserved initially as 'ghost cells' lacking nuclei",
@@ -4954,14 +4945,20 @@
                   3
                 ]
               }
-            ]
+            ],
+            "columns": [
+              "Coagulative Necrosis",
+              "Liquefactive Necrosis",
+              "Fat Necrosis",
+              "Caseous Necrosis"
+            ],
+            "firstColumnHeader": "Clinical & Pathological Scenario"
           },
           "options": [],
           "preamble": "Laboratory results and preliminary wound culture findings have returned (see Laboratory & Wound Assessment tab).",
           "explanation": "1. Coagulative necrosis: Most commonly caused by ischemia (except in the brain); protein denaturation predominates over enzymatic lysis, preserving basic structural cell outlines ('tombstone' or 'ghost' cells) for several days while nuclei undergo pyknosis, karyorrhexis, and karyolysis.\n2. Liquefactive necrosis: Enzymatic digestion predominates over protein denaturation; dead cells completely dissolve into a fluid viscous mass (pus/abscess), classic in bacterial/fungal infections and hypoxic death of central nervous system tissue (brain).\n3. Fat necrosis: Characterized by lipase-mediated destruction of adipose tissue (e.g., in acute pancreatitis or breast trauma); released free fatty acids bind with calcium ions (saponification) creating gross chalky-white deposits.\n4. Caseous necrosis: Distinctive feature of tuberculosis; tissue architecture is completely obliterated, leaving a friable, cheesy, amorphous granular debris surrounded by granulomatous inflammation."
         },
         "leftContent": {
-          "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration.",
           "tabs": [
             {
               "id": "nn_1",
@@ -4973,7 +4970,8 @@
               "title": "Laboratory & Wound Assessment",
               "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Stat Laboratory Results:</b><br>• WBC: 21,400 /mm<sup>3</sup> (Reference: 4,500–11,000) with 88% neutrophils, 10% band forms<br>• Hemoglobin: 10.8 g/dL (Reference: 13.5–17.5 g/dL)<br>• Serum Lactic Acid: 4.2 mmol/L (Reference: 0.5–2.0 mmol/L) [Tissue hypoperfusion]<br>• Serum Creatinine: 1.8 mg/dL (Baseline: 1.0 mg/dL) [Acute kidney injury]<br>• Blood Glucose: 312 mg/dL (Reference: 70–99 mg/dL)<br>• C-Reactive Protein (CRP): 145 mg/L (Reference: &lt; 5 mg/L)</p><p style=\"margin-top:10px;\"><b>Gram Stain & Anaerobic Wound Smear:</b><br>Numerous polymorphonuclear leukocytes; heavy growth of large Gram-positive, blunt-ended, spore-forming rods morphologically consistent with <i>Clostridium perfringens</i>, along with mixed Gram-negative enteric bacilli.</p><p style=\"margin-top:10px;\"><b>Right Foot Plain Radiograph (X-Ray):</b><br>Extensive soft tissue gas dissecting through the dorsal and plantar fascial compartments of the forefoot. Severe arterial calcification of dorsalis pedis and digital vessels. No bony osteomyelitis.</p></div>"
             }
-          ]
+          ],
+          "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration."
         }
       },
       {
@@ -4985,7 +4983,6 @@
             "text": "The initial ischemic death of Walter's toes was dry gangrene, a variant of [[drop0]] necrosis. When anaerobic bacteria infected the dead tissue, it transformed into wet/gas gangrene characterized by [[drop1]] necrosis. Unlike necrosis, which is unprogrammed and triggers [[drop2]], apoptosis is programmed cell death where cells fragment into apoptotic bodies without eliciting inflammation. The intrinsic pathway of apoptosis is initiated in the mitochondria by release of [[drop3]] into the cytoplasm, regulated by p53 and the BCL-2 protein family.",
             "dropdowns": [
               {
-                "placeholder": "Select...",
                 "options": [
                   {
                     "text": "coagulative",
@@ -4999,10 +4996,10 @@
                     "text": "caseous",
                     "correct": false
                   }
-                ]
+                ],
+                "placeholder": "Select..."
               },
               {
-                "placeholder": "Select...",
                 "options": [
                   {
                     "text": "liquefactive",
@@ -5016,10 +5013,10 @@
                     "text": "caseous",
                     "correct": false
                   }
-                ]
+                ],
+                "placeholder": "Select..."
               },
               {
-                "placeholder": "Select...",
                 "options": [
                   {
                     "text": "an intense acute inflammatory response",
@@ -5033,10 +5030,10 @@
                     "text": "immediate neoplastic transformation",
                     "correct": false
                   }
-                ]
+                ],
+                "placeholder": "Select..."
               },
               {
-                "placeholder": "Select...",
                 "options": [
                   {
                     "text": "cytochrome c",
@@ -5050,7 +5047,8 @@
                     "text": "glycogen synthetase",
                     "correct": false
                   }
-                ]
+                ],
+                "placeholder": "Select..."
               }
             ]
           },
@@ -5059,7 +5057,6 @@
           "explanation": "Necrosis is accidental, unprogrammed cell death resulting from severe exogenous injury (ischemia, toxins, severe trauma). In necrosis, ATP depletion causes cell and organelle swelling, plasma membrane disruption, release of intracellular macromolecules into the extracellular space, and inevitable acute inflammation. In dry gangrene, coagulative necrosis predominates; with secondary bacterial liquefaction, wet gangrene occurs. In gas gangrene, Clostridium toxins destroy adjacent viable tissue and produce gas bubbles. Conversely, apoptosis is programmed, energy-dependent cell suicide. The cell shrinks, chromatin condenses, and the cell buds into intact apoptotic bodies that are rapidly phagocytosed by macrophages without releasing cytosolic contents, producing NO inflammatory reaction. The intrinsic (mitochondrial) pathway is triggered by DNA damage, p53 activation, and intracellular calcium influx, causing BCL-2 effectors (BAX/BAK) to create mitochondrial pores that release cytochrome c, which activates executioner caspases."
         },
         "leftContent": {
-          "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration.",
           "tabs": [
             {
               "id": "nn_1",
@@ -5071,7 +5068,8 @@
               "title": "Laboratory & Wound Assessment",
               "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Stat Laboratory Results:</b><br>• WBC: 21,400 /mm<sup>3</sup> (Reference: 4,500–11,000) with 88% neutrophils, 10% band forms<br>• Hemoglobin: 10.8 g/dL (Reference: 13.5–17.5 g/dL)<br>• Serum Lactic Acid: 4.2 mmol/L (Reference: 0.5–2.0 mmol/L) [Tissue hypoperfusion]<br>• Serum Creatinine: 1.8 mg/dL (Baseline: 1.0 mg/dL) [Acute kidney injury]<br>• Blood Glucose: 312 mg/dL (Reference: 70–99 mg/dL)<br>• C-Reactive Protein (CRP): 145 mg/L (Reference: &lt; 5 mg/L)</p><p style=\"margin-top:10px;\"><b>Gram Stain & Anaerobic Wound Smear:</b><br>Numerous polymorphonuclear leukocytes; heavy growth of large Gram-positive, blunt-ended, spore-forming rods morphologically consistent with <i>Clostridium perfringens</i>, along with mixed Gram-negative enteric bacilli.</p><p style=\"margin-top:10px;\"><b>Right Foot Plain Radiograph (X-Ray):</b><br>Extensive soft tissue gas dissecting through the dorsal and plantar fascial compartments of the forefoot. Severe arterial calcification of dorsalis pedis and digital vessels. No bony osteomyelitis.</p></div>"
             }
-          ]
+          ],
+          "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration."
         }
       },
       {
@@ -5109,7 +5107,6 @@
           "explanation": "Gas/wet gangrene with septic shock is a surgical and medical emergency requiring immediate nursing actions: (1) Administering prescribed crystalloid fluid resuscitation restores effective circulating volume and combats hypoperfusion lactic acidosis; (2) Administering prescribed broad-spectrum intravenous antimicrobials stops bacterial proliferation and toxin production; (3) Preparing the client for surgical debridement/amputation ensures prompt source control, as antimicrobials cannot penetrate avascular dead tissue; and (4) Strict hourly urine output monitoring assesses renal perfusion. In contrast, tight compression bandages worsen tissue ischemia by further restricting arterial inflow, and heating pads cause thermal injury to neuropathic skin. Soaking in water macerates tissue, accelerates bacterial multiplication, and is strictly contraindicated."
         },
         "leftContent": {
-          "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration.",
           "tabs": [
             {
               "id": "nn_1",
@@ -5121,7 +5118,8 @@
               "title": "Laboratory & Wound Assessment",
               "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Stat Laboratory Results:</b><br>• WBC: 21,400 /mm<sup>3</sup> (Reference: 4,500–11,000) with 88% neutrophils, 10% band forms<br>• Hemoglobin: 10.8 g/dL (Reference: 13.5–17.5 g/dL)<br>• Serum Lactic Acid: 4.2 mmol/L (Reference: 0.5–2.0 mmol/L) [Tissue hypoperfusion]<br>• Serum Creatinine: 1.8 mg/dL (Baseline: 1.0 mg/dL) [Acute kidney injury]<br>• Blood Glucose: 312 mg/dL (Reference: 70–99 mg/dL)<br>• C-Reactive Protein (CRP): 145 mg/L (Reference: &lt; 5 mg/L)</p><p style=\"margin-top:10px;\"><b>Gram Stain & Anaerobic Wound Smear:</b><br>Numerous polymorphonuclear leukocytes; heavy growth of large Gram-positive, blunt-ended, spore-forming rods morphologically consistent with <i>Clostridium perfringens</i>, along with mixed Gram-negative enteric bacilli.</p><p style=\"margin-top:10px;\"><b>Right Foot Plain Radiograph (X-Ray):</b><br>Extensive soft tissue gas dissecting through the dorsal and plantar fascial compartments of the forefoot. Severe arterial calcification of dorsalis pedis and digital vessels. No bony osteomyelitis.</p></div>"
             }
-          ]
+          ],
+          "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration."
         }
       },
       {
@@ -5130,12 +5128,6 @@
           "stem": "Walter underwent emergent right transmetatarsal amputation and extensive fascial debridement. The nurse is managing his postoperative critical care. For each nursing action, click to specify whether it is <b>Indicated</b>, <b>Non-Essential</b>, or <b>Contraindicated</b>.",
           "type": "matrix_mc",
           "matrix": {
-            "firstColumnHeader": "Postoperative Nursing Action",
-            "columns": [
-              "Indicated",
-              "Non-Essential",
-              "Contraindicated"
-            ],
             "rows": [
               {
                 "text": "Administer supplemental oxygen to maintain SpO2 ≥ 96% to support tissue oxygenation and inhibit anaerobic Clostridial spore germination",
@@ -5172,14 +5164,19 @@
                   1
                 ]
               }
-            ]
+            ],
+            "columns": [
+              "Indicated",
+              "Non-Essential",
+              "Contraindicated"
+            ],
+            "firstColumnHeader": "Postoperative Nursing Action"
           },
           "options": [],
           "preamble": "Walter is transferred to the surgical ICU following emergent right transmetatarsal amputation and extensive surgical debridement.",
           "explanation": "1. Indicated: Supplemental oxygen supports mitochondrial oxidative phosphorylation in borderzone tissues and creates an oxygen-rich environment toxic to obligate anaerobic Clostridium species.\n2. Indicated: Reperfusion of chronically ischemic tissue delivers oxygen that generates toxic reactive oxygen species (free radicals) and high levels of extracellular calcium that rush into injured cells, triggering secondary cell death and cardiac arrhythmias.\n3. Indicated: Hyperglycemia impairs neutrophil phagocytosis and wound healing; maintaining glucose 140–180 mg/dL optimizes cellular defense without inducing hypoglycemia.\n4. Contraindicated: Weight-bearing and barefoot walking on a freshly debrided neuropathic diabetic amputation stump would cause immediate mechanical tissue disruption and catastrophic wound breakdown.\n5. Non-Essential: Radiation therapy is used for malignant neoplasms, not infectious ischemic gangrene."
         },
         "leftContent": {
-          "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration.",
           "tabs": [
             {
               "id": "nn_1",
@@ -5191,7 +5188,8 @@
               "title": "Laboratory & Wound Assessment",
               "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Stat Laboratory Results:</b><br>• WBC: 21,400 /mm<sup>3</sup> (Reference: 4,500–11,000) with 88% neutrophils, 10% band forms<br>• Hemoglobin: 10.8 g/dL (Reference: 13.5–17.5 g/dL)<br>• Serum Lactic Acid: 4.2 mmol/L (Reference: 0.5–2.0 mmol/L) [Tissue hypoperfusion]<br>• Serum Creatinine: 1.8 mg/dL (Baseline: 1.0 mg/dL) [Acute kidney injury]<br>• Blood Glucose: 312 mg/dL (Reference: 70–99 mg/dL)<br>• C-Reactive Protein (CRP): 145 mg/L (Reference: &lt; 5 mg/L)</p><p style=\"margin-top:10px;\"><b>Gram Stain & Anaerobic Wound Smear:</b><br>Numerous polymorphonuclear leukocytes; heavy growth of large Gram-positive, blunt-ended, spore-forming rods morphologically consistent with <i>Clostridium perfringens</i>, along with mixed Gram-negative enteric bacilli.</p><p style=\"margin-top:10px;\"><b>Right Foot Plain Radiograph (X-Ray):</b><br>Extensive soft tissue gas dissecting through the dorsal and plantar fascial compartments of the forefoot. Severe arterial calcification of dorsalis pedis and digital vessels. No bony osteomyelitis.</p></div>"
             }
-          ]
+          ],
+          "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration."
         }
       },
       {
@@ -5203,7 +5201,6 @@
             "text": "Following surgical source control of Walter's infected gangrene, his WBC count normalized to 8,400 /mm3 and lactate decreased to 1.2 mmol/L, confirming eradication of [[drop0]]. Because necrotic cell death causes plasma membrane rupture and enzymatic leakage, it triggers [[drop1]], creating extensive collateral tissue destruction. In contrast, apoptosis eliminates unwanted or damaged cells through programmed cell condensation and fragmentation into apoptotic bodies, which are cleanly ingested by [[drop2]] without producing an inflammatory reaction.",
             "dropdowns": [
               {
-                "placeholder": "Select...",
                 "options": [
                   {
                     "text": "liquefactive and gas gangrene",
@@ -5217,10 +5214,10 @@
                     "text": "reversible hydropic swelling",
                     "correct": false
                   }
-                ]
+                ],
+                "placeholder": "Select..."
               },
               {
-                "placeholder": "Select...",
                 "options": [
                   {
                     "text": "acute inflammation",
@@ -5234,10 +5231,10 @@
                     "text": "anaplastic transformation",
                     "correct": false
                   }
-                ]
+                ],
+                "placeholder": "Select..."
               },
               {
-                "placeholder": "Select...",
                 "options": [
                   {
                     "text": "tissue macrophages",
@@ -5251,7 +5248,8 @@
                     "text": "cardiac myocytes",
                     "correct": false
                   }
-                ]
+                ],
+                "placeholder": "Select..."
               }
             ]
           },
@@ -5260,7 +5258,6 @@
           "explanation": "This case summarizes the critical contrast between necrosis and apoptosis. In necrosis (including coagulative necrosis of dry gangrene and liquefactive necrosis of wet/gas gangrene), external injury disrupts the plasma membrane, spilling intracellular proteins, enzymes, and nucleic acids into surrounding interstitial spaces, triggering intense acute inflammation and tissue damage. In contrast, apoptosis is an orderly, programmed process wherein cell suicide is executed cleanly: cell shrinkage, chromatin condensation, and fragmentation into membrane-bound apoptotic bodies that display 'eat-me' signals (like phosphatidylserine) for rapid recognition and engulfment by tissue macrophages, preventing any inflammatory damage to neighboring tissues."
         },
         "leftContent": {
-          "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration.",
           "tabs": [
             {
               "id": "nn_1",
@@ -5272,19 +5269,20 @@
               "title": "Laboratory & Wound Assessment",
               "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Stat Laboratory Results:</b><br>• WBC: 21,400 /mm<sup>3</sup> (Reference: 4,500–11,000) with 88% neutrophils, 10% band forms<br>• Hemoglobin: 10.8 g/dL (Reference: 13.5–17.5 g/dL)<br>• Serum Lactic Acid: 4.2 mmol/L (Reference: 0.5–2.0 mmol/L) [Tissue hypoperfusion]<br>• Serum Creatinine: 1.8 mg/dL (Baseline: 1.0 mg/dL) [Acute kidney injury]<br>• Blood Glucose: 312 mg/dL (Reference: 70–99 mg/dL)<br>• C-Reactive Protein (CRP): 145 mg/L (Reference: &lt; 5 mg/L)</p><p style=\"margin-top:10px;\"><b>Gram Stain & Anaerobic Wound Smear:</b><br>Numerous polymorphonuclear leukocytes; heavy growth of large Gram-positive, blunt-ended, spore-forming rods morphologically consistent with <i>Clostridium perfringens</i>, along with mixed Gram-negative enteric bacilli.</p><p style=\"margin-top:10px;\"><b>Right Foot Plain Radiograph (X-Ray):</b><br>Extensive soft tissue gas dissecting through the dorsal and plantar fascial compartments of the forefoot. Severe arterial calcification of dorsalis pedis and digital vessels. No bony osteomyelitis.</p></div>"
             }
-          ]
+          ],
+          "intro": "The emergency department and vascular surgical nurse is conducting an urgent evaluation of Walter Henderson, a 72-year-old male with long-standing type 2 diabetes mellitus and advanced peripheral arterial disease (PAD), admitted with severe unremitting right foot pain and rapidly spreading tissue discoloration."
         }
       }
-    ]
+    ],
+    "disorder": "Unit 2 (Cellular Basis of Disease)",
+    "description": "72-year-old male with diabetes and PAD presenting with ischemic dry gangrene progressing to liquefactive wet/gas gangrene with septic shock."
   },
   {
     "id": "case_1782370000001",
+    "unit": "Unit 3 (Genetic and Developmental Disorders)",
     "title": "NURS 1017 Unit 3 Case Study 1",
     "topic": "Unit 3 (Genetic and Developmental Disorders)",
-    "unit": "Unit 3 (Genetic and Developmental Disorders)",
-    "disorder": "Unit 3 (Genetic and Developmental Disorders)",
     "course": "NURS 1017",
-    "description": "Newborn male presenting with hypotonia, low-set ears, epicanthal folds, protruding tongue, and heart murmur, prompting chromosomal karyotyping and comparative evaluation of Down, Turner, and Klinefelter syndromes.",
     "screens": [
       {
         "step": 1,
@@ -5329,7 +5327,6 @@
           "explanation": "Clinical manifestations of Trisomy 21 (Down syndrome) result from the presence of an extra 21st chromosome (autosomal polysomy/trisomy) and characteristically include: generalized muscular hypotonia (floppy infant), upward-slanting palpebral fissures, prominent epicanthal folds, protruding tongue/macroglossia, low-set malformed ears, short neck with redundant skin, single transverse palmar crease (simian crease), wide gap between the first and second toes, and congenital heart defects (most commonly atrioventricular septal defects or atrial/ventricular septal defects, producing murmurs). Hypertonia, sustained clonus, and craniosynostosis are not characteristic of Down syndrome."
         },
         "leftContent": {
-          "intro": "The nurse in the Neonatal Intensive Care Step-Down Unit is caring for infant Leo, a term male newborn delivered at 38 weeks and 2 days gestation to a 41-year-old mother via uncomplicated spontaneous vaginal delivery.",
           "tabs": [
             {
               "id": "nn_1",
@@ -5341,7 +5338,8 @@
               "title": "Vital Signs",
               "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Vital Sign</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Current Value (0100)</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Normal Term Newborn Range</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Temperature (Axillary)</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.7 °C</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.5 – 37.5 °C</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Heart Rate (Apical)</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">146 bpm, regular</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">110 – 160 bpm</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Respiratory Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">52 breaths/min</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">30 – 60 breaths/min</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Blood Pressure (Right Arm)</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">66/42 mmHg</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">60–80 / 40–50 mmHg</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Pre-ductal SpO<sub>2</sub> (Right Hand)</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">96% on room air</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">&ge; 95%</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Post-ductal SpO<sub>2</sub> (Left Foot)</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">95% on room air</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">&ge; 95%</td></tr></tbody></table>"
             }
-          ]
+          ],
+          "intro": "The nurse in the Neonatal Intensive Care Step-Down Unit is caring for infant Leo, a term male newborn delivered at 38 weeks and 2 days gestation to a 41-year-old mother via uncomplicated spontaneous vaginal delivery."
         }
       },
       {
@@ -5350,12 +5348,6 @@
           "stem": "The nurse reviews chromosomal disorders with a nursing student assigned to the unit. For each clinical characteristic or chromosomal profile, click to specify whether it corresponds to <b>Down Syndrome (Trisomy 21)</b>, <b>Turner Syndrome (45,X)</b>, or <b>Klinefelter Syndrome (47,XXY)</b>.",
           "type": "matrix_mc",
           "matrix": {
-            "firstColumnHeader": "Clinical & Genetic Manifestation",
-            "columns": [
-              "Down Syndrome (Trisomy 21)",
-              "Turner Syndrome (45,X)",
-              "Klinefelter Syndrome (47,XXY)"
-            ],
             "rows": [
               {
                 "text": "Autosomal trisomy characterized by epicanthal folds, muscular hypotonia, and increased long-term risk of leukemia and early-onset Alzheimer disease",
@@ -5399,14 +5391,19 @@
                   2
                 ]
               }
-            ]
+            ],
+            "columns": [
+              "Down Syndrome (Trisomy 21)",
+              "Turner Syndrome (45,X)",
+              "Klinefelter Syndrome (47,XXY)"
+            ],
+            "firstColumnHeader": "Clinical & Genetic Manifestation"
           },
           "options": [],
           "preamble": "Karyotype results and diagnostic genetic consult notes have been added to infant Leo's chart (see Diagnostic & Genetic Reports tab).",
           "explanation": "1. Down Syndrome (Trisomy 21): Extra autosome 21 (47,XX,+21 or 47,XY,+21); manifestations include hypotonia, protruding tongue, epicanthal folds, low-set ears, atrioventricular septal defects, and high lifetime risk of leukemia and Alzheimer disease.\n2. Turner Syndrome (45,X): Monosomy of the X chromosome in females (only 1 normal X; other missing or structurally abnormal); manifestations include short stature, webbed neck, broad shield-like chest with widely spaced nipples, streak ovaries causing primary amenorrhea and sterility, and aortic coarctation/bicuspid aortic valve.\n3. Klinefelter Syndrome (47,XXY): Polysomy of sex chromosomes in males (extra X chromosome); manifestations include male phenotype, testicular atrophy, reduced testosterone production causing gynecomastia, female-pattern hair distribution, taller than average height with elongated limbs, infertility, and verbal/learning deficits."
         },
         "leftContent": {
-          "intro": "Infant Leo is now 12 hours old. Echocardiography and chromosomal karyotype analysis have been performed. The nurse is reviewing the findings and preparing educational resources on chromosomal abnormalities.",
           "tabs": [
             {
               "id": "nn_2",
@@ -5418,7 +5415,8 @@
               "title": "Diagnostic & Genetic Reports",
               "content": "<div style=\"margin-bottom:12px;\"><b>Neonatal Echocardiogram Report (1000):</b><br>Normal left ventricular systolic function (EF 64%). Large ostium primum atrial septal defect (ASD) measuring 6.2 mm with left-to-right shunt. Mild mitral valve regurgitation without outflow tract obstruction. Pulmonary arterial pressures estimated at upper limits of normal for transitional neonatal circulation. Follow-up pediatric cardiology consultation scheduled.</div><div style=\"margin-top:12px;\"><b>Rapid Fluorescent In Situ Hybridization (FISH) & Karyotype (1130):</b><br>Karyotype result: <b>47,XY,+21</b>. Three distinct copies of chromosome 21 identified in all 20 metaphase cells examined, confirming non-mosaic complete Trisomy 21 (Down syndrome). Sex chromosomes: XY (genotypically male).</div>"
             }
-          ]
+          ],
+          "intro": "Infant Leo is now 12 hours old. Echocardiography and chromosomal karyotype analysis have been performed. The nurse is reviewing the findings and preparing educational resources on chromosomal abnormalities."
         }
       },
       {
@@ -5426,12 +5424,10 @@
         "question": {
           "stem": "The nurse analyzes the client's clinical data and genetic findings to formulate priorities of care.<br><br>Complete the following sentences by choosing from the lists of options.",
           "type": "dropdown_cloze",
+          "options": [],
+          "preamble": "",
+          "explanation": "Trisomy 21 (Down syndrome) most commonly (~95% of cases) arises from nondisjunction of chromosome 21 during parental meiosis (strongly correlated with advancing maternal age). The presence of a large atrial septal defect creates a left-to-right intracardiac shunt, placing the infant at high risk for pulmonary overcirculation, tachypnea, diaphoresis with feeds, and congestive heart failure. Concurrently, generalized hypotonia coupled with a protruding tongue (macroglossia) causes weak suction, uncoordinated swallowing, and increased risk for feeding fatigue, poor caloric intake, and aspiration of formula or breast milk.",
           "dropdown_cloze": {
-            "sentences": [
-              "The infant's chromosomal abnormality is caused by [drp1] during parental meiosis, resulting in autosomal aneuploidy with three copies of chromosome 21.",
-              "The nurse's immediate physiological priority during the newborn transition period is monitoring for [drp2] secondary to the confirmed atrial septal defect.",
-              "Due to generalized muscular hypotonia and macroglossia, the nurse must prioritize interventions to prevent [drp3] during enteral nutrition."
-            ],
             "dropdowns": [
               {
                 "id": "drp1",
@@ -5466,14 +5462,15 @@
                 ],
                 "correctIndex": 0
               }
+            ],
+            "sentences": [
+              "The infant's chromosomal abnormality is caused by [drp1] during parental meiosis, resulting in autosomal aneuploidy with three copies of chromosome 21.",
+              "The nurse's immediate physiological priority during the newborn transition period is monitoring for [drp2] secondary to the confirmed atrial septal defect.",
+              "Due to generalized muscular hypotonia and macroglossia, the nurse must prioritize interventions to prevent [drp3] during enteral nutrition."
             ]
-          },
-          "options": [],
-          "preamble": "",
-          "explanation": "Trisomy 21 (Down syndrome) most commonly (~95% of cases) arises from nondisjunction of chromosome 21 during parental meiosis (strongly correlated with advancing maternal age). The presence of a large atrial septal defect creates a left-to-right intracardiac shunt, placing the infant at high risk for pulmonary overcirculation, tachypnea, diaphoresis with feeds, and congestive heart failure. Concurrently, generalized hypotonia coupled with a protruding tongue (macroglossia) causes weak suction, uncoordinated swallowing, and increased risk for feeding fatigue, poor caloric intake, and aspiration of formula or breast milk."
+          }
         },
         "leftContent": {
-          "intro": "The nurse is evaluating infant Leo's diagnostic reports and clinical trajectory to determine high-priority nursing diagnoses and anticipated complications.",
           "tabs": [
             {
               "id": "nn_3",
@@ -5485,7 +5482,8 @@
               "title": "Vital Signs",
               "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Parameter</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Baseline (0100)</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Post-Feeding (1400)</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Heart Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">146 bpm</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">164 bpm</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Respiratory Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">52 breaths/min</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">68 breaths/min (tachypneic)</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>SpO<sub>2</sub></b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">96%</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">92% &rarr; 95% with rest</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Temperature</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.7 °C</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.8 °C</td></tr></tbody></table>"
             }
-          ]
+          ],
+          "intro": "The nurse is evaluating infant Leo's diagnostic reports and clinical trajectory to determine high-priority nursing diagnoses and anticipated complications."
         }
       },
       {
@@ -5527,7 +5525,6 @@
           "explanation": "Key nursing interventions for a neonate with Trisomy 21 and a congenital heart defect (ASD) include: (1) Upright positioning with head and neck supported to facilitate swallowing and prevent aspiration; (2) Using specialized feeding devices (e.g., Haberman or firm nipple) with small, frequent feeds (limiting feeds to 20–30 minutes to avoid excessive caloric expenditure and fatigue); (3) Close monitoring for heart failure (daily weights, respiratory effort, tachypnea, hepatomegaly, diaphoresis with feeds); and (4) Providing emotional support, genetic counseling referrals, and connection to infant development resources. Hyperextending the neck increases airway aspiration risk, and forcing 60-minute feeds exhausts the infant and increases cardiac work."
         },
         "leftContent": {
-          "intro": "The nurse collaborates with the neonatal interprofessional healthcare team (pediatrician, lactation consultant, and pediatric cardiologist) while formulating nursing interventions for infant Leo and his parents.",
           "tabs": [
             {
               "id": "nn_4",
@@ -5539,7 +5536,8 @@
               "title": "Cardiology Consult Note",
               "content": "<p><b>Pediatric Cardiology Assessment:</b> Ostium primum ASD with moderate left-to-right shunt. Currently compensated without acute pulmonary edema. Medical management: maintain caloric density, monitor for tachypnea and diaphoresis during feeds. Outpatient cardiology follow-up in 2 weeks for repeat echocardiogram. If signs of failure to thrive or pulmonary congestion develop, diuretic therapy and surgical repair consultation will be initiated.</p>"
             }
-          ]
+          ],
+          "intro": "The nurse collaborates with the neonatal interprofessional healthcare team (pediatrician, lactation consultant, and pediatric cardiologist) while formulating nursing interventions for infant Leo and his parents."
         }
       },
       {
@@ -5548,12 +5546,6 @@
           "stem": "The nurse is reviewing orders and planning nursing care for infant Leo. For each nursing action, click to specify whether the action is <b>Indicated</b>, <b>Non-Essential</b>, or <b>Contraindicated</b>.",
           "type": "matrix_mc",
           "matrix": {
-            "firstColumnHeader": "Nursing Action",
-            "columns": [
-              "Indicated",
-              "Non-Essential",
-              "Contraindicated"
-            ],
             "rows": [
               {
                 "text": "Assess pre- and post-ductal oxygen saturations and apical heart rate prior to and following feedings",
@@ -5597,14 +5589,19 @@
                   1
                 ]
               }
-            ]
+            ],
+            "columns": [
+              "Indicated",
+              "Non-Essential",
+              "Contraindicated"
+            ],
+            "firstColumnHeader": "Nursing Action"
           },
           "options": [],
           "preamble": "The nurse is executing the daily neonatal care plan and monitoring infant Leo on DOL 2.",
           "explanation": "1. Indicated: Assessing oxygen saturation and apical pulse pre- and post-feeding evaluates cardiopulmonary tolerance and detects early decompensation.\n2. Contraindicated: Prone sleeping is contraindicated due to increased risk of sudden infant death syndrome (SIDS); infants must sleep supine on a flat, firm surface.\n3. Indicated: Clearing oral secretions with a bulb syringe helps maintain airway patency, especially given hypotonia and macroglossia.\n4. Contraindicated: Prophylactic IV aminoglycosides are not indicated without evidence of systemic infection and pose risks of nephrotoxicity and ototoxicity.\n5. Indicated: Monitoring diaper count (aiming for 6+ wet diapers/day), fontanel fullness, and skin turgor accurately evaluates hydration status.\n6. Non-Essential: Invasive arterial monitoring is unnecessary and invasive for a stable neonate without cardiogenic shock or vasoactive infusions."
         },
         "leftContent": {
-          "intro": "Infant Leo is now 28 hours old (Day of Life 2). The mother is rooming-in and actively participating in diaper changes and feeding sessions under nursing supervision.",
           "tabs": [
             {
               "id": "nn_5",
@@ -5616,7 +5613,8 @@
               "title": "Vital Signs",
               "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Vital Sign</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Current Value (DOL 2, 0800)</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Target Range</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Temperature</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.8 °C (axillary)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.5 – 37.5 °C</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Heart Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">142 bpm</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">110 – 160 bpm</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Respiratory Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">48 breaths/min</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">30 – 60 breaths/min</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Blood Pressure</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">68/44 mmHg</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">60–80 / 40–50 mmHg</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>SpO<sub>2</sub></b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">97% on room air</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">&ge; 95%</td></tr></tbody></table>"
             }
-          ]
+          ],
+          "intro": "Infant Leo is now 28 hours old (Day of Life 2). The mother is rooming-in and actively participating in diaper changes and feeding sessions under nursing supervision."
         }
       },
       {
@@ -5624,12 +5622,10 @@
         "question": {
           "stem": "The nurse conducts discharge teaching and evaluates parental understanding prior to home transition.<br><br>Complete the following sentences by choosing from the lists of options.",
           "type": "dropdown_cloze",
+          "options": [],
+          "preamble": "Discharge preparation is underway on Day of Life 3.",
+          "explanation": "1. Warning signs of worsening left-to-right shunt and heart failure in infants with congenital heart disease include diaphoresis during feeds, tachypnea (> 60 breaths/min), retractions, prolonged feeding times (> 30 mins), and faltering weight gain.\n2. Children with Trisomy 21 have multisystem risks requiring structured surveillance: thyroid dysfunction (hypothyroidism ~15%), sensorineural/conductive hearing loss, acute leukemias (10- to 20-fold increased risk), celiac disease, obstructive sleep apnea, and atlantoaxial instability, as well as early Alzheimer disease in adult years.\n3. For parents of a child with standard nondisjunction Trisomy 21, the recurrence risk in subsequent pregnancies is approximately 1% (or slightly higher if maternal age exceeds 40 years), which differs significantly from Mendelian single-gene disorders (25% or 50%).",
           "dropdown_cloze": {
-            "sentences": [
-              "The nurse recognizes that parents demonstrate correct understanding of home cardiac monitoring when they state they will notify the healthcare provider if the infant develops [drp1].",
-              "Regarding developmental screening and long-term health maintenance for Trisomy 21, the nurse educates the parents that regular evaluations are necessary due to an increased risk of [drp2].",
-              "When the mother asks about recurrence risk in future pregnancies, the nurse explains that the recurrence rate for standard meiotic nondisjunction trisomy 21 is approximately [drp3]."
-            ],
             "dropdowns": [
               {
                 "id": "drp1",
@@ -5664,14 +5660,15 @@
                 ],
                 "correctIndex": 0
               }
+            ],
+            "sentences": [
+              "The nurse recognizes that parents demonstrate correct understanding of home cardiac monitoring when they state they will notify the healthcare provider if the infant develops [drp1].",
+              "Regarding developmental screening and long-term health maintenance for Trisomy 21, the nurse educates the parents that regular evaluations are necessary due to an increased risk of [drp2].",
+              "When the mother asks about recurrence risk in future pregnancies, the nurse explains that the recurrence rate for standard meiotic nondisjunction trisomy 21 is approximately [drp3]."
             ]
-          },
-          "options": [],
-          "preamble": "Discharge preparation is underway on Day of Life 3.",
-          "explanation": "1. Warning signs of worsening left-to-right shunt and heart failure in infants with congenital heart disease include diaphoresis during feeds, tachypnea (> 60 breaths/min), retractions, prolonged feeding times (> 30 mins), and faltering weight gain.\n2. Children with Trisomy 21 have multisystem risks requiring structured surveillance: thyroid dysfunction (hypothyroidism ~15%), sensorineural/conductive hearing loss, acute leukemias (10- to 20-fold increased risk), celiac disease, obstructive sleep apnea, and atlantoaxial instability, as well as early Alzheimer disease in adult years.\n3. For parents of a child with standard nondisjunction Trisomy 21, the recurrence risk in subsequent pregnancies is approximately 1% (or slightly higher if maternal age exceeds 40 years), which differs significantly from Mendelian single-gene disorders (25% or 50%)."
+          }
         },
         "leftContent": {
-          "intro": "Infant Leo is 56 hours old (DOL 3) and preparing for discharge home with outpatient pediatric cardiology, audiology, and early infant intervention follow-up scheduled.",
           "tabs": [
             {
               "id": "nn_6",
@@ -5683,19 +5680,20 @@
               "title": "Discharge Summary",
               "content": "<div style=\"margin-bottom:8px;\"><b>Discharge Diagnoses:</b> Term newborn male; Complete Trisomy 21 (Karyotype 47,XY,+21); Ostium primum atrial septal defect (stable, hemodynamically compensated); Neonatal feeding hypotonia (improving).</div><div><b>Follow-up Plan:</b> Pediatric primary care visit in 48 hours for weight and bilirubin check. Pediatric cardiology clinic in 2 weeks. Comprehensive newborn hearing screening: right ear refer, left ear pass; repeat formal ABR scheduled at 4 weeks. Thyroid function tests (TSH/free T4) scheduled at 2 months.</div>"
             }
-          ]
+          ],
+          "intro": "Infant Leo is 56 hours old (DOL 3) and preparing for discharge home with outpatient pediatric cardiology, audiology, and early infant intervention follow-up scheduled."
         }
       }
-    ]
+    ],
+    "disorder": "Unit 3 (Genetic and Developmental Disorders)",
+    "description": "Newborn male presenting with hypotonia, low-set ears, epicanthal folds, protruding tongue, and heart murmur, prompting chromosomal karyotyping and comparative evaluation of Down, Turner, and Klinefelter syndromes."
   },
   {
     "id": "case_1782370000002",
+    "unit": "Unit 3 (Genetic and Developmental Disorders)",
     "title": "NURS 1017 Unit 3 Case Study 2",
     "topic": "Unit 3 (Genetic and Developmental Disorders)",
-    "unit": "Unit 3 (Genetic and Developmental Disorders)",
-    "disorder": "Unit 3 (Genetic and Developmental Disorders)",
     "course": "NURS 1017",
-    "description": "Young couple presenting for preconception genetic counseling and health assessment with complex family history of Cystic Fibrosis (autosomal recessive), Marfan syndrome (autosomal dominant), and Hemophilia A (X-linked recessive).",
     "screens": [
       {
         "step": 1,
@@ -5732,7 +5730,6 @@
           "explanation": "Mendelian single-gene disorders follow predictable inheritance patterns (autosomal dominant, autosomal recessive, or X-linked): (1) Hemophilia A is an X-linked recessive bleeding disorder caused by deficiency of factor VIII; Maya's brother being affected means their mother is an obligate or probable carrier, placing Maya at 50% risk of being a carrier. (2) Sudden aortic dissection in a tall relative with pectus excavatum strongly suggests Marfan syndrome (an autosomal dominant connective tissue disorder caused by FBN1 mutations). (3) Cystic Fibrosis is an autosomal recessive disorder caused by CFTR mutations; cousins affected indicates carrier risk in parental lineages. (4) David's physical findings (tall, arm span > height, joint laxity, aortic murmur) are phenotypic cues of Marfan syndrome requiring immediate cardiovascular investigation. Primary hypertension and type 2 diabetes are multifactorial/polygenic disorders, not Mendelian single-gene disorders. Seasonal allergies are immune-mediated environmental responses."
         },
         "leftContent": {
-          "intro": "The nurse in an outpatient Medical Genetics and Preconception Planning Clinic is conducting an intake assessment for Maya (27 years old) and David (29 years old), who are planning their first pregnancy.",
           "tabs": [
             {
               "id": "nn_1",
@@ -5744,7 +5741,8 @@
               "title": "Vital Signs (David)",
               "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Parameter</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">David (Today, 0900)</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Blood Pressure</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">118/68 mmHg</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">&lt; 120/80 mmHg</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Heart Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">74 bpm, regular</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">60 – 100 bpm</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Respiratory Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">16 breaths/min</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">12 – 20 breaths/min</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Height / Weight</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">198 cm (6'6\") / 77 kg</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">Arm span: 206 cm (Span/Height ratio: 1.04)</td></tr></tbody></table>"
             }
-          ]
+          ],
+          "intro": "The nurse in an outpatient Medical Genetics and Preconception Planning Clinic is conducting an intake assessment for Maya (27 years old) and David (29 years old), who are planning their first pregnancy."
         }
       },
       {
@@ -5753,12 +5751,6 @@
           "stem": "The nurse analyzes the genetic transmission patterns for the single-gene disorders identified in the couple's pedigree. For each disorder, click to specify its <b>mode of inheritance</b> and primary <b>pathophysiological mechanism</b>.",
           "type": "matrix_mc",
           "matrix": {
-            "firstColumnHeader": "Disorder & Pathophysiology",
-            "columns": [
-              "Autosomal Dominant",
-              "Autosomal Recessive",
-              "X-Linked Recessive"
-            ],
             "rows": [
               {
                 "text": "Cystic Fibrosis: Mutation in chloride ion membrane transporter protein producing abnormally thick, viscous secretions obstructing bronchioles and pancreatic ducts",
@@ -5795,14 +5787,19 @@
                   1
                 ]
               }
-            ]
+            ],
+            "columns": [
+              "Autosomal Dominant",
+              "Autosomal Recessive",
+              "X-Linked Recessive"
+            ],
+            "firstColumnHeader": "Disorder & Pathophysiology"
           },
           "options": [],
           "preamble": "The nurse is reviewing Mendelian inheritance principles to prepare genetic education modules for the clients.",
           "explanation": "1. Cystic Fibrosis (CFTR): Autosomal recessive. Affects epithelial chloride conductance, leading to dehydrated thick mucus in pulmonary airways and pancreatic duct obstruction.\n2. Marfan Syndrome (FBN1): Autosomal dominant. Connective tissue microfibril defect causing aortic root dilation/rupture, mitral valve prolapse, tall stature, and skeletal deformities.\n3. Hemophilia A (F8): X-linked recessive. Factor VIII deficiency; affected individuals are almost exclusively male (hemizygous), while carrier females transmit the defective X chromosome.\n4. Huntington Disease (HTT): Autosomal dominant. Progressive neurodegeneration with motor (chorea) and cognitive decline appearing around age 40 due to huntingtin protein aggregation. Offspring of an affected individual have a 50% (1 in 2) chance of inheriting the gene.\n5. Sickle Cell Disease (HBB): Autosomal recessive. Both parents must carry the mutant allele for an offspring to have a 25% chance of being affected (homozygous HbSS)."
         },
         "leftContent": {
-          "intro": "The genetics team completes targeted pedigree mapping and provides DNA carrier panel results for Maya and David.",
           "tabs": [
             {
               "id": "nn_2",
@@ -5814,7 +5811,8 @@
               "title": "Genetic & Diagnostic Reports",
               "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Test / Client</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Genotype / Finding</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Clinical Interpretation</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Maya: CFTR Panel</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">Heterozygous (&Delta;F508 / normal)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">Asymptomatic carrier of Cystic Fibrosis (Autosomal Recessive)</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>David: CFTR Panel</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">Heterozygous (&Delta;F508 / normal)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">Asymptomatic carrier of Cystic Fibrosis (Autosomal Recessive)</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Maya: F8 Gene Analysis</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">Heterozygous (X<sup>H</sup>X<sup>h</sup>)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">Asymptomatic carrier of Hemophilia A (X-linked Recessive)</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>David: Transthoracic Echo</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">Aortic root dilation (4.4 cm); mild AR</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">High clinical suspicion for Marfan Syndrome (Autosomal Dominant)</td></tr></tbody></table>"
             }
-          ]
+          ],
+          "intro": "The genetics team completes targeted pedigree mapping and provides DNA carrier panel results for Maya and David."
         }
       },
       {
@@ -5822,12 +5820,10 @@
         "question": {
           "stem": "The nurse utilizes Punnett square principles to calculate genetic transmission risks for Maya and David's future offspring.<br><br>Complete the following sentences by choosing from the lists of options.",
           "type": "dropdown_cloze",
+          "options": [],
+          "preamble": "",
+          "explanation": "1. Autosomal Recessive (Cystic Fibrosis): When two heterozygous carriers mate (Cc x Cc), Punnett square yields: 25% homozygous normal (CC), 50% heterozygous carrier (Cc), and 25% homozygous affected (cc). Thus, each child has a 1 in 4 (25%) risk of having CF.\n2. X-Linked Recessive (Hemophilia A): A carrier mother (XHXh) and normal father (XHY) produce daughters who are XHXH (50% normal) or XHXh (50% carrier), and sons who are XHY (50% normal) or XhY (50% affected). Thus, any son born has a 50% (1 in 2) probability of having Hemophilia A.\n3. Autosomal Dominant (Marfan Syndrome): An affected individual heterozygous for the mutant allele (Mm) mated with an unaffected partner (mm) produces 50% affected offspring (Mm) and 50% unaffected offspring (mm), with males and females equally at risk.",
           "dropdown_cloze": {
-            "sentences": [
-              "Because both Maya and David are heterozygous carriers for Cystic Fibrosis (Cc x Cc), with each pregnancy there is a [drp1] probability of having a child affected with Cystic Fibrosis.",
-              "As an X-linked recessive carrier (X<sup>H</sup>X<sup>h</sup>) partnered with an unaffected male (X<sup>H</sup>Y), Maya has a [drp2] probability of giving birth to an affected son with Hemophilia A.",
-              "If David is confirmed to carry a heterozygous dominant mutation for Marfan syndrome (Mm x mm), any biological child has a [drp3] probability of inheriting the disorder regardless of biological sex."
-            ],
             "dropdowns": [
               {
                 "id": "drp1",
@@ -5862,14 +5858,15 @@
                 ],
                 "correctIndex": 0
               }
+            ],
+            "sentences": [
+              "Because both Maya and David are heterozygous carriers for Cystic Fibrosis (Cc x Cc), with each pregnancy there is a [drp1] probability of having a child affected with Cystic Fibrosis.",
+              "As an X-linked recessive carrier (X<sup>H</sup>X<sup>h</sup>) partnered with an unaffected male (X<sup>H</sup>Y), Maya has a [drp2] probability of giving birth to an affected son with Hemophilia A.",
+              "If David is confirmed to carry a heterozygous dominant mutation for Marfan syndrome (Mm x mm), any biological child has a [drp3] probability of inheriting the disorder regardless of biological sex."
             ]
-          },
-          "options": [],
-          "preamble": "",
-          "explanation": "1. Autosomal Recessive (Cystic Fibrosis): When two heterozygous carriers mate (Cc x Cc), Punnett square yields: 25% homozygous normal (CC), 50% heterozygous carrier (Cc), and 25% homozygous affected (cc). Thus, each child has a 1 in 4 (25%) risk of having CF.\n2. X-Linked Recessive (Hemophilia A): A carrier mother (XHXh) and normal father (XHY) produce daughters who are XHXH (50% normal) or XHXh (50% carrier), and sons who are XHY (50% normal) or XhY (50% affected). Thus, any son born has a 50% (1 in 2) probability of having Hemophilia A.\n3. Autosomal Dominant (Marfan Syndrome): An affected individual heterozygous for the mutant allele (Mm) mated with an unaffected partner (mm) produces 50% affected offspring (Mm) and 50% unaffected offspring (mm), with males and females equally at risk."
+          }
         },
         "leftContent": {
-          "intro": "The nurse conducts a dedicated counseling session using visual Punnett square diagrams to guide Maya and David through the genetic inheritance probabilities.",
           "tabs": [
             {
               "id": "nn_3",
@@ -5881,7 +5878,8 @@
               "title": "Punnett Probability Reference",
               "content": "<div style=\"border:1px solid #ccd8e0; border-radius:6px; padding:12px; background:#f8fafc;\"><h4 style=\"margin-top:0; color:#025287;\">Mendelian Risk Summary:</h4><ul style=\"line-height:1.6;\"><li><b>Autosomal Recessive (Carrier x Carrier):</b> 25% affected (homozygous), 50% carrier (heterozygous), 25% uninfected non-carrier.</li><li><b>Autosomal Dominant (Affected Heterozygote x Unaffected):</b> 50% affected, 50% unaffected; equal risk for males and females.</li><li><b>X-Linked Recessive (Carrier Mother x Normal Father):</b> 50% of sons affected; 50% of daughters are carriers; no sons receive father's X.</li></ul></div>"
             }
-          ]
+          ],
+          "intro": "The nurse conducts a dedicated counseling session using visual Punnett square diagrams to guide Maya and David through the genetic inheritance probabilities."
         }
       },
       {
@@ -5923,7 +5921,6 @@
           "explanation": "Appropriate nursing interventions include: (1) Promptly alerting the cardiology healthcare provider regarding David's aortic root dilation (4.4 cm is significantly enlarged in Marfan syndrome, placing him at risk for fatal aortic dissection/rupture); (2) Educating David on avoiding isometric resistance exercises and high-impact contact sports to prevent acute aortic wall shear stress; (3) Reviewing reproductive technologies (PGD with IVF, or prenatal diagnostic amniocentesis/CVS) so the couple can make informed family planning decisions; (4) Educating Maya regarding hemophilia precautions for a male newborn (deferring elective circumcisions until coagulation factor VIII status is verified to prevent life-threatening hemorrhage); and (5) Providing psychological support and disease-specific foundation resources. Aortic dilation of 4.4 cm is never a benign athletic finding in someone with Marfan phenotype. Folic acid prevents neural tube defects (multifactorial developmental defect), but cannot prevent or repair Mendelian single-gene DNA mutations."
         },
         "leftContent": {
-          "intro": "The nurse facilitates clinical coordination for David's cardiac protection and outlines reproductive genetic planning pathways for the couple.",
           "tabs": [
             {
               "id": "nn_4",
@@ -5935,7 +5932,8 @@
               "title": "Care Pathways",
               "content": "<p><b>Reproductive & Genetic Options:</b></p><ul><li><b>Natural conception with prenatal diagnosis:</b> Chorionic villus sampling (at 10–13 weeks) or amniocentesis (at 15–20 weeks) to test fetal DNA for CFTR mutations, F8 inversion, and FBN1 mutation.</li><li><b>In Vitro Fertilization (IVF) with Preimplantation Genetic Diagnosis (PGD):</b> Biopsy of blastocysts to transfer only embryos unaffected by Marfan syndrome, Cystic Fibrosis, or Hemophilia A.</li><li><b>Donor gametes:</b> Use of donor sperm or donor oocytes.</li></ul>"
             }
-          ]
+          ],
+          "intro": "The nurse facilitates clinical coordination for David's cardiac protection and outlines reproductive genetic planning pathways for the couple."
         }
       },
       {
@@ -5944,12 +5942,6 @@
           "stem": "The nurse evaluates planned clinical interventions and client education for David's suspected Marfan syndrome and the couple's genetic risk management. For each intervention, click to specify whether the action is <b>Indicated</b>, <b>Non-Essential</b>, or <b>Contraindicated</b>.",
           "type": "matrix_mc",
           "matrix": {
-            "firstColumnHeader": "Clinical Intervention & Education",
-            "columns": [
-              "Indicated",
-              "Non-Essential",
-              "Contraindicated"
-            ],
             "rows": [
               {
                 "text": "Advise David to seek immediate emergency medical evaluation if he develops sudden, severe tearing chest, back, or neck pain",
@@ -5993,21 +5985,27 @@
                   1
                 ]
               }
-            ]
+            ],
+            "columns": [
+              "Indicated",
+              "Non-Essential",
+              "Contraindicated"
+            ],
+            "firstColumnHeader": "Clinical Intervention & Education"
           },
           "options": [],
           "preamble": "The nurse is reviewing discharge teaching and self-care instructions with Maya and David.",
           "explanation": "1. Indicated: Sudden tearing chest or back pain is the hallmark warning symptom of acute aortic dissection, requiring immediate emergency intervention.\n2. Contraindicated: Heavy isometric lifting and contact sports dramatically elevate systolic blood pressure and aortic wall stress, increasing risk of dissection/rupture in Marfan syndrome.\n3. Indicated: Fibrillin-1 mutations affect the ciliary zonules of the eye, making ectopia lentis (upward lens dislocation) a frequent diagnostic finding in Marfan syndrome.\n4. Contraindicated: Discontinuing prenatal multivitamins is harmful; periconceptional folic acid is essential to prevent neural tube defects.\n5. Indicated: Meconium ileus at birth, salty skin (elevated sweat chloride), failure to thrive, and steatorrhea (pancreatic exocrine deficiency) are classic infantile presentations of CF.\n6. Non-Essential: Daily blood glucose checks are not indicated for an asymptomatic young adult with normal glycemic status and no acute symptoms."
         },
         "leftContent": {
-          "intro": "The nurse finishes reviewing safety precautions, warning signs, and follow-up plans with Maya and David before concluding their clinic visit.",
           "tabs": [
             {
               "id": "nn_5",
               "title": "Nurses' Notes",
               "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">1430:</span><span class=\"nurse-note-text\">Discharge counseling completed. David was provided written emergency action plans for aortic symptoms. Ophthalmology specialty consultation confirmed for slit-lamp evaluation of lens position. Maya provided educational brochures regarding prenatal screening timelines and early infant symptoms of Cystic Fibrosis and Hemophilia. Couple verbalizes clear understanding of the genetic mechanisms and expresses appreciation for the structured guidance.</span></p>"
             }
-          ]
+          ],
+          "intro": "The nurse finishes reviewing safety precautions, warning signs, and follow-up plans with Maya and David before concluding their clinic visit."
         }
       },
       {
@@ -6015,12 +6013,10 @@
         "question": {
           "stem": "The nurse evaluates the couple's understanding of genetic principles and health maintenance before concluding the visit.<br><br>Complete the following sentences by choosing from the lists of options.",
           "type": "dropdown_cloze",
+          "options": [],
+          "preamble": "Post-counseling evaluation in the genetics clinic.",
+          "explanation": "1. Autosomal Recessive Carrier Probability among Unaffected Offspring: Among the healthy/unaffected children of two carriers (excluding the 25% homozygous affected [cc]), 2 out of 3 (66.7%) will be heterozygous carriers (Cc), while 1 out of 3 (33.3%) will be homozygous normal (CC).\n2. X-Linked Recessive: Carrier mothers have a 50% chance of transmitting the defective X to daughters, making them asymptomatic carriers. A female would only be clinically affected if her father had hemophilia and her mother was a carrier (or through non-random X-inactivation/Turner syndrome).\n3. Marfan Syndrome Management: Connective tissue deficiency cannot be cured; medical management focuses on lifelong serial echocardiography/MRI surveillance of aortic diameter and administration of beta-blockers or angiotensin receptor blockers (ARBs) to lower heart rate and blood pressure, reducing pulsatile aortic wall stress.",
           "dropdown_cloze": {
-            "sentences": [
-              "The nurse confirms the couple understands autosomal recessive transmission when they state that an unaffected child born to two carriers has a [drp1] probability of being a carrier like themselves.",
-              "Regarding X-linked inheritance, the nurse verifies comprehension when Maya states that her future daughters [drp2].",
-              "In reviewing the natural history of Marfan syndrome, the nurse confirms David understands that aortic root dilation requires [drp3]."
-            ],
             "dropdowns": [
               {
                 "id": "drp1",
@@ -6055,33 +6051,35 @@
                 ],
                 "correctIndex": 0
               }
+            ],
+            "sentences": [
+              "The nurse confirms the couple understands autosomal recessive transmission when they state that an unaffected child born to two carriers has a [drp1] probability of being a carrier like themselves.",
+              "Regarding X-linked inheritance, the nurse verifies comprehension when Maya states that her future daughters [drp2].",
+              "In reviewing the natural history of Marfan syndrome, the nurse confirms David understands that aortic root dilation requires [drp3]."
             ]
-          },
-          "options": [],
-          "preamble": "Post-counseling evaluation in the genetics clinic.",
-          "explanation": "1. Autosomal Recessive Carrier Probability among Unaffected Offspring: Among the healthy/unaffected children of two carriers (excluding the 25% homozygous affected [cc]), 2 out of 3 (66.7%) will be heterozygous carriers (Cc), while 1 out of 3 (33.3%) will be homozygous normal (CC).\n2. X-Linked Recessive: Carrier mothers have a 50% chance of transmitting the defective X to daughters, making them asymptomatic carriers. A female would only be clinically affected if her father had hemophilia and her mother was a carrier (or through non-random X-inactivation/Turner syndrome).\n3. Marfan Syndrome Management: Connective tissue deficiency cannot be cured; medical management focuses on lifelong serial echocardiography/MRI surveillance of aortic diameter and administration of beta-blockers or angiotensin receptor blockers (ARBs) to lower heart rate and blood pressure, reducing pulsatile aortic wall stress."
+          }
         },
         "leftContent": {
-          "intro": "Maya and David complete their follow-up questionnaire and summarize their key takeaways with the genetics nurse.",
           "tabs": [
             {
               "id": "nn_6",
               "title": "Nurses' Notes",
               "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">1530:</span><span class=\"nurse-note-text\">Final debriefing concluded. Maya and David verbalize accurate comprehension of their respective genetic transmission probabilities. They have decided to consult with a reproductive endocrinologist regarding PGD-IVF while David begins clinical management for Marfan syndrome with cardiology. Follow-up genetics appointment booked in 6 weeks to review full FBN1 gene sequencing and discuss family cascade testing for David's siblings.</span></p>"
             }
-          ]
+          ],
+          "intro": "Maya and David complete their follow-up questionnaire and summarize their key takeaways with the genetics nurse."
         }
       }
-    ]
+    ],
+    "disorder": "Unit 3 (Genetic and Developmental Disorders)",
+    "description": "Young couple presenting for preconception genetic counseling and health assessment with complex family history of Cystic Fibrosis (autosomal recessive), Marfan syndrome (autosomal dominant), and Hemophilia A (X-linked recessive)."
   },
   {
     "id": "case_1782370000003",
+    "unit": "Unit 3 (Genetic and Developmental Disorders)",
     "title": "NURS 1017 Unit 3 Case Study 3",
     "topic": "Unit 3 (Genetic and Developmental Disorders)",
-    "unit": "Unit 3 (Genetic and Developmental Disorders)",
-    "disorder": "Unit 3 (Genetic and Developmental Disorders)",
     "course": "NURS 1017",
-    "description": "Newborn infant presenting with intrauterine growth restriction, microcephaly, smooth philtrum, thin vermilion border, cleft lip, and sensorineural hearing impairment, prompting nursing analysis of teratogenic timing, TORCH infections, FAS, and multifactorial inheritance.",
     "screens": [
       {
         "step": 1,
@@ -6126,7 +6124,6 @@
           "explanation": "Cues indicative of prenatal teratogenic insult and congenital infection include: (1) Classic facial features of Fetal Alcohol Syndrome (FAS): smooth philtrum, thin vermilion border of the upper lip, short palpebral fissures, and low nasal bridge; (2) Microcephaly and symmetric intrauterine growth restriction (IUGR) reflecting impaired neuronal proliferation and cellular growth; (3) Cleft lip/palate, a multifactorial congenital defect influenced by genetic predisposition and early embryologic environmental insults; and (4) Hepatosplenomegaly and petechial/purpuric 'blueberry muffin' lesions (extramedullary hematopoiesis), which are classic hallmarks of intrauterine TORCH infections (e.g., Cytomegalovirus, Rubella, Toxoplasmosis). Macrosomia is associated with maternal gestational diabetes, not teratogenic fetal growth restriction."
         },
         "leftContent": {
-          "intro": "The nurse in the special care nursery is admitting infant Noah, a male newborn born at 37 weeks and 1 day gestation to a 23-year-old mother (Clara).",
           "tabs": [
             {
               "id": "nn_1",
@@ -6138,7 +6135,8 @@
               "title": "Vital Signs",
               "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Parameter</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Value (0630)</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Temperature</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.4 °C (axillary, under radiant warmer)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.5 – 37.5 °C</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Heart Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">158 bpm, regular</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">110 – 160 bpm</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Respiratory Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">56 breaths/min</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">30 – 60 breaths/min</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>SpO<sub>2</sub></b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">96% on room air</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">&ge; 95%</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Blood Glucose</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">2.4 mmol/L (43 mg/dL)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">&ge; 2.6 mmol/L (&ge; 47 mg/dL)</td></tr></tbody></table>"
             }
-          ]
+          ],
+          "intro": "The nurse in the special care nursery is admitting infant Noah, a male newborn born at 37 weeks and 1 day gestation to a 23-year-old mother (Clara)."
         }
       },
       {
@@ -6147,12 +6145,6 @@
           "stem": "The nurse analyzes the client's clinical presentation in relation to principles of teratology and congenital pathology. For each finding or exposure, click to specify whether it corresponds primarily to <b>Fetal Alcohol Spectrum / Alcohol Exposure</b>, <b>TORCH Congenital Infection</b>, or <b>Multifactorial / Polygenic Inheritance</b>.",
           "type": "matrix_mc",
           "matrix": {
-            "firstColumnHeader": "Clinical Finding / Prenatal Exposure",
-            "columns": [
-              "Fetal Alcohol Spectrum / Alcohol",
-              "TORCH Congenital Infection",
-              "Multifactorial / Polygenic"
-            ],
             "rows": [
               {
                 "text": "Smooth philtrum, exceptionally thin upper vermilion border, microcephaly, and neurobehavioral irritability",
@@ -6196,14 +6188,19 @@
                   2
                 ]
               }
-            ]
+            ],
+            "columns": [
+              "Fetal Alcohol Spectrum / Alcohol",
+              "TORCH Congenital Infection",
+              "Multifactorial / Polygenic"
+            ],
+            "firstColumnHeader": "Clinical Finding / Prenatal Exposure"
           },
           "options": [],
           "preamble": "Laboratory evaluations, serology, and cranial imaging results have been reported (see Diagnostic & Laboratory Reports tab).",
           "explanation": "1. Fetal Alcohol Spectrum Disorders (FASD): Maternal ethanol easily crosses the placenta, generating reactive oxygen species, suppressing protein synthesis, and damaging migrating neural crest cells. This results in the triad of facial dysmorphology (smooth philtrum, thin vermilion, short palpebral fissures), growth restriction, and CNS neurodevelopmental damage.\n2. TORCH Complex (Toxoplasmosis, Others, Rubella, Cytomegalovirus, Herpes simplex): Intrauterine pathogens cause chronic fetal infection characterized by hepatosplenomegaly, extramedullary cutaneous hematopoiesis ('blueberry muffin' rash), thrombocytopenia, intracranial calcifications, chorioretinitis, and microcephaly.\n3. Multifactorial / Polygenic Inheritance: Disorders such as cleft lip/palate, congenital heart defects, and neural tube defects do not follow strict Mendelian ratios; they arise from cumulative interactions among multiple additive genes plus environmental factors during vulnerable developmental windows.\n4. Toxoplasma gondii is an intracellular protozoan parasite (part of TORCH) contracted via handling cat litter or raw meat."
         },
         "leftContent": {
-          "intro": "Diagnostic tests and serological screening were obtained on infant Noah to evaluate for intrauterine infection and structural congenital anomalies.",
           "tabs": [
             {
               "id": "nn_2",
@@ -6215,7 +6212,8 @@
               "title": "Diagnostic & Laboratory Reports",
               "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Laboratory Test</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Result</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Hemoglobin</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">142 g/L</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">140 – 200 g/L</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Platelet Count</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">68 &times; 10<sup>9</sup>/L (Low)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">150 – 450 &times; 10<sup>9</sup>/L</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Total Bilirubin</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">112 &mu;mol/L (Elevated for 3 hrs)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">&lt; 85 &mu;mol/L</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Direct (Conjugated) Bilirubin</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">38 &mu;mol/L (Elevated)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">&lt; 10 &mu;mol/L</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Serum IgM CMV / Toxoplasma</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">CMV IgM Positive; Urine CMV PCR positive</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">Negative</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Cranial Ultrasound</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">Periventricular calcifications, microcephaly</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">Normal intracranial anatomy</td></tr></tbody></table>"
             }
-          ]
+          ],
+          "intro": "Diagnostic tests and serological screening were obtained on infant Noah to evaluate for intrauterine infection and structural congenital anomalies."
         }
       },
       {
@@ -6223,12 +6221,10 @@
         "question": {
           "stem": "The nurse synthesizes the timing of teratogenic injury and clinical findings to establish nursing care priorities.<br><br>Complete the following sentences by choosing from the lists of options.",
           "type": "dropdown_cloze",
+          "options": [],
+          "preamble": "",
+          "explanation": "1. Teratogenic Vulnerability: The first 8 weeks of gestation (the embryonic period) represent the critical window of organogenesis during which tissues and organs differentiate. Exposure to teratogens (alcohol, medications, infectious agents, radiation) during this period causes severe structural malformations (e.g., neural tube defects, heart anomalies, facial clefts). In contrast, teratogens in the fetal period (week 9 to term) primarily impair growth and physiological/organ maturation (e.g., microcephaly, functional CNS deficits).\n2. Congenital Cytomegalovirus (CMV): The leading non-genetic cause of sensorineural hearing loss and neurodevelopmental disability in children. Intracranial periventricular calcifications reflect necrosis and inflammation of germinal matrix tissues.\n3. Cleft Lip Nursing Priorities: Infants with cleft lip struggle to achieve an airtight seal around a standard nipple, causing excessive air swallowing (aerophagia), nasal regurgitation, fatigue, inadequate caloric intake, and aspiration.",
           "dropdown_cloze": {
-            "sentences": [
-              "The developing human conceptus is most vulnerable to major structural malformations caused by teratogenic agents during [drp1], when basic organogenesis is occurring.",
-              "The positive urine CMV PCR and periventricular calcifications indicate congenital cytomegalovirus infection, which places infant Noah at highest long-term risk for [drp2].",
-              "In managing the infant's unilateral cleft lip defect during enteral feeding, the primary nursing concern is preventing [drp3]."
-            ],
             "dropdowns": [
               {
                 "id": "drp1",
@@ -6263,14 +6259,15 @@
                 ],
                 "correctIndex": 0
               }
+            ],
+            "sentences": [
+              "The developing human conceptus is most vulnerable to major structural malformations caused by teratogenic agents during [drp1], when basic organogenesis is occurring.",
+              "The positive urine CMV PCR and periventricular calcifications indicate congenital cytomegalovirus infection, which places infant Noah at highest long-term risk for [drp2].",
+              "In managing the infant's unilateral cleft lip defect during enteral feeding, the primary nursing concern is preventing [drp3]."
             ]
-          },
-          "options": [],
-          "preamble": "",
-          "explanation": "1. Teratogenic Vulnerability: The first 8 weeks of gestation (the embryonic period) represent the critical window of organogenesis during which tissues and organs differentiate. Exposure to teratogens (alcohol, medications, infectious agents, radiation) during this period causes severe structural malformations (e.g., neural tube defects, heart anomalies, facial clefts). In contrast, teratogens in the fetal period (week 9 to term) primarily impair growth and physiological/organ maturation (e.g., microcephaly, functional CNS deficits).\n2. Congenital Cytomegalovirus (CMV): The leading non-genetic cause of sensorineural hearing loss and neurodevelopmental disability in children. Intracranial periventricular calcifications reflect necrosis and inflammation of germinal matrix tissues.\n3. Cleft Lip Nursing Priorities: Infants with cleft lip struggle to achieve an airtight seal around a standard nipple, causing excessive air swallowing (aerophagia), nasal regurgitation, fatigue, inadequate caloric intake, and aspiration."
+          }
         },
         "leftContent": {
-          "intro": "The nurse reviews principles of developmental embryology and client status to prioritize nursing diagnoses and anticipate clinical complications.",
           "tabs": [
             {
               "id": "nn_3",
@@ -6282,7 +6279,8 @@
               "title": "Teratology Principles Chart",
               "content": "<div style=\"border:1px solid #ccd8e0; border-radius:6px; padding:12px; background:#f8fafc;\"><h4 style=\"margin-top:0; color:#025287;\">Principles of Teratology:</h4><ul style=\"line-height:1.6;\"><li><b>Pre-implantation (Day 0–14):</b> 'All-or-none' phenomenon (lethal damage or complete recovery without malformation).</li><li><b>Embryonic Period (Weeks 3–8):</b> Peak susceptibility to major structural anomalies across all organ systems (CNS, heart, limbs, eyes, palate).</li><li><b>Fetal Period (Week 9 to Term):</b> Susceptibility to functional defects, growth restriction, and microcephaly.</li><li><b>Multifactorial Threshold:</b> Combined gene-environment interactions govern liability to defects like cleft lip/palate.</li></ul></div>"
             }
-          ]
+          ],
+          "intro": "The nurse reviews principles of developmental embryology and client status to prioritize nursing diagnoses and anticipate clinical complications."
         }
       },
       {
@@ -6324,7 +6322,6 @@
           "explanation": "Appropriate nursing interventions include: (1) Utilizing specialty cleft feeders with assisted squeezes and gentle cheek support to compensate for the absent lip seal; (2) Frequent burping to expel swallowed air resulting from poor suction; (3) Implementing bleeding precautions (soft handling, monitoring for petechiae/hematuria, minimizing venipunctures/IM injections) due to thrombocytopenia (platelets 68 &times; 109/L); (4) Minimizing sensory stimulation (dim lighting, clustering care, swaddling) for neurobehavioral irritability/tremulousness characteristic of neonatal alcohol withdrawal and CNS teratogenicity; and (5) Fostering maternal-infant attachment through compassionate, nonjudgmental support. Feeding infants flat supine is strictly contraindicated due to high aspiration and choking risk. Scolding or shaming the mother is unprofessional, destroys therapeutic rapport, and impedes infant care."
         },
         "leftContent": {
-          "intro": "The nurse collaborates with the neonatal feeding specialist, social worker, and pediatrician to structure the nursing care plan.",
           "tabs": [
             {
               "id": "nn_4",
@@ -6336,7 +6333,8 @@
               "title": "Clinical Pathway",
               "content": "<p><b>Interprofessional Care Plan:</b></p><ul><li><b>Neonatal Feeding:</b> Upright positioning, cleft palate bottle, burp q15–30 mL, strict aspiration precautions.</li><li><b>Infection Control / CMV:</b> Standard precautions (CMV shedding in saliva and urine; pregnant healthcare staff must avoid direct urine/saliva contact). IV ganciclovir per protocol.</li><li><b>Hematology:</b> Daily CBC to monitor platelets; avoid IM injections while platelets &lt; 100 &times; 10<sup>9</sup>/L.</li><li><b>Plastic Surgery / Craniofacial:</b> Consult for cleft lip repair timeline (typically rule of 10s: 10 weeks, 10 lbs, Hb 10 g/dL).</li></ul>"
             }
-          ]
+          ],
+          "intro": "The nurse collaborates with the neonatal feeding specialist, social worker, and pediatrician to structure the nursing care plan."
         }
       },
       {
@@ -6345,12 +6343,6 @@
           "stem": "The nurse reviews orders and safety protocols for infant Noah. For each nursing action, click to specify whether the action is <b>Indicated</b>, <b>Non-Essential</b>, or <b>Contraindicated</b>.",
           "type": "matrix_mc",
           "matrix": {
-            "firstColumnHeader": "Nursing Action",
-            "columns": [
-              "Indicated",
-              "Non-Essential",
-              "Contraindicated"
-            ],
             "rows": [
               {
                 "text": "Maintain standard precautions and wear gloves during diaper changes due to urinary cytomegalovirus viral shedding",
@@ -6394,14 +6386,19 @@
                   1
                 ]
               }
-            ]
+            ],
+            "columns": [
+              "Indicated",
+              "Non-Essential",
+              "Contraindicated"
+            ],
+            "firstColumnHeader": "Nursing Action"
           },
           "options": [],
           "preamble": "The nurse is preparing medications and setting up safety measures on Day of Life 2.",
           "explanation": "1. Indicated: CMV is shed in high titers in urine and saliva; meticulous standard precautions and gloves during diaper changes prevent nosocomial transmission (especially critical for pregnant healthcare personnel).\n2. Indicated: IV ganciclovir treats symptomatic congenital CMV (reducing hearing and neurodevelopmental deterioration); it requires controlled infusion via pump and site assessment to avoid phlebitis/extravasation.\n3. Contraindicated: CMV is transmitted via body fluid contact (urine, saliva), not airborne droplet nuclei; airborne negative pressure isolation is inappropriate and wasteful.\n4. Indicated: Prolonged firm pressure after puncture is required due to thrombocytopenia (platelets 68 &times; 109/L) to prevent hematoma and continued oozing.\n5. Contraindicated: Repeated skull X-rays deliver unnecessary ionizing radiation (which itself is a known mutagen/teratogen) without clinical benefit; microcephaly is monitored non-invasively with a measuring tape.\n6. Non-Essential: Continuous SpO2 during feeds is non-essential for an infant without cardiopulmonary failure or baseline desaturations."
         },
         "leftContent": {
-          "intro": "Infant Noah is now 36 hours old (Day of Life 2). The nurse is administering scheduled therapies and coordinating safety precautions.",
           "tabs": [
             {
               "id": "nn_5",
@@ -6413,7 +6410,8 @@
               "title": "Vital Signs",
               "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Parameter</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Current Value (DOL 2)</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Target Range</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Temperature</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.8 °C (axillary)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.5 – 37.5 °C</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Heart Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">144 bpm</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">110 – 160 bpm</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Respiratory Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">46 breaths/min</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">30 – 60 breaths/min</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>SpO<sub>2</sub></b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">98% on room air</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">&ge; 95%</td></tr></tbody></table>"
             }
-          ]
+          ],
+          "intro": "Infant Noah is now 36 hours old (Day of Life 2). The nurse is administering scheduled therapies and coordinating safety precautions."
         }
       },
       {
@@ -6421,12 +6419,10 @@
         "question": {
           "stem": "The nurse conducts discharge counseling and prepares the family for community support and developmental surveillance.<br><br>Complete the following sentences by choosing from the lists of options.",
           "type": "dropdown_cloze",
+          "options": [],
+          "preamble": "Discharge preparation and health promotion teaching on Day of Life 3.",
+          "explanation": "1. Fetal Alcohol Exposure Education: There is no known safe threshold, dose, or gestational timing for alcohol consumption during pregnancy. Abstinence from alcohol throughout pregnancy and when attempting to conceive is the only proven preventive measure.\n2. Toxoplasmosis Prevention: Toxoplasma gondii oocysts are shed in feline feces and cysts are found in undercooked meat. Prevention involves having someone else change cat litter, washing hands thoroughly after gardening/soil exposure, and cooking meats to safe internal temperatures (> 66–74 °C). No human vaccine exists for toxoplasmosis.\n3. Cleft Lip Surgical Timing: Cheiloplasty (cleft lip repair) is typically performed at approximately 10 to 12 weeks of age, guided by the traditional 'rule of 10s' (age at least 10 weeks, weight at least 10 pounds [4.5 kg], hemoglobin at least 10 g/dL [100 g/L], and WBC < 10,000) to ensure surgical and anesthetic safety. In contrast, cleft palate repair is typically performed later, between 9 and 18 months, before significant speech development.",
           "dropdown_cloze": {
-            "sentences": [
-              "In educating the mother regarding Fetal Alcohol Spectrum Disorders, the nurse emphasizes that safe alcohol consumption during pregnancy is [drp1].",
-              "Regarding the prevention of congenital toxoplasmosis in future pregnancies, the nurse instructs the mother to [drp2].",
-              "The nurse explains that surgical reconstruction for the infant's cleft lip is typically planned at around [drp3], provided the infant meets physiological growth and stability criteria."
-            ],
             "dropdowns": [
               {
                 "id": "drp1",
@@ -6461,14 +6457,15 @@
                 ],
                 "correctIndex": 0
               }
+            ],
+            "sentences": [
+              "In educating the mother regarding Fetal Alcohol Spectrum Disorders, the nurse emphasizes that safe alcohol consumption during pregnancy is [drp1].",
+              "Regarding the prevention of congenital toxoplasmosis in future pregnancies, the nurse instructs the mother to [drp2].",
+              "The nurse explains that surgical reconstruction for the infant's cleft lip is typically planned at around [drp3], provided the infant meets physiological growth and stability criteria."
             ]
-          },
-          "options": [],
-          "preamble": "Discharge preparation and health promotion teaching on Day of Life 3.",
-          "explanation": "1. Fetal Alcohol Exposure Education: There is no known safe threshold, dose, or gestational timing for alcohol consumption during pregnancy. Abstinence from alcohol throughout pregnancy and when attempting to conceive is the only proven preventive measure.\n2. Toxoplasmosis Prevention: Toxoplasma gondii oocysts are shed in feline feces and cysts are found in undercooked meat. Prevention involves having someone else change cat litter, washing hands thoroughly after gardening/soil exposure, and cooking meats to safe internal temperatures (> 66–74 °C). No human vaccine exists for toxoplasmosis.\n3. Cleft Lip Surgical Timing: Cheiloplasty (cleft lip repair) is typically performed at approximately 10 to 12 weeks of age, guided by the traditional 'rule of 10s' (age at least 10 weeks, weight at least 10 pounds [4.5 kg], hemoglobin at least 10 g/dL [100 g/L], and WBC < 10,000) to ensure surgical and anesthetic safety. In contrast, cleft palate repair is typically performed later, between 9 and 18 months, before significant speech development."
+          }
         },
         "leftContent": {
-          "intro": "Infant Noah is 72 hours old (DOL 3). Discharge planning is being coordinated with pediatric infectious disease, audiology, plastic surgery, and infant developmental services.",
           "tabs": [
             {
               "id": "nn_6",
@@ -6480,9 +6477,12 @@
               "title": "Interprofessional Discharge Plan",
               "content": "<div style=\"margin-bottom:8px;\"><b>Diagnoses:</b> Small for gestational age (term, 37 weeks); Microcephaly; Prenatal alcohol exposure / Suspected Fetal Alcohol Spectrum Disorder; Congenital Cytomegalovirus (CMV) infection (treated with ganciclovir); Unilateral cleft lip (left); Sensorineural hearing impairment (pending confirmatory ABR).</div><div><b>Follow-Up Schedule:</b> Pediatric primary care in 48 hours. Plastic Surgery clinic in 4 weeks for cheiloplasty planning. Infectious Disease clinic in 2 weeks. Comprehensive Infant Developmental Assessment at 3 months.</div>"
             }
-          ]
+          ],
+          "intro": "Infant Noah is 72 hours old (DOL 3). Discharge planning is being coordinated with pediatric infectious disease, audiology, plastic surgery, and infant developmental services."
         }
       }
-    ]
+    ],
+    "disorder": "Unit 3 (Genetic and Developmental Disorders)",
+    "description": "Newborn infant presenting with intrauterine growth restriction, microcephaly, smooth philtrum, thin vermilion border, cleft lip, and sensorineural hearing impairment, prompting nursing analysis of teratogenic timing, TORCH infections, FAS, and multifactorial inheritance."
   }
 ]

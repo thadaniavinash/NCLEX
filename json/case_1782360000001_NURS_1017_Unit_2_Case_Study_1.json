@@ -1,11 +1,9 @@
 {
   "id": "case_1782360000001",
+  "unit": "Unit 2 (Cellular Basis of Disease)",
   "title": "NURS 1017 Unit 2 Case Study 1",
   "topic": "Unit 2 (Cellular Basis of Disease)",
-  "unit": "Unit 2 (Cellular Basis of Disease)",
-  "disorder": "Unit 2 (Cellular Basis of Disease)",
   "course": "NURS 1017",
-  "description": "58-year-old male with chronic GERD, smoking, and hypertension presenting with Barrett's metaplasia, bronchial squamous metaplasia, and left ventricular hypertrophy.",
   "screens": [
     {
       "step": 1,
@@ -42,7 +40,6 @@
         "explanation": "Cellular adaptations are reversible changes in cell size, number, phenotype, metabolic activity, or organization in response to altered physiological demand or chronic environmental stress. In this client, adaptations include: (1) Barrett's esophagus—glandular metaplasia of esophageal stratified squamous epithelium to columnar epithelium to better tolerate acidic gastric juice; (2) Squamous metaplasia of respiratory pseudostratified ciliated columnar epithelium to stratified squamous epithelium due to chronic cigarette smoke; (3) Left ventricular hypertrophy—increased cardiomyocyte size in response to chronic hemodynamic afterload; and (4) Disuse atrophy—shrinkage of skeletal muscle cells from decreased functional demand during casting. High fever with purulent sputum indicates acute infection/inflammation, while shock indicates cardiovascular collapse, neither of which represents an adaptive cellular response."
       },
       "leftContent": {
-        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
         "tabs": [
           {
             "id": "nn_1",
@@ -54,7 +51,8 @@
             "title": "Vital Signs",
             "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Vital Sign</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Outpatient Clinic (Today, 0800)</th><th style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Reference Range</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Temperature</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.8 °C (oral)</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">36.5 – 37.5 °C</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Heart Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">82 bpm, regular</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">60 – 100 bpm</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Respiratory Rate</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">18 breaths/min</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">12 – 20 breaths/min</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Blood Pressure</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">158/94 mmHg</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">&lt; 120/80 mmHg</td></tr><tr><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\"><b>Oxygen Saturation (SpO<sub>2</sub>)</b></td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">95% on room air</td><td style=\"border:1px solid #ccd8e0; padding:8px; background:white; color:#1e293b;\">95 – 100%</td></tr></tbody></table>"
           }
-        ]
+        ],
+        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath."
       }
     },
     {
@@ -63,13 +61,6 @@
         "stem": "The nurse analyzes the client's clinical and diagnostic findings. For each finding, click to specify the corresponding <b>cellular adaptation or tissue alteration</b>.",
         "type": "matrix_mc",
         "matrix": {
-          "firstColumnHeader": "Clinical & Pathological Finding",
-          "columns": [
-            "Atrophy",
-            "Hypertrophy",
-            "Metaplasia",
-            "Dysplasia"
-          ],
           "rows": [
             {
               "text": "Left ventricular myocardial wall thickness of 1.5 cm in response to chronic elevated systemic vascular resistance",
@@ -106,14 +97,20 @@
                 3
               ]
             }
-          ]
+          ],
+          "columns": [
+            "Atrophy",
+            "Hypertrophy",
+            "Metaplasia",
+            "Dysplasia"
+          ],
+          "firstColumnHeader": "Clinical & Pathological Finding"
         },
         "options": [],
         "preamble": "Endoscopy, echocardiography, and biopsy pathology reports have been added to the client's chart (see Diagnostic Reports tab).",
         "explanation": "1. Hypertrophy: Increase in individual cell size resulting in overall organ enlargement, typical in non-dividing cells like cardiac myocytes adapting to chronic pressure overload (hypertension).\n2. Metaplasia: Reversible transformation of one differentiated adult cell type into another differentiated cell type that better withstands a noxious microenvironment (e.g., columnar epithelium replacing squamous in the esophagus, or squamous replacing ciliated columnar in bronchial airways).\n3. Atrophy: Reduction in cell size and functional capacity due to decreased workload/disuse, loss of innervation, or diminished blood supply.\n4. Dysplasia: Disordered growth and maturation characterized by variation in cellular size and shape, hyperchromatic enlarged nuclei, and architectural disarray; it is a pre-malignant alteration that may progress to neoplasia."
       },
       "leftContent": {
-        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
         "tabs": [
           {
             "id": "nn_1",
@@ -125,7 +122,8 @@
             "title": "Diagnostic Reports",
             "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Upper Endoscopy (EGD) & Mucosal Biopsy:</b><br>Esophagitis with salmon-pink mucosal tongues extending 3.5 cm circumferentially above the gastroesophageal junction. Biopsy confirms Barrett's esophagus with intestinal metaplasia (stratified squamous epithelium replaced by glandular columnar epithelium containing goblet cells). Focal areas demonstrate low-grade dysplasia with cellular pleomorphism, nuclear enlargement, and hyperchromatism, without invasion through the basement membrane.</p><p style=\"margin-top:10px;\"><b>Bronchoscopy & Endobronchial Biopsy:</b><br>Right and left mainstem bronchi demonstrate erythematous, friable mucosa with loss of glistening ciliated surface. Biopsy reveals squamous metaplasia: respiratory ciliated pseudostratified columnar epithelium has been replaced by multi-layered stratified squamous epithelium.</p><p style=\"margin-top:10px;\"><b>Transthoracic Echocardiogram:</b><br>Concentric left ventricular hypertrophy (LVH). Interventricular septal wall thickness: 1.5 cm (reference: 0.6–1.1 cm). Left ventricular posterior wall thickness: 1.4 cm (reference: 0.6–1.1 cm). Estimated ejection fraction: 58%. Grade I diastolic dysfunction consistent with chronic systemic arterial hypertension.</p></div>"
           }
-        ]
+        ],
+        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath."
       }
     },
     {
@@ -137,7 +135,6 @@
           "text": "Metaplasia is defined as the [[drop0]] conversion of one differentiated cell type to another in response to chronic persistent injury. In the client's airways, replacement of ciliated columnar cells with stratified squamous epithelium protects against smoke but results in loss of [[drop1]]. If the chronic noxious irritation is not removed, the tissue can evolve into [[drop2]], which is characterized by disordered maturation and cellular pleomorphism. In severe cases, progression to autonomous malignant tissue with complete loss of cellular differentiation is termed [[drop3]].",
           "dropdowns": [
             {
-              "placeholder": "Select...",
               "options": [
                 {
                   "text": "reversible",
@@ -151,10 +148,10 @@
                   "text": "malignant",
                   "correct": false
                 }
-              ]
+              ],
+              "placeholder": "Select..."
             },
             {
-              "placeholder": "Select...",
               "options": [
                 {
                   "text": "mucociliary clearance and protection",
@@ -168,10 +165,10 @@
                   "text": "alveolar surfactant production",
                   "correct": false
                 }
-              ]
+              ],
+              "placeholder": "Select..."
             },
             {
-              "placeholder": "Select...",
               "options": [
                 {
                   "text": "dysplasia",
@@ -185,10 +182,10 @@
                   "text": "hyperplasia",
                   "correct": false
                 }
-              ]
+              ],
+              "placeholder": "Select..."
             },
             {
-              "placeholder": "Select...",
               "options": [
                 {
                   "text": "anaplasia",
@@ -202,7 +199,8 @@
                   "text": "metaplasia",
                   "correct": false
                 }
-              ]
+              ],
+              "placeholder": "Select..."
             }
           ]
         },
@@ -211,7 +209,6 @@
         "explanation": "Metaplasia is fundamentally a reversible adaptive response where one differentiated cell type (e.g., ciliated columnar in bronchial airways, or stratified squamous in esophagus) is substituted by another differentiated cell type that better tolerates the chronic injury. However, in the lungs, squamous epithelium lacks cilia and mucus-producing goblet cells, eliminating vital mucociliary clearance and predisposing to chronic mucous plugging and recurrent infections. If the noxious stimulus persists, metaplasia can progress to dysplasia ('disordered growth'), characterized by loss of architectural uniformity and cellular pleomorphism—a recognized pre-cancerous condition. When malignant transformation occurs and cells completely lose cellular differentiation, orientation, and specialized function, it is termed anaplasia, the hallmark of malignant neoplasms."
       },
       "leftContent": {
-        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
         "tabs": [
           {
             "id": "nn_1",
@@ -223,7 +220,8 @@
             "title": "Diagnostic Reports",
             "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Upper Endoscopy (EGD) & Mucosal Biopsy:</b><br>Esophagitis with salmon-pink mucosal tongues extending 3.5 cm circumferentially above the gastroesophageal junction. Biopsy confirms Barrett's esophagus with intestinal metaplasia (stratified squamous epithelium replaced by glandular columnar epithelium containing goblet cells). Focal areas demonstrate low-grade dysplasia with cellular pleomorphism, nuclear enlargement, and hyperchromatism, without invasion through the basement membrane.</p><p style=\"margin-top:10px;\"><b>Bronchoscopy & Endobronchial Biopsy:</b><br>Right and left mainstem bronchi demonstrate erythematous, friable mucosa with loss of glistening ciliated surface. Biopsy reveals squamous metaplasia: respiratory ciliated pseudostratified columnar epithelium has been replaced by multi-layered stratified squamous epithelium.</p><p style=\"margin-top:10px;\"><b>Transthoracic Echocardiogram:</b><br>Concentric left ventricular hypertrophy (LVH). Interventricular septal wall thickness: 1.5 cm (reference: 0.6–1.1 cm). Left ventricular posterior wall thickness: 1.4 cm (reference: 0.6–1.1 cm). Estimated ejection fraction: 58%. Grade I diastolic dysfunction consistent with chronic systemic arterial hypertension.</p></div>"
           }
-        ]
+        ],
+        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath."
       }
     },
     {
@@ -261,7 +259,6 @@
         "explanation": "Nursing interventions for clients with adaptive cellular responses and low-grade dysplasia focus on removing noxious stimuli, administering prescribed protective therapies, and health teaching: (1) Smoking cessation education removes toxic combustion products, allowing respiratory stem cells to regenerate ciliated columnar morphology; (2) Administering prescribed PPIs reduces chemical acid/peptic injury to the distal esophagus; (3) Elevating the head of the bed and meal timing physically reduces nocturnal reflux; (4) Administering prescribed antihypertensives lowers systemic afterload, halting or regressing left ventricular hypertrophy; (5) Reinforcing surveillance endoscopy ensures early detection if dysplasia advances. Preparing for esophagectomy and radiation is incorrect, as radical surgery and radiotherapy are reserved for invasive malignancy, not low-grade pre-invasive dysplasia."
       },
       "leftContent": {
-        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
         "tabs": [
           {
             "id": "nn_1",
@@ -273,7 +270,8 @@
             "title": "Diagnostic Reports",
             "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Upper Endoscopy (EGD) & Mucosal Biopsy:</b><br>Esophagitis with salmon-pink mucosal tongues extending 3.5 cm circumferentially above the gastroesophageal junction. Biopsy confirms Barrett's esophagus with intestinal metaplasia (stratified squamous epithelium replaced by glandular columnar epithelium containing goblet cells). Focal areas demonstrate low-grade dysplasia with cellular pleomorphism, nuclear enlargement, and hyperchromatism, without invasion through the basement membrane.</p><p style=\"margin-top:10px;\"><b>Bronchoscopy & Endobronchial Biopsy:</b><br>Right and left mainstem bronchi demonstrate erythematous, friable mucosa with loss of glistening ciliated surface. Biopsy reveals squamous metaplasia: respiratory ciliated pseudostratified columnar epithelium has been replaced by multi-layered stratified squamous epithelium.</p><p style=\"margin-top:10px;\"><b>Transthoracic Echocardiogram:</b><br>Concentric left ventricular hypertrophy (LVH). Interventricular septal wall thickness: 1.5 cm (reference: 0.6–1.1 cm). Left ventricular posterior wall thickness: 1.4 cm (reference: 0.6–1.1 cm). Estimated ejection fraction: 58%. Grade I diastolic dysfunction consistent with chronic systemic arterial hypertension.</p></div>"
           }
-        ]
+        ],
+        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath."
       }
     },
     {
@@ -282,12 +280,6 @@
         "stem": "The nurse is taking action to provide discharge counseling and education to Arthur. For each nursing action or client instruction, click to specify whether it is <b>Indicated</b>, <b>Non-Essential</b>, or <b>Contraindicated</b>.",
         "type": "matrix_mc",
         "matrix": {
-          "firstColumnHeader": "Nursing Action / Client Instruction",
-          "columns": [
-            "Indicated",
-            "Non-Essential",
-            "Contraindicated"
-          ],
           "rows": [
             {
               "text": "Educate the client that he can stop taking prescribed proton pump inhibitors once his heartburn symptoms resolve for 3 consecutive days",
@@ -324,14 +316,19 @@
                 2
               ]
             }
-          ]
+          ],
+          "columns": [
+            "Indicated",
+            "Non-Essential",
+            "Contraindicated"
+          ],
+          "firstColumnHeader": "Nursing Action / Client Instruction"
         },
         "options": [],
         "preamble": "The nurse conducts a targeted patient education and discharge counseling session with Arthur.",
         "explanation": "1. Contraindicated: Acid suppression in Barrett's esophagus must be maintained continuously as prescribed; chemical acid exposure continues to cause DNA damage even if sensory nerve endings become desensitized.\n2. Indicated: Progressive dysphagia, weight loss, or hematemesis are alarm cues suggesting esophageal stricture or adenocarcinoma progression, warranting immediate medical evaluation.\n3. Indicated: Nocturnal head-of-bed elevation utilizes gravity to prevent retrograde acid flow and pooling in the esophagus.\n4. Non-Essential: Weekly CT scans deliver unnecessary radiation and are non-essential; annual low-dose chest CT is the standard screening protocol for high-risk smokers.\n5. Contraindicated: While metaplasia is an adaptive response that is initially non-malignant, persistent chronic injury causes genetic mutations leading to pre-malignant dysplasia and potential progression to adenocarcinoma."
       },
       "leftContent": {
-        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
         "tabs": [
           {
             "id": "nn_1",
@@ -343,7 +340,8 @@
             "title": "Diagnostic Reports",
             "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Upper Endoscopy (EGD) & Mucosal Biopsy:</b><br>Esophagitis with salmon-pink mucosal tongues extending 3.5 cm circumferentially above the gastroesophageal junction. Biopsy confirms Barrett's esophagus with intestinal metaplasia (stratified squamous epithelium replaced by glandular columnar epithelium containing goblet cells). Focal areas demonstrate low-grade dysplasia with cellular pleomorphism, nuclear enlargement, and hyperchromatism, without invasion through the basement membrane.</p><p style=\"margin-top:10px;\"><b>Bronchoscopy & Endobronchial Biopsy:</b><br>Right and left mainstem bronchi demonstrate erythematous, friable mucosa with loss of glistening ciliated surface. Biopsy reveals squamous metaplasia: respiratory ciliated pseudostratified columnar epithelium has been replaced by multi-layered stratified squamous epithelium.</p><p style=\"margin-top:10px;\"><b>Transthoracic Echocardiogram:</b><br>Concentric left ventricular hypertrophy (LVH). Interventricular septal wall thickness: 1.5 cm (reference: 0.6–1.1 cm). Left ventricular posterior wall thickness: 1.4 cm (reference: 0.6–1.1 cm). Estimated ejection fraction: 58%. Grade I diastolic dysfunction consistent with chronic systemic arterial hypertension.</p></div>"
           }
-        ]
+        ],
+        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath."
       }
     },
     {
@@ -355,7 +353,6 @@
           "text": "At Arthur's 12-month follow-up, successful smoking cessation has allowed his bronchial mucosa to reverse squamous metaplasia and regenerate normal [[drop0]] epithelium. Strict blood pressure control has arrested further progression of [[drop1]]. A repeat endoscopy revealing regression of low-grade dysplasia and stabilization of mucosal architecture confirms that early cellular adaptations and dysplasia are [[drop2]] when the initiating chronic stressor is eliminated.",
           "dropdowns": [
             {
-              "placeholder": "Select...",
               "options": [
                 {
                   "text": "pseudostratified ciliated columnar",
@@ -369,10 +366,10 @@
                   "text": "transitional",
                   "correct": false
                 }
-              ]
+              ],
+              "placeholder": "Select..."
             },
             {
-              "placeholder": "Select...",
               "options": [
                 {
                   "text": "left ventricular hypertrophy",
@@ -386,10 +383,10 @@
                   "text": "prostatic hyperplasia",
                   "correct": false
                 }
-              ]
+              ],
+              "placeholder": "Select..."
             },
             {
-              "placeholder": "Select...",
               "options": [
                 {
                   "text": "reversible",
@@ -403,7 +400,8 @@
                   "text": "permanent and irreversible",
                   "correct": false
                 }
-              ]
+              ],
+              "placeholder": "Select..."
             }
           ]
         },
@@ -412,7 +410,6 @@
         "explanation": "The removal of noxious stimuli allows tissues with dividing stem cell populations to reverse adaptive metaplasia and early low-grade dysplasia. In the respiratory tract, differentiated pseudostratified ciliated columnar epithelium is regenerated by basal stem cells once tobacco smoke toxins are eliminated. Similarly, lowering systemic blood pressure decreases myocardial wall tension, reversing hemodynamic overload and halting left ventricular hypertrophy. This clinical case illustrates the fundamental pathophysiological principle: cellular adaptation and mild dysplasia are reversible upon removal of environmental stressors, preventing progression to irreversible malignant neoplasia."
       },
       "leftContent": {
-        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath.",
         "tabs": [
           {
             "id": "nn_1",
@@ -424,8 +421,11 @@
             "title": "Diagnostic Reports",
             "content": "<div style=\"padding:6px; font-size:13px; line-height:1.5;\"><p><b>Upper Endoscopy (EGD) & Mucosal Biopsy:</b><br>Esophagitis with salmon-pink mucosal tongues extending 3.5 cm circumferentially above the gastroesophageal junction. Biopsy confirms Barrett's esophagus with intestinal metaplasia (stratified squamous epithelium replaced by glandular columnar epithelium containing goblet cells). Focal areas demonstrate low-grade dysplasia with cellular pleomorphism, nuclear enlargement, and hyperchromatism, without invasion through the basement membrane.</p><p style=\"margin-top:10px;\"><b>Bronchoscopy & Endobronchial Biopsy:</b><br>Right and left mainstem bronchi demonstrate erythematous, friable mucosa with loss of glistening ciliated surface. Biopsy reveals squamous metaplasia: respiratory ciliated pseudostratified columnar epithelium has been replaced by multi-layered stratified squamous epithelium.</p><p style=\"margin-top:10px;\"><b>Transthoracic Echocardiogram:</b><br>Concentric left ventricular hypertrophy (LVH). Interventricular septal wall thickness: 1.5 cm (reference: 0.6–1.1 cm). Left ventricular posterior wall thickness: 1.4 cm (reference: 0.6–1.1 cm). Estimated ejection fraction: 58%. Grade I diastolic dysfunction consistent with chronic systemic arterial hypertension.</p></div>"
           }
-        ]
+        ],
+        "intro": "The nurse in an outpatient gastroenterology and pulmonology clinic is reviewing the clinical records of Arthur Vance, a 58-year-old male presenting for evaluation of chronic gastroesophageal reflux disease (GERD), long-standing cigarette smoking, and progressive exertional shortness of breath."
       }
     }
-  ]
+  ],
+  "disorder": "Unit 2 (Cellular Basis of Disease)",
+  "description": "58-year-old male with chronic GERD, smoking, and hypertension presenting with Barrett's metaplasia, bronchial squamous metaplasia, and left ventricular hypertrophy."
 }

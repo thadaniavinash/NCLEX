@@ -1,7 +1,9 @@
 {
   "id": "case_1782159166328",
+  "unit": "Unit 3 (Respiratory Disorders)",
   "title": "New Case Study",
   "topic": "Unit 3 (Respiratory Disorders)",
+  "course": "NURS 1021",
   "screens": [
     {
       "step": 1,
@@ -424,7 +426,5 @@
   ],
   "disorder": "Unit 3 (Respiratory Disorders)",
   "description": "",
-  "availability": "all",
-  "course": "NURS 1021",
-  "unit": "Unit 3 (Respiratory Disorders)"
+  "availability": "all"
 }
