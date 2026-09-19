@@ -1,9 +1,9 @@
 {
   "id": "case_1781741217820",
-  "unit": "Unit 6 (Gastrointestinal Disorders)",
+  "unit": "Others",
   "title": "NCSBN - Case Study 1",
-  "topic": "Unit 6 (Gastrointestinal Disorders)",
-  "course": "NURS 1021",
+  "topic": "Others",
+  "course": "Others",
   "screens": [
     {
       "step": 1,
@@ -420,7 +420,7 @@
       }
     }
   ],
-  "disorder": "Unit 6 (Gastrointestinal Disorders)",
+  "disorder": "Others",
   "description": "",
   "availability": "all"
 }

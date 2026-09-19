@@ -1,7 +1,7 @@
 {
   "id": "standalone_1781741057902",
   "title": "Neurological Disorders - Alzheimer's Disease (MCQ)",
-  "topic": "Unit 7 (Neurological Disorders)",
+  "topic": "Others",
   "screens": [
     {
       "step": 1,
@@ -35,10 +35,10 @@
       }
     }
   ],
-  "disorder": "Unit 7 (Neurological Disorders)",
+  "disorder": "Others",
   "description": "",
   "availability": "all",
   "isStandalone": true,
-  "course": "NURS 1017",
-  "unit": "Unit 7 (Neurological Disorders)"
+  "course": "Others",
+  "unit": "Others"
 }

@@ -154,9 +154,11 @@
       }
     }
   ],
-  "disorder": "Neurological Disorders",
+  "disorder": "Others",
   "description": "Emergency management and assessment of an acute neurological event (Ischemic Stroke).",
   "isStandalone": true,
-  "topic": "Neurological Disorders",
-  "availability": "all"
+  "topic": "Others",
+  "availability": "all",
+  "course": "Others",
+  "unit": "Others"
 }

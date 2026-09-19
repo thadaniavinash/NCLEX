@@ -1,12 +1,23 @@
 {
-  "id": "standalone_1782309032227",
-  "title": "New Stand-alone Question",
+  "id": "case_1781285254218",
+  "title": "New Case Study",
+  "description": "",
   "screens": [
     {
       "step": 1,
+      "leftContent": {
+        "intro": "",
+        "tabs": [
+          {
+            "id": "nn_1781285254218",
+            "title": "Nurses' Notes",
+            "content": ""
+          }
+        ]
+      },
       "question": {
-        "stem": "",
         "type": "select_all",
+        "stem": "",
         "options": [
           {
             "text": "",
@@ -29,18 +40,13 @@
             "correct": false
           }
         ],
-        "explanation": ""
-      },
-      "leftContent": {
-        "tabs": [],
-        "intro": ""
+        "explanation": "",
+        "preamble": ""
       }
     }
   ],
-  "description": "",
-  "isStandalone": true,
+  "disorder": "Others",
   "course": "Others",
   "unit": "Others",
-  "topic": "Others",
-  "disorder": "Others"
+  "topic": "Others"
 }

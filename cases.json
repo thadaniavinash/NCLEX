@@ -1,10 +1,10 @@
 [
   {
     "id": "cardio-case-1",
-    "unit": "Unit 2 (Cardiovascular Disorders)",
+    "unit": "Others",
     "title": "Case Study 1",
-    "topic": "Unit 2 (Cardiovascular Disorders)",
-    "course": "NURS 1021",
+    "topic": "Others",
+    "course": "Others",
     "screens": [
       {
         "step": 1,
@@ -339,16 +339,16 @@
         }
       }
     ],
-    "disorder": "Unit 2 (Cardiovascular Disorders)",
+    "disorder": "Others",
     "description": "",
     "availability": "all"
   },
   {
     "id": "case_1780489713691",
-    "unit": "Unit 11 (Endocrine Disorders)",
+    "unit": "Others",
     "title": "Case Study 2",
-    "topic": "Unit 11 (Endocrine Disorders)",
-    "course": "NURS 1017",
+    "topic": "Others",
+    "course": "Others",
     "screens": [
       {
         "step": 1,
@@ -741,16 +741,16 @@
         }
       }
     ],
-    "disorder": "Unit 11 (Endocrine Disorders)",
+    "disorder": "Others",
     "description": "Endocrine Disorders",
     "availability": "all"
   },
   {
     "id": "case_1780591712513",
-    "unit": "Unit 3 (Respiratory Disorders)",
+    "unit": "Others",
     "title": "University of Maryland - CS1",
-    "topic": "Unit 3 (Respiratory Disorders)",
-    "course": "NURS 1021",
+    "topic": "Others",
+    "course": "Others",
     "screens": [
       {
         "step": 1,
@@ -1380,7 +1380,7 @@
         }
       }
     ],
-    "disorder": "Unit 3 (Respiratory Disorders)",
+    "disorder": "Others",
     "description": "Maryland Next Gen NCLEX Test Bank Project September 1, 2022; Authors: Angela Davis, RN, MS, CM/DN Morgan State University",
     "availability": "all"
   },
@@ -1795,10 +1795,10 @@
   },
   {
     "id": "case_1781741217820",
-    "unit": "Unit 6 (Gastrointestinal Disorders)",
+    "unit": "Others",
     "title": "NCSBN - Case Study 1",
-    "topic": "Unit 6 (Gastrointestinal Disorders)",
-    "course": "NURS 1021",
+    "topic": "Others",
+    "course": "Others",
     "screens": [
       {
         "step": 1,
@@ -2215,16 +2215,16 @@
         }
       }
     ],
-    "disorder": "Unit 6 (Gastrointestinal Disorders)",
+    "disorder": "Others",
     "description": "",
     "availability": "all"
   },
   {
     "id": "case_1782149061171",
-    "unit": "Unit 4 (Inflammation and Immune Disorders)",
+    "unit": "Others",
     "title": "NCSBN Case Study 2",
-    "topic": "Unit 4 (Inflammation and Immune Disorders)",
-    "course": "NURS 1021",
+    "topic": "Others",
+    "course": "Others",
     "screens": [
       {
         "step": 1,
@@ -2661,16 +2661,16 @@
         }
       }
     ],
-    "disorder": "Unit 4 (Inflammation and Immune Disorders)",
+    "disorder": "Others",
     "description": "",
     "availability": "all"
   },
   {
     "id": "case_1782159166328",
-    "unit": "Unit 3 (Respiratory Disorders)",
+    "unit": "Others",
     "title": "New Case Study",
-    "topic": "Unit 3 (Respiratory Disorders)",
-    "course": "NURS 1021",
+    "topic": "Others",
+    "course": "Others",
     "screens": [
       {
         "step": 1,
@@ -3091,7 +3091,7 @@
         }
       }
     ],
-    "disorder": "Unit 3 (Respiratory Disorders)",
+    "disorder": "Others",
     "description": "",
     "availability": "all"
   },
@@ -3951,7 +3951,7 @@
     "unit": "Others",
     "title": "New Case Study",
     "topic": "Others",
-    "course": "",
+    "course": "Others",
     "screens": [
       {
         "step": 1,
@@ -10282,5 +10282,187 @@
         }
       }
     ]
+  },
+  {
+    "id": "case_1781285254218",
+    "title": "New Case Study",
+    "description": "",
+    "screens": [
+      {
+        "step": 1,
+        "leftContent": {
+          "intro": "",
+          "tabs": [
+            {
+              "id": "nn_1781285254218",
+              "title": "Nurses' Notes",
+              "content": ""
+            }
+          ]
+        },
+        "question": {
+          "type": "select_all",
+          "stem": "",
+          "options": [
+            {
+              "text": "",
+              "correct": false
+            },
+            {
+              "text": "",
+              "correct": false
+            },
+            {
+              "text": "",
+              "correct": false
+            },
+            {
+              "text": "",
+              "correct": false
+            },
+            {
+              "text": "",
+              "correct": false
+            }
+          ],
+          "explanation": "",
+          "preamble": ""
+        }
+      }
+    ],
+    "disorder": "Others",
+    "course": "Others",
+    "unit": "Others",
+    "topic": "Others"
+  },
+  {
+    "id": "case_1789577787012",
+    "title": "Bowtie-Stroke",
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "Complete the diagram by dragging from the choices below to specify what condition the client is most likely experiencing, 2 actions the nurse should take to address that condition, and 2 parameters the nurse should monitor to assess the client’s progress.",
+          "type": "bowtie",
+          "options": [
+            {
+              "text": "",
+              "correct": false
+            },
+            {
+              "text": "",
+              "correct": false
+            },
+            {
+              "text": "",
+              "correct": false
+            },
+            {
+              "text": "",
+              "correct": false
+            },
+            {
+              "text": "",
+              "correct": false
+            }
+          ],
+          "preamble": "The nurse is reviewing the client’s assessment data to prepare the client’s plan of care.",
+          "explanation": "",
+          "bowtieParams": [
+            {
+              "text": "urine output",
+              "correct": false
+            },
+            {
+              "text": "temperature",
+              "correct": false
+            },
+            {
+              "text": "",
+              "correct": false
+            },
+            {
+              "text": "",
+              "correct": false
+            },
+            {
+              "text": "",
+              "correct": false
+            }
+          ],
+          "bowtieActions": [
+            {
+              "text": "Administer oxygen at 2 L/min via nasal cannula.",
+              "correct": true
+            },
+            {
+              "text": "Request a prescription for an oral corticosteroid.",
+              "correct": false
+            },
+            {
+              "text": "Insert a peripheral venous access device (VAD).",
+              "correct": true
+            },
+            {
+              "text": "Obtain a urine specimen for urinalysis and culture and sensitivity (C & S).",
+              "correct": false
+            },
+            {
+              "text": "Request an order for 50% dextrose in water to be administered intravenously.",
+              "correct": false
+            }
+          ],
+          "bowtieCol1Header": "Actions to Take",
+          "bowtieCol2Header": "Potential Conditions",
+          "bowtieCol3Header": "Parameters to Monitor",
+          "bowtieConditions": [
+            {
+              "text": "Bell's palsy",
+              "correct": false
+            },
+            {
+              "text": "hypoglycemia",
+              "correct": false
+            },
+            {
+              "text": "ischemic stroke",
+              "correct": true
+            },
+            {
+              "text": "urinary tract infection (UTI)",
+              "correct": false
+            }
+          ],
+          "bowtieLeftPlaceholder": "",
+          "bowtieRightPlaceholder": "",
+          "bowtieCenterPlaceholder": ""
+        },
+        "leftContent": {
+          "tabs": [
+            {
+              "id": "nn_1789577787012",
+              "title": "Nurses' Notes",
+              "content": "<p class=\"nurse-note-row\"><span class=\"nurse-note-time\">1215:</span><span class=\"nurse-note-text\">Client presents with right-sided ptosis and facial drooping, right-sided hemiparesis, and expressive aphasia. Client’s adult child reports that the client recently had influenza. On assessment, skin is warm and dry. Lung sounds are clear; apical pulse is irregular. Bowel sounds are active in all quadrants. Client is incontinent of urine 2 times in the ED; adult child reports that the client is typically continent of urine. Capillary refill of 3 seconds. Peripheral pulses palpable, 2+. Vital signs: T 97.5° F (36.4° C), P 126, RR 18, BP 188/90, pulse oximetry reading 90% on room air.</span></p>"
+            },
+            {
+              "id": "tab_1789577946502",
+              "title": "History and Physical",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Body System</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">Findings</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Neurological</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">history of a stroke 2 years ago</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Cardiovascular</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">history of hypertension; atrial fibrillation; hyperlipidemia</td></tr><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>Gastrointestinal</b></td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">history of gastrointestinal bleeding 2 months ago</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>Endocrine</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">history of diabetes mellitus (type 2) for 30 years</td></tr><tr><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\"><b>Immunological</b></td><td placeholder=\"Cell\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; min-width: 80px; background: white; color: rgb(30, 41, 59);\">influenza 3 weeks ago</td></tr></tbody></table><p><br></p>"
+            },
+            {
+              "id": "tab_1789578518012",
+              "title": "Laboratory Results",
+              "content": "<table class=\"nclex-editor-table\" style=\"width:100%; border-collapse:collapse; margin:12px 0;\"><thead><tr><th placeholder=\"Header 1\" style=\"border: 1px solid rgb(204, 216, 224); padding: 8px; background: rgb(2, 82, 135); color: white; text-align: left;\">Laboratory Test and Reference Range</th><th placeholder=\"Header 2\" style=\"border:1px solid #ccd8e0; padding:8px; background:#025287; color:white; font-weight:600; text-align:left;\">1215</th></tr></thead><tbody><tr><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\"><b>random serum glucose</b><br>Elderly 60 - 90 years: 4.6 - 6.4 mmol/L</td><td placeholder=\"Cell\" style=\"border:1px solid #ccd8e0; padding:8px; min-width:80px; background:white; color:#1e293b;\">4.2 mmol/L</td></tr></tbody></table><p><br></p>"
+            }
+          ],
+          "intro": "The nurse in the emergency department (ED) is caring for a 79-year-old female client."
+        }
+      }
+    ],
+    "disorder": "Others",
+    "description": "",
+    "course": "Others",
+    "unit": "Others",
+    "topic": "Others"
   }
 ]

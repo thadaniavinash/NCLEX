@@ -1629,28 +1629,60 @@ function renderSessionTopicsList() {
   };
 
   const topicsMap = {};
+
+  // 1. Pre-populate ALL curriculum units in strict course order so units with 0 cases (e.g. Unit 1 Blood Disorders) are visible
+  CURRICULUM_COURSES["NURS 1017"].forEach(u => {
+    topicsMap[u] = { cases: 0, standalone: 0, course: "NURS 1017" };
+  });
+  CURRICULUM_COURSES["NURS 1021"].forEach(u => {
+    topicsMap[u] = { cases: 0, standalone: 0, course: "NURS 1021" };
+  });
+  topicsMap["Others"] = { cases: 0, standalone: 0, course: "Others" };
   
-  // Collect topics from cases
+  // 2. Collect topics from cases
   caseStudies.forEach(c => {
-    const t = (c.topic || c.disorder || 'General').trim();
-    if (!topicsMap[t]) topicsMap[t] = { cases: 0, standalone: 0, course: c.course || '' };
+    const t = (c.unit || c.topic || c.disorder || 'Others').trim();
+    if (!topicsMap[t]) {
+      topicsMap[t] = { cases: 0, standalone: 0, course: c.course || 'Others' };
+    }
     topicsMap[t].cases++;
-    if (!topicsMap[t].course && c.course) topicsMap[t].course = c.course;
+    if (c.course && !topicsMap[t].course) topicsMap[t].course = c.course;
   });
 
-  // Collect topics from standalone
+  // 3. Collect topics from standalone
   standaloneQuestions.forEach(s => {
-    const t = (s.topic || s.disorder || 'General').trim();
-    if (!topicsMap[t]) topicsMap[t] = { cases: 0, standalone: 0, course: s.course || '' };
+    const t = (s.unit || s.topic || s.disorder || 'Others').trim();
+    if (!topicsMap[t]) {
+      topicsMap[t] = { cases: 0, standalone: 0, course: s.course || 'Others' };
+    }
     topicsMap[t].standalone++;
-    if (!topicsMap[t].course && s.course) topicsMap[t].course = s.course;
+    if (s.course && !topicsMap[t].course) topicsMap[t].course = s.course;
   });
 
+  // 4. Sort topics: All NURS 1017 units first, followed by NURS 1021, followed by Others
   const sortedTopics = Object.keys(topicsMap).sort((a, b) => {
     const isAOther = (a.toLowerCase() === 'others' || a.toLowerCase().startsWith('other'));
     const isBOther = (b.toLowerCase() === 'others' || b.toLowerCase().startsWith('other'));
     if (isAOther && !isBOther) return 1;
     if (!isAOther && isBOther) return -1;
+
+    const idxA1017 = CURRICULUM_COURSES["NURS 1017"].indexOf(a);
+    const idxB1017 = CURRICULUM_COURSES["NURS 1017"].indexOf(b);
+    const idxA1021 = CURRICULUM_COURSES["NURS 1021"].indexOf(a);
+    const idxB1021 = CURRICULUM_COURSES["NURS 1021"].indexOf(b);
+
+    // If both are NURS 1017, order by curriculum sequence (Unit 1 to 11)
+    if (idxA1017 !== -1 && idxB1017 !== -1) return idxA1017 - idxB1017;
+    // NURS 1017 always comes before NURS 1021 and Others
+    if (idxA1017 !== -1) return -1;
+    if (idxB1017 !== -1) return 1;
+
+    // If both are NURS 1021, order by curriculum sequence (Unit 1 to 9)
+    if (idxA1021 !== -1 && idxB1021 !== -1) return idxA1021 - idxB1021;
+    // NURS 1021 always comes before Others
+    if (idxA1021 !== -1) return -1;
+    if (idxB1021 !== -1) return 1;
+
     return a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' });
   });
   container.innerHTML = '';
