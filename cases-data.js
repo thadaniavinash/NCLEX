@@ -10285,3 +10285,2672 @@ window.NCLEX_CASES = [
     ]
   }
 ];
+
+window.NCLEX_STANDALONE = [
+  {
+    "id": "standalone_1783010000001",
+    "title": "Unit 1 Stand-alone 1: Cellular Hypoxia & Hydropic Swelling",
+    "course": "NURS 1017",
+    "unit": "Unit 1 (Introduction to Pathophysiology)",
+    "topic": "Unit 1 (Introduction to Pathophysiology)",
+    "disorder": "Unit 1 (Introduction to Pathophysiology)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is providing care to a client recently diagnosed with acute cellular hypoxia secondary to severe hypovolemic shock. Which pathophysiologic findings and cellular consequences should the nurse anticipate? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Failure of the adenosine triphosphate (ATP)-dependent sodium-potassium membrane pump",
+              "correct": true
+            },
+            {
+              "text": "Intracellular accumulation of sodium and osmotic influx of water (hydropic swelling)",
+              "correct": true
+            },
+            {
+              "text": "Metabolic shift to anaerobic glycolysis resulting in intracellular lactic acidosis",
+              "correct": true
+            },
+            {
+              "text": "Enhanced protein synthesis and accelerated ribosomal translation",
+              "correct": false
+            },
+            {
+              "text": "Detachment of ribosomes from the rough endoplasmic reticulum",
+              "correct": true
+            },
+            {
+              "text": "Decreased intracellular calcium ion concentration",
+              "correct": false
+            }
+          ],
+          "preamble": "The nurse is reviewing the cellular pathophysiology of acute ischemic and hypoxic injury in an intensive care client.",
+          "explanation": "In acute cellular hypoxia, lack of oxygen halts oxidative phosphorylation in mitochondria, depleting cellular ATP. This causes failure of the active Na+/K+ ATPase pump, allowing sodium to flood into the cell followed osmotically by water, producing hydropic swelling (oncosis). Anaerobic glycolysis ensues, converting pyruvate to lactate and generating lactic acidosis. Acidosis and energy failure cause ribosomal detachment from the endoplasmic reticulum, diminishing protein synthesis. Intracellular calcium actually increases (not decreases) due to pump failure, activating destructive intracellular enzymes."
+        },
+        "leftContent": {
+          "intro": "A 52-year-old client is admitted to the intensive care unit following massive gastrointestinal hemorrhage with profound hypotension (blood pressure 68/40 mmHg) and systemic tissue hypoperfusion.",
+          "tabs": [
+            {
+              "id": "tab_u1_1_labs",
+              "title": "Laboratory Results",
+              "content": "<table class='nclex-editor-table'><thead><tr><th>Test</th><th>Result</th><th>Reference Range</th></tr></thead><tbody><tr><td>Arterial Lactate</td><td><strong>5.8 mmol/L</strong></td><td>0.5–2.2 mmol/L</td></tr><tr><td>Arterial pH</td><td><strong>7.24</strong></td><td>7.35–7.45</td></tr><tr><td>Serum Bicarbonate</td><td><strong>15 mEq/L</strong></td><td>22–28 mEq/L</td></tr><tr><td>Base Deficit</td><td><strong>-9 mEq/L</strong></td><td>-2 to +2 mEq/L</td></tr></tbody></table>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783010000002",
+    "title": "Unit 1 Stand-alone 2: Clinical Manifestations (Signs vs. Symptoms)",
+    "course": "NURS 1017",
+    "unit": "Unit 1 (Introduction to Pathophysiology)",
+    "topic": "Unit 1 (Introduction to Pathophysiology)",
+    "disorder": "Unit 1 (Introduction to Pathophysiology)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is completing an admission assessment on a client presenting with acute pulmonary disease. Which of the following documented assessment findings represents an objective <b>clinical sign</b> rather than a subjective symptom?",
+          "type": "multiple_choice",
+          "options": [
+            {
+              "text": "Client states, 'I have felt short of breath for the past three days.'",
+              "correct": false
+            },
+            {
+              "text": "Auscultation of bilateral expiratory wheezes in both lower pulmonary lobes",
+              "correct": true
+            },
+            {
+              "text": "Client describes a sharp, stabbing retrosternal chest pain rated 7 out of 10",
+              "correct": false
+            },
+            {
+              "text": "Client reports feeling dizzy, fatigued, and nauseated after walking",
+              "correct": false
+            }
+          ],
+          "preamble": "The triage nurse is documenting physical assessment data in the electronic health record.",
+          "explanation": "A clinical sign is an objective finding that can be directly observed, measured, or verified by the healthcare provider through physical examination, diagnostic tools, or laboratory measurement (e.g., auscultated wheezes, blood pressure, fever). Subjective symptoms are personal perceptions or sensations verbalized exclusively by the client (e.g., dyspnea, nausea, fatigue, pain intensity)."
+        },
+        "leftContent": {
+          "intro": "An 64-year-old client presents to the emergency department accompanied by a spouse, reporting worsening respiratory difficulty over the last 72 hours.",
+          "tabs": [
+            {
+              "id": "tab_u1_2_triage",
+              "title": "Triage Intake",
+              "content": "<p><strong>Chief Complaint:</strong> Client reports severe shortness of breath and pleuritic chest soreness.<br><strong>Triage Vitals:</strong> T 37.8 °C, P 108, RR 26, BP 142/86, SpO2 89% on room air.<br><strong>Physical Assessment:</strong> Tachypneic with intercostal retractions; coarse expiratory wheezes audible bilaterally.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783010000003",
+    "title": "Unit 1 Stand-alone 3: Acute Mesenteric Ischemia & Gangrene",
+    "course": "NURS 1017",
+    "unit": "Unit 1 (Introduction to Pathophysiology)",
+    "topic": "Unit 1 (Introduction to Pathophysiology)",
+    "disorder": "Unit 1 (Introduction to Pathophysiology)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "Complete the diagram by dragging from the choices below to specify what condition the client is most likely experiencing, 2 actions the nurse should take to address that condition, and 2 parameters the nurse should monitor to assess the client's progress.",
+          "type": "bowtie",
+          "options": [],
+          "bowtieCol1Header": "Actions to Take",
+          "bowtieCol2Header": "Potential Condition",
+          "bowtieCol3Header": "Parameters to Monitor",
+          "bowtieLeftPlaceholder": "Action to Take",
+          "bowtieCenterPlaceholder": "Potential Condition",
+          "bowtieRightPlaceholder": "Parameter to Monitor",
+          "bowtieActions": [
+            {
+              "text": "Maintain client strictly NPO and insert a nasogastric (NG) tube for low wall suction",
+              "correct": true
+            },
+            {
+              "text": "Administer prescribed IV fluid bolus of isotonic crystalloids (0.9% Normal Saline)",
+              "correct": true
+            },
+            {
+              "text": "Administer high-volume oral mineral oil to clear suspected fecal impaction",
+              "correct": false
+            },
+            {
+              "text": "Apply warm heating pads over the client's abdomen to improve mesenteric blood flow",
+              "correct": false
+            },
+            {
+              "text": "Encourage vigorous ambulation in the hallway to stimulate colonic peristalsis",
+              "correct": false
+            }
+          ],
+          "bowtieConditions": [
+            {
+              "text": "Irreversible bowel ischemia with gangrenous intestinal necrosis",
+              "correct": true
+            },
+            {
+              "text": "Acute viral gastroenteritis with self-limiting dehydration",
+              "correct": false
+            },
+            {
+              "text": "Chronic functional irritable bowel syndrome (IBS)",
+              "correct": false
+            },
+            {
+              "text": "Mild lactose intolerance following dietary indiscretion",
+              "correct": false
+            }
+          ],
+          "bowtieParams": [
+            {
+              "text": "Serial serum lactic acid levels and arterial base deficit",
+              "correct": true
+            },
+            {
+              "text": "Abdominal assessment for peritoneal signs (guarding, rigidity, rebound tenderness)",
+              "correct": true
+            },
+            {
+              "text": "Daily visual acuity and fundoscopic examination",
+              "correct": false
+            },
+            {
+              "text": "Serum prostate-specific antigen (PSA) levels",
+              "correct": false
+            },
+            {
+              "text": "Deep tendon reflex grading in bilateral patellar tendons",
+              "correct": false
+            }
+          ],
+          "preamble": "The nurse is analyzing assessment cues for an older adult with severe acute abdominal pain out of proportion to physical exam findings.",
+          "explanation": "The client presents with acute mesenteric ischemia, characterized by sudden, severe abdominal pain disproportionate to early physical exam findings, progressing to intestinal infarction, coagulative necrosis, and wet gangrene. Priority nursing actions include keeping the client strictly NPO with NG tube decompression to rest the bowel and infusing aggressive isotonic crystalloids to treat profound intravascular volume loss from third-spacing. Essential parameters to monitor include serial serum lactate (a primary marker of ischemic bowel necrosis and tissue hypoperfusion) and continuous surveillance for peritonitis (rigidity, rebound tenderness indicating transmural perforation)."
+        },
+        "leftContent": {
+          "intro": "An 76-year-old client with a history of atrial fibrillation and peripheral vascular disease presents with agonizing diffuse periumbilical abdominal pain that began suddenly 4 hours ago.",
+          "tabs": [
+            {
+              "id": "tab_u1_3_notes",
+              "title": "Nurses' Notes",
+              "content": "<p><strong>1400:</strong> Client writhing on stretcher in excruciating 10/10 abdominal pain. Abdomen is mildly distended, but soft with minimal tenderness on palpation, representing pain severely out of proportion to physical examination. Skin is pale, diaphoresis noted. Occult blood positive in dark liquid stool. Vital signs: BP 92/58 mmHg, HR 124 (atrial fibrillation), RR 28, T 38.3 °C.</p>"
+            },
+            {
+              "id": "tab_u1_3_labs",
+              "title": "Laboratory Results",
+              "content": "<table class='nclex-editor-table'><thead><tr><th>Test</th><th>Value</th><th>Reference Range</th></tr></thead><tbody><tr><td>Serum Lactate</td><td><strong>4.9 mmol/L</strong></td><td>0.5–2.2 mmol/L</td></tr><tr><td>White Blood Cells (WBC)</td><td><strong>21,400 /mm³</strong></td><td>4,500–11,000 /mm³</td></tr><tr><td>pH</td><td><strong>7.28</strong></td><td>7.35–7.45</td></tr></tbody></table>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783010000004",
+    "title": "Unit 1 Stand-alone 4: Hepatic Steatosis & Intracellular Accumulation",
+    "course": "NURS 1017",
+    "unit": "Unit 1 (Introduction to Pathophysiology)",
+    "topic": "Unit 1 (Introduction to Pathophysiology)",
+    "disorder": "Unit 1 (Introduction to Pathophysiology)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is providing care to a client with chronic alcohol use disorder recently diagnosed with hepatic steatosis (intracellular fatty accumulation). Which pathophysiologic concepts and clinical findings should the nurse anticipate? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Impaired lipid metabolism resulting in accumulation of triglyceride vacuoles within hepatocytes",
+              "correct": true
+            },
+            {
+              "text": "Smooth, non-tender hepatomegaly noted upon right upper quadrant palpation",
+              "correct": true
+            },
+            {
+              "text": "Elevation in serum alanine aminotransferase (ALT) and aspartate aminotransferase (AST)",
+              "correct": true
+            },
+            {
+              "text": "Immediate irreversible cell death that cannot resolve with alcohol cessation",
+              "correct": false
+            },
+            {
+              "text": "Fatty change represents a reversible cellular response to toxic metabolic injury",
+              "correct": true
+            },
+            {
+              "text": "Total absence of intracellular lipid droplets on microscopic liver biopsy",
+              "correct": false
+            }
+          ],
+          "preamble": "The clinic nurse is reviewing health records and educating a client regarding hepatic cellular adaptations.",
+          "explanation": "Hepatic steatosis (fatty liver) occurs when toxic insult (such as alcohol metabolism producing excess NADH) deranges lipid metabolism, causing abnormal accumulation of neutral triglycerides inside hepatocyte cytoplasm. It commonly presents as asymptomatic or mild smooth hepatomegaly with transaminase elevations (AST/ALT). Crucially, fatty change is a form of reversible cellular injury; if the toxic stimulus (alcohol consumption) is removed, normal hepatocyte lipid clearance resumes and the liver can recover."
+        },
+        "leftContent": {
+          "intro": "A 44-year-old client attends an outpatient medical follow-up after an ultrasound performed for vague right-sided abdominal fullness revealed marked diffuse hepatic enlargement with increased echogenicity.",
+          "tabs": [
+            {
+              "id": "tab_u1_4_us",
+              "title": "Ultrasound Report",
+              "content": "<p><strong>Findings:</strong> Diffuse increased parenchymal echogenicity with posterior acoustic attenuation, characteristic of moderate to severe diffuse hepatic steatosis. Liver span measured at 17.5 cm (hepatomegaly). No focal mass lesions or biliary ductal dilation identified.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783010000005",
+    "title": "Unit 1 Stand-alone 5: Acute Limb Ischemia & Reperfusion Injury Sequence",
+    "course": "NURS 1017",
+    "unit": "Unit 1 (Introduction to Pathophysiology)",
+    "topic": "Unit 1 (Introduction to Pathophysiology)",
+    "disorder": "Unit 1 (Introduction to Pathophysiology)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is caring for a client with acute lower extremity arterial occlusion who has just undergone surgical revascularization. Place the pathophysiological sequence of ischemic cell injury and reperfusion in the correct chronological order from earliest event to latest event.",
+          "type": "ordered_response",
+          "options": [],
+          "orderedOptions": [
+            "Arterial occlusion stops microvascular blood flow, causing cellular hypoxia and depletion of ATP stores",
+            "Membrane pumps fail, leading to intracellular sodium, water, and calcium accumulation",
+            "Surgical embolectomy restores blood and oxygen delivery into the previously ischemic vascular bed",
+            "Restored oxygen reacts with accumulated xanthine oxidase metabolites to generate massive toxic reactive oxygen species (free radicals)",
+            "Free radical lipid peroxidation damages cell membranes, triggering microvascular swelling and reperfusion tissue injury"
+          ],
+          "preamble": "The vascular progressive care nurse is reviewing the cellular mechanisms of reperfusion injury.",
+          "explanation": "Ischemia-reperfusion injury follows a precise chronological sequence: First, arterial occlusion prevents oxygen delivery, halting mitochondrial ATP production. Second, energetic depletion causes active ion pump failure, resulting in cellular hydropic swelling and calcium overload. Third, surgical restoration of flow re-oxygenates ischemic tissue. Fourth, reintroduced oxygen reacts with xanthine and hypoxanthine (accumulated during ischemia) in the presence of xanthine oxidase, producing a sudden burst of reactive oxygen species (superoxide, hydrogen peroxide, hydroxyl radicals). Fifth, these free radicals cause membrane lipid peroxidation, enzyme denaturation, and microvascular endothelial swelling that exacerbates tissue injury beyond the original ischemia."
+        },
+        "leftContent": {
+          "intro": "A 68-year-old client with acute right femoral-popliteal arterial thrombosis undergoes emergency balloon embolectomy with successful clot extraction and restoration of palpable pedal pulses.",
+          "tabs": [
+            {
+              "id": "tab_u1_5_op",
+              "title": "Operative Summary",
+              "content": "<p><strong>Procedure:</strong> Right femoral cutdown with Fogarty balloon thrombectomy. Large occlusive saddle thrombus extracted. Prompt return of strong brisk arterial pulsatile backbleeding. Right foot warmed and recolored pink with brisk capillary refill within 10 minutes post-restoration.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783010000006",
+    "title": "Unit 1 Stand-alone 6: Differentiating Dry and Wet Gangrene",
+    "course": "NURS 1017",
+    "unit": "Unit 1 (Introduction to Pathophysiology)",
+    "topic": "Unit 1 (Introduction to Pathophysiology)",
+    "disorder": "Unit 1 (Introduction to Pathophysiology)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is reviewing the wound clinic assessment note for a client with diabetes mellitus. Click to highlight the <b>3 findings</b> in the clinical note that indicate the dangerous development of <b>wet gangrene</b> requiring urgent surgical consultation.",
+          "type": "highlight",
+          "highlightText": "Client presents for scheduled foot check. Right second toe displays dry, dark brown, shriveled tissue with a distinct line of demarcation and no drainage. {The adjacent third toe is swollen, tense, and oozing malodorous purulent fluid|correct}. {Crepitus is palpated along the dorsal forefoot with audible subcutaneous bubbling|correct}. Temperature is 36.6 °C, heart rate 74/min. {Surrounding metatarsal skin is hot, violaceous, and rapidly extending red streaks are observed ascending the ankle|correct}. Capillary refill in left foot is 2 seconds.",
+          "maxCorrectSelections": 3,
+          "preamble": "The wound care nurse is assessing a chronic diabetic ischemic foot ulcer for signs of acute infectious gangrene.",
+          "explanation": "Dry gangrene is characterized by slow coagulative necrosis where tissue becomes dry, shriveled, dark brown/black with a clear line of demarcation from healthy tissue, usually without bacterial superinfection. In contrast, wet gangrene (liquefactive necrosis superinfected with pathogenic, gas-forming bacteria such as Clostridium or mixed anaerobes) features rapid spread, edema, foul-smelling purulence, hot spreading erythema/lymphangitis, and subcutaneous crepitus (gas in tissues). Wet gangrene is an immediate surgical emergency due to high risk of sepsis and limb loss."
+        },
+        "leftContent": {
+          "intro": "A 62-year-old client with poorly controlled type 2 diabetes mellitus and peripheral arterial disease arrives at the outpatient wound clinic for a routine evaluation of a necrotic toe.",
+          "tabs": [
+            {
+              "id": "tab_u1_6_note",
+              "title": "Clinical Progress Note",
+              "content": "<p>Client reports progressive foot throbbing and chills starting 24 hours ago. Inspection reveals mixed chronic ischemic and acute infectious changes to the right forefoot.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783010000007",
+    "title": "Unit 1 Stand-alone 7: Longitudinal Lactic Acidosis Trend",
+    "course": "NURS 1017",
+    "unit": "Unit 1 (Introduction to Pathophysiology)",
+    "topic": "Unit 1 (Introduction to Pathophysiology)",
+    "disorder": "Unit 1 (Introduction to Pathophysiology)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is caring for a client admitted with acute peritonitis and septic shock. Based on the 6-hour clinical trends shown in the tabs, which of the following actions should the nurse implement? <b>Select all that apply.</b>",
+          "type": "trend",
+          "options": [
+            {
+              "text": "Administer prescribed IV fluid boluses of balanced crystalloid solution (Lactated Ringer's)",
+              "correct": true
+            },
+            {
+              "text": "Prepare to initiate prescribed continuous norepinephrine vasopressor infusion to maintain Mean Arterial Pressure (MAP) ≥ 65 mmHg",
+              "correct": true
+            },
+            {
+              "text": "Administer prescribed broad-spectrum intravenous antimicrobials without delay",
+              "correct": true
+            },
+            {
+              "text": "Encourage the client to drink 500 mL of oral water to assess gastrointestinal tolerance",
+              "correct": false
+            },
+            {
+              "text": "Obtain repeated arterial blood gas and blood lactate measurements within 2 to 4 hours",
+              "correct": true
+            },
+            {
+              "text": "Administer high-dose oral potassium chloride tablets immediately",
+              "correct": false
+            }
+          ],
+          "preamble": "The rapid response team nurse is analyzing consecutive laboratory and hemodynamic values over a 6-hour interval.",
+          "explanation": "The client's trend demonstrates worsening septic shock with progressive cellular hypoxia and anaerobic metabolism: lactate has climbed from 2.4 to 6.2 mmol/L, arterial pH has dropped into severe metabolic acidosis (7.21), MAP has deteriorated to 55 mmHg, and urine output has dropped to oliguric levels (12 mL/hr). Immediate resuscitation requires aggressive IV crystalloids, broad-spectrum IV antibiotics, vasopressors (norepinephrine) to sustain MAP >= 65 mmHg, and serial lactate clearance monitoring. Oral intake is contraindicated due to shock and peritonitis, and oral potassium is contraindicated with rising potassium and renal hypoperfusion."
+        },
+        "leftContent": {
+          "intro": "A 58-year-old client with perforated diverticulitis is monitored in the progressive care unit awaiting emergency surgical intervention.",
+          "tabs": [
+            {
+              "id": "tab_u1_7_vitals",
+              "title": "Vital Signs Trend",
+              "content": "<table class='nclex-editor-table'><thead><tr><th>Parameter</th><th>0800</th><th>1100</th><th>1400</th></tr></thead><tbody><tr><td>Blood Pressure (mmHg)</td><td>110/68 (MAP 82)</td><td>94/56 (MAP 69)</td><td>78/44 (MAP 55)</td></tr><tr><td>Heart Rate (bpm)</td><td>98</td><td>116</td><td>132</td></tr><tr><td>Respiratory Rate (/min)</td><td>20</td><td>24</td><td>30</td></tr><tr><td>Hourly Urine Output</td><td>45 mL/hr</td><td>28 mL/hr</td><td>12 mL/hr</td></tr></tbody></table>"
+            },
+            {
+              "id": "tab_u1_7_labs",
+              "title": "Laboratory Trend",
+              "content": "<table class='nclex-editor-table'><thead><tr><th>Analyte</th><th>0800</th><th>1100</th><th>1400</th></tr></thead><tbody><tr><td>Serum Lactate</td><td>2.4 mmol/L</td><td>4.1 mmol/L</td><td>6.2 mmol/L</td></tr><tr><td>Arterial pH</td><td>7.36</td><td>7.29</td><td>7.21</td></tr><tr><td>Serum Bicarbonate</td><td>21 mEq/L</td><td>17 mEq/L</td><td>13 mEq/L</td></tr><tr><td>Serum Potassium</td><td>4.2 mEq/L</td><td>4.8 mEq/L</td><td>5.4 mEq/L</td></tr></tbody></table>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783010000008",
+    "title": "Unit 1 Stand-alone 8: Morphologic Types of Tissue Necrosis",
+    "course": "NURS 1017",
+    "unit": "Unit 1 (Introduction to Pathophysiology)",
+    "topic": "Unit 1 (Introduction to Pathophysiology)",
+    "disorder": "Unit 1 (Introduction to Pathophysiology)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "For each clinical presentation, select the specific morphological type of tissue necrosis most likely to occur.",
+          "type": "matrix_mc",
+          "matrix": {
+            "firstColumnHeader": "Clinical Vignette",
+            "columns": [
+              "Coagulative Necrosis",
+              "Liquefactive Necrosis",
+              "Caseous Necrosis",
+              "Fat Necrosis"
+            ],
+            "rows": [
+              {
+                "text": "Myocardial infarction secondary to acute occlusive left anterior descending coronary artery thrombosis",
+                "correctIndex": 0
+              },
+              {
+                "text": "Acute focal brain infarction (ischemic cerebral stroke) with microglial hydrolytic digestion",
+                "correctIndex": 1
+              },
+              {
+                "text": "Pulmonary granuloma in Mycobacterium tuberculosis infection exhibiting cheese-like friable debris",
+                "correctIndex": 2
+              },
+              {
+                "text": "Acute pancreatitis with leakage of active lipases forming chalky white calcium soaps (saponification)",
+                "correctIndex": 3
+              }
+            ]
+          },
+          "preamble": "The nurse is reviewing pathology slides and clinical correlations of irreversible cell death.",
+          "explanation": "1. Coagulative necrosis is the default pattern for ischemic tissue death in all solid organs except the brain (e.g. myocardial infarction, renal infarction); structural cell architecture is preserved for several days as acid denatures proteins. 2. Liquefactive necrosis occurs predominantly in the brain/CNS (rich in lipids and lytic enzymes, where rapid enzymatic dissolution liquefies tissue into pus/cyst fluid) and in bacterial abscesses. 3. Caseous necrosis is characteristic of tuberculosis, presenting as amorphous, soft, friable, 'cheesy' debris enclosed within granulomas. 4. Fat necrosis occurs with enzymatic destruction of adipose tissue (e.g., acute pancreatitis releasing lipases that split triglycerides into fatty acids, which bind calcium to form visible chalky-white soaps)."
+        },
+        "leftContent": {
+          "intro": "The clinical nurse educator is leading a pathology conference on patterns of necrosis resulting from different injurious mechanisms across organ systems.",
+          "tabs": [
+            {
+              "id": "tab_u1_8_notes",
+              "title": "Pathology Reference Guide",
+              "content": "<p>Tissue necrosis represents the morphological hallmark of irreversible somatic cellular death accompanied by inflammatory infiltration and membrane lysis.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783010000009",
+    "title": "Unit 1 Stand-alone 9: Levels of Disease Prevention",
+    "course": "NURS 1017",
+    "unit": "Unit 1 (Introduction to Pathophysiology)",
+    "topic": "Unit 1 (Introduction to Pathophysiology)",
+    "disorder": "Unit 1 (Introduction to Pathophysiology)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The community health nurse is planning a cardiovascular health seminar. Which of the following interventions represent <b>primary prevention</b> strategies? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Educating adolescents on the vascular hazards of smoking and vaping to prevent initiation",
+              "correct": true
+            },
+            {
+              "text": "Administering annual influenza and pneumococcal immunizations to older adults",
+              "correct": true
+            },
+            {
+              "text": "Performing routine fasting lipid and blood pressure screenings at a community health fair",
+              "correct": false
+            },
+            {
+              "text": "Teaching a community cooking class focused on whole-food, low-sodium dietary habits",
+              "correct": true
+            },
+            {
+              "text": "Enrolling a client who survived a myocardial infarction into a supervised cardiac rehabilitation program",
+              "correct": false
+            },
+            {
+              "text": "Scheduling an annual mammogram for a 50-year-old female client",
+              "correct": false
+            }
+          ],
+          "preamble": "The nurse is classifying health interventions according to established epidemiologic levels of prevention.",
+          "explanation": "Primary prevention aims to alter susceptibility or reduce exposure to disease-causing agents before disease ever develops (e.g., smoking prevention education, immunizations, healthy diet education, exercise). Secondary prevention focuses on early detection, screening, and prompt intervention while the condition is subclinical or latent (e.g., blood pressure fairs, lipid screening, mammography, Pap tests). Tertiary prevention focuses on rehabilitation, disability limitation, and restoring optimal function after irreversible disease or organ damage has already occurred (e.g., cardiac rehabilitation post-MI, physical therapy post-stroke)."
+        },
+        "leftContent": {
+          "intro": "A public health nursing department is organizing outreach initiatives targeting cardiovascular and metabolic disease reduction across the county.",
+          "tabs": [
+            {
+              "id": "tab_u1_9_program",
+              "title": "Community Program Scope",
+              "content": "<p>The public health framework utilizes Leavell and Clark's three-tier model of prevention to allocate nursing resources across wellness education, screening clinics, and chronic disease support groups.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783010000010",
+    "title": "Unit 1 Stand-alone 10: Dystrophic vs. Metastatic Pathologic Calcification",
+    "course": "NURS 1017",
+    "unit": "Unit 1 (Introduction to Pathophysiology)",
+    "topic": "Unit 1 (Introduction to Pathophysiology)",
+    "disorder": "Unit 1 (Introduction to Pathophysiology)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "An 82-year-old client with severe calcific aortic valve stenosis has a normal serum calcium level (2.3 mmol/L [9.2 mg/dL]). The nurse understands that this mineral deposition represents <b>dystrophic calcification</b> because it is characterized by which of the following pathophysiologic mechanisms?",
+          "type": "multiple_choice",
+          "options": [
+            {
+              "text": "Precipitation of calcium salts exclusively within previously damaged, necrotic, or degenerated tissues in the presence of normal systemic calcium levels",
+              "correct": true
+            },
+            {
+              "text": "Generalized calcium deposition in uninjured healthy tissues caused by sustained systemic hypercalcemia",
+              "correct": false
+            },
+            {
+              "text": "Massive bone demineralization caused by parathyroid adenoma oversecretion",
+              "correct": false
+            },
+            {
+              "text": "Systemic vitamin D toxicity leading to widespread vascular and renal parenchymal calcification",
+              "correct": false
+            }
+          ],
+          "preamble": "The cardiology clinic nurse is reviewing echocardiography and lab results with a resident nurse.",
+          "explanation": "Dystrophic calcification occurs locally in dying, necrotic, or chronically injured/degenerated tissues (such as scarred aortic valve leaflets, old tuberculous granulomas, or advanced atheromas) despite completely normal serum calcium metabolism and normal serum levels. In contrast, metastatic calcification occurs throughout normal, uninjured tissues (lungs, kidneys, gastric mucosa) as a result of systemic hypercalcemia (driven by primary hyperparathyroidism, extensive bone metastases, vitamin D toxicity, or chronic kidney disease)."
+        },
+        "leftContent": {
+          "intro": "An 82-year-old client undergoes evaluation for progressive exertional syncope and systolic murmur. Echocardiography demonstrates heavily calcified, rigid aortic valve cusps with a peak transvalvular gradient of 68 mmHg.",
+          "tabs": [
+            {
+              "id": "tab_u1_10_echo",
+              "title": "Echocardiogram & Labs",
+              "content": "<p><strong>Echocardiogram:</strong> Severe tricuspid aortic valve sclerosis with dense macroscopic calcification of left and non-coronary cusps; valve area 0.7 cm².<br><strong>Serum Chemistry:</strong> Total Calcium 2.30 mmol/L (normal 2.15–2.55 mmol/L); Ionized Calcium 1.20 mmol/L (normal 1.15–1.33 mmol/L); Phosphorus 1.1 mmol/L (normal 0.8–1.4 mmol/L).</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783020000001",
+    "title": "Unit 2 Stand-alone 1: Barrett's Esophagus Metaplasia",
+    "course": "NURS 1017",
+    "unit": "Unit 2 (Cellular Basis of Disease)",
+    "topic": "Unit 2 (Cellular Basis of Disease)",
+    "disorder": "Unit 2 (Cellular Basis of Disease)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is providing care to a client recently diagnosed with Barrett's esophagus secondary to long-standing gastroesophageal reflux disease (GERD). Which pathophysiologic and clinical findings should the nurse anticipate? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Replacement of normal stratified squamous epithelium with mucin-secreting columnar epithelium",
+              "correct": true
+            },
+            {
+              "text": "Presence of intestinal goblet cells on histological biopsy",
+              "correct": true
+            },
+            {
+              "text": "Increased long-term risk for developing esophageal adenocarcinoma",
+              "correct": true
+            },
+            {
+              "text": "Complete irreversibility of tissue architecture even if gastric acid exposure is eliminated",
+              "correct": false
+            },
+            {
+              "text": "Cellular adaptation induced by chronic mucosal irritation and acidic pH",
+              "correct": true
+            },
+            {
+              "text": "Transformation directly into small cell neuroendocrine carcinoma",
+              "correct": false
+            }
+          ],
+          "preamble": "The gastroenterology clinic nurse is reviewing pathology and endoscopy results with a 56-year-old client.",
+          "explanation": "Barrett's esophagus is a classic example of metaplasia, where chronic acid reflux injures normal nonkeratinized stratified squamous epithelium, prompting reprogramming of stem cells into intestinal-type columnar epithelium with goblet cells that better withstand acidic conditions. While metaplasia is an adaptive and potentially reversible process if the irritating stimulus is removed early, persistent severe reflux can progress from metaplasia to dysplasia and ultimately to esophageal adenocarcinoma (not small cell neuroendocrine carcinoma)."
+        },
+        "leftContent": {
+          "intro": "A 56-year-old client with a 12-year history of poorly controlled heartburn presents for follow-up after an upper gastrointestinal endoscopy with biopsies.",
+          "tabs": [
+            {
+              "id": "tab_u2_1_endo",
+              "title": "Endoscopy & Pathology",
+              "content": "<p><strong>Endoscopy Findings:</strong> Salmon-pink, velvety mucosa extending 3 cm circumferentially above the gastroesophageal junction.<br><strong>Pathology Report:</strong> Squamocolumnar mucosal junction showing specialized intestinal metaplasia with abundant mucin-producing goblet cells; negative for high-grade dysplasia.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783020000002",
+    "title": "Unit 2 Stand-alone 2: Benign Prostatic Hyperplasia (BPH)",
+    "course": "NURS 1017",
+    "unit": "Unit 2 (Cellular Basis of Disease)",
+    "topic": "Unit 2 (Cellular Basis of Disease)",
+    "disorder": "Unit 2 (Cellular Basis of Disease)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is providing care to an older adult client recently diagnosed with benign prostatic hyperplasia (BPH). Which clinical assessment findings and cellular mechanisms should the nurse anticipate? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Increase in the total number of prostatic stromal and glandular epithelial cells",
+              "correct": true
+            },
+            {
+              "text": "Hesitancy, weak urinary stream, and post-void dribbling",
+              "correct": true
+            },
+            {
+              "text": "Increased post-void residual volume predisposing to urinary stasis and infection",
+              "correct": true
+            },
+            {
+              "text": "Hypertrophy of individual skeletal muscle fibers in the anterior abdominal wall",
+              "correct": false
+            },
+            {
+              "text": "Enlargement primarily localized to the transition zone surrounding the urethra",
+              "correct": true
+            },
+            {
+              "text": "Obligatory malignant invasion into the pelvic lymph nodes",
+              "correct": false
+            }
+          ],
+          "preamble": "The urology nurse is evaluating a 68-year-old male presenting with progressive lower urinary tract symptoms.",
+          "explanation": "BPH is characterized by pathologic hyperplasia—an increase in the total number of cells in the transition (periurethral) zone of the prostate gland, driven predominantly by dihydrotestosterone (DHT) stimulation. As the transitional tissue expands, it compresses the prostatic urethra, leading to mechanical bladder outlet obstruction, urinary hesitancy, diminished stream caliber, nocturia, post-void dribbling, and incomplete bladder emptying with elevated post-void residual volume. BPH is a benign proliferative disorder and does not represent an obligatory malignant lesion."
+        },
+        "leftContent": {
+          "intro": "A 68-year-old male presents to the outpatient urology clinic reporting progressive difficulty voiding, waking 4 to 5 times per night to urinate, and feeling that his bladder never completely empties.",
+          "tabs": [
+            {
+              "id": "tab_u2_2_uro",
+              "title": "Urological Assessment",
+              "content": "<p><strong>Digital Rectal Examination:</strong> Symmetrically enlarged, smooth, firm prostate without palpable nodules or induration.<br><strong>Bladder Ultrasound (Post-Void):</strong> Residual urine volume 240 mL (normal < 50 mL).<br><strong>Urinalysis:</strong> Trace leukocytes, negative nitrites, specific gravity 1.018.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783020000003",
+    "title": "Unit 2 Stand-alone 3: Left Ventricular Hypertrophy",
+    "course": "NURS 1017",
+    "unit": "Unit 2 (Cellular Basis of Disease)",
+    "topic": "Unit 2 (Cellular Basis of Disease)",
+    "disorder": "Unit 2 (Cellular Basis of Disease)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "A client with a 15-year history of untreated essential hypertension undergoes echocardiography showing concentric left ventricular hypertrophy. Which cellular mechanism best explains this adaptive response in adult cardiomyocytes?",
+          "type": "multiple_choice",
+          "options": [
+            {
+              "text": "Increased rate of cardiomyocyte mitotic cell division leading to a higher total cell count",
+              "correct": false
+            },
+            {
+              "text": "Increased synthesis of sarcomeric myofilaments and structural proteins resulting in enlarged individual cell size",
+              "correct": true
+            },
+            {
+              "text": "Transformation of mature cardiac myocytes into embryonic skeletal muscle precursors",
+              "correct": false
+            },
+            {
+              "text": "Metastatic accumulation of extracellular lipid droplets within interstitial myocardial spaces",
+              "correct": false
+            }
+          ],
+          "preamble": "The cardiology clinic nurse is reviewing diagnostic imaging and educating a client regarding hypertensive heart disease.",
+          "explanation": "Adult cardiomyocytes are permanent cells with minimal to no regenerative or mitotic capacity. In response to chronic mechanical pressure overload (such as high systemic vascular resistance in hypertension), cardiomyocytes adapt via hypertrophy—enlargement of individual cell volume driven by accelerated transcription of structural genes, increased protein synthesis, and assembly of additional sarcomeric myofilaments to normalize ventricular wall tension (Laplace's Law). Hyperplasia cannot occur because mature cardiomyocytes cannot undergo mitotic replication."
+        },
+        "leftContent": {
+          "intro": "A 62-year-old client with untreated primary hypertension (office blood pressures consistently 168/98 to 174/102 mmHg) presents for cardiovascular risk evaluation.",
+          "tabs": [
+            {
+              "id": "tab_u2_3_echo",
+              "title": "Diagnostic Reports",
+              "content": "<p><strong>Transthoracic Echocardiogram:</strong> Left ventricular posterior wall thickness 15 mm (normal 6–11 mm); interventricular septal thickness 16 mm (normal 6–11 mm); concentric left ventricular hypertrophy with preserved ejection fraction (60%).<br><strong>Electrocardiogram (ECG):</strong> Voltage criteria for left ventricular hypertrophy with secondary ST-T wave changes (strain pattern) in lateral leads.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783020000004",
+    "title": "Unit 2 Stand-alone 4: Disuse Atrophy & Contracture Risk",
+    "course": "NURS 1017",
+    "unit": "Unit 2 (Cellular Basis of Disease)",
+    "topic": "Unit 2 (Cellular Basis of Disease)",
+    "disorder": "Unit 2 (Cellular Basis of Disease)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "Complete the diagram by dragging from the choices below to specify what condition the client is most likely experiencing, 2 actions the nurse should take to address that condition, and 2 parameters the nurse should monitor to assess the client's progress.",
+          "type": "bowtie",
+          "options": [],
+          "bowtieCol1Header": "Actions to Take",
+          "bowtieCol2Header": "Potential Condition",
+          "bowtieCol3Header": "Parameters to Monitor",
+          "bowtieActions": [
+            {
+              "text": "Implement scheduled passive and active-assistive range-of-motion exercises",
+              "correct": true
+            },
+            {
+              "text": "Place the immobilized joint in continuous acute flexion without repositioning",
+              "correct": false
+            },
+            {
+              "text": "Collaborate with physical therapy for progressive isometric muscle activation",
+              "correct": true
+            },
+            {
+              "text": "Restrain all extremities to prevent involuntary muscular contractions",
+              "correct": false
+            }
+          ],
+          "bowtieConditions": [
+            {
+              "text": "Disuse skeletal muscle atrophy",
+              "correct": true
+            },
+            {
+              "text": "Pathologic skeletal muscle hyperplasia",
+              "correct": false
+            },
+            {
+              "text": "Metaplastic ossification",
+              "correct": false
+            }
+          ],
+          "bowtieParams": [
+            {
+              "text": "Bilateral limb circumference measurements at reproducible landmarks",
+              "correct": true
+            },
+            {
+              "text": "Passive and active joint angle range-of-motion (goniometry)",
+              "correct": true
+            },
+            {
+              "text": "Hourly capillary blood glucose monitoring",
+              "correct": false
+            },
+            {
+              "text": "Serial serum calcitonin concentrations",
+              "correct": false
+            }
+          ],
+          "preamble": "The rehabilitation nurse is planning care for a client who has experienced prolonged immobilization following traumatic orthopedic fixation.",
+          "explanation": "Prolonged immobilization and lack of mechanical loading reduce metabolic demand and protein synthesis while upregulating the ubiquitin-proteasome pathway, leading to accelerated degradation of myofibrillar proteins and disuse muscle atrophy (shrinkage of cell size and loss of muscle mass). To counteract atrophy and prevent irreversible joint contractures, the nurse implements scheduled range-of-motion exercises and collaborates with physical therapy for isometric and resistance training. Monitoring limb circumference and joint degrees of motion verifies recovery and prevents functional deterioration."
+        },
+        "leftContent": {
+          "intro": "A 44-year-old client is admitted to the inpatient rehabilitation unit following 8 weeks of non-weight-bearing cast immobilization for a complex tibial plateau fracture.",
+          "tabs": [
+            {
+              "id": "tab_u2_4_assess",
+              "title": "Physical Therapy Assessment",
+              "content": "<p><strong>Right Lower Extremity:</strong> Severe visible reduction in gastrocnemius and quadriceps bulk compared to left side; right mid-calf circumference 31 cm vs left mid-calf 37 cm; 3/5 motor strength; passive ankle dorsiflexion restricted to neutral (0 degrees). Skin intact without swelling or erythema.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783020000005",
+    "title": "Unit 2 Stand-alone 5: Mechanisms of Cellular Adaptation",
+    "course": "NURS 1017",
+    "unit": "Unit 2 (Cellular Basis of Disease)",
+    "topic": "Unit 2 (Cellular Basis of Disease)",
+    "disorder": "Unit 2 (Cellular Basis of Disease)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "For each clinical scenario, select the primary cellular adaptation mechanism that is occurring.",
+          "type": "matrix_mc",
+          "matrix": {
+            "firstColumnHeader": "Clinical Scenario",
+            "columns": [
+              "Atrophy",
+              "Hypertrophy",
+              "Hyperplasia",
+              "Metaplasia",
+              "Dysplasia"
+            ],
+            "rows": [
+              {
+                "text": "Shrinkage of calf muscle fiber diameter in a paralyzed limb due to loss of motor nerve stimulation (denervation).",
+                "correctIndex": 0
+              },
+              {
+                "text": "Enlargement of skeletal muscle fibers in an athlete undergoing regular heavy resistance weight training.",
+                "correctIndex": 1
+              },
+              {
+                "text": "Rapid proliferation of uterine glandular endometrium driven by elevated estrogen during the menstrual cycle.",
+                "correctIndex": 2
+              },
+              {
+                "text": "Conversion of ciliated pseudostratified columnar bronchial epithelium to stratified squamous epithelium in a chronic tobacco smoker.",
+                "correctIndex": 3
+              },
+              {
+                "text": "Disordered cervical epithelial growth with marked variation in cellular shape, size, nuclear hyperchromatism, and architectural loss.",
+                "correctIndex": 4
+              }
+            ]
+          },
+          "preamble": "The nurse educator is reviewing cellular adaptation mechanisms and terminology with nursing students.",
+          "explanation": "Atrophy is a decrease in cell size and functional capacity due to decreased workload, denervation, ischemia, or malnutrition. Hypertrophy is an increase in individual cell size without cell division, typical of non-dividing cells like skeletal or cardiac muscle under increased workload. Hyperplasia is an increase in the number of cells in an organ capable of mitosis, driven by hormonal or compensatory stimuli. Metaplasia is a reversible phenotypic change where one adult mature cell type is replaced by another mature cell type better suited to a hostile environment. Dysplasia represents disordered growth and architectural derangement characterized by cellular pleomorphism and atypia; it is pre-neoplastic."
+        },
+        "leftContent": {
+          "intro": "The nursing team is completing a continuing education module on the cellular responses to stress, injury, and environmental demands.",
+          "tabs": [
+            {
+              "id": "tab_u2_5_ref",
+              "title": "Cellular Concepts Reference",
+              "content": "<p>Cells adapt to altered physiologic demands or sublethal pathologic stresses through modulated gene expression that alters cell size, cell number, or differentiation state.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783020000006",
+    "title": "Unit 2 Stand-alone 6: Post-Mortem Somatic Changes Sequence",
+    "course": "NURS 1017",
+    "unit": "Unit 2 (Cellular Basis of Disease)",
+    "topic": "Unit 2 (Cellular Basis of Disease)",
+    "disorder": "Unit 2 (Cellular Basis of Disease)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is reviewing the post-mortem physiological changes that occur following somatic death. Place the physiological post-mortem changes in the correct chronological sequence from earliest to latest occurrence.",
+          "type": "ordered_response",
+          "options": [],
+          "orderedOptions": [
+            "Cessation of cardiac output and respirations with gradual reduction of body temperature to ambient environmental temperature (algor mortis)",
+            "Gravitational settling of non-circulating blood into dependent cutaneous capillaries producing purple-red lividity (livor mortis)",
+            "Depletion of cellular ATP preventing actin-myosin detachment, resulting in progressive muscle stiffening (rigor mortis)",
+            "Resolution of muscular rigidity followed by generalized enzymatic autolysis and microbial decomposition (putrefaction)"
+          ],
+          "preamble": "The palliative care nurse is preparing educational materials regarding post-mortem nursing care and physiological stages after somatic death.",
+          "explanation": "Following somatic death (cessation of respiration and circulation): (1) Algor mortis begins immediately as metabolic heat production ceases and body temperature equilibrates to the ambient environment. (2) Livor mortis develops within 1 to 3 hours as blood settles into dependent microvasculature by gravity. (3) Rigor mortis develops as cellular glycogen and ATP stores are exhausted (typically starting within 2–4 hours, peaking at 12–18 hours); without ATP, actin and myosin cannot detach, causing persistent muscular rigidity. (4) Putrefaction and autolysis occur later (after 24–48 hours) as endogenous lysosomal enzymes and saprophytic intestinal microbes break down body tissues, accompanied by flaccidity."
+        },
+        "leftContent": {
+          "intro": "A hospice client with end-stage congestive heart failure passes away peacefully in the palliative care unit surrounded by family.",
+          "tabs": [
+            {
+              "id": "tab_u2_6_chart",
+              "title": "Clinical Record",
+              "content": "<p><strong>Pronouncement:</strong> Somatic death pronounced at 04:15 following absence of apical pulse, respirations, pupillary light reflex, and corneal reflexes.<br><strong>Post-Mortem Protocol:</strong> Family bereavement support facilitated; post-mortem care scheduled in accordance with cultural preferences.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783020000007",
+    "title": "Unit 2 Stand-alone 7: Cervical Dysplasia Assessment",
+    "course": "NURS 1017",
+    "unit": "Unit 2 (Cellular Basis of Disease)",
+    "topic": "Unit 2 (Cellular Basis of Disease)",
+    "disorder": "Unit 2 (Cellular Basis of Disease)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is reviewing the colposcopy clinic note for a client with an abnormal Papanicolaou (Pap) test. Click to highlight the <b>four findings</b> in the progress note that specifically indicate disordered cellular architecture, high-grade dysplasia, or pre-invasive neoplastic transformation.",
+          "type": "highlight",
+          "highlightText": "A 32-year-old client returns for colposcopy evaluation following a liquid-based Pap smear revealing high-grade squamous intraepithelial lesion (HSIL). Application of 5% acetic acid solution to the cervix demonstrates {dense acetowhite epithelium with coarse punctation and mosaic capillary patterns|correct} located at the squamocolumnar transformation zone. Directed punch biopsy of the lesion is obtained. Microscopic histological analysis demonstrates {marked cellular pleomorphism with prominent loss of architectural polarity|correct} throughout two-thirds of the epithelial thickness. The pathologist notes {hyperchromatic, enlarged nuclei with elevated nuclear-to-cytoplasmic ratio|correct} along with {frequent atypical mitotic figures extending above the basal cell layer|correct}. The underlying basement membrane is continuous and intact without microinvasion. {The client denies postcoital vaginal bleeding, pelvic pain, or intermenstrual discharge.} {Vitals: T 36.8 °C, P 72, BP 118/74 mmHg.} {Urine human chorionic gonadotropin pregnancy test is negative.}",
+          "maxCorrectSelections": 4,
+          "options": [],
+          "preamble": "The women's health clinic nurse is evaluating biopsy findings to guide client education regarding cervical intraepithelial neoplasia.",
+          "explanation": "Cervical dysplasia is characterized by atypical disordered cellular growth. Key microscopic and colposcopic hallmarks include dense acetowhite epithelium with coarse vascular punctation/mosaicism, marked pleomorphism with loss of architectural polarity, nuclear enlargement with hyperchromatism (elevated N:C ratio), and frequent atypical mitotic figures above the basal layer. The intact basement membrane indicates the process has not invaded the stroma, classifying it as pre-invasive dysplasia/CIN rather than invasive carcinoma. Vital signs, negative pregnancy test, and absence of pain are general non-dysplastic clinical observations."
+        },
+        "leftContent": {
+          "intro": "A 32-year-old client with persistent human papillomavirus (HPV) genotype 16 infection attends the colposcopy clinic for diagnostic evaluation of an abnormal screening smear.",
+          "tabs": [
+            {
+              "id": "tab_u2_7_hx",
+              "title": "Clinical Summary",
+              "content": "<p><strong>History:</strong> Nulliparous; HPV genotype 16 positive on previous two annual routine screens; Pap smear reported as HSIL.<br><strong>Procedure:</strong> Diagnostic colposcopy with acetic acid application and targeted transformation zone biopsies.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783020000008",
+    "title": "Unit 2 Stand-alone 8: Compensatory Renal Hypertrophy",
+    "course": "NURS 1017",
+    "unit": "Unit 2 (Cellular Basis of Disease)",
+    "topic": "Unit 2 (Cellular Basis of Disease)",
+    "disorder": "Unit 2 (Cellular Basis of Disease)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse reviews serial postoperative renal ultrasound and laboratory trends for a living kidney donor. Which interpretation accurately reflects the pathophysiologic adaptation occurring in the remaining solitary kidney over the 6-month follow-up period?",
+          "type": "trend",
+          "options": [
+            {
+              "text": "The remaining kidney is undergoing compensatory hypertrophy with enlargement of nephrons and increased filtration capacity to meet systemic metabolic demands.",
+              "correct": true
+            },
+            {
+              "text": "The remaining kidney is undergoing progressive ischemic atrophy secondary to excessive hemodynamic workload.",
+              "correct": false
+            },
+            {
+              "text": "The remaining kidney is exhibiting neoplastic hyperplasia with uncontrolled tubular mitotic division.",
+              "correct": false
+            },
+            {
+              "text": "The remaining kidney is undergoing widespread metaplastic transformation into hepatic parenchymal tissue.",
+              "correct": false
+            }
+          ],
+          "preamble": "The transplant clinic nurse is assessing longitudinal recovery data for a 38-year-old living donor following unilateral donor nephrectomy.",
+          "explanation": "When one kidney is surgically removed, the remaining solitary kidney undergoes compensatory hypertrophy. Because mature nephrons cannot multiply by hyperplasia, existing proximal and distal tubular epithelial cells and glomeruli enlarge in individual cell size, protein mass, and functional surface area to handle the entire cardiac output and metabolic filtration load. Over 6 months, this adaptive hypertrophy restores total renal function to approximately 75–85% of baseline bilateral capacity, reflected in the stabilization of GFR and serum creatinine."
+        },
+        "leftContent": {
+          "intro": "A 38-year-old client underwent an uncomplicated left laparoscopic donor nephrectomy 6 months ago to donate a kidney to a sibling. The nurse reviews serial recovery data.",
+          "tabs": [
+            {
+              "id": "tab_u2_8_trend",
+              "title": "Renal Function & Ultrasound Trend",
+              "content": "<table class='nclex-editor-table'><thead><tr><th>Parameter</th><th>Baseline (Pre-op)</th><th>Post-op Day 2</th><th>Month 1</th><th>Month 6</th></tr></thead><tbody><tr><td>Serum Creatinine</td><td>0.8 mg/dL</td><td>1.6 mg/dL</td><td>1.2 mg/dL</td><td>1.0 mg/dL</td></tr><tr><td>eGFR</td><td>110 mL/min/1.73m²</td><td>55 mL/min/1.73m²</td><td>72 mL/min/1.73m²</td><td>88 mL/min/1.73m²</td></tr><tr><td>Right Kidney Length (US)</td><td>11.2 cm</td><td>11.2 cm</td><td>12.1 cm</td><td>12.9 cm</td></tr><tr><td>Right Kidney Volume (US)</td><td>145 cm³</td><td>146 cm³</td><td>172 cm³</td><td>198 cm³</td></tr></tbody></table>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783020000009",
+    "title": "Unit 2 Stand-alone 9: Differentiation vs. Anaplasia",
+    "course": "NURS 1017",
+    "unit": "Unit 2 (Cellular Basis of Disease)",
+    "topic": "Unit 2 (Cellular Basis of Disease)",
+    "disorder": "Unit 2 (Cellular Basis of Disease)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "A pathology report describes a malignant soft-tissue tumor as 'completely anaplastic and undifferentiated.' What does this finding indicate regarding the biologic behavior and characteristics of these tumor cells?",
+          "type": "multiple_choice",
+          "options": [
+            {
+              "text": "The tumor cells closely resemble mature parenchymal tissue and demonstrate slow, indolent growth.",
+              "correct": false
+            },
+            {
+              "text": "The cells have lost specialized functional differentiation, display marked pleomorphism, and behave aggressively with poor prognosis.",
+              "correct": true
+            },
+            {
+              "text": "The tissue has successfully adapted to hypoxia by transforming into non-dividing fibrous scar tissue.",
+              "correct": false
+            },
+            {
+              "text": "The cells retain normal cell-cycle checkpoints and undergo uniform, organized apoptosis.",
+              "correct": false
+            }
+          ],
+          "preamble": "The surgical oncology nurse is interpreting a multidisciplinary tumor board pathology report.",
+          "explanation": "Differentiation refers to the degree to which neoplastic cells morphologically and functionally resemble mature, normal parent cells of origin. Anaplasia represents complete lack of differentiation—a hallmark of high-grade malignancy. Anaplastic cells exhibit severe cellular and nuclear pleomorphism, hyperchromasia, giant tumor cells, loss of normal organoid architecture, and numerous abnormal mitoses. Anaplasia correlates directly with aggressive local invasion, rapid proliferation, high metastatic potential, and poor clinical prognosis."
+        },
+        "leftContent": {
+          "intro": "A 59-year-old client undergoes wide local excision of an enlarging, deeply located thigh mass.",
+          "tabs": [
+            {
+              "id": "tab_u2_9_path",
+              "title": "Surgical Pathology Report",
+              "content": "<p><strong>Gross Specimen:</strong> 8.5 cm infiltrative, necrotic mass within the vastus lateralis.<br><strong>Microscopic Description:</strong> High-grade pleomorphic sarcoma. Tumor cells demonstrate complete anaplasia with bizarre multinucleated giant cells, hyperchromatic monstrous nuclei, loss of skeletal muscle striations, and > 25 atypical mitoses per 10 high-power fields.<br><strong>Tumor Grade:</strong> Grade 3 (Undifferentiated / Anaplastic).</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783020000010",
+    "title": "Unit 2 Stand-alone 10: Characteristics of Apoptosis vs. Necrosis",
+    "course": "NURS 1017",
+    "unit": "Unit 2 (Cellular Basis of Disease)",
+    "topic": "Unit 2 (Cellular Basis of Disease)",
+    "disorder": "Unit 2 (Cellular Basis of Disease)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is providing care to a client and reviewing the mechanisms of cell death. Which characteristics distinguishing programmed apoptosis from accidental necrosis should the nurse anticipate? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Apoptosis is an active, energy-dependent (ATP-requiring) process mediated by caspase proteases",
+              "correct": true
+            },
+            {
+              "text": "Apoptotic cells shrink and fragment into intact, membrane-bound apoptotic bodies without plasma membrane rupture",
+              "correct": true
+            },
+            {
+              "text": "Necrosis invariably triggers a vigorous acute inflammatory response in adjacent tissues",
+              "correct": true
+            },
+            {
+              "text": "Apoptosis results in widespread leakage of cellular enzymes (e.g., troponin, amylase) into systemic circulation",
+              "correct": false
+            },
+            {
+              "text": "Apoptotic fragments express 'eat-me' signals (such as phosphatidylserine) that facilitate rapid phagocytosis without inflammation",
+              "correct": true
+            },
+            {
+              "text": "Necrosis is characterized by early nuclear condensation followed by orderly non-random internucleosomal DNA fragmentation",
+              "correct": false
+            }
+          ],
+          "preamble": "The nurse educator is reviewing cellular pathology with graduate nurses on an acute medical unit.",
+          "explanation": "Apoptosis is programmed, gene-directed cell death requiring ATP. It involves cell condensation/shrinkage, caspase cascade activation, internucleosomal DNA cleavage, and packaging of cellular contents into intact membrane-bound apoptotic bodies displaying phosphatidylserine for phagocytic clearance without membrane rupture or inflammatory response. In contrast, necrosis is passive, accidental cell death caused by severe injury/ischemia, marked by cell swelling (oncosis), plasma membrane rupture, spilling of intracellular enzymes into systemic circulation, and induction of an intense acute inflammatory reaction."
+        },
+        "leftContent": {
+          "intro": "During clinical teaching on an acute medical floor, the nurse compares tissue recovery in a client with physiologic involution versus a client with acute myocardial infarction.",
+          "tabs": [
+            {
+              "id": "tab_u2_10_teaching",
+              "title": "Cell Death Comparison Table",
+              "content": "<table class='nclex-editor-table'><thead><tr><th>Feature</th><th>Apoptosis</th><th>Necrosis</th></tr></thead><tbody><tr><td>Cell Volume</td><td>Shrinkage / condensation</td><td>Swelling / oncosis</td></tr><tr><td>Membrane Integrity</td><td>Intact; apoptotic blebbing</td><td>Disrupted / ruptured</td></tr><tr><td>Inflammatory Reaction</td><td>None</td><td>Prominent acute inflammation</td></tr><tr><td>Energy Requirement</td><td>ATP-dependent</td><td>ATP depletion</td></tr></tbody></table>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783030000001",
+    "title": "Unit 3 Stand-alone 1: Cystic Fibrosis Pathophysiology",
+    "course": "NURS 1017",
+    "unit": "Unit 3 (Genetic and Developmental Disorders)",
+    "topic": "Unit 3 (Genetic and Developmental Disorders)",
+    "disorder": "Unit 3 (Genetic and Developmental Disorders)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is providing care to a pediatric client recently diagnosed with cystic fibrosis (CF). Which multisystem clinical and pathophysiologic findings should the nurse anticipate? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Defective CFTR chloride channel causing dehydration of epithelial secretions",
+              "correct": true
+            },
+            {
+              "text": "Copious, highly viscous mucus plugging bronchioles and recurrent Pseudomonas aeruginosa infections",
+              "correct": true
+            },
+            {
+              "text": "Exocrine pancreatic insufficiency causing malabsorption of fat and fat-soluble vitamins (A, D, E, K)",
+              "correct": true
+            },
+            {
+              "text": "Elevated sweat chloride concentration on quantitative pilocarpine iontophoresis testing",
+              "correct": true
+            },
+            {
+              "text": "Increased renal excretion of calcium leading to rapid skeletal hypocalcemia",
+              "correct": false
+            },
+            {
+              "text": "Bulky, foul-smelling, fatty stools (steatorrhea) and poor weight gain",
+              "correct": true
+            }
+          ],
+          "preamble": "The pediatric pulmonary nurse is evaluating an 18-month-old toddler referred following repeated episodes of wheezing, chronic productive cough, and failure to thrive.",
+          "explanation": "Cystic fibrosis is an autosomal recessive disorder caused by mutations in the CFTR gene (commonly F508del), which codes for an epithelial cAMP-regulated chloride channel. Defective chloride transport and subsequent hyperabsorption of sodium/water result in viscous, dehydrated secretions in multiple exocrine organs. Key manifestations include recurrent lower respiratory tract infections (especially Pseudomonas), bronchiole mucus plugging, bronchiectasis, exocrine pancreatic duct blockage leading to malabsorption of fats/proteins and fat-soluble vitamins (A, D, E, K), steatorrhea, failure to thrive, and elevated sweat chloride (≥ 60 mmol/L). It does not cause direct urinary calcium wasting."
+        },
+        "leftContent": {
+          "intro": "An 18-month-old toddler presents with a chronic moist cough, frequent loose greasy stools, and weight persistently below the 3rd percentile despite an insatiable appetite.",
+          "tabs": [
+            {
+              "id": "tab_u3_1_diag",
+              "title": "Diagnostic Workup",
+              "content": "<p><strong>Sweat Chloride Test (Pilocarpine Iontophoresis):</strong> 78 mmol/L (diagnostic positive: ≥ 60 mmol/L).<br><strong>Fecal Elastase-1:</strong> 42 mcg/g stool (severe pancreatic insufficiency: < 100 mcg/g).<br><strong>Chest X-ray:</strong> Bilateral hyperinflation with peribronchial cuffing and mucus plugging.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783030000002",
+    "title": "Unit 3 Stand-alone 2: Turner Syndrome (45,X)",
+    "course": "NURS 1017",
+    "unit": "Unit 3 (Genetic and Developmental Disorders)",
+    "topic": "Unit 3 (Genetic and Developmental Disorders)",
+    "disorder": "Unit 3 (Genetic and Developmental Disorders)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is providing care to an adolescent female client recently diagnosed with Turner syndrome (monosomy X). Which clinical findings and phenotypic characteristics should the nurse anticipate? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Short stature significantly below the genetic mid-parental height trajectory",
+              "correct": true
+            },
+            {
+              "text": "Primary amenorrhea and delayed pubertal development secondary to gonadal dysgenesis (streak ovaries)",
+              "correct": true
+            },
+            {
+              "text": "Coarctation of the aorta or bicuspid aortic valve",
+              "correct": true
+            },
+            {
+              "text": "Excessive longitudinal bone elongation resulting in tall, eunuchoid proportions",
+              "correct": false
+            },
+            {
+              "text": "Webbed neck (pterygium colli) and low posterior hairline",
+              "correct": true
+            },
+            {
+              "text": "Precocious puberty and early menarche prior to age 9",
+              "correct": false
+            }
+          ],
+          "preamble": "The pediatric endocrinology clinic nurse is conducting a health history and physical assessment on a 14-year-old female presenting for evaluation of growth delay.",
+          "explanation": "Turner syndrome (complete or partial monosomy X, 45,X) occurs due to meiotic nondisjunction or loss of a sex chromosome. Classic manifestations include short stature (due to SHOX gene haploinsufficiency), gonadal dysgenesis with fibrotic 'streak ovaries' resulting in absent estrogen production, primary amenorrhea, lack of secondary sexual characteristics, webbed neck, low posterior hairline, broad shield-shaped chest with widely spaced nipples, lymphedema of hands/feet in infancy, and congenital cardiovascular malformations (most commonly bicuspid aortic valve and coarctation of the aorta). Excessive tall stature and precocious puberty do not occur."
+        },
+        "leftContent": {
+          "intro": "A 14-year-old female presents to the endocrinology clinic with short stature (height at the 1st percentile) and failure to enter puberty. Her mother notes no breast budding and no menarche.",
+          "tabs": [
+            {
+              "id": "tab_u3_2_clin",
+              "title": "Endocrine Evaluation",
+              "content": "<p><strong>Height:</strong> 138 cm (< 1st percentile). <strong>Weight:</strong> 42 kg (15th percentile).<br><strong>Physical Exam:</strong> Tanner stage 1 breasts and pubic hair; low-set ears; webbed neck; high-arched palate; carrying angle of elbows increased (cubitus valgus).<br><strong>Serum FSH:</strong> 72 mIU/mL (markedly elevated due to lack of ovarian negative feedback).<br><strong>Serum Estradiol:</strong> < 10 pg/mL (undetectable/low).</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783030000003",
+    "title": "Unit 3 Stand-alone 3: Duchenne Muscular Dystrophy",
+    "course": "NURS 1017",
+    "unit": "Unit 3 (Genetic and Developmental Disorders)",
+    "topic": "Unit 3 (Genetic and Developmental Disorders)",
+    "disorder": "Unit 3 (Genetic and Developmental Disorders)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is providing care to a 5-year-old male recently diagnosed with Duchenne muscular dystrophy (DMD). Which assessment findings and disease characteristics should the nurse anticipate? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "X-linked recessive inheritance affecting predominantly male offspring",
+              "correct": true
+            },
+            {
+              "text": "Absence or profound deficiency of the sarcolemmal anchoring protein dystrophin",
+              "correct": true
+            },
+            {
+              "text": "Positive Gowers' sign, where the child uses their hands to 'climb up' their legs to achieve standing",
+              "correct": true
+            },
+            {
+              "text": "Pseudohypertrophy of the calf muscles due to fatty infiltration and fibrosis",
+              "correct": true
+            },
+            {
+              "text": "Markedly elevated serum creatine kinase (CK) levels reflecting active muscle necrosis",
+              "correct": true
+            },
+            {
+              "text": "Prominent sensory anesthesia and loss of deep tendon reflexes in upper extremities",
+              "correct": false
+            }
+          ],
+          "preamble": "The neuromuscular clinic nurse is conducting an intake assessment on a 5-year-old boy presenting with frequent falls and waddling gait.",
+          "explanation": "DMD is an X-linked recessive disorder caused by frameshift mutations in the DMD gene, which encodes dystrophin—a critical cytoskeletal structural protein that anchors the intracellular actin cytoskeleton to the extracellular matrix. Without dystrophin, mechanical contraction tears the sarcolemma, causing calcium influx, myofiber necrosis, and replacement of muscle tissue with fibrofatty tissue (pseudohypertrophy, especially of calves). Manifestations include progressive proximal muscle weakness, waddling gait, Gowers' sign, and dramatically elevated serum CK (often 10–100 times normal). DMD affects motor muscle fibers; it is not a sensory neuropathy."
+        },
+        "leftContent": {
+          "intro": "A 5-year-old boy is referred by his pediatrician after parents reported that he trips frequently, cannot keep up with peers on the playground, and struggles to stand up from sitting on the carpet.",
+          "tabs": [
+            {
+              "id": "tab_u3_3_assess",
+              "title": "Neuromuscular Assessment",
+              "content": "<p><strong>Observation:</strong> Waddling, lordotic gait; when asked to rise from floor, the child turns prone, extends knees, pushes hands off floor, and places hands on thighs sequentially to push torso upright (Gowers' sign).<br><strong>Physical Exam:</strong> Enlarged, firm gastrocnemius muscles bilaterally (calf pseudohypertrophy); proximal pelvic girdle weakness (3/5).<br><strong>Serum Creatine Kinase (CK):</strong> 14,800 U/L (reference 30–200 U/L).</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783030000004",
+    "title": "Unit 3 Stand-alone 4: Marfan Syndrome & Aortic Crisis",
+    "course": "NURS 1017",
+    "unit": "Unit 3 (Genetic and Developmental Disorders)",
+    "topic": "Unit 3 (Genetic and Developmental Disorders)",
+    "disorder": "Unit 3 (Genetic and Developmental Disorders)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "Complete the diagram by dragging from the choices below to specify what condition the client is most likely experiencing, 2 actions the nurse should take to address that condition, and 2 parameters the nurse should monitor to assess the client's progress.",
+          "type": "bowtie",
+          "options": [],
+          "bowtieCol1Header": "Actions to Take",
+          "bowtieCol2Header": "Potential Condition",
+          "bowtieCol3Header": "Parameters to Monitor",
+          "bowtieActions": [
+            {
+              "text": "Maintain strict bedrest and ensure calm, quiet surroundings to minimize sympathetic surge",
+              "correct": true
+            },
+            {
+              "text": "Encourage vigorous isometric resistance exercises to improve vascular compliance",
+              "correct": false
+            },
+            {
+              "text": "Administer prescribed intravenous antihypertensive / beta-blocker therapy as directed",
+              "correct": true
+            },
+            {
+              "text": "Place the client in high Trendelenburg position to increase central preload",
+              "correct": false
+            }
+          ],
+          "bowtieConditions": [
+            {
+              "text": "Acute aortic dissection / aneurysm expansion secondary to connective tissue defect",
+              "correct": true
+            },
+            {
+              "text": "Muscular dystrophy myasthenic crisis",
+              "correct": false
+            },
+            {
+              "text": "Spontaneous skeletal muscle necrosis",
+              "correct": false
+            }
+          ],
+          "bowtieParams": [
+            {
+              "text": "Bilateral upper extremity arterial blood pressures and mean arterial pressure (MAP)",
+              "correct": true
+            },
+            {
+              "text": "Quality and symmetry of peripheral arterial pulses (radial, femoral, pedal)",
+              "correct": true
+            },
+            {
+              "text": "Hourly urinary ketone levels",
+              "correct": false
+            },
+            {
+              "text": "Serum phenylalanine concentrations",
+              "correct": false
+            }
+          ],
+          "preamble": "The emergency department nurse is triaging a 24-year-old client with known Marfan syndrome presenting with sudden severe chest pain.",
+          "explanation": "Marfan syndrome is an autosomal dominant disorder caused by mutations in the FBN1 gene encoding fibrillin-1, a crucial component of microfibrils that support elastic fiber deposition in the connective tissue of the aortic media. Aortic root dilatation, cystic medial necrosis, and ascending aortic aneurysms/dissections are life-threatening complications. In acute aortic dissection/pain, immediate nursing priorities include strict bedrest, pain relief, minimizing sympathetic surge, and administering prescribed intravenous beta-blockers/antihypertensives to lower heart rate and blood pressure (reducing shearing force dP/dt on the aortic wall). Monitoring bilateral limb blood pressures and pulse symmetry is essential to detect branch vessel compromise."
+        },
+        "leftContent": {
+          "intro": "A 24-year-old male with Marfan syndrome (height 6 ft 6 in, arm span exceeding height, pectus excavatum) arrives at the emergency department with sudden-onset, severe, tearing chest pain radiating to his interscapular back.",
+          "tabs": [
+            {
+              "id": "tab_u3_4_ed",
+              "title": "Emergency Presentation",
+              "content": "<p><strong>Vitals:</strong> BP Right Arm 168/96 mmHg, BP Left Arm 138/82 mmHg; P 104 regular; RR 22; SpO2 96% on room air.<br><strong>Cardiovascular:</strong> Decrescendo diastolic murmur audible at right sternal border (aortic insufficiency); right radial pulse full, left radial pulse diminished.<br><strong>Diagnostics Ordered:</strong> Stat emergent CT Angiography of chest and echocardiogram.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783030000005",
+    "title": "Unit 3 Stand-alone 5: Autosomal Dominant Inheritance Risk",
+    "course": "NURS 1017",
+    "unit": "Unit 3 (Genetic and Developmental Disorders)",
+    "topic": "Unit 3 (Genetic and Developmental Disorders)",
+    "disorder": "Unit 3 (Genetic and Developmental Disorders)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "A 28-year-old female with genetically confirmed heterozygous Marfan syndrome is planning a pregnancy with her unaffected partner. What is the statistical probability that each biological offspring will inherit the mutated fibrillin-1 gene and develop Marfan syndrome?",
+          "type": "multiple_choice",
+          "options": [
+            {
+              "text": "0% (the condition only manifests if both parents transmit the mutated allele)",
+              "correct": false
+            },
+            {
+              "text": "25% (autosomal recessive recurrence probability)",
+              "correct": false
+            },
+            {
+              "text": "50% (autosomal dominant transmission from a heterozygous parent)",
+              "correct": true
+            },
+            {
+              "text": "100% (all offspring will invariably be affected regardless of parentage)",
+              "correct": false
+            }
+          ],
+          "preamble": "The prenatal genetics nurse is providing preconception counseling to a couple.",
+          "explanation": "Marfan syndrome follows an autosomal dominant inheritance pattern. An individual with the condition is heterozygous (Aa), possessing one mutated FBN1 allele and one normal allele, while the unaffected partner possesses two normal alleles (aa). During meiosis, the affected parent has a 50% (1 in 2) chance of passing the dominant mutated allele (A) and a 50% chance of passing the normal allele (a) with each pregnancy, independent of gender."
+        },
+        "leftContent": {
+          "intro": "A newly married couple presents for preconception genetic counseling. The female partner was diagnosed with Marfan syndrome at age 16 and has arachnodactyly, mild aortic root dilation, and lens subluxation. Her husband has no chronic medical conditions and no family history of genetic disease.",
+          "tabs": [
+            {
+              "id": "tab_u3_5_pedigree",
+              "title": "Family Pedigree",
+              "content": "<p><strong>Client Genotype:</strong> Heterozygous FBN1 c.1249C>T pathogenic variant.<br><strong>Partner Genotype:</strong> Negative for FBN1 pathogenic variants.<br><strong>Family History:</strong> Client's father and paternal grandfather had Marfan syndrome and thoracic aortic surgery.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783030000006",
+    "title": "Unit 3 Stand-alone 6: Sickle Cell Vaso-Occlusive Cascade",
+    "course": "NURS 1017",
+    "unit": "Unit 3 (Genetic and Developmental Disorders)",
+    "topic": "Unit 3 (Genetic and Developmental Disorders)",
+    "disorder": "Unit 3 (Genetic and Developmental Disorders)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is caring for a client with sickle cell anemia who develops an acute painful vaso-occlusive crisis. Place the pathophysiologic events of the vaso-occlusive cascade in the correct chronological order.",
+          "type": "ordered_response",
+          "options": [],
+          "orderedOptions": [
+            "Triggering factor (hypoxia, dehydration, cold, or acidosis) lowers local oxygen tension in systemic capillaries",
+            "Deoxygenated sickle hemoglobin (HbS) molecules polymerize into rigid, insoluble crystalline rod-like chains",
+            "Erythrocytes deform into rigid, crescent-shaped sickle cells with increased membrane adherence",
+            "Inflexible sickled red cells adhere to vascular endothelium and aggregate, causing microvascular occlusion",
+            "Downstream tissue ischemia and cellular infarction occur, triggering intense inflammatory pain and necrosis"
+          ],
+          "preamble": "The hematology unit nurse is reviewing the pathophysiology of sickle cell crisis while planning care for an admitted client.",
+          "explanation": "In sickle cell disease (autosomal recessive point mutation substituting valine for glutamic acid at codon 6 of the beta-globin chain): (1) A triggering factor such as dehydration, hypoxia, cold, or infection lowers oxygen saturation in the microcirculation. (2) Deoxygenated HbS polymerizes into long intracellular filaments. (3) The polymer filaments distort the red blood cell into a rigid, sickle-shaped erythrocyte. (4) Rigid sickled erythrocytes clump, adhere to endothelial cells, and obstruct capillaries and venules. (5) Microvascular occlusion blocks downstream perfusion, causing tissue ischemia, cellular infarction, intense acute pain, and organ dysfunction."
+        },
+        "leftContent": {
+          "intro": "A 19-year-old client with homozygous sickle cell disease (HbSS) is admitted with severe bilateral femur and lumbar pain following a viral respiratory illness with high fever.",
+          "tabs": [
+            {
+              "id": "tab_u3_6_labs",
+              "title": "Admission Assessment",
+              "content": "<p><strong>Vitals:</strong> T 38.6 °C, P 112, RR 24, BP 114/72, SpO2 91% on room air.<br><strong>Pain Score:</strong> 9/10 excruciating deep bone pain.<br><strong>CBC:</strong> Hemoglobin 6.8 g/dL (baseline 8.5), Hematocrit 21%, Reticulocyte count 14%, Total Bilirubin 3.8 mg/dL.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783030000007",
+    "title": "Unit 3 Stand-alone 7: Phenylketonuria (PKU) Assessment",
+    "course": "NURS 1017",
+    "unit": "Unit 3 (Genetic and Developmental Disorders)",
+    "topic": "Unit 3 (Genetic and Developmental Disorders)",
+    "disorder": "Unit 3 (Genetic and Developmental Disorders)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is reviewing the electronic health record of an infant admitted for developmental delay and eczema. Click to highlight the <b>four findings</b> in the clinical record that specifically reflect the metabolic derangements, enzymatic defect, or clinical manifestations of untreated phenylketonuria (PKU).",
+          "type": "highlight",
+          "highlightText": "A 6-month-old infant is evaluated for developmental regression, head lag, and persistent rash. The mother states the infant was born at home with no newborn metabolic blood spot screening performed. On exam, the nurse notes {a distinctive musty, mousy odor emanating from the infant's urine and skin|correct}. Physical inspection reveals fair skin, blonde hair, and blue eyes significantly lighter than the biological parents, consistent with {impaired melanin synthesis secondary to severe tyrosine deficiency|correct}. Neurologic evaluation reveals {infantile spasms, microcephaly, and profound developmental milestones regression|correct}. Diagnostic metabolic laboratory testing demonstrates {plasma phenylalanine concentration markedly elevated at 1,420 micromol/L due to phenylalanine hydroxylase deficiency|correct}. {Complete blood count reveals hemoglobin 12.1 g/dL and platelet count 280,000/mcL.} {Serum sodium is 139 mEq/L and potassium is 4.3 mEq/L.} {Abdominal ultrasound demonstrates normal hepatic and splenic size.}",
+          "maxCorrectSelections": 4,
+          "options": [],
+          "preamble": "The metabolic genetics clinic nurse is reviewing clinical and laboratory findings for an infant suspected of having an inborn error of amino acid metabolism.",
+          "explanation": "Phenylketonuria (PKU) is an autosomal recessive deficiency of the hepatic enzyme phenylalanine hydroxylase (PAH), which normally converts phenylalanine to tyrosine. High toxic levels of phenylalanine accumulate in the brain and blood, while tyrosine becomes deficient. Manifestations include: (1) musty/mousy odor from phenylacetic acid metabolites excreted in sweat and urine, (2) hypopigmentation (fair hair, pale skin, blue eyes) because tyrosine is an essential precursor for melanin synthesis, (3) neurologic impairment, seizures/spasms, microcephaly, and intellectual disability, and (4) markedly elevated plasma phenylalanine (> 1,200 micromol/L vs normal < 120). Normal CBC, electrolytes, and abdominal ultrasound are non-specific."
+        },
+        "leftContent": {
+          "intro": "A 6-month-old infant presents with developmental regression and skin rash. The child missed routine newborn screening after an unassisted home birth.",
+          "tabs": [
+            {
+              "id": "tab_u3_7_chart",
+              "title": "Pediatric Clinic Note",
+              "content": "<p><strong>History:</strong> Born at 39 weeks; exclusively breastfed; recently began having repetitive jerking seizures and lost head control.<br><strong>Consultation:</strong> Genetics and metabolic disorders team consulted for urgent dietary initiation of phenylalanine-restricted medical formula.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783030000008",
+    "title": "Unit 3 Stand-alone 8: Genetic Transmission Patterns",
+    "course": "NURS 1017",
+    "unit": "Unit 3 (Genetic and Developmental Disorders)",
+    "topic": "Unit 3 (Genetic and Developmental Disorders)",
+    "disorder": "Unit 3 (Genetic and Developmental Disorders)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "For each genetic disorder, select the primary mode of genetic transmission or chromosomal etiology.",
+          "type": "matrix_mc",
+          "matrix": {
+            "firstColumnHeader": "Genetic Disorder",
+            "columns": [
+              "Autosomal Recessive",
+              "Autosomal Dominant",
+              "X-Linked Recessive",
+              "Chromosomal Aneuploidy"
+            ],
+            "rows": [
+              {
+                "text": "Cystic Fibrosis (mutated CFTR gene requiring two carrier parents for disease expression in 25% of offspring).",
+                "correctIndex": 0
+              },
+              {
+                "text": "Marfan Syndrome (mutated FBN1 gene where a single defective copy produces clinical phenotype in 50% of offspring).",
+                "correctIndex": 1
+              },
+              {
+                "text": "Hemophilia A (factor VIII deficiency carried on the X chromosome affecting predominantly males).",
+                "correctIndex": 2
+              },
+              {
+                "text": "Down Syndrome (Trisomy 21 resulting from meiotic nondisjunction producing an extra chromosome 21).",
+                "correctIndex": 3
+              },
+              {
+                "text": "Turner Syndrome (loss of one sex chromosome resulting in a 45,X monosomy karyotype).",
+                "correctIndex": 3
+              }
+            ]
+          },
+          "preamble": "The nursing faculty is assessing student knowledge of hereditary patterns and chromosomal aberrations.",
+          "explanation": "Cystic fibrosis is autosomal recessive (both alleles mutated). Marfan syndrome is autosomal dominant (single mutated allele sufficient). Hemophilia A is X-linked recessive (primarily affects hemizygous males). Down syndrome (Trisomy 21) and Turner syndrome (Monosomy X) are chromosomal aneuploidies resulting from nondisjunction during gametogenesis or early mitotic division."
+        },
+        "leftContent": {
+          "intro": "The clinical team is classifying pediatric genetic referrals to determine specialized diagnostic testing and family genetic counseling requirements.",
+          "tabs": [
+            {
+              "id": "tab_u3_8_guide",
+              "title": "Genetics Reference Guide",
+              "content": "<p>Genetic disorders arise from single-gene mutations (Mendelian: autosomal dominant, autosomal recessive, X-linked) or numerical/structural chromosomal abnormalities (aneuploidies, translocations, deletions).</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783030000009",
+    "title": "Unit 3 Stand-alone 9: Down Syndrome Clinical Trend",
+    "course": "NURS 1017",
+    "unit": "Unit 3 (Genetic and Developmental Disorders)",
+    "topic": "Unit 3 (Genetic and Developmental Disorders)",
+    "disorder": "Unit 3 (Genetic and Developmental Disorders)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is reviewing serial growth, cardiac, and laboratory trends for a 4-month-old infant with Down syndrome (Trisomy 21). Which clinical interpretation accurately synthesizes the data to identify the infant's highest priority health complication?",
+          "type": "trend",
+          "options": [
+            {
+              "text": "Progressive pulmonary overcirculation and heart failure secondary to a large complete atrioventricular (AV) septal defect.",
+              "correct": true
+            },
+            {
+              "text": "Severe acute renal failure resulting from congenital cystic kidney disease.",
+              "correct": false
+            },
+            {
+              "text": "Malignant intracranial hypertension resulting from premature cranial synostosis.",
+              "correct": false
+            },
+            {
+              "text": "Primary hypoparathyroidism resulting from parathyroid aplasia.",
+              "correct": false
+            }
+          ],
+          "preamble": "The pediatric cardiology and primary care nurse is reviewing longitudinal assessment data for an infant with Trisomy 21.",
+          "explanation": "Approximately 40–50% of children with Down syndrome have congenital heart defects, most commonly an endocardial cushion defect / complete atrioventricular (AV) septal defect. As pulmonary vascular resistance naturally drops in the first 2 to 4 months of life, massive left-to-right shunting develops, causing high pulmonary blood flow, tachypnea, feeding diaphoresis, poor weight gain (failure to thrive), and hepatomegaly from congestive heart failure. The data trend shows worsening tachypnea, elevated BNP, poor weight velocity, and cardiomegaly consistent with AVSD heart failure."
+        },
+        "leftContent": {
+          "intro": "A 4-month-old infant with karyotype-confirmed Trisomy 21 (47,XY,+21) is brought for routine monitoring. Parents report the infant feeds slowly, sweats profusely around the forehead during bottle feedings, and breathes very fast.",
+          "tabs": [
+            {
+              "id": "tab_u3_9_trend",
+              "title": "Longitudinal Trends",
+              "content": "<table class='nclex-editor-table'><thead><tr><th>Parameter</th><th>Birth</th><th>Month 1</th><th>Month 2</th><th>Month 4</th></tr></thead><tbody><tr><td>Weight Percentile</td><td>25th</td><td>20th</td><td>10th</td><td>< 3rd (Failure to thrive)</td></tr><tr><td>Respiratory Rate (/min)</td><td>42</td><td>48</td><td>56</td><td>68 (Tachypnea, retractions)</td></tr><tr><td>Liver Edge Below Margin</td><td>0.5 cm</td><td>1.0 cm</td><td>2.0 cm</td><td>3.5 cm (Hepatomegaly)</td></tr><tr><td>Serum BNP (pg/mL)</td><td>80</td><td>190</td><td>540</td><td>1,280 (Severe volume overload)</td></tr><tr><td>Echocardiogram</td><td>Large AV canal</td><td>AV canal; Qp:Qs 1.4:1</td><td>AV canal; Qp:Qs 2.1:1</td><td>Large AV canal; severe pulmonary overcirculation</td></tr></tbody></table>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783030000010",
+    "title": "Unit 3 Stand-alone 10: Teratogenic Vulnerability Window",
+    "course": "NURS 1017",
+    "unit": "Unit 3 (Genetic and Developmental Disorders)",
+    "topic": "Unit 3 (Genetic and Developmental Disorders)",
+    "disorder": "Unit 3 (Genetic and Developmental Disorders)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is providing preconception education to a client of childbearing age regarding maternal medication safety and environmental teratogens. During which gestational timeframe is an embryo at the highest risk for developing major structural congenital malformations upon teratogenic exposure?",
+          "type": "multiple_choice",
+          "options": [
+            {
+              "text": "Weeks 1 to 2 of gestation (pre-differentiation 'all-or-none' period)",
+              "correct": false
+            },
+            {
+              "text": "Weeks 3 to 8 of gestation (embryonic period of organogenesis)",
+              "correct": true
+            },
+            {
+              "text": "Weeks 16 to 24 of gestation (second-trimester fetal maturation period)",
+              "correct": false
+            },
+            {
+              "text": "Weeks 36 to 40 of gestation (late third-trimester terminal growth period)",
+              "correct": false
+            }
+          ],
+          "preamble": "The obstetrics and maternal-fetal health nurse is educating clients regarding embryonic development and drug safety during pregnancy.",
+          "explanation": "The embryonic period—extending from gestational week 3 to week 8—is the critical window of organogenesis, during which all major organ systems, tissues, and anatomical axes (neural tube, cardiac chambers, limbs, facial structures) are forming and differentiating. Exposure to potent teratogens (e.g., isotretinoin, thalidomide, methotrexate, alcohol) during this peak vulnerability period causes severe gross structural anomalies. Prior to week 3 (pre-differentiation), teratogens typically follow an 'all-or-none' rule (either embryonic death or complete recovery). After week 8 (fetal period), teratogens primarily cause functional impairment or growth restriction rather than major structural organ dysmorphology."
+        },
+        "leftContent": {
+          "intro": "A 26-year-old client with cystic acne who is actively attempting to conceive attends a women's health consultation to discuss oral isotretinoin therapy.",
+          "tabs": [
+            {
+              "id": "tab_u3_10_info",
+              "title": "Maternal Health Record",
+              "content": "<p><strong>Medication Profile:</strong> Oral isotretinoin 40 mg daily prescribed 2 months ago; iPLEDGE registration pending confirmation.<br><strong>Reproductive Goal:</strong> Discontinuation of contraception; planning conception within the next several weeks.<br><strong>Nursing Action:</strong> Immediate client education regarding teratogenic risk and mandatory washout period prior to conception.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783040000001",
+    "title": "Unit 4 Stand-alone 1: Paraneoplastic SIADH Syndrome",
+    "course": "NURS 1017",
+    "unit": "Unit 4 (Neoplasia)",
+    "topic": "Unit 4 (Neoplasia)",
+    "disorder": "Unit 4 (Neoplasia)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is providing care to a client recently diagnosed with a paraneoplastic syndrome secondary to small cell lung carcinoma (SCLC). Which pathophysiologic and laboratory findings associated with syndrome of inappropriate antidiuretic hormone (SIADH) should the nurse anticipate? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Ectopic autonomous secretion of antidiuretic hormone (ADH / arginine vasopressin) by tumor cells",
+              "correct": true
+            },
+            {
+              "text": "Profound dilutional hyponatremia with decreased serum osmolality (< 275 mOsm/kg)",
+              "correct": true
+            },
+            {
+              "text": "Inappropriately elevated urine osmolality and concentrated urine despite systemic hypoosmolality",
+              "correct": true
+            },
+            {
+              "text": "Copious dilute polyuria with low urine specific gravity (< 1.005)",
+              "correct": false
+            },
+            {
+              "text": "Central nervous system irritability, confusion, lethargy, and seizure risk secondary to cerebral edema",
+              "correct": true
+            },
+            {
+              "text": "Severe hyperkalemia with peaked T waves on electrocardiogram",
+              "correct": false
+            }
+          ],
+          "preamble": "The medical oncology nurse is reviewing diagnostic and laboratory findings for a client admitted with new-onset confusion and small cell lung cancer.",
+          "explanation": "Paraneoplastic SIADH occurs when small cell lung neuroendocrine carcinoma cells ectopically synthesize and secrete arginine vasopressin (ADH), independent of normal hypothalamic-pituitary osmotic feedback. Excessive ADH causes continuous water reabsorption in renal collecting ducts, causing intravascular volume expansion, dilutional hyponatremia (< 135 mEq/L), low serum osmolality (< 275 mOsm/kg), and concentrated urine (high urine osmolality > 300 mOsm/kg and high urine sodium > 20–40 mEq/L). Acute hypoosmolar swelling leads to cerebral edema, manifesting as confusion, lethargy, headache, and potential seizures. Dilute polyuria is seen in diabetes insipidus, not SIADH."
+        },
+        "leftContent": {
+          "intro": "A 61-year-old client with newly diagnosed extensive-stage small cell lung carcinoma is admitted following progressive lethargy, confusion, nausea, and gait instability.",
+          "tabs": [
+            {
+              "id": "tab_u4_1_labs",
+              "title": "Admission Laboratory Results",
+              "content": "<table class='nclex-editor-table'><thead><tr><th>Test</th><th>Result</th><th>Reference Range</th></tr></thead><tbody><tr><td>Serum Sodium</td><td><strong>118 mEq/L</strong></td><td>135–145 mEq/L</td></tr><tr><td>Serum Osmolality</td><td><strong>245 mOsm/kg</strong></td><td>275–295 mOsm/kg</td></tr><tr><td>Urine Osmolality</td><td><strong>580 mOsm/kg</strong></td><td>300–900 mOsm/kg</td></tr><tr><td>Urine Sodium</td><td><strong>62 mEq/L</strong></td><td>20–40 mEq/L</td></tr><tr><td>Serum Potassium</td><td>4.1 mEq/L</td><td>3.5–5.0 mEq/L</td></tr></tbody></table>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783040000002",
+    "title": "Unit 4 Stand-alone 2: Cancer Cachexia Syndrome",
+    "course": "NURS 1017",
+    "unit": "Unit 4 (Neoplasia)",
+    "topic": "Unit 4 (Neoplasia)",
+    "disorder": "Unit 4 (Neoplasia)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is providing care to a client recently diagnosed with advanced pancreatic adenocarcinoma exhibiting cancer cachexia syndrome. Which metabolic and clinical manifestations should the nurse anticipate? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Progressive loss of skeletal muscle mass (sarcopenia) with or without loss of adipose tissue",
+              "correct": true
+            },
+            {
+              "text": "Systemic chronic inflammation mediated by pro-inflammatory cytokines such as tumor necrosis factor-alpha (TNF-alpha) and interleukin-6 (IL-6)",
+              "correct": true
+            },
+            {
+              "text": "Marked anorexia, early satiety, and elevated basal resting energy expenditure",
+              "correct": true
+            },
+            {
+              "text": "Complete reversal and restoration of lean body mass achieved solely through conventional caloric nutritional support",
+              "correct": false
+            },
+            {
+              "text": "Profound asthenia, generalized physical weakness, and anemia of chronic disease",
+              "correct": true
+            },
+            {
+              "text": "Hypertrophy of abdominal rectus muscles secondary to tumor-induced hyperinsulinemia",
+              "correct": false
+            }
+          ],
+          "preamble": "The palliative oncology nurse is conducting a comprehensive functional and nutritional assessment on a client with advanced malignancy.",
+          "explanation": "Cancer cachexia is a multifactorial paraneoplastic wasting syndrome characterized by involuntary progressive loss of skeletal muscle mass (sarcopenia), profound asthenia, anorexia, anemia, and chronic systemic inflammation driven by tumor- and host-derived cytokines (TNF-alpha/cachectin, IL-1, IL-6, interferon-gamma) and lipid-mobilizing factors. Unlike simple starvation, which conserves lean muscle by burning adipose tissue and resolves with food intake, cancer cachexia accelerates muscle protein proteolysis via the ubiquitin-proteasome pathway, elevates resting metabolic rate, and cannot be reversed by caloric intake alone."
+        },
+        "leftContent": {
+          "intro": "A 66-year-old client with metastatic pancreatic cancer is assessed in the outpatient clinic. Over the past 4 months, the client has experienced an involuntary 18 kg (22%) weight loss, temporal muscle wasting, and severe weakness.",
+          "tabs": [
+            {
+              "id": "tab_u4_2_nutr",
+              "title": "Nutritional & Clinical Assessment",
+              "content": "<p><strong>Anthropometrics:</strong> BMI 16.8 kg/m² (down from 23.4); temporal wasting, sunken clavicles, intercostal hollowing.<br><strong>Inflammatory Markers:</strong> C-reactive protein (CRP) 48 mg/L (normal < 5 mg/L); Erythrocyte sedimentation rate (ESR) 76 mm/hr.<br><strong>CBC:</strong> Hemoglobin 8.6 g/dL (normocytic, normochromic); Albumin 2.4 g/dL.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783040000003",
+    "title": "Unit 4 Stand-alone 3: Benign vs. Malignant Neoplasms",
+    "course": "NURS 1017",
+    "unit": "Unit 4 (Neoplasia)",
+    "topic": "Unit 4 (Neoplasia)",
+    "disorder": "Unit 4 (Neoplasia)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is reviewing surgical pathology reports for two clients with newly excised subcutaneous nodules. Which histological and biological characteristic distinguishes a <b>malignant</b> neoplasm from a benign neoplasm?",
+          "type": "multiple_choice",
+          "options": [
+            {
+              "text": "Slow, expansive growth enclosed within a distinct, cohesive fibrous capsule",
+              "correct": false
+            },
+            {
+              "text": "Cells that are well-differentiated and closely resemble the normal tissue of origin",
+              "correct": false
+            },
+            {
+              "text": "Local tissue infiltration with invasion across the basement membrane and capacity for distant metastasis",
+              "correct": true
+            },
+            {
+              "text": "Low mitotic index with normal nuclear-to-cytoplasmic ratio and absent necrosis",
+              "correct": false
+            }
+          ],
+          "preamble": "The ambulatory surgical oncology nurse is preparing to review pathology results with post-operative clients.",
+          "explanation": "The defining hallmark that differentiates malignant neoplasms from benign tumors is the capacity for local infiltration, invasion through surrounding normal tissue and basement membranes, and distant hematogenous or lymphatic metastasis. Benign tumors are typically slow-growing, well-differentiated, localized, encapsulated, and lack the biological capability to invade tissue borders or metastasize."
+        },
+        "leftContent": {
+          "intro": "Pathology reports are returned for two surgical specimens: Specimen A (a well-circumscribed thyroid follicular nodule) and Specimen B (an infiltrating retroperitoneal mass).",
+          "tabs": [
+            {
+              "id": "tab_u4_3_path",
+              "title": "Comparative Pathology",
+              "content": "<p><strong>Specimen A:</strong> Intact fibrous capsule; uniform glandular follicles; zero capsular or vascular invasion (Benign Follicular Adenoma).<br><strong>Specimen B:</strong> Infiltrative borders permeating adipose tissue; vascular invasion; nuclear atypia; necrotic foci (Malignant Liposarcoma).</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783040000004",
+    "title": "Unit 4 Stand-alone 4: Febrile Neutropenia Emergency",
+    "course": "NURS 1017",
+    "unit": "Unit 4 (Neoplasia)",
+    "topic": "Unit 4 (Neoplasia)",
+    "disorder": "Unit 4 (Neoplasia)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "Complete the diagram by dragging from the choices below to specify what condition the client is most likely experiencing, 2 actions the nurse should take to address that condition, and 2 parameters the nurse should monitor to assess the client's progress.",
+          "type": "bowtie",
+          "options": [],
+          "bowtieCol1Header": "Actions to Take",
+          "bowtieCol2Header": "Potential Condition",
+          "bowtieCol3Header": "Parameters to Monitor",
+          "bowtieActions": [
+            {
+              "text": "Obtain peripheral and central line blood cultures immediately prior to initiating antibiotics",
+              "correct": true
+            },
+            {
+              "text": "Administer prescribed broad-spectrum IV antipseudomonal beta-lactam within 60 minutes",
+              "correct": true
+            },
+            {
+              "text": "Administer high-dose oral aspirin and perform vigorous rectal temperature checks",
+              "correct": false
+            },
+            {
+              "text": "Place client on strict fluid restriction of less than 800 mL per 24 hours",
+              "correct": false
+            }
+          ],
+          "bowtieConditions": [
+            {
+              "text": "Febrile neutropenia / septic shock risk",
+              "correct": true
+            },
+            {
+              "text": "Superior vena cava compression",
+              "correct": false
+            },
+            {
+              "text": "Spontaneous tumor lysis syndrome",
+              "correct": false
+            }
+          ],
+          "bowtieParams": [
+            {
+              "text": "Absolute neutrophil count (ANC) and total white blood cell count",
+              "correct": true
+            },
+            {
+              "text": "Core body temperature and blood pressure every 2 to 4 hours",
+              "correct": true
+            },
+            {
+              "text": "Daily serum alpha-fetoprotein (AFP) concentrations",
+              "correct": false
+            },
+            {
+              "text": "Hourly pupillary light reflex and cranial nerve reflexes",
+              "correct": false
+            }
+          ],
+          "preamble": "The oncology unit nurse is assessing a client receiving intensive myelosuppressive chemotherapy who presents with sudden fever and rigors.",
+          "explanation": "Febrile neutropenia (fever ≥ 38.3 °C or ≥ 38.0 °C sustained for 1 hour with ANC < 500 cells/mcL) is a medical emergency requiring rapid intervention to prevent overwhelming sepsis and septic shock. Key nursing actions include immediately obtaining blood cultures (at least two sets, including central line lumens and peripheral stick) prior to starting antibiotics, followed by prompt administration of prescribed broad-spectrum antipseudomonal IV antibiotics (e.g., cefepime or piperacillin-tazobactam) within 60 minutes of arrival. Rectal temperatures and NSAIDs/aspirin are strictly contraindicated (due to mucosal trauma/bleeding risk). Monitoring includes serial vital signs (temperature, BP) and serial CBC with ANC."
+        },
+        "leftContent": {
+          "intro": "A 54-year-old client undergoing induction chemotherapy for acute myeloid leukemia presents on post-chemotherapy day 10 with chills, shaking rigors, and lightheadedness.",
+          "tabs": [
+            {
+              "id": "tab_u4_4_vitals",
+              "title": "Vital Signs & CBC",
+              "content": "<p><strong>Vitals:</strong> T 38.8 °C (101.8 °F), P 118, RR 22, BP 94/56 mmHg, SpO2 97% on room air.<br><strong>CBC:</strong> WBC 0.8 x 10^9/L (800/mcL); Neutrophils 15% (Absolute Neutrophil Count [ANC] = 120/mcL); Hemoglobin 9.1 g/dL; Platelets 45,000/mcL.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783040000005",
+    "title": "Unit 4 Stand-alone 5: Superior Vena Cava Syndrome Progression",
+    "course": "NURS 1017",
+    "unit": "Unit 4 (Neoplasia)",
+    "topic": "Unit 4 (Neoplasia)",
+    "disorder": "Unit 4 (Neoplasia)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is reviewing the pathophysiology of Superior Vena Cava (SVC) syndrome in thoracic oncology. Place the clinical and pathophysiologic events in the correct chronological sequence of disease progression.",
+          "type": "ordered_response",
+          "options": [],
+          "orderedOptions": [
+            "Extrinsic compression or direct tumor invasion of the thin-walled, low-pressure superior vena cava in the mediastinum",
+            "Impedance of venous return from the head, neck, and upper extremities to the right atrium",
+            "Retrograde venous engorgement producing facial edema, periorbital puffiness, and distended collateral chest wall veins",
+            "Progressive laryngeal edema, dyspnea, stridor, and cerebral venous hypertension leading to headache and altered mental status"
+          ],
+          "preamble": "The clinical nurse specialist is conducting a clinical conference on thoracic oncologic emergencies.",
+          "explanation": "SVC syndrome occurs when an expanding intrathoracic malignancy (e.g., non-small cell lung cancer, small cell lung cancer, or lymphoma) or mediastinal lymphadenopathy compresses the thin-walled superior vena cava. This impedes venous drainage from the upper body into the right heart, driving elevated retrograde venous pressure. This results in classic facial, periorbital, and bilateral upper extremity edema, cyanosis, plethora, and engorged superficial collateral veins on the anterior chest wall. With worsening obstruction, life-threatening laryngeal edema, dyspnea, stridor, and cerebral edema with neurological compromise ensue."
+        },
+        "leftContent": {
+          "intro": "A 58-year-old client with right upper lobe lung carcinoma presents with progressive collar tightness, facial swelling upon waking, and shortness of breath that worsens when bending forward.",
+          "tabs": [
+            {
+              "id": "tab_u4_5_exam",
+              "title": "Physical Examination",
+              "content": "<p><strong>Head & Neck:</strong> Symmetrical non-pitting facial plethora; periorbital edema; prominent distended jugular veins without pulsation.<br><strong>Chest:</strong> Tortuous, engorged subcutaneous collateral veins across the anterior thoracic wall.<br><strong>Pemberton's Sign:</strong> Marked facial flushing, stridor, and dizziness upon bilateral elevation of upper extremities for 60 seconds (positive).</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783040000006",
+    "title": "Unit 4 Stand-alone 6: CAUTION Warning Signs of Cancer",
+    "course": "NURS 1017",
+    "unit": "Unit 4 (Neoplasia)",
+    "topic": "Unit 4 (Neoplasia)",
+    "disorder": "Unit 4 (Neoplasia)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is reviewing the electronic health record of a client attending an annual wellness visit. Click to highlight the <b>four findings</b> in the clinical note that correspond directly to the classic American Cancer Society 'CAUTION' warning signs of occult malignancy.",
+          "type": "highlight",
+          "highlightText": "A 62-year-old client presents for routine annual review. Review of systems reveals {a persistent change in bowel habits over 2 months with ribbon-like stools and alternating constipation|correct}. The client also reports {a non-healing shallow ulcer on the lower lip that has bled repeatedly for 7 weeks|correct}. On physical examination of the left breast, the nurse palpates {a firm, non-tender, immobile 2-cm thickening and lump in the upper outer quadrant|correct}. In addition, the client mentions {a nagging, dry hoarseness and coughing that has persisted for over 3 months without an antecedent viral infection|correct}. {Blood pressure is 126/78 mmHg, heart rate is 74 beats/min, and oxygen saturation is 98% on room air.} {Urine dipstick is negative for protein and glucose.} {Bilateral visual acuity is 20/20 with corrective lenses.}",
+          "maxCorrectSelections": 4,
+          "options": [],
+          "preamble": "The primary care clinic nurse is screening an adult client for early signs and symptoms of malignancy using the CAUTION mnemonic.",
+          "explanation": "The American Cancer Society's CAUTION mnemonic outlines key warning signs: C = Change in bowel or bladder habits (ribbon-like stools/constipation); A = A sore that does not heal (non-healing lip ulcer); U = Unusual bleeding or discharge; T = Thickening or lump in breast or elsewhere (firm breast lump); I = Indigestion or difficulty swallowing; O = Obvious change in wart or mole; N = Nagging cough or hoarseness (persistent hoarseness/cough > 3 months). Normal blood pressure, normal urinalysis, and intact visual acuity are non-neoplastic general physical exam findings."
+        },
+        "leftContent": {
+          "intro": "A 62-year-old client presents for a routine annual health review with subtle multi-system complaints noted over the past several months.",
+          "tabs": [
+            {
+              "id": "tab_u4_6_enc",
+              "title": "Provider Encounter Note",
+              "content": "<p><strong>History of Present Illness:</strong> 62-year-old client with 30 pack-year smoking history presenting for health maintenance exam.<br><strong>Review of Systems:</strong> Multi-system assessment conducted across gastrointestinal, integumentary, breast, and respiratory domains.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783040000007",
+    "title": "Unit 4 Stand-alone 7: Proto-Oncogenes vs. Tumor Suppressors",
+    "course": "NURS 1017",
+    "unit": "Unit 4 (Neoplasia)",
+    "topic": "Unit 4 (Neoplasia)",
+    "disorder": "Unit 4 (Neoplasia)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "For each listed cancer-associated gene, select whether it functions as a Proto-Oncogene (driving proliferation via gain-of-function mutation) or a Tumor Suppressor Gene (inhibiting transformation via loss-of-function mutation).",
+          "type": "matrix_mc",
+          "matrix": {
+            "firstColumnHeader": "Cancer-Associated Gene",
+            "columns": [
+              "Proto-Oncogene / Oncogene (Gain of Function)",
+              "Tumor Suppressor Gene (Loss of Function)"
+            ],
+            "rows": [
+              {
+                "text": "TP53 (codes for the 'guardian of the genome' protein p53 that halts cell cycle at G1/S for DNA repair or triggers apoptosis).",
+                "correctIndex": 1
+              },
+              {
+                "text": "KRAS (codes for a membrane-associated GTPase that constantly transmits mitogenic growth signals when mutated).",
+                "correctIndex": 0
+              },
+              {
+                "text": "RB1 (codes for retinoblastoma protein that binds and sequesters E2F transcription factors to restrict cell cycle entry).",
+                "correctIndex": 1
+              },
+              {
+                "text": "HER2/neu (ERBB2) (codes for a cell-surface epidermal growth factor receptor tyrosine kinase that amplifies proliferative signaling).",
+                "correctIndex": 0
+              },
+              {
+                "text": "BRCA1 / BRCA2 (codes for proteins essential for homologous recombination DNA double-strand break repair).",
+                "correctIndex": 1
+              }
+            ]
+          },
+          "preamble": "The clinical cancer genetics nurse is reviewing molecular oncology principles with graduate nursing students.",
+          "explanation": "Proto-oncogenes normally promote physiological cell growth and survival; when mutated into oncogenes via gain-of-function mutations (point mutations, amplifications, translocations), a single altered allele produces hyperactive proteins (e.g., KRAS, HER2/neu) driving autonomous cell proliferation. In contrast, tumor suppressor genes (e.g., TP53, RB1, BRCA1/BRCA2) normally serve as negative regulators of the cell cycle, DNA repair caretakers, or apoptosis triggers; cancer development typically requires loss-of-function mutations in both alleles ('two-hit hypothesis') leading to uncontrolled cell survival and genomic instability."
+        },
+        "leftContent": {
+          "intro": "The molecular pathology department provides genetic profiling for clients with suspected hereditary and somatic malignancies.",
+          "tabs": [
+            {
+              "id": "tab_u4_7_gen",
+              "title": "Molecular Genetics Reference",
+              "content": "<p>Malignant transformation requires accumulation of mutations across two primary gene classes: oncogenes (gas pedal) and tumor suppressor genes (brakes).</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783040000008",
+    "title": "Unit 4 Stand-alone 8: Tumor Marker CEA Monitoring Trend",
+    "course": "NURS 1017",
+    "unit": "Unit 4 (Neoplasia)",
+    "topic": "Unit 4 (Neoplasia)",
+    "disorder": "Unit 4 (Neoplasia)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is analyzing longitudinal tumor marker and liver enzyme trends for a client who underwent curative-intent surgical resection of Stage III colorectal adenocarcinoma. Which clinical interpretation accurately reflects the client's disease status?",
+          "type": "trend",
+          "options": [
+            {
+              "text": "Occult recurrent metastatic colorectal carcinoma, most likely localized to hepatic parenchyma.",
+              "correct": true
+            },
+            {
+              "text": "Completely sustained remission with benign postoperative fibrous scarring.",
+              "correct": false
+            },
+            {
+              "text": "Acute infectious mononucleosis resulting in transient transaminitis.",
+              "correct": false
+            },
+            {
+              "text": "Primary benign prostatic hypertrophy causing cross-reactive biomarker elevation.",
+              "correct": false
+            }
+          ],
+          "preamble": "The surgical oncology follow-up clinic nurse is evaluating post-treatment surveillance surveillance data for a 65-year-old client.",
+          "explanation": "Carcinoembryonic antigen (CEA) is a glycoprotein tumor marker used primarily for monitoring disease response and surveillance for recurrence in colorectal cancer. Following complete curative resection, CEA should normalize (< 3.0 ng/mL in non-smokers, < 5.0 ng/mL in smokers). A progressive, exponential rise in CEA post-treatment (from 2.1 up to 44.5 ng/mL), accompanied by rising alkaline phosphatase and ALT/AST, strongly indicates occult tumor recurrence with metastatic spread to the liver (the primary site of colorectal metastasis via portal venous circulation)."
+        },
+        "leftContent": {
+          "intro": "A 65-year-old non-smoking client underwent sigmoid colectomy and adjuvant FOLFOX chemotherapy 18 months ago. The nurse reviews serial post-treatment surveillance laboratory trends.",
+          "tabs": [
+            {
+              "id": "tab_u4_8_trend",
+              "title": "Surveillance Trend Table",
+              "content": "<table class='nclex-editor-table'><thead><tr><th>Parameter</th><th>Baseline (Post-op)</th><th>Month 6</th><th>Month 12</th><th>Month 18</th></tr></thead><tbody><tr><td>CEA (ng/mL)</td><td>2.1</td><td>2.4</td><td>8.9</td><td>44.5 (Normal < 3.0)</td></tr><tr><td>Alkaline Phosphatase (U/L)</td><td>68</td><td>72</td><td>142</td><td>285 (Normal 44–147)</td></tr><tr><td>ALT (U/L)</td><td>22</td><td>24</td><td>48</td><td>88 (Normal 7–56)</td></tr><tr><td>AST (U/L)</td><td>19</td><td>21</td><td>42</td><td>76 (Normal 10–40)</td></tr><tr><td>Abdominal CT</td><td>No recurrence</td><td>Clear</td><td>Equivocal 1 cm liver hypoattenuation</td><td>Multiple bilobar hepatic metastases</td></tr></tbody></table>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783040000009",
+    "title": "Unit 4 Stand-alone 9: Three Stages of Carcinogenesis",
+    "course": "NURS 1017",
+    "unit": "Unit 4 (Neoplasia)",
+    "topic": "Unit 4 (Neoplasia)",
+    "disorder": "Unit 4 (Neoplasia)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is reviewing the multistep model of chemical carcinogenesis with a client discussing smoking cessation. Which statement accurately describes the <b>promotion</b> stage of carcinogenesis?",
+          "type": "multiple_choice",
+          "options": [
+            {
+              "text": "An irreversible DNA mutation directly caused by exposure to an initiator carcinogen",
+              "correct": false
+            },
+            {
+              "text": "A prolonged, potentially reversible process where mutated cells are stimulated to divide by chemical or hormonal promoters",
+              "correct": true
+            },
+            {
+              "text": "The development of chromosomal aneuploidy and autonomous invasion across tissue barriers",
+              "correct": false
+            },
+            {
+              "text": "The immediate hematogenous dissemination of malignant cells to distant visceral organs",
+              "correct": false
+            }
+          ],
+          "preamble": "The public health oncology nurse is educating community members on primary cancer prevention and behavioral risk reduction.",
+          "explanation": "Carcinogenesis occurs in three distinct stages: (1) Initiation: an irreversible genetic alteration (mutation) in cellular DNA caused by an initiator carcinogen (e.g., radiation, chemicals). The cell remains dormant unless promoted. (2) Promotion: a prolonged, potentially reversible process during which initiated cells undergo accelerated proliferation in response to promoters (e.g., hormones, chronic inflammation, phorbol esters, continuous tobacco smoke). If the promoter is removed before autonomous clonal progression, neoplastic development can be arrested. (3) Progression: irreversible acquisition of fully malignant phenotypic behavior, genomic instability, autonomous proliferation, invasiveness, and metastasis."
+        },
+        "leftContent": {
+          "intro": "A 48-year-old client with a 25-pack-year smoking history attends a preventive health consultation to understand how tobacco smoke components drive cancer development.",
+          "tabs": [
+            {
+              "id": "tab_u4_9_chart",
+              "title": "Pathophysiology Summary",
+              "content": "<p><strong>Carcinogenesis Stages:</strong><br>1. Initiation: DNA damage / permanent somatic mutation.<br>2. Promotion: Epigenetic stimulation of clonal cell proliferation (reversible upon cessation).<br>3. Progression: Invasive, metastatic malignant transformation with genomic instability.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783040000010",
+    "title": "Unit 4 Stand-alone 10: Infection Susceptibility in Cancer",
+    "course": "NURS 1017",
+    "unit": "Unit 4 (Neoplasia)",
+    "topic": "Unit 4 (Neoplasia)",
+    "disorder": "Unit 4 (Neoplasia)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is caring for a client undergoing multi-agent cytotoxic chemotherapy. Which mechanisms contributing to the client's high susceptibility to severe bacterial and opportunistic infections should the nurse anticipate? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Bone marrow suppression resulting in severe neutropenia and diminished phagocytic capacity",
+              "correct": true
+            },
+            {
+              "text": "Mucosal epithelial breakdown (mucositis) along the gastrointestinal tract breaching primary anatomical barriers",
+              "correct": true
+            },
+            {
+              "text": "Presence of invasive vascular access devices (e.g., central venous catheters) providing direct access for cutaneous flora",
+              "correct": true
+            },
+            {
+              "text": "Exuberant hypergammaglobulinemia providing enhanced bacterial opsonization",
+              "correct": false
+            },
+            {
+              "text": "Malnutrition and tumor-induced cachexia impairing cellular immune responses and wound healing",
+              "correct": true
+            },
+            {
+              "text": "Excessive accelerated splenic phagocytosis of normal bacterial microorganisms",
+              "correct": false
+            }
+          ],
+          "preamble": "The inpatient oncology nurse is developing an infection control and protective isolation care plan for an immunosuppressed client.",
+          "explanation": "Infection is a leading cause of morbidity and mortality in cancer clients. Factors contributing to susceptibility include: (1) Chemotherapy-induced myelosuppression causing absolute neutropenia (loss of primary antibacterial phagocytes); (2) Mucositis, where cytotoxic drugs disrupt rapidly dividing gastrointestinal mucosal cells, creating portals of entry for endogenous enteric flora; (3) Indwelling vascular devices (PICC lines, ports) breaching the skin barrier; (4) Malnutrition and cachexia, which suppress cell-mediated and humoral immunity; and (5) Tumor-mediated immunosuppressive factors (e.g., TGF-beta, regulatory T cells). Polyclonal hypergammaglobulinemia does not occur; rather, clients frequently have functional hypogammaglobulinemia."
+        },
+        "leftContent": {
+          "intro": "A 50-year-old client receiving intensive chemotherapy for diffuse large B-cell lymphoma is admitted to the protective environment unit on Day 8 of cycle 2.",
+          "tabs": [
+            {
+              "id": "tab_u4_10_assess",
+              "title": "Nursing Assessment",
+              "content": "<p><strong>Oral Cavity:</strong> Grade 3 oral mucositis with extensive painful mucosal ulcerations and bleeding.<br><strong>Access:</strong> Right internal jugular tunneled central catheter with mild erythema at exit site.<br><strong>CBC:</strong> ANC 210 cells/mcL (severe neutropenia); Lymphocytes 400 cells/mcL; Platelets 32,000/mcL.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783050000001",
+    "title": "Unit 5 Stand-alone 1: Burn Shock Pathophysiology",
+    "course": "NURS 1017",
+    "unit": "Unit 5 (Integumentary Disorders and Burns)",
+    "topic": "Unit 5 (Integumentary Disorders and Burns)",
+    "disorder": "Unit 5 (Integumentary Disorders and Burns)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is providing care to a client recently admitted with severe extensive second- and third-degree thermal burns covering 45% total body surface area (TBSA). Which acute pathophysiologic and laboratory findings should the nurse anticipate during the emergent resuscitation phase (first 24 to 48 hours)? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Profound systemic capillary hyperpermeability leading to massive third-spacing of fluid and protein into the interstitial space",
+              "correct": true
+            },
+            {
+              "text": "Hypovolemic burn shock manifested by decreased cardiac output and compensatory tachycardia",
+              "correct": true
+            },
+            {
+              "text": "Transient hyperkalemia resulting from widespread thermal cellular cytolysis and release of intracellular potassium",
+              "correct": true
+            },
+            {
+              "text": "Hemoconcentration reflected by an elevated hematocrit due to intravascular plasma volume loss",
+              "correct": true
+            },
+            {
+              "text": "Dramatic immediate expansion of intravascular circulating plasma volume",
+              "correct": false
+            },
+            {
+              "text": "Metabolic acidosis secondary to inadequate peripheral tissue perfusion and lactic acid accumulation",
+              "correct": true
+            }
+          ],
+          "preamble": "The burn intensive care unit nurse is reviewing admission pathophysiology and initial laboratory panels for an adult trauma client with extensive thermal injury.",
+          "explanation": "During the emergent phase of major burn injury (> 20% TBSA), intense systemic inflammatory mediator release (histamine, bradykinin, prostaglandins, cytokines) causes generalized capillary hyperpermeability, allowing massive leakage of plasma proteins and intravascular fluid into interstitial spaces (third-spacing). This leads to burn shock: severe intravascular hypovolemia, decreased venous return, diminished cardiac output, and lactic acidosis from tissue hypoperfusion. Cellular destruction and tissue necrosis release intracellular potassium into circulation, causing acute hyperkalemia. Relative loss of plasma water causes hemoconcentration with an elevated hematocrit. Intravascular volume is markedly depleted, not expanded."
+        },
+        "leftContent": {
+          "intro": "A 36-year-old client is admitted to the burn trauma center 90 minutes after escaping a residential fire, sustaining mixed partial- and full-thickness burns to the anterior torso and bilateral lower extremities (45% TBSA).",
+          "tabs": [
+            {
+              "id": "tab_u5_1_labs",
+              "title": "Emergent Labs & Vitals",
+              "content": "<table class='nclex-editor-table'><thead><tr><th>Parameter</th><th>Result</th><th>Reference Range</th></tr></thead><tbody><tr><td>Blood Pressure</td><td><strong>86/52 mmHg</strong></td><td>100–120 / 60–80 mmHg</td></tr><tr><td>Heart Rate</td><td><strong>132 beats/min</strong></td><td>60–100 beats/min</td></tr><tr><td>Hematocrit</td><td><strong>56%</strong></td><td>38–48%</td></tr><tr><td>Serum Potassium</td><td><strong>5.9 mEq/L</strong></td><td>3.5–5.0 mEq/L</td></tr><tr><td>Serum Sodium</td><td>131 mEq/L</td><td>135–145 mEq/L</td></tr><tr><td>Arterial Lactate</td><td><strong>4.2 mmol/L</strong></td><td>0.5–2.2 mmol/L</td></tr></tbody></table>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783050000002",
+    "title": "Unit 5 Stand-alone 2: Impetigo Contagiosa Pathophysiology",
+    "course": "NURS 1017",
+    "unit": "Unit 5 (Integumentary Disorders and Burns)",
+    "topic": "Unit 5 (Integumentary Disorders and Burns)",
+    "disorder": "Unit 5 (Integumentary Disorders and Burns)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is providing care to a pediatric client recently diagnosed with impetigo contagiosa. Which clinical manifestations and pathophysiologic characteristics should the nurse anticipate? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "Superficial bacterial epidermal infection caused by Staphylococcus aureus or Streptococcus pyogenes",
+              "correct": true
+            },
+            {
+              "text": "Fragile thin-roofed vesicles that rupture readily to form classic thick, honey-colored (amber) adherent crusts",
+              "correct": true
+            },
+            {
+              "text": "Highly contagious transmission through direct personal contact or shared contaminated fomites",
+              "correct": true
+            },
+            {
+              "text": "Pruritus leading to excoriation and mechanical autoinoculation to adjacent cutaneous sites",
+              "correct": true
+            },
+            {
+              "text": "Deep subcutaneous fascial necrosis and gas gangrene formation",
+              "correct": false
+            },
+            {
+              "text": "Obligatory permanent scarring extending deep into the reticular dermis",
+              "correct": false
+            }
+          ],
+          "preamble": "The community health clinic nurse is evaluating a 4-year-old preschool child brought in by parents for facial skin lesions.",
+          "explanation": "Impetigo is a highly contagious, superficial bacterial skin infection localized to the epidermis, most commonly caused by Staphylococcus aureus and/or Group A Streptococcus (Streptococcus pyogenes). It begins as small erythematous macules that evolve into thin-walled vesicles and pustules. These rupture easily, leaving an exudative red base that dries to form characteristic thick, golden-yellow 'honey-colored' crusts, commonly around the mouth and nares. Pruritus is common, prompting scratching that facilitates autoinoculation to other body sites. Because it is confined to the epidermis above the basement membrane, it resolves without scarring unless secondarily infected. It does not cause fascial necrosis or gas gangrene."
+        },
+        "leftContent": {
+          "intro": "A 4-year-old child attending daycare presents with a 4-day history of worsening clustered sores around the mouth and anterior nares.",
+          "tabs": [
+            {
+              "id": "tab_u5_2_derm",
+              "title": "Dermatological Exam",
+              "content": "<p><strong>Perioral & Nasal Area:</strong> Multiple erythematous papules and ruptured vesicles covered with confluent, thick, sticky amber/honey-colored crusts; child actively scratches face.<br><strong>Lymph Nodes:</strong> Mild, non-tender bilateral submandibular lymphadenopathy.<br><strong>Systemic:</strong> Temperature 37.1 °C; child is alert, energetic, and playful.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783050000003",
+    "title": "Unit 5 Stand-alone 3: Plaque Psoriasis Pathophysiology",
+    "course": "NURS 1017",
+    "unit": "Unit 5 (Integumentary Disorders and Burns)",
+    "topic": "Unit 5 (Integumentary Disorders and Burns)",
+    "disorder": "Unit 5 (Integumentary Disorders and Burns)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is providing care to a client recently diagnosed with chronic plaque psoriasis. Which pathophysiologic mechanisms and clinical manifestations should the nurse anticipate? <b>Select all that apply.</b>",
+          "type": "select_all",
+          "options": [
+            {
+              "text": "T-cell-mediated autoimmune dysregulation with oversecretion of pro-inflammatory cytokines (IL-17, IL-23, TNF-alpha)",
+              "correct": true
+            },
+            {
+              "text": "Markedly accelerated epidermal turnover time (shortened from ~28 days to 3–5 days) causing immature keratinocyte stacking",
+              "correct": true
+            },
+            {
+              "text": "Sharply demarcated erythematous plaques covered with thick, silvery-white micaceous scales",
+              "correct": true
+            },
+            {
+              "text": "Predilection for extensor surfaces such as bilateral elbows, knees, and the presacral scalp",
+              "correct": true
+            },
+            {
+              "text": "Pinpoint bleeding provoked by gentle removal of adherent surface scale (positive Auspitz sign)",
+              "correct": true
+            },
+            {
+              "text": "Spontaneous painless skin sloughing involving the entire dermal and subcutaneous layers",
+              "correct": false
+            }
+          ],
+          "preamble": "The outpatient dermatology clinic nurse is assessing a 35-year-old client presenting with recurrent scaly cutaneous plaques.",
+          "explanation": "Plaque psoriasis (psoriasis vulgaris) is a chronic, immune-mediated inflammatory dermatosis driven by pathogenic dendritic cell and helper T-cell (Th1/Th17) activation. Excessive secretion of IL-17, IL-23, and TNF-alpha stimulates extreme hyperproliferation of epidermal keratinocytes, shortening transit time through the epidermis from the normal 28 days down to just 3–5 days. This defective maturation leads to parakeratosis (nuclei retained in stratum corneum) and accumulation of thick silvery scales on well-demarcated erythematous plaques, characteristically distributed over extensor surfaces (elbows, knees, scalp, lumbosacral). Thinning of the suprapapillary epidermis over dilated dermal capillaries accounts for pinpoint bleeding when scales are peeled away (Auspitz sign). Full-thickness dermal sloughing is characteristic of toxic epidermal necrolysis, not chronic psoriasis."
+        },
+        "leftContent": {
+          "intro": "A 35-year-old client presents with an 8-month history of itchy, scaly patches over both elbows, anterior knees, and posterior scalp that worsen during stressful periods.",
+          "tabs": [
+            {
+              "id": "tab_u5_3_skin",
+              "title": "Physical Examination",
+              "content": "<p><strong>Integumentary Findings:</strong> Symmetrically distributed, well-circumscribed salmon-pink plaques with overlying thick, micaceous, silvery-white scales over bilateral extensor elbows and patellar regions.<br><strong>Special Tests:</strong> Auspitz sign positive (pinpoint capillary bleeding upon scraping scale); nail pitting and oil drop discoloration noted on multiple fingernails.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783050000004",
+    "title": "Unit 5 Stand-alone 4: Rule of Nines Burn Surface Area",
+    "course": "NURS 1017",
+    "unit": "Unit 5 (Integumentary Disorders and Burns)",
+    "topic": "Unit 5 (Integumentary Disorders and Burns)",
+    "disorder": "Unit 5 (Integumentary Disorders and Burns)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "An adult client is admitted to the emergency department following an industrial flash fire. Assessment reveals partial-thickness and full-thickness burns involving the entire right upper extremity, the entire anterior chest and abdomen, and the anterior surface of the right lower extremity. Using the Rule of Nines, what is the client's estimated Total Body Surface Area (TBSA) percentage of burn injury?",
+          "type": "multiple_choice",
+          "options": [
+            {
+              "text": "18% TBSA",
+              "correct": false
+            },
+            {
+              "text": "27% TBSA",
+              "correct": false
+            },
+            {
+              "text": "36% TBSA",
+              "correct": true
+            },
+            {
+              "text": "45% TBSA",
+              "correct": false
+            }
+          ],
+          "preamble": "The emergency triage nurse is calculating total body surface area burned to determine resuscitation fluid requirements.",
+          "explanation": "According to the adult Rule of Nines: Entire right upper extremity (arm) = 9%; Entire anterior torso (chest and abdomen) = 18%; Anterior surface of the right lower extremity (anterior right leg) = 9% (each entire leg is 18%, so anterior half = 9%). Total calculation: 9% + 18% + 9% = 36% TBSA. Accurate TBSA calculation is essential for initiating standardized fluid resuscitation formulas (e.g., Parkland formula)."
+        },
+        "leftContent": {
+          "intro": "An adult factory worker is admitted immediately after an explosion and flash fire in an industrial paint booth.",
+          "tabs": [
+            {
+              "id": "tab_u5_4_burn",
+              "title": "Anatomical Burn Mapping",
+              "content": "<p><strong>Burn Distribution:</strong><br>- Entire right upper extremity (circumferential arm, forearm, hand): 9%<br>- Anterior chest and anterior abdominal wall: 18%<br>- Anterior right thigh, leg, and dorsum of foot: 9%<br>Total calculated burn surface area = 36% TBSA.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783050000005",
+    "title": "Unit 5 Stand-alone 5: Circumferential Burn Compartment Syndrome",
+    "course": "NURS 1017",
+    "unit": "Unit 5 (Integumentary Disorders and Burns)",
+    "topic": "Unit 5 (Integumentary Disorders and Burns)",
+    "disorder": "Unit 5 (Integumentary Disorders and Burns)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "Complete the diagram by dragging from the choices below to specify what condition the client is most likely experiencing, 2 actions the nurse should take to address that condition, and 2 parameters the nurse should monitor to assess the client's progress.",
+          "type": "bowtie",
+          "options": [],
+          "bowtieCol1Header": "Actions to Take",
+          "bowtieCol2Header": "Potential Condition",
+          "bowtieCol3Header": "Parameters to Monitor",
+          "bowtieActions": [
+            {
+              "text": "Notify the surgical provider immediately and prepare the client and equipment for bedside escharotomy",
+              "correct": true
+            },
+            {
+              "text": "Loosen any constrictive outer dressings and maintain the burned limb elevated at or slightly above heart level",
+              "correct": true
+            },
+            {
+              "text": "Apply tight elastic compression wraps around the entire circumference of the forearm",
+              "correct": false
+            },
+            {
+              "text": "Lower the extremity into a dependent position below the heart to increase gravity blood flow",
+              "correct": false
+            }
+          ],
+          "bowtieConditions": [
+            {
+              "text": "Burn-induced extremity compartment syndrome / neurovascular compromise",
+              "correct": true
+            },
+            {
+              "text": "Systemic toxic shock syndrome",
+              "correct": false
+            },
+            {
+              "text": "Severe allergic contact dermatitis",
+              "correct": false
+            }
+          ],
+          "bowtieParams": [
+            {
+              "text": "Hourly radial and ulnar Doppler pulse signals and distal capillary refill time",
+              "correct": true
+            },
+            {
+              "text": "Serial digital sensorimotor examinations (paresthesia, motor weakness) and compartment firmness",
+              "correct": true
+            },
+            {
+              "text": "Continuous central venous pressure line wave tracing",
+              "correct": false
+            },
+            {
+              "text": "Daily serum antinuclear antibody (ANA) titers",
+              "correct": false
+            }
+          ],
+          "preamble": "The burn care unit nurse is assessing an admitted client 8 hours into fluid resuscitation for extensive circumferential forearm burns.",
+          "explanation": "Full-thickness circumferential burns create a rigid, inelastic leather-like eschar. As vigorous fluid resuscitation progresses, profound interstitial edema develops within the non-yielding osteofascial compartment. When interstitial pressure exceeds capillary perfusion pressure, burn-induced compartment syndrome develops, causing microvascular collapse, tissue ischemia, necrosis of deep nerves and muscles, and eventual limb loss. The nurse must immediately recognize early neurovascular signs (loss of Doppler pulses, paresthesia, severe disproportionate pain, pallor, cold skin), notify the surgical team, prepare for emergency bedside escharotomy (incising the eschar to release constriction), loosen any dressings, and position the limb elevated. Monitoring involves hourly Doppler arterial assessments and distal neurovascular checks."
+        },
+        "leftContent": {
+          "intro": "A 42-year-old client with deep partial- and full-thickness circumferential burns to the right upper extremity is receiving crystalloid resuscitation.",
+          "tabs": [
+            {
+              "id": "tab_u5_5_neuro",
+              "title": "Neurovascular Assessment",
+              "content": "<p><strong>Hour 8 Post-Injury:</strong> Right hand is pale and cool; right radial pulse is no longer palpable and only faintly audible by ultrasonic Doppler; capillary refill > 4 seconds; client reports intense tingling, numbness in fingers, and severe throbbing deep muscular forearm pain. Forearm is tense and board-like on palpation.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783050000006",
+    "title": "Unit 5 Stand-alone 6: Burn Resuscitation Bundle Sequence",
+    "course": "NURS 1017",
+    "unit": "Unit 5 (Integumentary Disorders and Burns)",
+    "topic": "Unit 5 (Integumentary Disorders and Burns)",
+    "disorder": "Unit 5 (Integumentary Disorders and Burns)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is providing emergent care to an adult client admitted immediately following a severe 40% TBSA thermal burn. Place the essential nursing interventions in the correct chronological priority order.",
+          "type": "ordered_response",
+          "options": [],
+          "orderedOptions": [
+            "Ensure the burning process is halted, evaluate airway patency, and provide 100% humidified oxygen via non-rebreather mask",
+            "Establish two large-bore (16- or 18-gauge) peripheral intravenous access lines and initiate warmed balanced crystalloid (Lactated Ringer's)",
+            "Insert an indwelling urinary catheter with an in-line urometer to titrate resuscitation to hourly urine output goals",
+            "Cover burn wounds with clean, dry sterile sheets and warm blankets to prevent hypothermia and cold-induced vasoconstriction",
+            "Review immunization history and administer intramuscular tetanus toxoid prophylaxis if indicated"
+          ],
+          "preamble": "The emergency trauma nurse is initiating emergent-phase care for a client with extensive thermal burn injuries.",
+          "explanation": "In major burn trauma: (1) Airway and breathing take absolute priority (ABCDE)—halt the burn source, assess inhalation injury, and administer 100% oxygen. (2) Circulation is secured next by establishing multiple large-bore IVs and starting warmed Lactated Ringer's based on standardized burn formulas. (3) An indwelling catheter with urometer must be placed immediately to monitor hourly urine output (the primary clinical benchmark for titration of fluid resuscitation). (4) Preventing hypothermia is critical, as burn clients lose epidermal thermal regulation; wounds are covered with clean dry sheets (never cold water or ice, which induce vasoconstriction and worsen ischemia). (5) Tetanus prophylaxis is administered once hemodynamic stabilization is underway."
+        },
+        "leftContent": {
+          "intro": "An adult client is transported to the trauma bay by paramedics 30 minutes after escaping a house fire, sustaining 40% TBSA flame burns across the torso and arms.",
+          "tabs": [
+            {
+              "id": "tab_u5_6_triage",
+              "title": "Trauma Bay Admission",
+              "content": "<p><strong>Primary Survey:</strong> Airway patent; singed nasal hairs; hoarse voice; spontaneous respirations at 28/min; SpO2 94% on room air; blood pressure 92/58 mmHg, pulse 124 beats/min.<br><strong>Wounds:</strong> Extensive blistering and leathery eschar across chest, abdomen, and both arms.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783050000007",
+    "title": "Unit 5 Stand-alone 7: Malignant Melanoma ABCDE Assessment",
+    "course": "NURS 1017",
+    "unit": "Unit 5 (Integumentary Disorders and Burns)",
+    "topic": "Unit 5 (Integumentary Disorders and Burns)",
+    "disorder": "Unit 5 (Integumentary Disorders and Burns)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is reviewing the dermatology progress note for a client with a suspicious pigmented cutaneous lesion. Click to highlight the <b>four findings</b> in the clinical note that correspond directly to the classic 'ABCDE' diagnostic criteria for cutaneous malignant melanoma.",
+          "type": "highlight",
+          "highlightText": "A 48-year-old fair-skinned client with extensive recreational sun exposure presents for evaluation of an abnormal back lesion. Visual inspection of the left infrascapular region reveals a pigmented lesion with {marked asymmetry between the superior and inferior hemispheres|correct}. Dermatoscopic examination identifies {irregular, notched, and scalloped peripheral borders|correct}. The internal lesion displays {prominent color variegation containing shades of jet black, deep brown, pink, and focal bluish-white depigmentation|correct}. Caliper measurement records {a maximal cross-sectional diameter of 9 millimeters|correct}. The client notes the lesion was previously uniform and small but grew and changed over the last 4 months. {The surrounding skin shows numerous non-dysplastic ephelides (freckles).} {Blood pressure is 120/80 mmHg, and heart rate is 68 beats/min.} {Review of systems is negative for bone pain, cough, or weight loss.}",
+          "maxCorrectSelections": 4,
+          "options": [],
+          "preamble": "The dermatology oncology nurse is assessing a pigmented cutaneous lesion using the ABCDE screening framework.",
+          "explanation": "The ABCDE criteria for melanoma include: A = Asymmetry (one half does not match the other); B = Border irregularity (scalloped, notched, or poorly defined edges); C = Color variegation (heterogeneous mixture of brown, black, blue, white, or red); D = Diameter > 6 mm (pencil eraser size); E = Evolving (lesion changing in size, shape, or color over time). Surrounding non-dysplastic freckles, normal vital signs, and negative systemic review are non-melanoma findings."
+        },
+        "leftContent": {
+          "intro": "A 48-year-old client with Fitzpatrick skin type II presents after a spouse noticed a rapidly darkening, irregular mole on the mid-back.",
+          "tabs": [
+            {
+              "id": "tab_u5_7_derm",
+              "title": "Dermoscopy Examination",
+              "content": "<p><strong>Lesion Location:</strong> Left infrascapular back.<br><strong>Clinical History:</strong> History of multiple blistering sunburns during adolescence; positive family history of melanoma in a maternal aunt.<br><strong>Biopsy Plan:</strong> Scheduled for full-thickness complete excisional biopsy with 2 mm margins.</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783050000008",
+    "title": "Unit 5 Stand-alone 8: Primary vs. Secondary Skin Lesions",
+    "course": "NURS 1017",
+    "unit": "Unit 5 (Integumentary Disorders and Burns)",
+    "topic": "Unit 5 (Integumentary Disorders and Burns)",
+    "disorder": "Unit 5 (Integumentary Disorders and Burns)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "For each integumentary lesion description, select its correct dermatological classification.",
+          "type": "matrix_mc",
+          "matrix": {
+            "firstColumnHeader": "Integumentary Lesion",
+            "columns": [
+              "Primary Flat Non-Palpable",
+              "Primary Solid Elevated",
+              "Primary Fluid-Filled Elevated",
+              "Secondary Depressed / Loss of Surface",
+              "Secondary Exuberant Scar"
+            ],
+            "rows": [
+              {
+                "text": "Macule (flat, circumscribed area of skin color change < 1 cm in diameter, such as a freckle).",
+                "correctIndex": 0
+              },
+              {
+                "text": "Plaque (elevated, firm, rough solid lesion with a flat top surface > 1 cm, such as psoriasis).",
+                "correctIndex": 1
+              },
+              {
+                "text": "Vesicle (elevated, circumscribed superficial lesion filled with serous fluid < 1 cm, such as varicella).",
+                "correctIndex": 2
+              },
+              {
+                "text": "Ulcer (loss of epidermis and dermis with concave, excavated tissue loss, such as a pressure injury).",
+                "correctIndex": 3
+              },
+              {
+                "text": "Keloid (hypertrophic, elevated fibrous scar tissue extending well beyond the original wound boundary).",
+                "correctIndex": 4
+              }
+            ]
+          },
+          "preamble": "The wound and ostomy nurse specialist is conducting an educational session on integumentary terminology and morphology.",
+          "explanation": "Primary skin lesions develop as direct results of the initial disease process (macule, patch, papule, plaque, nodule, tumor, vesicle, bulla, wheal, pustule). Secondary lesions result from external trauma, evolution of a primary lesion, or wound healing/scarring (scale, crust, erosion, ulcer, fissure, lichenification, atrophy, keloid). A macule is primary flat; plaque is primary solid elevated; vesicle is primary fluid-filled; ulcer is secondary depressed tissue loss; keloid is secondary excessive collagen scar formation."
+        },
+        "leftContent": {
+          "intro": "The nursing team is completing a review of dermatological terminology to ensure accurate documentation in electronic health records.",
+          "tabs": [
+            {
+              "id": "tab_u5_8_atlas",
+              "title": "Morphology Guide",
+              "content": "<p>Dermatologic lesions are classified based on whether they arise de novo from previously normal skin (primary) or evolve over time due to scratching, infection, regression, or repair (secondary).</p>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783050000009",
+    "title": "Unit 5 Stand-alone 9: Burn Fluid Resuscitation Trend",
+    "course": "NURS 1017",
+    "unit": "Unit 5 (Integumentary Disorders and Burns)",
+    "topic": "Unit 5 (Integumentary Disorders and Burns)",
+    "disorder": "Unit 5 (Integumentary Disorders and Burns)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "The nurse is monitoring serial vital signs and hourly urine output for a 70-kg client undergoing fluid resuscitation for a 40% TBSA thermal burn. Based on the 4-hour trend data, what clinical interpretation and nursing action are most appropriate?",
+          "type": "trend",
+          "options": [
+            {
+              "text": "Resuscitation is achieving target end-organ perfusion as evidenced by normalization of urine output to the target range of 0.5 to 1.0 mL/kg/hr (35–70 mL/hr); maintain current IV infusion titration.",
+              "correct": true
+            },
+            {
+              "text": "The client is in progressive uncompensated hypovolemic shock; immediately double the hourly crystalloid infusion rate.",
+              "correct": false
+            },
+            {
+              "text": "The client is experiencing severe hypervolemia and pulmonary edema; immediately halt all IV crystalloid infusions.",
+              "correct": false
+            },
+            {
+              "text": "The client has developed complete anuric renal failure requiring emergent hemodialysis.",
+              "correct": false
+            }
+          ],
+          "preamble": "The burn intensive care unit nurse is titrating Lactated Ringer's resuscitation fluid based on hourly physiologic parameters.",
+          "explanation": "In adult thermal burn resuscitation, hourly urine output is the gold standard clinical indicator of adequate renal and visceral end-organ perfusion. The universal resuscitation target for an adult is 0.5 to 1.0 mL/kg/hr (for a 70-kg client, 35 to 70 mL/hr). The 4-hour trend shows initial oliguria (15 mL/hr at Hour 1) progressively improving and stabilizing within the target therapeutic window (45 mL/hr at Hour 3, 55 mL/hr at Hour 4) accompanied by normalization of heart rate and mean arterial pressure. This confirms effective fluid restoration without evidence of hypoperfusion or fluid overload; the nurse should maintain the current titrated rate."
+        },
+        "leftContent": {
+          "intro": "A 70-kg adult is admitted to the burn unit following a 40% TBSA scald burn. Fluid resuscitation is initiated with Lactated Ringer's solution titrated hourly.",
+          "tabs": [
+            {
+              "id": "tab_u5_9_trend",
+              "title": "Hourly Resuscitation Flowsheet",
+              "content": "<table class='nclex-editor-table'><thead><tr><th>Parameter</th><th>Hour 1</th><th>Hour 2</th><th>Hour 3</th><th>Hour 4</th></tr></thead><tbody><tr><td>Hourly Urine Output</td><td>15 mL/hr (0.21 mL/kg)</td><td>28 mL/hr (0.40 mL/kg)</td><td>45 mL/hr (0.64 mL/kg)</td><td>55 mL/hr (0.79 mL/kg)</td></tr><tr><td>Heart Rate (beats/min)</td><td>138</td><td>122</td><td>106</td><td>94</td></tr><tr><td>Mean Arterial Pressure (MAP)</td><td>58 mmHg</td><td>64 mmHg</td><td>72 mmHg</td><td>76 mmHg</td></tr><tr><td>Serum Lactate (mmol/L)</td><td>4.8</td><td>3.9</td><td>2.8</td><td>2.0</td></tr><tr><td>IV Infusion Rate (mL/hr)</td><td>700 mL/hr</td><td>700 mL/hr</td><td>600 mL/hr</td><td>550 mL/hr</td></tr></tbody></table>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "standalone_1783050000010",
+    "title": "Unit 5 Stand-alone 10: Burn Hypermetabolic State",
+    "course": "NURS 1017",
+    "unit": "Unit 5 (Integumentary Disorders and Burns)",
+    "topic": "Unit 5 (Integumentary Disorders and Burns)",
+    "disorder": "Unit 5 (Integumentary Disorders and Burns)",
+    "isStandalone": true,
+    "screens": [
+      {
+        "step": 1,
+        "question": {
+          "stem": "A client with 35% TBSA severe burns enters the acute rehabilitation phase 5 days post-injury. The nurse notes an elevated core body temperature of 38.3 °C (101.0 °F) without identifiable infection, tachycardia, and a resting energy expenditure 180% of normal baseline. Which pathophysiologic mechanism accounts for this persistent hypermetabolic state?",
+          "type": "multiple_choice",
+          "options": [
+            {
+              "text": "Persistent autonomic sympathetic storm and surge of catecholamines, cortisol, and glucagon driving massive catabolism and futile substrate cycling",
+              "correct": true
+            },
+            {
+              "text": "Acute bacterial bacteremia causing immediate hypothalamic thermoregulatory set-point collapse",
+              "correct": false
+            },
+            {
+              "text": "Severe hypothyroidism resulting in slowed cellular substrate oxidation and secondary shivering",
+              "correct": false
+            },
+            {
+              "text": "Metastatic calcification within skeletal muscle sarcolemma halting glycogen utilization",
+              "correct": false
+            }
+          ],
+          "preamble": "The burn center clinical specialist is discussing nutritional therapy and metabolic response in the acute post-burn phase.",
+          "explanation": "Major burn injuries (> 20–30% TBSA) trigger the most extreme and prolonged hypermetabolic, catabolic stress response known in medicine. Driven by massive, persistent elevations of circulating catecholamines (epinephrine, norepinephrine), cortisol, glucagon, and pro-inflammatory cytokines, resting energy expenditure can double (up to 150–200% of baseline). This hypermetabolic state features accelerated muscle proteolysis, lipolysis, gluconeogenesis, elevated baseline core body temperature (a non-infectious hypothalamic reset), and rapid loss of lean body mass unless supported by early, high-protein, high-calorie enteral nutrition."
+        },
+        "leftContent": {
+          "intro": "A 40-year-old client with 35% TBSA burns is on Post-Burn Day 5 in the burn ICU. The nurse reviews metabolic and nutritional assessment data.",
+          "tabs": [
+            {
+              "id": "tab_u5_10_metab",
+              "title": "Metabolic Panel & Vitals",
+              "content": "<p><strong>Vitals:</strong> Core Temperature 38.3 °C, Heart Rate 112 beats/min, Blood Pressure 128/78 mmHg.<br><strong>Indirect Calorimetry:</strong> Resting energy expenditure 3,400 kcal/day (185% of predicted basal metabolic rate).<br><strong>Urinary Nitrogen:</strong> 24-hour urinary urea nitrogen demonstrates severe negative nitrogen balance (-18 g/day).</p>"
+            }
+          ]
+        }
+      }
+    ]
+  }
+];
